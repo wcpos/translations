@@ -26,13 +26,16 @@ function getArg(name, defaultValue) {
 const FREE_PATH = getArg('free', path.resolve(__dirname, '../../woocommerce-pos'));
 const PRO_PATH = getArg('pro', path.resolve(__dirname, '../../woocommerce-pos-pro'));
 const OUTPUT_DIR = path.resolve(__dirname, '../source/php');
+const SKIP_FREE = args.includes('--skip-free');
+const SKIP_PRO = args.includes('--skip-pro');
 
-const plugins = [
+const allPlugins = [
   {
     name: 'WooCommerce POS',
     domain: 'woocommerce-pos',
     src: FREE_PATH,
     exclude: ['vendor/**', 'node_modules/**', 'tests/**'],
+    skip: SKIP_FREE,
   },
   {
     name: 'WooCommerce POS Pro',
@@ -40,8 +43,11 @@ const plugins = [
     src: PRO_PATH,
     // Exclude vendor/ to avoid duplicating free plugin strings
     exclude: ['vendor/**', 'node_modules/**', 'tests/**'],
+    skip: SKIP_PRO,
   },
 ];
+
+const plugins = allPlugins.filter(p => !p.skip);
 
 function extractPlugin(plugin) {
   const srcDir = plugin.src;

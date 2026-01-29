@@ -1,23 +1,27 @@
 name: Extract PHP Strings
 
 on:
+  # Manual trigger for free plugin (public, no token needed)
   workflow_dispatch:
     inputs:
       free_ref:
         description: 'Free plugin ref (tag, branch, or SHA)'
         required: false
         default: 'main'
-      pro_ref:
-        description: 'Pro plugin ref (tag, branch, or SHA)'
-        required: false
-        default: 'main'
+
+  # Pro plugin pushes its POT via repository_dispatch
+  repository_dispatch:
+    types:
+      - update-pro-pot
 
 concurrency:
   group: extract-php
   cancel-in-progress: true
 
 jobs:
-  extract:
+  # Extract free plugin strings (public repo, no token needed)
+  extract-free:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout translations
@@ -29,14 +33,6 @@ jobs:
           repository: wcpos/woocommerce-pos
           ref: ${{ inputs.free_ref }}
           path: woocommerce-pos
-
-      - name: Checkout pro plugin
-        uses: actions/checkout@v4
-        with:
-          repository: wcpos/woocommerce-pos-pro
-          ref: ${{ inputs.pro_ref }}
-          path: woocommerce-pos-pro
-          token: ${{ secrets.PRO_PLUGIN_TOKEN }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -50,22 +46,43 @@ jobs:
         run: pnpm install
 
       - name: Extract strings
-        run: node scripts/extract-php-strings.js --free woocommerce-pos --pro woocommerce-pos-pro
+        run: node scripts/extract-php-strings.js --free woocommerce-pos --skip-pro
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet source/php/; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit changes
-        if: steps.changes.outputs.changed == 'true'
+      - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add source/php/
-          git commit -m "chore: update PHP source strings"
-          git push
+          git add source/php/woocommerce-pos.pot
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update free plugin source strings"
+            git push
+          fi
+
+  # Receive pro plugin POT via repository_dispatch
+  receive-pro:
+    if: github.event_name == 'repository_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout translations
+        uses: actions/checkout@v4
+
+      - name: Write POT file
+        run: |
+          mkdir -p source/php
+          echo '${{ github.event.client_payload.pot_content }}' | base64 -d > source/php/woocommerce-pos-pro.pot
+          echo "Received pro plugin POT file"
+          grep -c '^msgid ' source/php/woocommerce-pos-pro.pot || true
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add source/php/woocommerce-pos-pro.pot
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update pro plugin source strings"
+            git push
+          fi
