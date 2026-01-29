@@ -1,0 +1,71 @@
+name: Extract PHP Strings
+
+on:
+  workflow_dispatch:
+    inputs:
+      free_ref:
+        description: 'Free plugin ref (tag, branch, or SHA)'
+        required: false
+        default: 'main'
+      pro_ref:
+        description: 'Pro plugin ref (tag, branch, or SHA)'
+        required: false
+        default: 'main'
+
+concurrency:
+  group: extract-php
+  cancel-in-progress: true
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout translations
+        uses: actions/checkout@v4
+
+      - name: Checkout free plugin
+        uses: actions/checkout@v4
+        with:
+          repository: wcpos/woocommerce-pos
+          ref: ${{ inputs.free_ref }}
+          path: woocommerce-pos
+
+      - name: Checkout pro plugin
+        uses: actions/checkout@v4
+        with:
+          repository: wcpos/woocommerce-pos-pro
+          ref: ${{ inputs.pro_ref }}
+          path: woocommerce-pos-pro
+          token: ${{ secrets.PRO_PLUGIN_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Extract strings
+        run: node scripts/extract-php-strings.js --free woocommerce-pos --pro woocommerce-pos-pro
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet source/php/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add source/php/
+          git commit -m "chore: update PHP source strings"
+          git push

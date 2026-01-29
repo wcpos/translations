@@ -1,0 +1,120 @@
+name: Translation QA
+
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: 'Locale to QA (leave empty for all)'
+        required: false
+        default: ''
+      type:
+        description: 'What to QA'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - js
+          - php
+      structural_only:
+        description: 'Skip back-translation (faster, structural checks only)'
+        required: false
+        default: false
+        type: boolean
+      apply_fixes:
+        description: 'Auto-apply corrections'
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        locale: ${{ fromJson(inputs.locale != '' && format('["{0}"]', inputs.locale) || '["es","fr","de","ja","pt-BR","ko","it","ar","hi-IN","zh-CN"]') }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: QA ${{ matrix.locale }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ARGS="${{ matrix.locale }} --type ${{ inputs.type }}"
+          if [ "${{ inputs.structural_only }}" = "true" ]; then
+            ARGS="$ARGS --structural-only"
+          fi
+          if [ "${{ inputs.apply_fixes }}" = "true" ]; then
+            ARGS="$ARGS --apply-fixes"
+          fi
+          node scripts/qa-translations.js $ARGS || true
+
+      - name: Upload fixes
+        if: inputs.apply_fixes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-fixes-${{ matrix.locale }}
+          path: translations/
+          retention-days: 7
+
+  commit-fixes:
+    needs: qa
+    if: inputs.apply_fixes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download fixes
+        uses: actions/download-artifact@v4
+        with:
+          path: downloaded-fixes
+          pattern: qa-fixes-*
+
+      - name: Merge fixes
+        run: |
+          for dir in downloaded-fixes/qa-fixes-*/; do
+            cp -r "$dir"* translations/ 2>/dev/null || true
+          done
+
+      - name: Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          TARGET_BRANCH="qa-fixes-$(date +%Y-%m-%d)"
+          git checkout -B "$TARGET_BRANCH"
+
+          git add translations/
+          if git diff --staged --quiet; then
+            echo "No fixes to commit"
+          else
+            git commit -m "fix: QA translation corrections"
+            git push -u origin "$TARGET_BRANCH"
+
+            echo "## QA Fixes Ready" >> $GITHUB_STEP_SUMMARY
+            echo "Branch: \`$TARGET_BRANCH\`" >> $GITHUB_STEP_SUMMARY
+          fi

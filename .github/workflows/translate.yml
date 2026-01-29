@@ -1,0 +1,154 @@
+name: Translate
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Translation mode'
+        required: true
+        default: 'changed'
+        type: choice
+        options:
+          - test      # Single locale (de), for testing
+          - changed   # Only new/changed strings
+          - all       # Force retranslate everything
+      type:
+        description: 'What to translate'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - js
+          - php
+
+concurrency:
+  group: translate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        locale: ${{ fromJson(inputs.mode == 'test' && '["de"]' || '["es","fr","de","ja","pt-BR","ko","it","ar","hi-IN","zh-CN"]') }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Translate to ${{ matrix.locale }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.mode }}" = "all" ]; then
+            FORCE_FLAG="--force"
+          fi
+          node scripts/translate-locale.js ${{ matrix.locale }} --type ${{ inputs.type }} $FORCE_FLAG
+
+      - name: Generate PHP files
+        if: inputs.type == 'all' || inputs.type == 'php'
+        run: node scripts/generate-php-files.js ${{ matrix.locale }}
+
+      - name: Upload translations
+        uses: actions/upload-artifact@v4
+        with:
+          name: translations-${{ matrix.locale }}
+          path: |
+            translations/
+            .translation-state.json
+          retention-days: 1
+
+  commit:
+    needs: translate
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download all translations
+        uses: actions/download-artifact@v4
+        with:
+          path: downloaded
+          pattern: translations-*
+
+      - name: Merge translations
+        run: |
+          for dir in downloaded/translations-*/; do
+            locale=$(basename "$dir" | sed 's/translations-//')
+            echo "Merging $locale..."
+
+            # Merge JS translations
+            if [ -d "$dir/translations/js/$locale" ]; then
+              mkdir -p "translations/js/$locale"
+              cp -r "$dir/translations/js/$locale/"* "translations/js/$locale/" 2>/dev/null || true
+            fi
+
+            # Merge PHP translations
+            if [ -d "$dir/translations/php/$locale" ]; then
+              mkdir -p "translations/php/$locale"
+              cp -r "$dir/translations/php/$locale/"* "translations/php/$locale/" 2>/dev/null || true
+            fi
+
+            # Merge state (last writer wins per key, which is fine since each locale writes different keys)
+            if [ -f "$dir/.translation-state.json" ]; then
+              if [ -f ".translation-state.json" ]; then
+                # Merge JSON objects
+                jq -s '.[0] * .[1]' .translation-state.json "$dir/.translation-state.json" > .tmp-state.json
+                mv .tmp-state.json .translation-state.json
+              else
+                cp "$dir/.translation-state.json" .translation-state.json
+              fi
+            fi
+          done
+
+      - name: Validate
+        run: |
+          # Quick JSON validation
+          for f in translations/js/**/*.json; do
+            if ! python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
+              echo "Invalid JSON: $f"
+              exit 1
+            fi
+          done
+          echo "All JSON files valid"
+
+      - name: Commit translations
+        if: inputs.mode != 'test'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          TARGET_BRANCH="translations-$(date +%Y-%m-%d)"
+          git checkout -B "$TARGET_BRANCH"
+
+          git add translations/ .translation-state.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: translate strings (${{ inputs.mode }} mode)"
+            git push -u origin "$TARGET_BRANCH"
+
+            echo "## Translations Ready" >> $GITHUB_STEP_SUMMARY
+            echo "Branch: \`$TARGET_BRANCH\`" >> $GITHUB_STEP_SUMMARY
+            echo "[Create PR](https://github.com/${{ github.repository }}/compare/main...$TARGET_BRANCH?expand=1)" >> $GITHUB_STEP_SUMMARY
+          fi

@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v1.0.0)'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create tag and release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git tag ${{ inputs.version }}
+          git push origin ${{ inputs.version }}
+
+          gh release create ${{ inputs.version }} \
+            --title "${{ inputs.version }}" \
+            --notes "Translation release ${{ inputs.version }}
+
+          ## jsDelivr URLs
+          JS translations are available via jsDelivr:
+          \`\`\`
+          https://cdn.jsdelivr.net/gh/wcpos/translations@${{ inputs.version }}/translations/js/{locale}/{tag}.json
+          \`\`\`
+
+          ## PHP translations
+          Download PHP translation files from the release assets or directly from the repo at this tag."
+
+          # Attach PHP translation files as release assets
+          for locale_dir in translations/php/*/; do
+            locale=$(basename "$locale_dir")
+            for file in "$locale_dir"*.{mo,l10n.php}; do
+              if [ -f "$file" ]; then
+                gh release upload ${{ inputs.version }} "$file" --clobber
+              fi
+            done
+          done
+
+          echo "## Release Created" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag:** ${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**jsDelivr:** \`https://cdn.jsdelivr.net/gh/wcpos/translations@${{ inputs.version }}/translations/js/{locale}/{tag}.json\`" >> $GITHUB_STEP_SUMMARY
