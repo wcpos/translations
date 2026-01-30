@@ -86,7 +86,7 @@ jobs:
           node scripts/qa-translations.js $ARGS || true
 
       - name: Upload fixes
-        if: inputs.apply_fixes == 'true'
+        if: inputs.apply_fixes
         uses: actions/upload-artifact@v4
         with:
           name: qa-fixes-${{ matrix.locale }}
@@ -95,7 +95,7 @@ jobs:
 
   commit-fixes:
     needs: qa
-    if: inputs.apply_fixes == 'true'
+    if: inputs.apply_fixes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
