@@ -19,12 +19,22 @@ const path = require('path');
 const gettextParser = require('gettext-parser');
 const { glob } = require('glob');
 
-const openai = new OpenAI();
+let openai;
 
 const LOCALE_NAMES = require('../locales.json');
 
 const TRANSLATIONS_JS_DIR = path.resolve(__dirname, '../translations/js');
 const TRANSLATIONS_PHP_DIR = path.resolve(__dirname, '../translations/php');
+
+// Strings that are expected to remain identical in translation
+const KEEP_IN_ENGLISH = new Set([
+  'WCPOS', 'WooCommerce', 'WordPress', 'WooCommerce POS',
+  'POS', 'SKU', 'API', 'REST API', 'JSON', 'PHP', 'CSS', 'HTML', 'URL', 'ID', 'UUID',
+  'Stripe', 'PayPal', 'Square',
+  'Barcode', 'WP Admin', 'WordPress Admin', 'Online',
+  // Common loanwords used as-is in many languages
+  'Code', 'Name', 'Server', 'Status', 'Tags', 'App', 'Login', 'Logout', 'Email', 'Version',
+]);
 
 let translationContext = '';
 
@@ -58,6 +68,7 @@ Return a JSON array where each item has:
 Entries:
 ${JSON.stringify(translations, null, 2)}`;
 
+  if (!openai) openai = new OpenAI();
   const response = await openai.chat.completions.create({
     model: 'gpt-4o',
     max_tokens: 4096,
@@ -79,9 +90,10 @@ ${JSON.stringify(translations, null, 2)}`;
 /**
  * Structural checks for JS translations (no AI needed).
  */
-function structuralCheckJs(source, translations) {
+function structuralCheckJs(source, translations, locale) {
   const issues = [];
   const placeholderRegex = /\{[^}]+\}/g;
+  const isEnglishVariant = locale && locale.startsWith('en');
 
   for (const [sourceStr, translated] of Object.entries(translations)) {
     // Check placeholders are preserved
@@ -97,12 +109,19 @@ function structuralCheckJs(source, translations) {
     }
 
     // Check for untranslated strings (same as source)
-    if (sourceStr === translated && sourceStr.length > 3) {
-      issues.push({
-        string: sourceStr,
-        issue: 'String appears untranslated (identical to source)',
-        severity: 'medium',
-      });
+    // Skip for English variants (en_GB etc.) where most strings are legitimately identical
+    // Only flag multi-word strings — single words are often identical across languages
+    if (!isEnglishVariant && sourceStr === translated && !KEEP_IN_ENGLISH.has(sourceStr.trim())) {
+      const stripped = sourceStr.replace(/\{[^}]+\}/g, '').trim();
+      const words = stripped.split(/[\s:,]+/).filter(w => w.length > 0);
+      const allKept = words.every(w => KEEP_IN_ENGLISH.has(w));
+      if (!allKept && words.length > 2) {
+        issues.push({
+          string: sourceStr,
+          issue: 'String appears untranslated (identical to source)',
+          severity: 'medium',
+        });
+      }
     }
   }
 
@@ -206,7 +225,7 @@ async function main() {
       } catch { /* ignore */ }
 
       // Structural checks
-      const structIssues = structuralCheckJs(source, translations);
+      const structIssues = structuralCheckJs(source, translations, locale);
       if (structIssues.length > 0) {
         console.log(`  ${tag}: ${structIssues.length} structural issue(s)`);
         for (const issue of structIssues) {
@@ -264,8 +283,8 @@ async function main() {
 
     for (const poFile of poFiles) {
       const basename = path.basename(poFile, '.po');
-      // Extract domain from filename (e.g., woocommerce-pos-es.po → woocommerce-pos)
-      const domain = basename.replace(/-[a-z]{2}(-[A-Z]{2})?$/, '');
+      // Extract domain from filename (e.g., woocommerce-pos-de_AT.po → woocommerce-pos)
+      const domain = basename.replace(/-[a-z]{2}([_-][A-Z]{2})?$/, '');
       const potFile = path.join(path.resolve(__dirname, '../source/php'), `${domain}.pot`);
 
       const structIssues = structuralCheckPhp(potFile, poFile);
