@@ -9,7 +9,7 @@ on:
         default: 'changed'
         type: choice
         options:
-          - test      # Single locale (de), for testing
+          - test      # Single locale (de_DE), for testing
           - changed   # Only new/changed strings
           - all       # Force retranslate everything
       type:
@@ -27,13 +27,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      locales: ${{ steps.locales.outputs.list }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: locales
+        run: |
+          if [ "${{ inputs.mode }}" = "test" ]; then
+            echo 'list=["de_DE"]' >> $GITHUB_OUTPUT
+          else
+            echo "list=$(jq -c 'keys' locales.json)" >> $GITHUB_OUTPUT
+          fi
+
   translate:
+    needs: setup
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       max-parallel: 10
       matrix:
-        locale: ${{ fromJson(inputs.mode == 'test' && '["de_DE"]' || '["ar","cs","da","de_DE","de_AT","el","en_GB","es_ES","es_MX","es_AR","fa_IR","fr_FR","fr_CA","he_IL","hi_IN","hu_HU","id_ID","it_IT","ja","ko_KR","ms_MY","nb_NO","nl_NL","nl_BE","pl_PL","pt_BR","pt_PT","ro_RO","ru_RU","sv_SE","th","tr_TR","uk","vi","zh_CN","zh_TW"]') }}
+        locale: ${{ fromJson(needs.setup.outputs.locales) }}
 
     steps:
       - name: Checkout

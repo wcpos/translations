@@ -32,13 +32,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      locales: ${{ steps.locales.outputs.list }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: locales
+        run: |
+          if [ -n "${{ inputs.locale }}" ]; then
+            echo 'list=["${{ inputs.locale }}"]' >> $GITHUB_OUTPUT
+          else
+            echo "list=$(jq -c 'keys' locales.json)" >> $GITHUB_OUTPUT
+          fi
+
   qa:
+    needs: setup
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       max-parallel: 5
       matrix:
-        locale: ${{ fromJson(inputs.locale != '' && format('["{0}"]', inputs.locale) || '["es","fr","de","ja","pt-BR","ko","it","ar","hi-IN","zh-CN"]') }}
+        locale: ${{ fromJson(needs.setup.outputs.locales) }}
 
     steps:
       - name: Checkout

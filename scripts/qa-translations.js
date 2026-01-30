@@ -21,12 +21,7 @@ const { glob } = require('glob');
 
 const openai = new OpenAI();
 
-const LOCALE_NAMES = {
-  es: 'Spanish', fr: 'French', de: 'German', ja: 'Japanese',
-  'pt-BR': 'Brazilian Portuguese', ko: 'Korean', it: 'Italian',
-  ar: 'Arabic', 'hi-IN': 'Hindi', 'zh-CN': 'Simplified Chinese',
-  nl: 'Dutch', 'zh-TW': 'Traditional Chinese',
-};
+const LOCALE_NAMES = require('../locales.json');
 
 const TRANSLATIONS_JS_DIR = path.resolve(__dirname, '../translations/js');
 const TRANSLATIONS_PHP_DIR = path.resolve(__dirname, '../translations/php');
