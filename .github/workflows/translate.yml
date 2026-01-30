@@ -141,7 +141,8 @@ jobs:
           TARGET_BRANCH="translations-$(date +%Y-%m-%d)"
           git checkout -B "$TARGET_BRANCH"
 
-          git add translations/ .translation-state.json
+          git add translations/
+          [ -f .translation-state.json ] && git add .translation-state.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
