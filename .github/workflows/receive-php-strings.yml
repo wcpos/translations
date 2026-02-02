@@ -31,10 +31,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add source/php/woocommerce-pos.pot
-          if git diff --staged --quiet; then
+          if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
             echo "No changes"
           else
-            git commit -m "chore: update free plugin source strings"
+            git commit -m "chore: update free plugin source strings" --allow-empty
             git push
           fi
 
@@ -57,9 +57,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add source/php/woocommerce-pos-pro.pot
-          if git diff --staged --quiet; then
+          if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
             echo "No changes"
           else
-            git commit -m "chore: update pro plugin source strings"
+            git commit -m "chore: update pro plugin source strings" --allow-empty
             git push
           fi
