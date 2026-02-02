@@ -3,7 +3,7 @@
 /**
  * Extract translatable strings from the WCPOS monorepo.
  *
- * Parses t('...', { _tags: '...' }) calls and groups them by tag.
+ * Parses t('...', { _tags: '...' }) and t('...', { ns: '...' }) calls and groups them by tag.
  * Outputs one JSON file per tag into source/js/.
  *
  * Usage:
@@ -22,7 +22,7 @@ const OUTPUT_DIR = path.resolve(__dirname, '../source/js');
 // Match t('string' or t("string" with optional second argument containing _tags
 // Handles single quotes, double quotes, and backticks
 const T_CALL_REGEX = /\bt\(\s*(['"`])((?:(?!\1)[^\\]|\\.)*?)\1\s*(?:,\s*\{([^}]*)\})?\s*\)/g;
-const TAGS_REGEX = /_tags:\s*['"`]([^'"`]+)['"`]/;
+const TAGS_REGEX = /(?:_tags|ns):\s*['"`]([^'"`]+)['"`]/;
 const CONTEXT_REGEX = /_context:\s*['"`]([^'"`]+)['"`]/;
 
 async function extractFromFile(filePath) {
@@ -42,7 +42,7 @@ async function extractFromFile(filePath) {
     const context = contextMatch ? contextMatch[1] : undefined;
 
     if (!tag) {
-      console.warn(`  Warning: t() call without _tags in ${filePath}: "${sourceString.substring(0, 50)}..."`);
+      console.warn(`  Warning: t() call without _tags/ns in ${filePath}: "${sourceString.substring(0, 50)}..."`);
       continue;
     }
 
