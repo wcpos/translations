@@ -362,7 +362,7 @@ async function main() {
   // JS translations
   if (type === 'js' || type === 'all') {
     console.log('--- JS Translations ---');
-    const jsFiles = await glob('*.json', { cwd: SOURCE_JS_DIR, absolute: true });
+    const jsFiles = await glob('**/*.json', { cwd: SOURCE_JS_DIR, absolute: true });
     if (jsFiles.length === 0) {
       console.log('  No JS source files found. Run extract:js first.\n');
     } else {

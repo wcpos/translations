@@ -28,17 +28,18 @@ jobs:
 
       - name: Fetch source strings
         run: |
-          mkdir -p source/js
+          REPO="${{ github.event.client_payload.repo_name }}"
+          mkdir -p "source/js/$REPO"
 
           git clone --depth 1 --branch ${{ github.event.client_payload.ref }} \
-            https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/${{ github.event.client_payload.repo_name }}.git \
+            https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git \
             _source
 
-          cp _source/*.json source/js/
+          cp _source/*.json "source/js/$REPO/"
           rm -rf _source
 
-          echo "Copied files from wcpos/${{ github.event.client_payload.repo_name }}@${{ github.event.client_payload.ref }}:"
-          ls -la source/js/
+          echo "Copied files from wcpos/$REPO@${{ github.event.client_payload.ref }}:"
+          ls -la "source/js/$REPO/"
 
       - name: Commit changes
         run: |

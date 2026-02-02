@@ -221,7 +221,10 @@ async function main() {
       // Load source for structural checks
       let source = null;
       try {
-        source = JSON.parse(await fs.readFile(path.join(path.resolve(__dirname, '../source/js'), `${tag}.json`), 'utf8'));
+        const sourceFiles = await glob(`**/${tag}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true });
+        if (sourceFiles.length > 0) {
+          source = JSON.parse(await fs.readFile(sourceFiles[0], 'utf8'));
+        }
       } catch { /* ignore */ }
 
       // Structural checks
