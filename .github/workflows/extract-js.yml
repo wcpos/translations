@@ -6,25 +6,39 @@ on:
       - update-js-strings
 
 concurrency:
-  group: receive-js
+  group: receive-js-${{ github.event.client_payload.repo_name }}
   cancel-in-progress: true
 
 jobs:
   receive:
-    if: github.event.client_payload.files
+    if: github.event.client_payload.repo_name && github.event.client_payload.ref
     runs-on: ubuntu-latest
     steps:
       - name: Checkout translations
         uses: actions/checkout@v4
 
-      - name: Write JSON files
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: ${{ github.event.client_payload.repo_name }}
+
+      - name: Fetch source strings
         run: |
           mkdir -p source/js
 
-          echo '${{ toJSON(github.event.client_payload.files) }}' | jq -r 'to_entries[] | "\(.key) \(.value)"' | while read -r name content; do
-            echo "$content" | base64 -d > "source/js/$name"
-            echo "Wrote source/js/$name"
-          done
+          git clone --depth 1 --branch ${{ github.event.client_payload.ref }} \
+            https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/${{ github.event.client_payload.repo_name }}.git \
+            _source
+
+          cp _source/*.json source/js/
+          rm -rf _source
+
+          echo "Copied files from wcpos/${{ github.event.client_payload.repo_name }}@${{ github.event.client_payload.ref }}:"
+          ls -la source/js/
 
       - name: Commit changes
         run: |
@@ -34,6 +48,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes"
           else
-            git commit -m "chore: update JS source strings from ${{ github.event.client_payload.ref }}"
+            git commit -m "chore: update JS source strings from wcpos/${{ github.event.client_payload.repo_name }}"
             git push
           fi
