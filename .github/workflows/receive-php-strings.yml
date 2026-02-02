@@ -1,17 +1,10 @@
-name: Extract PHP Strings
+name: Receive PHP Strings
 
 on:
-  # Manual trigger for free plugin (public, no token needed)
-  workflow_dispatch:
-    inputs:
-      free_ref:
-        description: 'Free plugin ref (tag, branch, or SHA)'
-        required: false
-        default: 'main'
-
-  # Pro plugin pushes its POT via repository_dispatch
+  # Free plugin pushes its POT via repository_dispatch
   repository_dispatch:
     types:
+      - update-free-pot
       - update-pro-pot
 
 concurrency:
@@ -19,34 +12,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Extract free plugin strings (public repo, no token needed)
-  extract-free:
-    if: github.event_name == 'workflow_dispatch'
+  receive-free:
+    if: github.event.client_payload.pot_content && github.event.action == 'update-free-pot'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout translations
         uses: actions/checkout@v4
 
-      - name: Checkout free plugin
-        uses: actions/checkout@v4
-        with:
-          repository: wcpos/woocommerce-pos
-          ref: ${{ inputs.free_ref }}
-          path: woocommerce-pos
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Extract strings
-        run: node scripts/extract-php-strings.js --free woocommerce-pos --skip-pro
+      - name: Write POT file
+        run: |
+          mkdir -p source/php
+          echo '${{ github.event.client_payload.pot_content }}' | base64 -d > source/php/woocommerce-pos.pot
+          echo "Received free plugin POT file"
+          grep -c '^msgid ' source/php/woocommerce-pos.pot || true
 
       - name: Commit
         run: |
@@ -60,9 +38,8 @@ jobs:
             git push
           fi
 
-  # Receive pro plugin POT via repository_dispatch
   receive-pro:
-    if: github.event_name == 'repository_dispatch'
+    if: github.event.client_payload.pot_content && github.event.action == 'update-pro-pot'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout translations
