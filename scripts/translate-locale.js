@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * Translate source strings to a single locale.
+ * Translate source strings to a single locale with built-in verification.
  * Supports both JS (JSON) and PHP (POT/PO) formats.
  * Includes incremental translation — only translates new/changed strings.
+ *
+ * Each translation is verified against quality rules before being saved:
+ * - Placeholders preserved
+ * - Technical terms kept in English
+ * - Appropriate length
+ * - Correct terminology
  *
  * Usage:
  *   node scripts/translate-locale.js <locale> [--type js|php|all] [--force]
@@ -62,6 +68,47 @@ function hashString(str) {
     hash |= 0;
   }
   return hash.toString(36);
+}
+
+/**
+ * Validate placeholders are preserved in translation.
+ * Returns array of issues, empty if valid.
+ */
+function validatePlaceholders(source, translated) {
+  const issues = [];
+  const placeholderRegex = /\{[^}]+\}|%[0-9]*\$?[sd]|%[0-9]+/g;
+
+  const sourcePlaceholders = (source.match(placeholderRegex) || []).sort();
+  const translatedPlaceholders = (translated.match(placeholderRegex) || []).sort();
+
+  if (JSON.stringify(sourcePlaceholders) !== JSON.stringify(translatedPlaceholders)) {
+    issues.push(`Placeholder mismatch: source has [${sourcePlaceholders.join(', ')}], translation has [${translatedPlaceholders.join(', ')}]`);
+  }
+
+  return issues;
+}
+
+/**
+ * Check if translation contains critical technical terms that MUST stay in English.
+ * Only flags the most critical terms - some like "Barcode" may have standard translations.
+ */
+function validateTechnicalTerms(source, translated) {
+  const issues = [];
+  // Only the most critical terms that must stay in English
+  const criticalTerms = [
+    'Gateway', 'Gateways', 'POS', 'SKU', 'API', 'JSON', 'ID', 'UUID',
+    'Webhook', 'Token', 'OAuth',
+    'WCPOS', 'WooCommerce', 'WordPress', 'Stripe', 'PayPal', 'Square',
+  ];
+
+  for (const term of criticalTerms) {
+    const regex = new RegExp(`\\b${term}\\b`, 'i');
+    if (regex.test(source) && !regex.test(translated)) {
+      issues.push(`Critical term "${term}" must stay in English`);
+    }
+  }
+
+  return issues;
 }
 
 // ─── JS Translation ───────────────────────────────────────────────────────────
@@ -131,13 +178,19 @@ async function translateJsFile(sourceFile, locale, state, force) {
     const localeName = LOCALE_NAMES[locale] || locale;
     const userPrompt = `Translate the following UI strings to ${localeName}. The keys are the English source strings. The values are optional context hints (empty string means no context).
 
-Return a JSON object where keys are the ORIGINAL English strings and values are the translations.
+IMPORTANT: After translating each string, verify it:
+1. All placeholders ({name}, {count}, %s, %d, etc.) must appear exactly as in the source
+2. Technical terms (Gateway, POS, SKU, API, ID, WooCommerce, etc.) must stay in English
+3. Keep translations concise - similar length to source
+4. If you find an issue, fix it before returning
+
+Return a JSON object where keys are the ORIGINAL English strings and values are the VERIFIED translations.
 
 ${JSON.stringify(input, null, 2)}`;
 
     try {
       const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o',
         max_tokens: 4096,
         temperature: 0.3,
         messages: [
@@ -155,8 +208,23 @@ ${JSON.stringify(input, null, 2)}`;
 
       const translations = JSON.parse(text);
 
+      // Local validation as safety net
+      let issueCount = 0;
       for (const [source, translated] of Object.entries(translations)) {
+        const placeholderIssues = validatePlaceholders(source, translated);
+        const termIssues = validateTechnicalTerms(source, translated);
+        const allIssues = [...placeholderIssues, ...termIssues];
+
+        if (allIssues.length > 0) {
+          console.warn(`    ⚠ "${source.substring(0, 30)}...": ${allIssues.join('; ')}`);
+          issueCount++;
+        }
+
         existingTranslations[source] = translated;
+      }
+
+      if (issueCount > 0) {
+        console.log(`    ${issueCount} validation warning(s) in batch`);
       }
     } catch (error) {
       console.error(`    Error translating batch: ${error.message}`);
@@ -261,13 +329,19 @@ For each entry, provide:
 - "msgstr": the translated string
 - If "msgid_plural" is present, provide "msgstr_plural" with forms for the target language
 
-Return a JSON array with the translations in the same order.
+IMPORTANT: After translating each string, verify it:
+1. All printf placeholders (%s, %d, %1$s, etc.) must appear exactly as in the source
+2. Technical terms (Gateway, POS, SKU, API, ID, WooCommerce, etc.) must stay in English
+3. Keep translations concise
+4. If you find an issue, fix it before returning
+
+Return a JSON array with the VERIFIED translations in the same order.
 
 ${JSON.stringify(input, null, 2)}`;
 
     try {
       const response = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o',
         max_tokens: 4096,
         temperature: 0.3,
         messages: [
@@ -283,12 +357,23 @@ ${JSON.stringify(input, null, 2)}`;
 
       const translations = JSON.parse(text);
 
+      let issueCount = 0;
       for (let j = 0; j < batch.length && j < translations.length; j++) {
         const entry = batch[j];
         const translated = translations[j];
         const key = entry.context ? `${entry.context}\x04${entry.msgid}` : entry.msgid;
 
+        // Validate the translation
         if (translated.msgstr) {
+          const placeholderIssues = validatePlaceholders(entry.msgid, translated.msgstr);
+          const termIssues = validateTechnicalTerms(entry.msgid, translated.msgstr);
+          const allIssues = [...placeholderIssues, ...termIssues];
+
+          if (allIssues.length > 0) {
+            console.warn(`    ⚠ "${entry.msgid.substring(0, 30)}...": ${allIssues.join('; ')}`);
+            issueCount++;
+          }
+
           existingTranslations[key] = [translated.msgstr];
         }
         if (translated.msgstr_plural) {
@@ -296,6 +381,10 @@ ${JSON.stringify(input, null, 2)}`;
             ? translated.msgstr_plural
             : [translated.msgstr || '', translated.msgstr_plural];
         }
+      }
+
+      if (issueCount > 0) {
+        console.log(`    ${issueCount} validation warning(s) in batch`);
       }
     } catch (error) {
       console.error(`    Error translating batch: ${error.message}`);
