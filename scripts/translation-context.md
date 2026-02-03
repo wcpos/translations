@@ -165,6 +165,28 @@ Example:
    - Spanish: varies by region — use the local convention
 7. **Financial context**: These strings appear in a sales/retail application. When a term could be ambiguous, choose the financial/retail meaning. For example, "Order" means a customer purchase order, not a command.
 
+## AMBIGUOUS SHORT STRINGS — CRITICAL
+
+Some short English strings are ambiguous without context. Use these rules:
+
+| String | Meaning | Context | Correct | Wrong |
+|--------|---------|---------|---------|-------|
+| "No" | Negative response (opposite of "Yes") | Used in yes/no radio buttons and confirmation dialogs | de: "Nein", da: "Nej", nl: "Nee", ro: "Nu", ko: "아니요" | de: "Nr.", da: "Nr.", nl: "Nr.", ro: "Nr.", ko: "번호" |
+| "Yes" | Affirmative response | Used in yes/no radio buttons and confirmation dialogs | Translate as affirmative | |
+| "None" | No items / nothing selected | Used in dropdowns and filters | de: "Keine", fr: "Aucun" | de: "Nichts" |
+| "All" | Every item | Used in filters and selections | de: "Alle", fr: "Tous" | |
+| "Left" | Direction (left side) | Used for text/layout alignment | de: "Links", fr: "Gauche" | |
+| "Right" | Direction (right side) | Used for text/layout alignment | de: "Rechts", fr: "Droite" | |
+| "Default" | Standard/preset option | Used in settings | de: "Standard", fr: "Par défaut" | |
+
+**Key rule:** When "No" appears as a standalone string, it is ALWAYS the negative response (opposite of "Yes"), NEVER an abbreviation for "Number". The abbreviation "No." (with a period) is a separate string.
+
+## COMPOUND PHRASES — CONSISTENCY
+
+When a string has a compound form like "Left with space" or "Right with space", translate ALL parts consistently:
+- If "Left" = "Links" in German, then "Left with space" = "Links mit Leerzeichen" (not just "Links ")
+- If "Right" = "Droite" in French, then "Right with space" = "Droite avec espace" (not just "Droite ")
+
 ## COMMON MISTAKES TO AVOID
 
 ### DO NOT add words that aren't in the source

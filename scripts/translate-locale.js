@@ -182,6 +182,24 @@ function validateTechnicalTerms(source, translated) {
   return issues;
 }
 
+/**
+ * Check for known mistranslations of ambiguous short strings.
+ * These are strings where the AI commonly picks the wrong meaning.
+ */
+function validateAmbiguousTerms(source, translated, locale) {
+  const issues = [];
+
+  // "No" (negative response) mistranslated as "Number" abbreviation
+  if (source === 'No') {
+    const wrongTranslations = ['Nr.', 'Nr', '번호', 'Nro.', 'Nro', 'N.º', 'رقم'];
+    if (wrongTranslations.includes(translated.trim())) {
+      issues.push(`"No" means negative response (opposite of "Yes"), not "Number" — got "${translated}"`);
+    }
+  }
+
+  return issues;
+}
+
 // ─── JS Translation ───────────────────────────────────────────────────────────
 
 /**
@@ -331,7 +349,8 @@ ${JSON.stringify(input, null, 2)}`;
       for (const [source, translated] of Object.entries(translations)) {
         const placeholderIssues = validatePlaceholders(source, translated);
         const termIssues = validateTechnicalTerms(source, translated);
-        const allIssues = [...placeholderIssues, ...termIssues];
+        const ambiguousIssues = validateAmbiguousTerms(source, translated, locale);
+        const allIssues = [...placeholderIssues, ...termIssues, ...ambiguousIssues];
 
         if (allIssues.length > 0) {
           console.warn(`    ⚠ "${source.substring(0, 30)}...": ${allIssues.join('; ')}`);
