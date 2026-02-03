@@ -119,13 +119,15 @@ function validateTechnicalTerms(source, translated) {
  * Output format: { "English text": "Translated text" }
  */
 async function translateJsFile(sourceFile, locale, state, force) {
-  const tag = path.basename(sourceFile, '.json');
+  // Preserve directory structure from source (e.g., monorepo/core.json)
+  const relativePath = path.relative(SOURCE_JS_DIR, sourceFile);
+  const tag = relativePath.replace(/\.json$/, ''); // e.g., "monorepo/core"
   const sourceContent = await fs.readFile(sourceFile, 'utf8');
   const sourceStrings = JSON.parse(sourceContent);
 
-  // Load existing translations
-  const outputDir = path.join(TRANSLATIONS_JS_DIR, locale);
-  const outputFile = path.join(outputDir, `${tag}.json`);
+  // Load existing translations - mirror source directory structure
+  const outputFile = path.join(TRANSLATIONS_JS_DIR, locale, relativePath);
+  const outputDir = path.dirname(outputFile);
 
   let existingTranslations = {};
   try {
