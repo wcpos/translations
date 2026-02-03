@@ -60,34 +60,23 @@ t('Hello {{name}}', { name: userName })
 
 ---
 
-## Plural Handling (Action Required)
+## Plural Handling
 
-### Current State (Not Ideal)
+The translation system uses i18next's built-in plural handling with CLDR plural rules.
 
-The codebase currently uses separate strings for singular/plural:
-
-```typescript
-// Current approach
-const message = count === 1
-  ? t('1 product found locally')
-  : t('{count} products found locally', { count });
-```
-
-This works for languages with 2 plural forms but fails for:
-- **Russian**: 4 forms (one, few, many, other)
-- **Arabic**: 6 forms
-- **Polish**: 3 forms
-
-### Recommended Change
-
-Use i18next's built-in plural handling:
+### Usage in Code
 
 ```typescript
-// Better approach
-t('product_found_locally', { count })
+// i18next automatically selects the correct plural form based on count
+t('product_found_locally', { count: 1 })  // uses _one
+t('product_found_locally', { count: 5 })  // uses _other (or _many for Russian)
 ```
 
-With translation keys:
+### Translation Keys
+
+Plural keys use suffixes: `_zero`, `_one`, `_two`, `_few`, `_many`, `_other`
+
+**English (2 forms):**
 ```json
 {
   "product_found_locally_one": "{count} product found locally",
@@ -95,7 +84,7 @@ With translation keys:
 }
 ```
 
-For Russian, translators would provide:
+**Russian (4 forms):**
 ```json
 {
   "product_found_locally_one": "{count} продукт найден локально",
@@ -105,12 +94,22 @@ For Russian, translators would provide:
 }
 ```
 
-### Strings That Need Updating
+### Plural Suffixes by Locale
 
-| Current Singular | Current Plural | Suggested Key |
-|-----------------|----------------|---------------|
-| `1 product found locally` | `{count} products found locally` | `product_found_locally` |
-| `1 variation found for {term}` | `{count} variations found for {term}` | `variation_found_for_term` |
+| Locale Group | Suffixes |
+|--------------|----------|
+| East Asian (ja, zh_CN, zh_TW, ko_KR, vi, th, id_ID, ms_MY) | `other` |
+| Germanic, Romance (de, fr, es, it, pt, nl, sv, da, no, el, he, hi, hu, tr, fa) | `one`, `other` |
+| Slavic (ru, uk, pl, cs) | `one`, `few`, `many`, `other` |
+| Romanian | `one`, `few`, `other` |
+| Arabic | `zero`, `one`, `two`, `few`, `many`, `other` |
+
+### Current Plural Strings
+
+| Base Key | Description |
+|----------|-------------|
+| `product_found_locally` | Barcode scan result count |
+| `variation_found_for_term` | Product variation search count |
 
 ---
 
