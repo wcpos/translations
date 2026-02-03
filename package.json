@@ -9,7 +9,13 @@
     "translate": "node scripts/translate-locale.js",
     "qa": "node scripts/qa-translations.js",
     "generate:php": "node scripts/generate-php-files.js",
-    "validate": "node scripts/validate-translations.js"
+    "validate": "node scripts/validate-translations.js",
+    "test": "node tests/test-extraction.js && node tests/test-translation.js --dry-run",
+    "test:extraction": "node tests/test-extraction.js",
+    "test:translation": "node tests/test-translation.js",
+    "test:workflow": "node tests/test-workflow.js",
+    "test:all": "node tests/test-extraction.js && node tests/test-translation.js && node tests/test-workflow.js",
+    "test:score": "node tests/score-translation.js"
   },
   "dependencies": {
     "gettext-parser": "^4.1.0",
