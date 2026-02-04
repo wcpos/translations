@@ -47,6 +47,27 @@ jobs:
           echo "Copied files from wcpos/$REPO@${{ github.event.client_payload.ref }}:"
           ls -la "source/js/$REPO/"
 
+      - name: Validate source key counts
+        run: |
+          REPO="${{ github.event.client_payload.repo_name }}"
+          for f in source/js/$REPO/*.json; do
+            [ -f "$f" ] || continue
+            filename=$(basename "$f")
+
+            new_count=$(python3 -c "import json; print(len(json.load(open('$f'))))")
+
+            # Check previous version if it exists
+            old_count=$(git show HEAD:"source/js/$REPO/$filename" 2>/dev/null \
+              | python3 -c "import json,sys; print(len(json.load(sys.stdin)))" 2>/dev/null || echo "0")
+
+            echo "$REPO/$filename: $old_count → $new_count keys"
+
+            if [ "$old_count" -gt 20 ] && [ "$new_count" -lt $(( old_count / 2 )) ]; then
+              echo "::error::$REPO/$filename lost >50% of keys ($old_count → $new_count). Aborting to protect translations."
+              exit 1
+            fi
+          done
+
       - name: Commit changes
         id: commit
         env:

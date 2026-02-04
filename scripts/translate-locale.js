@@ -288,10 +288,17 @@ async function translateJsFile(sourceFile, locale, state, force) {
       validKeys.add(`${baseKey}_${suffix}`);
     }
   }
-  for (const key of Object.keys(existingTranslations)) {
-    if (!validKeys.has(key)) {
-      delete existingTranslations[key];
-    }
+
+  const existingCount = Object.keys(existingTranslations).length;
+  const keysToRemove = Object.keys(existingTranslations).filter(k => !validKeys.has(k));
+
+  if (existingCount > 20 && keysToRemove.length > existingCount * 0.5) {
+    console.error(`  ⛔ ${tag}: Refusing to delete ${keysToRemove.length}/${existingCount} translations (>50% drop). Source may be broken.`);
+    process.exit(1);
+  }
+
+  for (const key of keysToRemove) {
+    delete existingTranslations[key];
   }
 
   const totalToTranslate = regularToTranslate.length + pluralToTranslate.length;
