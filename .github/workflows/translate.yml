@@ -143,6 +143,7 @@ jobs:
       - name: Validate
         run: |
           # Quick JSON validation
+          shopt -s globstar
           for f in translations/js/**/*.json; do
             if ! python3 -c "import json; json.load(open('$f'))" 2>/dev/null; then
               echo "Invalid JSON: $f"
