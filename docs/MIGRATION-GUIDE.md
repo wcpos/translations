@@ -154,7 +154,33 @@ translations/js/{locale}/{project}/{namespace}.json
 - `translations/js/de_DE/woocommerce-pos/wp-admin-settings.json`
 - `translations/js/de_DE/woocommerce-pos-pro/wp-admin-analytics.json`
 
-Example loader:
+### Production (jsDelivr CDN)
+
+Use a pinned translation version for production. The version uses CalVer format (`YYYY.M.N`) and is decoupled from plugin/app versions.
+
+```typescript
+// TRANSLATION_VERSION is set at build time, updated automatically
+// via repository_dispatch from the translations repo
+const TRANSLATION_VERSION = '2026.2.0';
+
+const loadTranslations = async (
+  locale: string,
+  project: string,
+  namespace: string
+) => {
+  const url = `https://cdn.jsdelivr.net/gh/wcpos/translations@${TRANSLATION_VERSION}/translations/js/${locale}/${project}/${namespace}.json`;
+  const response = await fetch(url);
+  return response.json();
+};
+
+// Usage
+await loadTranslations('de_DE', 'monorepo', 'core');
+```
+
+### Development (GitHub raw)
+
+For development, load directly from the main branch:
+
 ```typescript
 const loadTranslations = async (
   locale: string,
@@ -165,10 +191,9 @@ const loadTranslations = async (
   const response = await fetch(url);
   return response.json();
 };
-
-// Usage
-await loadTranslations('de_DE', 'monorepo', 'core');
 ```
+
+See [CONSUMER-INTEGRATION.md](CONSUMER-INTEGRATION.md) for details on receiving automatic version updates.
 
 ---
 

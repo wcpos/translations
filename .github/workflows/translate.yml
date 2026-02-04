@@ -22,6 +22,10 @@ on:
           - js
           - php
 
+permissions:
+  contents: write
+  pull-requests: write
+
 concurrency:
   group: translate-${{ github.ref }}
   cancel-in-progress: true
@@ -148,23 +152,44 @@ jobs:
           echo "All JSON files valid"
 
       - name: Commit translations
+        id: commit
         if: inputs.mode != 'test'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           TARGET_BRANCH="translations-$(date +%Y-%m-%d)"
+          echo "branch=$TARGET_BRANCH" >> $GITHUB_OUTPUT
           git checkout -B "$TARGET_BRANCH"
 
           git add translations/
           [ -f .translation-state.json ] && git add .translation-state.json
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "pushed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: translate strings (${{ inputs.mode }} mode)"
-            git push -u origin "$TARGET_BRANCH"
+            git push --force-with-lease -u origin "$TARGET_BRANCH"
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          fi
 
+      - name: Create or update PR
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TARGET_BRANCH="${{ steps.commit.outputs.branch }}"
+          EXISTING_PR=$(gh pr list --head "$TARGET_BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists, updated via force-push"
+            echo "## Translations Updated" >> $GITHUB_STEP_SUMMARY
+            echo "Updated PR #$EXISTING_PR" >> $GITHUB_STEP_SUMMARY
+          else
+            gh pr create \
+              --title "Update translations $(date +%Y-%m-%d)" \
+              --body "Automated translation update (${{ inputs.mode }} mode, ${{ inputs.type }} type)." \
+              --base main \
+              --head "$TARGET_BRANCH"
             echo "## Translations Ready" >> $GITHUB_STEP_SUMMARY
-            echo "Branch: \`$TARGET_BRANCH\`" >> $GITHUB_STEP_SUMMARY
-            echo "[Create PR](https://github.com/${{ github.repository }}/compare/main...$TARGET_BRANCH?expand=1)" >> $GITHUB_STEP_SUMMARY
+            echo "PR created for branch \`$TARGET_BRANCH\`" >> $GITHUB_STEP_SUMMARY
           fi

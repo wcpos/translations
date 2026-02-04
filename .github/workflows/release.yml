@@ -1,11 +1,15 @@
 name: Release
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'translations/**'
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version tag (e.g., v1.0.0)'
-        required: true
+        description: 'Version override (leave empty for auto CalVer)'
+        required: false
 
 jobs:
   release:
@@ -15,40 +19,91 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calculate version
+        id: version
+        run: |
+          git fetch --tags
+
+          YEAR=$(date +%Y)
+          MONTH=$(date +%-m)
+          PREFIX="${YEAR}.${MONTH}."
+
+          LATEST=$(git tag -l "${PREFIX}*" | sort -t. -k3 -n | tail -1)
+          if [ -z "$LATEST" ]; then
+            VERSION="${PREFIX}0"
+          else
+            CURRENT_N=$(echo "$LATEST" | awk -F. '{print $3}')
+            VERSION="${PREFIX}$((CURRENT_N + 1))"
+          fi
+
+          # Allow manual override
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          fi
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Releasing version: $VERSION"
 
       - name: Create tag and release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          VERSION="${{ steps.version.outputs.version }}"
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git tag ${{ inputs.version }}
-          git push origin ${{ inputs.version }}
+          git tag "$VERSION"
+          git push origin "$VERSION"
 
-          gh release create ${{ inputs.version }} \
-            --title "${{ inputs.version }}" \
-            --notes "Translation release ${{ inputs.version }}
+          gh release create "$VERSION" \
+            --title "$VERSION" \
+            --notes "Translation release $VERSION
 
           ## jsDelivr URLs
           JS translations are available via jsDelivr:
           \`\`\`
-          https://cdn.jsdelivr.net/gh/wcpos/translations@${{ inputs.version }}/translations/js/{locale}/{tag}.json
+          https://cdn.jsdelivr.net/gh/wcpos/translations@$VERSION/translations/js/{locale}/{project}/{namespace}.json
           \`\`\`
 
           ## PHP translations
-          Download PHP translation files from the release assets or directly from the repo at this tag."
+          Download PHP translation files from the release assets below."
 
           # Attach PHP translation files as release assets
           for locale_dir in translations/php/*/; do
             locale=$(basename "$locale_dir")
             for file in "$locale_dir"*.{mo,l10n.php}; do
               if [ -f "$file" ]; then
-                gh release upload ${{ inputs.version }} "$file" --clobber
+                gh release upload "$VERSION" "$file" --clobber
               fi
             done
           done
 
           echo "## Release Created" >> $GITHUB_STEP_SUMMARY
-          echo "**Tag:** ${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**jsDelivr:** \`https://cdn.jsdelivr.net/gh/wcpos/translations@${{ inputs.version }}/translations/js/{locale}/{tag}.json\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** $VERSION" >> $GITHUB_STEP_SUMMARY
+          echo "**jsDelivr:** \`https://cdn.jsdelivr.net/gh/wcpos/translations@$VERSION/translations/js/{locale}/{project}/{namespace}.json\`" >> $GITHUB_STEP_SUMMARY
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: monorepo,woocommerce-pos,woocommerce-pos-pro
+
+      - name: Notify consuming repos
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          for repo in monorepo woocommerce-pos woocommerce-pos-pro; do
+            echo "Dispatching translation-release to wcpos/$repo with version $VERSION..."
+            gh api "repos/wcpos/$repo/dispatches" \
+              --method POST \
+              -f event_type=translation-release \
+              -f "client_payload[version]=$VERSION" || echo "Warning: failed to notify $repo"
+          done
