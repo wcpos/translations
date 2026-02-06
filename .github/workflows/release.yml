@@ -93,14 +93,14 @@ jobs:
           app-id: ${{ secrets.TRANSLATION_APP_ID }}
           private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
           owner: wcpos
-          repositories: monorepo,woocommerce-pos,woocommerce-pos-pro
+          repositories: monorepo,electron,woocommerce-pos,woocommerce-pos-pro
 
       - name: Notify consuming repos
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           VERSION="${{ steps.version.outputs.version }}"
-          for repo in monorepo woocommerce-pos woocommerce-pos-pro; do
+          for repo in monorepo electron woocommerce-pos woocommerce-pos-pro; do
             echo "Dispatching translation-release to wcpos/$repo with version $VERSION..."
             gh api "repos/wcpos/$repo/dispatches" \
               --method POST \
