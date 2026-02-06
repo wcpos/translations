@@ -323,8 +323,8 @@ async function translateJsFile(sourceFile, locale, state, force) {
   const existingCount = Object.keys(existingTranslations).length;
   const keysToRemove = Object.keys(existingTranslations).filter(k => !validKeys.has(k));
 
-  if (existingCount > 20 && keysToRemove.length > existingCount * 0.5) {
-    console.error(`  ⛔ ${tag}: Refusing to delete ${keysToRemove.length}/${existingCount} translations (>50% drop). Source may be broken.`);
+  if (!force && existingCount > 20 && keysToRemove.length > existingCount * 0.5) {
+    console.error(`  ⛔ ${tag}: Refusing to delete ${keysToRemove.length}/${existingCount} translations (>50% drop). Source may be broken. Use --force to override.`);
     process.exit(1);
   }
 
