@@ -273,6 +273,9 @@ async function main() {
         try {
           const basename = path.basename(file, '.json');
           const sourceFiles = await glob(`**/${basename}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true });
+          if (sourceFiles.length > 1) {
+            console.warn(`    Warning: Multiple source files found for ${basename}, using ${sourceFiles[0]}`);
+          }
           if (sourceFiles.length > 0) {
             source = JSON.parse(await fs.readFile(sourceFiles[0], 'utf8'));
           }
@@ -291,6 +294,15 @@ async function main() {
 
       // Back-translation QA
       if (!structuralOnly) {
+        // Detect format and build key→English mapping for this file
+        const isNewFormat = source && typeof Object.values(source)[0] === 'string';
+        const keyToEnglish = {};
+        if (source && isNewFormat) {
+          for (const [k, englishString] of Object.entries(source)) {
+            keyToEnglish[k] = englishString;
+          }
+        }
+
         // For new format, send English strings (not semantic keys) for back-translation
         const entries = Object.entries(translations).map(([key, translated]) => ({
           original: (source && isNewFormat) ? (keyToEnglish[key] || key) : key,
@@ -310,7 +322,9 @@ async function main() {
                 totalIssues++;
 
                 if (applyFixes && result.suggested_fix) {
-                  translations[result.original] = result.suggested_fix;
+                  // Use semantic key (not English string) for new format
+                  const fixKey = result.key || result.original;
+                  translations[fixKey] = result.suggested_fix;
                   totalFixed++;
                 }
               }

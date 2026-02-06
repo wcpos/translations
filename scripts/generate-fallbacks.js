@@ -30,6 +30,9 @@ const FALLBACK_MAP = {
 };
 
 function copyDirSync(src, dest) {
+  if (fs.existsSync(dest)) {
+    fs.rmSync(dest, { recursive: true });
+  }
   fs.mkdirSync(dest, { recursive: true });
   const entries = fs.readdirSync(src, { withFileTypes: true });
   for (const entry of entries) {
@@ -65,6 +68,9 @@ for (const [baseCode, sourceVariant] of Object.entries(FALLBACK_MAP)) {
   const phpDest = path.join(TRANSLATIONS_PHP_DIR, baseCode);
 
   if (fs.existsSync(phpSource)) {
+    if (fs.existsSync(phpDest)) {
+      fs.rmSync(phpDest, { recursive: true });
+    }
     fs.mkdirSync(phpDest, { recursive: true });
     const files = fs.readdirSync(phpSource);
     for (const file of files) {

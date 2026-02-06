@@ -462,8 +462,9 @@ ${JSON.stringify(input, null, 2)}`;
 
     // Collect all placeholders from all English forms (they must appear in every translated form)
     const allPlaceholders = new Set();
+    const placeholderRegex = /\{[^}]+\}|%[0-9]*\$?[sd]|%[0-9]+/g;
     for (const str of Object.values(englishForms)) {
-      const matches = str.match(/\{[^}]+\}/g) || [];
+      const matches = str.match(placeholderRegex) || [];
       matches.forEach(p => allPlaceholders.add(p));
     }
     const placeholderList = [...allPlaceholders];
