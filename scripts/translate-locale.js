@@ -281,7 +281,11 @@ async function translateJsFile(sourceFile, locale, state, force) {
     const hash = hashString(entry.string + (entry.context || ''));
     newHashes[entry.key] = hash;
 
-    if (force || hash !== prevHashes[entry.key] || !existingTranslations[outputKey(entry)]) {
+    const hasExistingTranslation = !!existingTranslations[outputKey(entry)];
+    const hasPrevHash = prevHashes[entry.key] !== undefined;
+    const sourceChanged = hasPrevHash && hash !== prevHashes[entry.key];
+
+    if (force || sourceChanged || !hasExistingTranslation) {
       regularToTranslate.push(entry);
     }
   }
@@ -295,9 +299,10 @@ async function translateJsFile(sourceFile, locale, state, force) {
     newHashes[`plural:${baseKey}`] = hash;
 
     // Check if we need to translate this plural group
-    const needsTranslation = force ||
-      hash !== prevHashes[`plural:${baseKey}`] ||
-      !requiredSuffixes.every(s => existingTranslations[`${baseKey}_${s}`]);
+    const hasPrevHash = prevHashes[`plural:${baseKey}`] !== undefined;
+    const sourceChanged = hasPrevHash && hash !== prevHashes[`plural:${baseKey}`];
+    const missingForms = !requiredSuffixes.every(s => existingTranslations[`${baseKey}_${s}`]);
+    const needsTranslation = force || sourceChanged || missingForms;
 
     if (needsTranslation) {
       pluralToTranslate.push({ baseKey, suffixes });
@@ -638,7 +643,10 @@ async function translatePhpFile(potFile, locale, state, force) {
       const hash = hashString(msgid + (ctx || '') + (entry.msgid_plural || ''));
       newHashes[key] = hash;
 
-      if (force || hash !== prevHashes[key] || !existingTranslations[key]) {
+      const hasPrevHash = prevHashes[key] !== undefined;
+      const sourceChanged = hasPrevHash && hash !== prevHashes[key];
+
+      if (force || sourceChanged || !existingTranslations[key]) {
         toTranslate.push({ msgid, msgid_plural: entry.msgid_plural, context: ctx || null });
       }
     }
