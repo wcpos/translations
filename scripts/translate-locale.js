@@ -546,11 +546,9 @@ Example format: { "one": "...", "other": "..." }`;
 
         // Auto-repair remaining placeholder issues after final attempt
         for (const { suffix, fullKey, issues, translated } of placeholderFailures) {
-          const sourceString = suffixes[suffix]?.string || suffixes.other?.string || suffixes.one?.string || '';
-          const requiredPlaceholders = (sourceString.match(/\{[^}]+\}/g) || []);
           let repaired = translated;
 
-          for (const placeholder of requiredPlaceholders) {
+          for (const placeholder of placeholderList) {
             if (!repaired.includes(placeholder)) {
               // Prepend the missing placeholder with a space
               repaired = `${placeholder} ${repaired}`;

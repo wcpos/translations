@@ -59,6 +59,7 @@ async function backTranslateBatch(translations, locale) {
 For each entry, translate the "${localeName}" text back to English, then compare with the original.
 
 Return a JSON array where each item has:
+- "key": the "key" field from the input entry (copy exactly)
 - "original": the original English string
 - "back_translated": your English back-translation
 - "score": 0-100 (100 = perfect match in meaning)
@@ -272,7 +273,7 @@ async function main() {
         // Try glob fallback for flat structure
         try {
           const basename = path.basename(file, '.json');
-          const sourceFiles = await glob(`**/${basename}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true });
+          const sourceFiles = (await glob(`**/${basename}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true })).sort();
           if (sourceFiles.length > 1) {
             console.warn(`    Warning: Multiple source files found for ${basename}, using ${sourceFiles[0]}`);
           }
@@ -322,7 +323,10 @@ async function main() {
                 totalIssues++;
 
                 if (applyFixes && result.suggested_fix) {
-                  // Use semantic key (not English string) for new format
+                  if (isNewFormat && !result.key) {
+                    console.warn('    Warning: missing key in back-translation result; skipping auto-fix');
+                    continue;
+                  }
                   const fixKey = result.key || result.original;
                   translations[fixKey] = result.suggested_fix;
                   totalFixed++;
