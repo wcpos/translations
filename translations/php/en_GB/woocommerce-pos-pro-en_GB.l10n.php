@@ -29,7 +29,7 @@ return array(
 	'Friday' => 'Friday',
 	'Saturday' => 'Saturday',
 	'Sunday' => 'Sunday',
-	'Loading&#8230;' => 'Loading…',
+	'Loading&#8230;' => 'Loading&#8230;',
 	'Select the users who are authorized to access this store.' => 'Select the users who are authorised to access this store.',
 	'Note: only the users with the proper privileges will be available for selection. <a href="%s" target="_blank">See the documentation for details.</a>' => 'Note: only the users with the proper privileges will be available for selection. <a href="%s" target="_blank">See the documentation for details.</a>',
 	'Web Address' => 'Web Address',
