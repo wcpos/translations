@@ -140,6 +140,17 @@ jobs:
             fi
           done
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Validate
         run: |
           # Quick JSON validation
@@ -151,6 +162,9 @@ jobs:
             fi
           done
           echo "All JSON files valid"
+
+      - name: Generate fallbacks
+        run: node scripts/generate-fallbacks.js
 
       - name: Commit translations
         id: commit

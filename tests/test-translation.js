@@ -223,6 +223,49 @@ async function main() {
     false
   );
 
+  // New Format Tests
+  console.log('\nTesting new source format (semantic keys)...');
+
+  const SAMPLE_STRINGS_NEW = {
+    'common.welcome': 'Welcome',
+    'common.hello_name': 'Hello {name}',
+    'common.cart_items': 'You have {count} items in your cart',
+    'common.save': 'Save',
+    'common.cancel': 'Cancel',
+    'common.open': 'Open',
+  };
+
+  await test(
+    'new format: placeholders preserved with semantic keys',
+    async () => {
+      const mockTranslations = {
+        'common.hello_name': 'Hallo {name}',
+        'common.cart_items': 'Sie haben {count} Artikel in Ihrem Warenkorb',
+      };
+
+      for (const [key, translated] of Object.entries(mockTranslations)) {
+        const english = SAMPLE_STRINGS_NEW[key];
+        if (!checkPlaceholders(english, translated)) {
+          throw new Error(`Placeholder mismatch in: ${key} (${english}) -> ${translated}`);
+        }
+      }
+    },
+    false
+  );
+
+  await test(
+    'new format: detects placeholder mismatch with semantic keys',
+    async () => {
+      const badTranslation = { 'common.hello_name': 'Hallo' }; // Missing {name}
+      const english = SAMPLE_STRINGS_NEW['common.hello_name'];
+      const hasIssue = !checkPlaceholders(english, badTranslation['common.hello_name']);
+      if (!hasIssue) {
+        throw new Error('Should detect placeholder mismatch in semantic key format');
+      }
+    },
+    false
+  );
+
   // Output results
   if (!DRY_RUN && Object.keys(translations).length > 0) {
     console.log('\nSample translations received:');

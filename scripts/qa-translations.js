@@ -89,35 +89,48 @@ ${JSON.stringify(translations, null, 2)}`;
 
 /**
  * Structural checks for JS translations (no AI needed).
+ * Supports both old format (English string keys) and new format (semantic keys).
  */
 function structuralCheckJs(source, translations, locale) {
   const issues = [];
   const placeholderRegex = /\{[^}]+\}/g;
   const isEnglishVariant = locale && locale.startsWith('en');
 
-  for (const [sourceStr, translated] of Object.entries(translations)) {
+  // Detect source format
+  const isNewFormat = source && typeof Object.values(source)[0] === 'string';
+
+  // Build lookup from translation key to English source string
+  const keyToEnglish = {};
+  if (source && isNewFormat) {
+    for (const [key, englishString] of Object.entries(source)) {
+      keyToEnglish[key] = englishString;
+    }
+  }
+
+  for (const [translationKey, translated] of Object.entries(translations)) {
+    // For new format, look up the English source string; for old format, the key IS the English string
+    const englishStr = isNewFormat ? (keyToEnglish[translationKey] || translationKey) : translationKey;
+
     // Check placeholders are preserved
-    const sourcePlaceholders = (sourceStr.match(placeholderRegex) || []).sort();
+    const sourcePlaceholders = (englishStr.match(placeholderRegex) || []).sort();
     const translatedPlaceholders = (translated.match(placeholderRegex) || []).sort();
 
     if (JSON.stringify(sourcePlaceholders) !== JSON.stringify(translatedPlaceholders)) {
       issues.push({
-        string: sourceStr,
+        string: translationKey,
         issue: `Placeholder mismatch: source has ${sourcePlaceholders.join(', ')} but translation has ${translatedPlaceholders.join(', ')}`,
         severity: 'high',
       });
     }
 
     // Check for untranslated strings (same as source)
-    // Skip for English variants (en_GB etc.) where most strings are legitimately identical
-    // Only flag multi-word strings — single words are often identical across languages
-    if (!isEnglishVariant && sourceStr === translated && !KEEP_IN_ENGLISH.has(sourceStr.trim())) {
-      const stripped = sourceStr.replace(/\{[^}]+\}/g, '').trim();
+    if (!isEnglishVariant && englishStr === translated && !KEEP_IN_ENGLISH.has(englishStr.trim())) {
+      const stripped = englishStr.replace(/\{[^}]+\}/g, '').trim();
       const words = stripped.split(/[\s:,]+/).filter(w => w.length > 0);
       const allKept = words.every(w => KEEP_IN_ENGLISH.has(w));
       if (!allKept && words.length > 2) {
         issues.push({
-          string: sourceStr,
+          string: translationKey,
           issue: 'String appears untranslated (identical to source)',
           severity: 'medium',
         });
@@ -127,13 +140,25 @@ function structuralCheckJs(source, translations, locale) {
 
   // Check all source strings have translations
   if (source) {
-    for (const [, entry] of Object.entries(source)) {
-      if (!translations[entry.string]) {
-        issues.push({
-          string: entry.string,
-          issue: 'Missing translation',
-          severity: 'high',
-        });
+    if (isNewFormat) {
+      for (const key of Object.keys(source)) {
+        if (!translations[key]) {
+          issues.push({
+            string: key,
+            issue: 'Missing translation',
+            severity: 'high',
+          });
+        }
+      }
+    } else {
+      for (const [, entry] of Object.entries(source)) {
+        if (!translations[entry.string]) {
+          issues.push({
+            string: entry.string,
+            issue: 'Missing translation',
+            severity: 'high',
+          });
+        }
       }
     }
   }
@@ -212,20 +237,29 @@ async function main() {
   // JS QA
   if (type === 'js' || type === 'all') {
     console.log('--- JS Translations ---');
-    const jsFiles = await glob('*.json', { cwd: path.join(TRANSLATIONS_JS_DIR, locale), absolute: true });
+    const jsFiles = await glob('**/*.json', { cwd: path.join(TRANSLATIONS_JS_DIR, locale), absolute: true });
 
     for (const file of jsFiles) {
-      const tag = path.basename(file, '.json');
+      const localeDir = path.join(TRANSLATIONS_JS_DIR, locale);
+      const relPath = path.relative(localeDir, file);
+      const tag = relPath.replace(/\.json$/, '');
       const translations = JSON.parse(await fs.readFile(file, 'utf8'));
 
-      // Load source for structural checks
+      // Load source for structural checks — match directory structure
       let source = null;
       try {
-        const sourceFiles = await glob(`**/${tag}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true });
-        if (sourceFiles.length > 0) {
-          source = JSON.parse(await fs.readFile(sourceFiles[0], 'utf8'));
-        }
-      } catch { /* ignore */ }
+        const sourceFile = path.resolve(__dirname, '../source/js', relPath);
+        source = JSON.parse(await fs.readFile(sourceFile, 'utf8'));
+      } catch {
+        // Try glob fallback for flat structure
+        try {
+          const basename = path.basename(file, '.json');
+          const sourceFiles = await glob(`**/${basename}.json`, { cwd: path.resolve(__dirname, '../source/js'), absolute: true });
+          if (sourceFiles.length > 0) {
+            source = JSON.parse(await fs.readFile(sourceFiles[0], 'utf8'));
+          }
+        } catch { /* ignore */ }
+      }
 
       // Structural checks
       const structIssues = structuralCheckJs(source, translations, locale);
@@ -239,8 +273,10 @@ async function main() {
 
       // Back-translation QA
       if (!structuralOnly) {
-        const entries = Object.entries(translations).map(([source, translated]) => ({
-          original: source,
+        // For new format, send English strings (not semantic keys) for back-translation
+        const entries = Object.entries(translations).map(([key, translated]) => ({
+          original: (source && isNewFormat) ? (keyToEnglish[key] || key) : key,
+          key: key,
           translated,
         }));
 
