@@ -42,6 +42,7 @@ const PLURAL_SUFFIXES = {
 
   // Germanic, Romance, etc. (one, other)
   en_GB: ['one', 'other'],
+  en_US: ['one', 'other'],
   de_DE: ['one', 'other'],
   de_AT: ['one', 'other'],
   nl_NL: ['one', 'other'],
@@ -204,10 +205,12 @@ function validateAmbiguousTerms(source, translated, locale) {
 
 /**
  * Translate JS source strings for a locale.
- * Source format: { "key": { "string": "English text", "context": "optional", "plural": bool } }
+ * Supports two source formats:
+ *   Old: { "key": { "string": "English text", "context": "optional", "plural": bool } }
+ *   New: { "namespace.key": "English String" }
  * Output format:
- *   - Regular strings: { "English text": "Translated text" }
- *   - Plural strings: { "key_one": "...", "key_other": "...", etc. }
+ *   Old: { "English text": "Translated text" } with plurals as { "key_one": "...", "key_other": "..." }
+ *   New: { "namespace.key": "Translated text" } with plurals as { "namespace.key_one": "...", etc. }
  */
 async function translateJsFile(sourceFile, locale, state, force) {
   // Preserve directory structure from source (e.g., monorepo/core.json)
@@ -215,6 +218,10 @@ async function translateJsFile(sourceFile, locale, state, force) {
   const tag = relativePath.replace(/\.json$/, ''); // e.g., "monorepo/core"
   const sourceContent = await fs.readFile(sourceFile, 'utf8');
   const sourceStrings = JSON.parse(sourceContent);
+
+  // Detect source format: new format has string values, old format has object values
+  const firstValue = Object.values(sourceStrings)[0];
+  const isNewFormat = typeof firstValue === 'string';
 
   // Load existing translations - mirror source directory structure
   const outputFile = path.join(TRANSLATIONS_JS_DIR, locale, relativePath);
@@ -231,18 +238,37 @@ async function translateJsFile(sourceFile, locale, state, force) {
   const regularEntries = [];
   const pluralGroups = new Map(); // base key -> { one: entry, other: entry, ... }
 
-  for (const [key, entry] of Object.entries(sourceStrings)) {
-    if (entry.plural) {
+  if (isNewFormat) {
+    for (const [key, englishString] of Object.entries(sourceStrings)) {
       const parsed = parsePluralKey(key);
       if (parsed) {
         if (!pluralGroups.has(parsed.base)) {
           pluralGroups.set(parsed.base, {});
         }
-        pluralGroups.get(parsed.base)[parsed.suffix] = { key, ...entry };
+        pluralGroups.get(parsed.base)[parsed.suffix] = { key, string: englishString };
+      } else {
+        regularEntries.push({ key, string: englishString });
       }
-    } else {
-      regularEntries.push({ key, ...entry });
     }
+  } else {
+    for (const [key, entry] of Object.entries(sourceStrings)) {
+      if (entry.plural) {
+        const parsed = parsePluralKey(key);
+        if (parsed) {
+          if (!pluralGroups.has(parsed.base)) {
+            pluralGroups.set(parsed.base, {});
+          }
+          pluralGroups.get(parsed.base)[parsed.suffix] = { key, ...entry };
+        }
+      } else {
+        regularEntries.push({ key, ...entry });
+      }
+    }
+  }
+
+  // Helper: the key used in the output translation file
+  function outputKey(entry) {
+    return isNewFormat ? entry.key : entry.string;
   }
 
   // Determine which regular strings need translation
@@ -255,7 +281,7 @@ async function translateJsFile(sourceFile, locale, state, force) {
     const hash = hashString(entry.string + (entry.context || ''));
     newHashes[entry.key] = hash;
 
-    if (force || hash !== prevHashes[entry.key] || !existingTranslations[entry.string]) {
+    if (force || hash !== prevHashes[entry.key] || !existingTranslations[outputKey(entry)]) {
       regularToTranslate.push(entry);
     }
   }
@@ -281,7 +307,7 @@ async function translateJsFile(sourceFile, locale, state, force) {
   // Remove translations for strings no longer in source
   const validKeys = new Set();
   for (const entry of regularEntries) {
-    validKeys.add(entry.string);
+    validKeys.add(outputKey(entry));
   }
   for (const [baseKey] of pluralGroups) {
     for (const suffix of requiredSuffixes) {
@@ -317,12 +343,33 @@ async function translateJsFile(sourceFile, locale, state, force) {
   for (let i = 0; i < regularToTranslate.length; i += batchSize) {
     const batch = regularToTranslate.slice(i, i + batchSize);
 
-    const input = {};
-    for (const entry of batch) {
-      input[entry.string] = entry.context || '';
-    }
+    let userPrompt;
+    if (isNewFormat) {
+      // New format: send semantic keys with English strings
+      const input = {};
+      for (const entry of batch) {
+        input[entry.key] = entry.string;
+      }
 
-    const userPrompt = `Translate the following UI strings to ${localeName}. The keys are the English source strings. The values are optional context hints (empty string means no context).
+      userPrompt = `Translate the following UI strings to ${localeName}. The keys are semantic identifiers and the values are the English source strings to translate.
+
+IMPORTANT: After translating each string, verify it:
+1. All placeholders ({name}, {count}, %s, %d, etc.) must appear exactly as in the source
+2. Technical terms (Gateway, POS, SKU, API, ID, WooCommerce, etc.) must stay in English
+3. Keep translations concise - similar length to source
+4. If you find an issue, fix it before returning
+
+Return a JSON object where keys are the SAME semantic keys and values are the VERIFIED translations.
+
+${JSON.stringify(input, null, 2)}`;
+    } else {
+      // Old format: send English strings with context hints
+      const input = {};
+      for (const entry of batch) {
+        input[entry.string] = entry.context || '';
+      }
+
+      userPrompt = `Translate the following UI strings to ${localeName}. The keys are the English source strings. The values are optional context hints (empty string means no context).
 
 IMPORTANT: After translating each string, verify it:
 1. All placeholders ({name}, {count}, %s, %d, etc.) must appear exactly as in the source
@@ -333,6 +380,7 @@ IMPORTANT: After translating each string, verify it:
 Return a JSON object where keys are the ORIGINAL English strings and values are the VERIFIED translations.
 
 ${JSON.stringify(input, null, 2)}`;
+    }
 
     try {
       const response = await openai.chat.completions.create({
@@ -353,18 +401,43 @@ ${JSON.stringify(input, null, 2)}`;
       const translations = JSON.parse(text);
 
       let issueCount = 0;
-      for (const [source, translated] of Object.entries(translations)) {
-        const placeholderIssues = validatePlaceholders(source, translated);
-        const termIssues = validateTechnicalTerms(source, translated);
-        const ambiguousIssues = validateAmbiguousTerms(source, translated, locale);
-        const allIssues = [...placeholderIssues, ...termIssues, ...ambiguousIssues];
 
-        if (allIssues.length > 0) {
-          console.warn(`    ⚠ "${source.substring(0, 30)}...": ${allIssues.join('; ')}`);
-          issueCount++;
+      if (isNewFormat) {
+        // New format: keys are semantic identifiers, look up English string for validation
+        const keyToEnglish = {};
+        for (const entry of batch) {
+          keyToEnglish[entry.key] = entry.string;
         }
 
-        existingTranslations[source] = translated;
+        for (const [key, translated] of Object.entries(translations)) {
+          const english = keyToEnglish[key] || key;
+          const placeholderIssues = validatePlaceholders(english, translated);
+          const termIssues = validateTechnicalTerms(english, translated);
+          const ambiguousIssues = validateAmbiguousTerms(english, translated, locale);
+          const allIssues = [...placeholderIssues, ...termIssues, ...ambiguousIssues];
+
+          if (allIssues.length > 0) {
+            console.warn(`    ⚠ "${key}": ${allIssues.join('; ')}`);
+            issueCount++;
+          }
+
+          existingTranslations[key] = translated;
+        }
+      } else {
+        // Old format: keys are English strings
+        for (const [source, translated] of Object.entries(translations)) {
+          const placeholderIssues = validatePlaceholders(source, translated);
+          const termIssues = validateTechnicalTerms(source, translated);
+          const ambiguousIssues = validateAmbiguousTerms(source, translated, locale);
+          const allIssues = [...placeholderIssues, ...termIssues, ...ambiguousIssues];
+
+          if (allIssues.length > 0) {
+            console.warn(`    ⚠ "${source.substring(0, 30)}...": ${allIssues.join('; ')}`);
+            issueCount++;
+          }
+
+          existingTranslations[source] = translated;
+        }
       }
 
       if (issueCount > 0) {
@@ -387,6 +460,15 @@ ${JSON.stringify(input, null, 2)}`;
       englishForms[suffix] = entry.string;
     }
 
+    // Collect all placeholders from all English forms (they must appear in every translated form)
+    const allPlaceholders = new Set();
+    const placeholderRegex = /\{[^}]+\}|%[0-9]*\$?[sd]|%[0-9]+/g;
+    for (const str of Object.values(englishForms)) {
+      const matches = str.match(placeholderRegex) || [];
+      matches.forEach(p => allPlaceholders.add(p));
+    }
+    const placeholderList = [...allPlaceholders];
+
     const userPrompt = `Translate the following plural forms to ${localeName}.
 
 This is a plural string for i18next. The base key is "${baseKey}".
@@ -396,8 +478,11 @@ ${JSON.stringify(englishForms, null, 2)}
 
 ${localeName} requires these plural suffixes: ${requiredSuffixes.join(', ')}
 
-IMPORTANT:
-1. Preserve ALL placeholders exactly ({count}, {term}, etc.)
+CRITICAL RULES:
+1. EVERY translated form MUST contain these exact placeholders: ${placeholderList.join(', ')}
+   - Even for zero/one/two forms where the language uses specific words, you MUST still include ${placeholderList.join(', ')}
+   - Example: for Arabic "one" form, write "تم العثور على {count} منتج واحد" NOT "تم العثور على منتج واحد"
+   - The application code requires these placeholders in ALL forms — omitting them causes runtime errors
 2. Return ONLY the suffixes listed above for ${localeName}
 3. Use the correct grammatical plural forms for ${localeName}
 4. Technical terms must stay in English
@@ -405,42 +490,85 @@ IMPORTANT:
 Return a JSON object with the required suffixes as keys and translations as values.
 Example format: { "one": "...", "other": "..." }`;
 
-    try {
-      const response = await openai.chat.completions.create({
-        model: 'gpt-4o',
-        max_tokens: 1024,
-        temperature: 0.3,
-        messages: [
-          { role: 'system', content: translationContext || 'You are a professional translator for POS software UI.' },
-          { role: 'user', content: userPrompt },
-        ],
-      });
+    const maxAttempts = 2;
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        const response = await openai.chat.completions.create({
+          model: 'gpt-4o',
+          max_tokens: 1024,
+          temperature: attempt > 1 ? 0.1 : 0.3, // Lower temperature on retry
+          messages: [
+            { role: 'system', content: translationContext || 'You are a professional translator for POS software UI.' },
+            { role: 'user', content: userPrompt },
+          ],
+        });
 
-      let text = response.choices[0].message.content.trim();
-      if (text.startsWith('```')) {
-        text = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
-      }
+        let text = response.choices[0].message.content.trim();
+        if (text.startsWith('```')) {
+          text = text.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+        }
 
-      const translations = JSON.parse(text);
+        const translations = JSON.parse(text);
 
-      // Store translations with full key names
-      for (const suffix of requiredSuffixes) {
-        if (translations[suffix]) {
-          const fullKey = `${baseKey}_${suffix}`;
-          existingTranslations[fullKey] = translations[suffix];
+        // Validate and store translations
+        let missingSuffixes = [];
+        let placeholderFailures = [];
 
-          // Validate
-          const sourceString = suffixes.one?.string || suffixes.other?.string || '';
-          const placeholderIssues = validatePlaceholders(sourceString, translations[suffix]);
-          if (placeholderIssues.length > 0) {
-            console.warn(`    ⚠ "${fullKey}": ${placeholderIssues.join('; ')}`);
+        for (const suffix of requiredSuffixes) {
+          if (translations[suffix]) {
+            const fullKey = `${baseKey}_${suffix}`;
+
+            // Validate placeholders against the matching English source form,
+            // falling back to _other or _one if this specific suffix doesn't exist in source
+            const sourceString = suffixes[suffix]?.string || suffixes.other?.string || suffixes.one?.string || '';
+            const placeholderIssues = validatePlaceholders(sourceString, translations[suffix]);
+
+            if (placeholderIssues.length > 0) {
+              placeholderFailures.push({ suffix, fullKey, issues: placeholderIssues, translated: translations[suffix] });
+            }
+
+            existingTranslations[fullKey] = translations[suffix];
+          } else {
+            missingSuffixes.push(suffix);
           }
         }
-      }
 
-      console.log(`    ✓ ${baseKey}: ${requiredSuffixes.length} plural forms`);
-    } catch (error) {
-      console.error(`    Error translating plural "${baseKey}": ${error.message}`);
+        if (missingSuffixes.length > 0) {
+          console.warn(`    ⚠ "${baseKey}": API did not return required suffixes: ${missingSuffixes.join(', ')}`);
+        }
+
+        // If placeholders are broken and we haven't retried yet, try again
+        if (placeholderFailures.length > 0 && attempt < maxAttempts) {
+          console.warn(`    ⚠ "${baseKey}": ${placeholderFailures.length} form(s) have placeholder issues, retrying...`);
+          await sleep(500);
+          continue;
+        }
+
+        // Auto-repair remaining placeholder issues after final attempt
+        for (const { suffix, fullKey, issues, translated } of placeholderFailures) {
+          let repaired = translated;
+
+          for (const placeholder of placeholderList) {
+            if (!repaired.includes(placeholder)) {
+              // Prepend the missing placeholder with a space
+              repaired = `${placeholder} ${repaired}`;
+              console.warn(`    🔧 "${fullKey}": auto-inserted missing ${placeholder}`);
+            }
+          }
+
+          existingTranslations[fullKey] = repaired;
+        }
+
+        const receivedCount = requiredSuffixes.length - missingSuffixes.length;
+        console.log(`    ✓ ${baseKey}: ${receivedCount}/${requiredSuffixes.length} plural forms`);
+        break; // Success, exit retry loop
+      } catch (error) {
+        console.error(`    Error translating plural "${baseKey}": ${error.message}`);
+        if (attempt < maxAttempts) {
+          await sleep(500);
+          continue;
+        }
+      }
     }
 
     await sleep(500);
