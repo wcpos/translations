@@ -43,8 +43,9 @@ function generateL10nPhp(po) {
     }
   }
 
-  // Generate PHP array
-  let php = `<?php\nreturn array(\n`;
+  // Generate PHP array in WordPress 6.5+ format.
+  // WordPress expects: array( 'messages' => array( key => value, ... ) )
+  let php = `<?php\nreturn array(\n\t'messages' => array(\n`;
 
   for (const { key, value } of entries) {
     const escapedKey = key.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
@@ -52,10 +53,10 @@ function generateL10nPhp(po) {
     // Restore \x04 and \x00 as actual bytes
     const phpKey = escapedKey.replace(/\x04/g, "' . \"\\x04\" . '");
     const phpValue = escapedValue.replace(/\x00/g, "' . \"\\x00\" . '");
-    php += `\t'${phpKey}' => '${phpValue}',\n`;
+    php += `\t\t'${phpKey}' => '${phpValue}',\n`;
   }
 
-  php += `);\n`;
+  php += `\t),\n);\n`;
   return php;
 }
 
