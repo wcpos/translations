@@ -107,9 +107,27 @@ function structuralCheckJs(source, translations, locale) {
     }
   }
 
+  // Plural suffix pattern for resolving extra plural forms not in source
+  const pluralSuffixPattern = /^(.+)_(zero|one|two|few|many|other)$/;
+
   for (const [translationKey, translated] of Object.entries(translations)) {
     // For new format, look up the English source string; for old format, the key IS the English string
-    const englishStr = isNewFormat ? (keyToEnglish[translationKey] || translationKey) : translationKey;
+    let englishStr;
+    if (isNewFormat) {
+      englishStr = keyToEnglish[translationKey];
+      // For plural suffix keys not directly in source (e.g., _few, _many, _zero),
+      // look up the base key's _one or _other form for placeholder comparison
+      if (!englishStr) {
+        const match = translationKey.match(pluralSuffixPattern);
+        if (match) {
+          const base = match[1];
+          englishStr = keyToEnglish[`${base}_one`] || keyToEnglish[`${base}_other`];
+        }
+      }
+      if (!englishStr) englishStr = translationKey;
+    } else {
+      englishStr = translationKey;
+    }
 
     // Check placeholders are preserved
     const sourcePlaceholders = (englishStr.match(placeholderRegex) || []).sort();
