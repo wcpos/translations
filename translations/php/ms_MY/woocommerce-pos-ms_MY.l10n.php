@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Alamat e-mel tidak sah.',
 		'Order Status.' => 'Status Pesanan.',
 		'Order Status Label.' => 'Label Status Pesanan.',
+		'You do not have permission to view extensions.' => 'Anda tidak mempunyai kebenaran untuk melihat sambungan.',
 		'Email address' => 'Alamat e-mel',
 		'Save email to order' => 'Simpan e-mel ke pesanan',
 		'Barcode' => 'Kod bar',

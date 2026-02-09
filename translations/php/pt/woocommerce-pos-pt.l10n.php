@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Endereço de email inválido.',
 		'Order Status.' => 'Estado da Encomenda.',
 		'Order Status Label.' => 'Etiqueta do Estado da Encomenda.',
+		'You do not have permission to view extensions.' => 'Não tem permissão para ver extensões.',
 		'Email address' => 'Endereço de email',
 		'Save email to order' => 'Guardar email na encomenda',
 		'Barcode' => 'Código de barras',

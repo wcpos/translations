@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => '電子郵件地址無效。',
 		'Order Status.' => '訂單狀態。',
 		'Order Status Label.' => '訂單狀態標籤。',
+		'You do not have permission to view extensions.' => '您沒有權限查看擴充功能。',
 		'Email address' => '電子郵件地址',
 		'Save email to order' => '將電子郵件儲存到訂單',
 		'Barcode' => '條碼',

@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Érvénytelen email cím.',
 		'Order Status.' => 'Rendelés állapota.',
 		'Order Status Label.' => 'Rendelés állapot címke.',
+		'You do not have permission to view extensions.' => 'Nincs jogosultságod a bővítmények megtekintéséhez.',
 		'Email address' => 'Email cím',
 		'Save email to order' => 'Email mentése a rendeléshez',
 		'Barcode' => 'Vonalkód',

@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'अमान्य ईमेल पता।',
 		'Order Status.' => 'ऑर्डर स्थिति।',
 		'Order Status Label.' => 'ऑर्डर स्थिति लेबल।',
+		'You do not have permission to view extensions.' => 'आपको एक्सटेंशन देखने की अनुमति नहीं है।',
 		'Email address' => 'ईमेल पता',
 		'Save email to order' => 'ऑर्डर में ईमेल सहेजें',
 		'Barcode' => 'बारकोड',

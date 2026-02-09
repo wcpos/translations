@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Ongeldig e-mailadres.',
 		'Order Status.' => 'Bestelstatus.',
 		'Order Status Label.' => 'Label bestelstatus.',
+		'You do not have permission to view extensions.' => 'Je hebt geen toestemming om extensies te bekijken.',
 		'Email address' => 'E-mailadres',
 		'Save email to order' => 'E-mail opslaan bij bestelling',
 		'Barcode' => 'Barcode',

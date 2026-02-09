@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Μη έγκυρη διεύθυνση email.',
 		'Order Status.' => 'Κατάσταση Παραγγελίας.',
 		'Order Status Label.' => 'Ετικέτα Κατάστασης Παραγγελίας.',
+		'You do not have permission to view extensions.' => 'Δεν έχετε άδεια να δείτε τις επεκτάσεις.',
 		'Email address' => 'Διεύθυνση email',
 		'Save email to order' => 'Αποθήκευση email στην παραγγελία',
 		'Barcode' => 'Barcode',
