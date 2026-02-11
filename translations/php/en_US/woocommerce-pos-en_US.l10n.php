@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Invalid email address.',
 		'Order Status.' => 'Order Status.',
 		'Order Status Label.' => 'Order Status Label.',
+		'You do not have permission to view extensions.' => 'You do not have permission to view extensions.',
 		'Email address' => 'Email address',
 		'Save email to order' => 'Save email to order',
 		'Barcode' => 'Barcode',

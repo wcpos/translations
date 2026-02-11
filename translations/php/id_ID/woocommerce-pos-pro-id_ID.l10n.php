@@ -69,7 +69,7 @@ return array(
 		'No download URL available for this extension.' => 'URL unduhan tidak tersedia untuk ekstensi ini.',
 		'Plugin installation failed.' => 'Instalasi plugin gagal.',
 		'Plugin was installed but could not be located.' => 'Plugin telah diinstal tetapi tidak dapat ditemukan.',
-		'Extension is not installed.' => 'Ekstensi tidak terinstal.',
+		'Extension is not installed.' => 'Ekstensi tidak terpasang.',
 		'Plugin update failed.' => 'Pembaruan plugin gagal.',
 		'Failed to save settings.' => 'Gagal menyimpan pengaturan.',
 		'Add New Store' => 'Tambah Toko Baru',

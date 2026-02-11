@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Ogiltig e-postadress.',
 		'Order Status.' => 'Orderstatus.',
 		'Order Status Label.' => 'Orderstatusetikett.',
+		'You do not have permission to view extensions.' => 'Du har inte behörighet att visa tillägg.',
 		'Email address' => 'E-postadress',
 		'Save email to order' => 'Spara e-post till order',
 		'Barcode' => 'Streckkod',

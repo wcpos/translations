@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Địa chỉ email không hợp lệ.',
 		'Order Status.' => 'Trạng thái đơn hàng.',
 		'Order Status Label.' => 'Nhãn trạng thái đơn hàng.',
+		'You do not have permission to view extensions.' => 'Bạn không có quyền xem các tiện ích mở rộng.',
 		'Email address' => 'Địa chỉ email',
 		'Save email to order' => 'Lưu email vào đơn hàng',
 		'Barcode' => 'Mã vạch',

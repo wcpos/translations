@@ -69,7 +69,7 @@ return array(
 		'No download URL available for this extension.' => '이 확장 기능에 대한 다운로드 URL이 없습니다.',
 		'Plugin installation failed.' => '플러그인 설치에 실패했습니다.',
 		'Plugin was installed but could not be located.' => '플러그인이 설치되었지만 찾을 수 없습니다.',
-		'Extension is not installed.' => '확장 기능이 설치되지 않았습니다.',
+		'Extension is not installed.' => '확장 기능이 설치되어 있지 않습니다.',
 		'Plugin update failed.' => '플러그인 업데이트에 실패했습니다.',
 		'Failed to save settings.' => '설정을 저장하지 못했습니다.',
 		'Add New Store' => '새 매장 추가',

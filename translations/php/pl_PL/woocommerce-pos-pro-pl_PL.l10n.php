@@ -64,7 +64,7 @@ return array(
 		'Your WCPOS Pro license is inactive' => 'Twoja licencja WCPOS Pro jest nieaktywna',
 		'Your WCPOS Pro license has expired' => 'Twoja licencja WCPOS Pro wygasła',
 		'You do not have permission to manage plugins.' => 'Nie masz uprawnień do zarządzania wtyczkami.',
-		'Extension "%s" not found in catalog.' => 'Rozszerzenie "%s" nie znaleziono w katalogu.',
+		'Extension "%s" not found in catalog.' => 'Rozszerzenie "%s" nie znalezione w katalogu.',
 		'Invalid action.' => 'Nieprawidłowa akcja.',
 		'No download URL available for this extension.' => 'Brak dostępnego URL do pobrania dla tego rozszerzenia.',
 		'Plugin installation failed.' => 'Instalacja wtyczki nie powiodła się.',

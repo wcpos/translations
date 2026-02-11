@@ -70,7 +70,7 @@ return array(
 		'Plugin installation failed.' => 'Plugin-Installation fehlgeschlagen.',
 		'Plugin was installed but could not be located.' => 'Plugin wurde installiert, konnte aber nicht gefunden werden.',
 		'Extension is not installed.' => 'Erweiterung ist nicht installiert.',
-		'Plugin update failed.' => 'Plugin-Update fehlgeschlagen.',
+		'Plugin update failed.' => 'Plugin-Aktualisierung fehlgeschlagen.',
 		'Failed to save settings.' => 'Einstellungen konnten nicht gespeichert werden.',
 		'Add New Store' => 'Neuen Laden hinzufügen',
 		'New Store' => 'Neuer Laden',

@@ -68,7 +68,7 @@ return array(
 		'Invalid action.' => 'Ongeldige actie.',
 		'No download URL available for this extension.' => 'Geen download-URL beschikbaar voor deze extensie.',
 		'Plugin installation failed.' => 'Installatie van plugin mislukt.',
-		'Plugin was installed but could not be located.' => 'Plugin werd geïnstalleerd maar kon niet worden gevonden.',
+		'Plugin was installed but could not be located.' => 'Plugin was geïnstalleerd maar kon niet worden gevonden.',
 		'Extension is not installed.' => 'Extensie is niet geïnstalleerd.',
 		'Plugin update failed.' => 'Plugin-update mislukt.',
 		'Failed to save settings.' => 'Instellingen opslaan mislukt.',

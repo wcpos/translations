@@ -66,7 +66,7 @@ return array(
 		'You do not have permission to manage plugins.' => 'У вас нет прав для управления плагинами.',
 		'Extension "%s" not found in catalog.' => 'Расширение "%s" не найдено в каталоге.',
 		'Invalid action.' => 'Недопустимое действие.',
-		'No download URL available for this extension.' => 'Нет доступного URL для загрузки этого расширения.',
+		'No download URL available for this extension.' => 'URL для загрузки этого расширения недоступен.',
 		'Plugin installation failed.' => 'Установка плагина не удалась.',
 		'Plugin was installed but could not be located.' => 'Плагин был установлен, но не может быть найден.',
 		'Extension is not installed.' => 'Расширение не установлено.',

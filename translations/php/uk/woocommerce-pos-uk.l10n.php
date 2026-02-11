@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Невірна електронна адреса.',
 		'Order Status.' => 'Статус замовлення.',
 		'Order Status Label.' => 'Мітка статусу замовлення.',
+		'You do not have permission to view extensions.' => 'Ви не маєте дозволу переглядати розширення.',
 		'Email address' => 'Електронна адреса',
 		'Save email to order' => 'Зберегти електронну адресу до замовлення',
 		'Barcode' => 'Штрих-код',

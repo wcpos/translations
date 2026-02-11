@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Geçersiz e-posta adresi.',
 		'Order Status.' => 'Sipariş Durumu.',
 		'Order Status Label.' => 'Sipariş Durumu Etiketi.',
+		'You do not have permission to view extensions.' => 'Eklentileri görüntüleme izniniz yok.',
 		'Email address' => 'E-posta adresi',
 		'Save email to order' => 'E-postayı siparişe kaydet',
 		'Barcode' => 'Barkod',

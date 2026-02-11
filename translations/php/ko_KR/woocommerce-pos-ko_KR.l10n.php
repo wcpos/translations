@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => '유효하지 않은 이메일 주소입니다.',
 		'Order Status.' => '주문 상태.',
 		'Order Status Label.' => '주문 상태 라벨.',
+		'You do not have permission to view extensions.' => '확장 기능을 볼 수 있는 권한이 없습니다.',
 		'Email address' => '이메일 주소',
 		'Save email to order' => '주문에 이메일 저장',
 		'Barcode' => '바코드',

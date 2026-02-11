@@ -66,7 +66,7 @@ return array(
 		'You do not have permission to manage plugins.' => 'Δεν έχετε άδεια να διαχειριστείτε τα πρόσθετα.',
 		'Extension "%s" not found in catalog.' => 'Η επέκταση "%s" δεν βρέθηκε στον κατάλογο.',
 		'Invalid action.' => 'Μη έγκυρη ενέργεια.',
-		'No download URL available for this extension.' => 'Δεν υπάρχει διαθέσιμος σύνδεσμος λήψης για αυτή την επέκταση.',
+		'No download URL available for this extension.' => 'Δεν υπάρχει διαθέσιμος σύνδεσμος λήψης για αυτήν την επέκταση.',
 		'Plugin installation failed.' => 'Η εγκατάσταση του πρόσθετου απέτυχε.',
 		'Plugin was installed but could not be located.' => 'Το πρόσθετο εγκαταστάθηκε αλλά δεν μπόρεσε να εντοπιστεί.',
 		'Extension is not installed.' => 'Η επέκταση δεν είναι εγκατεστημένη.',

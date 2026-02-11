@@ -68,7 +68,7 @@ return array(
 		'Invalid action.' => 'Ação inválida.',
 		'No download URL available for this extension.' => 'Nenhum URL de download disponível para esta extensão.',
 		'Plugin installation failed.' => 'A instalação do plugin falhou.',
-		'Plugin was installed but could not be located.' => 'O plugin foi instalado, mas não pôde ser localizado.',
+		'Plugin was installed but could not be located.' => 'O plugin foi instalado mas não pôde ser localizado.',
 		'Extension is not installed.' => 'A extensão não está instalada.',
 		'Plugin update failed.' => 'A atualização do plugin falhou.',
 		'Failed to save settings.' => 'Falha ao guardar as definições.',

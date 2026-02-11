@@ -108,6 +108,7 @@ return array(
 		'Invalid email address.' => 'Adresă de email invalidă.',
 		'Order Status.' => 'Starea comenzii.',
 		'Order Status Label.' => 'Eticheta stării comenzii.',
+		'You do not have permission to view extensions.' => 'Nu aveți permisiunea de a vizualiza extensiile.',
 		'Email address' => 'Adresă de email',
 		'Save email to order' => 'Salvează emailul la comandă',
 		'Barcode' => 'Cod de bare',

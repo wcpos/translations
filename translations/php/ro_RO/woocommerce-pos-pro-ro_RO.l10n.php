@@ -63,7 +63,7 @@ return array(
 		'<a href="%s">Please renew</a> to receive updates.' => '<a href="%s">Vă rugăm să reînnoiți</a> pentru a primi actualizări.',
 		'Your WCPOS Pro license is inactive' => 'Licența dvs. WCPOS Pro este inactivă',
 		'Your WCPOS Pro license has expired' => 'Licența dvs. WCPOS Pro a expirat',
-		'You do not have permission to manage plugins.' => 'Nu aveți permisiunea de a gestiona pluginurile.',
+		'You do not have permission to manage plugins.' => 'Nu aveți permisiunea de a gestiona pluginuri.',
 		'Extension "%s" not found in catalog.' => 'Extensia "%s" nu a fost găsită în catalog.',
 		'Invalid action.' => 'Acțiune invalidă.',
 		'No download URL available for this extension.' => 'Nu există un URL de descărcare disponibil pentru această extensie.',

@@ -69,7 +69,7 @@ return array(
 		'No download URL available for this extension.' => 'Ingen download-URL tilgængelig for denne udvidelse.',
 		'Plugin installation failed.' => 'Plugin-installation mislykkedes.',
 		'Plugin was installed but could not be located.' => 'Plugin blev installeret, men kunne ikke findes.',
-		'Extension is not installed.' => 'Udvidelse er ikke installeret.',
+		'Extension is not installed.' => 'Udvidelsen er ikke installeret.',
 		'Plugin update failed.' => 'Plugin-opdatering mislykkedes.',
 		'Failed to save settings.' => 'Kunne ikke gemme indstillinger.',
 		'Add New Store' => 'Tilføj ny butik',

@@ -66,7 +66,7 @@ return array(
 		'You do not have permission to manage plugins.' => 'Você não tem permissão para gerenciar plugins.',
 		'Extension "%s" not found in catalog.' => 'Extensão "%s" não encontrada no catálogo.',
 		'Invalid action.' => 'Ação inválida.',
-		'No download URL available for this extension.' => 'Nenhum URL de download disponível para esta extensão.',
+		'No download URL available for this extension.' => 'Nenhuma URL de download disponível para esta extensão.',
 		'Plugin installation failed.' => 'Falha na instalação do plugin.',
 		'Plugin was installed but could not be located.' => 'O plugin foi instalado, mas não pôde ser localizado.',
 		'Extension is not installed.' => 'A extensão não está instalada.',
