@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'Orderstatus.',
 		'Order Status Label.' => 'Orderstatusetikett.',
 		'You do not have permission to view extensions.' => 'Du har inte behörighet att visa tillägg.',
+		'You do not have permission to view logs.' => 'Du har inte behörighet att visa loggar.',
 		'Email address' => 'E-postadress',
 		'Save email to order' => 'Spara e-post till order',
 		'Barcode' => 'Streckkod',

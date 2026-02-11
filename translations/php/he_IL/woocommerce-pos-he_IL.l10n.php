@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'סטטוס הזמנה.',
 		'Order Status Label.' => 'תווית סטטוס הזמנה.',
 		'You do not have permission to view extensions.' => 'אין לך הרשאה לצפות בתוספים.',
+		'You do not have permission to view logs.' => 'אין לך הרשאה לצפות ביומנים.',
 		'Email address' => 'כתובת דוא"ל',
 		'Save email to order' => 'שמור דוא"ל להזמנה',
 		'Barcode' => 'ברקוד',

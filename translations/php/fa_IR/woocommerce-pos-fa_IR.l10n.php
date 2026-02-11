@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'وضعیت سفارش.',
 		'Order Status Label.' => 'برچسب وضعیت سفارش.',
 		'You do not have permission to view extensions.' => 'شما اجازه مشاهده افزونه‌ها را ندارید.',
+		'You do not have permission to view logs.' => 'شما اجازه مشاهده گزارش‌ها را ندارید.',
 		'Email address' => 'آدرس ایمیل',
 		'Save email to order' => 'ذخیره ایمیل در سفارش',
 		'Barcode' => 'بارکد',

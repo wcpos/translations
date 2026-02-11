@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'Κατάσταση Παραγγελίας.',
 		'Order Status Label.' => 'Ετικέτα Κατάστασης Παραγγελίας.',
 		'You do not have permission to view extensions.' => 'Δεν έχετε άδεια να δείτε τις επεκτάσεις.',
+		'You do not have permission to view logs.' => 'Δεν έχετε άδεια να δείτε τα αρχεία καταγραφής.',
 		'Email address' => 'Διεύθυνση email',
 		'Save email to order' => 'Αποθήκευση email στην παραγγελία',
 		'Barcode' => 'Barcode',

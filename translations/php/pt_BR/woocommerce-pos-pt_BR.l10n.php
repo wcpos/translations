@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'Status do Pedido.',
 		'Order Status Label.' => 'Etiqueta do Status do Pedido.',
 		'You do not have permission to view extensions.' => 'Você não tem permissão para ver extensões.',
+		'You do not have permission to view logs.' => 'Você não tem permissão para ver logs.',
 		'Email address' => 'Endereço de e-mail',
 		'Save email to order' => 'Salvar e-mail no pedido',
 		'Barcode' => 'Código de barras',

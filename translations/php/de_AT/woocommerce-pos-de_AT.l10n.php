@@ -109,6 +109,7 @@ return array(
 		'Order Status.' => 'Bestellstatus.',
 		'Order Status Label.' => 'Bestellstatus-Bezeichnung.',
 		'You do not have permission to view extensions.' => 'Sie haben keine Berechtigung, Erweiterungen anzusehen.',
+		'You do not have permission to view logs.' => 'Sie haben keine Berechtigung, Protokolle anzusehen.',
 		'Email address' => 'E-Mail-Adresse',
 		'Save email to order' => 'E-Mail zur Bestellung speichern',
 		'Barcode' => 'Barcode',
