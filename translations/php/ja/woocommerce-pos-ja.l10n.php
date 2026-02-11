@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => '無効なメールアドレスです。',
 		'Order Status.' => '注文ステータス。',
 		'Order Status Label.' => '注文ステータスラベル。',
+		'You do not have permission to view extensions.' => '拡張機能を表示する権限がありません。',
+		'You do not have permission to view logs.' => 'ログを表示する権限がありません。',
 		'Email address' => 'メールアドレス',
 		'Save email to order' => '注文にメールを保存',
 		'Barcode' => 'バーコード',

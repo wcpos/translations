@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Dirección de correo electrónico no válida.',
 		'Order Status.' => 'Estado del pedido.',
 		'Order Status Label.' => 'Etiqueta de estado del pedido.',
+		'You do not have permission to view extensions.' => 'No tienes permiso para ver extensiones.',
+		'You do not have permission to view logs.' => 'No tienes permiso para ver registros.',
 		'Email address' => 'Dirección de correo electrónico',
 		'Save email to order' => 'Guardar correo en el pedido',
 		'Barcode' => 'Código de barras',

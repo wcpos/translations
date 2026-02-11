@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Alamat email tidak valid.',
 		'Order Status.' => 'Status Pesanan.',
 		'Order Status Label.' => 'Label Status Pesanan.',
+		'You do not have permission to view extensions.' => 'Anda tidak memiliki izin untuk melihat ekstensi.',
+		'You do not have permission to view logs.' => 'Anda tidak memiliki izin untuk melihat log.',
 		'Email address' => 'Alamat email',
 		'Save email to order' => 'Simpan email ke pesanan',
 		'Barcode' => 'Barcode',

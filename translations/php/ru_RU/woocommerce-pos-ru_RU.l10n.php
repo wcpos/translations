@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Недействительный адрес электронной почты.',
 		'Order Status.' => 'Статус заказа.',
 		'Order Status Label.' => 'Метка статуса заказа.',
+		'You do not have permission to view extensions.' => 'У вас нет прав для просмотра расширений.',
+		'You do not have permission to view logs.' => 'У вас нет прав для просмотра логов.',
 		'Email address' => 'Адрес электронной почты',
 		'Save email to order' => 'Сохранить email в заказ',
 		'Barcode' => 'Штрих-код',

@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Adresse courriel invalide.',
 		'Order Status.' => 'Statut de la commande.',
 		'Order Status Label.' => 'Étiquette du statut de la commande.',
+		'You do not have permission to view extensions.' => 'Vous n\'avez pas la permission de voir les extensions.',
+		'You do not have permission to view logs.' => 'Vous n\'avez pas la permission de voir les journaux.',
 		'Email address' => 'Adresse courriel',
 		'Save email to order' => 'Enregistrer le courriel à la commande',
 		'Barcode' => 'Code-barres',

@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Neplatná e-mailová adresa.',
 		'Order Status.' => 'Stav objednávky.',
 		'Order Status Label.' => 'Štítek stavu objednávky.',
+		'You do not have permission to view extensions.' => 'Nemáte oprávnění zobrazit rozšíření.',
+		'You do not have permission to view logs.' => 'Nemáte oprávnění zobrazit záznamy.',
 		'Email address' => 'E-mailová adresa',
 		'Save email to order' => 'Uložit e-mail k objednávce',
 		'Barcode' => 'Čárový kód',

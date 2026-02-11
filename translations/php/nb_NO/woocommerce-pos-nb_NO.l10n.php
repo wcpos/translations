@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'Ugyldig e-postadresse.',
 		'Order Status.' => 'Bestillingsstatus.',
 		'Order Status Label.' => 'Etikett for bestillingsstatus.',
+		'You do not have permission to view extensions.' => 'Du har ikke tillatelse til å se utvidelser.',
+		'You do not have permission to view logs.' => 'Du har ikke tillatelse til å se logger.',
 		'Email address' => 'E-postadresse',
 		'Save email to order' => 'Lagre e-post til bestilling',
 		'Barcode' => 'Strekkode',

@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'ที่อยู่อีเมลไม่ถูกต้อง',
 		'Order Status.' => 'สถานะคำสั่งซื้อ',
 		'Order Status Label.' => 'ป้ายสถานะคำสั่งซื้อ',
+		'You do not have permission to view extensions.' => 'คุณไม่มีสิทธิ์ในการดูส่วนขยาย',
+		'You do not have permission to view logs.' => 'คุณไม่มีสิทธิ์ในการดูบันทึก',
 		'Email address' => 'ที่อยู่อีเมล',
 		'Save email to order' => 'บันทึกอีเมลในคำสั่งซื้อ',
 		'Barcode' => 'บาร์โค้ด',

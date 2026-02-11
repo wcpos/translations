@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => 'عنوان البريد الإلكتروني غير صالح.',
 		'Order Status.' => 'حالة الطلب.',
 		'Order Status Label.' => 'تسمية حالة الطلب.',
+		'You do not have permission to view extensions.' => 'ليس لديك إذن لعرض الإضافات.',
+		'You do not have permission to view logs.' => 'ليس لديك إذن لعرض السجلات.',
 		'Email address' => 'عنوان البريد الإلكتروني',
 		'Save email to order' => 'حفظ البريد الإلكتروني في الطلب',
 		'Barcode' => 'الباركود',

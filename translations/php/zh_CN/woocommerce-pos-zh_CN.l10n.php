@@ -108,6 +108,8 @@ return array(
 		'Invalid email address.' => '无效的电子邮件地址。',
 		'Order Status.' => '订单状态。',
 		'Order Status Label.' => '订单状态标签。',
+		'You do not have permission to view extensions.' => '您没有权限查看扩展。',
+		'You do not have permission to view logs.' => '您没有权限查看日志。',
 		'Email address' => '电子邮件地址',
 		'Save email to order' => '将电子邮件保存到订单',
 		'Barcode' => '条形码',
