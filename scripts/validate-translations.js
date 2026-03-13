@@ -157,7 +157,7 @@ function validatePhp(locale) {
     try {
       const phpCode = [
         '<?php',
-        `$result = require '${file.replace(/'/g, "\\'")}';`,
+        `$result = require '${file.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}';`,
         'if (!is_array($result)) { fwrite(STDERR, "File does not return an array"); exit(1); }',
         "if (!array_key_exists('messages', $result)) { fwrite(STDERR, \"Missing 'messages' key\"); exit(1); }",
         "if (!is_array($result['messages'])) { fwrite(STDERR, \"'messages' is not an array\"); exit(1); }",
