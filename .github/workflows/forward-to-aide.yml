@@ -1,0 +1,44 @@
+# forward-to-aide.yml
+# Receives repository_dispatch events for new/changed strings and forwards them
+# to Aide's webhook. Aide owns the translation pipeline from this point onward.
+#
+# Required secrets:
+#   OPENCLAW_HOOKS_URL   — public URL of OpenClaw gateway (e.g. https://openclaw.wcpos.com/control)
+#   OPENCLAW_HOOKS_TOKEN — bearer token matching OPENCLAW_HOOKS_TOKEN in docker-compose
+#   WCPOS_GITHUB_APP_TOKEN — GitHub App token for Aide to commit back to this repo
+
+name: Forward strings to Aide
+
+on:
+  repository_dispatch:
+    types:
+      - update-js-strings
+      - update-php-strings
+
+jobs:
+  forward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Forward to Aide webhook
+        env:
+          OPENCLAW_HOOKS_URL: ${{ secrets.OPENCLAW_HOOKS_URL }}
+          OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WCPOS_GITHUB_APP_TOKEN }}
+        run: |
+          payload=$(jq -n \
+            --arg project "${{ github.event.client_payload.project }}" \
+            --argjson changed_files '${{ toJson(github.event.client_payload.changed_files) }}' \
+            --arg github_token "$GITHUB_TOKEN" \
+            '{project: $project, changed_files: $changed_files, github_token: $github_token}')
+
+          echo "Forwarding to Aide: project=${{ github.event.client_payload.project }}"
+
+          response=$(curl -sf \
+            -X POST \
+            -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$OPENCLAW_HOOKS_URL/hooks/translation-request")
+
+          echo "Aide acknowledged: $response"
