@@ -1,19 +1,26 @@
 # forward-to-aide.yml
-# Receives repository_dispatch events for new/changed strings and forwards them
-# to Aide's webhook. Aide owns the translation pipeline from this point onward.
+# Called by receive-js-strings.yml and receive-php-strings.yml after they commit
+# source strings. Forwards a translation request to Aide's webhook so Aide can
+# translate the newly committed strings.
 #
 # Required secrets:
-#   OPENCLAW_HOOKS_URL   — public URL of OpenClaw gateway (e.g. https://openclaw.wcpos.com/control)
+#   OPENCLAW_HOOKS_URL   — public URL of OpenClaw gateway (e.g. https://openclaw.wcpos.com)
 #   OPENCLAW_HOOKS_TOKEN — bearer token matching OPENCLAW_HOOKS_TOKEN in docker-compose
-#   WCPOS_GITHUB_APP_TOKEN — GitHub App token for Aide to commit back to this repo
 
 name: Forward strings to Aide
 
+permissions: {}
+
 on:
-  repository_dispatch:
-    types:
-      - update-js-strings
-      - update-php-strings
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Project name (e.g. woocommerce-pos)
+        required: true
+      type:
+        description: Type of strings (js or php)
+        required: true
+        default: js
 
 jobs:
   forward:
@@ -24,21 +31,42 @@ jobs:
         env:
           OPENCLAW_HOOKS_URL: ${{ secrets.OPENCLAW_HOOKS_URL }}
           OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.WCPOS_GITHUB_APP_TOKEN }}
         run: |
+          project="${{ inputs.project }}"
+          type="${{ inputs.type }}"
+
+          if [ -z "$project" ]; then
+            echo "::error::project input is required"
+            exit 1
+          fi
+
+          # Derive changed_files path from project + type
+          if [ "$type" = "php" ]; then
+            changed_files="[\"source/php/${project}.pot\"]"
+          else
+            changed_files="[\"source/js/${project}/pos.json\"]"
+          fi
+
           payload=$(jq -n \
-            --arg project "${{ github.event.client_payload.project }}" \
-            --argjson changed_files '${{ toJson(github.event.client_payload.changed_files) }}' \
-            --arg github_token "$GITHUB_TOKEN" \
-            '{project: $project, changed_files: $changed_files, github_token: $github_token}')
+            --arg project "$project" \
+            --argjson changed_files "$changed_files" \
+            '{project: $project, changed_files: $changed_files}')
 
-          echo "Forwarding to Aide: project=${{ github.event.client_payload.project }}"
+          echo "Forwarding to Aide: project=$project type=$type"
 
-          response=$(curl -sf \
+          http_code=$(curl -s -o /tmp/aide_response.json -w "%{http_code}" \
+            --max-time 30 \
+            --retry 3 --retry-delay 5 --retry-connrefused \
             -X POST \
             -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$payload" \
             "$OPENCLAW_HOOKS_URL/hooks/translation-request")
 
-          echo "Aide acknowledged: $response"
+          status=$(jq -r '.status // "unknown"' /tmp/aide_response.json 2>/dev/null || echo "unknown")
+          echo "Aide response: http=$http_code status=$status"
+
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo "::error::Aide webhook returned HTTP $http_code"
+            exit 1
+          fi

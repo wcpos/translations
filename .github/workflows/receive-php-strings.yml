@@ -50,7 +50,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh workflow run translate.yml -f mode=changed -f type=php
+          gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
 
   receive-pro:
     if: github.event.client_payload.pot_content && github.event.action == 'update-pro-pot'
@@ -86,4 +86,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh workflow run translate.yml -f mode=changed -f type=php
+          gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
