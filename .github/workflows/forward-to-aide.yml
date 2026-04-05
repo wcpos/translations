@@ -1,0 +1,72 @@
+# forward-to-aide.yml
+# Called by receive-js-strings.yml and receive-php-strings.yml after they commit
+# source strings. Forwards a translation request to Aide's webhook so Aide can
+# translate the newly committed strings.
+#
+# Required secrets:
+#   OPENCLAW_HOOKS_URL   — public URL of OpenClaw gateway (e.g. https://openclaw.wcpos.com)
+#   OPENCLAW_HOOKS_TOKEN — bearer token matching OPENCLAW_HOOKS_TOKEN in docker-compose
+
+name: Forward strings to Aide
+
+permissions: {}
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Project name (e.g. woocommerce-pos)
+        required: true
+      type:
+        description: Type of strings (js or php)
+        required: true
+        default: js
+
+jobs:
+  forward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Forward to Aide webhook
+        env:
+          OPENCLAW_HOOKS_URL: ${{ secrets.OPENCLAW_HOOKS_URL }}
+          OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
+        run: |
+          project="${{ inputs.project }}"
+          type="${{ inputs.type }}"
+
+          if [ -z "$project" ]; then
+            echo "::error::project input is required"
+            exit 1
+          fi
+
+          # Derive changed_files path from project + type
+          if [ "$type" = "php" ]; then
+            changed_files="[\"source/php/${project}.pot\"]"
+          else
+            changed_files="[\"source/js/${project}/pos.json\"]"
+          fi
+
+          payload=$(jq -n \
+            --arg project "$project" \
+            --argjson changed_files "$changed_files" \
+            '{project: $project, changed_files: $changed_files}')
+
+          echo "Forwarding to Aide: project=$project type=$type"
+
+          http_code=$(curl -s -o /tmp/aide_response.json -w "%{http_code}" \
+            --max-time 30 \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            -X POST \
+            -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$OPENCLAW_HOOKS_URL/hooks/translation-request")
+
+          status=$(jq -r '.status // "unknown"' /tmp/aide_response.json 2>/dev/null || echo "unknown")
+          echo "Aide response: http=$http_code status=$status"
+
+          if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
+            echo "::error::Aide webhook returned HTTP $http_code"
+            exit 1
+          fi

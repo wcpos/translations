@@ -91,4 +91,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh workflow run translate.yml -f mode=changed -f type=js
+          REPO="${{ github.event.client_payload.repo_name }}"
+          gh workflow run forward-to-aide.yml -f project="$REPO" -f type=js
