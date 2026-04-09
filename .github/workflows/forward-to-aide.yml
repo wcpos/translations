@@ -61,7 +61,7 @@ jobs:
             -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$payload" \
-            "$OPENCLAW_HOOKS_URL/hooks/translation-request")
+            "$OPENCLAW_HOOKS_URL/translation/webhook")
 
           status=$(jq -r '.status // "unknown"' /tmp/aide_response.json 2>/dev/null || echo "unknown")
           echo "Aide response: http=$http_code status=$status"
