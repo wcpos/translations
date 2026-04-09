@@ -4,7 +4,6 @@
 # translate the newly committed strings.
 #
 # Required secrets:
-#   OPENCLAW_HOOKS_URL   — public URL of OpenClaw gateway (e.g. https://openclaw.wcpos.com)
 #   OPENCLAW_HOOKS_TOKEN — bearer token matching OPENCLAW_HOOKS_TOKEN in docker-compose
 
 name: Forward strings to Aide
@@ -29,7 +28,6 @@ jobs:
     steps:
       - name: Forward to Aide webhook
         env:
-          OPENCLAW_HOOKS_URL: ${{ secrets.OPENCLAW_HOOKS_URL }}
           OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
         run: |
           project="${{ inputs.project }}"
@@ -61,7 +59,7 @@ jobs:
             -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$payload" \
-            "$OPENCLAW_HOOKS_URL/translation/webhook")
+            "https://openclaw.wcpos.com/translation/webhook")
 
           status=$(jq -r '.status // "unknown"' /tmp/aide_response.json 2>/dev/null || echo "unknown")
           echo "Aide response: http=$http_code status=$status"
