@@ -8,7 +8,8 @@
 
 name: Forward strings to Aide
 
-permissions: {}
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
@@ -26,6 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Checkout translations
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
       - name: Forward to Aide webhook
         env:
           OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
@@ -38,11 +42,26 @@ jobs:
             exit 1
           fi
 
-          # Derive changed_files path from project + type
+          # Build changed_files from actual files on disk
           if [ "$type" = "php" ]; then
-            changed_files="[\"source/php/${project}.pot\"]"
+            source_dir="source/php"
+            pattern="${project}.pot"
           else
-            changed_files="[\"source/js/${project}/pos.json\"]"
+            source_dir="source/js/${project}"
+            pattern="*.json"
+          fi
+
+          if [ ! -d "$source_dir" ]; then
+            echo "::error::Source directory $source_dir does not exist"
+            exit 1
+          fi
+
+          changed_files=$(find "$source_dir" -name "$pattern" -printf '%p\n' | jq -R . | jq -s .)
+          file_count=$(echo "$changed_files" | jq length)
+
+          if [ "$file_count" -eq 0 ]; then
+            echo "::error::No source files found in $source_dir matching $pattern"
+            exit 1
           fi
 
           payload=$(jq -n \
@@ -50,7 +69,8 @@ jobs:
             --argjson changed_files "$changed_files" \
             '{project: $project, changed_files: $changed_files}')
 
-          echo "Forwarding to Aide: project=$project type=$type"
+          echo "Forwarding to Aide: project=$project type=$type files=$file_count"
+          echo "$changed_files" | jq -r '.[]'
 
           http_code=$(curl -s -o /tmp/aide_response.json -w "%{http_code}" \
             --max-time 30 \
