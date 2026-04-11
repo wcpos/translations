@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro hiện là độc lập.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Plugin Pro bao gồm tất cả các tính năng từ phiên bản miễn phí. Bạn có thể vô hiệu hóa và xóa plugin này một cách an toàn.',
 		'Edit Store' => 'Chỉnh sửa Cửa hàng',
+		'All' => 'Tất cả',
 		'Open POS' => 'Mở POS',
 		'Store' => 'Cửa hàng',
 		'Authorized Users' => 'Người dùng được ủy quyền',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro không tải được. Vui lòng chạy composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'bây giờ bao gồm tất cả các tính năng từ plugin miễn phí. Plugin miễn phí độc lập đã được tự động vô hiệu hóa. Bạn có thể xóa nó an toàn khỏi các plugin của mình.',
-		'All authorized users' . "\x04" . 'All' => 'Tất cả',
 	),
 );

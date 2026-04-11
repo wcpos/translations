@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro 現在是獨立的。',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro 插件包含免費版本的所有功能。您可以安全地停用並刪除此插件。',
 		'Edit Store' => '編輯商店',
+		'All' => '所有',
 		'Open POS' => '開啟 POS',
 		'Store' => '商店',
 		'Authorized Users' => '授權用戶',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro 加載失敗。請運行 composer install。',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '現在包含免費插件的所有功能。獨立的免費插件已自動停用。您可以安全地從插件中刪除它。',
-		'All authorized users' . "\x04" . 'All' => '所有',
 	),
 );

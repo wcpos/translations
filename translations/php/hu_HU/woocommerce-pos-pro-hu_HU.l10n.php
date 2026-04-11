@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'A WooCommerce POS Pro mostantól önálló.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'A Pro bővítmény tartalmazza az összes funkciót az ingyenes verzióból. Biztonságosan deaktiválhatja és törölheti ezt a bővítményt.',
 		'Edit Store' => 'Bolt szerkesztése',
+		'All' => 'Összes',
 		'Open POS' => 'POS megnyitása',
 		'Store' => 'Üzlet',
 		'Authorized Users' => 'Engedélyezett felhasználók',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'A WCPOS Pro betöltése nem sikerült. Kérjük, futtassa a composer install parancsot.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'most tartalmazza az összes funkciót az ingyenes bővítményből. Az önálló ingyenes bővítmény automatikusan deaktiválva lett. Nyugodtan törölheti a bővítmények közül.',
-		'All authorized users' . "\x04" . 'All' => 'Összes',
 	),
 );

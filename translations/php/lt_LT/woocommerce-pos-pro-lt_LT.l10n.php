@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro dabar yra savarankiškas.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro įskiepis apima visas nemokamos versijos funkcijas. Galite saugiai išjungti ir ištrinti šį įskiepį.',
 		'Edit Store' => 'Redaguoti parduotuvę',
+		'All' => 'Visi',
 		'Open POS' => 'Atidaryti POS',
 		'Store' => 'Parduotuvė',
 		'Authorized Users' => 'Įgalioti vartotojai',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro nepavyko įkelti. Paleiskite composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'dabar apima visas nemokamo įskiepio funkcijas. Atskirai veikiantis nemokamas įskiepis buvo automatiškai išjungtas. Galite saugiai jį ištrinti iš savo įskiepių.',
-		'All authorized users' . "\x04" . 'All' => 'Visi',
 	),
 );

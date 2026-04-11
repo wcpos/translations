@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro är nu fristående.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro-pluginet inkluderar alla funktioner från gratisversionen. Du kan säkert inaktivera och ta bort detta plugin.',
 		'Edit Store' => 'Redigera butik',
+		'All' => 'Alla',
 		'Open POS' => 'Öppna POS',
 		'Store' => 'Butik',
 		'Authorized Users' => 'Auktoriserade användare',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro kunde inte laddas. Kör composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'innehåller nu alla funktioner från gratispluginet. Det fristående gratispluginet har automatiskt avaktiverats. Du kan säkert ta bort det från dina plugins.',
-		'All authorized users' . "\x04" . 'All' => 'Alla',
 	),
 );

@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro сега е самостоен.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro додатокот ги вклучува сите функции од бесплатната верзија. Можете безбедно да го деактивирате и избришете овој додаток.',
 		'Edit Store' => 'Уреди продавница',
+		'All' => 'Сите',
 		'Open POS' => 'Отвори POS',
 		'Store' => 'Продавница',
 		'Authorized Users' => 'Авторизирани корисници',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro не успеа да се вчита. Ве молиме извршете composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'сега ги вклучува сите функции од бесплатниот додаток. Самостојниот бесплатен додаток е автоматски деактивиран. Може безбедно да го избришете од вашите додатоци.',
-		'All authorized users' . "\x04" . 'All' => 'Сите',
 	),
 );

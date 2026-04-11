@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro ara és independent.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'El complement Pro inclou totes les funcions de la versió gratuïta. Podeu desactivar i eliminar aquest complement amb seguretat.',
 		'Edit Store' => 'Edita botiga',
+		'All' => 'Tots',
 		'Open POS' => 'Obrir POS',
 		'Store' => 'Botiga',
 		'Authorized Users' => 'Usuaris Autoritzats',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'No s\'ha pogut carregar WCPOS Pro. Si us plau, executa composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'ara inclou totes les funcions del complement gratuït. El complement gratuït independent s\'ha desactivat automàticament. Pots eliminar-lo de manera segura dels teus complements.',
-		'All authorized users' . "\x04" . 'All' => 'Tots',
 	),
 );

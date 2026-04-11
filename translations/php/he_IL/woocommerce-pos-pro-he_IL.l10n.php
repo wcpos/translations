@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro הוא כעת עצמאי.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'התוסף Pro כולל את כל התכונות מהגרסה החינמית. ניתן לבטל ולהסיר את התוסף הזה בבטחה.',
 		'Edit Store' => 'ערוך חנות',
+		'All' => 'הכל',
 		'Open POS' => 'פתח POS',
 		'Store' => 'חנות',
 		'Authorized Users' => 'משתמשים מורשים',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro נכשל בטעינה. אנא הפעל את composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'כעת כולל את כל התכונות מהתוסף החינמי. התוסף החינמי העצמאי הושבת אוטומטית. ניתן למחוק אותו בבטחה מהתוספים שלך.',
-		'All authorized users' . "\x04" . 'All' => 'הכל',
 	),
 );

@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro kini berdiri sendiri.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Plugin Pro termasuk semua ciri dari versi percuma. Anda boleh menyahaktifkan dan memadam plugin ini dengan selamat.',
 		'Edit Store' => 'Edit Kedai',
+		'All' => 'Semua',
 		'Open POS' => 'Buka POS',
 		'Store' => 'Kedai',
 		'Authorized Users' => 'Pengguna Sah',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro gagal dimuatkan. Sila jalankan pemasangan composer.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'kini merangkumi semua ciri dari plugin percuma. Plugin percuma yang berdiri sendiri telah dinyahaktifkan secara automatik. Anda boleh menghapuskannya dengan selamat dari plugin anda.',
-		'All authorized users' . "\x04" . 'All' => 'Semua',
 	),
 );

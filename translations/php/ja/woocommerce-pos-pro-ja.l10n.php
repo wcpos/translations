@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Proは現在スタンドアロンです。',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Proプラグインには無料版のすべての機能が含まれています。このプラグインを安全に無効化して削除できます。',
 		'Edit Store' => '店舗を編集',
+		'All' => 'すべて',
 		'Open POS' => 'POSを開く',
 		'Store' => '店舗',
 		'Authorized Users' => '承認されたユーザー',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Proの読み込みに失敗しました。composer installを実行してください。',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '無料プラグインのすべての機能が含まれるようになりました。スタンドアロンの無料プラグインは自動的に無効化されました。プラグインから安全に削除できます。',
-		'All authorized users' . "\x04" . 'All' => 'すべて',
 	),
 );

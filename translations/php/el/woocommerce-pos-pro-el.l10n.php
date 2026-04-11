@@ -12,6 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'Το WooCommerce POS Pro είναι πλέον αυτόνομο.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Το πρόσθετο Pro περιλαμβάνει όλα τα χαρακτηριστικά της δωρεάν έκδοσης. Μπορείτε να απενεργοποιήσετε και να διαγράψετε αυτό το πρόσθετο με ασφάλεια.',
 		'Edit Store' => 'Επεξεργασία Καταστήματος',
+		'All' => 'Όλοι',
 		'Open POS' => 'Άνοιγμα POS',
 		'Store' => 'Κατάστημα',
 		'Authorized Users' => 'Εξουσιοδοτημένοι Χρήστες',
@@ -86,6 +87,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'Η φόρτωση του WCPOS Pro απέτυχε. Παρακαλώ εκτελέστε το composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'περιλαμβάνει πλέον όλα τα χαρακτηριστικά του δωρεάν πρόσθετου. Το αυτόνομο δωρεάν πρόσθετο έχει απενεργοποιηθεί αυτόματα. Μπορείτε να το διαγράψετε με ασφάλεια από τα πρόσθετά σας.',
-		'All authorized users' . "\x04" . 'All' => 'Όλοι',
 	),
 );
