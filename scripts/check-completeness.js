@@ -73,7 +73,17 @@ function checkJsCompleteness() {
   for (const project of JS_PROJECTS) {
     for (const sourceFile of project.files) {
       const sourcePath = path.join(JS_SOURCE_DIR, project.name, sourceFile);
-      const sourceStrings = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
+      let sourceStrings;
+      try {
+        sourceStrings = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
+      } catch (e) {
+        error("Invalid source JSON: " + project.name + "/" + sourceFile + " — " + e.message);
+        continue;
+      }
+      if (!sourceStrings || typeof sourceStrings !== "object" || Array.isArray(sourceStrings)) {
+        error("Invalid source format: " + project.name + "/" + sourceFile + " — expected JSON object");
+        continue;
+      }
       const sourceKeys = Object.keys(sourceStrings);
 
       for (const locale of TRANSLATABLE_LOCALES) {
@@ -94,6 +104,10 @@ function checkJsCompleteness() {
           error("Invalid JSON: " + locale + "/" + project.name + "/" + sourceFile + " — " + e.message);
           continue;
         }
+        if (!translations || typeof translations !== "object" || Array.isArray(translations)) {
+          error("Invalid translation format: " + locale + "/" + project.name + "/" + sourceFile + " — expected JSON object");
+          continue;
+        }
 
         // Missing keys
         const missingKeys = sourceKeys.filter((k) => !(k in translations));
@@ -107,6 +121,7 @@ function checkJsCompleteness() {
         // Placeholder integrity: {foo} tokens
         for (const key of sourceKeys) {
           if (!(key in translations)) continue;
+          if (typeof sourceStrings[key] !== "string" || typeof translations[key] !== "string") continue;
           const srcPH = (sourceStrings[key].match(/\{[^}]+\}/g) || []).sort();
           const trnPH = (translations[key].match(/\{[^}]+\}/g) || []).sort();
           if (srcPH.join(",") !== trnPH.join(",")) {
