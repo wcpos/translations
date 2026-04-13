@@ -21,7 +21,6 @@ const ROOT = path.resolve(__dirname, '..');
 const SOURCE_JS_DIR = path.join(ROOT, 'source/js');
 const TRANSLATIONS_JS_DIR = path.join(ROOT, 'translations/js');
 const LOCALES = JSON.parse(fs.readFileSync(path.join(ROOT, 'locales.json'), 'utf8'));
-const ENGLISH = new Set(['en', 'en_US', 'en_GB']);
 
 function main() {
   const dryRun = process.argv.includes('--dry-run');
@@ -45,7 +44,6 @@ function main() {
       const sourceKeys = Object.keys(sourceStrings);
 
       for (const locale of Object.keys(LOCALES)) {
-        if (ENGLISH.has(locale)) continue;
 
         const transPath = path.join(TRANSLATIONS_JS_DIR, locale, project.name, file);
         if (!fs.existsSync(transPath)) continue;
