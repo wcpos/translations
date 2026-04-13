@@ -138,7 +138,13 @@ function checkPhpCompleteness() {
     const potPath = path.join(PHP_SOURCE_DIR, potFile);
     const potContent = fs.readFileSync(potPath);
     const pot = gettextParser.po.parse(potContent);
-    const potEntries = Object.keys(pot.translations[""] || {}).filter((k) => k !== "");
+    const potEntries = [];
+    for (const [context, contextEntries] of Object.entries(pot.translations || {})) {
+      for (const [msgid, entry] of Object.entries(contextEntries || {})) {
+        if (msgid === "") continue;
+        potEntries.push({ context, msgid, entry });
+      }
+    }
     const totalStrings = potEntries.length;
 
     for (const locale of TRANSLATABLE_LOCALES) {
@@ -159,28 +165,30 @@ function checkPhpCompleteness() {
         continue;
       }
 
-      const translations = po.translations[""] || {};
+      const translationsByContext = po.translations || {};
 
       // Count empty msgstr (untranslated)
       let untranslated = 0;
       const untranslatedExamples = [];
 
-      for (const msgid of potEntries) {
+      for (const { context, msgid } of potEntries) {
+        const translations = translationsByContext[context] || {};
         const entry = translations[msgid];
+        const msgidLabel = context ? "[" + context + "] " + msgid : msgid;
         if (!entry) {
           untranslated++;
           if (untranslatedExamples.length < 3) {
-            untranslatedExamples.push(msgid.slice(0, 60));
+            untranslatedExamples.push(msgidLabel.slice(0, 60));
           }
           continue;
         }
 
         const msgstr = entry.msgstr || [];
-        const isEmpty = msgstr.every((s) => !s || s.trim() === "");
-        if (isEmpty) {
+        const hasEmptyForm = msgstr.some((s) => !s || s.trim() === "");
+        if (hasEmptyForm) {
           untranslated++;
           if (untranslatedExamples.length < 3) {
-            untranslatedExamples.push(msgid.slice(0, 60));
+            untranslatedExamples.push(msgidLabel.slice(0, 60));
           }
         }
       }
@@ -192,23 +200,27 @@ function checkPhpCompleteness() {
 
       // PHP placeholder integrity: %s, %d, %1$s, etc.
       // Check each plural form independently (joining forms creates false positives)
-      for (const msgid of potEntries) {
+      for (const { context, msgid, entry: potEntry } of potEntries) {
+        const translations = translationsByContext[context] || {};
         const entry = translations[msgid];
         if (!entry) continue;
         const forms = entry.msgstr || [];
         if (forms.every((s) => !s || s.trim() === "")) continue;
 
-        const srcPH = (msgid.match(/%(?:\d+\$)?[sdfb]/g) || []).sort();
-        if (srcPH.length === 0) continue;
-
         for (let fi = 0; fi < forms.length; fi++) {
           const form = forms[fi];
           if (!form || form.trim() === "") continue;
+          const sourceText = fi === 0
+            ? msgid
+            : (potEntry.msgid_plural || entry.msgid_plural || msgid);
+          const srcPH = (sourceText.match(/%(?:\d+\$)?[sdfb]/g) || []).sort();
+          if (srcPH.length === 0) continue;
           const trnPH = (form.match(/%(?:\d+\$)?[sdfb]/g) || []).sort();
           if (srcPH.join(",") !== trnPH.join(",")) {
             const formLabel = forms.length > 1 ? " [form " + fi + "]" : "";
+            const msgidLabel = context ? "[" + context + "] " + msgid : msgid;
             error(locale + "/" + poFile + ": placeholder mismatch in \"" +
-              msgid.slice(0, 50) + "\"" + formLabel + " — source [" + srcPH + "], translation [" + trnPH + "]");
+              msgidLabel.slice(0, 50) + "\"" + formLabel + " — source [" + srcPH + "], translation [" + trnPH + "]");
           }
         }
       }
