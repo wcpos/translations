@@ -43,6 +43,7 @@ return array(
 		'Settings failed to load, please contact support' => '설정을 불러오지 못했습니다. 지원팀에 문의하세요',
 		'Receipt Templates' => '영수증 템플릿',
 		'Customise your POS receipts with PHP or logicless templates.' => 'PHP 또는 논리 없는 템플릿으로 POS 영수증을 사용자 정의할 수 있습니다.',
+		'<a href="%s" target="_blank" rel="noopener noreferrer">Read the documentation</a> for a complete reference and examples.' => '<a href="%s" target="_blank" rel="noopener noreferrer">문서 보기</a>하여 전체적인 참고 자료 및 예시를 확인하세요.',
 		'Starter Templates' => '시작 템플릿',
 		'Ready-made examples that demonstrate different receipt styles. Install one to get a working template you can customise.' => '다양한 영수증 스타일을 보여주는 준비된 예제입니다. 설치하면 커스터마이즈할 수 있는 작동하는 템플릿을 얻을 수 있습니다.',
 		'Offline' => '오프라인',
