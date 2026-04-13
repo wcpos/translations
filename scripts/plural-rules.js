@@ -38,7 +38,7 @@ const PLURAL_SUFFIXES = {
   da: ['one', 'other'],
   nb_NO: ['one', 'other'],
   el: ['one', 'other'],
-  he_IL: ['one', 'other'],
+  he_IL: ['one', 'two', 'other'],
   hi_IN: ['one', 'other'],
   hu_HU: ['one', 'other'],
   tr_TR: ['one', 'other'],
@@ -48,7 +48,7 @@ const PLURAL_SUFFIXES = {
   et: ['one', 'other'],
   fi: ['one', 'other'],
   is_IS: ['one', 'other'],
-  lt_LT: ['one', 'other'],
+  lt_LT: ['one', 'few', 'many', 'other'],
   mk_MK: ['one', 'other'],
 
   // Slavic (one, few, many, other)
