@@ -32,6 +32,7 @@ const LOCALE_NAMES = require('../locales.json');
 const PLURAL_SUFFIXES = {
   // East Asian (no plural forms - just "other")
   ja: ['other'],
+  zh: ['other'],
   zh_CN: ['other'],
   zh_TW: ['other'],
   ko_KR: ['other'],

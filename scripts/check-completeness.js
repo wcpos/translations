@@ -31,6 +31,52 @@ const TRANSLATABLE_LOCALES = LOCALE_CODES.filter(
   (l) => !ENGLISH_LOCALES.has(l)
 );
 
+// i18next plural suffixes per locale based on CLDR plural rules.
+const PLURAL_SUFFIXES = {
+  ja: ["other"], zh: ["other"], zh_CN: ["other"], zh_TW: ["other"], ko_KR: ["other"],
+  vi: ["other"], th: ["other"], id_ID: ["other"], ms_MY: ["other"],
+  ar: ["zero", "one", "two", "few", "many", "other"],
+  ru_RU: ["one", "few", "many", "other"], uk: ["one", "few", "many", "other"],
+  pl_PL: ["one", "few", "many", "other"], cs: ["one", "few", "many", "other"],
+  ro_RO: ["one", "few", "other"],
+};
+const DEFAULT_PLURAL_SUFFIXES = ["one", "other"];
+const ALL_SUFFIXES = ["zero", "one", "two", "few", "many", "other"];
+const SUFFIX_RE = new RegExp("^(.+)_(" + ALL_SUFFIXES.join("|") + ")$");
+
+/**
+ * Compute the set of expected keys for a given locale.
+ * Plural keys are expanded to only the suffixes required by that locale.
+ */
+function expectedKeysForLocale(sourceKeys, locale) {
+  const suffixes = PLURAL_SUFFIXES[locale] || DEFAULT_PLURAL_SUFFIXES;
+
+  // Identify plural base keys in source
+  const pluralBases = new Set();
+  for (const k of sourceKeys) {
+    const m = k.match(SUFFIX_RE);
+    if (m) pluralBases.add(m[1]);
+  }
+
+  const expected = new Set();
+  for (const k of sourceKeys) {
+    const m = k.match(SUFFIX_RE);
+    if (m && pluralBases.has(m[1])) {
+      // Only include if this suffix is required for the locale
+      if (suffixes.includes(m[2])) expected.add(k);
+    } else {
+      expected.add(k);
+    }
+  }
+  // Add locale-specific plural forms that may not be in source
+  for (const base of pluralBases) {
+    for (const s of suffixes) {
+      expected.add(base + "_" + s);
+    }
+  }
+  return expected;
+}
+
 // Discover JS source files
 const JS_SOURCE_DIR = path.join(ROOT, "source/js");
 const JS_PROJECTS = fs
@@ -109,8 +155,11 @@ function checkJsCompleteness() {
           continue;
         }
 
+        // Compute locale-aware expected keys (respects CLDR plural rules)
+        const expected = expectedKeysForLocale(sourceKeys, locale);
+
         // Missing keys
-        const missingKeys = sourceKeys.filter((k) => !(k in translations));
+        const missingKeys = [...expected].filter((k) => !(k in translations));
         if (missingKeys.length > 0) {
           const examples = missingKeys.slice(0, 3).join(", ");
           const suffix = missingKeys.length > 3 ? "..." : "";
@@ -130,8 +179,8 @@ function checkJsCompleteness() {
           }
         }
 
-        // Stale keys (in translation but not in source)
-        const staleKeys = Object.keys(translations).filter((k) => !(k in sourceStrings));
+        // Stale keys (in translation but not expected for this locale)
+        const staleKeys = Object.keys(translations).filter((k) => !expected.has(k));
         if (staleKeys.length > 0) {
           const examples = staleKeys.slice(0, 3).join(", ");
           const suffix = staleKeys.length > 3 ? "..." : "";
