@@ -33,8 +33,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Validate translations
+      - name: Validate translations (format)
         run: node scripts/validate-translations.js
+
+      - name: Check completeness & placeholders
+        run: pnpm run check:completeness
 
       - name: Calculate version
         id: version
