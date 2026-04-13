@@ -18,6 +18,7 @@
 const fs = require("fs");
 const path = require("path");
 const gettextParser = require("gettext-parser");
+const { expectedKeysForLocale } = require("./plural-rules");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES = JSON.parse(
@@ -30,52 +31,6 @@ const ENGLISH_LOCALES = new Set(["en", "en_US", "en_GB"]);
 const TRANSLATABLE_LOCALES = LOCALE_CODES.filter(
   (l) => !ENGLISH_LOCALES.has(l)
 );
-
-// i18next plural suffixes per locale based on CLDR plural rules.
-const PLURAL_SUFFIXES = {
-  ja: ["other"], zh: ["other"], zh_CN: ["other"], zh_TW: ["other"], ko_KR: ["other"],
-  vi: ["other"], th: ["other"], id_ID: ["other"], ms_MY: ["other"],
-  ar: ["zero", "one", "two", "few", "many", "other"],
-  ru_RU: ["one", "few", "many", "other"], uk: ["one", "few", "many", "other"],
-  pl_PL: ["one", "few", "many", "other"], cs: ["one", "few", "many", "other"],
-  ro_RO: ["one", "few", "other"],
-};
-const DEFAULT_PLURAL_SUFFIXES = ["one", "other"];
-const ALL_SUFFIXES = ["zero", "one", "two", "few", "many", "other"];
-const SUFFIX_RE = new RegExp("^(.+)_(" + ALL_SUFFIXES.join("|") + ")$");
-
-/**
- * Compute the set of expected keys for a given locale.
- * Plural keys are expanded to only the suffixes required by that locale.
- */
-function expectedKeysForLocale(sourceKeys, locale) {
-  const suffixes = PLURAL_SUFFIXES[locale] || DEFAULT_PLURAL_SUFFIXES;
-
-  // Identify plural base keys in source
-  const pluralBases = new Set();
-  for (const k of sourceKeys) {
-    const m = k.match(SUFFIX_RE);
-    if (m) pluralBases.add(m[1]);
-  }
-
-  const expected = new Set();
-  for (const k of sourceKeys) {
-    const m = k.match(SUFFIX_RE);
-    if (m && pluralBases.has(m[1])) {
-      // Only include if this suffix is required for the locale
-      if (suffixes.includes(m[2])) expected.add(k);
-    } else {
-      expected.add(k);
-    }
-  }
-  // Add locale-specific plural forms that may not be in source
-  for (const base of pluralBases) {
-    for (const s of suffixes) {
-      expected.add(base + "_" + s);
-    }
-  }
-  return expected;
-}
 
 // Discover JS source files
 const JS_SOURCE_DIR = path.join(ROOT, "source/js");

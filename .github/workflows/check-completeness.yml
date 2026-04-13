@@ -1,0 +1,96 @@
+name: Check Translation Completeness
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Daily at 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run completeness check
+        id: check
+        run: |
+          set +e
+          output=$(node scripts/check-completeness.js --warn-only 2>&1)
+          exit_code=$?
+          set -e
+
+          echo "$output"
+
+          errors=$(echo "$output" | grep -c "ERROR:" || true)
+          warnings=$(echo "$output" | grep -c "WARN:" || true)
+          echo "errors=$errors" >> $GITHUB_OUTPUT
+          echo "warnings=$warnings" >> $GITHUB_OUTPUT
+
+          # Save output for issue body (truncate if too long)
+          {
+            echo 'report<<REPORT_EOF'
+            echo "$output" | tail -100
+            echo 'REPORT_EOF'
+          } >> $GITHUB_OUTPUT
+
+      - name: Create or update issue
+        if: steps.check.outputs.errors != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Translation completeness: ${{ steps.check.outputs.errors }} errors"
+          LABEL="translation-gaps"
+
+          # Ensure label exists
+          gh label create "$LABEL" --description "Missing or incomplete translations" --color "d93f0b" 2>/dev/null || true
+
+          # Close any existing issue with same label (avoid duplicates)
+          EXISTING=$(gh issue list --label "$LABEL" --state open --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --comment "Superseded by new completeness check."
+          fi
+
+          gh issue create \
+            --title "$TITLE" \
+            --label "$LABEL" \
+            --body "$(cat <<'EOF'
+          ## Daily Translation Completeness Check
+
+          **Errors:** ${{ steps.check.outputs.errors }}
+          **Warnings:** ${{ steps.check.outputs.warnings }}
+
+          <details>
+          <summary>Full report</summary>
+
+          ```
+          ${{ steps.check.outputs.report }}
+          ```
+
+          </details>
+
+          Run \`pnpm run check:completeness\` locally for the full output.
+
+          ### How to fix
+          Trigger the Aide translation pipeline for the affected projects:
+          ```bash
+          gh workflow run forward-to-aide.yml -f project=monorepo -f type=js
+          gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
+          ```
+          EOF
+          )"

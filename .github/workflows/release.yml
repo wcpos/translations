@@ -33,6 +33,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Clean up stale keys
+        run: pnpm run cleanup:stale
+
+      - name: Generate fallback locales
+        run: pnpm run generate:fallbacks
+
       - name: Validate translations (format)
         run: node scripts/validate-translations.js
 
