@@ -39,6 +39,15 @@ jobs:
       - name: Generate fallback locales
         run: pnpm run generate:fallbacks
 
+      - name: Commit cleanup changes (if any)
+        run: |
+          if [ -n "$(git status --porcelain --untracked-files=all -- translations)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add translations/
+            git commit -m "chore: auto-cleanup stale keys and regenerate fallbacks"
+          fi
+
       - name: Validate translations (format)
         run: node scripts/validate-translations.js
 
