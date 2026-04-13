@@ -24,78 +24,7 @@ const { glob } = require('glob');
 const openai = new OpenAI();
 
 const LOCALE_NAMES = require('../locales.json');
-
-/**
- * i18next plural suffixes per locale based on CLDR plural rules.
- * Each locale needs specific suffixes; i18next selects based on count.
- */
-const PLURAL_SUFFIXES = {
-  // East Asian (no plural forms - just "other")
-  ja: ['other'],
-  zh_CN: ['other'],
-  zh_TW: ['other'],
-  ko_KR: ['other'],
-  vi: ['other'],
-  th: ['other'],
-  id_ID: ['other'],
-  ms_MY: ['other'],
-
-  // Germanic, Romance, etc. (one, other)
-  en_GB: ['one', 'other'],
-  en_US: ['one', 'other'],
-  de_DE: ['one', 'other'],
-  de_AT: ['one', 'other'],
-  nl_NL: ['one', 'other'],
-  nl_BE: ['one', 'other'],
-  fr_FR: ['one', 'other'],
-  fr_CA: ['one', 'other'],
-  es_ES: ['one', 'other'],
-  es_MX: ['one', 'other'],
-  es_AR: ['one', 'other'],
-  it_IT: ['one', 'other'],
-  pt_BR: ['one', 'other'],
-  pt_PT: ['one', 'other'],
-  sv_SE: ['one', 'other'],
-  da: ['one', 'other'],
-  nb_NO: ['one', 'other'],
-  el: ['one', 'other'],
-  he_IL: ['one', 'other'],
-  hi_IN: ['one', 'other'],
-  hu_HU: ['one', 'other'],
-  tr_TR: ['one', 'other'],
-  fa_IR: ['one', 'other'],
-
-  // Slavic (one, few, many, other)
-  ru_RU: ['one', 'few', 'many', 'other'],
-  uk: ['one', 'few', 'many', 'other'],
-  pl_PL: ['one', 'few', 'many', 'other'],
-  cs: ['one', 'few', 'many', 'other'],
-
-  // Romanian (one, few, other)
-  ro_RO: ['one', 'few', 'other'],
-
-  // Arabic (zero, one, two, few, many, other)
-  ar: ['zero', 'one', 'two', 'few', 'many', 'other'],
-};
-
-// Default for unknown locales
-const DEFAULT_PLURAL_SUFFIXES = ['one', 'other'];
-
-function getPluralSuffixes(locale) {
-  return PLURAL_SUFFIXES[locale] || DEFAULT_PLURAL_SUFFIXES;
-}
-
-/**
- * Extract base key and suffix from a plural key.
- * e.g., "product_found_locally_one" -> { base: "product_found_locally", suffix: "one" }
- */
-function parsePluralKey(key) {
-  const match = key.match(/^(.+)_(zero|one|two|few|many|other)$/);
-  if (match) {
-    return { base: match[1], suffix: match[2] };
-  }
-  return null;
-}
+const { getPluralSuffixes, parsePluralKey } = require('./plural-rules');
 
 const SOURCE_JS_DIR = path.resolve(__dirname, '../source/js');
 const SOURCE_PHP_DIR = path.resolve(__dirname, '../source/php');

@@ -18,6 +18,7 @@
 const fs = require("fs");
 const path = require("path");
 const gettextParser = require("gettext-parser");
+const { expectedKeysForLocale, parsePluralKey } = require("./plural-rules");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES = JSON.parse(
@@ -109,8 +110,11 @@ function checkJsCompleteness() {
           continue;
         }
 
+        // Compute locale-aware expected keys (respects CLDR plural rules)
+        const expected = expectedKeysForLocale(sourceKeys, locale);
+
         // Missing keys
-        const missingKeys = sourceKeys.filter((k) => !(k in translations));
+        const missingKeys = [...expected].filter((k) => !(k in translations));
         if (missingKeys.length > 0) {
           const examples = missingKeys.slice(0, 3).join(", ");
           const suffix = missingKeys.length > 3 ? "..." : "";
@@ -119,10 +123,29 @@ function checkJsCompleteness() {
         }
 
         // Placeholder integrity: {foo} tokens
-        for (const key of sourceKeys) {
+        // Check all expected keys, including generated plural forms (_two, _few, etc.)
+        for (const key of expected) {
           if (!(key in translations)) continue;
-          if (typeof sourceStrings[key] !== "string" || typeof translations[key] !== "string") continue;
-          const srcPH = (sourceStrings[key].match(/\{[^}]+\}/g) || []).sort();
+          if (typeof translations[key] !== "string") continue;
+
+          // Find the source string: either directly in source, or from a sibling plural form
+          let sourceText = sourceStrings[key];
+          if (typeof sourceText !== "string") {
+            const parsed = parsePluralKey(key);
+            if (parsed) {
+              // Look for any sibling plural form in source (e.g. _one or _other)
+              for (const sk of sourceKeys) {
+                const sp = parsePluralKey(sk);
+                if (sp && sp.base === parsed.base) {
+                  sourceText = sourceStrings[sk];
+                  break;
+                }
+              }
+            }
+          }
+          if (typeof sourceText !== "string") continue;
+
+          const srcPH = (sourceText.match(/\{[^}]+\}/g) || []).sort();
           const trnPH = (translations[key].match(/\{[^}]+\}/g) || []).sort();
           if (srcPH.join(",") !== trnPH.join(",")) {
             error(locale + "/" + project.name + "/" + sourceFile + ":" + key +
@@ -130,8 +153,8 @@ function checkJsCompleteness() {
           }
         }
 
-        // Stale keys (in translation but not in source)
-        const staleKeys = Object.keys(translations).filter((k) => !(k in sourceStrings));
+        // Stale keys (in translation but not expected for this locale)
+        const staleKeys = Object.keys(translations).filter((k) => !expected.has(k));
         if (staleKeys.length > 0) {
           const examples = staleKeys.slice(0, 3).join(", ");
           const suffix = staleKeys.length > 3 ? "..." : "";
