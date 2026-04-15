@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: write
 
 jobs:
   check:
@@ -36,6 +37,7 @@ jobs:
           set -e
 
           echo "$output"
+          printf '%s\n' "$output" > completeness-report.txt
 
           errors=$(echo "$output" | grep -c "ERROR:" || true)
           warnings=$(echo "$output" | grep -c "WARN:" || true)
@@ -69,8 +71,7 @@ jobs:
           gh issue create \
             --title "$TITLE" \
             --label "$LABEL" \
-            --body "$(cat <<'EOF'
-          ## Daily Translation Completeness Check
+            --body "## Daily Translation Completeness Check
 
           **Errors:** ${{ steps.check.outputs.errors }}
           **Warnings:** ${{ steps.check.outputs.warnings }}
@@ -78,19 +79,40 @@ jobs:
           <details>
           <summary>Full report</summary>
 
-          ```
+          \`\`\`
           ${{ steps.check.outputs.report }}
-          ```
+          \`\`\`
 
           </details>
 
-          Run \`pnpm run check:completeness\` locally for the full output.
+          Aide translation pipeline triggered automatically for affected projects."
 
-          ### How to fix
-          Trigger the Aide translation pipeline for the affected projects:
-          ```bash
-          gh workflow run forward-to-aide.yml -f project=monorepo -f type=js
-          gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
-          ```
-          EOF
-          )"
+      - name: Trigger Aide for affected projects
+        if: steps.check.outputs.errors != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          report_file="completeness-report.txt"
+          if [ ! -f "$report_file" ]; then
+            echo "Full completeness report file not found; skipping auto-trigger."
+            exit 0
+          fi
+
+          # Detect affected JS projects
+          for project in monorepo electron woocommerce-pos woocommerce-pos-pro; do
+            if grep -Eq "ERROR:.*(${project}/.*missing keys|Missing file: .*/${project}/)" "$report_file"; then
+              echo "Triggering Aide for JS project: $project"
+              gh workflow run forward-to-aide.yml -f project="$project" -f type=js
+            fi
+          done
+
+          # Detect affected PHP projects (check filenames in error lines)
+          if grep -q "ERROR:.*woocommerce-pos-pro-.*\.po:" "$report_file"; then
+            echo "Triggering Aide for PHP project: woocommerce-pos-pro"
+            gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
+          fi
+          # woocommerce-pos .po files don't have "pro" in the name
+          if grep "ERROR:" "$report_file" | grep '\.po:' | grep -qv 'pos-pro'; then
+            echo "Triggering Aide for PHP project: woocommerce-pos"
+            gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
+          fi

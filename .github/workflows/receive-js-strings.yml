@@ -47,6 +47,23 @@ jobs:
           echo "Copied files from wcpos/$REPO@${{ github.event.client_payload.ref }}:"
           ls -la "source/js/$REPO/"
 
+      - name: Normalize JSON formatting
+        run: |
+          REPO="${{ github.event.client_payload.repo_name }}"
+          for f in source/js/$REPO/*.json; do
+            [ -f "$f" ] || continue
+            python3 -c "
+          import json
+          path = '$f'
+          with open(path) as fh:
+              data = json.load(fh)
+          with open(path, 'w') as fh:
+              json.dump(data, fh, indent=2, ensure_ascii=False, sort_keys=True)
+              fh.write('\n')
+          "
+          done
+          echo "Normalized JSON files in source/js/$REPO/"
+
       - name: Validate source key counts
         run: |
           REPO="${{ github.event.client_payload.repo_name }}"
