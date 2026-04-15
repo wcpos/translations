@@ -37,6 +37,7 @@ jobs:
           set -e
 
           echo "$output"
+          printf '%s\n' "$output" > completeness-report.txt
 
           errors=$(echo "$output" | grep -c "ERROR:" || true)
           warnings=$(echo "$output" | grep -c "WARN:" || true)
@@ -91,23 +92,27 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          report="${{ steps.check.outputs.report }}"
+          report_file="completeness-report.txt"
+          if [ ! -f "$report_file" ]; then
+            echo "Full completeness report file not found; skipping auto-trigger."
+            exit 0
+          fi
 
           # Detect affected JS projects
           for project in monorepo electron woocommerce-pos woocommerce-pos-pro; do
-            if echo "$report" | grep -q "ERROR:.*${project}/.*missing keys"; then
+            if grep -Eq "ERROR:.*(${project}/.*missing keys|Missing file: .*/${project}/)" "$report_file"; then
               echo "Triggering Aide for JS project: $project"
               gh workflow run forward-to-aide.yml -f project="$project" -f type=js
             fi
           done
 
           # Detect affected PHP projects (check filenames in error lines)
-          if echo "$report" | grep -q "ERROR:.*woocommerce-pos-pro-.*\.po:"; then
+          if grep -q "ERROR:.*woocommerce-pos-pro-.*\.po:" "$report_file"; then
             echo "Triggering Aide for PHP project: woocommerce-pos-pro"
             gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
           fi
           # woocommerce-pos .po files don't have "pro" in the name
-          if echo "$report" | grep "ERROR:" | grep '\.po:' | grep -qv 'pos-pro'; then
+          if grep "ERROR:" "$report_file" | grep '\.po:' | grep -qv 'pos-pro'; then
             echo "Triggering Aide for PHP project: woocommerce-pos"
             gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
           fi
