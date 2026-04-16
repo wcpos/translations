@@ -64,13 +64,20 @@ const CONSUMER_REPOS = {
 };
 
 function run(cmd, args = [], options = {}) {
+  const { allowFailure, ...spawnOptions } = options;
   const result = spawnSync(cmd, args, {
     encoding: 'utf8',
     stdio: ['ignore', 'pipe', 'pipe'],
-    ...options,
+    timeout: 120000,
+    killSignal: 'SIGTERM',
+    ...spawnOptions,
   });
 
-  if (options.allowFailure) {
+  if (result.error) {
+    throw new Error(`${cmd} ${args.join(' ')} failed: ${result.error.message}`);
+  }
+
+  if (allowFailure) {
     return result;
   }
 
@@ -214,7 +221,7 @@ async function updateRepo(repoKey, version, tempRoot) {
 
   const commitMessage = buildPrTitle(version);
   run('git', ['commit', '-m', commitMessage], { cwd });
-  run('git', ['push', '-u', 'origin', config.branch], { cwd });
+  run('git', ['push', '--force-with-lease', '-u', 'origin', config.branch], { cwd });
 
   const prNumber = getOpenPrNumber(config.repo, config.branch);
   const prTitle = buildPrTitle(version);
