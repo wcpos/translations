@@ -16,8 +16,8 @@ const CONSUMER_REPOS = {
     file: 'packages/core/src/contexts/translations/rxdb-backend.ts',
     replacements: [
       {
-        pattern: /TRANSLATION_VERSION = '([^']+)'/g,
-        replace: (_, currentVersion, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
+        pattern: /TRANSLATION_VERSION = '[^']+'/g,
+        replace: (_, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
       },
     ],
   },
@@ -28,8 +28,8 @@ const CONSUMER_REPOS = {
     file: 'src/main/translations/index.ts',
     replacements: [
       {
-        pattern: /TRANSLATION_VERSION = '([^']+)'/g,
-        replace: (_, currentVersion, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
+        pattern: /TRANSLATION_VERSION = '[^']+'/g,
+        replace: (_, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
       },
     ],
   },
@@ -40,8 +40,8 @@ const CONSUMER_REPOS = {
     file: 'woocommerce-pos.php',
     replacements: [
       {
-        pattern: /TRANSLATION_VERSION', '([^']+)'/g,
-        replace: (_, currentVersion, nextVersion) => `TRANSLATION_VERSION', '${nextVersion}'`,
+        pattern: /TRANSLATION_VERSION', '[^']+'/g,
+        replace: (_, nextVersion) => `TRANSLATION_VERSION', '${nextVersion}'`,
       },
     ],
   },
@@ -52,12 +52,12 @@ const CONSUMER_REPOS = {
     file: 'woocommerce-pos-pro.php',
     replacements: [
       {
-        pattern: /TRANSLATION_VERSION = '([^']+)'/g,
-        replace: (_, currentVersion, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
+        pattern: /TRANSLATION_VERSION = '[^']+'/g,
+        replace: (_, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
       },
       {
-        pattern: /TRANSLATION_VERSION', '([^']+)'/g,
-        replace: (_, currentVersion, nextVersion) => `TRANSLATION_VERSION', '${nextVersion}'`,
+        pattern: /TRANSLATION_VERSION', '[^']+'/g,
+        replace: (_, nextVersion) => `TRANSLATION_VERSION', '${nextVersion}'`,
       },
     ],
   },
@@ -102,8 +102,8 @@ function applyReplacements(content, replacements, version, repoKey) {
       throw new Error(`No match found for ${repoKey} using pattern ${replacement.pattern}`);
     }
 
-    updated = updated.replace(replacement.pattern, (match, currentVersion) =>
-      replacement.replace(match, currentVersion, version)
+    updated = updated.replace(replacement.pattern, (match) =>
+      replacement.replace(match, version)
     );
   }
 
@@ -131,9 +131,8 @@ function remoteBranchExists(cwd, branch) {
   return result.status === 0;
 }
 
-function getHeadRef(repo, branch) {
-  const owner = repo.split('/')[0];
-  return `${owner}:${branch}`;
+function getHeadRef(branch) {
+  return branch;
 }
 
 function getOpenPrNumber(repo, branch) {
@@ -145,7 +144,7 @@ function getOpenPrNumber(repo, branch) {
     '--state',
     'open',
     '--head',
-    getHeadRef(repo, branch),
+    getHeadRef(branch),
     '--json',
     'number',
     '--jq',
@@ -179,6 +178,7 @@ async function prepareRepoCheckout(tempRoot, repoKey, config) {
 
   if (remoteBranchExists(cwd, config.branch)) {
     run('git', ['checkout', '-B', config.branch, `origin/${config.branch}`], { cwd });
+    run('git', ['reset', '--hard', `origin/${config.baseBranch}`], { cwd });
   } else {
     run('git', ['checkout', '-B', config.branch, `origin/${config.baseBranch}`], { cwd });
   }
@@ -234,7 +234,7 @@ async function updateRepo(repoKey, version, tempRoot) {
     '--base',
     config.baseBranch,
     '--head',
-    getHeadRef(config.repo, config.branch),
+    getHeadRef(config.branch),
     '--title',
     prTitle,
     '--body',

@@ -31,6 +31,11 @@ test('accepts valid CalVer versions', () => {
 test('rejects invalid versions', () => {
   assert.throws(() => validateVersion('2026-4-47'), /Invalid version format/);
   assert.throws(() => validateVersion('foo'), /Invalid version format/);
+  assert.throws(() => validateVersion(''), /Invalid version format/);
+  assert.throws(() => validateVersion(null), /Invalid version format/);
+  assert.throws(() => validateVersion(undefined), /Invalid version format/);
+  assert.throws(() => validateVersion('2026.4'), /Invalid version format/);
+  assert.throws(() => validateVersion('2026.4.47.0'), /Invalid version format/);
 });
 
 test('all consumer repos use the stable update branch', () => {
