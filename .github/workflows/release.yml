@@ -127,15 +127,9 @@ jobs:
           owner: wcpos
           repositories: monorepo,electron,woocommerce-pos,woocommerce-pos-pro
 
-      - name: Notify consuming repos
+      - name: Update consuming repos
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           VERSION="${{ steps.version.outputs.version }}"
-          for repo in monorepo electron woocommerce-pos woocommerce-pos-pro; do
-            echo "Dispatching translation-release to wcpos/$repo with version $VERSION..."
-            gh api "repos/wcpos/$repo/dispatches" \
-              --method POST \
-              -f event_type=translation-release \
-              -f "client_payload[version]=$VERSION" || echo "Warning: failed to notify $repo"
-          done
+          node scripts/update-consumer-version-prs.js "$VERSION"

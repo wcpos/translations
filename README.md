@@ -18,7 +18,7 @@ Source repos push strings to this repo via `repository_dispatch`. The pipeline t
 2. **Translate** — Auto-triggered in `changed` mode (only new/modified strings)
 3. **PR** — Created automatically for human review
 4. **Release** — Auto-created on merge using CalVer (`YYYY.M.N`)
-5. **Notify** — Consuming repos receive the new version via `repository_dispatch`
+5. **Update consumers** — This repo opens or updates version-bump PRs in consuming repos
 
 ## Versioning
 
@@ -38,7 +38,7 @@ Versions are decoupled from plugin/app versions. Each consumer pins the translat
 | Receive PHP Strings | `repository_dispatch` | Commit PHP POT files, trigger translate |
 | Translate | Auto or manual | AI translate to all locales (incremental) |
 | Translation QA | Manual | Back-translation quality checks |
-| Release | Auto on merge or manual | CalVer tag + GitHub Release + notify consumers |
+| Release | Auto on merge or manual | CalVer tag + GitHub Release + update/reuse consumer PRs |
 
 ## JS Distribution (jsDelivr)
 
