@@ -5,6 +5,7 @@
 #
 # Required secrets:
 #   OPENCLAW_HOOKS_TOKEN — bearer token matching OPENCLAW_HOOKS_TOKEN in docker-compose
+#   TRANSLATION_STATUS_TOKEN — bearer token that can read GET /api/tasks/:id for polling
 
 name: Forward strings to Aide
 
@@ -32,13 +33,25 @@ jobs:
 
       - name: Forward to Aide webhook
         env:
+          OPENCLAW_BASE_URL: https://openclaw.wcpos.com
           OPENCLAW_HOOKS_TOKEN: ${{ secrets.OPENCLAW_HOOKS_TOKEN }}
+          TRANSLATION_STATUS_TOKEN: ${{ secrets.TRANSLATION_STATUS_TOKEN }}
         run: |
           project="${{ inputs.project }}"
           type="${{ inputs.type }}"
 
           if [ -z "$project" ]; then
             echo "::error::project input is required"
+            exit 1
+          fi
+
+          if [ -z "$OPENCLAW_HOOKS_TOKEN" ]; then
+            echo "::error::OPENCLAW_HOOKS_TOKEN secret is required"
+            exit 1
+          fi
+
+          if [ -z "$TRANSLATION_STATUS_TOKEN" ]; then
+            echo "::error::TRANSLATION_STATUS_TOKEN secret is required to poll translation task status"
             exit 1
           fi
 
@@ -79,12 +92,15 @@ jobs:
             -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$payload" \
-            "https://openclaw.wcpos.com/translation/webhook")
+            "$OPENCLAW_BASE_URL/translation/webhook")
 
-          status=$(jq -r '.status // "unknown"' /tmp/aide_response.json 2>/dev/null || echo "unknown")
+          status=$(jq -r '.status // (if .accepted == true then "accepted" else "unknown" end)' /tmp/aide_response.json 2>/dev/null || echo "unknown")
           echo "Aide response: http=$http_code status=$status"
 
           if [ "$http_code" -lt 200 ] || [ "$http_code" -ge 300 ]; then
             echo "::error::Aide webhook returned HTTP $http_code"
+            cat /tmp/aide_response.json
             exit 1
           fi
+
+          node scripts/wait-for-openclaw-task.js /tmp/aide_response.json
