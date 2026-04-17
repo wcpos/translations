@@ -128,8 +128,58 @@ test('main requires TRANSLATION_STATUS_TOKEN for polling', async () => {
 
   await assert.rejects(
     () => main([responsePath], { OPENCLAW_BASE_URL: 'https://openclaw.example' }),
-    /TRANSLATION_STATUS_TOKEN/
+    /TRANSLATION_STATUS_TOKEN.*OPENCLAW_API_TOKEN/
   );
+});
+
+test('main does not log duplicate terminal task details', async () => {
+  const fs = require('node:fs');
+  const os = require('node:os');
+  const path = require('node:path');
+  const { main } = require('../scripts/wait-for-openclaw-task');
+
+  const responsePath = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'openclaw-response-')), 'response.json');
+  fs.writeFileSync(responsePath, JSON.stringify({
+    accepted: true,
+    job_id: 'translation:cli-logs',
+    poll_url: '/api/tasks/translation:cli-logs',
+  }));
+
+  const originalFetch = global.fetch;
+  const originalConsoleLog = console.log;
+  const capturedLogs = [];
+
+  global.fetch = async () => ({
+    ok: true,
+    status: 200,
+    async json() {
+      return {
+        status: 'completed',
+        output: '{"status":"ok","summary":"done"}',
+      };
+    },
+  });
+  console.log = (...args) => {
+    capturedLogs.push(args.join(' '));
+  };
+
+  try {
+    await main([responsePath], {
+      OPENCLAW_BASE_URL: 'https://openclaw.example',
+      TRANSLATION_STATUS_TOKEN: 'secret-token',
+      OPENCLAW_POLL_INTERVAL_MS: '0',
+      OPENCLAW_POLL_TIMEOUT_MS: '100',
+    });
+  } finally {
+    global.fetch = originalFetch;
+    console.log = originalConsoleLog;
+  }
+
+  const detailLogs = capturedLogs.filter((line) => line.includes('output={"status":"ok","summary":"done"}'));
+  assert.deepEqual(detailLogs, [
+    'OpenClaw task reached terminal success: output={"status":"ok","summary":"done"}',
+  ]);
+  assert.ok(capturedLogs.includes('OpenClaw job translation:cli-logs finished with status completed'));
 });
 
 test('throws when polling times out before terminal status', async () => {

@@ -108,7 +108,7 @@ async function pollTaskUntilTerminal({
     throw new Error('pollUrl is required');
   }
   if (!apiToken) {
-    throw new Error('TRANSLATION_STATUS_TOKEN is required to poll OpenClaw task status');
+    throw new Error('TRANSLATION_STATUS_TOKEN or OPENCLAW_API_TOKEN is required to poll OpenClaw task status');
   }
   if (typeof fetchImpl !== 'function') {
     throw new Error('A fetch implementation is required to poll OpenClaw task status');
@@ -198,9 +198,6 @@ async function main(argv = process.argv.slice(2), env = process.env) {
   });
 
   console.log(`OpenClaw job ${jobId} finished with status ${task.status}`);
-  if (task.output) {
-    console.log(`OpenClaw summary: ${formatTaskDetails(task)}`);
-  }
 }
 
 module.exports = {
