@@ -62,6 +62,32 @@ test('polls until completed status', async () => {
   ]);
 });
 
+test('uses a fixed per-request timeout instead of poll interval length', async () => {
+  const seenTimeouts = [];
+
+  await pollTaskUntilTerminal({
+    pollUrl: 'https://openclaw.example/api/tasks/translation:signal',
+    apiToken: 'secret-token',
+    fetchImpl: async () => ({
+      ok: true,
+      status: 200,
+      async json() {
+        return { status: 'completed', output: '{"status":"ok"}' };
+      },
+    }),
+    intervalMs: 60_000,
+    timeoutMs: 100,
+    sleep: async () => {},
+    logger: { log() {} },
+    createTimeoutSignal: (ms) => {
+      seenTimeouts.push(ms);
+      return { timeoutMs: ms };
+    },
+  });
+
+  assert.deepEqual(seenTimeouts, [30_000]);
+});
+
 test('throws on failed terminal status with task details', async () => {
   await assert.rejects(
     () => pollTaskUntilTerminal({

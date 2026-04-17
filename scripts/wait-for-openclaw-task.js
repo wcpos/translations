@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const DEFAULT_BASE_URL = 'https://openclaw.wcpos.com';
 const DEFAULT_INTERVAL_MS = 10_000;
 const DEFAULT_TIMEOUT_MS = 4 * 60 * 1000;
+const REQUEST_TIMEOUT_MS = 30_000;
 const TERMINAL_SUCCESS_STATUS = 'completed';
 const TERMINAL_FAILURE_STATUSES = new Set(['failed', 'relay_failed']);
 
@@ -99,6 +100,9 @@ async function pollTaskUntilTerminal({
   timeoutMs = DEFAULT_TIMEOUT_MS,
   sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
   logger = console,
+  createTimeoutSignal = typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
+    ? (ms) => AbortSignal.timeout(ms)
+    : () => undefined,
 }) {
   if (!pollUrl) {
     throw new Error('pollUrl is required');
@@ -125,9 +129,7 @@ async function pollTaskUntilTerminal({
           Authorization: `Bearer ${apiToken}`,
           Accept: 'application/json',
         },
-        signal: typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
-          ? AbortSignal.timeout(Math.max(5_000, intervalMs || 0, 1_000))
-          : undefined,
+        signal: createTimeoutSignal(REQUEST_TIMEOUT_MS),
       });
     } catch (error) {
       throw new Error(`Failed to poll OpenClaw task at ${pollUrl}: ${error.message}`);
@@ -205,6 +207,7 @@ module.exports = {
   DEFAULT_BASE_URL,
   DEFAULT_INTERVAL_MS,
   DEFAULT_TIMEOUT_MS,
+  REQUEST_TIMEOUT_MS,
   formatTaskDetails,
   main,
   parseAcceptedJob,
