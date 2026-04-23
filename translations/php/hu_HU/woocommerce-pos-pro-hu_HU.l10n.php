@@ -12,7 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'A WooCommerce POS Pro mostantól önálló.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'A Pro bővítmény tartalmazza az összes funkciót az ingyenes verzióból. Biztonságosan deaktiválhatja és törölheti ezt a bővítményt.',
 		'Edit Store' => 'Bolt szerkesztése',
-		'All' => 'Összes',
+		'All authorized users' . "\x04" . 'All' => 'Összes',
 		'Open POS' => 'POS megnyitása',
 		'Store' => 'Üzlet',
 		'Authorized Users' => 'Engedélyezett felhasználók',

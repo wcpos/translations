@@ -12,7 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS प्रो अब स्टैंडअलोन है।',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'प्रो प्लगइन में मुफ्त संस्करण की सभी विशेषताएं शामिल हैं। आप इस प्लगइन को सुरक्षित रूप से निष्क्रिय और हटा सकते हैं।',
 		'Edit Store' => 'स्टोर संपादित करें',
-		'All' => 'सभी',
+		'All authorized users' . "\x04" . 'All' => 'सभी',
 		'Open POS' => 'POS खोलें',
 		'Store' => 'स्टोर',
 		'Authorized Users' => 'अधिकृत उपयोगकर्ता',

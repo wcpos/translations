@@ -12,7 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro ist jetzt eigenständig.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Das Pro-Plugin enthält alle Funktionen der kostenlosen Version. Sie können dieses Plugin sicher deaktivieren und löschen.',
 		'Edit Store' => 'Laden bearbeiten',
-		'All' => 'Alle',
+		'All authorized users' . "\x04" . 'All' => 'Alle',
 		'Open POS' => 'POS öffnen',
 		'Store' => 'Geschäft',
 		'Authorized Users' => 'Autorisierte Benutzer',

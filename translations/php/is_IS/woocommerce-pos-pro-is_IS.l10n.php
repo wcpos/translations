@@ -12,7 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro er nú sjálfstætt.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro viðbótin inniheldur alla eiginleika frá ókeypis útgáfunni. Þú getur örugglega óvirkjað og eytt þessari viðbót.',
 		'Edit Store' => 'Breyta verslun',
-		'All' => 'Allir',
+		'All authorized users' . "\x04" . 'All' => 'Allt',
 		'Open POS' => 'Opna POS',
 		'Store' => 'Verslun',
 		'Authorized Users' => 'Heimilaðir notendur',

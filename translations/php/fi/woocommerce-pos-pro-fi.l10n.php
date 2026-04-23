@@ -12,7 +12,7 @@ return array(
 		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro on nyt itsenäinen.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'Pro-lisäosa sisältää kaikki ilmaisen version ominaisuudet. Voit turvallisesti poistaa tämän lisäosan käytöstä ja poistaa sen.',
 		'Edit Store' => 'Muokkaa myymälää',
-		'All' => 'Kaikki',
+		'All authorized users' . "\x04" . 'All' => 'Kaikki',
 		'Open POS' => 'Avaa POS',
 		'Store' => 'Kauppa',
 		'Authorized Users' => 'Valtuutetut käyttäjät',
