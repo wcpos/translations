@@ -4,7 +4,7 @@ const fs = require('node:fs');
 
 const DEFAULT_BASE_URL = 'https://openclaw.wcpos.com';
 const DEFAULT_INTERVAL_MS = 10_000;
-const DEFAULT_TIMEOUT_MS = 4 * 60 * 1000;
+const DEFAULT_TIMEOUT_MS = 20 * 60 * 1000;
 const REQUEST_TIMEOUT_MS = 30_000;
 const TERMINAL_SUCCESS_STATUS = 'completed';
 const TERMINAL_FAILURE_STATUSES = new Set(['failed', 'relay_failed']);
