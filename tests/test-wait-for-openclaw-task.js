@@ -3,6 +3,7 @@
 const assert = require('node:assert/strict');
 
 const {
+  DEFAULT_TIMEOUT_MS,
   parseAcceptedJob,
   pollTaskUntilTerminal,
 } = require('../scripts/wait-for-openclaw-task');
@@ -12,6 +13,10 @@ const tests = [];
 function test(name, fn) {
   tests.push({ name, fn });
 }
+
+test('allows long-running translation batches by default', async () => {
+  assert.equal(DEFAULT_TIMEOUT_MS, 20 * 60 * 1000);
+});
 
 test('requires job_id and poll_url on accepted responses', async () => {
   assert.throws(
