@@ -7,6 +7,7 @@ const {
   CONSUMER_REPOS,
   validateVersion,
   applyVersionUpdate,
+  setupGitAuthentication,
 } = require('../scripts/update-consumer-version-prs');
 
 const VERSION = '2026.4.47';
@@ -69,6 +70,18 @@ test('updates electron translation backend version', () => {
   const original = "export const TRANSLATION_VERSION = '2026.2.10';\n";
   const updated = applyVersionUpdate('electron', original, VERSION);
   assert.match(updated, /TRANSLATION_VERSION = '2026\.4\.47'/);
+});
+
+test('configures gh as git credential helper for GitHub pushes', () => {
+  const calls = [];
+  setupGitAuthentication((cmd, args) => {
+    calls.push([cmd, args]);
+    return { status: 0 };
+  });
+
+  assert.deepEqual(calls, [
+    ['gh', ['auth', 'setup-git', '--hostname', 'github.com']],
+  ]);
 });
 
 if (process.exitCode) {
