@@ -142,6 +142,10 @@ function getHeadRef(branch) {
   return branch;
 }
 
+function setupGitAuthentication(runCommand = run) {
+  runCommand('gh', ['auth', 'setup-git', '--hostname', 'github.com']);
+}
+
 function getOpenPrNumber(repo, branch) {
   const result = run('gh', [
     'pr',
@@ -267,6 +271,8 @@ async function main() {
     throw new Error('GH_TOKEN is required');
   }
 
+  setupGitAuthentication();
+
   const tempRoot = await fsp.mkdtemp(path.join(os.tmpdir(), 'translation-consumers-'));
   try {
     for (const repoKey of repoKeys) {
@@ -286,6 +292,7 @@ module.exports = {
   applyVersionUpdate,
   buildPrTitle,
   buildPrBody,
+  setupGitAuthentication,
 };
 
 if (require.main === module) {
