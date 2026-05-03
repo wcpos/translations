@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
   STABLE_BRANCH,
@@ -82,6 +84,19 @@ test('configures gh as git credential helper for GitHub pushes', () => {
   assert.deepEqual(calls, [
     ['gh', ['auth', 'setup-git', '--hostname', 'github.com']],
   ]);
+});
+
+test('release workflow requests app token permissions needed for consumer PRs', () => {
+  const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
+
+  assert.match(
+    workflow,
+    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-contents:\s*write/
+  );
+  assert.match(
+    workflow,
+    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-pull-requests:\s*write/
+  );
 });
 
 if (process.exitCode) {
