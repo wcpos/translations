@@ -193,7 +193,7 @@ return array(
 		'Money returned from cash sale' . "\x04" . 'Change' => 'Monnaie',
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS ne peut pas fonctionner avec le plugin wePOS en raison de problèmes de compatibilité. WCPOS a été désactivé.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Ouvert',
-		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Paiement partiel',
+		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Paiement Partiel',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Ouvert <span class="count">(%s)</span>' . "\x00" . 'POS - Ouverts <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Paiement partiel <span class="count">(%s)</span>' . "\x00" . 'POS - Paiements partiels <span class="count">(%s)</span>',
 		'JWT is not configured properly, please contact the admin' => 'JWT n\'est pas configuré correctement, veuillez contacter l\'administrateur',
