@@ -89,8 +89,14 @@ test('configures gh as git credential helper for GitHub pushes', () => {
 test('release workflow requests app token permissions needed for consumer PRs', () => {
   const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
 
-  assert.match(workflow, /permission-contents:\s*write/);
-  assert.match(workflow, /permission-pull-requests:\s*write/);
+  assert.match(
+    workflow,
+    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-contents:\s*write/
+  );
+  assert.match(
+    workflow,
+    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-pull-requests:\s*write/
+  );
 });
 
 if (process.exitCode) {
