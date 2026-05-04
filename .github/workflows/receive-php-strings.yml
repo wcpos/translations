@@ -93,24 +93,56 @@ jobs:
             --delete "$REF"
 
   receive-pro:
-    if: github.event.client_payload.pot_content && github.event.action == 'update-pro-pot'
+    if: github.event.action == 'update-pro-pot' && github.event.client_payload.repo_name == 'woocommerce-pos-pro' && startsWith(github.event.client_payload.ref, 'translations-source-php/') && github.event.client_payload.pot_file == 'woocommerce-pos-pro.pot'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout translations
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
-      - name: Write POT file
+      - name: Validate payload
         run: |
+          REF="${{ github.event.client_payload.ref }}"
+          if [[ ! "$REF" =~ ^translations-source-php/[0-9]+-[0-9]+$ ]]; then
+            echo "Invalid source ref: $REF"
+            exit 1
+          fi
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: ${{ github.event.client_payload.repo_name }}
+
+      - name: Fetch POT file
+        run: |
+          REPO="${{ github.event.client_payload.repo_name }}"
+          REF="${{ github.event.client_payload.ref }}"
+          POT_FILE="${{ github.event.client_payload.pot_file }}"
+
           mkdir -p source/php
-          echo '${{ github.event.client_payload.pot_content }}' | base64 -d > source/php/woocommerce-pos-pro.pot
-          echo "Received pro plugin POT file"
+          git clone --depth 1 --branch "$REF" \
+            "https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git" \
+            _source
+
+          cp "_source/$POT_FILE" source/php/woocommerce-pos-pro.pot
+          rm -rf _source
+
+          echo "Copied pro plugin POT file from wcpos/$REPO@$REF:$POT_FILE"
           grep -c '^msgid ' source/php/woocommerce-pos-pro.pot || true
 
       - name: Commit
         id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git add source/php/woocommerce-pos-pro.pot
           if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
             echo "No changes"
@@ -127,3 +159,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
+
+      - name: Delete source branch
+        run: |
+          REPO="${{ github.event.client_payload.repo_name }}"
+          REF="${{ github.event.client_payload.ref }}"
+          git push \
+            "https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git" \
+            --delete "$REF"
