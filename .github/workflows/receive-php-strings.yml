@@ -56,6 +56,7 @@ jobs:
           repositories: ${{ github.event.client_payload.repo_name }}
 
       - name: Fetch POT file
+        id: fetch-pot
         run: |
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
@@ -98,7 +99,7 @@ jobs:
           gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
 
       - name: Delete source branch
-        if: ${{ always() && steps.app-token.outcome == 'success' }}
+        if: ${{ always() && steps.app-token.outcome == 'success' && steps.fetch-pot.outcome == 'success' }}
         run: |
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
@@ -146,6 +147,7 @@ jobs:
           repositories: ${{ github.event.client_payload.repo_name }}
 
       - name: Fetch POT file
+        id: fetch-pot
         run: |
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
@@ -188,7 +190,7 @@ jobs:
           gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
 
       - name: Delete source branch
-        if: ${{ always() && steps.app-token.outcome == 'success' }}
+        if: ${{ always() && steps.app-token.outcome == 'success' && steps.fetch-pot.outcome == 'success' }}
         run: |
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
