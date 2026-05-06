@@ -13,7 +13,6 @@
  *   node scripts/qa-translations.js <locale> [--type js|php|all] [--apply-fixes] [--structural-only]
  */
 
-const OpenAI = require('openai').default;
 const fs = require('fs').promises;
 const path = require('path');
 const gettextParser = require('gettext-parser');
@@ -37,6 +36,18 @@ const KEEP_IN_ENGLISH = new Set([
 ]);
 
 let translationContext = '';
+
+function getOpenAIClient() {
+  if (openai) return openai;
+  let OpenAI;
+  try {
+    OpenAI = require('openai').default;
+  } catch {
+    throw new Error('The openai package is required for legacy direct QA. Install it locally or use the OpenClaw/Aide pipeline.');
+  }
+  openai = new OpenAI();
+  return openai;
+}
 
 async function loadTranslationContext() {
   try {
@@ -69,8 +80,7 @@ Return a JSON array where each item has:
 Entries:
 ${JSON.stringify(translations, null, 2)}`;
 
-  if (!openai) openai = new OpenAI();
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAIClient().chat.completions.create({
     model: 'gpt-4o',
     max_tokens: 4096,
     temperature: 0,

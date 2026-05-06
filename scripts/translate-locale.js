@@ -15,13 +15,12 @@
  *   node scripts/translate-locale.js <locale> [--type js|php|all] [--force]
  */
 
-const OpenAI = require('openai').default;
 const fs = require('fs').promises;
 const path = require('path');
 const gettextParser = require('gettext-parser');
 const { glob } = require('glob');
 
-const openai = new OpenAI();
+let openai;
 
 const LOCALE_NAMES = require('../locales.json');
 const { getPluralSuffixes, parsePluralKey } = require('./plural-rules');
@@ -33,6 +32,18 @@ const TRANSLATIONS_PHP_DIR = path.resolve(__dirname, '../translations/php');
 const STATE_FILE = path.resolve(__dirname, '../.translation-state.json');
 
 let translationContext = '';
+
+function getOpenAIClient() {
+  if (openai) return openai;
+  let OpenAI;
+  try {
+    OpenAI = require('openai').default;
+  } catch {
+    throw new Error('The openai package is required for legacy direct translation. Install it locally or use the OpenClaw/Aide pipeline.');
+  }
+  openai = new OpenAI();
+  return openai;
+}
 
 async function loadTranslationContext() {
   try {
@@ -317,7 +328,7 @@ ${JSON.stringify(input, null, 2)}`;
     }
 
     try {
-      const response = await openai.chat.completions.create({
+      const response = await getOpenAIClient().chat.completions.create({
         model: 'gpt-4o',
         max_tokens: 4096,
         temperature: 0.3,
@@ -427,7 +438,7 @@ Example format: { "one": "...", "other": "..." }`;
     const maxAttempts = 2;
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
       try {
-        const response = await openai.chat.completions.create({
+        const response = await getOpenAIClient().chat.completions.create({
           model: 'gpt-4o',
           max_tokens: 1024,
           temperature: attempt > 1 ? 0.1 : 0.3, // Lower temperature on retry
@@ -618,7 +629,7 @@ Return a JSON array with the VERIFIED translations in the same order.
 ${JSON.stringify(input, null, 2)}`;
 
     try {
-      const response = await openai.chat.completions.create({
+      const response = await getOpenAIClient().chat.completions.create({
         model: 'gpt-4o',
         max_tokens: 4096,
         temperature: 0.3,

@@ -55,6 +55,39 @@ const PHP_TRANSLATIONS_DIR = path.join(ROOT, "translations/php");
 
 const errors = [];
 const warnings = [];
+const triageSummary = createTriageSummary();
+
+function createTriageSummary() {
+  return {
+    missing_js_keys: new Map(),
+    stale_js_keys: new Map(),
+    php_untranslated: new Map(),
+    naming_violation: new Map(),
+  };
+}
+
+function recordTriageIssue(summary, category, key, count = 1) {
+  if (!summary[category]) {
+    summary[category] = new Map();
+  }
+  summary[category].set(key, (summary[category].get(key) || 0) + count);
+}
+
+function findWcposNamingIssues(value) {
+  if (typeof value !== "string" || value.trim() === "") return [];
+
+  const issues = [];
+  const withoutPro = value.replace(/WooCommerce POS Pro/g, "");
+
+  if (value.includes("WooCommerce POS Pro")) {
+    issues.push('Use "WCPOS Pro" instead of "WooCommerce POS Pro"');
+  }
+  if (withoutPro.includes("WooCommerce POS")) {
+    issues.push('Use "WCPOS" instead of "WooCommerce POS"');
+  }
+
+  return issues;
+}
 
 function error(msg) {
   errors.push(msg);
@@ -118,6 +151,7 @@ function checkJsCompleteness() {
         if (missingKeys.length > 0) {
           const examples = missingKeys.slice(0, 3).join(", ");
           const suffix = missingKeys.length > 3 ? "..." : "";
+          recordTriageIssue(triageSummary, "missing_js_keys", project.name + "/" + sourceFile, missingKeys.length);
           error(locale + "/" + project.name + "/" + sourceFile + ": " +
             missingKeys.length + " missing keys — " + examples + suffix);
         }
@@ -151,6 +185,13 @@ function checkJsCompleteness() {
             error(locale + "/" + project.name + "/" + sourceFile + ":" + key +
               " — placeholder mismatch: source [" + srcPH + "], translation [" + trnPH + "]");
           }
+
+          const namingIssues = findWcposNamingIssues(translations[key]);
+          for (const namingIssue of namingIssues) {
+            recordTriageIssue(triageSummary, "naming_violation", project.name + "/" + sourceFile);
+            warn(locale + "/" + project.name + "/" + sourceFile + ":" + key +
+              " — product naming violation: " + namingIssue);
+          }
         }
 
         // Stale keys (in translation but not expected for this locale)
@@ -158,6 +199,7 @@ function checkJsCompleteness() {
         if (staleKeys.length > 0) {
           const examples = staleKeys.slice(0, 3).join(", ");
           const suffix = staleKeys.length > 3 ? "..." : "";
+          recordTriageIssue(triageSummary, "stale_js_keys", project.name + "/" + sourceFile, staleKeys.length);
           warn(locale + "/" + project.name + "/" + sourceFile + ": " +
             staleKeys.length + " stale keys — " + examples + suffix);
         }
@@ -232,6 +274,7 @@ function checkPhpCompleteness() {
       }
 
       if (untranslated > 0) {
+        recordTriageIssue(triageSummary, "php_untranslated", poFile, untranslated);
         error(locale + "/" + poFile + ": " + untranslated + "/" + totalStrings +
           " untranslated — e.g. " + untranslatedExamples.join("; "));
       }
@@ -251,12 +294,20 @@ function checkPhpCompleteness() {
           const sourceText = fi === 0
             ? msgid
             : (potEntry.msgid_plural || entry.msgid_plural || msgid);
+          const formLabel = forms.length > 1 ? " [form " + fi + "]" : "";
+          const msgidLabel = context ? "[" + context + "] " + msgid : msgid;
+
+          const namingIssues = findWcposNamingIssues(form);
+          for (const namingIssue of namingIssues) {
+            recordTriageIssue(triageSummary, "naming_violation", poFile);
+            warn(locale + "/" + poFile + ": product naming violation in \"" +
+              msgidLabel.slice(0, 50) + "\"" + formLabel + " — " + namingIssue);
+          }
+
           const srcPH = (sourceText.match(/%(?:\d+\$)?[sdfb]/g) || []).sort();
           if (srcPH.length === 0) continue;
           const trnPH = (form.match(/%(?:\d+\$)?[sdfb]/g) || []).sort();
           if (srcPH.join(",") !== trnPH.join(",")) {
-            const formLabel = forms.length > 1 ? " [form " + fi + "]" : "";
-            const msgidLabel = context ? "[" + context + "] " + msgid : msgid;
             error(locale + "/" + poFile + ": placeholder mismatch in \"" +
               msgidLabel.slice(0, 50) + "\"" + formLabel + " — source [" + srcPH + "], translation [" + trnPH + "]");
           }
@@ -280,6 +331,17 @@ function checkPhpCompleteness() {
   }
 }
 
+function printTriageSummary(summary = triageSummary) {
+  console.log("\n== Triage ==");
+  for (const [category, entries] of Object.entries(summary)) {
+    if (!(entries instanceof Map) || entries.size === 0) continue;
+    console.log("\n" + category + ":");
+    for (const [key, count] of [...entries.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10)) {
+      console.log("  " + key + ": " + count);
+    }
+  }
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -298,6 +360,8 @@ function main() {
   checkJsCompleteness();
   checkPhpCompleteness();
 
+  printTriageSummary();
+
   console.log("\n== Summary ==");
   console.log("Errors:   " + errors.length);
   console.log("Warnings: " + warnings.length);
@@ -308,4 +372,13 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  findWcposNamingIssues,
+  createTriageSummary,
+  recordTriageIssue,
+  printTriageSummary,
+};

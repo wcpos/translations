@@ -14,7 +14,6 @@
  *   node tests/test-translation.js --dry-run  (structural tests only)
  */
 
-const OpenAI = require('openai').default;
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -24,6 +23,14 @@ const LOCALE = 'de_DE'; // Test with German
 let passed = 0;
 let failed = 0;
 let skipped = 0;
+
+function getOpenAI() {
+  try {
+    return require('openai').default;
+  } catch {
+    throw new Error('The openai package is required for API-backed translation tests. Install it locally or run with --dry-run.');
+  }
+}
 
 function test(name, fn, requiresApi = false) {
   if (requiresApi && DRY_RUN) {
@@ -67,6 +74,7 @@ const SAMPLE_STRINGS = {
 };
 
 async function translateBatch(strings, locale) {
+  const OpenAI = getOpenAI();
   const openai = new OpenAI();
   const input = {};
   for (const entry of Object.values(strings)) {

@@ -9,11 +9,10 @@
  *   OPENAI_API_KEY=... node tests/score-translation.js [locale] [--sample N]
  */
 
-const OpenAI = require('openai').default;
 const fs = require('fs').promises;
 const path = require('path');
 
-const openai = new OpenAI();
+let openai;
 
 const LOCALE = process.argv[2] || 'de_DE';
 const SAMPLE_SIZE = parseInt(process.argv.find(a => a.startsWith('--sample='))?.split('=')[1] || '20');
@@ -22,6 +21,18 @@ const SOURCE_JS_DIR = path.resolve(__dirname, '../source/js');
 const LOCALES = require('../locales.json');
 
 let translationContext = '';
+
+function getOpenAIClient() {
+  if (openai) return openai;
+  let OpenAI;
+  try {
+    OpenAI = require('openai').default;
+  } catch {
+    throw new Error('The openai package is required for API-backed scoring. Install it locally before running this optional test.');
+  }
+  openai = new OpenAI();
+  return openai;
+}
 
 async function loadContext() {
   translationContext = await fs.readFile(
@@ -59,7 +70,7 @@ async function translateStrings(strings, locale) {
     input[entry.string] = entry.context || '';
   }
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAIClient().chat.completions.create({
     model: 'gpt-4o',
     max_tokens: 4096,
     temperature: 0.3,
@@ -92,7 +103,7 @@ async function scoreTranslations(original, translations, locale) {
     translated,
   }));
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAIClient().chat.completions.create({
     model: 'gpt-4o',
     max_tokens: 8192,
     temperature: 0,
@@ -219,4 +230,7 @@ async function main() {
   return { averageScore, perfect, total: scores.length, issues };
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  console.error('Translation scoring failed:', error);
+  process.exit(1);
+});
