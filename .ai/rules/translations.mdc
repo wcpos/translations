@@ -1,0 +1,63 @@
+---
+description: Aide/OpenClaw rules for wcpos/translations app translation work
+globs:
+  - "source/**/*.json"
+  - "source/**/*.pot"
+  - "translations/**/*.json"
+  - "translations/**/*.po"
+  - "scripts/**/*.js"
+  - "tests/**/*.js"
+alwaysApply: true
+---
+
+# WCPOS App Translation Pipeline
+
+This repository contains app/plugin translations, not documentation pages. Treat source files as canonical English strings and translation files as generated/localized artifacts.
+
+## Preferred workflow for Aide/OpenClaw
+
+1. Read `scripts/translation-context.md` before translating.
+2. Use `pnpm --silent run check:completeness:json` to identify the next bounded batch.
+3. Prefer small batches by triage category, project/file, and locale.
+4. After editing translations, run the validation commands in this order:
+   - `pnpm test`
+   - `node scripts/validate-translations.js`
+   - `node scripts/check-completeness.js`
+5. If `check-completeness` still fails due to unrelated pre-existing debt, include the exact remaining triage summary in the PR/body.
+
+## JSON translation rules
+
+- Preserve every JSON key exactly; translate values only.
+- Keep flat JSON objects. Do not nest keys.
+- Preserve interpolation placeholders exactly, including names and braces: `{count}`, `{amount}`, `{name}`.
+- Preserve i18next plural suffix keys exactly (`_one`, `_other`, `_few`, `_many`, etc.).
+- Do not add stale keys from another locale/file.
+- Keep output sorted only if the existing file is already sorted by the script; otherwise minimize churn.
+
+## PHP/PO translation rules
+
+- Preserve every `msgid`, `msgctxt`, and file header structure.
+- Translate `msgstr` values only.
+- Preserve printf placeholders exactly: `%s`, `%d`, `%1$s`, `%2$d`, etc.
+- Preserve plural forms and fill all required `msgstr[n]` entries.
+- Do not edit `.pot` files as a substitute for translations; `.pot` files are source artifacts.
+- Regenerate `.mo` / `.l10n.php` files only via the repository scripts when needed.
+
+## Product and terminology rules
+
+- Follow `.ai/rules/wcpos-naming.mdc`: use `WCPOS` / `WCPOS Pro`, not `WooCommerce POS` / `WooCommerce POS Pro` in customer-facing text.
+- Preserve brand/platform names: WooCommerce, WordPress, Stripe, PayPal, Square, Android, iOS, macOS, Windows, Linux.
+- Preserve technical terms where `scripts/translation-context.md` says they remain English: POS, SKU, API, REST API, JSON, PHP, CSS, HTML, URL, ID, UUID, Gateway, Webhook, Endpoint, Token, OAuth, Barcode, QR Code, Cache, Sync, Log, Debug, Admin, Plugin, Theme.
+- Keep POS UI concise. Do not expand short labels such as `Qty`, `No.`, `Min`, `Max`, `Inc`, `Exc`, `N/A`.
+- Localize regional tax/retail terms for the target locale: VAT/IVA/TVA/GST/MwSt/BTW, receipt/ticket, till/register, etc.
+
+## Triage categories
+
+`pnpm --silent run check:completeness:json` returns a JSON object with top issues:
+
+- `missing_js_keys`: release-blocking missing JSON keys by project/file.
+- `php_untranslated`: release-blocking empty/missing PO translations.
+- `stale_js_keys`: warning-only extra JSON keys not expected for the locale.
+- `naming_violation`: warning-only product naming debt.
+
+Work release-blocking categories first, then warning-only cleanup.

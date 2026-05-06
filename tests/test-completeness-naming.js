@@ -6,6 +6,7 @@ const {
   findWcposNamingIssues,
   createTriageSummary,
   recordTriageIssue,
+  serializeTriageSummary,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -45,4 +46,23 @@ test('records grouped triage issue counts', () => {
   assert.equal(summary.missing_js_keys.get('woocommerce-pos/wp-admin-settings.json'), 34);
   assert.equal(summary.php_untranslated.get('woocommerce-pos.po'), 212);
   assert.equal(summary.naming_violation.get('woocommerce-pos-pro.po'), 1);
+});
+
+
+test('serializes triage summary as sorted plain objects for automation', () => {
+  const summary = createTriageSummary();
+
+  recordTriageIssue(summary, 'missing_js_keys', 'b.json', 2);
+  recordTriageIssue(summary, 'missing_js_keys', 'a.json', 5);
+  recordTriageIssue(summary, 'missing_js_keys', 'c.json', 1);
+
+  assert.deepEqual(serializeTriageSummary(summary, { limit: 2 }), {
+    missing_js_keys: [
+      { key: 'a.json', count: 5 },
+      { key: 'b.json', count: 2 },
+    ],
+    stale_js_keys: [],
+    php_untranslated: [],
+    naming_violation: [],
+  });
 });

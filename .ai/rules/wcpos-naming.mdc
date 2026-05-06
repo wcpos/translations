@@ -1,0 +1,35 @@
+---
+description: WCPOS product naming rules for app translations
+globs:
+  - "source/**/*.json"
+  - "source/**/*.pot"
+  - "translations/**/*.json"
+  - "translations/**/*.po"
+alwaysApply: true
+---
+
+# WCPOS Product Naming
+
+Use the short product names in all customer-facing app translation strings.
+
+| Correct | Incorrect |
+| --- | --- |
+| WCPOS | WooCommerce POS |
+| WCPOS Pro | WooCommerce POS Pro |
+
+## Rules
+
+- Preserve `WCPOS`, `WCPOS Pro`, `WooCommerce`, and `WordPress` exactly as product/brand names.
+- Do not translate `WCPOS` or `WCPOS Pro`.
+- Replace customer-facing `WooCommerce POS` with `WCPOS`.
+- Replace customer-facing `WooCommerce POS Pro` with `WCPOS Pro`.
+- Do not change technical identifiers, slugs, repository names, filenames, or URLs that contain `woocommerce-pos` or `woocommerce-pos-pro`.
+- Do not change existing code-style identifiers such as `wcposVersion`, `wcposProVersion`, `X-WCPOS-Idempotency-Key`, or namespace/package names.
+
+## Examples
+
+- ✅ `Please update your WCPOS plugin.`
+- ❌ `Please update your WooCommerce POS plugin.`
+- ✅ `Upgrade to WCPOS Pro.`
+- ❌ `Upgrade to WooCommerce POS Pro.`
+- ✅ Keep slug/file identifiers such as `woocommerce-pos-de_DE.po` unchanged.

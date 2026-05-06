@@ -106,7 +106,8 @@ These terms should be translated using the standard retail/POS terminology for t
 ## TERMS TO KEEP IN ENGLISH (NEVER TRANSLATE)
 
 ### Product & Brand Names
-- WCPOS, WooCommerce, WordPress, WooCommerce POS
+- WCPOS, WCPOS Pro, WooCommerce, WordPress
+- Use WCPOS / WCPOS Pro in customer-facing product names; do NOT output WooCommerce POS / WooCommerce POS Pro except when preserving technical identifiers such as slugs, filenames, repository names, or URLs.
 - Stripe, PayPal, Square, Afterpay, Klarna
 - Android, iOS, macOS, Windows, Linux
 - Chrome, Safari, Firefox, Edge

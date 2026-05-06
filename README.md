@@ -59,6 +59,33 @@ PHP translation files (.mo, .l10n.php) are attached to GitHub Releases and can b
 
 See [docs/CONSUMER-INTEGRATION.md](docs/CONSUMER-INTEGRATION.md) for instructions on receiving translation version updates in consuming repos.
 
+## Aide / OpenClaw Translation Workflow
+
+Aide rules live in `.ai/rules/` and mirror the docs translation learnings for app/plugin translations:
+
+- Use `WCPOS` and `WCPOS Pro` in customer-facing strings; do not use `WooCommerce POS` / `WooCommerce POS Pro` except in technical identifiers such as slugs, filenames, repo names, and URLs.
+- Preserve JSON keys, PO `msgid` / `msgctxt`, placeholders, plural suffixes, and technical terms exactly.
+- Work in small batches from the machine-readable completeness triage.
+
+Useful commands:
+
+```bash
+# Human-readable release gate; exits 1 while release-blocking translation debt remains
+node scripts/check-completeness.js
+
+# Machine-readable triage for Aide/OpenClaw; exits 0 for task planning
+pnpm --silent run check:completeness:json
+```
+
+The JSON report contains top grouped issues under:
+
+- `missing_js_keys` — release-blocking missing JSON translations
+- `php_untranslated` — release-blocking empty/missing PO translations
+- `stale_js_keys` — warning-only stale JSON entries
+- `naming_violation` — warning-only product naming debt
+
+Recommended order: fix `missing_js_keys` and `php_untranslated` first, then clean `naming_violation`, `stale_js_keys`, and PO header warnings.
+
 ## Local Development
 
 ```bash
