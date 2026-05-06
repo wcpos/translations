@@ -230,4 +230,7 @@ async function main() {
   return { averageScore, perfect, total: scores.length, issues };
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  console.error('Translation scoring failed:', error);
+  process.exit(1);
+});
