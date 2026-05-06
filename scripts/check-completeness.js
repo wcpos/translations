@@ -10,7 +10,7 @@
  * 4. JS placeholder tokens ({foo}) in source appear in translations
  * 5. PHP printf placeholders (%s, %d, %1$s) in msgid appear in msgstr
  *
- * Usage: node scripts/check-completeness.js [--warn-only]
+ * Usage: node scripts/check-completeness.js [--warn-only] [--json]
  *
  * Exit code 1 on any completeness failure (unless --warn-only).
  */
@@ -55,6 +55,9 @@ const PHP_TRANSLATIONS_DIR = path.join(ROOT, "translations/php");
 
 const errors = [];
 const warnings = [];
+const cliOptions = {
+  json: process.argv.includes("--json"),
+};
 const triageSummary = createTriageSummary();
 
 function createTriageSummary() {
@@ -91,18 +94,22 @@ function findWcposNamingIssues(value) {
 
 function error(msg) {
   errors.push(msg);
-  console.error("  ERROR: " + msg);
+  if (!cliOptions.json) console.error("  ERROR: " + msg);
 }
 
 function warn(msg) {
   warnings.push(msg);
-  console.warn("  WARN:  " + msg);
+  if (!cliOptions.json) console.warn("  WARN:  " + msg);
+}
+
+function log(msg = "") {
+  if (!cliOptions.json) console.log(msg);
 }
 
 // ── JS completeness ─────────────────────────────────────────────────────────
 
 function checkJsCompleteness() {
-  console.log("\n== JS Translation Completeness ==\n");
+  log("\n== JS Translation Completeness ==\n");
 
   for (const project of JS_PROJECTS) {
     for (const sourceFile of project.files) {
@@ -211,7 +218,7 @@ function checkJsCompleteness() {
 // ── PHP completeness ─────────────────────────────────────────────────────────
 
 function checkPhpCompleteness() {
-  console.log("\n== PHP Translation Completeness ==\n");
+  log("\n== PHP Translation Completeness ==\n");
 
   for (const potFile of PHP_POTS) {
     const domain = potFile.replace(/\.pot$/, "");
@@ -331,15 +338,47 @@ function checkPhpCompleteness() {
   }
 }
 
-function printTriageSummary(summary = triageSummary) {
-  console.log("\n== Triage ==");
+function serializeTriageSummary(summary = triageSummary, options = {}) {
+  const limit = Number.isInteger(options.limit) ? options.limit : 10;
+  const serialized = {};
+
   for (const [category, entries] of Object.entries(summary)) {
-    if (!(entries instanceof Map) || entries.size === 0) continue;
-    console.log("\n" + category + ":");
-    for (const [key, count] of [...entries.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10)) {
-      console.log("  " + key + ": " + count);
+    if (!(entries instanceof Map)) {
+      serialized[category] = [];
+      continue;
+    }
+
+    serialized[category] = [...entries.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, limit)
+      .map(([key, count]) => ({ key, count }));
+  }
+
+  return serialized;
+}
+
+function printTriageSummary(summary = triageSummary) {
+  log("\n== Triage ==");
+  const serialized = serializeTriageSummary(summary);
+  for (const [category, entries] of Object.entries(serialized)) {
+    if (entries.length === 0) continue;
+    log("\n" + category + ":");
+    for (const { key, count } of entries) {
+      log("  " + key + ": " + count);
     }
   }
+}
+
+function buildCompletenessReport() {
+  return {
+    errors: errors.length,
+    warnings: warnings.length,
+    triage: serializeTriageSummary(),
+    details: {
+      errors,
+      warnings,
+    },
+  };
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
@@ -347,27 +386,33 @@ function printTriageSummary(summary = triageSummary) {
 function main() {
   const warnOnly = process.argv.includes("--warn-only");
 
-  console.log("Translation Completeness Check");
-  console.log(
+  log("Translation Completeness Check");
+  log(
     "Locales: " + TRANSLATABLE_LOCALES.length + " translatable (" +
     ENGLISH_LOCALES.size + " English excluded)"
   );
-  console.log(
+  log(
     "JS: " + JS_PROJECTS.map((p) => p.name + " (" + p.files.length + " files)").join(", ")
   );
-  console.log("PHP: " + PHP_POTS.join(", "));
+  log("PHP: " + PHP_POTS.join(", "));
 
   checkJsCompleteness();
   checkPhpCompleteness();
 
   printTriageSummary();
 
-  console.log("\n== Summary ==");
-  console.log("Errors:   " + errors.length);
-  console.log("Warnings: " + warnings.length);
+  if (cliOptions.json) {
+    console.log(JSON.stringify(buildCompletenessReport(), null, 2));
+  } else {
+    console.log("\n== Summary ==");
+    console.log("Errors:   " + errors.length);
+    console.log("Warnings: " + warnings.length);
+  }
 
   if (errors.length > 0 && !warnOnly) {
-    console.error("\n" + errors.length + " error(s) found. Fix before releasing.");
+    if (!cliOptions.json) {
+      console.error("\n" + errors.length + " error(s) found. Fix before releasing.");
+    }
     process.exit(1);
   }
 }
@@ -381,4 +426,6 @@ module.exports = {
   createTriageSummary,
   recordTriageIssue,
   printTriageSummary,
+  serializeTriageSummary,
+  buildCompletenessReport,
 };
