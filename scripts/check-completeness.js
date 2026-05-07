@@ -178,10 +178,12 @@ function shouldCheckJsTranslationFile(filePath) {
   return changedScope.jsTranslationFiles.has(toRepoRelativePath(filePath));
 }
 
-function shouldCheckPhpPoFile(filePath) {
-  if (!changedScope) return true;
-  if (changedScope.phpSourceChanged) return true;
-  return changedScope.phpPoFiles.has(toRepoRelativePath(filePath));
+function shouldCheckPhpPoFile(filePath, scope = changedScope) {
+  if (!scope) return true;
+  if (scope.phpSourceChanged) return true;
+  const poPath = toRepoRelativePath(filePath);
+  const l10nPath = poPath.replace(/\.po$/, ".l10n.php");
+  return scope.phpPoFiles.has(poPath) || scope.phpL10nFiles.has(l10nPath);
 }
 
 function formatGitHubAnnotation(level, message) {
@@ -587,4 +589,5 @@ module.exports = {
   createChangedScope,
   buildChangedScope,
   toRepoRelativePath,
+  shouldCheckPhpPoFile,
 };

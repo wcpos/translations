@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const assert = require('node:assert/strict');
+const path = require('node:path');
 
 const {
   findWcposNamingIssues,
@@ -10,6 +11,7 @@ const {
   parseCliOptions,
   parseGitChangedFiles,
   createChangedScope,
+  shouldCheckPhpPoFile,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -167,4 +169,15 @@ test('locale plural expected keys match current Intl plural categories for app l
   assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'zh_TW')].sort(), [
     'logs.entries_count_other',
   ]);
+});
+
+test('checks matching PHP PO file when l10n artifact changes', () => {
+  const scope = createChangedScope('origin/main', [
+    'translations/php/es_ES/woocommerce-pos-es_ES.l10n.php',
+  ]);
+  const poPath = path.join(__dirname, '..', 'translations/php/es_ES/woocommerce-pos-es_ES.po');
+  const unrelatedPoPath = path.join(__dirname, '..', 'translations/php/fr_FR/woocommerce-pos-fr_FR.po');
+
+  assert.equal(shouldCheckPhpPoFile(poPath, scope), true);
+  assert.equal(shouldCheckPhpPoFile(unrelatedPoPath, scope), false);
 });
