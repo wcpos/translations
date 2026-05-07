@@ -15,7 +15,7 @@ function test(name, fn) {
 }
 
 test('allows long-running translation batches by default', async () => {
-  assert.equal(DEFAULT_TIMEOUT_MS, 20 * 60 * 1000);
+  assert.equal(DEFAULT_TIMEOUT_MS, 2 * 60 * 60 * 1000);
 });
 
 test('requires job_id and poll_url on accepted responses', async () => {
