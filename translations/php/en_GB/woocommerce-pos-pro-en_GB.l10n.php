@@ -21,7 +21,7 @@ return array(
 		'Stores' => 'Stores',
 		'Cashiers' => 'Cashiers',
 		'Gateways' => 'Gateways',
-		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro is now standalone.',
+		'WooCommerce POS Pro is now standalone.' => 'WCPOS Pro is now standalone.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.',
 		'Edit Store' => 'Edit Store',
 		'Open POS' => 'Open POS',
