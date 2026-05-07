@@ -384,7 +384,7 @@ function checkJsCompleteness() {
 
 function checkPhpCompleteness() {
   log("\n== PHP Translation Completeness ==\n");
-  const phpLocales = changedScope ? LOCALE_CODES : TRANSLATABLE_LOCALES;
+  const phpLocales = TRANSLATABLE_LOCALES;
 
   for (const potFile of PHP_POTS) {
     const domain = potFile.replace(/\.pot$/, "");
