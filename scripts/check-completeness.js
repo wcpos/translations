@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 const gettextParser = require("gettext-parser");
 const { expectedKeysForLocale, parsePluralKey } = require("./plural-rules");
 
@@ -55,10 +56,145 @@ const PHP_TRANSLATIONS_DIR = path.join(ROOT, "translations/php");
 
 const errors = [];
 const warnings = [];
-const cliOptions = {
-  json: process.argv.includes("--json"),
-};
+const cliOptions = (() => {
+  try {
+    return parseCliOptions(process.argv.slice(2));
+  } catch (error) {
+    if (require.main === module) {
+      console.error(error.message);
+      process.exit(1);
+    }
+    throw error;
+  }
+})();
+const changedScope = cliOptions.changedSince
+  ? buildChangedScope(cliOptions.changedSince)
+  : null;
 const triageSummary = createTriageSummary();
+
+
+function parseCliOptions(args) {
+  const options = {
+    json: args.includes("--json"),
+    changedSince: null,
+    githubAnnotations: args.includes("--github-annotations"),
+  };
+
+  for (let index = 0; index < args.length; index++) {
+    const arg = args[index];
+    if (arg === "--changed-since") {
+      const nextArg = args[index + 1];
+      if (!nextArg || nextArg.startsWith("-")) {
+        throw new Error("Missing value for --changed-since");
+      }
+      options.changedSince = nextArg;
+      index++;
+    } else if (arg.startsWith("--changed-since=")) {
+      const value = arg.slice("--changed-since=".length);
+      if (!value) {
+        throw new Error("Missing value for --changed-since");
+      }
+      options.changedSince = value;
+    }
+  }
+
+  return options;
+}
+
+function parseGitChangedFiles(output) {
+  const changedFiles = new Set();
+
+  for (const line of output.split(/\r?\n/)) {
+    if (!line.trim()) continue;
+    const fields = line.split("\t");
+    const paths = fields.length > 1 ? fields.slice(1) : fields;
+    for (const file of paths) {
+      if (file) changedFiles.add(file.trim());
+    }
+  }
+
+  return [...changedFiles];
+}
+
+function gitChangedFiles(baseRef) {
+  try {
+    return parseGitChangedFiles(execFileSync("git", ["diff", "--name-status", "--find-renames", `${baseRef}...HEAD`], {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    }));
+  } catch (error) {
+    throw new Error(`Unable to determine changed files from ${baseRef}: ${error.message}`);
+  }
+}
+
+function createChangedScope(baseRef, changedFiles) {
+  const jsTranslationFiles = new Set();
+  const phpPoFiles = new Set();
+  const phpL10nFiles = new Set();
+  let jsSourceChanged = false;
+  let phpSourceChanged = false;
+  let checkerChanged = false;
+
+  for (const file of changedFiles) {
+    if (file.startsWith("translations/js/") && file.endsWith(".json")) {
+      jsTranslationFiles.add(file);
+    } else if (file.startsWith("translations/php/") && file.endsWith(".po")) {
+      phpPoFiles.add(file);
+    } else if (file.startsWith("translations/php/") && file.endsWith(".l10n.php")) {
+      phpL10nFiles.add(file);
+    } else if (file.startsWith("source/js/")) {
+      jsSourceChanged = true;
+    } else if (file.startsWith("source/php/")) {
+      phpSourceChanged = true;
+    } else if (file.startsWith("scripts/")) {
+      checkerChanged = true;
+    }
+  }
+
+  return {
+    baseRef,
+    changedFiles,
+    jsTranslationFiles,
+    phpPoFiles,
+    phpL10nFiles,
+    jsSourceChanged,
+    phpSourceChanged,
+    checkerChanged,
+  };
+}
+
+function buildChangedScope(baseRef) {
+  return createChangedScope(baseRef, gitChangedFiles(baseRef));
+}
+
+function toRepoRelativePath(filePath) {
+  return path.relative(ROOT, filePath).split(path.sep).join("/");
+}
+
+function shouldCheckJsTranslationFile(filePath) {
+  if (!changedScope) return true;
+  if (changedScope.jsSourceChanged) return true;
+  return changedScope.jsTranslationFiles.has(toRepoRelativePath(filePath));
+}
+
+function shouldCheckPhpPoFile(filePath, scope = changedScope) {
+  if (!scope) return true;
+  if (scope.phpSourceChanged) return true;
+  const poPath = toRepoRelativePath(filePath);
+  const l10nPath = poPath.replace(/\.po$/, ".l10n.php");
+  return scope.phpPoFiles.has(poPath) || scope.phpL10nFiles.has(l10nPath);
+}
+
+function formatGitHubAnnotation(level, message) {
+  if (!cliOptions.githubAnnotations) return;
+  const escaped = message
+    .replace(/%/g, "%25")
+    .replace(/\r/g, "%0D")
+    .replace(/\n/g, "%0A");
+  const stream = cliOptions.json ? process.stderr : process.stdout;
+  stream.write(`::${level}::${escaped}\n`);
+}
 
 function createTriageSummary() {
   return {
@@ -94,11 +230,13 @@ function findWcposNamingIssues(value) {
 
 function error(msg) {
   errors.push(msg);
+  formatGitHubAnnotation("error", msg);
   if (!cliOptions.json) console.error("  ERROR: " + msg);
 }
 
 function warn(msg) {
   warnings.push(msg);
+  formatGitHubAnnotation("warning", msg);
   if (!cliOptions.json) console.warn("  WARN:  " + msg);
 }
 
@@ -131,6 +269,10 @@ function checkJsCompleteness() {
         const translationPath = path.join(
           JS_TRANSLATIONS_DIR, locale, project.name, sourceFile
         );
+
+        if (!shouldCheckJsTranslationFile(translationPath)) {
+          continue;
+        }
 
         // File existence
         if (!fs.existsSync(translationPath)) {
@@ -206,9 +348,14 @@ function checkJsCompleteness() {
         if (staleKeys.length > 0) {
           const examples = staleKeys.slice(0, 3).join(", ");
           const suffix = staleKeys.length > 3 ? "..." : "";
+          const message = locale + "/" + project.name + "/" + sourceFile + ": " +
+            staleKeys.length + " stale keys — " + examples + suffix;
           recordTriageIssue(triageSummary, "stale_js_keys", project.name + "/" + sourceFile, staleKeys.length);
-          warn(locale + "/" + project.name + "/" + sourceFile + ": " +
-            staleKeys.length + " stale keys — " + examples + suffix);
+          if (changedScope) {
+            error(message);
+          } else {
+            warn(message);
+          }
         }
       }
     }
@@ -237,6 +384,10 @@ function checkPhpCompleteness() {
     for (const locale of TRANSLATABLE_LOCALES) {
       const poFile = domain + "-" + locale + ".po";
       const poPath = path.join(PHP_TRANSLATIONS_DIR, locale, poFile);
+
+      if (!shouldCheckPhpPoFile(poPath)) {
+        continue;
+      }
 
       // File existence
       if (!fs.existsSync(poPath)) {
@@ -373,6 +524,8 @@ function buildCompletenessReport() {
   return {
     errors: errors.length,
     warnings: warnings.length,
+    changed_since: changedScope?.baseRef ?? null,
+    changed_files: changedScope?.changedFiles.length ?? null,
     triage: serializeTriageSummary(),
     details: {
       errors,
@@ -387,6 +540,9 @@ function main() {
   const warnOnly = process.argv.includes("--warn-only");
 
   log("Translation Completeness Check");
+  if (changedScope) {
+    log("Changed-since: " + changedScope.baseRef + " (" + changedScope.changedFiles.length + " changed file(s))");
+  }
   log(
     "Locales: " + TRANSLATABLE_LOCALES.length + " translatable (" +
     ENGLISH_LOCALES.size + " English excluded)"
@@ -428,4 +584,10 @@ module.exports = {
   printTriageSummary,
   serializeTriageSummary,
   buildCompletenessReport,
+  parseCliOptions,
+  parseGitChangedFiles,
+  createChangedScope,
+  buildChangedScope,
+  toRepoRelativePath,
+  shouldCheckPhpPoFile,
 };

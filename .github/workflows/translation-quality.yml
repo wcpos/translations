@@ -6,8 +6,10 @@ on:
       - 'translations/**/*.json'
       - 'translations/**/*.po'
       - 'scripts/check-translation-quality.js'
+      - 'scripts/check-completeness.js'
       - 'scripts/plural-rules.js'
       - 'tests/test-translation-quality-check.js'
+      - 'tests/test-completeness-naming.js'
       - '.ai/rules/**/*.mdc'
       - '.github/workflows/translation-quality.yml'
   workflow_dispatch:
@@ -39,6 +41,14 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Run changed-file completeness gate
+        env:
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || inputs.changed_since }}
+        run: |
+          set -euo pipefail
+          echo "Checking changed translation completeness against: $BASE_REF"
+          pnpm --silent run check:completeness -- --changed-since "$BASE_REF" --github-annotations
 
       - name: Run quality smoke check
         env:
