@@ -78,6 +78,9 @@ pnpm --silent run check:completeness:json
 
 # Heuristic quality smoke check for recent translation changes
 pnpm run qa:quality -- --changed-since origin/main
+
+# Markdown summary, used by the Translation Quality Smoke Check workflow
+pnpm --silent run qa:quality -- --changed-since origin/main --markdown
 ```
 
 The JSON report contains top grouped issues under:

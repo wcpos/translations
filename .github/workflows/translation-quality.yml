@@ -1,0 +1,56 @@
+name: Translation Quality Smoke Check
+
+on:
+  pull_request:
+    paths:
+      - 'translations/**/*.json'
+      - 'translations/**/*.po'
+      - 'scripts/check-translation-quality.js'
+      - 'scripts/plural-rules.js'
+      - 'tests/test-translation-quality-check.js'
+      - '.ai/rules/**/*.mdc'
+      - '.github/workflows/translation-quality.yml'
+  workflow_dispatch:
+    inputs:
+      changed_since:
+        description: Git ref to compare against (defaults to origin/main)
+        required: false
+        default: origin/main
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@26f6d4f2c533a43e6b5da0b4a5dd983f98f7b49a # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run quality smoke check
+        env:
+          BASE_REF: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || inputs.changed_since }}
+        run: |
+          set -euo pipefail
+          echo "Comparing changed translations against: $BASE_REF"
+
+          pnpm --silent run qa:quality -- --changed-since "$BASE_REF" --markdown | tee translation-quality-summary.md
+
+          {
+            cat translation-quality-summary.md
+            echo
+            echo "_This is a warning-only smoke check. Native review is still required for production-quality translations._"
+          } >> "$GITHUB_STEP_SUMMARY"

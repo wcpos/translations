@@ -7,6 +7,7 @@ const path = require('node:path');
 const {
   findQualityWarnings,
   isAllowedUnchangedTechnicalString,
+  formatMarkdownSummary,
   isChangedRelativePath,
   normalizePathSeparators,
   scanJsonTranslations,
@@ -146,4 +147,33 @@ test('uses sibling JSON plural source text for locale-specific plural keys', () 
   assert.deepEqual(warnings.map((item) => ({ key: item.key, msgid: item.msgid, warning: item.warning })), [
     { key: 'cart.items_few', msgid: '{count} products', warning: 'human-facing English appears unchanged' },
   ]);
+});
+
+
+test('formats markdown summary for GitHub job summaries', () => {
+  const markdown = formatMarkdownSummary([
+    {
+      file: 'translations/php/de_DE/woocommerce-pos-de_DE.po',
+      locale: 'de_DE',
+      msgid: 'Order details manually sent to %s from WCPOS.',
+      msgstr: 'Bestelldetails manuell an %s von WCPOS gesendet.',
+      warning: 'German phrasing is too literal',
+    },
+    {
+      file: 'translations/php/de_DE/woocommerce-pos-de_DE.po',
+      locale: 'de_DE',
+      msgid: 'Status',
+      msgstr: 'Status',
+      warning: 'human-facing English appears unchanged',
+    },
+  ], { limit: 1 });
+
+  assert.match(markdown, /^## Translation quality smoke check/m);
+  assert.match(markdown, /2 warning\(s\)/);
+  assert.match(markdown, /German phrasing is too literal/);
+  assert.match(markdown, /\.\.\. 1 more warning\(s\)/);
+});
+
+test('formats empty markdown summary clearly', () => {
+  assert.equal(formatMarkdownSummary([]), `## Translation quality smoke check\n\nNo warnings found.`);
 });

@@ -7,7 +7,7 @@
  * Aide spot checks so future translation batches can be reviewed faster.
  *
  * Usage:
- *   node scripts/check-translation-quality.js [--locale de_DE] [--changed-since origin/main] [--json]
+ *   node scripts/check-translation-quality.js [--locale de_DE] [--changed-since origin/main] [--json] [--markdown]
  */
 
 const fs = require('node:fs');
@@ -81,10 +81,11 @@ function findQualityWarnings({ locale, msgid, msgstr }) {
 }
 
 function parseArgs(argv) {
-  const options = { locale: '', changedSince: '', json: false };
+  const options = { locale: '', changedSince: '', json: false, markdown: false };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--json') options.json = true;
+    else if (arg === '--markdown') options.markdown = true;
     else if (arg === '--locale') options.locale = argv[++i] || '';
     else if (arg === '--changed-since') options.changedSince = argv[++i] || '';
   }
@@ -229,6 +230,40 @@ function discoverTranslationFiles({ locale, changedSince }) {
   return files;
 }
 
+
+function truncateForSummary(value, maxLength = 140) {
+  const normalized = String(value || '').replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 1)}…`;
+}
+
+function formatMarkdownSummary(warnings, { limit = 25 } = {}) {
+  const items = Array.isArray(warnings) ? warnings : [];
+  if (items.length === 0) {
+    return '## Translation quality smoke check\n\nNo warnings found.';
+  }
+
+  const lines = [
+    '## Translation quality smoke check',
+    '',
+    `${items.length} warning(s) found. This check is warning-only; investigate warnings before merging translation changes.`,
+    '',
+  ];
+
+  for (const item of items.slice(0, limit)) {
+    lines.push(`- **${item.warning}**`);
+    lines.push(`  - File: \`${item.file}\``);
+    lines.push(`  - Source: ${truncateForSummary(item.msgid)}`);
+    lines.push(`  - Translation: ${truncateForSummary(item.msgstr)}`);
+  }
+
+  if (items.length > limit) {
+    lines.push('', `... ${items.length - limit} more warning(s).`);
+  }
+
+  return lines.join('\n');
+}
+
 function main(argv = process.argv.slice(2)) {
   const options = parseArgs(argv);
   const warnings = [];
@@ -238,6 +273,8 @@ function main(argv = process.argv.slice(2)) {
 
   if (options.json) {
     console.log(JSON.stringify({ warnings: warnings.length, details: warnings }, null, 2));
+  } else if (options.markdown) {
+    console.log(formatMarkdownSummary(warnings));
   } else {
     console.log(`Translation quality smoke check: ${warnings.length} warning(s)`);
     for (const item of warnings.slice(0, 50)) {
@@ -252,6 +289,7 @@ function main(argv = process.argv.slice(2)) {
 
 module.exports = {
   findQualityWarnings,
+  formatMarkdownSummary,
   isAllowedUnchangedTechnicalString,
   isChangedRelativePath,
   isShortUiLabel,
