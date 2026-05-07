@@ -83,23 +83,11 @@ test('parses changed-since and GitHub annotation CLI options', () => {
     githubAnnotations: false,
   });
 
-  assert.deepEqual(parseCliOptions(['--changed-since']), {
-    json: false,
-    changedSince: null,
-    githubAnnotations: false,
-  });
+  assert.throws(() => parseCliOptions(['--changed-since']), /--changed-since/);
 
-  assert.deepEqual(parseCliOptions(['--changed-since', '--json']), {
-    json: true,
-    changedSince: null,
-    githubAnnotations: false,
-  });
+  assert.throws(() => parseCliOptions(['--changed-since', '--json']), /--changed-since/);
 
-  assert.deepEqual(parseCliOptions(['--changed-since=']), {
-    json: false,
-    changedSince: null,
-    githubAnnotations: false,
-  });
+  assert.throws(() => parseCliOptions(['--changed-since=']), /--changed-since/);
 
   assert.deepEqual(parseCliOptions([]), {
     json: false,

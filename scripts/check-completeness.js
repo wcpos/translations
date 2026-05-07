@@ -85,13 +85,16 @@ function parseCliOptions(args) {
     if (arg === "--changed-since") {
       const nextArg = args[index + 1];
       if (!nextArg || nextArg.startsWith("-")) {
-        options.changedSince = null;
-        continue;
+        throw new Error("Missing value for --changed-since");
       }
       options.changedSince = nextArg;
       index++;
     } else if (arg.startsWith("--changed-since=")) {
-      options.changedSince = arg.slice("--changed-since=".length) || null;
+      const value = arg.slice("--changed-since=".length);
+      if (!value) {
+        throw new Error("Missing value for --changed-since");
+      }
+      options.changedSince = value;
     }
   }
 
