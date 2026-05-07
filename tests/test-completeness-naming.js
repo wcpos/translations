@@ -7,6 +7,7 @@ const {
   createTriageSummary,
   recordTriageIssue,
   serializeTriageSummary,
+  parseCliOptions,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -64,5 +65,19 @@ test('serializes triage summary as sorted plain objects for automation', () => {
     stale_js_keys: [],
     php_untranslated: [],
     naming_violation: [],
+  });
+});
+
+test('parses changed-since and GitHub annotation CLI options', () => {
+  assert.deepEqual(parseCliOptions(['--json', '--changed-since', 'origin/main', '--github-annotations']), {
+    json: true,
+    changedSince: 'origin/main',
+    githubAnnotations: true,
+  });
+
+  assert.deepEqual(parseCliOptions(['--changed-since=upstream/main']), {
+    json: false,
+    changedSince: 'upstream/main',
+    githubAnnotations: false,
   });
 });
