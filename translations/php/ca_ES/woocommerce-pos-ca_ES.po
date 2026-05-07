@@ -69,8 +69,8 @@ msgstr "Activa els enllaços permanents"
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Activator.php:364
-#: includes/Services/Receipt_Data_Schema.php:368
-#: includes/Services/Receipt_Data_Schema.php:1030
+#: includes/Services/Receipt_Data_Schema.php:370
+#: includes/Services/Receipt_Data_Schema.php:1036
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:338
 #: templates/gallery/minimal-receipt.php:97
@@ -363,8 +363,8 @@ msgstr "Plantilla"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Admin/Templates/List_Templates.php:407
 #: includes/Admin/Templates/List_Templates.php:841
-#: includes/Services/Receipt_Data_Schema.php:411
-#: includes/Services/Receipt_Data_Schema.php:433
+#: includes/Services/Receipt_Data_Schema.php:413
+#: includes/Services/Receipt_Data_Schema.php:435
 msgid "Type"
 msgstr "Tipus"
 
@@ -378,7 +378,7 @@ msgstr "Font"
 #: includes/Admin/Templates/List_Templates.php:409
 #: includes/Admin/Templates/List_Templates.php:843
 #: includes/Admin/Templates/List_Templates.php:854
-#: includes/Services/Receipt_I18n_Labels.php:212
+#: includes/Services/Receipt_I18n_Labels.php:214
 msgid "Status"
 msgstr "Estat"
 
@@ -425,7 +425,7 @@ msgstr "Activa"
 #. translators: Label or action in the receipt templates admin screen.
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Admin/Templates/List_Templates.php:458
-#: includes/Services/Receipt_I18n_Labels.php:208
+#: includes/Services/Receipt_I18n_Labels.php:210
 msgid "Copy"
 msgstr "Copia"
 
@@ -804,24 +804,24 @@ msgstr "Identificadors fiscals del client."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:108
-#: includes/API/Orders_Controller.php:319
+#: includes/API/Orders_Controller.php:320
 msgid "Tax ID type."
 msgstr "Tipus d'identificador fiscal."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:112
-#: includes/API/Orders_Controller.php:323
+#: includes/API/Orders_Controller.php:324
 msgid "Tax ID value."
 msgstr "Valor de l'identificador fiscal."
 
 #: includes/API/Customers_Controller.php:116
-#: includes/API/Orders_Controller.php:327
+#: includes/API/Orders_Controller.php:328
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Codi de país ISO 3166-1 alfa-2."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:120
-#: includes/API/Orders_Controller.php:331
+#: includes/API/Orders_Controller.php:332
 msgid "Optional human-readable label."
 msgstr "Etiqueta llegible opcional."
 
@@ -831,7 +831,7 @@ msgstr "Filtra clients per rols."
 
 #. translators: Use default WordPress translation.
 #: includes/API/Customers_Controller.php:326
-#: includes/API/Orders_Controller.php:696
+#: includes/API/Orders_Controller.php:777
 msgid "Invalid email address."
 msgstr "Adreça de correu electrònic no vàlida."
 
@@ -858,53 +858,63 @@ msgid "You do not have permission to view logs."
 msgstr "No tens permís per veure registres."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:264
+#: includes/API/Orders_Controller.php:265
 msgid "Email address"
 msgstr "Adreça de correu electrònic"
 
-#: includes/API/Orders_Controller.php:269
+#: includes/API/Orders_Controller.php:270
 msgid "Save email to order"
 msgstr "Desa el correu electrònic a la comanda"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:301
+#: includes/API/Orders_Controller.php:302
 #: includes/API/Products_Controller.php:105
 #: includes/API/Product_Variations_Controller.php:109
 msgid "Barcode"
 msgstr "Codi de barres"
 
-#: includes/API/Orders_Controller.php:310
+#: includes/API/Orders_Controller.php:311
 msgid "Customer tax IDs snapshotted at sale time."
 msgstr "Identificadors fiscals del client capturats en el moment de la venda."
 
+#: includes/API/Orders_Controller.php:463
+#: includes/API/Orders_Controller.php:477
+#: includes/API/Orders_Controller.php:487
+msgid "date_created_gmt must be a valid ISO 8601 UTC date."
+msgstr "date_created_gmt ha de ser una data UTC ISO 8601 vàlida."
+
+#: includes/API/Orders_Controller.php:497
+msgid "date_created_gmt cannot be more than 24 hours in the future."
+msgstr "date_created_gmt no pot ser més de 24 hores en el futur."
+
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:725
+#: includes/API/Orders_Controller.php:806
 msgid "Filter orders by POS cashier."
 msgstr "Filtra comandes per caixer del POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:733
+#: includes/API/Orders_Controller.php:814
 msgid "Filter orders by POS store."
 msgstr "Filtra comandes per botiga del POS."
 
 #. translators: %s: email address.
-#: includes/API/Orders_Controller.php:761
+#: includes/API/Orders_Controller.php:842
 #, php-format
 msgid "Email address %s added to billing details from WCPOS."
 msgstr ""
 "Adreça de correu electrònic %s afegida als detalls de facturació des de WCPOS."
 
 #. translators: %s: email address.
-#: includes/API/Orders_Controller.php:774
+#: includes/API/Orders_Controller.php:855
 #, php-format
 msgid "Order details manually sent to %s from WCPOS."
 msgstr "Detalls de la comanda enviats manualment a %s des de WCPOS."
 
-#: includes/API/Orders_Controller.php:839
+#: includes/API/Orders_Controller.php:920
 msgid "Unique identifier for the order status."
 msgstr "Identificador únic per a l'estat de la comanda."
 
-#: includes/API/Orders_Controller.php:845
+#: includes/API/Orders_Controller.php:926
 msgid "Display name of the order status."
 msgstr "Nom de visualització de l'estat de la comanda."
 
@@ -1197,8 +1207,8 @@ msgstr "Import ofert"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Gateways/Cash.php:100
-#: includes/Services/Receipt_Data_Schema.php:719
-#: includes/Services/Receipt_Data_Schema.php:783
+#: includes/Services/Receipt_Data_Schema.php:721
+#: includes/Services/Receipt_Data_Schema.php:789
 #: includes/Services/Receipt_I18n_Labels.php:165
 #: templates/gallery/thermal-receipt.php:209
 #: templates/receipt.php:257
@@ -1315,8 +1325,8 @@ msgstr "Rebut d'impostos"
 #. translators: Tax identification type label.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Preview_Receipt_Builder.php:747
-#: includes/Services/Receipt_Data_Schema.php:316
-#: includes/Services/Receipt_Data_Schema.php:401
+#: includes/Services/Receipt_Data_Schema.php:318
+#: includes/Services/Receipt_Data_Schema.php:403
 #: includes/Services/Receipt_I18n_Labels.php:67
 #: includes/Services/Receipt_I18n_Labels.php:95
 #: includes/Services/Receipt_I18n_Labels.php:124
@@ -1342,7 +1352,7 @@ msgstr ""
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Preview_Receipt_Builder.php:855
-#: includes/Services/Receipt_I18n_Labels.php:194
+#: includes/Services/Receipt_I18n_Labels.php:196
 #: templates/gallery/minimal-receipt.php:179
 #: templates/gallery/thermal-receipt.php:227
 msgid "Thank you for your purchase!"
@@ -1357,7 +1367,7 @@ msgid "Tax"
 msgstr "Impost"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Services/Receipt_Data_Builder.php:145
+#: includes/Services/Receipt_Data_Builder.php:148
 #: includes/Templates/Payment.php:356
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1367,8 +1377,8 @@ msgstr "Convidat"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:259
-#: includes/Services/Receipt_Data_Schema.php:1022
+#: includes/Services/Receipt_Data_Schema.php:261
+#: includes/Services/Receipt_Data_Schema.php:1028
 #: includes/Services/Receipt_I18n_Labels.php:44
 #: includes/Templates/Adapters/Html_Output_Adapter.php:36
 #: templates/gallery/minimal-receipt.php:88
@@ -1376,139 +1386,139 @@ msgid "Order"
 msgstr "Comanda"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:263
+#: includes/Services/Receipt_Data_Schema.php:265
 msgid "Order ID"
 msgstr "ID de l'ordre"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:267
+#: includes/Services/Receipt_Data_Schema.php:269
 msgid "Order Number"
 msgstr "Número de l'ordre"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:271
+#: includes/Services/Receipt_Data_Schema.php:273
 msgid "Currency"
 msgstr "Moneda"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:275
-#: includes/Services/Receipt_I18n_Labels.php:188
+#: includes/Services/Receipt_Data_Schema.php:277
+#: includes/Services/Receipt_I18n_Labels.php:190
 msgid "Customer Note"
 msgstr "Nota del client"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:279
+#: includes/Services/Receipt_Data_Schema.php:281
 msgid "WC Status"
 msgstr "Estat WC"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:283
+#: includes/Services/Receipt_Data_Schema.php:285
 msgid "Status Label"
 msgstr "Etiqueta d'estat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:287
+#: includes/Services/Receipt_Data_Schema.php:289
 msgid "Created Via"
 msgstr "Creat mitjançant"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:292
+#: includes/Services/Receipt_Data_Schema.php:294
 msgid "Order Created"
 msgstr "Comanda creada"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:296
+#: includes/Services/Receipt_Data_Schema.php:298
 msgid "Order Paid"
 msgstr "Comanda pagada"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:300
+#: includes/Services/Receipt_Data_Schema.php:302
 msgid "Order Completed"
 msgstr "Comanda completada"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:304
+#: includes/Services/Receipt_Data_Schema.php:306
 msgid "Store"
 msgstr "Botiga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:308
+#: includes/Services/Receipt_Data_Schema.php:310
 msgid "Store Name"
 msgstr "Nom de la botiga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:312
+#: includes/Services/Receipt_Data_Schema.php:314
 msgid "Address Lines"
 msgstr "Línies d'adreça"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:320
+#: includes/Services/Receipt_Data_Schema.php:322
 msgid "Phone"
 msgstr "Telèfon"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:324
+#: includes/Services/Receipt_Data_Schema.php:326
 msgid "Email"
 msgstr "Correu electrònic"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:328
+#: includes/Services/Receipt_Data_Schema.php:330
 msgid "Logo URL"
 msgstr "URL del logo"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:333
-#: includes/Services/Receipt_I18n_Labels.php:215
+#: includes/Services/Receipt_Data_Schema.php:335
+#: includes/Services/Receipt_I18n_Labels.php:217
 msgid "Opening Hours"
 msgstr "Horari d'obertura"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:338
+#: includes/Services/Receipt_Data_Schema.php:340
 msgid "Opening Hours (Vertical)"
 msgstr "Horari d'obertura (vertical)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:343
+#: includes/Services/Receipt_Data_Schema.php:345
 msgid "Opening Hours (Inline)"
 msgstr "Horari d'obertura (en línia)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:348
+#: includes/Services/Receipt_Data_Schema.php:350
 msgid "Opening Hours Notes"
 msgstr "Notes de l'horari d'obertura"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:353
+#: includes/Services/Receipt_Data_Schema.php:355
 msgid "Personal Notes"
 msgstr "Notes personals"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:358
+#: includes/Services/Receipt_Data_Schema.php:360
 msgid "Policies & Conditions"
 msgstr "Polítiques i condicions"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:363
+#: includes/Services/Receipt_Data_Schema.php:365
 msgid "Footer Imprint"
 msgstr "Empremta al peu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:372
+#: includes/Services/Receipt_Data_Schema.php:374
 msgid "Cashier ID"
 msgstr "ID del caixer"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:376
+#: includes/Services/Receipt_Data_Schema.php:378
 msgid "Cashier Name"
 msgstr "Nom del caixer"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:381
-#: includes/Services/Receipt_Data_Schema.php:1034
+#: includes/Services/Receipt_Data_Schema.php:383
+#: includes/Services/Receipt_Data_Schema.php:1040
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/gallery/thermal-receipt.php:145
 #: templates/receipt.php:126
@@ -1516,163 +1526,163 @@ msgid "Customer"
 msgstr "Client"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:385
+#: includes/Services/Receipt_Data_Schema.php:387
 msgid "Customer ID"
 msgstr "ID del client"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:389
+#: includes/Services/Receipt_Data_Schema.php:391
 msgid "Customer Name"
 msgstr "Nom del client"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:393
+#: includes/Services/Receipt_Data_Schema.php:395
 #: includes/Services/Receipt_I18n_Labels.php:132
 msgid "Billing Address"
 msgstr "Adreça de factura"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:397
+#: includes/Services/Receipt_Data_Schema.php:399
 msgid "Shipping Address"
 msgstr "Adreça d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:406
+#: includes/Services/Receipt_Data_Schema.php:408
 #: includes/Services/Receipt_I18n_Labels.php:53
 msgid "Customer Tax IDs"
 msgstr "NIF del client"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:415
-#: includes/Services/Receipt_Data_Schema.php:437
-#: includes/Services/Receipt_Data_Schema.php:1009
+#: includes/Services/Receipt_Data_Schema.php:417
+#: includes/Services/Receipt_Data_Schema.php:439
+#: includes/Services/Receipt_Data_Schema.php:1015
 msgid "Value"
 msgstr "Valor"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:419
-#: includes/Services/Receipt_Data_Schema.php:441
-#: includes/Services/Receipt_Data_Schema.php:474
+#: includes/Services/Receipt_Data_Schema.php:421
+#: includes/Services/Receipt_Data_Schema.php:443
+#: includes/Services/Receipt_Data_Schema.php:476
 msgid "Country"
 msgstr "País"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:423
-#: includes/Services/Receipt_Data_Schema.php:445
-#: includes/Services/Receipt_Data_Schema.php:1005
+#: includes/Services/Receipt_Data_Schema.php:425
+#: includes/Services/Receipt_Data_Schema.php:447
+#: includes/Services/Receipt_Data_Schema.php:1011
 msgid "Label"
 msgstr "Etiqueta"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:428
+#: includes/Services/Receipt_Data_Schema.php:430
 msgid "Store Tax IDs"
 msgstr "NIF de la botiga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:450
+#: includes/Services/Receipt_Data_Schema.php:452
 msgid "Store Address"
 msgstr "Adreça de la botiga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:454
+#: includes/Services/Receipt_Data_Schema.php:456
 msgid "Address line 1"
 msgstr "Línia d'adreça 1"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:458
+#: includes/Services/Receipt_Data_Schema.php:460
 msgid "Address line 2"
 msgstr "Línia d'adreça 2"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:462
+#: includes/Services/Receipt_Data_Schema.php:464
 msgid "City"
 msgstr "Ciutat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:466
+#: includes/Services/Receipt_Data_Schema.php:468
 msgid "State / Region"
 msgstr "Estat / Regió"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:470
+#: includes/Services/Receipt_Data_Schema.php:472
 msgid "Postcode"
 msgstr "Codi postal"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:479
+#: includes/Services/Receipt_Data_Schema.php:481
 msgid "Line Items"
 msgstr "Elements de línia"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:484
+#: includes/Services/Receipt_Data_Schema.php:486
 msgid "Item Key"
 msgstr "Clau de l'element"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:488
-#: includes/Services/Receipt_Data_Schema.php:867
+#: includes/Services/Receipt_Data_Schema.php:490
+#: includes/Services/Receipt_Data_Schema.php:873
 #: includes/Services/Receipt_I18n_Labels.php:136
 msgid "SKU"
 msgstr "SKU"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:492
-#: includes/Services/Receipt_Data_Schema.php:863
+#: includes/Services/Receipt_Data_Schema.php:494
+#: includes/Services/Receipt_Data_Schema.php:869
 msgid "Product Name"
 msgstr "Nom del producte"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:496
-#: includes/Services/Receipt_Data_Schema.php:871
+#: includes/Services/Receipt_Data_Schema.php:498
+#: includes/Services/Receipt_Data_Schema.php:877
 msgid "Quantity"
 msgstr "Quantitat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:500
+#: includes/Services/Receipt_Data_Schema.php:502
 msgid "Quantity Refunded"
 msgstr "Quantitat retornada"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:504
+#: includes/Services/Receipt_Data_Schema.php:506
 msgid "Unit Subtotal"
 msgstr "Subtotal unitari"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:508
+#: includes/Services/Receipt_Data_Schema.php:510
 msgid "Unit Subtotal (incl tax)"
 msgstr "Subtotal unitari (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:512
+#: includes/Services/Receipt_Data_Schema.php:514
 msgid "Unit Subtotal (excl tax)"
 msgstr "Subtotal unitari (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:516
+#: includes/Services/Receipt_Data_Schema.php:518
 #: includes/Services/Receipt_I18n_Labels.php:138
 msgid "Unit Price"
 msgstr "Preu unitari"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:520
+#: includes/Services/Receipt_Data_Schema.php:522
 msgid "Unit Price (incl tax)"
 msgstr "Preu unitari (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:524
+#: includes/Services/Receipt_Data_Schema.php:526
 msgid "Unit Price (excl tax)"
 msgstr "Preu unitari (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:528
-#: includes/Services/Receipt_Data_Schema.php:675
-#: includes/Services/Receipt_Data_Schema.php:1038
+#: includes/Services/Receipt_Data_Schema.php:530
+#: includes/Services/Receipt_Data_Schema.php:677
+#: includes/Services/Receipt_Data_Schema.php:1044
 #: includes/Services/Receipt_I18n_Labels.php:156
 #: templates/gallery/minimal-receipt.php:130
 #: templates/gallery/thermal-receipt.php:166
@@ -1680,84 +1690,84 @@ msgid "Subtotal"
 msgstr "Subtotal"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:532
-#: includes/Services/Receipt_Data_Schema.php:679
+#: includes/Services/Receipt_Data_Schema.php:534
+#: includes/Services/Receipt_Data_Schema.php:681
 msgid "Subtotal (incl tax)"
 msgstr "Subtotal (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:536
-#: includes/Services/Receipt_Data_Schema.php:683
+#: includes/Services/Receipt_Data_Schema.php:538
+#: includes/Services/Receipt_Data_Schema.php:685
 msgid "Subtotal (excl tax)"
 msgstr "Subtotal (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:540
-#: includes/Services/Receipt_Data_Schema.php:641
+#: includes/Services/Receipt_Data_Schema.php:542
+#: includes/Services/Receipt_Data_Schema.php:643
 msgid "Discounts"
 msgstr "Descuents"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:544
+#: includes/Services/Receipt_Data_Schema.php:546
 msgid "Discounts (incl tax)"
 msgstr "Descomptes (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:548
+#: includes/Services/Receipt_Data_Schema.php:550
 msgid "Discounts (excl tax)"
 msgstr "Descomptes (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:552
+#: includes/Services/Receipt_Data_Schema.php:554
 msgid "Line Total"
 msgstr "Total de la línia"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:556
+#: includes/Services/Receipt_Data_Schema.php:558
 msgid "Line Total (incl tax)"
 msgstr "Total de línia (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:560
+#: includes/Services/Receipt_Data_Schema.php:562
 msgid "Line Total (excl tax)"
 msgstr "Total de línia (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:564
+#: includes/Services/Receipt_Data_Schema.php:566
 #: includes/Services/Receipt_I18n_Labels.php:185
 msgid "Total Refunded"
 msgstr "Total retornat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:568
+#: includes/Services/Receipt_Data_Schema.php:570
 msgid "Line Taxes"
 msgstr "Impostos de línia"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:572
+#: includes/Services/Receipt_Data_Schema.php:574
 msgid "Item Meta"
 msgstr "Metadades de l'article"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:577
+#: includes/Services/Receipt_Data_Schema.php:579
 msgid "Fees"
 msgstr "Drets"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:582
-#: includes/Services/Receipt_Data_Schema.php:898
+#: includes/Services/Receipt_Data_Schema.php:584
+#: includes/Services/Receipt_Data_Schema.php:904
 msgid "Fee Label"
 msgstr "Etiqueta de dret"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:586
-#: includes/Services/Receipt_Data_Schema.php:620
-#: includes/Services/Receipt_Data_Schema.php:658
-#: includes/Services/Receipt_Data_Schema.php:703
-#: includes/Services/Receipt_Data_Schema.php:1042
+#: includes/Services/Receipt_Data_Schema.php:588
+#: includes/Services/Receipt_Data_Schema.php:622
+#: includes/Services/Receipt_Data_Schema.php:660
+#: includes/Services/Receipt_Data_Schema.php:705
+#: includes/Services/Receipt_Data_Schema.php:1048
 #: includes/Services/Receipt_I18n_Labels.php:158
 #: templates/gallery/minimal-receipt.php:109
 #: templates/gallery/minimal-receipt.php:156
@@ -1765,180 +1775,187 @@ msgid "Total"
 msgstr "Total"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:590
-#: includes/Services/Receipt_Data_Schema.php:624
-#: includes/Services/Receipt_Data_Schema.php:662
+#: includes/Services/Receipt_Data_Schema.php:592
+#: includes/Services/Receipt_Data_Schema.php:626
+#: includes/Services/Receipt_Data_Schema.php:664
 msgid "Total (incl tax)"
 msgstr "Total (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:594
-#: includes/Services/Receipt_Data_Schema.php:628
-#: includes/Services/Receipt_Data_Schema.php:666
+#: includes/Services/Receipt_Data_Schema.php:596
+#: includes/Services/Receipt_Data_Schema.php:630
+#: includes/Services/Receipt_Data_Schema.php:668
 msgid "Total (excl tax)"
 msgstr "Total (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:598
+#: includes/Services/Receipt_Data_Schema.php:600
 msgid "Fee Taxes"
 msgstr "Impostos de la comissió"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:602
+#: includes/Services/Receipt_Data_Schema.php:604
 msgid "Fee Meta"
 msgstr "Metadades de la comissió"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:607
+#: includes/Services/Receipt_Data_Schema.php:609
 msgid "Shipping"
 msgstr "Port"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:612
-#: includes/Services/Receipt_Data_Schema.php:925
+#: includes/Services/Receipt_Data_Schema.php:614
+#: includes/Services/Receipt_Data_Schema.php:931
 msgid "Shipping Label"
 msgstr "Etiqueta d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:616
-#: includes/Services/Receipt_Data_Schema.php:929
+#: includes/Services/Receipt_Data_Schema.php:618
+#: includes/Services/Receipt_Data_Schema.php:935
 msgid "Shipping Method ID"
 msgstr "ID del mètode d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:632
+#: includes/Services/Receipt_Data_Schema.php:634
 msgid "Shipping Taxes"
 msgstr "Impostos d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:636
+#: includes/Services/Receipt_Data_Schema.php:638
 msgid "Shipping Meta"
 msgstr "Metadades d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:646
+#: includes/Services/Receipt_Data_Schema.php:648
 msgid "Discount Label"
 msgstr "Etiqueta de descuent"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:650
+#: includes/Services/Receipt_Data_Schema.php:652
 msgid "Coupon Code"
 msgstr "Codi de cupó"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:654
+#: includes/Services/Receipt_Data_Schema.php:656
 msgid "Coupon Codes"
 msgstr "Codis de cupó"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:671
+#: includes/Services/Receipt_Data_Schema.php:673
 msgid "Totals"
 msgstr "Totals"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:687
+#: includes/Services/Receipt_Data_Schema.php:689
 msgid "Discount Total"
 msgstr "Total del descompte"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:691
+#: includes/Services/Receipt_Data_Schema.php:693
 msgid "Discount Total (incl tax)"
 msgstr "Total del descuent (incl. impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:695
+#: includes/Services/Receipt_Data_Schema.php:697
 msgid "Discount Total (excl tax)"
 msgstr "Total del descuent (excl. impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:699
+#: includes/Services/Receipt_Data_Schema.php:701
 msgid "Tax Total"
 msgstr "Total d'impostos"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:707
+#: includes/Services/Receipt_Data_Schema.php:709
 #: includes/Services/Receipt_I18n_Labels.php:160
 msgid "Total (incl. tax)"
 msgstr "Total (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:711
+#: includes/Services/Receipt_Data_Schema.php:713
 msgid "Total (excl. tax)"
 msgstr "Total (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:715
+#: includes/Services/Receipt_Data_Schema.php:717
 msgid "Paid Total"
 msgstr "Total pagat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:723
+#: includes/Services/Receipt_Data_Schema.php:725
 msgid "Refund Total"
 msgstr "Total reemborsat"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:728
+#: includes/Services/Receipt_Data_Schema.php:729
+#: includes/Services/Receipt_I18n_Labels.php:187
+msgid "Net Total"
+msgstr "Total net"
+
+#. translators: Label for a receipt data field in the template editor.
+#. translators: Standalone label used in printed receipt templates.
+#: includes/Services/Receipt_Data_Schema.php:734
 #: includes/Services/Receipt_I18n_Labels.php:168
 msgid "Tax Summary"
 msgstr "Resum d'impostos"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:733
+#: includes/Services/Receipt_Data_Schema.php:739
 msgid "Tax Code"
 msgstr "Codi d'impost"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:737
+#: includes/Services/Receipt_Data_Schema.php:743
 msgid "Tax Label"
 msgstr "Etiqueta d'impost"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:741
+#: includes/Services/Receipt_Data_Schema.php:747
 msgid "Tax Rate (%)"
 msgstr "Percentatge d'impost (%)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:745
+#: includes/Services/Receipt_Data_Schema.php:751
 msgid "Compound Tax"
 msgstr "Impost compost"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:749
+#: includes/Services/Receipt_Data_Schema.php:755
 msgid "Taxable Amount (excl)"
 msgstr "Import subjecte a impost (excl.)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:753
+#: includes/Services/Receipt_Data_Schema.php:759
 #: includes/Services/Receipt_I18n_Labels.php:170
 msgid "Tax Amount"
 msgstr "Import de l'impost"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:757
+#: includes/Services/Receipt_Data_Schema.php:763
 msgid "Taxable Amount (incl)"
 msgstr "Import imposable (inc)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:762
+#: includes/Services/Receipt_Data_Schema.php:768
 msgid "Payments"
 msgstr "Pagaments"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:767
+#: includes/Services/Receipt_Data_Schema.php:773
 msgid "Method ID"
 msgstr "Identificador del mètode"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:771
+#: includes/Services/Receipt_Data_Schema.php:777
 msgid "Payment Method"
 msgstr "Mètode de pagament"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:775
+#: includes/Services/Receipt_Data_Schema.php:781
 #: includes/Services/Receipt_I18n_Labels.php:184
 msgid "Amount"
 msgstr "Quantitat"
@@ -1946,7 +1963,7 @@ msgstr "Quantitat"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:779
+#: includes/Services/Receipt_Data_Schema.php:785
 #: includes/Services/Receipt_I18n_Labels.php:164
 #: templates/gallery/thermal-receipt.php:205
 #: templates/receipt.php:253
@@ -1954,236 +1971,236 @@ msgid "Tendered"
 msgstr "Import entregat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:787
+#: includes/Services/Receipt_Data_Schema.php:793
 msgid "Transaction ID"
 msgstr "ID de transacció"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:792
+#: includes/Services/Receipt_Data_Schema.php:798
 msgid "Refunds"
 msgstr "Reemborsaments"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:797
+#: includes/Services/Receipt_Data_Schema.php:803
 msgid "Refund ID"
 msgstr "ID de reemborsament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:801
+#: includes/Services/Receipt_Data_Schema.php:807
 msgid "Refund Date"
 msgstr "Data de reemborsament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:805
+#: includes/Services/Receipt_Data_Schema.php:811
 msgid "Refund Amount"
 msgstr "Import del reemborsament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:809
+#: includes/Services/Receipt_Data_Schema.php:815
 msgid "Refund Subtotal"
 msgstr "Subtotal del reemborsament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:813
+#: includes/Services/Receipt_Data_Schema.php:819
 msgid "Refund Tax Total"
 msgstr "Total impostos del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:817
-#: includes/Services/Receipt_Data_Schema.php:933
+#: includes/Services/Receipt_Data_Schema.php:823
+#: includes/Services/Receipt_Data_Schema.php:939
 msgid "Refund Shipping Total"
 msgstr "Total enviament del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:821
+#: includes/Services/Receipt_Data_Schema.php:827
 msgid "Refund Shipping Tax"
 msgstr "Impost d'enviament del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:825
+#: includes/Services/Receipt_Data_Schema.php:831
 msgid "Refund Reason"
 msgstr "Motiu del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:830
+#: includes/Services/Receipt_Data_Schema.php:836
 msgid "Refunded By (User ID)"
 msgstr "Reembossat per (ID d'usuari)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:834
+#: includes/Services/Receipt_Data_Schema.php:840
 msgid "Refunded By (Name)"
 msgstr "Reembossat per (Nom)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:838
+#: includes/Services/Receipt_Data_Schema.php:844
 msgid "Refunded Payment"
 msgstr "Pagament reembossat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:842
+#: includes/Services/Receipt_Data_Schema.php:848
 msgid "Refund Destination"
 msgstr "Destinació del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:846
+#: includes/Services/Receipt_Data_Schema.php:852
 msgid "Refund Gateway ID"
 msgstr "ID de la passarel·la de reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:850
+#: includes/Services/Receipt_Data_Schema.php:856
 msgid "Refund Gateway Title"
 msgstr "Títol de la passarel·la de reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:854
+#: includes/Services/Receipt_Data_Schema.php:860
 msgid "Refund Processing Mode"
 msgstr "Mode de processament del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:858
+#: includes/Services/Receipt_Data_Schema.php:864
 msgid "Refund Lines"
 msgstr "Línies de reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:875
+#: includes/Services/Receipt_Data_Schema.php:881
 msgid "Refund Line Total"
 msgstr "Total de línia del reembossament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:879
+#: includes/Services/Receipt_Data_Schema.php:885
 msgid "Refund Line Total (incl tax)"
 msgstr "Total de línia del reembossament (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:883
+#: includes/Services/Receipt_Data_Schema.php:889
 msgid "Refund Line Total (excl tax)"
 msgstr "Total de línia del reembossament (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:887
+#: includes/Services/Receipt_Data_Schema.php:893
 msgid "Refund Line Taxes"
 msgstr "Impostos de la línia de devolució"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:893
+#: includes/Services/Receipt_Data_Schema.php:899
 msgid "Refund Fees"
 msgstr "Devolució de comissions"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:902
+#: includes/Services/Receipt_Data_Schema.php:908
 msgid "Refund Fee Total"
 msgstr "Total de comissions de devolució"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:906
+#: includes/Services/Receipt_Data_Schema.php:912
 msgid "Refund Fee Total (incl tax)"
 msgstr "Total de comissions de devolució (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:910
+#: includes/Services/Receipt_Data_Schema.php:916
 msgid "Refund Fee Total (excl tax)"
 msgstr "Total de comissions de devolució (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:914
+#: includes/Services/Receipt_Data_Schema.php:920
 msgid "Refund Fee Taxes"
 msgstr "Impostos de comissions de devolució"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:920
+#: includes/Services/Receipt_Data_Schema.php:926
 msgid "Refund Shipping"
 msgstr "Devolució d'enviament"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:937
+#: includes/Services/Receipt_Data_Schema.php:943
 msgid "Refund Shipping Total (incl tax)"
 msgstr "Total d'enviament de devolució (amb impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:941
+#: includes/Services/Receipt_Data_Schema.php:947
 msgid "Refund Shipping Total (excl tax)"
 msgstr "Total d'enviament de devolució (sense impostos)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:945
+#: includes/Services/Receipt_Data_Schema.php:951
 msgid "Refund Shipping Taxes"
 msgstr "Impostos d'enviament de devolució"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:952
+#: includes/Services/Receipt_Data_Schema.php:958
 msgid "Fiscal"
 msgstr "Fiscal"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:956
+#: includes/Services/Receipt_Data_Schema.php:962
 msgid "Immutable ID"
 msgstr "Identificador immutable"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:960
+#: includes/Services/Receipt_Data_Schema.php:966
 msgid "Receipt Number"
 msgstr "Número de rebut"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:964
+#: includes/Services/Receipt_Data_Schema.php:970
 msgid "Sequence"
 msgstr "Seqüència"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:968
+#: includes/Services/Receipt_Data_Schema.php:974
 msgid "Hash"
 msgstr "Hash"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:972
+#: includes/Services/Receipt_Data_Schema.php:978
 msgid "QR Payload"
 msgstr "Càrrega de QR"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:976
+#: includes/Services/Receipt_Data_Schema.php:982
 msgid "Tax Agency Code"
 msgstr "Còdi d'agència fiscal"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:980
+#: includes/Services/Receipt_Data_Schema.php:986
 msgid "Signed At"
 msgstr "Signat el"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:984
+#: includes/Services/Receipt_Data_Schema.php:990
 msgid "Signature Excerpt"
 msgstr "Extracte de la signatura"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:988
+#: includes/Services/Receipt_Data_Schema.php:994
 msgid "Document Label"
 msgstr "Etiqueta del document"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:992
+#: includes/Services/Receipt_Data_Schema.php:998
 msgid "Is Reprint"
 msgstr "És una reimpressió"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:996
+#: includes/Services/Receipt_Data_Schema.php:1002
 msgid "Reprint Count"
 msgstr "Recompte de reimpressions"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1000
+#: includes/Services/Receipt_Data_Schema.php:1006
 msgid "Extra Fields"
 msgstr "Camps addicionals"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1018
+#: includes/Services/Receipt_Data_Schema.php:1024
 msgid "Labels (i18n)"
 msgstr "Etiquetes (i18n)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:1026
-#: includes/Services/Receipt_Data_Schema.php:1062
+#: includes/Services/Receipt_Data_Schema.php:1032
+#: includes/Services/Receipt_Data_Schema.php:1068
 #: includes/Services/Receipt_I18n_Labels.php:45
 #: templates/gallery/minimal-receipt.php:92
 #: templates/gallery/thermal-receipt.php:138
@@ -2192,92 +2209,92 @@ msgid "Date"
 msgstr "Data"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1058
+#: includes/Services/Receipt_Data_Schema.php:1064
 msgid "Date & Time"
 msgstr "Data i hora"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1066
+#: includes/Services/Receipt_Data_Schema.php:1072
 msgid "Time"
 msgstr "Hora"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1070
+#: includes/Services/Receipt_Data_Schema.php:1076
 msgid "Short Date & Time"
 msgstr "Data i hora curta"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1074
+#: includes/Services/Receipt_Data_Schema.php:1080
 msgid "Long Date & Time"
 msgstr "Data i hora llarga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1078
+#: includes/Services/Receipt_Data_Schema.php:1084
 msgid "Full Date & Time"
 msgstr "Data i hora completa"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1082
+#: includes/Services/Receipt_Data_Schema.php:1088
 msgid "Short Date"
 msgstr "Data curta"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1086
+#: includes/Services/Receipt_Data_Schema.php:1092
 msgid "Long Date"
 msgstr "Data llarga"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1090
+#: includes/Services/Receipt_Data_Schema.php:1096
 msgid "Full Date"
 msgstr "Data completa"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1094
+#: includes/Services/Receipt_Data_Schema.php:1100
 msgid "YYYY-MM-DD"
 msgstr "AAAA-MM-DD"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1098
+#: includes/Services/Receipt_Data_Schema.php:1104
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/AAAA"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1102
+#: includes/Services/Receipt_Data_Schema.php:1108
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/AAAA"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1106
+#: includes/Services/Receipt_Data_Schema.php:1112
 msgid "Weekday Short"
 msgstr "Dia de la setmana curt"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1110
+#: includes/Services/Receipt_Data_Schema.php:1116
 msgid "Weekday Long"
 msgstr "Dia de la setmana llarg"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1114
+#: includes/Services/Receipt_Data_Schema.php:1120
 msgid "Day"
 msgstr "Dia"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1118
+#: includes/Services/Receipt_Data_Schema.php:1124
 msgid "Month Number"
 msgstr "Número del mes"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1122
+#: includes/Services/Receipt_Data_Schema.php:1128
 msgid "Month Short"
 msgstr "Mes abreujat"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1126
+#: includes/Services/Receipt_Data_Schema.php:1132
 msgid "Month Long"
 msgstr "Mes complet"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1130
+#: includes/Services/Receipt_Data_Schema.php:1136
 msgid "Year"
 msgstr "Any"
 
@@ -2679,82 +2696,87 @@ msgid "Returned Items"
 msgstr "Articles retornats"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:189
+#: includes/Services/Receipt_I18n_Labels.php:186
+msgid "Refunded"
+msgstr "Reemborsat"
+
+#. translators: Standalone label used in printed receipt templates.
+#: includes/Services/Receipt_I18n_Labels.php:191
 msgid "Terms & Conditions"
 msgstr "Termes i condicions"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:190
+#: includes/Services/Receipt_I18n_Labels.php:192
 #: templates/gallery/gift-receipt.php:123
 msgid "A message for you"
 msgstr "Un missatge per a vostè"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:193
+#: includes/Services/Receipt_I18n_Labels.php:195
 msgid "Thank you!"
 msgstr "Gràcies!"
 
-#: includes/Services/Receipt_I18n_Labels.php:195
+#: includes/Services/Receipt_I18n_Labels.php:197
 msgid "Thank you for shopping with us!"
 msgstr "Gràcies per comprar amb nosaltres!"
 
-#: includes/Services/Receipt_I18n_Labels.php:196
+#: includes/Services/Receipt_I18n_Labels.php:198
 msgid "Thank you for your business."
 msgstr "Gràcies per la seva compra."
 
-#: includes/Services/Receipt_I18n_Labels.php:197
+#: includes/Services/Receipt_I18n_Labels.php:199
 msgid "Items may be returned or exchanged within 30 days with this receipt."
 msgstr ""
 "Els articles es poden retornar o canviar en un termini de 30 dies amb aquest rebut."
 
-#: includes/Services/Receipt_I18n_Labels.php:198
+#: includes/Services/Receipt_I18n_Labels.php:200
 msgid ""
 "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase."
 msgstr ""
 "Aquest pressupost és vàlid durant 30 dies des de la data d'emissió. Els preus poden canviar després del període de validesa. Això no és un rebut ni una confirmació de compra."
 
-#: includes/Services/Receipt_I18n_Labels.php:199
+#: includes/Services/Receipt_I18n_Labels.php:201
 msgid "This is a quote, not a receipt"
 msgstr "Això és un pressupost, no un rebut"
 
-#: includes/Services/Receipt_I18n_Labels.php:200
+#: includes/Services/Receipt_I18n_Labels.php:202
 msgid "Please retain this receipt for your records."
 msgstr "Conservi aquest rebut per als seus registres."
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:203
+#: includes/Services/Receipt_I18n_Labels.php:205
 msgid "KITCHEN"
 msgstr "CUINA"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:206
+#: includes/Services/Receipt_I18n_Labels.php:208
 msgid "Signature"
 msgstr "Signatura"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:207
+#: includes/Services/Receipt_I18n_Labels.php:209
 msgid "Document Type"
 msgstr "Tipus de document"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:209
+#: includes/Services/Receipt_I18n_Labels.php:211
 msgid "Copy No."
 msgstr "Núm. de còpia"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:213
+#: includes/Services/Receipt_I18n_Labels.php:215
 msgid "Completed"
 msgstr "Completat"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:214
+#: includes/Services/Receipt_I18n_Labels.php:216
 msgid "Printed"
 msgstr "Imprès"
 
 #. translators: %s: store tax identification number
 #. translators: %s: tax identification number
 #. translators: %s: tax ID
-#: includes/Services/Receipt_I18n_Labels.php:238
+#: includes/Services/Receipt_I18n_Labels.php:240
 #: templates/gallery/thermal-receipt.php:120
 #: templates/receipt.php:97
 #, php-format
@@ -2762,81 +2784,81 @@ msgid "Tax ID: %s"
 msgstr "NIF: %s"
 
 #. translators: %s: store phone number
-#: includes/Services/Receipt_I18n_Labels.php:243
+#: includes/Services/Receipt_I18n_Labels.php:245
 #, php-format
 msgid "Phone: %s"
 msgstr "Telèfon: %s"
 
 #. translators: %s: store email address
-#: includes/Services/Receipt_I18n_Labels.php:248
+#: includes/Services/Receipt_I18n_Labels.php:250
 #, php-format
 msgid "Email: %s"
 msgstr "Correu electrònic: %s"
 
 #. translators: %s: payment method name
-#: includes/Services/Receipt_I18n_Labels.php:253
+#: includes/Services/Receipt_I18n_Labels.php:255
 #, php-format
 msgid "Paid via %s"
 msgstr "Pagat amb %s"
 
 #. translators: %s: payment method name
-#: includes/Services/Receipt_I18n_Labels.php:258
+#: includes/Services/Receipt_I18n_Labels.php:260
 #, php-format
 msgid "Refunded via %s"
 msgstr "Reemborsat amb %s"
 
 #. translators: %s: cashier name
-#: includes/Services/Receipt_I18n_Labels.php:263
+#: includes/Services/Receipt_I18n_Labels.php:265
 #, php-format
 msgid "Served by %s"
 msgstr "Atès per %s"
 
 #. translators: %s: customer name
-#: includes/Services/Receipt_I18n_Labels.php:268
+#: includes/Services/Receipt_I18n_Labels.php:270
 #, php-format
 msgid "Customer: %s"
 msgstr "Client: %s"
 
 #. translators: %s: customer name
-#: includes/Services/Receipt_I18n_Labels.php:273
+#: includes/Services/Receipt_I18n_Labels.php:275
 #, php-format
 msgid "Thank you, %s!"
 msgstr "Gràcies, %s!"
 
 #. translators: %s: payment transaction ID
 #. translators: %s: order number with # prefix
-#: includes/Services/Receipt_I18n_Labels.php:278
-#: includes/Services/Receipt_I18n_Labels.php:283
+#: includes/Services/Receipt_I18n_Labels.php:280
+#: includes/Services/Receipt_I18n_Labels.php:285
 #, php-format
 msgid "Ref: %s"
 msgstr "Ref.: %s"
 
 #. translators: %s: order number with # prefix
-#: includes/Services/Receipt_I18n_Labels.php:288
+#: includes/Services/Receipt_I18n_Labels.php:290
 #, php-format
 msgid "Order %s"
 msgstr "Comanda %s"
 
 #. translators: %s: product SKU
-#: includes/Services/Receipt_I18n_Labels.php:293
+#: includes/Services/Receipt_I18n_Labels.php:295
 #, php-format
 msgid "SKU: %s"
 msgstr "SKU: %s"
 
 #. translators: %s: line subtotal amount
-#: includes/Services/Receipt_I18n_Labels.php:298
+#: includes/Services/Receipt_I18n_Labels.php:300
 #, php-format
 msgid "Subtotal: %s"
 msgstr "Subtotal: %s"
 
 #. translators: %s: discount amount with minus sign
-#: includes/Services/Receipt_I18n_Labels.php:303
+#: includes/Services/Receipt_I18n_Labels.php:305
 #, php-format
 msgid "Discount: %s"
 msgstr "Descompte: %s"
 
 #. translators: %s: taxable amount
-#: includes/Services/Receipt_I18n_Labels.php:308
+#: includes/Services/Receipt_I18n_Labels.php:310
 #, php-format
 msgid "Taxable: %s"
 msgstr "Imposable: %s"
