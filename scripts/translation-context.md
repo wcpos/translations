@@ -15,6 +15,7 @@ Structural correctness is not enough. Every translation must sound like natural,
 - For German, use natural verb placement; avoid literal constructions such as "... an %s von WCPOS gesendet".
 - For Bulgarian, ensure passive/active constructions have the required auxiliary verbs.
 - For ambiguous fiscal labels such as "UID", inspect the PO comments/references before choosing a local tax acronym.
+- Country-specific receipt/tax ID labels such as "Codice Fiscale", "Partita IVA", "USt-IdNr.", "Steuernummer", "CPF", "CNPJ", "GSTIN", "NIF", "CUIT", "EIN", "HRB", and "KVK" are legal/fiscal labels; preserve the source label when it identifies that country-specific tax ID type rather than localizing it generically.
 
 Before opening/updating a PR, run the quality smoke check and review every warning:
 

@@ -7,7 +7,10 @@ const path = require('node:path');
 const {
   findQualityWarnings,
   isAllowedUnchangedTechnicalString,
+  formatGithubAnnotations,
+  formatMarkdownSummary,
   isChangedRelativePath,
+  main,
   normalizePathSeparators,
   scanJsonTranslations,
   scanPoFile,
@@ -29,6 +32,14 @@ test('allows known technical strings to remain unchanged', () => {
   assert.equal(isAllowedUnchangedTechnicalString('OK'), true);
   assert.equal(isAllowedUnchangedTechnicalString('https://wordpress.org/plugins/woocommerce-pos/'), true);
   assert.equal(isAllowedUnchangedTechnicalString('Status Label'), false);
+});
+
+
+test('allows receipt tax labels and placeholder-only formats to remain unchanged', () => {
+  for (const value of ['Codice Fiscale', 'Partita IVA', 'USt-IdNr.', 'Steuernummer', '%1$s: %2$s', 'SKU: %s', 'POS & Online', 'HTML (Offline)', 'PHP (Legacy)', 'kilbot']) {
+    assert.equal(isAllowedUnchangedTechnicalString(value), true, value);
+    assert.deepEqual(findQualityWarnings({ locale: 'fr_FR', msgid: value, msgstr: value }), []);
+  }
 });
 
 test('matches changed translation files with Windows path separators', () => {
@@ -146,4 +157,89 @@ test('uses sibling JSON plural source text for locale-specific plural keys', () 
   assert.deepEqual(warnings.map((item) => ({ key: item.key, msgid: item.msgid, warning: item.warning })), [
     { key: 'cart.items_few', msgid: '{count} products', warning: 'human-facing English appears unchanged' },
   ]);
+});
+
+
+test('formats markdown summary for GitHub job summaries', () => {
+  const markdown = formatMarkdownSummary([
+    {
+      file: 'translations/php/de_DE/woocommerce-pos-de_DE.po',
+      locale: 'de_DE',
+      msgid: 'Order details manually sent to %s from WCPOS.',
+      msgstr: 'Bestelldetails manuell an %s von WCPOS gesendet.',
+      warning: 'German phrasing is too literal',
+    },
+    {
+      file: 'translations/php/de_DE/woocommerce-pos-de_DE.po',
+      locale: 'de_DE',
+      msgid: 'Status',
+      msgstr: 'Status',
+      warning: 'human-facing English appears unchanged',
+    },
+  ], { limit: 1 });
+
+  assert.match(markdown, /^## Translation quality smoke check/m);
+  assert.match(markdown, /2 warning\(s\)/);
+  assert.match(markdown, /German phrasing is too literal/);
+  assert.match(markdown, /\.\.\. 1 more warning\(s\)/);
+});
+
+test('formats empty markdown summary clearly', () => {
+  assert.equal(formatMarkdownSummary([]), `## Translation quality smoke check\n\nNo warnings found.`);
+});
+
+test('rejects conflicting translation quality output modes', () => {
+  assert.throws(
+    () => main(['--json', '--markdown']),
+    /Choose only one output mode: --json, --markdown, or --github-annotations/,
+  );
+});
+
+
+test('formats GitHub Actions warning annotations', () => {
+  const annotations = formatGithubAnnotations([
+    {
+      file: 'translations/php/de_DE/woocommerce-pos-de_DE.po',
+      msgid: 'Order details manually sent to %s from WCPOS.',
+      msgstr: 'Bestelldetails manuell an %s von WCPOS gesendet.',
+      warning: 'German phrasing is too literal',
+    },
+  ]);
+
+  assert.equal(annotations, '::warning file=translations/php/de_DE/woocommerce-pos-de_DE.po,title=Translation quality::German phrasing is too literal: Order details manually sent to %25s from WCPOS. => Bestelldetails manuell an %25s von WCPOS gesendet.');
+});
+
+test('formats multiple GitHub Actions warning annotations separated by newlines', () => {
+  const annotations = formatGithubAnnotations([
+    {
+      file: 'translations/php/de_DE/a.po',
+      msgid: 'foo',
+      msgstr: 'foo',
+      warning: 'first warning',
+    },
+    {
+      file: 'translations/php/fr_FR/b.po',
+      msgid: 'bar',
+      msgstr: 'bar',
+      warning: 'second warning',
+    },
+  ]);
+
+  const lines = annotations.split(/\r?\n/);
+  assert.equal(lines.length, 2);
+  assert.equal(lines[0], '::warning file=translations/php/de_DE/a.po,title=Translation quality::first warning: foo => foo');
+  assert.equal(lines[1], '::warning file=translations/php/fr_FR/b.po,title=Translation quality::second warning: bar => bar');
+});
+
+test('escapes GitHub Actions annotation control characters', () => {
+  const annotations = formatGithubAnnotations([
+    {
+      file: 'translations/php/de_DE/example.po',
+      msgid: `Line one\nLine two`,
+      msgstr: '100% ready: yes',
+      warning: 'contains colon, percent and newline',
+    },
+  ]);
+
+  assert.match(annotations, /Line one Line two => 100%25 ready: yes/);
 });

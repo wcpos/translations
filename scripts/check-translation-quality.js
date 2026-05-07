@@ -7,7 +7,7 @@
  * Aide spot checks so future translation batches can be reviewed faster.
  *
  * Usage:
- *   node scripts/check-translation-quality.js [--locale de_DE] [--changed-since origin/main] [--json]
+ *   node scripts/check-translation-quality.js [--locale de_DE] [--changed-since origin/main] [--json] [--markdown] [--github-annotations]
  */
 
 const fs = require('node:fs');
@@ -26,6 +26,11 @@ const ALWAYS_ENGLISH = new Set([
   'WCPOS', 'WCPOS Pro', 'WooCommerce', 'WordPress', 'Stripe', 'PayPal', 'Square',
   'Gateway', 'Gateway ID', 'Barcode', 'QR Code', 'Debug', 'Error', 'Warning', 'Admin',
   'Plugin', 'Theme', 'Online', 'Offline', 'N/A', 'YYYY-MM-DD', 'DD/MM/YYYY', 'MM/DD/YYYY',
+  // Country-specific receipt/tax ID labels intentionally stay in their local form.
+  'Codice Fiscale', 'Partita IVA', 'P.IVA', 'USt-IdNr.', 'Steuernummer',
+  'CPF', 'CNPJ', 'GSTIN', 'NIF', 'CUIT', 'GST/HST', 'GST/HST No.', 'EIN', 'HRB', 'KVK',
+  // Technical/proper-noun receipt labels that are intentionally unchanged.
+  'kilbot', 'SKU: %s', 'POS & Online', 'HTML (Offline)', 'PHP (Legacy)',
 ]);
 
 function isAllowedUnchangedTechnicalString(value) {
@@ -33,6 +38,7 @@ function isAllowedUnchangedTechnicalString(value) {
   const trimmed = value.trim();
   if (!trimmed) return true;
   if (ALWAYS_ENGLISH.has(trimmed)) return true;
+  if (/^(?:%\d+\$[sdfb]|%[sdfb]|[\s:().,/-])+$/i.test(trimmed)) return true;
   if (/^https?:\/\//.test(trimmed)) return true;
   if (/^[\w.-]+@[\w.-]+$/.test(trimmed)) return true;
   if (/^[a-z0-9]+[._-][a-z0-9._-]+$/.test(trimmed) && trimmed.length <= 32) return true;
@@ -81,12 +87,18 @@ function findQualityWarnings({ locale, msgid, msgstr }) {
 }
 
 function parseArgs(argv) {
-  const options = { locale: '', changedSince: '', json: false };
+  const options = { locale: '', changedSince: '', json: false, markdown: false, githubAnnotations: false };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--json') options.json = true;
+    else if (arg === '--markdown') options.markdown = true;
+    else if (arg === '--github-annotations') options.githubAnnotations = true;
     else if (arg === '--locale') options.locale = argv[++i] || '';
     else if (arg === '--changed-since') options.changedSince = argv[++i] || '';
+  }
+  const outputModes = [options.json, options.markdown, options.githubAnnotations].filter(Boolean).length;
+  if (outputModes > 1) {
+    throw new Error('Choose only one output mode: --json, --markdown, or --github-annotations');
   }
   return options;
 }
@@ -229,6 +241,57 @@ function discoverTranslationFiles({ locale, changedSince }) {
   return files;
 }
 
+
+function truncateForSummary(value, maxLength = 140) {
+  const normalized = String(value || '').replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 1)}…`;
+}
+
+function formatMarkdownSummary(warnings, { limit = 25 } = {}) {
+  const items = Array.isArray(warnings) ? warnings : [];
+  if (items.length === 0) {
+    return '## Translation quality smoke check\n\nNo warnings found.';
+  }
+
+  const lines = [
+    '## Translation quality smoke check',
+    '',
+    `${items.length} warning(s) found. This check is warning-only; investigate warnings before merging translation changes.`,
+    '',
+  ];
+
+  for (const item of items.slice(0, limit)) {
+    lines.push(`- **${item.warning}**`);
+    lines.push(`  - File: \`${item.file}\``);
+    lines.push(`  - Source: ${truncateForSummary(item.msgid)}`);
+    lines.push(`  - Translation: ${truncateForSummary(item.msgstr)}`);
+  }
+
+  if (items.length > limit) {
+    lines.push('', `... ${items.length - limit} more warning(s).`);
+  }
+
+  return lines.join('\n');
+}
+
+
+function escapeGithubAnnotationValue(value) {
+  return String(value || '')
+    .replace(/%/g, '%25')
+    .replace(/\r/g, '%0D')
+    .replace(/\n/g, '%0A');
+}
+
+function formatGithubAnnotations(warnings, { limit = 50 } = {}) {
+  const items = Array.isArray(warnings) ? warnings : [];
+  return items.slice(0, limit).map((item) => {
+    const file = escapeGithubAnnotationValue(item.file);
+    const message = escapeGithubAnnotationValue(`${item.warning}: ${truncateForSummary(item.msgid)} => ${truncateForSummary(item.msgstr)}`);
+    return `::warning file=${file},title=Translation quality::${message}`;
+  }).join('\n');
+}
+
 function main(argv = process.argv.slice(2)) {
   const options = parseArgs(argv);
   const warnings = [];
@@ -238,6 +301,11 @@ function main(argv = process.argv.slice(2)) {
 
   if (options.json) {
     console.log(JSON.stringify({ warnings: warnings.length, details: warnings }, null, 2));
+  } else if (options.markdown) {
+    console.log(formatMarkdownSummary(warnings));
+  } else if (options.githubAnnotations) {
+    const annotations = formatGithubAnnotations(warnings);
+    if (annotations) console.log(annotations);
   } else {
     console.log(`Translation quality smoke check: ${warnings.length} warning(s)`);
     for (const item of warnings.slice(0, 50)) {
@@ -252,6 +320,8 @@ function main(argv = process.argv.slice(2)) {
 
 module.exports = {
   findQualityWarnings,
+  formatGithubAnnotations,
+  formatMarkdownSummary,
   isAllowedUnchangedTechnicalString,
   isChangedRelativePath,
   isShortUiLabel,
