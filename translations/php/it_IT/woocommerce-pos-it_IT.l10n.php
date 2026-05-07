@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS 1.8.8',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-11T20:52:25+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos',
+	'language' => 'it_IT',
+	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Punto vendita per WooCommerce',
 		'https://wordpress.org/plugins/woocommerce-pos/' => 'https://wordpress.org/plugins/woocommerce-pos/',
@@ -396,8 +409,8 @@ return array(
 		'Reprint Count' => 'N. ristampe',
 		'Extra Fields' => 'Campi extra',
 		'Labels (i18n)' => 'Etichette (i18n)',
-		'Date' => 'Data',
 		'Date & Time' => 'Data e ora',
+		'Date' => 'Data',
 		'Time' => 'Ora',
 		'Short Date & Time' => 'Data e ora breve',
 		'Long Date & Time' => 'Data e ora estesa',

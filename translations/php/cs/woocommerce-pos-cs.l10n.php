@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS 1.8.8',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-11T20:52:25+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos',
+	'language' => 'cs',
+	'plural-forms' => 'nplurals=3; plural=n==1 ? 0 : n>=2 && n<=4 ? 1 : 2;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Pokladní systém pro WooCommerce',
 		'https://wordpress.org/plugins/woocommerce-pos/' => 'https://wordpress.org/plugins/woocommerce-pos/',
@@ -396,8 +409,8 @@ return array(
 		'Reprint Count' => 'Počet opakovaných tisků',
 		'Extra Fields' => 'Doplňková pole',
 		'Labels (i18n)' => 'Štítky (i18n)',
-		'Date' => 'Datum',
 		'Date & Time' => 'Datum a čas',
+		'Date' => 'Datum',
 		'Time' => 'Čas',
 		'Short Date & Time' => 'Krátké datum a čas',
 		'Long Date & Time' => 'Dlouhé datum a čas',

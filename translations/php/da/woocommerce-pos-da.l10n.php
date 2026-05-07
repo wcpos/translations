@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS 1.8.8',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-11T20:52:25+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos',
+	'language' => 'da',
+	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Salgssted for WooCommerce',
 		'https://wordpress.org/plugins/woocommerce-pos/' => 'https://wordpress.org/plugins/woocommerce-pos/',
@@ -396,8 +409,8 @@ return array(
 		'Reprint Count' => 'Antal genoptryk',
 		'Extra Fields' => 'Ekstra felter',
 		'Labels (i18n)' => 'Etiketter (i18n)',
-		'Date' => 'Dato',
 		'Date & Time' => 'Dato og tid',
+		'Date' => 'Dato',
 		'Time' => 'Tid',
 		'Short Date & Time' => 'Kort dato og tid',
 		'Long Date & Time' => 'Lang dato og tid',

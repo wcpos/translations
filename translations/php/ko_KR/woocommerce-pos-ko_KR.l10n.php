@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS 1.8.8',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-11T20:52:25+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos',
+	'language' => 'ko_KR',
+	'plural-forms' => 'nplurals=1; plural=0;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – WooCommerce용 판매 시점 관리',
 		'https://wordpress.org/plugins/woocommerce-pos/' => 'https://wordpress.org/plugins/woocommerce-pos/',
@@ -396,8 +409,8 @@ return array(
 		'Reprint Count' => '재인쇄 횟수',
 		'Extra Fields' => '추가 필드',
 		'Labels (i18n)' => '라벨(i18n)',
-		'Date' => '날짜',
 		'Date & Time' => '날짜 및 시간',
+		'Date' => '날짜',
 		'Time' => '시간',
 		'Short Date & Time' => '짧은 날짜 및 시간',
 		'Long Date & Time' => '긴 날짜 및 시간',

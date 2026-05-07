@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS 1.8.8',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-11T20:52:25+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos',
+	'language' => 'hi_IN',
+	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – WooCommerce के लिए पॉइंट ऑफ सेल',
 		'https://wordpress.org/plugins/woocommerce-pos/' => 'https://wordpress.org/plugins/woocommerce-pos/',
@@ -396,8 +409,8 @@ return array(
 		'Reprint Count' => 'पुनर्मुद्रण संख्या',
 		'Extra Fields' => 'अतिरिक्त फ़ील्ड',
 		'Labels (i18n)' => 'लेबल (i18n)',
-		'Date' => 'तिथि',
 		'Date & Time' => 'तिथि और समय',
+		'Date' => 'तिथि',
 		'Time' => 'समय',
 		'Short Date & Time' => 'संक्षिप्त तिथि और समय',
 		'Long Date & Time' => 'दीर्घ तिथि और समय',
