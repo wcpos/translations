@@ -8,6 +8,8 @@ const {
   recordTriageIssue,
   serializeTriageSummary,
   parseCliOptions,
+  parseGitChangedFiles,
+  createChangedScope,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -80,4 +82,81 @@ test('parses changed-since and GitHub annotation CLI options', () => {
     changedSince: 'upstream/main',
     githubAnnotations: false,
   });
+
+  assert.deepEqual(parseCliOptions(['--changed-since']), {
+    json: false,
+    changedSince: null,
+    githubAnnotations: false,
+  });
+
+  assert.deepEqual(parseCliOptions(['--changed-since', '--json']), {
+    json: true,
+    changedSince: null,
+    githubAnnotations: false,
+  });
+
+  assert.deepEqual(parseCliOptions(['--changed-since=']), {
+    json: false,
+    changedSince: null,
+    githubAnnotations: false,
+  });
+
+  assert.deepEqual(parseCliOptions([]), {
+    json: false,
+    changedSince: null,
+    githubAnnotations: false,
+  });
+});
+
+test('parses renamed files from git name-status output', () => {
+  assert.deepEqual(parseGitChangedFiles([
+    'M\ttranslations/js/de_DE/woocommerce-pos/common.json',
+    'R100\ttranslations/js/fr_FR/woocommerce-pos/old.json\ttranslations/js/fr_FR/woocommerce-pos/new.json',
+    'R087\ttranslations/php/es_ES/woocommerce-pos-es_ES.po\ttranslations/php/es_ES/woocommerce-pos-pro-es_ES.po',
+    '',
+  ].join('\n')), [
+    'translations/js/de_DE/woocommerce-pos/common.json',
+    'translations/js/fr_FR/woocommerce-pos/old.json',
+    'translations/js/fr_FR/woocommerce-pos/new.json',
+    'translations/php/es_ES/woocommerce-pos-es_ES.po',
+    'translations/php/es_ES/woocommerce-pos-pro-es_ES.po',
+  ]);
+});
+
+test('builds changed scope with separate JS, PHP, and script flags', () => {
+  const scope = createChangedScope('origin/main', [
+    'source/js/woocommerce-pos/common.json',
+    'source/php/woocommerce-pos.pot',
+    'scripts/check-completeness.js',
+    'translations/js/de_DE/woocommerce-pos/common.json',
+    'translations/php/es_ES/woocommerce-pos-es_ES.po',
+    'translations/php/es_ES/woocommerce-pos-es_ES.l10n.php',
+  ]);
+
+  assert.equal(scope.baseRef, 'origin/main');
+  assert.equal(scope.jsSourceChanged, true);
+  assert.equal(scope.phpSourceChanged, true);
+  assert.equal(scope.checkerChanged, true);
+  assert.deepEqual([...scope.jsTranslationFiles], [
+    'translations/js/de_DE/woocommerce-pos/common.json',
+  ]);
+  assert.deepEqual([...scope.phpPoFiles], [
+    'translations/php/es_ES/woocommerce-pos-es_ES.po',
+  ]);
+  assert.deepEqual([...scope.phpL10nFiles], [
+    'translations/php/es_ES/woocommerce-pos-es_ES.l10n.php',
+  ]);
+});
+
+test('tracks checker-only changes without marking translation sources changed', () => {
+  const scope = createChangedScope('origin/main', [
+    'scripts/check-completeness.js',
+  ]);
+
+  assert.equal(scope.checkerChanged, true);
+  assert.equal(scope.jsSourceChanged, false);
+  assert.equal(scope.phpSourceChanged, false);
+  assert.equal(scope.jsTranslationFiles.size, 0);
+  assert.equal(scope.phpPoFiles.size, 0);
+  assert.equal(scope.phpL10nFiles.size, 0);
 });

@@ -56,7 +56,17 @@ const PHP_TRANSLATIONS_DIR = path.join(ROOT, "translations/php");
 
 const errors = [];
 const warnings = [];
-const cliOptions = parseCliOptions(process.argv.slice(2));
+const cliOptions = (() => {
+  try {
+    return parseCliOptions(process.argv.slice(2));
+  } catch (error) {
+    if (require.main === module) {
+      console.error(error.message);
+      process.exit(1);
+    }
+    throw error;
+  }
+})();
 const changedScope = cliOptions.changedSince
   ? buildChangedScope(cliOptions.changedSince)
   : null;
@@ -73,37 +83,55 @@ function parseCliOptions(args) {
   for (let index = 0; index < args.length; index++) {
     const arg = args[index];
     if (arg === "--changed-since") {
-      options.changedSince = args[index + 1] || null;
+      const nextArg = args[index + 1];
+      if (!nextArg || nextArg.startsWith("-")) {
+        options.changedSince = null;
+        continue;
+      }
+      options.changedSince = nextArg;
       index++;
     } else if (arg.startsWith("--changed-since=")) {
-      options.changedSince = arg.slice("--changed-since=".length);
+      options.changedSince = arg.slice("--changed-since=".length) || null;
     }
   }
 
   return options;
 }
 
+function parseGitChangedFiles(output) {
+  const changedFiles = new Set();
+
+  for (const line of output.split(/\r?\n/)) {
+    if (!line.trim()) continue;
+    const fields = line.split("\t");
+    const paths = fields.length > 1 ? fields.slice(1) : fields;
+    for (const file of paths) {
+      if (file) changedFiles.add(file.trim());
+    }
+  }
+
+  return [...changedFiles];
+}
+
 function gitChangedFiles(baseRef) {
   try {
-    return execFileSync("git", ["diff", "--name-only", `${baseRef}...HEAD`], {
+    return parseGitChangedFiles(execFileSync("git", ["diff", "--name-status", "--find-renames", `${baseRef}...HEAD`], {
       cwd: ROOT,
       encoding: "utf8",
       stdio: ["ignore", "pipe", "pipe"],
-    })
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
+    }));
   } catch (error) {
     throw new Error(`Unable to determine changed files from ${baseRef}: ${error.message}`);
   }
 }
 
-function buildChangedScope(baseRef) {
-  const changedFiles = gitChangedFiles(baseRef);
+function createChangedScope(baseRef, changedFiles) {
   const jsTranslationFiles = new Set();
   const phpPoFiles = new Set();
   const phpL10nFiles = new Set();
-  let sourceOrScriptChanged = false;
+  let jsSourceChanged = false;
+  let phpSourceChanged = false;
+  let checkerChanged = false;
 
   for (const file of changedFiles) {
     if (file.startsWith("translations/js/") && file.endsWith(".json")) {
@@ -112,8 +140,12 @@ function buildChangedScope(baseRef) {
       phpPoFiles.add(file);
     } else if (file.startsWith("translations/php/") && file.endsWith(".l10n.php")) {
       phpL10nFiles.add(file);
-    } else if (file.startsWith("source/")) {
-      sourceOrScriptChanged = true;
+    } else if (file.startsWith("source/js/")) {
+      jsSourceChanged = true;
+    } else if (file.startsWith("source/php/")) {
+      phpSourceChanged = true;
+    } else if (file.startsWith("scripts/")) {
+      checkerChanged = true;
     }
   }
 
@@ -123,8 +155,14 @@ function buildChangedScope(baseRef) {
     jsTranslationFiles,
     phpPoFiles,
     phpL10nFiles,
-    sourceOrScriptChanged,
+    jsSourceChanged,
+    phpSourceChanged,
+    checkerChanged,
   };
+}
+
+function buildChangedScope(baseRef) {
+  return createChangedScope(baseRef, gitChangedFiles(baseRef));
 }
 
 function toRepoRelativePath(filePath) {
@@ -133,13 +171,13 @@ function toRepoRelativePath(filePath) {
 
 function shouldCheckJsTranslationFile(filePath) {
   if (!changedScope) return true;
-  if (changedScope.sourceOrScriptChanged) return true;
+  if (changedScope.jsSourceChanged) return true;
   return changedScope.jsTranslationFiles.has(toRepoRelativePath(filePath));
 }
 
 function shouldCheckPhpPoFile(filePath) {
   if (!changedScope) return true;
-  if (changedScope.sourceOrScriptChanged) return true;
+  if (changedScope.phpSourceChanged) return true;
   return changedScope.phpPoFiles.has(toRepoRelativePath(filePath));
 }
 
@@ -149,7 +187,8 @@ function formatGitHubAnnotation(level, message) {
     .replace(/%/g, "%25")
     .replace(/\r/g, "%0D")
     .replace(/\n/g, "%0A");
-  console.log(`::${level}::${escaped}`);
+  const stream = cliOptions.json ? process.stderr : process.stdout;
+  stream.write(`::${level}::${escaped}\n`);
 }
 
 function createTriageSummary() {
@@ -541,6 +580,8 @@ module.exports = {
   serializeTriageSummary,
   buildCompletenessReport,
   parseCliOptions,
+  parseGitChangedFiles,
+  createChangedScope,
   buildChangedScope,
   toRepoRelativePath,
 };
