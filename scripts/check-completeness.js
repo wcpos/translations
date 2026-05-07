@@ -202,6 +202,7 @@ function createTriageSummary() {
     stale_js_keys: new Map(),
     php_untranslated: new Map(),
     naming_violation: new Map(),
+    php_plural_metadata: new Map(),
   };
 }
 
@@ -226,6 +227,23 @@ function findWcposNamingIssues(value) {
   }
 
   return issues;
+}
+
+function parsePluralFormsHeader(headers) {
+  const header = headers["plural-forms"] || headers["Plural-Forms"];
+  if (typeof header !== "string") return null;
+  const match = header.match(/nplurals\s*=\s*(\d+)/i);
+  if (!match) return null;
+  const nplurals = Number.parseInt(match[1], 10);
+  return Number.isFinite(nplurals) && nplurals > 0 ? { nplurals, header } : null;
+}
+
+function l10nHasPluralFormsHeader(filePath) {
+  try {
+    return /['"]plural-forms['"]\s*=>/.test(fs.readFileSync(filePath, "utf8"));
+  } catch {
+    return false;
+  }
 }
 
 function error(msg) {
@@ -366,6 +384,7 @@ function checkJsCompleteness() {
 
 function checkPhpCompleteness() {
   log("\n== PHP Translation Completeness ==\n");
+  const phpLocales = changedScope ? LOCALE_CODES : TRANSLATABLE_LOCALES;
 
   for (const potFile of PHP_POTS) {
     const domain = potFile.replace(/\.pot$/, "");
@@ -381,7 +400,7 @@ function checkPhpCompleteness() {
     }
     const totalStrings = potEntries.length;
 
-    for (const locale of TRANSLATABLE_LOCALES) {
+    for (const locale of phpLocales) {
       const poFile = domain + "-" + locale + ".po";
       const poPath = path.join(PHP_TRANSLATIONS_DIR, locale, poFile);
 
@@ -404,6 +423,27 @@ function checkPhpCompleteness() {
       }
 
       const translationsByContext = po.translations || {};
+      const pluralForms = parsePluralFormsHeader(po.headers || {});
+      const hasPluralEntries = potEntries.some(({ entry }) => entry.msgid_plural);
+      if (!pluralForms) {
+        recordTriageIssue(triageSummary, "php_plural_metadata", poFile);
+        error(locale + "/" + poFile + ": missing or invalid Plural-Forms header");
+      } else if (hasPluralEntries) {
+        for (const { context, msgid, entry: potEntry } of potEntries) {
+          if (!potEntry.msgid_plural) continue;
+          const translations = translationsByContext[context] || {};
+          const entry = translations[msgid];
+          if (!entry) continue;
+          const forms = entry.msgstr || [];
+          if (forms.length !== pluralForms.nplurals) {
+            recordTriageIssue(triageSummary, "php_plural_metadata", poFile);
+            const msgidLabel = context ? "[" + context + "] " + msgid : msgid;
+            error(locale + "/" + poFile + ": plural form count mismatch in \"" +
+              msgidLabel.slice(0, 50) + "\" — header nplurals=" + pluralForms.nplurals +
+              ", msgstr forms=" + forms.length);
+          }
+        }
+      }
 
       // Count empty msgstr (untranslated)
       let untranslated = 0;
@@ -477,6 +517,9 @@ function checkPhpCompleteness() {
       const l10nPath = path.join(PHP_TRANSLATIONS_DIR, locale, l10nFile);
       if (!fs.existsSync(l10nPath)) {
         error("Missing file: " + locale + "/" + l10nFile);
+      } else if (!l10nHasPluralFormsHeader(l10nPath)) {
+        recordTriageIssue(triageSummary, "php_plural_metadata", l10nFile);
+        error(locale + "/" + l10nFile + ": missing plural-forms header");
       }
 
       // Check .mo exists
@@ -590,4 +633,6 @@ module.exports = {
   buildChangedScope,
   toRepoRelativePath,
   shouldCheckPhpPoFile,
+  parsePluralFormsHeader,
+  l10nHasPluralFormsHeader,
 };

@@ -45,7 +45,15 @@ function generateL10nPhp(po) {
 
   // Generate PHP array in WordPress 6.5+ format.
   // WordPress expects: array( 'messages' => array( key => value, ... ) )
-  let php = `<?php\nreturn array(\n\t'messages' => array(\n`;
+  let php = `<?php\nreturn array(\n`;
+
+  for (const [key, value] of Object.entries(po.headers || {})) {
+    const escapedKey = key.toLowerCase().replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    const escapedValue = String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    php += `\t'${escapedKey}' => '${escapedValue}',\n`;
+  }
+
+  php += `\t'messages' => array(\n`;
 
   for (const { key, value } of entries) {
     const escapedKey = key.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
@@ -113,4 +121,10 @@ function main() {
   console.log(`\nProcessed ${poFiles.length} file(s).`);
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  generateL10nPhp,
+};
