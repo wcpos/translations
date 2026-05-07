@@ -148,3 +148,23 @@ test('tracks checker-only changes without marking translation sources changed', 
   assert.equal(scope.phpPoFiles.size, 0);
   assert.equal(scope.phpL10nFiles.size, 0);
 });
+
+test('locale plural expected keys match current Intl plural categories for app locales', () => {
+  const { expectedKeysForLocale } = require('../scripts/plural-rules.js');
+  const sourceKeys = [
+    'logs.entries_count_one',
+    'logs.entries_count_other',
+  ];
+
+  for (const locale of ['ca_ES', 'es', 'es_AR', 'es_ES', 'es_MX', 'fr', 'fr_CA', 'fr_FR', 'it_IT', 'pt', 'pt_BR', 'pt_PT']) {
+    assert.deepEqual([...expectedKeysForLocale(sourceKeys, locale)].sort(), [
+      'logs.entries_count_many',
+      'logs.entries_count_one',
+      'logs.entries_count_other',
+    ]);
+  }
+
+  assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'zh_TW')].sort(), [
+    'logs.entries_count_other',
+  ]);
+});
