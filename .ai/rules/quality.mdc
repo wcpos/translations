@@ -1,0 +1,48 @@
+---
+description: Quality rules for Aide/OpenClaw app translations
+globs:
+  - "translations/**/*.json"
+  - "translations/**/*.po"
+  - "scripts/translation-context.md"
+alwaysApply: true
+---
+
+# Translation Quality Bar
+
+Translations must be production-quality, natural UI copy for the target locale. Passing structural checks is necessary but not sufficient.
+
+## Natural target-language phrasing
+
+- Translate meaning, not English word order.
+- Prefer the phrasing a native-speaking retail/POS user would expect in the product UI.
+- Do not create literal “source-shaped” sentences when the target language requires a different verb order, case, article, or auxiliary verb.
+- Keep messages concise, but never at the cost of grammar.
+
+## Locale-specific conventions
+
+- Use the exact regional locale, not just the language family: `es_ES`, `es_AR`, `es_MX`, `fr_FR`, `fr_CA`, `de_DE`, `de_AT`, etc.
+- Use local tax and fiscal terms. Examples: German `USt-IdNr.` where the source clearly means VAT ID; Spanish `NIF/CIF/NIE` only when the context is Spain-specific enough; otherwise use a generic fiscal-ID term.
+- Do not blindly translate `UID` to a local tax acronym unless the source context is a tax-ID label. When ambiguous, inspect source comments/references in the PO entry.
+
+## Case and UI style
+
+- Follow target-language UI capitalization conventions.
+- Do not copy English Title Case into languages that normally use sentence case for UI labels.
+- Greek UI labels should normally use sentence case, e.g. prefer `Ετικέτα κατάστασης` over `Ετικέτα Κατάστασης`.
+- German nouns remain capitalized, but full labels/messages should still read naturally.
+
+## Known patterns to avoid
+
+- German: avoid literal agent placement such as `Bestelldetails manuell an %s von WCPOS gesendet.` Prefer natural phrasing such as `Bestelldetails wurden von WCPOS manuell an %s gesendet.`
+- Bulgarian: avoid missing auxiliary verbs in passive constructions, e.g. do not write `Данните за поръчката ръчно изпратени ...`; use a complete grammatical passive/active sentence.
+- Greek: avoid English-style title case in labels such as `Ετικέτα Κατάστασης`.
+
+## Quality smoke check
+
+Before opening or updating a translation PR, run:
+
+```bash
+pnpm run qa:quality -- --changed-since origin/main
+```
+
+This is a heuristic warning-only check. Investigate warnings; do not blindly silence them.

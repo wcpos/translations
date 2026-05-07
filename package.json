@@ -12,18 +12,20 @@
     "generate:php": "node scripts/generate-php-files.js",
     "validate": "node scripts/validate-translations.js",
     "check:completeness": "node scripts/check-completeness.js",
-    "test": "node tests/test-extraction.js && node tests/test-translation.js --dry-run && node tests/test-i18next-format.js && node tests/test-completeness-naming.js && node tests/test-update-consumer-version-prs.js",
+    "test": "node tests/test-extraction.js && node tests/test-translation.js --dry-run && node tests/test-i18next-format.js && node tests/test-completeness-naming.js && node tests/test-translation-quality-check.js && node tests/test-update-consumer-version-prs.js",
     "test:extraction": "node tests/test-extraction.js",
     "test:translation": "node tests/test-translation.js",
     "test:i18next": "node tests/test-i18next-format.js",
     "test:workflow": "node tests/test-workflow.js",
-    "test:all": "node tests/test-extraction.js && node tests/test-translation.js && node tests/test-workflow.js && node tests/test-i18next-format.js && node tests/test-completeness-naming.js && node tests/test-update-consumer-version-prs.js && node tests/test-wait-for-openclaw-task.js",
+    "test:all": "node tests/test-extraction.js && node tests/test-translation.js && node tests/test-workflow.js && node tests/test-i18next-format.js && node tests/test-completeness-naming.js && node tests/test-translation-quality-check.js && node tests/test-update-consumer-version-prs.js && node tests/test-wait-for-openclaw-task.js",
     "test:score": "node tests/score-translation.js",
     "generate:fallbacks": "node scripts/generate-fallbacks.js",
     "cleanup:stale": "node scripts/cleanup-stale-keys.js",
     "test:openclaw": "node tests/test-wait-for-openclaw-task.js",
     "test:completeness-naming": "node tests/test-completeness-naming.js",
-    "check:completeness:json": "node scripts/check-completeness.js --json --warn-only"
+    "check:completeness:json": "node scripts/check-completeness.js --json --warn-only",
+    "test:translation-quality": "node tests/test-translation-quality-check.js",
+    "qa:quality": "node scripts/check-translation-quality.js"
   },
   "dependencies": {
     "gettext-parser": "^9.0.2",

@@ -2,6 +2,26 @@
 
 You are translating UI strings for **WCPOS**, a Point of Sale (POS) application built on WooCommerce/WordPress. WCPOS runs on tablets, desktops, and mobile devices in retail environments worldwide.
 
+
+## QUALITY BAR — CRITICAL
+
+Structural correctness is not enough. Every translation must sound like natural, production-quality UI text written by a native speaker for the target regional locale.
+
+- Translate meaning, not English word order.
+- Prefer concise, idiomatic UI phrasing over literal source-shaped sentences.
+- Preserve grammar even for short labels and system notices.
+- Follow target-language capitalization conventions; do not copy English Title Case into languages that normally use sentence case.
+- For Greek, use sentence case for normal UI labels.
+- For German, use natural verb placement; avoid literal constructions such as "... an %s von WCPOS gesendet".
+- For Bulgarian, ensure passive/active constructions have the required auxiliary verbs.
+- For ambiguous fiscal labels such as "UID", inspect the PO comments/references before choosing a local tax acronym.
+
+Before opening/updating a PR, run the quality smoke check and review every warning:
+
+```bash
+pnpm run qa:quality -- --changed-since origin/main
+```
+
 ## YOUR TASK
 
 Translate the provided strings accurately and concisely for the **specific regional locale** you are given. These strings appear in the UI of a point of sale terminal — they must be short, clear, and use the correct retail/financial terminology for that region.

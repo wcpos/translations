@@ -19,11 +19,13 @@ This repository contains app/plugin translations, not documentation pages. Treat
 1. Read `scripts/translation-context.md` before translating.
 2. Use `pnpm --silent run check:completeness:json` to identify the next bounded batch.
 3. Prefer small batches by triage category, project/file, and locale.
-4. After editing translations, run the validation commands in this order:
+4. Keep translation work protected: push a branch and open/update a PR for every coherent batch. Never leave translated files only in a local working tree.
+5. After editing translations, run the validation commands in this order:
    - `pnpm test`
    - `node scripts/validate-translations.js`
+   - `pnpm run qa:quality -- --changed-since origin/main`
    - `node scripts/check-completeness.js`
-5. If `check-completeness` still fails due to unrelated pre-existing debt, include the exact remaining triage summary in the PR/body.
+6. If `check-completeness` still fails due to unrelated pre-existing debt, include the exact remaining triage summary in the PR/body.
 
 ## JSON translation rules
 
@@ -43,6 +45,13 @@ This repository contains app/plugin translations, not documentation pages. Treat
 - Do not edit `.pot` files as a substitute for translations; `.pot` files are source artifacts.
 - Regenerate `.mo` / `.l10n.php` files only via the repository scripts when needed.
 
+## Pull request safety
+
+- Translation work must always be represented by a GitHub PR before the task is considered complete.
+- If a batch is large or long-running, push partial progress and open/update the PR rather than keeping changes local.
+- Use a stable branch such as `aide/rolling-translations` for rolling batches, or one batch-specific branch per locale/project.
+- Include validation output and quality smoke-check warnings in the PR body so reviewers can focus native review.
+
 ## Product and terminology rules
 
 - Follow `.ai/rules/wcpos-naming.mdc`: use `WCPOS` / `WCPOS Pro`, not `WooCommerce POS` / `WooCommerce POS Pro` in customer-facing text.
@@ -50,6 +59,7 @@ This repository contains app/plugin translations, not documentation pages. Treat
 - Preserve technical terms where `scripts/translation-context.md` says they remain English: POS, SKU, API, REST API, JSON, PHP, CSS, HTML, URL, ID, UUID, Gateway, Webhook, Endpoint, Token, OAuth, Barcode, QR Code, Cache, Sync, Log, Debug, Admin, Plugin, Theme.
 - Keep POS UI concise. Do not expand short labels such as `Qty`, `No.`, `Min`, `Max`, `Inc`, `Exc`, `N/A`.
 - Localize regional tax/retail terms for the target locale: VAT/IVA/TVA/GST/MwSt/BTW, receipt/ticket, till/register, etc.
+- Follow `.ai/rules/quality.mdc`: translations must be natural target-language UI copy, not literal English word order.
 
 ## Triage categories
 

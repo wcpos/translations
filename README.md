@@ -75,6 +75,9 @@ node scripts/check-completeness.js
 
 # Machine-readable triage for Aide/OpenClaw; exits 0 for task planning
 pnpm --silent run check:completeness:json
+
+# Heuristic quality smoke check for recent translation changes
+pnpm run qa:quality -- --changed-since origin/main
 ```
 
 The JSON report contains top grouped issues under:
@@ -84,7 +87,7 @@ The JSON report contains top grouped issues under:
 - `stale_js_keys` — warning-only stale JSON entries
 - `naming_violation` — warning-only product naming debt
 
-Recommended order: fix `missing_js_keys` and `php_untranslated` first, then clean `naming_violation`, `stale_js_keys`, and PO header warnings.
+Recommended order: fix `missing_js_keys` and `php_untranslated` first, run the quality smoke check and review every warning, then clean `naming_violation`, `stale_js_keys`, and PO header warnings. Translation batches should always be pushed to a branch and opened as a PR so Aide work is never left only in a local working tree.
 
 ## Local Development
 
