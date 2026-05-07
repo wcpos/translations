@@ -12,6 +12,8 @@ const {
   parseGitChangedFiles,
   createChangedScope,
   shouldCheckPhpPoFile,
+  parsePluralFormsHeader,
+  l10nHasPluralFormsHeader,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -69,6 +71,7 @@ test('serializes triage summary as sorted plain objects for automation', () => {
     stale_js_keys: [],
     php_untranslated: [],
     naming_violation: [],
+    php_plural_metadata: [],
   });
 });
 
@@ -180,4 +183,54 @@ test('checks matching PHP PO file when l10n artifact changes', () => {
 
   assert.equal(shouldCheckPhpPoFile(poPath, scope), true);
   assert.equal(shouldCheckPhpPoFile(unrelatedPoPath, scope), false);
+});
+
+test('parses PHP Plural-Forms headers for gettext slot validation', () => {
+  assert.deepEqual(parsePluralFormsHeader({
+    'plural-forms': 'nplurals=3; plural=n%10==1 ? 0 : 2;',
+  }), {
+    nplurals: 3,
+    header: 'nplurals=3; plural=n%10==1 ? 0 : 2;',
+  });
+
+  assert.equal(parsePluralFormsHeader({}), null);
+  assert.equal(parsePluralFormsHeader({ 'plural-forms': 'plural=n != 1;' }), null);
+});
+
+test('detects plural-forms metadata in l10n.php artifacts', () => {
+  const fs = require('node:fs');
+  const os = require('node:os');
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'wcpos-l10n-'));
+  const withHeader = path.join(tempDir, 'with.l10n.php');
+  const withoutHeader = path.join(tempDir, 'without.l10n.php');
+
+  fs.writeFileSync(withHeader, "<?php return array('plural-forms' => 'nplurals=2; plural=n != 1;', 'messages' => array());");
+  fs.writeFileSync(withoutHeader, "<?php return array('messages' => array());");
+
+  assert.equal(l10nHasPluralFormsHeader(withHeader), true);
+  assert.equal(l10nHasPluralFormsHeader(withoutHeader), false);
+  assert.equal(l10nHasPluralFormsHeader(path.join(tempDir, 'missing.l10n.php')), false);
+});
+
+test('PHP artifact generator writes plural metadata into l10n.php', () => {
+  const { generateL10nPhp } = require('../scripts/generate-php-files.js');
+  const l10n = generateL10nPhp({
+    headers: {
+      'plural-forms': 'nplurals=2; plural=n != 1;',
+      language: 'de',
+    },
+    translations: {
+      '': {
+        'One order': {
+          msgstr: ['Eine Bestellung', '%s Bestellungen'],
+        },
+      },
+    },
+  });
+
+  assert.match(l10n, /'plural-forms' => 'nplurals=2; plural=n != 1;'/);
+  assert.match(l10n, /'language' => 'de'/);
+  assert.match(l10n, /Eine Bestellung/);
+  assert.match(l10n, /%s Bestellungen/);
+  assert.match(l10n, /\\x00/);
 });
