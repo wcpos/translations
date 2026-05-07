@@ -1,5 +1,18 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS Pro 1.8.12',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos-pro/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos-pro',
+	'language' => 'ar',
+	'plural-forms' => 'nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro - نقطة بيع لـ WooCommerce',
 		'https://wcpos.com/pro' => 'https://wcpos.com/pro',
