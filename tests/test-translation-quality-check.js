@@ -4,7 +4,14 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { findQualityWarnings, isAllowedUnchangedTechnicalString, scanJsonTranslations, scanPoFile } = require('../scripts/check-translation-quality.js');
+const {
+  findQualityWarnings,
+  isAllowedUnchangedTechnicalString,
+  isChangedRelativePath,
+  normalizePathSeparators,
+  scanJsonTranslations,
+  scanPoFile,
+} = require('../scripts/check-translation-quality.js');
 
 function test(name, fn) {
   try {
@@ -22,6 +29,14 @@ test('allows known technical strings to remain unchanged', () => {
   assert.equal(isAllowedUnchangedTechnicalString('OK'), true);
   assert.equal(isAllowedUnchangedTechnicalString('https://wordpress.org/plugins/woocommerce-pos/'), true);
   assert.equal(isAllowedUnchangedTechnicalString('Status Label'), false);
+});
+
+test('matches changed translation files with Windows path separators', () => {
+  const changed = new Set(['translations/php/de_DE/woocommerce-pos.po']);
+
+  assert.equal(normalizePathSeparators('translations\\php\\de_DE\\woocommerce-pos.po'), 'translations/php/de_DE/woocommerce-pos.po');
+  assert.equal(isChangedRelativePath(changed, 'translations\\php\\de_DE\\woocommerce-pos.po'), true);
+  assert.equal(isChangedRelativePath(changed, 'translations\\php\\fr_FR\\woocommerce-pos.po'), false);
 });
 
 test('flags unchanged human-facing English in non-English locales', () => {

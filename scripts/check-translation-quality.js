@@ -91,13 +91,26 @@ function parseArgs(argv) {
   return options;
 }
 
+function normalizePathSeparators(filePath) {
+  return filePath.replace(/\\/g, '/');
+}
+
+function isChangedRelativePath(changed, relativePath) {
+  return !changed || changed.has(normalizePathSeparators(relativePath));
+}
+
 function changedTranslationFiles(ref) {
   if (!ref) return null;
   try {
-    return new Set(execFileSync('git', ['diff', '--name-only', ref, '--', 'translations/php/**/*.po', 'translations/js/**/*.json'], {
+    const changed = execFileSync('git', ['diff', '--name-only', ref, '--', 'translations/php', 'translations/js'], {
       cwd: ROOT,
       encoding: 'utf8',
-    }).split('\n').filter(Boolean));
+    })
+      .split('\n')
+      .filter(Boolean)
+      .map(normalizePathSeparators)
+      .filter((file) => file.endsWith('.po') || file.endsWith('.json'));
+    return new Set(changed);
   } catch (error) {
     throw new Error(`Unable to list changed translation files since ${ref}: ${error.message}`);
   }
@@ -188,7 +201,7 @@ function discoverTranslationFiles({ locale, changedSince }) {
         if (!file.endsWith('.po')) continue;
         const absolute = path.join(phpDir, file);
         const relative = path.relative(ROOT, absolute);
-        if (changed && !changed.has(relative)) continue;
+        if (!isChangedRelativePath(changed, relative)) continue;
         files.push({ file: absolute, locale: code, type: 'po' });
       }
     }
@@ -206,7 +219,7 @@ function discoverTranslationFiles({ locale, changedSince }) {
           }
           if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
           const relative = path.relative(ROOT, absolute);
-          if (changed && !changed.has(relative)) continue;
+          if (!isChangedRelativePath(changed, relative)) continue;
           files.push({ file: absolute, locale: code, type: 'json' });
         }
       }
@@ -240,7 +253,9 @@ function main(argv = process.argv.slice(2)) {
 module.exports = {
   findQualityWarnings,
   isAllowedUnchangedTechnicalString,
+  isChangedRelativePath,
   isShortUiLabel,
+  normalizePathSeparators,
   scanPoFile,
   resolveJsonSourceText,
   scanJsonTranslations,
