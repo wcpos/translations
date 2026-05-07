@@ -26,6 +26,11 @@ const ALWAYS_ENGLISH = new Set([
   'WCPOS', 'WCPOS Pro', 'WooCommerce', 'WordPress', 'Stripe', 'PayPal', 'Square',
   'Gateway', 'Gateway ID', 'Barcode', 'QR Code', 'Debug', 'Error', 'Warning', 'Admin',
   'Plugin', 'Theme', 'Online', 'Offline', 'N/A', 'YYYY-MM-DD', 'DD/MM/YYYY', 'MM/DD/YYYY',
+  // Country-specific receipt/tax ID labels intentionally stay in their local form.
+  'Codice Fiscale', 'Partita IVA', 'P.IVA', 'USt-IdNr.', 'Steuernummer',
+  'CPF', 'CNPJ', 'GSTIN', 'NIF', 'CUIT', 'GST/HST', 'GST/HST No.', 'EIN', 'HRB', 'KVK',
+  // Technical/proper-noun receipt labels that are intentionally unchanged.
+  'kilbot', 'SKU: %s', 'POS & Online', 'HTML (Offline)', 'PHP (Legacy)',
 ]);
 
 function isAllowedUnchangedTechnicalString(value) {
@@ -33,6 +38,7 @@ function isAllowedUnchangedTechnicalString(value) {
   const trimmed = value.trim();
   if (!trimmed) return true;
   if (ALWAYS_ENGLISH.has(trimmed)) return true;
+  if (/^(?:%\d+\$[sdfb]|%[sdfb]|[\s:().,/-])+$/i.test(trimmed)) return true;
   if (/^https?:\/\//.test(trimmed)) return true;
   if (/^[\w.-]+@[\w.-]+$/.test(trimmed)) return true;
   if (/^[a-z0-9]+[._-][a-z0-9._-]+$/.test(trimmed) && trimmed.length <= 32) return true;

@@ -33,6 +33,14 @@ test('allows known technical strings to remain unchanged', () => {
   assert.equal(isAllowedUnchangedTechnicalString('Status Label'), false);
 });
 
+
+test('allows receipt tax labels and placeholder-only formats to remain unchanged', () => {
+  for (const value of ['Codice Fiscale', 'Partita IVA', 'USt-IdNr.', 'Steuernummer', '%1$s: %2$s', 'SKU: %s', 'POS & Online', 'HTML (Offline)', 'PHP (Legacy)', 'kilbot']) {
+    assert.equal(isAllowedUnchangedTechnicalString(value), true, value);
+    assert.deepEqual(findQualityWarnings({ locale: 'fr_FR', msgid: value, msgstr: value }), []);
+  }
+});
+
 test('matches changed translation files with Windows path separators', () => {
   const changed = new Set(['translations/php/de_DE/woocommerce-pos.po']);
 
