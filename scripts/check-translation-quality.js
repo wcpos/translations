@@ -96,6 +96,10 @@ function parseArgs(argv) {
     else if (arg === '--locale') options.locale = argv[++i] || '';
     else if (arg === '--changed-since') options.changedSince = argv[++i] || '';
   }
+  const outputModes = [options.json, options.markdown, options.githubAnnotations].filter(Boolean).length;
+  if (outputModes > 1) {
+    throw new Error('Choose only one output mode: --json, --markdown, or --github-annotations');
+  }
   return options;
 }
 

@@ -10,6 +10,7 @@ const {
   formatGithubAnnotations,
   formatMarkdownSummary,
   isChangedRelativePath,
+  main,
   normalizePathSeparators,
   scanJsonTranslations,
   scanPoFile,
@@ -187,6 +188,13 @@ test('formats empty markdown summary clearly', () => {
   assert.equal(formatMarkdownSummary([]), `## Translation quality smoke check\n\nNo warnings found.`);
 });
 
+test('rejects conflicting translation quality output modes', () => {
+  assert.throws(
+    () => main(['--json', '--markdown']),
+    /Choose only one output mode: --json, --markdown, or --github-annotations/,
+  );
+});
+
 
 test('formats GitHub Actions warning annotations', () => {
   const annotations = formatGithubAnnotations([
@@ -199,6 +207,28 @@ test('formats GitHub Actions warning annotations', () => {
   ]);
 
   assert.equal(annotations, '::warning file=translations/php/de_DE/woocommerce-pos-de_DE.po,title=Translation quality::German phrasing is too literal: Order details manually sent to %25s from WCPOS. => Bestelldetails manuell an %25s von WCPOS gesendet.');
+});
+
+test('formats multiple GitHub Actions warning annotations separated by newlines', () => {
+  const annotations = formatGithubAnnotations([
+    {
+      file: 'translations/php/de_DE/a.po',
+      msgid: 'foo',
+      msgstr: 'foo',
+      warning: 'first warning',
+    },
+    {
+      file: 'translations/php/fr_FR/b.po',
+      msgid: 'bar',
+      msgstr: 'bar',
+      warning: 'second warning',
+    },
+  ]);
+
+  const lines = annotations.split(/\r?\n/);
+  assert.equal(lines.length, 2);
+  assert.equal(lines[0], '::warning file=translations/php/de_DE/a.po,title=Translation quality::first warning: foo => foo');
+  assert.equal(lines[1], '::warning file=translations/php/fr_FR/b.po,title=Translation quality::second warning: bar => bar');
 });
 
 test('escapes GitHub Actions annotation control characters', () => {
