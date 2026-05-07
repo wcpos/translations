@@ -12,6 +12,8 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: woocommerce-pos\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n>=2 && n<=4 ? 1 : 2;\n"
 
 #. Plugin Name of the plugin
 msgid "WCPOS – Point of Sale for WooCommerce"
@@ -69,8 +71,7 @@ msgstr "Povolit trvalé odkazy"
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Activator.php:364
-#: includes/Services/Receipt_Data_Schema.php:368
-#: includes/Services/Receipt_Data_Schema.php:1030
+#: includes/Services/Receipt_Data_Schema.php:375
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:338
 #: templates/gallery/minimal-receipt.php:97
@@ -362,8 +363,8 @@ msgstr "Šablona"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Admin/Templates/List_Templates.php:407
 #: includes/Admin/Templates/List_Templates.php:841
-#: includes/Services/Receipt_Data_Schema.php:411
-#: includes/Services/Receipt_Data_Schema.php:433
+#: includes/Services/Receipt_Data_Schema.php:418
+#: includes/Services/Receipt_Data_Schema.php:440
 msgid "Type"
 msgstr "Typ"
 
@@ -377,7 +378,7 @@ msgstr "Zdroj"
 #: includes/Admin/Templates/List_Templates.php:409
 #: includes/Admin/Templates/List_Templates.php:843
 #: includes/Admin/Templates/List_Templates.php:854
-#: includes/Services/Receipt_I18n_Labels.php:212
+#: includes/Services/Receipt_I18n_Labels.php:214
 msgid "Status"
 msgstr "Stav"
 
@@ -424,7 +425,7 @@ msgstr "Aktivovat"
 #. translators: Label or action in the receipt templates admin screen.
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Admin/Templates/List_Templates.php:458
-#: includes/Services/Receipt_I18n_Labels.php:208
+#: includes/Services/Receipt_I18n_Labels.php:210
 msgid "Copy"
 msgstr "Kopírovat"
 
@@ -800,24 +801,24 @@ msgstr "Daňová identifikační čísla zákazníka."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:108
-#: includes/API/Orders_Controller.php:319
+#: includes/API/Orders_Controller.php:320
 msgid "Tax ID type."
 msgstr "Typ daňového identifikačního čísla."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:112
-#: includes/API/Orders_Controller.php:323
+#: includes/API/Orders_Controller.php:324
 msgid "Tax ID value."
 msgstr "Hodnota daňového identifikačního čísla."
 
 #: includes/API/Customers_Controller.php:116
-#: includes/API/Orders_Controller.php:327
+#: includes/API/Orders_Controller.php:328
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Kód země podle ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Customers_Controller.php:120
-#: includes/API/Orders_Controller.php:331
+#: includes/API/Orders_Controller.php:332
 msgid "Optional human-readable label."
 msgstr "Volitelný čitelný popisek."
 
@@ -827,7 +828,7 @@ msgstr "Filtrovat zákazníky podle rolí."
 
 #. translators: Use default WordPress translation.
 #: includes/API/Customers_Controller.php:326
-#: includes/API/Orders_Controller.php:696
+#: includes/API/Orders_Controller.php:777
 msgid "Invalid email address."
 msgstr "Neplatná e-mailová adresa."
 
@@ -854,52 +855,62 @@ msgid "You do not have permission to view logs."
 msgstr "Nemáte oprávnění zobrazit záznamy."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:264
+#: includes/API/Orders_Controller.php:265
 msgid "Email address"
 msgstr "E-mailová adresa"
 
-#: includes/API/Orders_Controller.php:269
+#: includes/API/Orders_Controller.php:270
 msgid "Save email to order"
 msgstr "Uložit e-mail k objednávce"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:301
+#: includes/API/Orders_Controller.php:302
 #: includes/API/Products_Controller.php:105
 #: includes/API/Product_Variations_Controller.php:109
 msgid "Barcode"
 msgstr "Čárový kód"
 
-#: includes/API/Orders_Controller.php:310
+#: includes/API/Orders_Controller.php:311
 msgid "Customer tax IDs snapshotted at sale time."
 msgstr "Daňová identifikační čísla zákazníka zaznamenaná v okamžiku prodeje."
 
+#: includes/API/Orders_Controller.php:463
+#: includes/API/Orders_Controller.php:477
+#: includes/API/Orders_Controller.php:487
+msgid "date_created_gmt must be a valid ISO 8601 UTC date."
+msgstr "date_created_gmt musí být platné datum ve formátu ISO 8601 UTC."
+
+#: includes/API/Orders_Controller.php:497
+msgid "date_created_gmt cannot be more than 24 hours in the future."
+msgstr "date_created_gmt nesmí být více než 24 hodin v budoucnosti."
+
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:725
+#: includes/API/Orders_Controller.php:806
 msgid "Filter orders by POS cashier."
 msgstr "Filtrovat objednávky podle pokladní POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Orders_Controller.php:733
+#: includes/API/Orders_Controller.php:814
 msgid "Filter orders by POS store."
 msgstr "Filtrovat objednávky podle obchodu POS."
 
 #. translators: %s: email address.
-#: includes/API/Orders_Controller.php:761
+#: includes/API/Orders_Controller.php:842
 #, php-format
 msgid "Email address %s added to billing details from WCPOS."
 msgstr "E-mailová adresa %s byla přidána k fakturačním údajům z WCPOS."
 
 #. translators: %s: email address.
-#: includes/API/Orders_Controller.php:774
+#: includes/API/Orders_Controller.php:855
 #, php-format
 msgid "Order details manually sent to %s from WCPOS."
 msgstr "Detaily objednávky byly ručně odeslány na %s z WCPOS."
 
-#: includes/API/Orders_Controller.php:839
+#: includes/API/Orders_Controller.php:920
 msgid "Unique identifier for the order status."
 msgstr "Unikátní identifikátor pro stav objednávky."
 
-#: includes/API/Orders_Controller.php:845
+#: includes/API/Orders_Controller.php:926
 msgid "Display name of the order status."
 msgstr "Zobrazované jméno stavu objednávky."
 
@@ -1190,8 +1201,8 @@ msgstr "Předaná částka"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Gateways/Cash.php:100
-#: includes/Services/Receipt_Data_Schema.php:719
-#: includes/Services/Receipt_Data_Schema.php:783
+#: includes/Services/Receipt_Data_Schema.php:726
+#: includes/Services/Receipt_Data_Schema.php:794
 #: includes/Services/Receipt_I18n_Labels.php:165
 #: templates/gallery/thermal-receipt.php:209
 #: templates/receipt.php:257
@@ -1309,8 +1320,8 @@ msgstr "Daňová účtenka"
 #. translators: Tax identification type label.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Preview_Receipt_Builder.php:747
-#: includes/Services/Receipt_Data_Schema.php:316
-#: includes/Services/Receipt_Data_Schema.php:401
+#: includes/Services/Receipt_Data_Schema.php:323
+#: includes/Services/Receipt_Data_Schema.php:408
 #: includes/Services/Receipt_I18n_Labels.php:67
 #: includes/Services/Receipt_I18n_Labels.php:95
 #: includes/Services/Receipt_I18n_Labels.php:124
@@ -1336,7 +1347,7 @@ msgstr ""
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Preview_Receipt_Builder.php:855
-#: includes/Services/Receipt_I18n_Labels.php:194
+#: includes/Services/Receipt_I18n_Labels.php:196
 #: templates/gallery/minimal-receipt.php:179
 #: templates/gallery/thermal-receipt.php:227
 msgid "Thank you for your purchase!"
@@ -1351,7 +1362,7 @@ msgid "Tax"
 msgstr "Daň"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Services/Receipt_Data_Builder.php:145
+#: includes/Services/Receipt_Data_Builder.php:148
 #: includes/Templates/Payment.php:356
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1361,8 +1372,7 @@ msgstr "Host"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:259
-#: includes/Services/Receipt_Data_Schema.php:1022
+#: includes/Services/Receipt_Data_Schema.php:266
 #: includes/Services/Receipt_I18n_Labels.php:44
 #: includes/Templates/Adapters/Html_Output_Adapter.php:36
 #: templates/gallery/minimal-receipt.php:88
@@ -1370,139 +1380,138 @@ msgid "Order"
 msgstr "Objednávka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:263
+#: includes/Services/Receipt_Data_Schema.php:270
 msgid "Order ID"
 msgstr "ID objednávky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:267
+#: includes/Services/Receipt_Data_Schema.php:274
 msgid "Order Number"
 msgstr "Číslo objednávky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:271
+#: includes/Services/Receipt_Data_Schema.php:278
 msgid "Currency"
 msgstr "Měna"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:275
-#: includes/Services/Receipt_I18n_Labels.php:188
+#: includes/Services/Receipt_Data_Schema.php:282
+#: includes/Services/Receipt_I18n_Labels.php:190
 msgid "Customer Note"
 msgstr "Poznámka pro zákazníka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:279
+#: includes/Services/Receipt_Data_Schema.php:286
 msgid "WC Status"
 msgstr "Stav WC"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:283
+#: includes/Services/Receipt_Data_Schema.php:290
 msgid "Status Label"
 msgstr "Štítek stavu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:287
+#: includes/Services/Receipt_Data_Schema.php:294
 msgid "Created Via"
 msgstr "Vytvořeno přes"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:292
+#: includes/Services/Receipt_Data_Schema.php:299
 msgid "Order Created"
 msgstr "Objednávka vytvořena"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:296
+#: includes/Services/Receipt_Data_Schema.php:303
 msgid "Order Paid"
 msgstr "Objednávka zaplacena"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:300
+#: includes/Services/Receipt_Data_Schema.php:307
 msgid "Order Completed"
 msgstr "Objednávka dokončena"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:304
+#: includes/Services/Receipt_Data_Schema.php:311
 msgid "Store"
 msgstr "Obchod"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:308
+#: includes/Services/Receipt_Data_Schema.php:315
 msgid "Store Name"
 msgstr "Název obchodu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:312
+#: includes/Services/Receipt_Data_Schema.php:319
 msgid "Address Lines"
 msgstr "Adresní řádky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:320
+#: includes/Services/Receipt_Data_Schema.php:327
 msgid "Phone"
 msgstr "Telefon"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:324
+#: includes/Services/Receipt_Data_Schema.php:331
 msgid "Email"
 msgstr "E-mail"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:328
+#: includes/Services/Receipt_Data_Schema.php:335
 msgid "Logo URL"
 msgstr "URL loga"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:333
-#: includes/Services/Receipt_I18n_Labels.php:215
+#: includes/Services/Receipt_Data_Schema.php:340
+#: includes/Services/Receipt_I18n_Labels.php:217
 msgid "Opening Hours"
 msgstr "Otevírací doba"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:338
+#: includes/Services/Receipt_Data_Schema.php:345
 msgid "Opening Hours (Vertical)"
 msgstr "Otevírací doba (svisle)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:343
+#: includes/Services/Receipt_Data_Schema.php:350
 msgid "Opening Hours (Inline)"
 msgstr "Otevírací doba (v řádku)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:348
+#: includes/Services/Receipt_Data_Schema.php:355
 msgid "Opening Hours Notes"
 msgstr "Poznámky k otevírací době"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:353
+#: includes/Services/Receipt_Data_Schema.php:360
 msgid "Personal Notes"
 msgstr "Osobní poznámky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:358
+#: includes/Services/Receipt_Data_Schema.php:365
 msgid "Policies & Conditions"
 msgstr "Zásady a podmínky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:363
+#: includes/Services/Receipt_Data_Schema.php:370
 msgid "Footer Imprint"
 msgstr "Zápatní řádek"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:372
+#: includes/Services/Receipt_Data_Schema.php:379
 msgid "Cashier ID"
 msgstr "ID pokladníka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:376
+#: includes/Services/Receipt_Data_Schema.php:383
 msgid "Cashier Name"
 msgstr "Jméno pokladníka"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:381
-#: includes/Services/Receipt_Data_Schema.php:1034
+#: includes/Services/Receipt_Data_Schema.php:388
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/gallery/thermal-receipt.php:145
 #: templates/receipt.php:126
@@ -1510,163 +1519,162 @@ msgid "Customer"
 msgstr "Zákazník"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:385
+#: includes/Services/Receipt_Data_Schema.php:392
 msgid "Customer ID"
 msgstr "ID zákazníka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:389
+#: includes/Services/Receipt_Data_Schema.php:396
 msgid "Customer Name"
 msgstr "Jméno zákazníka"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:393
+#: includes/Services/Receipt_Data_Schema.php:400
 #: includes/Services/Receipt_I18n_Labels.php:132
 msgid "Billing Address"
 msgstr "Fakturační adresa"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:397
+#: includes/Services/Receipt_Data_Schema.php:404
 msgid "Shipping Address"
 msgstr "Dodací adresa"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:406
+#: includes/Services/Receipt_Data_Schema.php:413
 #: includes/Services/Receipt_I18n_Labels.php:53
 msgid "Customer Tax IDs"
 msgstr "DIČ zákazníka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:415
-#: includes/Services/Receipt_Data_Schema.php:437
-#: includes/Services/Receipt_Data_Schema.php:1009
+#: includes/Services/Receipt_Data_Schema.php:422
+#: includes/Services/Receipt_Data_Schema.php:444
+#: includes/Services/Receipt_Data_Schema.php:1020
 msgid "Value"
 msgstr "Hodnota"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:419
-#: includes/Services/Receipt_Data_Schema.php:441
-#: includes/Services/Receipt_Data_Schema.php:474
+#: includes/Services/Receipt_Data_Schema.php:426
+#: includes/Services/Receipt_Data_Schema.php:448
+#: includes/Services/Receipt_Data_Schema.php:481
 msgid "Country"
 msgstr "Země"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:423
-#: includes/Services/Receipt_Data_Schema.php:445
-#: includes/Services/Receipt_Data_Schema.php:1005
+#: includes/Services/Receipt_Data_Schema.php:430
+#: includes/Services/Receipt_Data_Schema.php:452
+#: includes/Services/Receipt_Data_Schema.php:1016
 msgid "Label"
 msgstr "Štítek"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:428
+#: includes/Services/Receipt_Data_Schema.php:435
 msgid "Store Tax IDs"
 msgstr "DIČ obchodu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:450
+#: includes/Services/Receipt_Data_Schema.php:457
 msgid "Store Address"
 msgstr "Adresa obchodu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:454
+#: includes/Services/Receipt_Data_Schema.php:461
 msgid "Address line 1"
 msgstr "Adresa, řádek 1"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:458
+#: includes/Services/Receipt_Data_Schema.php:465
 msgid "Address line 2"
 msgstr "Adresa, řádek 2"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:462
+#: includes/Services/Receipt_Data_Schema.php:469
 msgid "City"
 msgstr "Město"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:466
+#: includes/Services/Receipt_Data_Schema.php:473
 msgid "State / Region"
 msgstr "Stát / Region"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:470
+#: includes/Services/Receipt_Data_Schema.php:477
 msgid "Postcode"
 msgstr "PSČ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:479
+#: includes/Services/Receipt_Data_Schema.php:486
 msgid "Line Items"
 msgstr "Položky objednávky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:484
+#: includes/Services/Receipt_Data_Schema.php:491
 msgid "Item Key"
 msgstr "Klíč položky"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:488
-#: includes/Services/Receipt_Data_Schema.php:867
+#: includes/Services/Receipt_Data_Schema.php:495
+#: includes/Services/Receipt_Data_Schema.php:878
 #: includes/Services/Receipt_I18n_Labels.php:136
 msgid "SKU"
 msgstr "SKU"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:492
-#: includes/Services/Receipt_Data_Schema.php:863
+#: includes/Services/Receipt_Data_Schema.php:499
+#: includes/Services/Receipt_Data_Schema.php:874
 msgid "Product Name"
 msgstr "Název produktu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:496
-#: includes/Services/Receipt_Data_Schema.php:871
+#: includes/Services/Receipt_Data_Schema.php:503
+#: includes/Services/Receipt_Data_Schema.php:882
 msgid "Quantity"
 msgstr "Množství"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:500
+#: includes/Services/Receipt_Data_Schema.php:507
 msgid "Quantity Refunded"
 msgstr "Vrácené množství"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:504
+#: includes/Services/Receipt_Data_Schema.php:511
 msgid "Unit Subtotal"
 msgstr "Mezisoučet za jednotku"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:508
+#: includes/Services/Receipt_Data_Schema.php:515
 msgid "Unit Subtotal (incl tax)"
 msgstr "Mezisoučet za jednotku (vč. daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:512
+#: includes/Services/Receipt_Data_Schema.php:519
 msgid "Unit Subtotal (excl tax)"
 msgstr "Mezisoučet za jednotku (bez daně)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:516
+#: includes/Services/Receipt_Data_Schema.php:523
 #: includes/Services/Receipt_I18n_Labels.php:138
 msgid "Unit Price"
 msgstr "Jednotková cena"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:520
+#: includes/Services/Receipt_Data_Schema.php:527
 msgid "Unit Price (incl tax)"
 msgstr "Cena jednotky (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:524
+#: includes/Services/Receipt_Data_Schema.php:531
 msgid "Unit Price (excl tax)"
 msgstr "Cena jednotky (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:528
-#: includes/Services/Receipt_Data_Schema.php:675
-#: includes/Services/Receipt_Data_Schema.php:1038
+#: includes/Services/Receipt_Data_Schema.php:535
+#: includes/Services/Receipt_Data_Schema.php:682
 #: includes/Services/Receipt_I18n_Labels.php:156
 #: templates/gallery/minimal-receipt.php:130
 #: templates/gallery/thermal-receipt.php:166
@@ -1674,84 +1682,83 @@ msgid "Subtotal"
 msgstr "Mezisoučet"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:532
-#: includes/Services/Receipt_Data_Schema.php:679
+#: includes/Services/Receipt_Data_Schema.php:539
+#: includes/Services/Receipt_Data_Schema.php:686
 msgid "Subtotal (incl tax)"
 msgstr "Mezisoučet (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:536
-#: includes/Services/Receipt_Data_Schema.php:683
+#: includes/Services/Receipt_Data_Schema.php:543
+#: includes/Services/Receipt_Data_Schema.php:690
 msgid "Subtotal (excl tax)"
 msgstr "Mezisoučet (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:540
-#: includes/Services/Receipt_Data_Schema.php:641
+#: includes/Services/Receipt_Data_Schema.php:547
+#: includes/Services/Receipt_Data_Schema.php:648
 msgid "Discounts"
 msgstr "Slevy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:544
+#: includes/Services/Receipt_Data_Schema.php:551
 msgid "Discounts (incl tax)"
 msgstr "Slevy (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:548
+#: includes/Services/Receipt_Data_Schema.php:555
 msgid "Discounts (excl tax)"
 msgstr "Slevy (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:552
+#: includes/Services/Receipt_Data_Schema.php:559
 msgid "Line Total"
 msgstr "Celkem za položku"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:556
+#: includes/Services/Receipt_Data_Schema.php:563
 msgid "Line Total (incl tax)"
 msgstr "Celkem za položku (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:560
+#: includes/Services/Receipt_Data_Schema.php:567
 msgid "Line Total (excl tax)"
 msgstr "Celkem za položku (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:564
+#: includes/Services/Receipt_Data_Schema.php:571
 #: includes/Services/Receipt_I18n_Labels.php:185
 msgid "Total Refunded"
 msgstr "Celkem vráceno"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:568
+#: includes/Services/Receipt_Data_Schema.php:575
 msgid "Line Taxes"
 msgstr "Zdaňování položky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:572
+#: includes/Services/Receipt_Data_Schema.php:579
 msgid "Item Meta"
 msgstr "Metadata položky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:577
+#: includes/Services/Receipt_Data_Schema.php:584
 msgid "Fees"
 msgstr "Poplatky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:582
-#: includes/Services/Receipt_Data_Schema.php:898
+#: includes/Services/Receipt_Data_Schema.php:589
+#: includes/Services/Receipt_Data_Schema.php:909
 msgid "Fee Label"
 msgstr "Skladka"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:586
-#: includes/Services/Receipt_Data_Schema.php:620
-#: includes/Services/Receipt_Data_Schema.php:658
-#: includes/Services/Receipt_Data_Schema.php:703
-#: includes/Services/Receipt_Data_Schema.php:1042
+#: includes/Services/Receipt_Data_Schema.php:593
+#: includes/Services/Receipt_Data_Schema.php:627
+#: includes/Services/Receipt_Data_Schema.php:665
+#: includes/Services/Receipt_Data_Schema.php:710
 #: includes/Services/Receipt_I18n_Labels.php:158
 #: templates/gallery/minimal-receipt.php:109
 #: templates/gallery/minimal-receipt.php:156
@@ -1759,180 +1766,187 @@ msgid "Total"
 msgstr "Celkem"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:590
-#: includes/Services/Receipt_Data_Schema.php:624
-#: includes/Services/Receipt_Data_Schema.php:662
+#: includes/Services/Receipt_Data_Schema.php:597
+#: includes/Services/Receipt_Data_Schema.php:631
+#: includes/Services/Receipt_Data_Schema.php:669
 msgid "Total (incl tax)"
 msgstr "Celkem (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:594
-#: includes/Services/Receipt_Data_Schema.php:628
-#: includes/Services/Receipt_Data_Schema.php:666
+#: includes/Services/Receipt_Data_Schema.php:601
+#: includes/Services/Receipt_Data_Schema.php:635
+#: includes/Services/Receipt_Data_Schema.php:673
 msgid "Total (excl tax)"
 msgstr "Celkem (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:598
+#: includes/Services/Receipt_Data_Schema.php:605
 msgid "Fee Taxes"
 msgstr "Daně z poplatku"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:602
+#: includes/Services/Receipt_Data_Schema.php:609
 msgid "Fee Meta"
 msgstr "Metadata poplatku"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:607
+#: includes/Services/Receipt_Data_Schema.php:614
 msgid "Shipping"
 msgstr "Doprava"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:612
-#: includes/Services/Receipt_Data_Schema.php:925
+#: includes/Services/Receipt_Data_Schema.php:619
+#: includes/Services/Receipt_Data_Schema.php:936
 msgid "Shipping Label"
 msgstr "Shipovací štítek"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:616
-#: includes/Services/Receipt_Data_Schema.php:929
+#: includes/Services/Receipt_Data_Schema.php:623
+#: includes/Services/Receipt_Data_Schema.php:940
 msgid "Shipping Method ID"
 msgstr "ID způsobu dopravy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:632
+#: includes/Services/Receipt_Data_Schema.php:639
 msgid "Shipping Taxes"
 msgstr "Daně z dopravy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:636
+#: includes/Services/Receipt_Data_Schema.php:643
 msgid "Shipping Meta"
 msgstr "Metadata dopravy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:646
+#: includes/Services/Receipt_Data_Schema.php:653
 msgid "Discount Label"
 msgstr "Popisek slevy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:650
+#: includes/Services/Receipt_Data_Schema.php:657
 msgid "Coupon Code"
 msgstr "Kód kupónu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:654
+#: includes/Services/Receipt_Data_Schema.php:661
 msgid "Coupon Codes"
 msgstr "Kódy kupónů"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:671
+#: includes/Services/Receipt_Data_Schema.php:678
 msgid "Totals"
 msgstr "Zápisy"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:687
+#: includes/Services/Receipt_Data_Schema.php:694
 msgid "Discount Total"
 msgstr "Celková sleva"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:691
+#: includes/Services/Receipt_Data_Schema.php:698
 msgid "Discount Total (incl tax)"
 msgstr "Celková sleva (vč. DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:695
+#: includes/Services/Receipt_Data_Schema.php:702
 msgid "Discount Total (excl tax)"
 msgstr "Celková sleva (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:699
+#: includes/Services/Receipt_Data_Schema.php:706
 msgid "Tax Total"
 msgstr "DPH celkem"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:707
+#: includes/Services/Receipt_Data_Schema.php:714
 #: includes/Services/Receipt_I18n_Labels.php:160
 msgid "Total (incl. tax)"
 msgstr "Celkem (vč. daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:711
+#: includes/Services/Receipt_Data_Schema.php:718
 msgid "Total (excl. tax)"
 msgstr "Celkem (bez daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:715
+#: includes/Services/Receipt_Data_Schema.php:722
 msgid "Paid Total"
 msgstr "Placené celkem"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:723
+#: includes/Services/Receipt_Data_Schema.php:730
 msgid "Refund Total"
 msgstr "Celková vrácená částka"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:728
+#: includes/Services/Receipt_Data_Schema.php:734
+#: includes/Services/Receipt_I18n_Labels.php:187
+msgid "Net Total"
+msgstr "Celkem bez DPH"
+
+#. translators: Label for a receipt data field in the template editor.
+#. translators: Standalone label used in printed receipt templates.
+#: includes/Services/Receipt_Data_Schema.php:739
 #: includes/Services/Receipt_I18n_Labels.php:168
 msgid "Tax Summary"
 msgstr "Přehled DPH"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:733
+#: includes/Services/Receipt_Data_Schema.php:744
 msgid "Tax Code"
 msgstr "Daňový kód"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:737
+#: includes/Services/Receipt_Data_Schema.php:748
 msgid "Tax Label"
 msgstr "Popisek DPH"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:741
+#: includes/Services/Receipt_Data_Schema.php:752
 msgid "Tax Rate (%)"
 msgstr "Daňová sazba (%)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:745
+#: includes/Services/Receipt_Data_Schema.php:756
 msgid "Compound Tax"
 msgstr "Složená daň"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:749
+#: includes/Services/Receipt_Data_Schema.php:760
 msgid "Taxable Amount (excl)"
 msgstr "Zdanitelný částka (bez DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:753
+#: includes/Services/Receipt_Data_Schema.php:764
 #: includes/Services/Receipt_I18n_Labels.php:170
 msgid "Tax Amount"
 msgstr "Daňová částka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:757
+#: includes/Services/Receipt_Data_Schema.php:768
 msgid "Taxable Amount (incl)"
 msgstr "Zdanitelná částka (s DPH)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:762
+#: includes/Services/Receipt_Data_Schema.php:773
 msgid "Payments"
 msgstr "Plateby"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:767
+#: includes/Services/Receipt_Data_Schema.php:778
 msgid "Method ID"
 msgstr "ID způsobu platby"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:771
+#: includes/Services/Receipt_Data_Schema.php:782
 msgid "Payment Method"
 msgstr "Způsob platby"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:775
+#: includes/Services/Receipt_Data_Schema.php:786
 #: includes/Services/Receipt_I18n_Labels.php:184
 msgid "Amount"
 msgstr "Částka"
@@ -1940,7 +1954,7 @@ msgstr "Částka"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:779
+#: includes/Services/Receipt_Data_Schema.php:790
 #: includes/Services/Receipt_I18n_Labels.php:164
 #: templates/gallery/thermal-receipt.php:205
 #: templates/receipt.php:253
@@ -1948,236 +1962,240 @@ msgid "Tendered"
 msgstr "Uplaceno"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:787
+#: includes/Services/Receipt_Data_Schema.php:798
 msgid "Transaction ID"
 msgstr "ID transakce"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:792
+#: includes/Services/Receipt_Data_Schema.php:803
 msgid "Refunds"
 msgstr "Vrácení peněz"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:797
+#: includes/Services/Receipt_Data_Schema.php:808
 msgid "Refund ID"
 msgstr "ID vrácení peněz"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:801
+#: includes/Services/Receipt_Data_Schema.php:812
 msgid "Refund Date"
 msgstr "Datum vrácení peněz"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:805
+#: includes/Services/Receipt_Data_Schema.php:816
 msgid "Refund Amount"
 msgstr "Vrácená částka"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:809
+#: includes/Services/Receipt_Data_Schema.php:820
 msgid "Refund Subtotal"
 msgstr "Mezisoučet vrácení peněz"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:813
+#: includes/Services/Receipt_Data_Schema.php:824
 msgid "Refund Tax Total"
 msgstr "Celková daň vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:817
-#: includes/Services/Receipt_Data_Schema.php:933
+#: includes/Services/Receipt_Data_Schema.php:828
+#: includes/Services/Receipt_Data_Schema.php:944
 msgid "Refund Shipping Total"
 msgstr "Celková doprava vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:821
+#: includes/Services/Receipt_Data_Schema.php:832
 msgid "Refund Shipping Tax"
 msgstr "Daň z dopravy vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:825
+#: includes/Services/Receipt_Data_Schema.php:836
 msgid "Refund Reason"
 msgstr "Důvod vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:830
+#: includes/Services/Receipt_Data_Schema.php:841
 msgid "Refunded By (User ID)"
 msgstr "Vráceno uživatelem (ID)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:834
+#: includes/Services/Receipt_Data_Schema.php:845
 msgid "Refunded By (Name)"
 msgstr "Vráceno uživatelem (jméno)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:838
+#: includes/Services/Receipt_Data_Schema.php:849
 msgid "Refunded Payment"
 msgstr "Vrácená platba"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:842
+#: includes/Services/Receipt_Data_Schema.php:853
 msgid "Refund Destination"
 msgstr "Cíl vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:846
+#: includes/Services/Receipt_Data_Schema.php:857
 msgid "Refund Gateway ID"
 msgstr "ID platební brány vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:850
+#: includes/Services/Receipt_Data_Schema.php:861
 msgid "Refund Gateway Title"
 msgstr "Název platební brány vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:854
+#: includes/Services/Receipt_Data_Schema.php:865
 msgid "Refund Processing Mode"
 msgstr "Režim zpracování vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:858
+#: includes/Services/Receipt_Data_Schema.php:869
 msgid "Refund Lines"
 msgstr "Řádky vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:875
+#: includes/Services/Receipt_Data_Schema.php:886
 msgid "Refund Line Total"
 msgstr "Celkem za řádek vrácení"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:879
+#: includes/Services/Receipt_Data_Schema.php:890
 msgid "Refund Line Total (incl tax)"
 msgstr "Celkem za řádek vrácení (vč. daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:883
+#: includes/Services/Receipt_Data_Schema.php:894
 msgid "Refund Line Total (excl tax)"
 msgstr "Celkem za řádek vrácení (bez daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:887
+#: includes/Services/Receipt_Data_Schema.php:898
 msgid "Refund Line Taxes"
 msgstr "Daně vrácených položek"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:893
+#: includes/Services/Receipt_Data_Schema.php:904
 msgid "Refund Fees"
 msgstr "Vrácené poplatky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:902
+#: includes/Services/Receipt_Data_Schema.php:913
 msgid "Refund Fee Total"
 msgstr "Celkové vrácené poplatky"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:906
+#: includes/Services/Receipt_Data_Schema.php:917
 msgid "Refund Fee Total (incl tax)"
 msgstr "Celkové vrácené poplatky (vč. daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:910
+#: includes/Services/Receipt_Data_Schema.php:921
 msgid "Refund Fee Total (excl tax)"
 msgstr "Celkové vrácené poplatky (bez daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:914
+#: includes/Services/Receipt_Data_Schema.php:925
 msgid "Refund Fee Taxes"
 msgstr "Daně vrácených poplatků"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:920
+#: includes/Services/Receipt_Data_Schema.php:931
 msgid "Refund Shipping"
 msgstr "Vrácené dopravné"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:937
+#: includes/Services/Receipt_Data_Schema.php:948
 msgid "Refund Shipping Total (incl tax)"
 msgstr "Celkové vrácené dopravné (vč. daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:941
+#: includes/Services/Receipt_Data_Schema.php:952
 msgid "Refund Shipping Total (excl tax)"
 msgstr "Celkové vrácené dopravné (bez daně)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:945
+#: includes/Services/Receipt_Data_Schema.php:956
 msgid "Refund Shipping Taxes"
 msgstr "Daně vráceného dopravného"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:952
+#: includes/Services/Receipt_Data_Schema.php:963
 msgid "Fiscal"
 msgstr "Fiskální"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:956
+#: includes/Services/Receipt_Data_Schema.php:967
 msgid "Immutable ID"
 msgstr "Neměnné ID"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:960
+#: includes/Services/Receipt_Data_Schema.php:971
 msgid "Receipt Number"
 msgstr "Číslo dokladu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:964
+#: includes/Services/Receipt_Data_Schema.php:975
 msgid "Sequence"
 msgstr "Sekvence"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:968
+#: includes/Services/Receipt_Data_Schema.php:979
 msgid "Hash"
 msgstr "Hash"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:972
+#: includes/Services/Receipt_Data_Schema.php:983
 msgid "QR Payload"
 msgstr "QR payload"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:976
+#: includes/Services/Receipt_Data_Schema.php:987
 msgid "Tax Agency Code"
 msgstr "Kód daňové agentury"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:980
+#: includes/Services/Receipt_Data_Schema.php:991
 msgid "Signed At"
 msgstr "Podpsáno v"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:984
+#: includes/Services/Receipt_Data_Schema.php:995
 msgid "Signature Excerpt"
 msgstr "Výňatek podpisu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:988
+#: includes/Services/Receipt_Data_Schema.php:999
 msgid "Document Label"
 msgstr "Označení dokumentu"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:992
+#: includes/Services/Receipt_Data_Schema.php:1003
 msgid "Is Reprint"
 msgstr "Je opakovaný tisk"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:996
+#: includes/Services/Receipt_Data_Schema.php:1007
 msgid "Reprint Count"
 msgstr "Počet opakovaných tisků"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1000
+#: includes/Services/Receipt_Data_Schema.php:1011
 msgid "Extra Fields"
 msgstr "Doplňková pole"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1018
+#: includes/Services/Receipt_Data_Schema.php:1027
 msgid "Labels (i18n)"
 msgstr "Štítky (i18n)"
 
 #. translators: Label for a receipt data field in the template editor.
+#: includes/Services/Receipt_Data_Schema.php:1061
+msgid "Date & Time"
+msgstr "Datum a čas"
+
+#. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:1026
-#: includes/Services/Receipt_Data_Schema.php:1062
+#: includes/Services/Receipt_Data_Schema.php:1065
 #: includes/Services/Receipt_I18n_Labels.php:45
 #: templates/gallery/minimal-receipt.php:92
 #: templates/gallery/thermal-receipt.php:138
@@ -2186,92 +2204,87 @@ msgid "Date"
 msgstr "Datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1058
-msgid "Date & Time"
-msgstr "Datum a čas"
-
-#. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1066
+#: includes/Services/Receipt_Data_Schema.php:1069
 msgid "Time"
 msgstr "Čas"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1070
+#: includes/Services/Receipt_Data_Schema.php:1073
 msgid "Short Date & Time"
 msgstr "Krátké datum a čas"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1074
+#: includes/Services/Receipt_Data_Schema.php:1077
 msgid "Long Date & Time"
 msgstr "Dlouhé datum a čas"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1078
+#: includes/Services/Receipt_Data_Schema.php:1081
 msgid "Full Date & Time"
 msgstr "Úplné datum a čas"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1082
+#: includes/Services/Receipt_Data_Schema.php:1085
 msgid "Short Date"
 msgstr "Krátké datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1086
+#: includes/Services/Receipt_Data_Schema.php:1089
 msgid "Long Date"
 msgstr "Dlouhé datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1090
+#: includes/Services/Receipt_Data_Schema.php:1093
 msgid "Full Date"
 msgstr "Úplné datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1094
+#: includes/Services/Receipt_Data_Schema.php:1097
 msgid "YYYY-MM-DD"
 msgstr "RRRR-MM-DD"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1098
+#: includes/Services/Receipt_Data_Schema.php:1101
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/RRRR"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1102
+#: includes/Services/Receipt_Data_Schema.php:1105
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/RRRR"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1106
+#: includes/Services/Receipt_Data_Schema.php:1109
 msgid "Weekday Short"
 msgstr "Krátký název dne"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1110
+#: includes/Services/Receipt_Data_Schema.php:1113
 msgid "Weekday Long"
 msgstr "Dlouhý název dne"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1114
+#: includes/Services/Receipt_Data_Schema.php:1117
 msgid "Day"
 msgstr "Den"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1118
+#: includes/Services/Receipt_Data_Schema.php:1121
 msgid "Month Number"
 msgstr "Číslo měsíce"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1122
+#: includes/Services/Receipt_Data_Schema.php:1125
 msgid "Month Short"
 msgstr "Měsíc krátce"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1126
+#: includes/Services/Receipt_Data_Schema.php:1129
 msgid "Month Long"
 msgstr "Měsíc plně"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1130
+#: includes/Services/Receipt_Data_Schema.php:1133
 msgid "Year"
 msgstr "Rok"
 
@@ -2673,81 +2686,86 @@ msgid "Returned Items"
 msgstr "Vrácené položky"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:189
+#: includes/Services/Receipt_I18n_Labels.php:186
+msgid "Refunded"
+msgstr "Vráceno"
+
+#. translators: Standalone label used in printed receipt templates.
+#: includes/Services/Receipt_I18n_Labels.php:191
 msgid "Terms & Conditions"
 msgstr "Obchodní podmínky"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:190
+#: includes/Services/Receipt_I18n_Labels.php:192
 #: templates/gallery/gift-receipt.php:123
 msgid "A message for you"
 msgstr "Zpráva pro vás"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:193
+#: includes/Services/Receipt_I18n_Labels.php:195
 msgid "Thank you!"
 msgstr "Děkujeme!"
 
-#: includes/Services/Receipt_I18n_Labels.php:195
+#: includes/Services/Receipt_I18n_Labels.php:197
 msgid "Thank you for shopping with us!"
 msgstr "Děkujeme za váš nákup!"
 
-#: includes/Services/Receipt_I18n_Labels.php:196
+#: includes/Services/Receipt_I18n_Labels.php:198
 msgid "Thank you for your business."
 msgstr "Děkujeme za vaši důvěru."
 
-#: includes/Services/Receipt_I18n_Labels.php:197
+#: includes/Services/Receipt_I18n_Labels.php:199
 msgid "Items may be returned or exchanged within 30 days with this receipt."
 msgstr "Položky lze vrátit nebo vyměnit do 30 dnů s tímto dokladem."
 
-#: includes/Services/Receipt_I18n_Labels.php:198
+#: includes/Services/Receipt_I18n_Labels.php:200
 msgid ""
 "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase."
 msgstr ""
 "Tato nabídka je platná 30 dnů od data vystavení. Ceny se po uplynutí doby platnosti mohou změnit. Toto není doklad o nákupu ani potvrzení o nákupu."
 
-#: includes/Services/Receipt_I18n_Labels.php:199
+#: includes/Services/Receipt_I18n_Labels.php:201
 msgid "This is a quote, not a receipt"
 msgstr "Toto je nabídka, nikoli doklad o nákupu"
 
-#: includes/Services/Receipt_I18n_Labels.php:200
+#: includes/Services/Receipt_I18n_Labels.php:202
 msgid "Please retain this receipt for your records."
 msgstr "Uschovejte si tento doklad pro své záznamy."
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:203
+#: includes/Services/Receipt_I18n_Labels.php:205
 msgid "KITCHEN"
 msgstr "KUCHYNĚ"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:206
+#: includes/Services/Receipt_I18n_Labels.php:208
 msgid "Signature"
 msgstr "Podpis"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:207
+#: includes/Services/Receipt_I18n_Labels.php:209
 msgid "Document Type"
 msgstr "Typ dokumentu"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:209
+#: includes/Services/Receipt_I18n_Labels.php:211
 msgid "Copy No."
 msgstr "Číslo kopie"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:213
+#: includes/Services/Receipt_I18n_Labels.php:215
 msgid "Completed"
 msgstr "Dokončeno"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_I18n_Labels.php:214
+#: includes/Services/Receipt_I18n_Labels.php:216
 msgid "Printed"
 msgstr "Vytištěno"
 
 #. translators: %s: store tax identification number
 #. translators: %s: tax identification number
 #. translators: %s: tax ID
-#: includes/Services/Receipt_I18n_Labels.php:238
+#: includes/Services/Receipt_I18n_Labels.php:240
 #: templates/gallery/thermal-receipt.php:120
 #: templates/receipt.php:97
 #, php-format
@@ -2755,81 +2773,81 @@ msgid "Tax ID: %s"
 msgstr "DIČ: %s"
 
 #. translators: %s: store phone number
-#: includes/Services/Receipt_I18n_Labels.php:243
+#: includes/Services/Receipt_I18n_Labels.php:245
 #, php-format
 msgid "Phone: %s"
 msgstr "Telefon: %s"
 
 #. translators: %s: store email address
-#: includes/Services/Receipt_I18n_Labels.php:248
+#: includes/Services/Receipt_I18n_Labels.php:250
 #, php-format
 msgid "Email: %s"
 msgstr "E-mail: %s"
 
 #. translators: %s: payment method name
-#: includes/Services/Receipt_I18n_Labels.php:253
+#: includes/Services/Receipt_I18n_Labels.php:255
 #, php-format
 msgid "Paid via %s"
 msgstr "Zaplaceno přes %s"
 
 #. translators: %s: payment method name
-#: includes/Services/Receipt_I18n_Labels.php:258
+#: includes/Services/Receipt_I18n_Labels.php:260
 #, php-format
 msgid "Refunded via %s"
 msgstr "Vráceno přes %s"
 
 #. translators: %s: cashier name
-#: includes/Services/Receipt_I18n_Labels.php:263
+#: includes/Services/Receipt_I18n_Labels.php:265
 #, php-format
 msgid "Served by %s"
 msgstr "Obsloužil(a) %s"
 
 #. translators: %s: customer name
-#: includes/Services/Receipt_I18n_Labels.php:268
+#: includes/Services/Receipt_I18n_Labels.php:270
 #, php-format
 msgid "Customer: %s"
 msgstr "Zákazník: %s"
 
 #. translators: %s: customer name
-#: includes/Services/Receipt_I18n_Labels.php:273
+#: includes/Services/Receipt_I18n_Labels.php:275
 #, php-format
 msgid "Thank you, %s!"
 msgstr "Děkujeme, %s!"
 
 #. translators: %s: payment transaction ID
 #. translators: %s: order number with # prefix
-#: includes/Services/Receipt_I18n_Labels.php:278
-#: includes/Services/Receipt_I18n_Labels.php:283
+#: includes/Services/Receipt_I18n_Labels.php:280
+#: includes/Services/Receipt_I18n_Labels.php:285
 #, php-format
 msgid "Ref: %s"
 msgstr "Ref: %s"
 
 #. translators: %s: order number with # prefix
-#: includes/Services/Receipt_I18n_Labels.php:288
+#: includes/Services/Receipt_I18n_Labels.php:290
 #, php-format
 msgid "Order %s"
 msgstr "Objednávka %s"
 
 #. translators: %s: product SKU
-#: includes/Services/Receipt_I18n_Labels.php:293
+#: includes/Services/Receipt_I18n_Labels.php:295
 #, php-format
 msgid "SKU: %s"
 msgstr "SKU: %s"
 
 #. translators: %s: line subtotal amount
-#: includes/Services/Receipt_I18n_Labels.php:298
+#: includes/Services/Receipt_I18n_Labels.php:300
 #, php-format
 msgid "Subtotal: %s"
 msgstr "Mezisoučet: %s"
 
 #. translators: %s: discount amount with minus sign
-#: includes/Services/Receipt_I18n_Labels.php:303
+#: includes/Services/Receipt_I18n_Labels.php:305
 #, php-format
 msgid "Discount: %s"
 msgstr "Sleva: %s"
 
 #. translators: %s: taxable amount
-#: includes/Services/Receipt_I18n_Labels.php:308
+#: includes/Services/Receipt_I18n_Labels.php:310
 #, php-format
 msgid "Taxable: %s"
 msgstr "Zdanitelné: %s"

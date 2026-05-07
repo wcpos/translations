@@ -1,5 +1,17 @@
 <?php
 return array(
+	'project-id-version' => 'WCPOS Pro 1.8.12',
+	'report-msgid-bugs-to' => 'https://github.com/wcpos/woocommerce-pos-pro/issues',
+	'last-translator' => 'FULL NAME <EMAIL@ADDRESS>',
+	'language-team' => 'LANGUAGE <LL@li.org>',
+	'mime-version' => '1.0',
+	'content-type' => 'text/plain; charset=utf-8',
+	'content-transfer-encoding' => '8bit',
+	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
+	'x-generator' => 'WP-CLI 2.12.0',
+	'x-domain' => 'woocommerce-pos-pro',
+	'language' => 'en_US',
+	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – Point of Sale for WooCommerce',
 		'https://wcpos.com/pro' => 'https://wcpos.com/pro',
@@ -9,7 +21,7 @@ return array(
 		'Stores' => 'Stores',
 		'Cashiers' => 'Cashiers',
 		'Gateways' => 'Gateways',
-		'WooCommerce POS Pro is now standalone.' => 'WooCommerce POS Pro is now standalone.',
+		'WooCommerce POS Pro is now standalone.' => 'WCPOS Pro is now standalone.',
 		'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.' => 'The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin.',
 		'Edit Store' => 'Edit Store',
 		'Open POS' => 'Open POS',
