@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'ស្តាំ',
 		'Left with space' => 'ឆ្វេងមានចន្លោះ',
 		'Right with space' => 'ស្តាំមានចន្លោះ',
+		'Inherit site timezone' => 'ប្រើតំបន់ពេលវេលារបស់គេហទំព័រ',
+		'All authorized users' . "\x04" . 'All' => 'ទាំងអស់',
 		'Open POS' => 'បើក POS',
 		'Store' => 'ហាង',
 		'Authorized Users' => 'អ្នកប្រើដែលបានអនុញ្ញាត',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro បានបរាជ័យក្នុងការផ្ទុក។ សូមដំណើរការ composer install។',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'ឥឡូវនេះរួមបញ្ចូលគ្រប់លក្ខណៈពិសេសពីផ្លក់អ៊ីនឥតគិតថ្លៃ។ ផ្លក់អ៊ីនឥតគិតថ្លៃដែលឈរតែម្នាក់ឯងត្រូវបានបិទដោយស្វ័យប្រវត្តិ។ អ្នកអាចលុបវាចេញពីផ្លក់អ៊ីនរបស់អ្នកបានដោយសុវត្ថិភាព។',
-		'All authorized users' . "\x04" . 'All' => 'ទាំងអស់',
 	),
 );

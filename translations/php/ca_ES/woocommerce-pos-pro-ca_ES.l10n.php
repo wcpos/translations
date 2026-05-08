@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Dreta',
 		'Left with space' => 'Esquerra amb espai',
 		'Right with space' => 'Dreta amb espai',
+		'Inherit site timezone' => 'Hereta la zona horària del lloc',
+		'All authorized users' . "\x04" . 'All' => 'Tot',
 		'Open POS' => 'Obrir POS',
 		'Store' => 'Botiga',
 		'Authorized Users' => 'Usuaris Autoritzats',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'No s\'ha pogut carregar WCPOS Pro. Si us plau, executa composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'ara inclou totes les funcions del complement gratuït. El complement gratuït independent s\'ha desactivat automàticament. Pots eliminar-lo de manera segura dels teus complements.',
-		'All authorized users' . "\x04" . 'All' => 'Tot',
 	),
 );

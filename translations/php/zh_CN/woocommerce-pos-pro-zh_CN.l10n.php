@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => '右侧',
 		'Left with space' => '左侧带空格',
 		'Right with space' => '右侧带空格',
+		'Inherit site timezone' => '继承站点时区',
+		'All authorized users' . "\x04" . 'All' => '全部',
 		'Open POS' => '打开 POS',
 		'Store' => '商店',
 		'Authorized Users' => '授权用户',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro加载失败。请运行composer install。',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '现在包括免费插件的所有功能。独立的免费插件已自动停用。您可以安全地从插件中删除它。',
-		'All authorized users' . "\x04" . 'All' => '全部',
 	),
 );

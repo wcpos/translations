@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Vpravo',
 		'Left with space' => 'Vlevo s mezerou',
 		'Right with space' => 'Vpravo s mezerou',
+		'Inherit site timezone' => 'Použít časové pásmo webu',
+		'All authorized users' . "\x04" . 'All' => 'Vše',
 		'Open POS' => 'Otevřít POS',
 		'Store' => 'Obchod',
 		'Authorized Users' => 'Autorizovaní uživatelé',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'Nepodařilo se načíst WCPOS Pro. Spusťte prosím composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'nyní obsahuje všechny funkce z bezplatného pluginu. Samostatný bezplatný plugin byl automaticky deaktivován. Můžete jej bezpečně odstranit ze svých pluginů.',
-		'All authorized users' . "\x04" . 'All' => 'Vše',
 	),
 );

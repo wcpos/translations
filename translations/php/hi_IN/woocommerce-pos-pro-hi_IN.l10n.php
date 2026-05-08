@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'दाएँ',
 		'Left with space' => 'बाएँ रिक्ति के साथ',
 		'Right with space' => 'दाएँ रिक्ति के साथ',
+		'Inherit site timezone' => 'साइट के समय क्षेत्र का उपयोग करें',
+		'All authorized users' . "\x04" . 'All' => 'सभी',
 		'Open POS' => 'POS खोलें',
 		'Store' => 'स्टोर',
 		'Authorized Users' => 'अधिकृत उपयोगकर्ता',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS प्रो लोड करने में विफल। कृपया कंपोजर इंस्टॉल चलाएं।',
 		'WCPOS Pro' => 'WCPOS प्रो',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'अब इसमें मुफ्त प्लगइन की सभी विशेषताएं शामिल हैं। स्वतंत्र मुफ्त प्लगइन को स्वचालित रूप से निष्क्रिय कर दिया गया है। आप इसे अपने प्लगइन्स से सुरक्षित रूप से हटा सकते हैं।',
-		'All authorized users' . "\x04" . 'All' => 'सभी',
 	),
 );

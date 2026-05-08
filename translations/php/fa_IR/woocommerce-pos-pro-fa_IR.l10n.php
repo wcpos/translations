@@ -29,6 +29,7 @@ return array(
 		'Right' => 'راست',
 		'Left with space' => 'چپ با فاصله',
 		'Right with space' => 'راست با فاصله',
+		'Inherit site timezone' => 'از منطقه زمانی سایت استفاده کن',
 		'All authorized users' . "\x04" . 'All' => 'تمام',
 		'Open POS' => 'باز کردن POS',
 		'Store' => 'فروشگاه',

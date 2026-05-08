@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Derecha',
 		'Left with space' => 'Izquierda con espacio',
 		'Right with space' => 'Derecha con espacio',
+		'Inherit site timezone' => 'Heredar la zona horaria del sitio',
+		'All authorized users' . "\x04" . 'All' => 'Todos',
 		'Open POS' => 'Abrir POS',
 		'Store' => 'Tienda',
 		'Authorized Users' => 'Usuarios Autorizados',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro no se pudo cargar. Por favor, ejecutá composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'ahora incluye todas las funciones del plugin gratuito. El plugin gratuito independiente ha sido desactivado automáticamente. Podés eliminarlo de tus plugins de forma segura.',
-		'All authorized users' . "\x04" . 'All' => 'Todos',
 	),
 );

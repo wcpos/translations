@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Десно',
 		'Left with space' => 'Лево со празно место',
 		'Right with space' => 'Десно со празно место',
+		'Inherit site timezone' => 'Наследи ја временската зона на сајтот',
+		'All authorized users' . "\x04" . 'All' => 'Сите',
 		'Open POS' => 'Отвори POS',
 		'Store' => 'Продавница',
 		'Authorized Users' => 'Авторизирани корисници',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro не успеа да се вчита. Ве молиме извршете composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'сега ги вклучува сите функции од бесплатниот додаток. Самостојниот бесплатен додаток е автоматски деактивиран. Може безбедно да го избришете од вашите додатоци.',
-		'All authorized users' . "\x04" . 'All' => 'Сите',
 	),
 );

@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Sağ',
 		'Left with space' => 'Sol (boşluklu)',
 		'Right with space' => 'Sağ (boşluklu)',
+		'Inherit site timezone' => 'Site saat dilimini devral',
+		'All authorized users' . "\x04" . 'All' => 'Tümü',
 		'Open POS' => 'POS\'u Aç',
 		'Store' => 'Mağaza',
 		'Authorized Users' => 'Yetkili Kullanıcılar',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro yüklenemedi. Lütfen composer install çalıştırın.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'artık ücretsiz eklentinin tüm özelliklerini içeriyor. Bağımsız ücretsiz eklenti otomatik olarak devre dışı bırakıldı. Eklentilerinizden güvenle silebilirsiniz.',
-		'All authorized users' . "\x04" . 'All' => 'Tümü',
 	),
 );
