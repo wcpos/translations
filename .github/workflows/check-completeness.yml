@@ -68,10 +68,8 @@ jobs:
             gh issue close "$EXISTING" --comment "Superseded by new completeness check."
           fi
 
-          gh issue create \
-            --title "$TITLE" \
-            --label "$LABEL" \
-            --body "## Daily Translation Completeness Check
+          cat > issue-body.md <<'BODY_EOF'
+          ## Daily Translation Completeness Check
 
           **Errors:** ${{ steps.check.outputs.errors }}
           **Warnings:** ${{ steps.check.outputs.warnings }}
@@ -79,13 +77,21 @@ jobs:
           <details>
           <summary>Full report</summary>
 
-          \`\`\`
-          ${{ steps.check.outputs.report }}
-          \`\`\`
+          ```
+          BODY_EOF
+          tail -100 completeness-report.txt >> issue-body.md
+          cat >> issue-body.md <<'BODY_EOF'
+          ```
 
           </details>
 
-          Aide translation pipeline triggered automatically for affected projects."
+          Aide translation pipeline triggered automatically for affected projects.
+          BODY_EOF
+
+          gh issue create \
+            --title "$TITLE" \
+            --label "$LABEL" \
+            --body-file issue-body.md
 
       - name: Trigger Aide for affected projects
         if: steps.check.outputs.errors != '0'
