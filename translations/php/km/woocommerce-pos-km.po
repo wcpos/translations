@@ -71,7 +71,7 @@ msgstr "បើកការប្រើប្រាស់ permalinks"
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Label shown on a POS receipt or checkout template.
 #: includes/Activator.php:364
-#: includes/Services/Receipt_Data_Schema.php:375
+#: includes/Services/Receipt_Data_Schema.php:379
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:338
 #: templates/gallery/minimal-receipt.php:97
@@ -1181,7 +1181,7 @@ msgstr "ចំនួន cashback ត្រូវតែស្មើ ឬធំជ�
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Sample receipt label or value used in receipt template previews.
 #: includes/Gateways/Cash.php:28
-#: includes/Services/Preview_Receipt_Builder.php:721
+#: includes/Services/Preview_Receipt_Builder.php:724
 msgid "Cash"
 msgstr "សាច់ប្រាក់"
 
@@ -1282,38 +1282,35 @@ msgid "Closed"
 msgstr "បិទ"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:572
+#: includes/Services/Preview_Receipt_Builder.php:573
 msgid "Gift Wrapping"
 msgstr "គម្មង់សម្លាប់​វត្តមាន​អ្វី​ផ្សេងៗ"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:578
+#: includes/Services/Preview_Receipt_Builder.php:579
 msgid "Flat Rate Shipping"
 msgstr "ការដឹកជញ្ជូនតាម​អត្រាផ្ទាល់"
 
 #. translators: %s: discount percentage
-#: includes/Services/Preview_Receipt_Builder.php:586
+#: includes/Services/Preview_Receipt_Builder.php:587
 #, php-format
 msgid "Summer Sale (%s%%)"
 msgstr "រដូវ​ដែលបញ្ជឺ​នៃ​អ្វី​ពេញ​វ័ន្ន (%s%%)"
 
-#: includes/Services/Preview_Receipt_Builder.php:644
+#: includes/Services/Preview_Receipt_Builder.php:646
 msgid "Please gift wrap this order. Thank you!"
 msgstr "សូមសម្លាប់អ្វី​ណាដែល​មាន​មក​ពីសុំ សូមអរគុណ!"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:742
+#: includes/Services/Preview_Receipt_Builder.php:745
 msgid "Tax Receipt"
 msgstr "បង្កាន់ដៃពន្ធ"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Tax identification type label.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Preview_Receipt_Builder.php:747
-#: includes/Services/Receipt_Data_Schema.php:323
-#: includes/Services/Receipt_Data_Schema.php:408
+#: includes/Services/Preview_Receipt_Builder.php:750
 #: includes/Services/Receipt_I18n_Labels.php:67
 #: includes/Services/Receipt_I18n_Labels.php:95
 #: includes/Services/Receipt_I18n_Labels.php:124
@@ -1323,22 +1320,22 @@ msgid "Tax ID"
 msgstr "លេខអត្តបណ្ណអាករ"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:751
+#: includes/Services/Preview_Receipt_Builder.php:754
 msgid "Auth Code"
 msgstr "កូដផ្ទៀងផ្ទាត់"
 
-#: includes/Services/Preview_Receipt_Builder.php:849
+#: includes/Services/Preview_Receipt_Builder.php:852
 msgid "Thank you for shopping with us! We appreciate your business."
 msgstr "អរគុណដែលបានទិញពីយើង! យើងសូមកោតសរសើរចំពោះការគាំទ្ររបស់អ្នក។"
 
-#: includes/Services/Preview_Receipt_Builder.php:852
+#: includes/Services/Preview_Receipt_Builder.php:855
 msgid ""
 "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging."
 msgstr ""
 "ទទួលយកការត្រឡប់វិញក្នុងរយៈពេល 30 ថ្ងៃ ដោយភ្ជាប់បង្កាន់ដៃដើម។ ទំនិញត្រូវមិនបានប្រើ និងនៅក្នុងការវេចខ្ចប់ដើម។"
 
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Preview_Receipt_Builder.php:855
+#: includes/Services/Preview_Receipt_Builder.php:858
 #: includes/Services/Receipt_I18n_Labels.php:196
 #: templates/gallery/minimal-receipt.php:179
 #: templates/gallery/thermal-receipt.php:227
@@ -1347,14 +1344,21 @@ msgstr "សូមអរគុណចំពោះការទិញរបស់អ
 
 #. translators: Sample receipt label or value used in receipt template previews.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Preview_Receipt_Builder.php:1320
-#: includes/Services/Preview_Receipt_Builder.php:1345
+#: includes/Services/Preview_Receipt_Builder.php:1335
+#: includes/Services/Preview_Receipt_Builder.php:1360
 #: includes/Services/Receipt_I18n_Labels.php:162
 msgid "Tax"
 msgstr "ពន្លារ"
 
+#. translators: %d: Historical POS store ID that no longer exists.
+#: includes/Services/Receipt_Data_Builder.php:86
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:533
+#, php-format
+msgid "Store #%d"
+msgstr "ហាងលេខ %d"
+
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Services/Receipt_Data_Builder.php:148
+#: includes/Services/Receipt_Data_Builder.php:166
 #: includes/Templates/Payment.php:356
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1425,85 +1429,95 @@ msgstr "ការបញ្ជាទិញបានបញ្ចប់"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:311
+msgid "Receipt Printed"
+msgstr "បានបោះពុម្ពបង្កាន់ដៃ"
+
+#. translators: Label for a receipt data field in the template editor.
+#: includes/Services/Receipt_Data_Schema.php:315
 msgid "Store"
 msgstr "ហាង"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:315
+#: includes/Services/Receipt_Data_Schema.php:319
+msgid "Store ID"
+msgstr "លេខសម្គាល់ហាង"
+
+#. translators: Label for a receipt data field in the template editor.
+#: includes/Services/Receipt_Data_Schema.php:323
 msgid "Store Name"
 msgstr "ឈ្មោះហាង"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:319
+#: includes/Services/Receipt_Data_Schema.php:327
 msgid "Address Lines"
 msgstr "ផ្លូវ / ឈ្មោះផ្លូវ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:327
+#: includes/Services/Receipt_Data_Schema.php:331
 msgid "Phone"
 msgstr "លេខទូរសព្ទ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:331
+#: includes/Services/Receipt_Data_Schema.php:335
 msgid "Email"
 msgstr "អ៊ីមែល"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:335
+#: includes/Services/Receipt_Data_Schema.php:339
 msgid "Logo URL"
 msgstr "URL របស់ឡូកូ"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:340
+#: includes/Services/Receipt_Data_Schema.php:344
 #: includes/Services/Receipt_I18n_Labels.php:217
 msgid "Opening Hours"
 msgstr "ម៉ោងបើក"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:345
+#: includes/Services/Receipt_Data_Schema.php:349
 msgid "Opening Hours (Vertical)"
 msgstr "ម៉ោងបើក (បញ្ឈរ)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:350
+#: includes/Services/Receipt_Data_Schema.php:354
 msgid "Opening Hours (Inline)"
 msgstr "ម៉ោងបើក (ផ្តេក)"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:355
+#: includes/Services/Receipt_Data_Schema.php:359
 msgid "Opening Hours Notes"
 msgstr "កំណត់សម្គាល់ម៉ោងបើក"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:360
+#: includes/Services/Receipt_Data_Schema.php:364
 msgid "Personal Notes"
 msgstr "ចំណាំផ្ទាល់ខ្លួន"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:365
+#: includes/Services/Receipt_Data_Schema.php:369
 msgid "Policies & Conditions"
 msgstr "គោលក្រោយ & លក្ខខ័ណ្ឌ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:370
+#: includes/Services/Receipt_Data_Schema.php:374
 msgid "Footer Imprint"
 msgstr "ផ្នែកខាងក្រោម រាងរង្វង់"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:379
+#: includes/Services/Receipt_Data_Schema.php:383
 msgid "Cashier ID"
 msgstr "លេខសម្គាល់អ្នកគ្រប់គ្រងកាសនា"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:383
+#: includes/Services/Receipt_Data_Schema.php:387
 msgid "Cashier Name"
 msgstr "ឈ្មោះអ្នកគ្រប់គ្រងកាសនា"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Label shown on a POS receipt or checkout template.
-#: includes/Services/Receipt_Data_Schema.php:388
+#: includes/Services/Receipt_Data_Schema.php:392
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/gallery/thermal-receipt.php:145
 #: templates/receipt.php:126
@@ -1511,24 +1525,24 @@ msgid "Customer"
 msgstr "អតិថិជន"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:392
+#: includes/Services/Receipt_Data_Schema.php:396
 msgid "Customer ID"
 msgstr "លេខសម្គាល់អតិថិជន"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:396
+#: includes/Services/Receipt_Data_Schema.php:400
 msgid "Customer Name"
 msgstr "ឈ្មោះអតិថិជន"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#: includes/Services/Receipt_Data_Schema.php:400
+#: includes/Services/Receipt_Data_Schema.php:404
 #: includes/Services/Receipt_I18n_Labels.php:132
 msgid "Billing Address"
 msgstr "អាសយដ្ឋានវិក័យប័ត្រ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:404
+#: includes/Services/Receipt_Data_Schema.php:408
 msgid "Shipping Address"
 msgstr "អាសយដ្ឋានបញ្ជូន"
 
