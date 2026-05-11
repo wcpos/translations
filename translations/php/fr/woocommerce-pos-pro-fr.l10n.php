@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
-	'language' => 'fr',
+	'language' => 'fr_FR',
 	'plural-forms' => 'nplurals=2; plural=n > 1;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – Point de Vente pour WooCommerce',
@@ -29,7 +29,7 @@ return array(
 		'Right' => 'Droite',
 		'Left with space' => 'Gauche avec espace',
 		'Right with space' => 'Droite avec espace',
-		'Inherit site timezone' => 'Utiliser le fuseau horaire du site',
+		'Inherit site timezone' => 'Hériter du fuseau horaire du site',
 		'All authorized users' . "\x04" . 'All' => 'Tous',
 		'Open POS' => 'Ouvrir POS',
 		'Store' => 'Boutique',
