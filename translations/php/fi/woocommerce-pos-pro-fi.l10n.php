@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Oikea',
 		'Left with space' => 'Vasen välilyönnillä',
 		'Right with space' => 'Oikea välilyönnillä',
+		'Inherit site timezone' => 'Käytä sivuston aikavyöhykettä',
+		'All authorized users' . "\x04" . 'All' => 'Kaikki',
 		'Open POS' => 'Avaa POS',
 		'Store' => 'Kauppa',
 		'Authorized Users' => 'Valtuutetut käyttäjät',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro -lataus epäonnistui. Suorita composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'sisältää nyt kaikki ilmaisen lisäosan ominaisuudet. Erillinen ilmainen lisäosa on automaattisesti poistettu käytöstä. Voit poistaa sen turvallisesti lisäosistasi.',
-		'All authorized users' . "\x04" . 'All' => 'Kaikki',
 	),
 );

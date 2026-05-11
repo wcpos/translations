@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => '오른쪽',
 		'Left with space' => '왼쪽 (공백 포함)',
 		'Right with space' => '오른쪽 (공백 포함)',
+		'Inherit site timezone' => '사이트 시간대 따르기',
+		'All authorized users' . "\x04" . 'All' => '전체',
 		'Open POS' => 'POS 열기',
 		'Store' => '매장',
 		'Authorized Users' => '승인된 사용자',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro 로드에 실패했습니다. composer install을 실행하세요.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '이제 무료 플러그인의 모든 기능이 포함됩니다. 독립 실행형 무료 플러그인은 자동으로 비활성화되었습니다. 플러그인에서 안전하게 삭제할 수 있습니다.',
-		'All authorized users' . "\x04" . 'All' => '전체',
 	),
 );

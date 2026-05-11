@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Kanan',
 		'Left with space' => 'Kiri dengan ruang',
 		'Right with space' => 'Kanan dengan ruang',
+		'Inherit site timezone' => 'Warisi zon waktu laman',
+		'All authorized users' . "\x04" . 'All' => 'Semua',
 		'Open POS' => 'Buka POS',
 		'Store' => 'Kedai',
 		'Authorized Users' => 'Pengguna Sah',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro gagal dimuatkan. Sila jalankan pemasangan composer.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'kini merangkumi semua ciri dari plugin percuma. Plugin percuma yang berdiri sendiri telah dinyahaktifkan secara automatik. Anda boleh menghapuskannya dengan selamat dari plugin anda.',
-		'All authorized users' . "\x04" . 'All' => 'Semua',
 	),
 );

@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Dešinėje',
 		'Left with space' => 'Kairėje su tarpu',
 		'Right with space' => 'Dešinėje su tarpu',
+		'Inherit site timezone' => 'Naudoti svetainės laiko juostą',
+		'All authorized users' . "\x04" . 'All' => 'Viskas',
 		'Open POS' => 'Atidaryti POS',
 		'Store' => 'Parduotuvė',
 		'Authorized Users' => 'Įgalioti vartotojai',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro nepavyko įkelti. Paleiskite composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'dabar apima visas nemokamo įskiepio funkcijas. Atskirai veikiantis nemokamas įskiepis buvo automatiškai išjungtas. Galite saugiai jį ištrinti iš savo įskiepių.',
-		'All authorized users' . "\x04" . 'All' => 'Viskas',
 	),
 );

@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Dreapta',
 		'Left with space' => 'Stânga cu spațiu',
 		'Right with space' => 'Dreapta cu spațiu',
+		'Inherit site timezone' => 'Moștenește fusul orar al site-ului',
+		'All authorized users' . "\x04" . 'All' => 'Toate',
 		'Open POS' => 'Deschide POS',
 		'Store' => 'Magazin',
 		'Authorized Users' => 'Utilizatori Autorizați',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro nu a reușit să se încarce. Vă rugăm să rulați composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'acum include toate funcțiile din pluginul gratuit. Pluginul gratuit independent a fost dezactivat automat. Îl puteți șterge în siguranță din pluginurile dvs.',
-		'All authorized users' . "\x04" . 'All' => 'Toate',
 	),
 );

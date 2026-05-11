@@ -7,6 +7,7 @@ return array(
 	'mime-version' => '1.0',
 	'content-type' => 'text/plain; charset=utf-8',
 	'content-transfer-encoding' => '8bit',
+	'pot-creation-date' => '2026-02-12T14:34:27+00:00',
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
@@ -28,6 +29,8 @@ return array(
 		'Right' => 'Jobb',
 		'Left with space' => 'Bal szóközzel',
 		'Right with space' => 'Jobb szóközzel',
+		'Inherit site timezone' => 'A webhely időzónájának öröklése',
+		'All authorized users' . "\x04" . 'All' => 'Összes',
 		'Open POS' => 'POS megnyitása',
 		'Store' => 'Üzlet',
 		'Authorized Users' => 'Engedélyezett felhasználók',
@@ -100,6 +103,5 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'A WCPOS Pro betöltése nem sikerült. Kérjük, futtassa a composer install parancsot.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'most tartalmazza az összes funkciót az ingyenes bővítményből. Az önálló ingyenes bővítmény automatikusan deaktiválva lett. Nyugodtan törölheti a bővítmények közül.',
-		'All authorized users' . "\x04" . 'All' => 'Összes',
 	),
 );
