@@ -62,6 +62,19 @@ test('updates woocommerce-pos-pro version constants', () => {
   assert.match(updated, /TRANSLATION_VERSION', '2026\.4\.47'/);
 });
 
+test('updates woocommerce-pos-pro when free namespace constant references the pro constant', () => {
+  const original = [
+    "const TRANSLATION_VERSION = '2026.5.2';",
+    "if ( ! \\defined( 'WCPOS\\WooCommercePOS\\TRANSLATION_VERSION' ) ) {",
+    "\t\\define( 'WCPOS\\WooCommercePOS\\TRANSLATION_VERSION', TRANSLATION_VERSION );",
+    "}",
+  ].join('\n');
+
+  const updated = applyVersionUpdate('woocommerce-pos-pro', original, VERSION);
+  assert.match(updated, /const TRANSLATION_VERSION = '2026\.4\.47'/);
+  assert.match(updated, /TRANSLATION_VERSION', TRANSLATION_VERSION/);
+});
+
 test('updates monorepo translation backend version', () => {
   const original = "export const TRANSLATION_VERSION = '2026.2.10';\n";
   const updated = applyVersionUpdate('monorepo', original, VERSION);
