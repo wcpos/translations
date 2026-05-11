@@ -58,6 +58,7 @@ const CONSUMER_REPOS = {
       {
         pattern: /TRANSLATION_VERSION', '[^']+'/g,
         replace: (_, nextVersion) => `TRANSLATION_VERSION', '${nextVersion}'`,
+        required: false,
       },
     ],
   },
@@ -106,6 +107,9 @@ function applyReplacements(content, replacements, version, repoKey) {
   for (const replacement of replacements) {
     const matches = [...updated.matchAll(replacement.pattern)];
     if (matches.length === 0) {
+      if (replacement.required === false) {
+        continue;
+      }
       throw new Error(`No match found for ${repoKey} using pattern ${replacement.pattern}`);
     }
 
