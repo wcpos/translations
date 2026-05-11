@@ -79,6 +79,27 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Releasing version: $VERSION"
 
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: monorepo,electron,woocommerce-pos,woocommerce-pos-pro
+          permission-contents: write
+          permission-pull-requests: write
+
+      - name: Verify consumer GitHub App access
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          for repo in monorepo electron woocommerce-pos woocommerce-pos-pro; do
+            echo "Verifying GitHub App access to wcpos/$repo..."
+            gh api "repos/wcpos/$repo" --jq '.full_name' >/dev/null
+            gh api "repos/wcpos/$repo/pulls?state=open&per_page=1" >/dev/null
+          done
+
       - name: Create tag and release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -117,17 +138,6 @@ jobs:
           echo "## Release Created" >> $GITHUB_STEP_SUMMARY
           echo "**Version:** $VERSION" >> $GITHUB_STEP_SUMMARY
           echo "**jsDelivr:** \`https://cdn.jsdelivr.net/gh/wcpos/translations@$VERSION/translations/js/{locale}/{project}/{namespace}.json\`" >> $GITHUB_STEP_SUMMARY
-
-      - name: Generate GitHub App token
-        id: app-token
-        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v2
-        with:
-          app-id: ${{ secrets.TRANSLATION_APP_ID }}
-          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
-          owner: wcpos
-          repositories: monorepo,electron,woocommerce-pos,woocommerce-pos-pro
-          permission-contents: write
-          permission-pull-requests: write
 
       - name: Update consuming repos
         env:

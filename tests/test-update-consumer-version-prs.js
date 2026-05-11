@@ -86,16 +86,28 @@ test('configures gh as git credential helper for GitHub pushes', () => {
   ]);
 });
 
-test('release workflow requests app token permissions needed for consumer PRs', () => {
+test('release workflow requests exact app token access needed for consumer PRs', () => {
+  const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
+  const tokenStep = workflow.match(/-\s*name:\s*Generate GitHub App token[\s\S]*?(?=\n\s{6}-\s*name:|$)/)?.[0] || '';
+
+  assert.match(tokenStep, /repositories:\s*monorepo,electron,woocommerce-pos,woocommerce-pos-pro/);
+  assert.match(tokenStep, /permission-contents:\s*write/);
+  assert.match(tokenStep, /permission-pull-requests:\s*write/);
+});
+
+test('release workflow validates consumer app token before creating an irreversible release', () => {
   const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
 
-  assert.match(
-    workflow,
-    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-contents:\s*write/
-  );
-  assert.match(
-    workflow,
-    /-\s*name:\s*Generate GitHub App token[\s\S]*?permission-pull-requests:\s*write/
+  const tokenStepIndex = workflow.indexOf('- name: Generate GitHub App token');
+  const verifyStepIndex = workflow.indexOf('- name: Verify consumer GitHub App access');
+  const releaseStepIndex = workflow.indexOf('- name: Create tag and release');
+
+  assert.notEqual(tokenStepIndex, -1, 'Generate GitHub App token step must exist');
+  assert.notEqual(verifyStepIndex, -1, 'Verify consumer GitHub App access step must exist');
+  assert.notEqual(releaseStepIndex, -1, 'Create tag and release step must exist');
+  assert.ok(
+    tokenStepIndex < verifyStepIndex && verifyStepIndex < releaseStepIndex,
+    'consumer GitHub App token must be minted and verified before tag/release creation so permission failures do not leave partial releases'
   );
 });
 
