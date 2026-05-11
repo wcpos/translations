@@ -86,28 +86,54 @@ test('configures gh as git credential helper for GitHub pushes', () => {
   ]);
 });
 
+function getWorkflowStep(workflow, stepName) {
+  const escapedName = stepName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return workflow.match(new RegExp(`-\\s*name:\\s*${escapedName}[\\s\\S]*?(?=\\n\\s{6}-\\s*name:|$)`))?.[0] || '';
+}
+
 test('release workflow requests exact app token access needed for consumer PRs', () => {
   const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
-  const tokenStep = workflow.match(/-\s*name:\s*Generate GitHub App token[\s\S]*?(?=\n\s{6}-\s*name:|$)/)?.[0] || '';
+  const tokenSteps = [
+    getWorkflowStep(workflow, 'Generate consumer GitHub App token (preflight)'),
+    getWorkflowStep(workflow, 'Generate consumer GitHub App token'),
+  ];
 
-  assert.match(tokenStep, /repositories:\s*monorepo,electron,woocommerce-pos,woocommerce-pos-pro/);
-  assert.match(tokenStep, /permission-contents:\s*write/);
-  assert.match(tokenStep, /permission-pull-requests:\s*write/);
+  for (const tokenStep of tokenSteps) {
+    assert.match(tokenStep, /repositories:\s*monorepo,electron,woocommerce-pos,woocommerce-pos-pro/);
+    assert.match(tokenStep, /permission-contents:\s*write/);
+    assert.match(tokenStep, /permission-pull-requests:\s*write/);
+  }
 });
 
 test('release workflow validates consumer app token before creating an irreversible release', () => {
   const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
 
-  const tokenStepIndex = workflow.indexOf('- name: Generate GitHub App token');
+  const preflightTokenStepIndex = workflow.indexOf('- name: Generate consumer GitHub App token (preflight)');
   const verifyStepIndex = workflow.indexOf('- name: Verify consumer GitHub App access');
   const releaseStepIndex = workflow.indexOf('- name: Create tag and release');
 
-  assert.notEqual(tokenStepIndex, -1, 'Generate GitHub App token step must exist');
+  assert.notEqual(preflightTokenStepIndex, -1, 'preflight GitHub App token step must exist');
   assert.notEqual(verifyStepIndex, -1, 'Verify consumer GitHub App access step must exist');
   assert.notEqual(releaseStepIndex, -1, 'Create tag and release step must exist');
   assert.ok(
-    tokenStepIndex < verifyStepIndex && verifyStepIndex < releaseStepIndex,
+    preflightTokenStepIndex < verifyStepIndex && verifyStepIndex < releaseStepIndex,
     'consumer GitHub App token must be minted and verified before tag/release creation so permission failures do not leave partial releases'
+  );
+});
+
+test('release workflow mints a fresh consumer app token after uploading assets', () => {
+  const workflow = fs.readFileSync(path.join(__dirname, '..', '.github', 'workflows', 'release.yml'), 'utf8');
+
+  const releaseStepIndex = workflow.indexOf('- name: Create tag and release');
+  const freshTokenStepIndex = workflow.indexOf('- name: Generate consumer GitHub App token', releaseStepIndex);
+  const updateStepIndex = workflow.indexOf('- name: Update consuming repos');
+
+  assert.notEqual(releaseStepIndex, -1, 'Create tag and release step must exist');
+  assert.notEqual(freshTokenStepIndex, -1, 'fresh post-release GitHub App token step must exist');
+  assert.notEqual(updateStepIndex, -1, 'Update consuming repos step must exist');
+  assert.ok(
+    releaseStepIndex < freshTokenStepIndex && freshTokenStepIndex < updateStepIndex,
+    'consumer updater must use a freshly minted token after the potentially long release upload step'
   );
 });
 
