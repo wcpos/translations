@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Итого возвращено',
 		'Line Taxes' => 'Налоги по позиции',
 		'Item Meta' => 'Метаданные товара',
+		'Product Attributes' => 'Атрибуты товара',
 		'Fees' => 'Платежи',
 		'Fee Label' => 'Метка платежа',
 		'Total' => 'Итого',

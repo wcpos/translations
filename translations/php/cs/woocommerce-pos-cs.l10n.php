@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Celkem vráceno',
 		'Line Taxes' => 'Zdaňování položky',
 		'Item Meta' => 'Metadata položky',
+		'Product Attributes' => 'Atributy produktu',
 		'Fees' => 'Poplatky',
 		'Fee Label' => 'Skladka',
 		'Total' => 'Celkem',

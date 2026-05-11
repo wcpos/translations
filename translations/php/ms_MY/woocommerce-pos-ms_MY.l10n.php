@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'jumlah dipulangkan',
 		'Line Taxes' => 'Kadar Cukai Baris',
 		'Item Meta' => 'meta item',
+		'Product Attributes' => 'Atribut Produk',
 		'Fees' => 'Yuran',
 		'Fee Label' => 'Label Yuran',
 		'Total' => 'Jumlah',

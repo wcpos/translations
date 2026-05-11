@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => '환불 총액',
 		'Line Taxes' => '항목 세금',
 		'Item Meta' => '상품 메타',
+		'Product Attributes' => '상품 속성',
 		'Fees' => '수수료',
 		'Fee Label' => '수수료 라벨',
 		'Total' => '총액',

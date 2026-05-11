@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Total rambursat',
 		'Line Taxes' => 'TVA - linie',
 		'Item Meta' => 'Meta articol',
+		'Product Attributes' => 'Atributele produsului',
 		'Fees' => 'Taxe',
 		'Fee Label' => 'Etichetă taxă',
 		'Total' => 'Total',

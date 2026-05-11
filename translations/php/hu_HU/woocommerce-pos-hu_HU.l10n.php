@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Visszatérítés összesen',
 		'Line Taxes' => 'Sor ÁFA',
 		'Item Meta' => 'Tétel metaadatai',
+		'Product Attributes' => 'Termékattribútumok',
 		'Fees' => 'Díjak',
 		'Fee Label' => 'Díj címkéje',
 		'Total' => 'Összesen',

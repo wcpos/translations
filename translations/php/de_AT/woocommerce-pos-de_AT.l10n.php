@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Gesamt erstattet',
 		'Line Taxes' => 'Steuern',
 		'Item Meta' => 'Artikel-Metadaten',
+		'Product Attributes' => 'Produktattribute',
 		'Fees' => 'Gebühren',
 		'Fee Label' => 'Gebührenbezeichnung',
 		'Total' => 'Gesamt',

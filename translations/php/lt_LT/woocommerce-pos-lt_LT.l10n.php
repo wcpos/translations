@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Grąžinta iš viso',
 		'Line Taxes' => 'Eilės mokesčiai',
 		'Item Meta' => 'Prekės meta duomenys',
+		'Product Attributes' => 'Produkto atributai',
 		'Fees' => 'Mokesčiai',
 		'Fee Label' => 'Mokesčio pavadinimas',
 		'Total' => 'Viso',

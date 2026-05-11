@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'សរុបដែលសងវិញ',
 		'Line Taxes' => 'ពន្ធចូលសម្ថិត',
 		'Item Meta' => 'មេតាទិន្នន័យធាតុ',
+		'Product Attributes' => 'គុណលក្ខណៈផលិតផល',
 		'Fees' => 'តម្លៃមូលនិងជំនួយពន្ធខ្មែរ',
 		'Fee Label' => 'ថ្លៃមូលនិងតាម​បាន',
 		'Total' => 'សរុប',

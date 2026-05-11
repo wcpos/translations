@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Total refunderet',
 		'Line Taxes' => 'Linjemomsum',
 		'Item Meta' => 'Vare-metadata',
+		'Product Attributes' => 'Produktegenskaber',
 		'Fees' => 'Gebyrer',
 		'Fee Label' => 'Gebyrnavn',
 		'Total' => 'Total',

@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Heildarendurgreiðsla',
 		'Line Taxes' => 'Línuskættir',
 		'Item Meta' => 'Vörugögn',
+		'Product Attributes' => 'Vörueiginleikar',
 		'Fees' => 'Álag',
 		'Fee Label' => 'Álaga merki',
 		'Total' => 'Heildarupplata',

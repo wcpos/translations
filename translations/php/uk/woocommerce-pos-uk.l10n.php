@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Повернено всього',
 		'Line Taxes' => 'Податки по позиції',
 		'Item Meta' => 'Метадані товару',
+		'Product Attributes' => 'Атрибути товару',
 		'Fees' => 'Тарифи',
 		'Fee Label' => 'Мітка тарифу',
 		'Total' => 'Загалом',

@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Total reembolsado',
 		'Line Taxes' => 'Impuestos de línea',
 		'Item Meta' => 'Metadatos del artículo',
+		'Product Attributes' => 'Atributos del producto',
 		'Fees' => 'Gastos',
 		'Fee Label' => 'Etiqueta del gasto',
 		'Total' => 'Total',
