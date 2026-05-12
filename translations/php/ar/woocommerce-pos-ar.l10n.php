@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'إجمالي المسترد',
 		'Line Taxes' => 'ضرائب السطر',
 		'Item Meta' => 'البيانات الوصفية للعنصر',
+		'Product Attributes' => 'سمات المنتج',
 		'Fees' => 'الرسوم',
 		'Fee Label' => 'عنوان الرسم',
 		'Total' => 'المجموع',

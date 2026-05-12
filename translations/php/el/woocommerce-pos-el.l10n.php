@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Συνολικό ποσό επιστροφής',
 		'Line Taxes' => 'Φόροι Περιγράφου',
 		'Item Meta' => 'Μεταδεδομένα είδους',
+		'Product Attributes' => 'Ιδιότητες προϊόντος',
 		'Fees' => 'Δαπάνες',
 		'Fee Label' => 'Ετικέτα Δαπάνης',
 		'Total' => 'Σύνολο',

@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Totaal terugbetaald',
 		'Line Taxes' => 'Lijnaanpassingen',
 		'Item Meta' => 'Itemmetadata',
+		'Product Attributes' => 'Producteigenschappen',
 		'Fees' => 'Kosten',
 		'Fee Label' => 'Kostenlabel',
 		'Total' => 'Totaal',

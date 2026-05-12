@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Łącznie zwrócono',
 		'Line Taxes' => 'Podatki pozycji',
 		'Item Meta' => 'Metadane pozycji',
+		'Product Attributes' => 'Atrybuty produktu',
 		'Fees' => 'Opłaty',
 		'Fee Label' => 'Etykieta opłaty',
 		'Total' => 'Razem',

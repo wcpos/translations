@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Gesamterstattung',
 		'Line Taxes' => 'Positionssteuern',
 		'Item Meta' => 'Artikel-Metadaten',
+		'Product Attributes' => 'Produktattribute',
 		'Fees' => 'Gebühren',
 		'Fee Label' => 'Gebührenbezeichnung',
 		'Total' => 'Gesamt',

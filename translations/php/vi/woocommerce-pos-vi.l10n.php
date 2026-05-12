@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Tổng hoàn tiền',
 		'Line Taxes' => 'Thuế hàng',
 		'Item Meta' => 'Thông tin mặt hàng',
+		'Product Attributes' => 'Thuộc tính sản phẩm',
 		'Fees' => 'Phí',
 		'Fee Label' => 'Nhãn phí',
 		'Total' => 'Tổng cộng',

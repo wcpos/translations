@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Total retornat',
 		'Line Taxes' => 'Impostos de línia',
 		'Item Meta' => 'Metadades de l\'article',
+		'Product Attributes' => 'Atributs del producte',
 		'Fees' => 'Drets',
 		'Fee Label' => 'Etiqueta de dret',
 		'Total' => 'Total',

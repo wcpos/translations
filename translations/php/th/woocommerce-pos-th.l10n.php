@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'ยอดคืนเงินรวม',
 		'Line Taxes' => 'ภาษีในรายการ',
 		'Item Meta' => 'ข้อมูลเมตารายการ',
+		'Product Attributes' => 'คุณลักษณะสินค้า',
 		'Fees' => 'ค่าธรรมเนียม',
 		'Fee Label' => 'ชื่อค่าธรรมเนียม',
 		'Total' => 'รวมทั้งหมด',

@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Tagastatud kokku',
 		'Line Taxes' => 'Rida maksud',
 		'Item Meta' => 'Kauba metaandmed',
+		'Product Attributes' => 'Toote atribuudid',
 		'Fees' => 'Tasud',
 		'Fee Label' => 'Tasu sild',
 		'Total' => 'Kogusumma',

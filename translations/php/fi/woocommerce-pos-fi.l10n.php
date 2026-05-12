@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Palautettu yhteensä',
 		'Line Taxes' => 'Riviverot',
 		'Item Meta' => 'Tuotteen metatiedot',
+		'Product Attributes' => 'Tuoteominaisuudet',
 		'Fees' => 'Maksut',
 		'Fee Label' => 'Maksun nimi',
 		'Total' => 'Yhteensä',

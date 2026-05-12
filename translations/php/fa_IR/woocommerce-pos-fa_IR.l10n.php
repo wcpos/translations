@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'جمع بازپرداخت',
 		'Line Taxes' => 'مالیات ردیف',
 		'Item Meta' => 'فراداده کالا',
+		'Product Attributes' => 'ویژگی‌های محصول',
 		'Fees' => 'کارمزد ها',
 		'Fee Label' => 'برچسب کارمزد',
 		'Total' => 'جمع کل',

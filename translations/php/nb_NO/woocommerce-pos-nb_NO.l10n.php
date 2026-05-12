@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Totalt refundert',
 		'Line Taxes' => 'Linet MVA',
 		'Item Meta' => 'Varemata',
+		'Product Attributes' => 'Produktattributter',
 		'Fees' => 'Gebyrer',
 		'Fee Label' => 'Gebyrnavn',
 		'Total' => 'Totalt',

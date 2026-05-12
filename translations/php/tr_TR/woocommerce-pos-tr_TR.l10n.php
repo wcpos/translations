@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Toplam İade',
 		'Line Taxes' => 'Satır Vergileri',
 		'Item Meta' => 'Öğe Metası',
+		'Product Attributes' => 'Ürün Özellikleri',
 		'Fees' => 'Ücretler',
 		'Fee Label' => 'Ücret Etiketi',
 		'Total' => 'TOPLAM',

@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Общо възстановено',
 		'Line Taxes' => 'ДДС по статия',
 		'Item Meta' => 'Метаданни на артикула',
+		'Product Attributes' => 'Атрибути на продукта',
 		'Fees' => 'Такси',
 		'Fee Label' => 'Описание на такса',
 		'Total' => 'Общо',

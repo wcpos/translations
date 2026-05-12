@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'סה"כ שהוחזר',
 		'Line Taxes' => '라인 세금',
 		'Item Meta' => 'מטא הפריט',
+		'Product Attributes' => 'מאפייני מוצר',
 		'Fees' => '斯基_duplicates',
 		'Fee Label' => '斯基_duplicates',
 		'Total' => 'סהכ',

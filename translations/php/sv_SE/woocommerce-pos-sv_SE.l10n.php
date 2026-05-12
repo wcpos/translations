@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Totalt återbetalt',
 		'Line Taxes' => 'Linjemoms',
 		'Item Meta' => 'Artikelmetadata',
+		'Product Attributes' => 'Produktattribut',
 		'Fees' => 'Avgifter',
 		'Fee Label' => 'Avgiftsetikett',
 		'Total' => 'Totalt',

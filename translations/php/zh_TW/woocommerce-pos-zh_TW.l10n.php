@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => '退款總額',
 		'Line Taxes' => '行稅額',
 		'Item Meta' => '商品中繼資料',
+		'Product Attributes' => '商品屬性',
 		'Fees' => '費用',
 		'Fee Label' => '費用標籤',
 		'Total' => '總計',

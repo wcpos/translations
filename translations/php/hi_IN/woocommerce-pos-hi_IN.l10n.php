@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'वापस की गई कुल राशि',
 		'Line Taxes' => 'पंक्ति कर',
 		'Item Meta' => 'आइटम मेटा',
+		'Product Attributes' => 'उत्पाद विशेषताएँ',
 		'Fees' => 'शुल्क',
 		'Fee Label' => 'शुल्क लेबल',
 		'Total' => 'कुल',

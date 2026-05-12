@@ -331,6 +331,7 @@ return array(
 		'Total Refunded' => 'Total dikembalikan',
 		'Line Taxes' => 'Pajak Baris',
 		'Item Meta' => 'Meta item',
+		'Product Attributes' => 'Atribut Produk',
 		'Fees' => 'Biaya',
 		'Fee Label' => 'Label Biaya',
 		'Total' => 'Total',
