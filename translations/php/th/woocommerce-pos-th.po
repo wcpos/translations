@@ -69,12 +69,11 @@ msgstr "เปิดใช้งานลิงก์ถาวร"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Short WCPOS UI label; keep concise.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Activator.php:364
 #: includes/Services/Receipt_Data_Schema.php:387
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:338
-#: templates/receipt.php:120
+#: templates/receipt.php:203
 msgid "Cashier"
 msgstr "แคชเชียร์"
 
@@ -455,9 +454,9 @@ msgstr "เปิดในแท็บใหม่"
 #. translators: REST API schema field label or error message.
 #: includes/Admin/Templates/List_Templates.php:589
 #: includes/Admin/Templates/List_Templates.php:637
-#: includes/Admin/Templates/Single_Template.php:371
-#: includes/Admin/Templates/Single_Template.php:404
-#: includes/Admin/Templates/Single_Template.php:462
+#: includes/Admin/Templates/Single_Template.php:385
+#: includes/Admin/Templates/Single_Template.php:418
+#: includes/Admin/Templates/Single_Template.php:476
 #: includes/API/Templates_Controller.php:460
 #: includes/API/Templates_Controller.php:511
 #: includes/API/Templates_Controller.php:687
@@ -470,14 +469,14 @@ msgstr "รหัสแม่แบบไม่ถูกต้อง"
 #: includes/Admin/Templates/List_Templates.php:596
 #: includes/Admin/Templates/List_Templates.php:644
 #: includes/Admin/Templates/List_Templates.php:803
-#: includes/Admin/Templates/Single_Template.php:362
-#: includes/Admin/Templates/Single_Template.php:408
-#: includes/Admin/Templates/Single_Template.php:466
+#: includes/Admin/Templates/Single_Template.php:376
+#: includes/Admin/Templates/Single_Template.php:422
+#: includes/Admin/Templates/Single_Template.php:480
 msgid "Security check failed."
 msgstr "การตรวจสอบความปลอดภัยล้มเหลว"
 
 #: includes/Admin/Templates/List_Templates.php:600
-#: includes/Admin/Templates/Single_Template.php:412
+#: includes/Admin/Templates/Single_Template.php:426
 msgid "You do not have permission to activate templates."
 msgstr "คุณไม่มีสิทธิ์ในการเปิดใช้งานแม่แบบ"
 
@@ -488,7 +487,7 @@ msgstr "คุณไม่มีสิทธิ์ในการคัดลอ
 #. translators: Label or action in the receipt templates admin screen.
 #. translators: Error message displayed when a template cannot be found.
 #: includes/Admin/Templates/List_Templates.php:655
-#: includes/Admin/Templates/Single_Template.php:477
+#: includes/Admin/Templates/Single_Template.php:491
 #: includes/Template_Router.php:221
 #: includes/Template_Router.php:239
 msgid "Template not found."
@@ -496,7 +495,7 @@ msgstr "ไม่พบแม่แบบ"
 
 #. translators: %s: original template title
 #: includes/Admin/Templates/List_Templates.php:669
-#: includes/Admin/Templates/Single_Template.php:485
+#: includes/Admin/Templates/Single_Template.php:499
 #: includes/API/Templates_Controller.php:698
 #, php-format
 msgid "Copy of %s"
@@ -504,24 +503,24 @@ msgstr "คัดลอกของ %s"
 
 #. translators: Label or action in the receipt templates admin screen.
 #: includes/Admin/Templates/List_Templates.php:713
-#: includes/Admin/Templates/Single_Template.php:754
+#: includes/Admin/Templates/Single_Template.php:768
 msgid "Template activated successfully."
 msgstr "เปิดใช้งานแม่แบบสำเร็จ"
 
 #: includes/Admin/Templates/List_Templates.php:722
-#: includes/Admin/Templates/Single_Template.php:781
+#: includes/Admin/Templates/Single_Template.php:795
 msgid "Template copied successfully. You can now edit your custom template."
 msgstr "คัดลอกแม่แบบสำเร็จ คุณสามารถแก้ไขแม่แบบที่กำหนดเองได้แล้ว"
 
 #: includes/Admin/Templates/List_Templates.php:731
-#: includes/Admin/Templates/Single_Template.php:790
+#: includes/Admin/Templates/Single_Template.php:804
 msgid ""
 "Starter template installed. You can now customise it and activate it when ready."
 msgstr ""
 "ติดตั้งแม่แบบเริ่มต้นสำเร็จ คุณสามารถปรับแต่งมันได้และเปิดใช้งานเมื่อพร้อม"
 
 #: includes/Admin/Templates/List_Templates.php:740
-#: includes/Admin/Templates/Single_Template.php:799
+#: includes/Admin/Templates/Single_Template.php:813
 msgid "Failed to activate template."
 msgstr "ไม่สามารถเปิดใช้งานแม่แบบ"
 
@@ -564,99 +563,104 @@ msgid "Back to Templates"
 msgstr "ย้อนกลับไปที่แม่แบบ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:176
+#: includes/Admin/Templates/Single_Template.php:178
 msgid "Publish"
 msgstr "เผยแพร่"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:186
+#: includes/Admin/Templates/Single_Template.php:188
 msgid "Template Actions"
 msgstr "การกระทำของแม่แบบ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:196
+#: includes/Admin/Templates/Single_Template.php:198
 msgid "Template Settings"
 msgstr "การตั้งค่าแม่แบบ"
 
-#: includes/Admin/Templates/Single_Template.php:225
+#. translators: Label or action in the receipt templates admin screen.
+#: includes/Admin/Templates/Single_Template.php:209
+msgid "Revisions"
+msgstr "การแก้ไข"
+
+#: includes/Admin/Templates/Single_Template.php:239
 msgid ""
 "Prints using your browser's print dialog. Renders on the device without needing a server connection."
 msgstr ""
 "การพิมพ์โดยใช้หน้าต่างเครื่องพิมพ์ของเบราว์เซอร์ แสดงผลบนอุปกรณ์โดยไม่ต้องเชื่อมต่อกับเซิร์ฟเวอร์"
 
-#: includes/Admin/Templates/Single_Template.php:226
+#: includes/Admin/Templates/Single_Template.php:240
 msgid ""
 "Sends output directly to thermal printers like Epson or Star. Works offline."
 msgstr ""
 "ส่งผลลัพธ์ไปยังเครื่องพิมพ์ร้อนอย่างเช่น Epson หรือ Star เลย ทำงานได้แบบออฟไลน์"
 
-#: includes/Admin/Templates/Single_Template.php:227
+#: includes/Admin/Templates/Single_Template.php:241
 msgid ""
 "Prints using your browser's print dialog. Requires a server connection to generate the receipt."
 msgstr ""
 "การพิมพ์โดยใช้หน้าต่างเครื่องพิมพ์ของเบราว์เซอร์ จำเป็นต้องเชื่อมต่อกับเซิร์ฟเวอร์เพื่อสร้างใบเสร็จ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:233
+#: includes/Admin/Templates/Single_Template.php:247
 msgid "Template Engine"
 msgstr "เครื่องมือจัดการแม่แบบ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:251
+#: includes/Admin/Templates/Single_Template.php:265
 msgid "Paper Size"
 msgstr "ขนาดกระดาษ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:253
+#: includes/Admin/Templates/Single_Template.php:267
 msgid "80mm (Standard)"
 msgstr "80 มม. (นิรชาต)"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:254
+#: includes/Admin/Templates/Single_Template.php:268
 msgid "58mm (Narrow)"
 msgstr "58 มม. (แคบ)"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:304
+#: includes/Admin/Templates/Single_Template.php:318
 msgid "Deactivate Template"
 msgstr "ปิดใช้งานเทมเพลต"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:304
+#: includes/Admin/Templates/Single_Template.php:318
 msgid "Activate Template"
 msgstr "เปิดใช้งานเทมเพลต"
 
-#: includes/Admin/Templates/Single_Template.php:306
+#: includes/Admin/Templates/Single_Template.php:320
 msgid "This template is active and available for POS receipts."
 msgstr "เทมเพลตนี้เปิดใช้งานอยู่และพร้อมใช้สำหรับใบเสร็จ POS"
 
-#: includes/Admin/Templates/Single_Template.php:307
+#: includes/Admin/Templates/Single_Template.php:321
 msgid "This template is inactive and will not be used for POS receipts."
 msgstr "เทมเพลตนี้ปิดใช้งานอยู่และจะไม่ถูกใช้กับใบเสร็จ POS"
 
-#: includes/Admin/Templates/Single_Template.php:358
+#: includes/Admin/Templates/Single_Template.php:372
 msgid "Invalid template status request."
 msgstr "คำขอสถานะเทมเพลตไม่ถูกต้อง"
 
-#: includes/Admin/Templates/Single_Template.php:366
+#: includes/Admin/Templates/Single_Template.php:380
 msgid "You do not have permission to update templates."
 msgstr "คุณไม่มีสิทธิ์อัปเดตเทมเพลต"
 
-#: includes/Admin/Templates/Single_Template.php:470
+#: includes/Admin/Templates/Single_Template.php:484
 msgid "You do not have permission to create templates."
 msgstr "คุณไม่มีสิทธิ์ในการสร้างแม่แบบ"
 
-#: includes/Admin/Templates/Single_Template.php:496
+#: includes/Admin/Templates/Single_Template.php:510
 msgid "Failed to create template copy."
 msgstr "ไม่สามารถสร้างสำเนาแม่แบบ"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:768
+#: includes/Admin/Templates/Single_Template.php:782
 msgid "Template status updated successfully."
 msgstr "อัปเดตสถานะเทมเพลตเรียบร้อยแล้ว"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:769
+#: includes/Admin/Templates/Single_Template.php:783
 msgid "Failed to update template status."
 msgstr "อัปเดตสถานะเทมเพลตไม่สำเร็จ"
 
@@ -1183,12 +1187,11 @@ msgstr "จำนวนเงินที่เสนอ"
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Gateways/Cash.php:100
 #: includes/Services/Receipt_Data_Schema.php:738
 #: includes/Services/Receipt_Data_Schema.php:814
 #: includes/Services/Receipt_I18n_Labels.php:169
-#: templates/receipt.php:257
+#: templates/receipt.php:367
 msgid "Change"
 msgstr "เงินทอน"
 
@@ -1321,6 +1324,7 @@ msgstr ""
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Preview_Receipt_Builder.php:885
 #: includes/Services/Receipt_I18n_Labels.php:211
+#: templates/receipt.php:379
 msgid "Thank you for your purchase!"
 msgstr "ขอบคุณสำหรับการซื้อสินค้า"
 
@@ -1506,10 +1510,9 @@ msgstr "ชื่อแคชเชียร์"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:400
 #: includes/Services/Receipt_I18n_Labels.php:51
-#: templates/receipt.php:126
+#: templates/receipt.php:207
 msgid "Customer"
 msgstr "ลูกค้า"
 
@@ -1756,6 +1759,7 @@ msgstr "ชื่อค่าธรรมเนียม"
 #: includes/Services/Receipt_Data_Schema.php:677
 #: includes/Services/Receipt_Data_Schema.php:722
 #: includes/Services/Receipt_I18n_Labels.php:161
+#: templates/receipt.php:229
 msgid "Total"
 msgstr "รวมทั้งหมด"
 
@@ -1876,6 +1880,7 @@ msgstr "ยอดคืนเงิน"
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_Data_Schema.php:746
 #: includes/Services/Receipt_I18n_Labels.php:191
+#: templates/receipt.php:316
 msgid "Net Total"
 msgstr "ยอดสุทธิ"
 
@@ -1957,10 +1962,9 @@ msgstr "จำนวนเงิน"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:810
 #: includes/Services/Receipt_I18n_Labels.php:168
-#: templates/receipt.php:253
+#: templates/receipt.php:363
 msgid "Tendered"
 msgstr "จำนวนเงินที่จ่าย"
 
@@ -2197,10 +2201,8 @@ msgstr "วันที่และเวลา"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:1085
 #: includes/Services/Receipt_I18n_Labels.php:45
-#: templates/receipt.php:114
 msgid "Date"
 msgstr "วันที่"
 
@@ -2521,11 +2523,13 @@ msgstr "เรียกเก็บเงินถึง"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:136
+#: templates/receipt.php:227
 msgid "Item"
 msgstr "รายการ"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:138
+#: templates/receipt.php:228
 msgid "Qty"
 msgstr "จำนวน"
 
@@ -2630,6 +2634,7 @@ msgstr "ยอดรวมสุทธิ (รวมภาษี)"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:166
+#: templates/receipt.php:355
 msgid "Paid"
 msgstr "ชำระแล้ว"
 
@@ -2651,7 +2656,7 @@ msgstr "ฐานภาษี (รวม)"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:178
-#: includes/Templates.php:1094
+#: includes/Templates.php:1112
 msgid "Invoice"
 msgstr "ใบแจ้งหนี้"
 
@@ -2668,21 +2673,22 @@ msgstr "ใบเสนอราคา"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:181
-#: includes/Templates.php:1093
+#: includes/Templates.php:1111
+#: templates/receipt.php:189
 msgid "Receipt"
 msgstr "ใบเสร็จ"
 
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:182
-#: includes/Templates.php:1095
+#: includes/Templates.php:1113
 msgid "Gift Receipt"
 msgstr "ใบเสร็จของขวัญ"
 
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:183
-#: includes/Templates.php:1096
+#: includes/Templates.php:1114
 msgid "Credit Note"
 msgstr "ใบลดหนี้"
 
@@ -2693,6 +2699,7 @@ msgstr "ใบบรรจุสินค้า"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:187
+#: templates/receipt.php:325
 msgid "Returned Items"
 msgstr "สินค้าคืน"
 
@@ -2813,9 +2820,7 @@ msgid "Printed"
 msgstr "พิมพ์แล้ว"
 
 #. translators: %s: store tax identification number
-#. translators: %s: tax ID
 #: includes/Services/Receipt_I18n_Labels.php:255
-#: templates/receipt.php:97
 #, php-format
 msgid "Tax ID: %s"
 msgstr "เลขประจำตัวผู้เสียภาษี: %s"
@@ -3173,70 +3178,58 @@ msgid "Template Category"
 msgstr "หมวดหมู่เทมเพลต"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:320
+#: includes/Templates.php:345
 msgid "Theme Receipt Template"
 msgstr "เทมเพลตรับธีม"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:321
+#: includes/Templates.php:346
 msgid "Pro Receipt Template"
 msgstr "เทมเพลตรับ Pro"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:322
+#: includes/Templates.php:347
 msgid "Default Receipt Template"
 msgstr "เทมเพลตรับค่าเริ่มต้น"
 
-#. translators: Receipt template post type or template option label.
-#: includes/Templates.php:808
-msgid "Simple Receipt (Logicless)"
-msgstr "ใบเสร็จแบบง่าย (ไม่มีตรรกะ)"
-
-#. translators: Receipt template post type or template option label.
-#: includes/Templates.php:809
-msgid ""
-"Full receipt using the logicless template engine with section blocks for line items, payments, and conditionals. No PHP required — just HTML and CSS."
-msgstr ""
-"ใบเสร็จเต็มรูปแบบโดยใช้เครื่องมือแม่แบบกลไกตรรกะอย่างง่าย แบ่งส่วนสำหรับรายการสินค้า การชำระเงิน และเงื่อนไข ไม่จำเป็นต้องใช้ PHP — HTML และ CSS เท่านั้น"
-
-#: includes/Templates.php:931
+#: includes/Templates.php:949
 msgid "Starter template not found."
 msgstr "ไม่พบแม่แบบเริ่มต้น"
 
-#: includes/Templates.php:938
+#: includes/Templates.php:956
 msgid "Could not read starter template file."
 msgstr "ไม่สามารถอ่านไฟล์แม่แบบเริ่มต้นได้"
 
-#: includes/Templates.php:967
-#: includes/Templates.php:1048
+#: includes/Templates.php:985
+#: includes/Templates.php:1066
 msgid "Template was created but raw content could not be saved."
 msgstr "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
 
-#: includes/Templates.php:994
+#: includes/Templates.php:1012
 msgid "Gallery template not found."
 msgstr "ไม่พบแม่แบบแกลเลอรี่"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1069
+#: includes/Templates.php:1087
 msgid "Receipt templates for printing orders"
 msgstr "เทมเพลตรับสำหรับพิมพ์คำสั่งซื้อ"
 
-#: includes/Templates.php:1080
+#: includes/Templates.php:1098
 msgid "Report templates for analytics"
 msgstr "เทมเพลตรายงานสำหรับการวิเคราะห์"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1097
+#: includes/Templates.php:1115
 msgid "Purchase Order"
 msgstr "ใบสั่งซื้อ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1098
+#: includes/Templates.php:1116
 msgid "Kitchen Ticket"
 msgstr "ตั๋วครัว"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1099
+#: includes/Templates.php:1117
 msgid "Bar Ticket"
 msgstr "ตั๋วบาร์"
 
@@ -3477,21 +3470,6 @@ msgstr ""
 #: templates/pos.php:14
 msgid "Point of Sale"
 msgstr "จุดขาย"
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:109
-msgid "Receipt #"
-msgstr "เลขที่ใบเสร็จ:"
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:219
-msgid "incl."
-msgstr "รวม"
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:220
-msgid "excl."
-msgstr "ไม่รวม"
 
 #: woocommerce-pos.php:131
 msgid "The WCPOS plugin failed to load correctly."

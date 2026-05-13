@@ -69,12 +69,11 @@ msgstr "Увімкнути постійні посилання"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Short WCPOS UI label; keep concise.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Activator.php:364
 #: includes/Services/Receipt_Data_Schema.php:387
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:338
-#: templates/receipt.php:120
+#: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Касир"
 
@@ -457,9 +456,9 @@ msgstr "Відкрити у новій вкладці"
 #. translators: REST API schema field label or error message.
 #: includes/Admin/Templates/List_Templates.php:589
 #: includes/Admin/Templates/List_Templates.php:637
-#: includes/Admin/Templates/Single_Template.php:371
-#: includes/Admin/Templates/Single_Template.php:404
-#: includes/Admin/Templates/Single_Template.php:462
+#: includes/Admin/Templates/Single_Template.php:385
+#: includes/Admin/Templates/Single_Template.php:418
+#: includes/Admin/Templates/Single_Template.php:476
 #: includes/API/Templates_Controller.php:460
 #: includes/API/Templates_Controller.php:511
 #: includes/API/Templates_Controller.php:687
@@ -472,14 +471,14 @@ msgstr "Неправильний ID шаблону."
 #: includes/Admin/Templates/List_Templates.php:596
 #: includes/Admin/Templates/List_Templates.php:644
 #: includes/Admin/Templates/List_Templates.php:803
-#: includes/Admin/Templates/Single_Template.php:362
-#: includes/Admin/Templates/Single_Template.php:408
-#: includes/Admin/Templates/Single_Template.php:466
+#: includes/Admin/Templates/Single_Template.php:376
+#: includes/Admin/Templates/Single_Template.php:422
+#: includes/Admin/Templates/Single_Template.php:480
 msgid "Security check failed."
 msgstr "Перевірка безпеки не вдалася."
 
 #: includes/Admin/Templates/List_Templates.php:600
-#: includes/Admin/Templates/Single_Template.php:412
+#: includes/Admin/Templates/Single_Template.php:426
 msgid "You do not have permission to activate templates."
 msgstr "Ви не маєте дозволу на активацію шаблонів."
 
@@ -490,7 +489,7 @@ msgstr "Ви не маєте дозволу на копіювання шабло
 #. translators: Label or action in the receipt templates admin screen.
 #. translators: Error message displayed when a template cannot be found.
 #: includes/Admin/Templates/List_Templates.php:655
-#: includes/Admin/Templates/Single_Template.php:477
+#: includes/Admin/Templates/Single_Template.php:491
 #: includes/Template_Router.php:221
 #: includes/Template_Router.php:239
 msgid "Template not found."
@@ -498,7 +497,7 @@ msgstr "Шаблон не знайдено."
 
 #. translators: %s: original template title
 #: includes/Admin/Templates/List_Templates.php:669
-#: includes/Admin/Templates/Single_Template.php:485
+#: includes/Admin/Templates/Single_Template.php:499
 #: includes/API/Templates_Controller.php:698
 #, php-format
 msgid "Copy of %s"
@@ -506,25 +505,25 @@ msgstr "Копія %s"
 
 #. translators: Label or action in the receipt templates admin screen.
 #: includes/Admin/Templates/List_Templates.php:713
-#: includes/Admin/Templates/Single_Template.php:754
+#: includes/Admin/Templates/Single_Template.php:768
 msgid "Template activated successfully."
 msgstr "Шаблон успішно активовано."
 
 #: includes/Admin/Templates/List_Templates.php:722
-#: includes/Admin/Templates/Single_Template.php:781
+#: includes/Admin/Templates/Single_Template.php:795
 msgid "Template copied successfully. You can now edit your custom template."
 msgstr ""
 "Шаблон успішно скопійовано. Тепер ви можете редагувати свій користувацький шаблон."
 
 #: includes/Admin/Templates/List_Templates.php:731
-#: includes/Admin/Templates/Single_Template.php:790
+#: includes/Admin/Templates/Single_Template.php:804
 msgid ""
 "Starter template installed. You can now customise it and activate it when ready."
 msgstr ""
 "Початковий шаблон встановлено. Тепер ви можете налаштувати його та активувати, коли будете готові."
 
 #: includes/Admin/Templates/List_Templates.php:740
-#: includes/Admin/Templates/Single_Template.php:799
+#: includes/Admin/Templates/Single_Template.php:813
 msgid "Failed to activate template."
 msgstr "Не вдалося активувати шаблон."
 
@@ -567,99 +566,104 @@ msgid "Back to Templates"
 msgstr "Повернутися до шаблонів"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:176
+#: includes/Admin/Templates/Single_Template.php:178
 msgid "Publish"
 msgstr "Публікація"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:186
+#: includes/Admin/Templates/Single_Template.php:188
 msgid "Template Actions"
 msgstr "Дії з шаблоном"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:196
+#: includes/Admin/Templates/Single_Template.php:198
 msgid "Template Settings"
 msgstr "Налаштування шаблону"
 
-#: includes/Admin/Templates/Single_Template.php:225
+#. translators: Label or action in the receipt templates admin screen.
+#: includes/Admin/Templates/Single_Template.php:209
+msgid "Revisions"
+msgstr "Редакції"
+
+#: includes/Admin/Templates/Single_Template.php:239
 msgid ""
 "Prints using your browser's print dialog. Renders on the device without needing a server connection."
 msgstr ""
 "Використовує діалогове вікно друку браузера. Відображається на пристрої без підключення до сервера."
 
-#: includes/Admin/Templates/Single_Template.php:226
+#: includes/Admin/Templates/Single_Template.php:240
 msgid ""
 "Sends output directly to thermal printers like Epson or Star. Works offline."
 msgstr ""
 "Посилання вихідних даних прямо на термопринтари, як-от Epson або Star. Працює офлайн."
 
-#: includes/Admin/Templates/Single_Template.php:227
+#: includes/Admin/Templates/Single_Template.php:241
 msgid ""
 "Prints using your browser's print dialog. Requires a server connection to generate the receipt."
 msgstr ""
 "Використовує діалогове вікно друку браузера. Вимагає підключення до сервера для генерації касового чеку."
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:233
+#: includes/Admin/Templates/Single_Template.php:247
 msgid "Template Engine"
 msgstr "Мотор шаблонів"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:251
+#: includes/Admin/Templates/Single_Template.php:265
 msgid "Paper Size"
 msgstr "Розмір паперу"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:253
+#: includes/Admin/Templates/Single_Template.php:267
 msgid "80mm (Standard)"
 msgstr "80 мм (Стандартний)"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:254
+#: includes/Admin/Templates/Single_Template.php:268
 msgid "58mm (Narrow)"
 msgstr "58 мм (Вузький)"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:304
+#: includes/Admin/Templates/Single_Template.php:318
 msgid "Deactivate Template"
 msgstr "Вимкнути шаблон"
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:304
+#: includes/Admin/Templates/Single_Template.php:318
 msgid "Activate Template"
 msgstr "Активувати шаблон"
 
-#: includes/Admin/Templates/Single_Template.php:306
+#: includes/Admin/Templates/Single_Template.php:320
 msgid "This template is active and available for POS receipts."
 msgstr "Цей шаблон активний і доступний для POS-чеків."
 
-#: includes/Admin/Templates/Single_Template.php:307
+#: includes/Admin/Templates/Single_Template.php:321
 msgid "This template is inactive and will not be used for POS receipts."
 msgstr "Цей шаблон неактивний і не використовуватиметься для POS-чеків."
 
-#: includes/Admin/Templates/Single_Template.php:358
+#: includes/Admin/Templates/Single_Template.php:372
 msgid "Invalid template status request."
 msgstr "Недійсний запит на зміну статусу шаблону."
 
-#: includes/Admin/Templates/Single_Template.php:366
+#: includes/Admin/Templates/Single_Template.php:380
 msgid "You do not have permission to update templates."
 msgstr "У вас немає дозволу на оновлення шаблонів."
 
-#: includes/Admin/Templates/Single_Template.php:470
+#: includes/Admin/Templates/Single_Template.php:484
 msgid "You do not have permission to create templates."
 msgstr "Ви не маєте дозволу на створення шаблонів."
 
-#: includes/Admin/Templates/Single_Template.php:496
+#: includes/Admin/Templates/Single_Template.php:510
 msgid "Failed to create template copy."
 msgstr "Не вдалося створити копію шаблону."
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:768
+#: includes/Admin/Templates/Single_Template.php:782
 msgid "Template status updated successfully."
 msgstr "Статус шаблону успішно оновлено."
 
 #. translators: Label or action in the receipt templates admin screen.
-#: includes/Admin/Templates/Single_Template.php:769
+#: includes/Admin/Templates/Single_Template.php:783
 msgid "Failed to update template status."
 msgstr "Не вдалося оновити статус шаблону."
 
@@ -1189,12 +1193,11 @@ msgstr "Сума надана"
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Gateways/Cash.php:100
 #: includes/Services/Receipt_Data_Schema.php:738
 #: includes/Services/Receipt_Data_Schema.php:814
 #: includes/Services/Receipt_I18n_Labels.php:169
-#: templates/receipt.php:257
+#: templates/receipt.php:367
 msgid "Change"
 msgstr "Здача"
 
@@ -1332,6 +1335,7 @@ msgstr ""
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Preview_Receipt_Builder.php:885
 #: includes/Services/Receipt_I18n_Labels.php:211
+#: templates/receipt.php:379
 msgid "Thank you for your purchase!"
 msgstr "Дякуємо за покупку!"
 
@@ -1517,10 +1521,9 @@ msgstr "Ім'я касира"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:400
 #: includes/Services/Receipt_I18n_Labels.php:51
-#: templates/receipt.php:126
+#: templates/receipt.php:207
 msgid "Customer"
 msgstr "Клієнт"
 
@@ -1767,6 +1770,7 @@ msgstr "Мітка тарифу"
 #: includes/Services/Receipt_Data_Schema.php:677
 #: includes/Services/Receipt_Data_Schema.php:722
 #: includes/Services/Receipt_I18n_Labels.php:161
+#: templates/receipt.php:229
 msgid "Total"
 msgstr "Загалом"
 
@@ -1887,6 +1891,7 @@ msgstr "Сума повернення"
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_Data_Schema.php:746
 #: includes/Services/Receipt_I18n_Labels.php:191
+#: templates/receipt.php:316
 msgid "Net Total"
 msgstr "Чиста сума"
 
@@ -1968,10 +1973,9 @@ msgstr "Сума"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:810
 #: includes/Services/Receipt_I18n_Labels.php:168
-#: templates/receipt.php:253
+#: templates/receipt.php:363
 msgid "Tendered"
 msgstr "Внесені кошти"
 
@@ -2208,10 +2212,8 @@ msgstr "Дата й час"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Standalone label used in printed receipt templates.
-#. translators: Label shown on a POS receipt or checkout template.
 #: includes/Services/Receipt_Data_Schema.php:1085
 #: includes/Services/Receipt_I18n_Labels.php:45
-#: templates/receipt.php:114
 msgid "Date"
 msgstr "Дата"
 
@@ -2532,11 +2534,13 @@ msgstr "Платнику"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:136
+#: templates/receipt.php:227
 msgid "Item"
 msgstr "Товар"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:138
+#: templates/receipt.php:228
 msgid "Qty"
 msgstr "Кількість"
 
@@ -2641,6 +2645,7 @@ msgstr "Загальна сума з ПДВ"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:166
+#: templates/receipt.php:355
 msgid "Paid"
 msgstr "Сплачено"
 
@@ -2662,7 +2667,7 @@ msgstr "Опод. з ПДВ"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:178
-#: includes/Templates.php:1094
+#: includes/Templates.php:1112
 msgid "Invoice"
 msgstr "Рахунок"
 
@@ -2679,21 +2684,22 @@ msgstr "Кошторис"
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:181
-#: includes/Templates.php:1093
+#: includes/Templates.php:1111
+#: templates/receipt.php:189
 msgid "Receipt"
 msgstr "Чек"
 
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:182
-#: includes/Templates.php:1095
+#: includes/Templates.php:1113
 msgid "Gift Receipt"
 msgstr "Подарункове платежівче"
 
 #. translators: Standalone label used in printed receipt templates.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:183
-#: includes/Templates.php:1096
+#: includes/Templates.php:1114
 msgid "Credit Note"
 msgstr "Кредитна нота"
 
@@ -2704,6 +2710,7 @@ msgstr "Пакувальний лист"
 
 #. translators: Standalone label used in printed receipt templates.
 #: includes/Services/Receipt_I18n_Labels.php:187
+#: templates/receipt.php:325
 msgid "Returned Items"
 msgstr "Повернені товари"
 
@@ -2824,9 +2831,7 @@ msgid "Printed"
 msgstr "Надруковано"
 
 #. translators: %s: store tax identification number
-#. translators: %s: tax ID
 #: includes/Services/Receipt_I18n_Labels.php:255
-#: templates/receipt.php:97
 #, php-format
 msgid "Tax ID: %s"
 msgstr "ІПН: %s"
@@ -3184,70 +3189,58 @@ msgid "Template Category"
 msgstr "Категорія шаблону"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:320
+#: includes/Templates.php:345
 msgid "Theme Receipt Template"
 msgstr "Шаблон чека теми"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:321
+#: includes/Templates.php:346
 msgid "Pro Receipt Template"
 msgstr "Шаблон чека Pro"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:322
+#: includes/Templates.php:347
 msgid "Default Receipt Template"
 msgstr "Шаблон чека за замовчуванням"
 
-#. translators: Receipt template post type or template option label.
-#: includes/Templates.php:808
-msgid "Simple Receipt (Logicless)"
-msgstr "Простий платежівч (безлогічний)"
-
-#. translators: Receipt template post type or template option label.
-#: includes/Templates.php:809
-msgid ""
-"Full receipt using the logicless template engine with section blocks for line items, payments, and conditionals. No PHP required — just HTML and CSS."
-msgstr ""
-"Повний платежівч, що використовує безлогічний двигун шаблонів із блоками для позицій списку, платежів, умов. Не потрібно PHP — всього HTML і CSS."
-
-#: includes/Templates.php:931
+#: includes/Templates.php:949
 msgid "Starter template not found."
 msgstr "Початковий шаблон не знайдено."
 
-#: includes/Templates.php:938
+#: includes/Templates.php:956
 msgid "Could not read starter template file."
 msgstr "Не вдалося прочитати файл початкового шаблону."
 
-#: includes/Templates.php:967
-#: includes/Templates.php:1048
+#: includes/Templates.php:985
+#: includes/Templates.php:1066
 msgid "Template was created but raw content could not be saved."
 msgstr "Шаблон створено, але не вдалося зберегти вихідний вміст."
 
-#: includes/Templates.php:994
+#: includes/Templates.php:1012
 msgid "Gallery template not found."
 msgstr "Галерея шаблону не знайдено."
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1069
+#: includes/Templates.php:1087
 msgid "Receipt templates for printing orders"
 msgstr "Шаблони чеків для друку замовлень"
 
-#: includes/Templates.php:1080
+#: includes/Templates.php:1098
 msgid "Report templates for analytics"
 msgstr "Шаблони звітів для аналітики"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1097
+#: includes/Templates.php:1115
 msgid "Purchase Order"
 msgstr "Закупівельне замовлення"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1098
+#: includes/Templates.php:1116
 msgid "Kitchen Ticket"
 msgstr "Кухонний квиток"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1099
+#: includes/Templates.php:1117
 msgid "Bar Ticket"
 msgstr "Барний квиток"
 
@@ -3492,21 +3485,6 @@ msgstr ""
 #: templates/pos.php:14
 msgid "Point of Sale"
 msgstr "Точка продажу"
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:109
-msgid "Receipt #"
-msgstr "Чек №"
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:219
-msgid "incl."
-msgstr "вкл."
-
-#. translators: Label shown on a POS receipt or checkout template.
-#: templates/receipt.php:220
-msgid "excl."
-msgstr "викл."
 
 #: woocommerce-pos.php:131
 msgid "The WCPOS plugin failed to load correctly."
