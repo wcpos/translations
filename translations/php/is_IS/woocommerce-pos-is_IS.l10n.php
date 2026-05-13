@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Sniðmátsflokk',
 		'Theme Receipt Template' => 'Þema kvittunarsniðmát',
 		'Pro Receipt Template' => 'Pro kvittunarsniðmát',
-		'Default Receipt Template' => 'Sjálfgefið kvittunarsniðmát',
+		'Legacy PHP Template' => 'Eldra PHP-sniðmát',
 		'Starter template not found.' => 'Byrjunssnít fannst ekki.',
 		'Could not read starter template file.' => 'Mistókst að lesa byrjunssnít skrá.',
 		'Template was created but raw content could not be saved.' => 'Snítiði var búin til en óhæð skráarleggja mistókst.',

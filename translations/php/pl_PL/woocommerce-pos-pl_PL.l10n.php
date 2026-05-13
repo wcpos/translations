@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Kategoria szablonu',
 		'Theme Receipt Template' => 'Szablon paragonu motywu',
 		'Pro Receipt Template' => 'Szablon paragonu Pro',
-		'Default Receipt Template' => 'Domyślny szablon paragonu',
+		'Legacy PHP Template' => 'Starszy szablon PHP',
 		'Starter template not found.' => 'Nie znaleziono szablonu startowego.',
 		'Could not read starter template file.' => 'Nie można odczytać pliku szablonu startowego.',
 		'Template was created but raw content could not be saved.' => 'Szablon został utworzony, ale nie można zachować surowej zawartości.',

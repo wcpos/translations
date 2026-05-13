@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Vorlagenkategorie',
 		'Theme Receipt Template' => 'Themenbelegvorlage',
 		'Pro Receipt Template' => 'Pro-Belegvorlage',
-		'Default Receipt Template' => 'Standard-Belegvorlage',
+		'Legacy PHP Template' => 'Alte PHP-Vorlage',
 		'Starter template not found.' => 'Startvordruck nicht gefunden.',
 		'Could not read starter template file.' => 'Kann Startvordruckfile nicht lesen.',
 		'Template was created but raw content could not be saved.' => 'Die Vorlage wurde erstellt, aber der Rohinhalt konnte nicht gespeichert werden.',

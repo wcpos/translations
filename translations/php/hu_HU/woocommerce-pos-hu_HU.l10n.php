@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Sablon kategória',
 		'Theme Receipt Template' => 'Téma nyugta sablon',
 		'Pro Receipt Template' => 'Pro nyugta sablon',
-		'Default Receipt Template' => 'Alapértelmezett nyugta sablon',
+		'Legacy PHP Template' => 'Örökölt PHP sablon',
 		'Starter template not found.' => 'A kiinduló sablon nem található.',
 		'Could not read starter template file.' => 'Nem sikerült beolvasni a kiinduló sablon fájlt.',
 		'Template was created but raw content could not be saved.' => 'A sablon létrejött, de a nyers tartalom nem tárolható.',

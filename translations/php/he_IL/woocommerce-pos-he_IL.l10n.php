@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'קטגוריית תבנית',
 		'Theme Receipt Template' => 'תבנית קבלה לנושא',
 		'Pro Receipt Template' => 'תבנית קבלה מקצועית',
-		'Default Receipt Template' => 'תבנית קבלה ברירת מחדל',
+		'Legacy PHP Template' => 'תבנית PHP מדור קודם',
 		'Starter template not found.' => '郤构 אתחול לא נמצאה.',
 		'Could not read starter template file.' => 'לא נכללל לקרוא את קובץ郤构 האתחול.',
 		'Template was created but raw content could not be saved.' => '郤构 נוצר הולם הסבר לא נ disgrace.',

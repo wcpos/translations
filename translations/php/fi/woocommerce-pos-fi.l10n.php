@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Mallin kategoria',
 		'Theme Receipt Template' => 'Teeman kuittimalli',
 		'Pro Receipt Template' => 'Pro-kuittimalli',
-		'Default Receipt Template' => 'Oletuskuittimalli',
+		'Legacy PHP Template' => 'Perinteinen PHP-malli',
 		'Starter template not found.' => 'Perusmallipohja ei löytynyt.',
 		'Could not read starter template file.' => 'Ei voitu lukea perusmallipohjatiedostoa.',
 		'Template was created but raw content could not be saved.' => 'Mallia on luotu, mutta raaka sisältö ei voitu tallentaa.',

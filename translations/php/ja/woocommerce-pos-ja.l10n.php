@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'テンプレートカテゴリー',
 		'Theme Receipt Template' => 'テーマレシートテンプレート',
 		'Pro Receipt Template' => 'プロレシートテンプレート',
-		'Default Receipt Template' => 'デフォルトレシートテンプレート',
+		'Legacy PHP Template' => 'レガシー PHP テンプレート',
 		'Starter template not found.' => 'スターターテンプレートが見つかりません。',
 		'Could not read starter template file.' => 'スターターテンプレートファイルの読み込みに失敗しました。',
 		'Template was created but raw content could not be saved.' => 'テンプレートは作成されましたが、生の内容を保存できませんでした。',

@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Malkategori',
 		'Theme Receipt Template' => 'Tema kvitteringsmal',
 		'Pro Receipt Template' => 'Pro kvitteringsmal',
-		'Default Receipt Template' => 'Standard kvitteringsmal',
+		'Legacy PHP Template' => 'Gammel PHP-mal',
 		'Starter template not found.' => 'Startmalen ble ikke funnet.',
 		'Could not read starter template file.' => 'Klarte ikke å lese startmalfilen.',
 		'Template was created but raw content could not be saved.' => 'Malen ble opprettet, men råinnholdet kunne ikke lagres.',

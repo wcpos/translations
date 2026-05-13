@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Sjablooncategorie',
 		'Theme Receipt Template' => 'Thema ontvangstsjabloon',
 		'Pro Receipt Template' => 'Pro ontvangstsjabloon',
-		'Default Receipt Template' => 'Standaard ontvangstsjabloon',
+		'Legacy PHP Template' => 'Verouderd PHP-sjabloon',
 		'Starter template not found.' => 'Aanvangstsjabloon niet gevonden.',
 		'Could not read starter template file.' => 'Kon het aanvangstsjabloonbestand niet lezen.',
 		'Template was created but raw content could not be saved.' => 'Sjabloon is aangemaakt, maar de ruwe inhoud kon niet worden opgeslagen.',

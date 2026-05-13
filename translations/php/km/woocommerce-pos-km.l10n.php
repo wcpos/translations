@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'ក្រុមឯកសារគំរូ',
 		'Theme Receipt Template' => 'ពុម្ពបង្កាន់ដៃស្បែក',
 		'Pro Receipt Template' => 'ពុម្ពបង្កាន់ដៃ Pro',
-		'Default Receipt Template' => 'ពុម្ពបង្កាន់ដៃលំនាំដើម',
+		'Legacy PHP Template' => 'ពុម្ព PHP ចាស់',
 		'Starter template not found.' => 'មិនអាចស្វែងរកគំរូក្រោយបរិបទបានទេ។',
 		'Could not read starter template file.' => 'មិនអាចអានឯកសារគំរូក្រោយបរិបទដែលបានស្វែងរកបានទេ។',
 		'Template was created but raw content could not be saved.' => 'គំរូត្រូវបានទាញយក ប៉ុន្តែមិនអាចរក្សាអត្ថបទដើមបាន។',

@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'หมวดหมู่เทมเพลต',
 		'Theme Receipt Template' => 'เทมเพลตรับธีม',
 		'Pro Receipt Template' => 'เทมเพลตรับ Pro',
-		'Default Receipt Template' => 'เทมเพลตรับค่าเริ่มต้น',
+		'Legacy PHP Template' => 'เทมเพลต PHP แบบเก่า',
 		'Starter template not found.' => 'ไม่พบแม่แบบเริ่มต้น',
 		'Could not read starter template file.' => 'ไม่สามารถอ่านไฟล์แม่แบบเริ่มต้นได้',
 		'Template was created but raw content could not be saved.' => 'สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้',

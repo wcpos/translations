@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'فئة القالب',
 		'Theme Receipt Template' => 'قالب إيصال الثيم',
 		'Pro Receipt Template' => 'قالب إيصال المحترف',
-		'Default Receipt Template' => 'قالب الإيصال الافتراضي',
+		'Legacy PHP Template' => 'قالب PHP قديم',
 		'Starter template not found.' => 'لم يتم العثور على النموذج الأساسي.',
 		'Could not read starter template file.' => 'لم يتم قراءة ملف النموذج الأساسي.',
 		'Template was created but raw content could not be saved.' => 'تم إنشاء النموذج ولكن لم يمكن حفظ محتواه.',

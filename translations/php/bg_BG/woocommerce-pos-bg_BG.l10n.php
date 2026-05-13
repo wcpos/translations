@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Категория шаблон',
 		'Theme Receipt Template' => 'Шаблон за касова бележка на тема',
 		'Pro Receipt Template' => 'Про шаблон за касова бележка',
-		'Default Receipt Template' => 'Шаблон за касова бележка по подразбиране',
+		'Legacy PHP Template' => 'Наследен PHP шаблон',
 		'Starter template not found.' => 'Пусков шаблон не е намерен.',
 		'Could not read starter template file.' => 'Не можа да се прочете файлът за пусков шаблон.',
 		'Template was created but raw content could not be saved.' => 'Шаблонът е създаден, но не можа да бъде записан суровият му съдържание.',

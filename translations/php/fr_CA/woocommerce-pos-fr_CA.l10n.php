@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Catégorie de modèle',
 		'Theme Receipt Template' => 'Modèle de reçu de thème',
 		'Pro Receipt Template' => 'Modèle de reçu Pro',
-		'Default Receipt Template' => 'Modèle de reçu par défaut',
+		'Legacy PHP Template' => 'Modèle PHP hérité',
 		'Starter template not found.' => 'Modèle de départ introuvable.',
 		'Could not read starter template file.' => 'Impossible de lire le fichier de modèle de départ.',
 		'Template was created but raw content could not be saved.' => 'Le modèle a été créé, mais le contenu brut n\'a pas pu être enregistré.',

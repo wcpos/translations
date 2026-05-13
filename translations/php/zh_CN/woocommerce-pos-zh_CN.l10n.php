@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => '模板分类',
 		'Theme Receipt Template' => '主题收据模板',
 		'Pro Receipt Template' => '专业收据模板',
-		'Default Receipt Template' => '默认收据模板',
+		'Legacy PHP Template' => '旧版 PHP 模板',
 		'Starter template not found.' => '未找到入门模板。',
 		'Could not read starter template file.' => '无法读取入门模板文件。',
 		'Template was created but raw content could not be saved.' => '模板已创建，但原始内容无法保存。',

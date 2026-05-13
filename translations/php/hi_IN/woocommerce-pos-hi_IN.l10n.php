@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'प्रारूप श्रेणी',
 		'Theme Receipt Template' => 'थीम रसीद टेम्पलेट',
 		'Pro Receipt Template' => 'प्रो रसीद टेम्पलेट',
-		'Default Receipt Template' => 'डिफ़ॉल्ट रसीद टेम्पलेट',
+		'Legacy PHP Template' => 'लीगेसी PHP टेम्पलेट',
 		'Starter template not found.' => 'शुरुआत टेम्पलेट नहीं मिला।',
 		'Could not read starter template file.' => 'शुरुआत टेम्पलेट फ़ाइल पढ़ा नहीं जा सका।',
 		'Template was created but raw content could not be saved.' => 'टेम्पलेट बनाया गया लेकिन कच्चा सामग्री सहेजा नहीं जा सका।',

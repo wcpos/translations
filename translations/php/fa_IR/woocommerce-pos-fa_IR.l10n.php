@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'دسته قالب',
 		'Theme Receipt Template' => 'قالب رسید تم',
 		'Pro Receipt Template' => 'قالب رسید حرفه‌ای',
-		'Default Receipt Template' => 'قالب رسید پیش‌فرض',
+		'Legacy PHP Template' => 'قالب PHP قدیمی',
 		'Starter template not found.' => 'پیش‌نویس شروع یافت نشد.',
 		'Could not read starter template file.' => 'نمی‌توان فایل پیش‌نویس شروع را خواند.',
 		'Template was created but raw content could not be saved.' => 'پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد.',

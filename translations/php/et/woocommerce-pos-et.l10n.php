@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Mallkategoria',
 		'Theme Receipt Template' => 'Teema kviitungi mall',
 		'Pro Receipt Template' => 'Pro kviitungi mall',
-		'Default Receipt Template' => 'Vaikimisi kviitungi mall',
+		'Legacy PHP Template' => 'Pärand-PHP mall',
 		'Starter template not found.' => 'Alustava malli ei leitud.',
 		'Could not read starter template file.' => 'Ei suudetud lugeda alustava malli faili.',
 		'Template was created but raw content could not be saved.' => 'Mall oli loodud, kuid suur sisu ei saa salvestada.',

@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Categoria de Șablon',
 		'Theme Receipt Template' => 'Șablon de chitanță tematică',
 		'Pro Receipt Template' => 'Șablon de chitanță Pro',
-		'Default Receipt Template' => 'Șablon de chitanță implicit',
+		'Legacy PHP Template' => 'Șablon PHP vechi',
 		'Starter template not found.' => 'Șablonul de pornire nu a fost găsit.',
 		'Could not read starter template file.' => 'Nu s-a putut citi fișierul de șablon de pornire.',
 		'Template was created but raw content could not be saved.' => 'Șablonul a fost creat, dar conținutul brut nu a putut fi salvat.',

@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Κατηγορία Προτύπου',
 		'Theme Receipt Template' => 'Πρότυπο Απόδειξης Θέματος',
 		'Pro Receipt Template' => 'Πρότυπο Απόδειξης Pro',
-		'Default Receipt Template' => 'Προεπιλεγμένο Πρότυπο Απόδειξης',
+		'Legacy PHP Template' => 'Παλιό πρότυπο PHP',
 		'Starter template not found.' => 'Δεν βρέθηκε εκκινητικό πρότυπο.',
 		'Could not read starter template file.' => 'Αδύνατο να διαβαστεί το αρχικό αρχείο προτύπου.',
 		'Template was created but raw content could not be saved.' => 'Δημιουργήθηκε το πρότυπο αλλά το αγνές περιεχόμενο δεν μπόρεσε να αποθηκευτεί.',

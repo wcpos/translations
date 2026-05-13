@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Danh mục mẫu',
 		'Theme Receipt Template' => 'Mẫu Biên lai Giao diện',
 		'Pro Receipt Template' => 'Mẫu Biên lai Pro',
-		'Default Receipt Template' => 'Mẫu Biên lai Mặc định',
+		'Legacy PHP Template' => 'Mẫu PHP cũ',
 		'Starter template not found.' => 'Không tìm thấy khuôn mẫu khởi đầu.',
 		'Could not read starter template file.' => 'Không thể đọc tệp khuôn mẫu khởi đầu.',
 		'Template was created but raw content could not be saved.' => 'Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu.',

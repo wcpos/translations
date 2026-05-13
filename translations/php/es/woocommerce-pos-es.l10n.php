@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Categoría de Plantilla',
 		'Theme Receipt Template' => 'Plantilla de recibo del tema',
 		'Pro Receipt Template' => 'Plantilla de recibo Pro',
-		'Default Receipt Template' => 'Plantilla de recibo predeterminada',
+		'Legacy PHP Template' => 'Plantilla PHP heredada',
 		'Starter template not found.' => 'No se ha encontrado la plantilla de inicio.',
 		'Could not read starter template file.' => 'No se puede leer el archivo de la plantilla de inicio.',
 		'Template was created but raw content could not be saved.' => 'Se ha creado la plantilla, pero el contenido sin procesar no se ha podido guardar.',

@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Šablono Kategorija',
 		'Theme Receipt Template' => 'Temos kvito šablonas',
 		'Pro Receipt Template' => 'Pro kvito šablonas',
-		'Default Receipt Template' => 'Numatytasis kvito šablonas',
+		'Legacy PHP Template' => 'Senasis PHP šablonas',
 		'Starter template not found.' => 'Nerastas pradinis šablonas.',
 		'Could not read starter template file.' => 'Nepavyko skaityti pradinio šablonų failo.',
 		'Template was created but raw content could not be saved.' => 'Šablonas sukurtas, bet grynas turinys negalėjo būti išsaugotas.',

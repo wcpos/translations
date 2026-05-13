@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Skabelonkategori',
 		'Theme Receipt Template' => 'Tema kvitteringsskabelon',
 		'Pro Receipt Template' => 'Pro kvitteringsskabelon',
-		'Default Receipt Template' => 'Standard kvitteringsskabelon',
+		'Legacy PHP Template' => 'Ældre PHP-skabelon',
 		'Starter template not found.' => 'Starter skabelon ikke fundet.',
 		'Could not read starter template file.' => 'Kunne ikke læse starter skabelonfil.',
 		'Template was created but raw content could not be saved.' => 'Skabelon blev oprettet, men råindhold kunne ikke gemmes.',

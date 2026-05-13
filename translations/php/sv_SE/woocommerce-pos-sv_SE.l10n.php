@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Mallkategori',
 		'Theme Receipt Template' => 'Tema kvittomall',
 		'Pro Receipt Template' => 'Pro kvittomall',
-		'Default Receipt Template' => 'Standard kvittomall',
+		'Legacy PHP Template' => 'Äldre PHP-mall',
 		'Starter template not found.' => 'Startmallen kunde inte hittas.',
 		'Could not read starter template file.' => 'Kunde inte läsa startmallens fil.',
 		'Template was created but raw content could not be saved.' => 'Mallen skapades men rått innehåll kunde inte sparas.',

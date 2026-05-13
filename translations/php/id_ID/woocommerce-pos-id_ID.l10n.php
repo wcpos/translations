@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Kategori Templat',
 		'Theme Receipt Template' => 'Template Tanda Terima Tema',
 		'Pro Receipt Template' => 'Template Tanda Terima Pro',
-		'Default Receipt Template' => 'Template Tanda Terima Default',
+		'Legacy PHP Template' => 'Template PHP Lama',
 		'Starter template not found.' => 'Template dasar tidak ditemukan.',
 		'Could not read starter template file.' => 'Tidak dapat membaca file template dasar.',
 		'Template was created but raw content could not be saved.' => 'Template telah dibuat tetapi konten mentah tidak dapat disimpan.',

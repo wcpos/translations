@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Kategorie šablony',
 		'Theme Receipt Template' => 'Šablona účtenky motivu',
 		'Pro Receipt Template' => 'Pro šablona účtenky',
-		'Default Receipt Template' => 'Výchozí šablona účtenky',
+		'Legacy PHP Template' => 'Starší šablona PHP',
 		'Starter template not found.' => 'Základní šablona nebyla nalezena.',
 		'Could not read starter template file.' => 'Nelze přečíst soubor se základní šablonou.',
 		'Template was created but raw content could not be saved.' => 'Šablona byla vytvořena, ale obsah nebylo možné uložit.',

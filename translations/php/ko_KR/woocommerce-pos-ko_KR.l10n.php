@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => '템플릿 카테고리',
 		'Theme Receipt Template' => '테마 영수증 템플릿',
 		'Pro Receipt Template' => '프로 영수증 템플릿',
-		'Default Receipt Template' => '기본 영수증 템플릿',
+		'Legacy PHP Template' => '레거시 PHP 템플릿',
 		'Starter template not found.' => '시작 템플릿을 찾을 수 없습니다.',
 		'Could not read starter template file.' => '시작 템플릿 파일을 읽을 수 없습니다.',
 		'Template was created but raw content could not be saved.' => '템플릿은 생성되었으나 원본 내용을 저장할 수 없습니다.',

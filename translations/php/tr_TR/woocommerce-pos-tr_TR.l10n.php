@@ -592,7 +592,7 @@ return array(
 		'Taxonomy Singular Name' . "\x04" . 'Template Category' => 'Şablon Kategorisi',
 		'Theme Receipt Template' => 'Tema Fiş Şablonu',
 		'Pro Receipt Template' => 'Pro Fiş Şablonu',
-		'Default Receipt Template' => 'Varsayılan Fiş Şablonu',
+		'Legacy PHP Template' => 'Eski PHP şablonu',
 		'Starter template not found.' => 'Başlangıç şablonu bulunamadı.',
 		'Could not read starter template file.' => 'Başlangıç şablon dosyası okunamadı.',
 		'Template was created but raw content could not be saved.' => 'Şablon oluşturuldu, ancak ham içerik kaydedilemedi.',
