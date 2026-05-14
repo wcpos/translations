@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Skattskylt m. VSK',
 		'Subtotal (excl. tax)' => 'Millisamtala (án VSK)',
 		'Total Tax' => 'Skattur alls',
+		'Tax included' => 'VSK innifalið',
 		'Grand Total (incl. tax)' => 'Heildarsamtala (með VSK)',
 		'Paid' => 'Greitt',
 		'Paid via' => 'Greitt með',

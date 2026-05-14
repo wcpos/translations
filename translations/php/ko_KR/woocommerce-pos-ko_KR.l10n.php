@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => '과세액(세포함)',
 		'Subtotal (excl. tax)' => '소계(세금 제외)',
 		'Total Tax' => '총 세액',
+		'Tax included' => '세금 포함',
 		'Grand Total (incl. tax)' => '총합계(세포함)',
 		'Paid' => '지불액',
 		'Paid via' => '결제 수단',

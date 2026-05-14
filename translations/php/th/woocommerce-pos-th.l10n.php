@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'ฐานภาษี (รวม)',
 		'Subtotal (excl. tax)' => 'ยอดย่อย (ไม่รวมภาษี)',
 		'Total Tax' => 'ภาษีรวม',
+		'Tax included' => 'รวมภาษีแล้ว',
 		'Grand Total (incl. tax)' => 'ยอดรวมสุทธิ (รวมภาษี)',
 		'Paid' => 'ชำระแล้ว',
 		'Paid via' => 'ชำระผ่าน',

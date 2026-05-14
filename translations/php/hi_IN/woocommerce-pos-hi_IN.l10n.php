@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'कर-योग्य (कर सहित)',
 		'Subtotal (excl. tax)' => 'उप-योग (कर छोड़कर)',
 		'Total Tax' => 'कुल कर',
+		'Tax included' => 'कर सहित',
 		'Grand Total (incl. tax)' => 'कुल योग (कर सहित)',
 		'Paid' => 'भुगतान किया गया',
 		'Paid via' => 'के माध्यम से भुगतान',

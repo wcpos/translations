@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Momspl. inkl.',
 		'Subtotal (excl. tax)' => 'Subtotal (ekskl. moms)',
 		'Total Tax' => 'Moms i alt',
+		'Tax included' => 'Moms inkluderet',
 		'Grand Total (incl. tax)' => 'I alt (inkl. moms)',
 		'Paid' => 'Betalt',
 		'Paid via' => 'Betalt via',

@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Опод. з ПДВ',
 		'Subtotal (excl. tax)' => 'Проміжний підсумок без ПДВ',
 		'Total Tax' => 'Сума податку',
+		'Tax included' => 'Податок включено',
 		'Grand Total (incl. tax)' => 'Загальна сума з ПДВ',
 		'Paid' => 'Сплачено',
 		'Paid via' => 'Оплачено через',

@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Bază impozabilă (cu TVA)',
 		'Subtotal (excl. tax)' => 'Subtotal (fără TVA)',
 		'Total Tax' => 'TVA total',
+		'Tax included' => 'TVA inclus',
 		'Grand Total (incl. tax)' => 'Total general (cu TVA)',
 		'Paid' => 'Plătit',
 		'Paid via' => 'Plătit prin',

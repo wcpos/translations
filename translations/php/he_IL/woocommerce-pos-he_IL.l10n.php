@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'בסיס מס (כולל)',
 		'Subtotal (excl. tax)' => 'סכום ביניים ללא מס',
 		'Total Tax' => 'סך מע"מ',
+		'Tax included' => 'כולל מס',
 		'Grand Total (incl. tax)' => 'סה"כ כולל מס',
 		'Paid' => 'שולם',
 		'Paid via' => 'שולם באמצעות',

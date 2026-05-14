@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Matrah (KDV dahil)',
 		'Subtotal (excl. tax)' => 'Ara toplam (vergisiz)',
 		'Total Tax' => 'Toplam Vergi',
+		'Tax included' => 'Vergi dahil',
 		'Grand Total (incl. tax)' => 'Genel Toplam (KDV dahil)',
 		'Paid' => 'Ödendi',
 		'Paid via' => 'Ödeme yöntemi:',

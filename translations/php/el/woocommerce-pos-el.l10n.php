@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Φορολ. μ. ΦΠΑ',
 		'Subtotal (excl. tax)' => 'Μερικό σύνολο (χωρίς ΦΠΑ)',
 		'Total Tax' => 'Συνολικός ΦΠΑ',
+		'Tax included' => 'Περιλαμβάνεται φόρος',
 		'Grand Total (incl. tax)' => 'Γενικό σύνολο (με ΦΠΑ)',
 		'Paid' => 'Πληρώθηκε',
 		'Paid via' => 'Πληρώθηκε μέσω',

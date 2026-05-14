@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Base c/IVA',
 		'Subtotal (excl. tax)' => 'Subtotal (sin impuestos)',
 		'Total Tax' => 'Impuestos totales',
+		'Tax included' => 'IVA incluido',
 		'Grand Total (incl. tax)' => 'Total general (con impuestos)',
 		'Paid' => 'Pagado',
 		'Paid via' => 'Pagado con',

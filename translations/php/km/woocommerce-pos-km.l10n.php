@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'អាចជាប់ពន្ធ (រាប់)',
 		'Subtotal (excl. tax)' => 'សរុបរង (មិនរាប់ពន្ធ)',
 		'Total Tax' => 'ពន្ធសរុប',
+		'Tax included' => 'រួមបញ្ចូលពន្ធ',
 		'Grand Total (incl. tax)' => 'សរុបចុងក្រោយ (រាប់ពន្ធ)',
 		'Paid' => 'បានបង់',
 		'Paid via' => 'បានបង់តាម',

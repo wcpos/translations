@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => '应税额（含税）',
 		'Subtotal (excl. tax)' => '小计（不含税）',
 		'Total Tax' => '税额合计',
+		'Tax included' => '含税',
 		'Grand Total (incl. tax)' => '合计（含税）',
 		'Paid' => '已付款',
 		'Paid via' => '支付方式',

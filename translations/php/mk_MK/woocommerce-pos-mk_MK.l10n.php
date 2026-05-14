@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Оданоч. со ДДВ',
 		'Subtotal (excl. tax)' => 'Подзбир (без данок)',
 		'Total Tax' => 'Вкупен данок',
+		'Tax included' => 'Вклучен данок',
 		'Grand Total (incl. tax)' => 'Вкупно (со ДДВ)',
 		'Paid' => 'Платено',
 		'Paid via' => 'Платено преку',
