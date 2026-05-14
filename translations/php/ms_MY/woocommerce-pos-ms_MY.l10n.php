@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Boleh cukai (termasuk)',
 		'Subtotal (excl. tax)' => 'Subjumlah (tidak termasuk cukai)',
 		'Total Tax' => 'Jumlah Cukai',
+		'Tax included' => 'Termasuk cukai',
 		'Grand Total (incl. tax)' => 'Jumlah Besar (termasuk cukai)',
 		'Paid' => 'Dibayar',
 		'Paid via' => 'Dibayar melalui',

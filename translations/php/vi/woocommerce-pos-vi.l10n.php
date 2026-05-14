@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Chịu thuế (có thuế)',
 		'Subtotal (excl. tax)' => 'Tạm tính (chưa thuế)',
 		'Total Tax' => 'Tổng thuế',
+		'Tax included' => 'Đã gồm thuế',
 		'Grand Total (incl. tax)' => 'Tổng cộng (có thuế)',
 		'Paid' => 'Đã thanh toán',
 		'Paid via' => 'Đã thanh toán qua',

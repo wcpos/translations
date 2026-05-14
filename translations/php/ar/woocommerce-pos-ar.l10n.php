@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'الخاضع شامل ض.',
 		'Subtotal (excl. tax)' => 'الإجمالي الفرعي (باستثناء الضريبة)',
 		'Total Tax' => 'إجمالي الضريبة',
+		'Tax included' => 'شامل الضريبة',
 		'Grand Total (incl. tax)' => 'المجموع الكلي (شامل الضريبة)',
 		'Paid' => 'مدفوع',
 		'Paid via' => 'تم الدفع عبر',

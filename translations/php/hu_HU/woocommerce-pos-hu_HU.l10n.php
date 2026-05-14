@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Adóalap áfával',
 		'Subtotal (excl. tax)' => 'Részösszeg (adó nélkül)',
 		'Total Tax' => 'Összes adó',
+		'Tax included' => 'Adót tartalmaz',
 		'Grand Total (incl. tax)' => 'Végösszeg (adóval)',
 		'Paid' => 'Fizetve',
 		'Paid via' => 'Fizetve így:',

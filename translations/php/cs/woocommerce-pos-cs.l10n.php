@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Základ s DPH',
 		'Subtotal (excl. tax)' => 'Mezisoučet (bez DPH)',
 		'Total Tax' => 'Celkem DPH',
+		'Tax included' => 'Včetně daně',
 		'Grand Total (incl. tax)' => 'Celkem (vč. DPH)',
 		'Paid' => 'Zaplaceno',
 		'Paid via' => 'Zaplaceno přes',

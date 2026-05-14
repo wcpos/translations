@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Steuerb. brutto',
 		'Subtotal (excl. tax)' => 'Zwischensumme (exkl. MwSt.)',
 		'Total Tax' => 'Steuer gesamt',
+		'Tax included' => 'inkl. MwSt.',
 		'Grand Total (incl. tax)' => 'Gesamtsumme (inkl. MwSt)',
 		'Paid' => 'Bezahlt',
 		'Paid via' => 'Bezahlt mit',

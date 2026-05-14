@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Maksustatav km-ga',
 		'Subtotal (excl. tax)' => 'Vahesumma (km-ta)',
 		'Total Tax' => 'Käibemaks kokku',
+		'Tax included' => 'Maks sisaldub',
 		'Grand Total (incl. tax)' => 'Lõppsumma (km-ga)',
 		'Paid' => 'Makstud',
 		'Paid via' => 'Makstud',

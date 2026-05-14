@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Apmokest. su PVM',
 		'Subtotal (excl. tax)' => 'Tarpinė suma (su PVM)',
 		'Total Tax' => 'Viso PVM',
+		'Tax included' => 'Mokesčiai įskaičiuoti',
 		'Grand Total (incl. tax)' => 'Galutinė suma (su PVM)',
 		'Paid' => 'Sumokėta',
 		'Paid via' => 'Apmokėta per',

@@ -486,6 +486,7 @@ return array(
 		'short receipt table header' . "\x04" . 'Taxable incl.' => 'Verotettava (sis.)',
 		'Subtotal (excl. tax)' => 'Välisummaa (ei sis. alv.)',
 		'Total Tax' => 'Alv yhteensä',
+		'Tax included' => 'Sisältää veron',
 		'Grand Total (incl. tax)' => 'Loppusumma (sis. alv.)',
 		'Paid' => 'Maksettu',
 		'Paid via' => 'Maksettu kautta',
