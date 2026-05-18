@@ -122,6 +122,25 @@ async function main() {
   backup(existingElectronJson);
 
   try {
+    step('Checking Aide forwarding workflow structure');
+
+    const forwardWorkflow = fs.readFileSync(path.resolve(__dirname, '../.github/workflows/forward-to-aide.yml'), 'utf8');
+
+    test('forward workflow generates translation context artifacts', () => {
+      if (!forwardWorkflow.includes('scripts/translation-context-packets.js')) {
+        throw new Error('forward-to-aide.yml should invoke scripts/translation-context-packets.js');
+      }
+    });
+
+    test('forward workflow includes context artifacts and type in payload', () => {
+      if (!forwardWorkflow.includes('context_artifacts')) {
+        throw new Error('payload should include context_artifacts');
+      }
+      if (!forwardWorkflow.includes('--arg type')) {
+        throw new Error('payload should include type');
+      }
+    });
+
     // Step 1: Extract strings
     step('Running extraction on test fixtures');
 
