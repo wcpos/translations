@@ -88,6 +88,11 @@ test('matches glossary concepts by full source term, not arbitrary substring', (
   assert.ok(!contender.some(concept => concept.id === 'amount_tendered'));
 });
 
+test('matches multi-word glossary concepts across punctuation', () => {
+  const matches = matchConcepts('Amount-Tendered');
+  assert.ok(matches.some(concept => concept.id === 'amount_tendered'));
+});
+
 test('builds PHP context packet with translator comments and source references', () => {
   const root = makeTempRepo();
   const packets = buildPhpContextPackets({ rootDir: root, locale: 'da_DK', domain: 'woocommerce-pos' });

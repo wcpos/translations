@@ -141,6 +141,18 @@ async function main() {
       }
     });
 
+    test('forward workflow generates PHP context artifacts per locale', () => {
+      if (!forwardWorkflow.includes('find translations/php -mindepth 1 -maxdepth 1 -type d')) {
+        throw new Error('PHP context artifacts should be generated for each existing locale directory');
+      }
+      if (!forwardWorkflow.includes('--locale "$locale"')) {
+        throw new Error('translation-context-packets.js should receive the locale for PHP context artifacts');
+      }
+      if (!forwardWorkflow.includes('translation-context/php/${locale}')) {
+        throw new Error('locale-specific context artifacts should use distinct output directories');
+      }
+    });
+
     // Step 1: Extract strings
     step('Running extraction on test fixtures');
 

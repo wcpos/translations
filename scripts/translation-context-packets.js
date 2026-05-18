@@ -29,7 +29,7 @@ function termMatchesSource(source, term) {
   if (!normalizedSource || !normalizedTerm) return false;
   if (normalizedSource === normalizedTerm) return true;
 
-  const flexibleTerm = escapeRegExp(normalizedTerm).replace(/\\\s\+/g, '[\\s\\p{P}]+');
+  const flexibleTerm = escapeRegExp(normalizedTerm).replace(/\s+/g, '[\\s\\p{P}]+');
   const fullWord = new RegExp(`(^|[^\\p{L}\\p{N}_])${flexibleTerm}($|[^\\p{L}\\p{N}_])`, 'u');
   return fullWord.test(normalizedSource);
 }

@@ -83,10 +83,15 @@ jobs:
             artifact_list=$(mktemp)
             while IFS= read -r file; do
               domain=$(basename "$file" .pot)
-              node scripts/translation-context-packets.js \
-                --type php \
-                --domain "$domain" \
-                --out-dir translation-context/php >> "$artifact_list"
+              while IFS= read -r locale; do
+                locale_out_dir="translation-context/php/${locale}"
+                mkdir -p "$locale_out_dir"
+                node scripts/translation-context-packets.js \
+                  --type php \
+                  --locale "$locale" \
+                  --domain "$domain" \
+                  --out-dir "$locale_out_dir" >> "$artifact_list"
+              done < <(find translations/php -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
             done < <(echo "$changed_files" | jq -r '.[]')
             context_artifacts=$(jq -R . "$artifact_list" | jq -s .)
           fi

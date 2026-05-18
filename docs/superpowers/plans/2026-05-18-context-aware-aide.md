@@ -351,8 +351,12 @@ context_artifacts='[]'
 if [ "$type" = "php" ]; then
   while IFS= read -r file; do
     domain=$(basename "$file" .pot)
-    artifact=$(node scripts/translation-context-packets.js --type php --domain "$domain" --out-dir translation-context/php)
-    context_artifacts=$(printf '%s\n' "$artifact" | jq -R . | jq -s .)
+    while IFS= read -r locale; do
+      locale_out_dir="translation-context/php/${locale}"
+      mkdir -p "$locale_out_dir"
+      artifact=$(node scripts/translation-context-packets.js --type php --locale "$locale" --domain "$domain" --out-dir "$locale_out_dir")
+      context_artifacts=$(jq -c --arg artifact "$artifact" '. + [$artifact]' <<< "$context_artifacts")
+    done < <(find translations/php -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
   done < <(echo "$changed_files" | jq -r '.[]')
 fi
 ```

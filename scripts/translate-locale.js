@@ -619,15 +619,24 @@ async function translatePhpFile(potFile, locale, state, force) {
     for (const [msgid, entry] of Object.entries(entries)) {
       if (!msgid) continue; // Skip header
 
-      const key = ctx ? `${ctx}\x04${msgid}` : msgid;
-      const hash = hashString(msgid + (ctx || '') + (entry.msgid_plural || ''));
+      const fallbackPacket = { entry: { msgid, msgctxt: ctx || null, msgid_plural: entry.msgid_plural || null } };
+      const key = packetLookupKey(fallbackPacket);
+      const packet = contextPacketByKey.get(key);
+      const hash = packet
+        ? hashPhpEntryContext(packet)
+        : hashString(msgid + (ctx || '') + (entry.msgid_plural || ''));
       newHashes[key] = hash;
 
       const hasPrevHash = prevHashes[key] !== undefined;
       const sourceChanged = hasPrevHash && hash !== prevHashes[key];
 
       if (force || sourceChanged || !existingTranslations[key]) {
-        toTranslate.push({ msgid, msgid_plural: entry.msgid_plural, context: ctx || null });
+        toTranslate.push({
+          msgid,
+          msgid_plural: entry.msgid_plural,
+          context: ctx || null,
+          packet: packet || fallbackPacket,
+        });
       }
     }
   }
