@@ -16,7 +16,7 @@
 - Create `scripts/translation-concepts.json`: machine-readable English concept glossary. It contains concept meanings and avoid-meanings only, never target-locale translations.
 - Create `tests/test-translation-context-packets.js`: fixture-driven tests for comments/references, related Danish translations, concept matching, risk detection, and CLI artifact output.
 - Modify `package.json`: add `generate:context` and include the new test in `test`/`test:all`.
-- Modify `.github/workflows/forward-to-aide.yml`: generate context artifacts before webhook dispatch and include `type` plus `context_artifacts` in the payload.
+- Modify the GitHub Actions workflow `.github/workflows/forward-to-aide.yml`: generate context artifacts before webhook dispatch and include `type` plus `context_artifacts` in the payload.
 - Modify `scripts/translate-locale.js`: use context packets for PHP prompt input and include comment/reference/context hash fields in PHP freshness hashes.
 - Modify `docs/aide-context-aware-translation-design.md`: update Phase 0 with the confirmed current contract and mark Phase 1 implementation shape.
 
@@ -323,7 +323,7 @@ git commit -m "feat: add related translation context artifacts"
 ## Task 3: Forward Context Artifacts to Aide
 
 **Files:**
-- Modify: `.github/workflows/forward-to-aide.yml`
+- Modify the GitHub Actions workflow: `.github/workflows/forward-to-aide.yml`
 - Modify: `tests/test-workflow.js`
 - Modify: `docs/aide-context-aware-translation-design.md`
 
@@ -343,7 +343,7 @@ Expected: FAIL because the workflow still sends only `project` and `changed_file
 
 - [ ] **Step 3: Update the workflow**
 
-In `.github/workflows/forward-to-aide.yml`, before `payload=$(jq -n ...)`, generate PHP context artifacts when `type=php` with:
+In the GitHub Actions workflow `.github/workflows/forward-to-aide.yml`, before `payload=$(jq -n ...)`, generate PHP context artifacts when `type=php` with:
 
 ```bash
 mkdir -p translation-context/php
@@ -365,7 +365,7 @@ Then include `--arg type "$type" --argjson context_artifacts "$context_artifacts
 
 - [ ] **Step 4: Update design doc Phase 0**
 
-Record that on 2026-05-18 the current workflow payload was verified from `.github/workflows/forward-to-aide.yml` and contained only `project`/`changed_files` before this implementation.
+Record that on 2026-05-18 the current GitHub Actions workflow payload was verified from `.github/workflows/forward-to-aide.yml` and contained only `project`/`changed_files` before this implementation.
 
 - [ ] **Step 5: Run workflow tests and full tests**
 
@@ -476,7 +476,7 @@ npm test
 npm run test:all
 ```
 
-Expected: both commands complete successfully. Existing warnings from extraction fixtures are acceptable because current baseline emits them while passing.
+Expected: `npm test` completes successfully. `npm run test:all` also completes successfully when `OPENAI_API_KEY` is set; without that key, use `node tests/test-translation.js --dry-run` as the reproducible structural alternative. Existing warnings from extraction fixtures are acceptable because current baseline emits them while passing.
 
 - [ ] **Step 2: Check branch state before push**
 
