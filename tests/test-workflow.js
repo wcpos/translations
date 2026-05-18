@@ -141,6 +141,22 @@ async function main() {
       }
     });
 
+
+    test('forward workflow commits context artifacts before sending payload', () => {
+      if (!forwardWorkflow.includes('contents: write')) {
+        throw new Error('forward workflow needs contents: write to persist generated context artifacts');
+      }
+      if (!forwardWorkflow.includes('git add translation-context/php')) {
+        throw new Error('generated context artifacts should be staged');
+      }
+      if (!forwardWorkflow.includes('chore: update PHP translation context artifacts')) {
+        throw new Error('generated context artifacts should be committed before forwarding');
+      }
+      if (!forwardWorkflow.includes('source_ref')) {
+        throw new Error('payload should include source_ref/head_sha for the committed artifact revision');
+      }
+    });
+
     test('forward workflow generates PHP context artifacts per locale', () => {
       if (!forwardWorkflow.includes('find translations/php -mindepth 1 -maxdepth 1 -type d')) {
         throw new Error('PHP context artifacts should be generated for each existing locale directory');

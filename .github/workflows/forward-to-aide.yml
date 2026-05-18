@@ -10,7 +10,7 @@
 name: Forward strings to Aide
 
 permissions:
-  contents: read
+  contents: write
 
 on:
   workflow_dispatch:
@@ -94,14 +94,27 @@ jobs:
               done < <(find translations/php -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
             done < <(echo "$changed_files" | jq -r '.[]')
             context_artifacts=$(jq -R . "$artifact_list" | jq -s .)
+
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add translation-context/php
+            if git diff --staged --quiet; then
+              echo "No context artifact changes to commit"
+            else
+              git commit -m "chore: update PHP translation context artifacts"
+              git push
+            fi
           fi
+
+          source_ref=$(git rev-parse HEAD)
 
           payload=$(jq -n \
             --arg project "$project" \
             --arg type "$type" \
+            --arg source_ref "$source_ref" \
             --argjson changed_files "$changed_files" \
             --argjson context_artifacts "$context_artifacts" \
-            '{project: $project, type: $type, changed_files: $changed_files, context_artifacts: $context_artifacts}')
+            '{project: $project, type: $type, changed_files: $changed_files, context_artifacts: $context_artifacts, source_ref: $source_ref, head_sha: $source_ref}')
 
           echo "Forwarding to Aide: project=$project type=$type files=$file_count"
           echo "$changed_files" | jq -r '.[]'
