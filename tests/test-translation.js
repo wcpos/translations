@@ -274,6 +274,63 @@ async function main() {
     false
   );
 
+  // PHP context packet helper tests
+  console.log('\nTesting PHP context packet helpers...');
+
+  await test(
+    'PHP context input includes comments, references, related translations, and concept hints',
+    async () => {
+      const { spawnSync } = require('child_process');
+      const helperScript = `
+        const { buildPhpTranslationInput } = require('./scripts/translate-locale.js');
+        const input = buildPhpTranslationInput({
+          entry: {
+            msgid: 'Tendered',
+            msgctxt: null,
+            msgid_plural: null,
+            translator_comments: ['Standalone label used in printed receipt templates.'],
+            references: ['templates/receipt.php:360']
+          },
+          source_usage: { areas: ['receipt'], nearby_source_strings: ['Amount', 'Change'] },
+          related_existing_translations: [{ msgid: 'Amount Tendered', msgstr: 'Indbetalt beløb' }],
+          concept_hints: [{ id: 'amount_tendered', meaning: 'Money received from the customer during checkout.', avoid_meanings: ['bid'], style: 'Short receipt label.' }],
+          risk: { level: 'high', reasons: ['short standalone label'] }
+        });
+        if (!input.translator_comments.includes('Standalone label used in printed receipt templates.')) process.exit(2);
+        if (!input.references.includes('templates/receipt.php:360')) process.exit(3);
+        if (input.related_existing_translations[0].msgstr !== 'Indbetalt beløb') process.exit(4);
+        if (input.concept_hints[0].id !== 'amount_tendered') process.exit(5);
+      `;
+      const result = spawnSync(process.execPath, ['-e', helperScript], { cwd: path.resolve(__dirname, '..'), encoding: 'utf8' });
+      if (result.status !== 0) {
+        throw new Error(result.stderr || result.stdout || `helper exited with ${result.status}`);
+      }
+    },
+    false
+  );
+
+  await test(
+    'PHP context hash changes when translator comments change',
+    async () => {
+      const { spawnSync } = require('child_process');
+      const helperScript = `
+        const { hashPhpEntryContext } = require('./scripts/translate-locale.js');
+        const base = {
+          entry: { msgid: 'Tendered', msgctxt: null, msgid_plural: null, translator_comments: ['old comment'], references: ['templates/receipt.php:360'] },
+          concept_hints: [{ id: 'amount_tendered' }]
+        };
+        const changed = JSON.parse(JSON.stringify(base));
+        changed.entry.translator_comments = ['new comment'];
+        if (hashPhpEntryContext(base) === hashPhpEntryContext(changed)) process.exit(2);
+      `;
+      const result = spawnSync(process.execPath, ['-e', helperScript], { cwd: path.resolve(__dirname, '..'), encoding: 'utf8' });
+      if (result.status !== 0) {
+        throw new Error(result.stderr || result.stdout || `helper exited with ${result.status}`);
+      }
+    },
+    false
+  );
+
   // Output results
   if (!DRY_RUN && Object.keys(translations).length > 0) {
     console.log('\nSample translations received:');

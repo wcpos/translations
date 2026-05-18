@@ -24,6 +24,7 @@ let openai;
 
 const LOCALE_NAMES = require('../locales.json');
 const { getPluralSuffixes, parsePluralKey } = require('./plural-rules');
+const { buildPhpContextPackets } = require('./translation-context-packets');
 
 const SOURCE_JS_DIR = path.resolve(__dirname, '../source/js');
 const SOURCE_PHP_DIR = path.resolve(__dirname, '../source/php');
@@ -80,6 +81,42 @@ function hashString(str) {
     hash |= 0;
   }
   return hash.toString(36);
+}
+
+
+function buildPhpTranslationInput(packet) {
+  const entry = packet.entry || packet;
+  return {
+    msgid: entry.msgid,
+    ...(entry.msgid_plural && { msgid_plural: entry.msgid_plural }),
+    ...(entry.msgctxt && { context: entry.msgctxt }),
+    ...(entry.context && { context: entry.context }),
+    translator_comments: entry.translator_comments || [],
+    references: entry.references || [],
+    source_usage: packet.source_usage || { areas: [], nearby_source_strings: [] },
+    related_existing_translations: packet.related_existing_translations || [],
+    concept_hints: packet.concept_hints || [],
+    risk: packet.risk || { level: 'normal', reasons: [] },
+  };
+}
+
+function hashPhpEntryContext(packet) {
+  const entry = packet.entry || packet;
+  return hashString(JSON.stringify({
+    msgid: entry.msgid,
+    msgctxt: entry.msgctxt || entry.context || null,
+    msgid_plural: entry.msgid_plural || null,
+    translator_comments: entry.translator_comments || [],
+    references: entry.references || [],
+    concept_ids: (packet.concept_hints || []).map(concept => concept.id),
+    nearby_source_strings: packet.source_usage?.nearby_source_strings || [],
+  }));
+}
+
+function packetLookupKey(packet) {
+  const entry = packet.entry || packet;
+  const context = entry.msgctxt || entry.context || '';
+  return context ? `${context}\x04${entry.msgid}` : entry.msgid;
 }
 
 /**
@@ -569,6 +606,9 @@ async function translatePhpFile(potFile, locale, state, force) {
     }
   }
 
+  const contextPackets = buildPhpContextPackets({ locale, domain });
+  const contextPacketByKey = new Map(contextPackets.entries.map(packet => [packetLookupKey(packet), packet]));
+
   // Determine which strings need translation
   const stateKey = `php:${domain}:${locale}`;
   const prevHashes = state[stateKey] || {};
@@ -605,14 +645,12 @@ async function translatePhpFile(potFile, locale, state, force) {
   for (let i = 0; i < toTranslate.length; i += batchSize) {
     const batch = toTranslate.slice(i, i + batchSize);
 
-    const input = batch.map(entry => ({
-      msgid: entry.msgid,
-      ...(entry.msgid_plural && { msgid_plural: entry.msgid_plural }),
-      ...(entry.context && { context: entry.context }),
-    }));
+    const input = batch.map(entry => buildPhpTranslationInput(entry.packet));
 
     const localeName = LOCALE_NAMES[locale] || locale;
     const userPrompt = `Translate the following WordPress plugin strings to ${localeName}.
+
+Each entry may include translator_comments, source references, nearby_source_strings, related_existing_translations, concept_hints, and risk reasons. Use that context to choose the natural product meaning, especially for short POS receipt/payment labels.
 
 For each entry, provide:
 - "msgstr": the translated string
@@ -769,7 +807,17 @@ async function main() {
   console.log('Done.');
 }
 
-main().catch(error => {
-  console.error('Fatal error:', error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(error => {
+    console.error('Fatal error:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  buildPhpTranslationInput,
+  hashPhpEntryContext,
+  validatePlaceholders,
+  validateTechnicalTerms,
+  validateAmbiguousTerms,
+};
