@@ -122,6 +122,53 @@ async function main() {
   backup(existingElectronJson);
 
   try {
+    step('Checking Aide forwarding workflow structure');
+
+    const forwardWorkflow = fs.readFileSync(path.resolve(__dirname, '../.github/workflows/forward-to-aide.yml'), 'utf8');
+
+    test('forward workflow generates translation context artifacts', () => {
+      if (!forwardWorkflow.includes('scripts/translation-context-packets.js')) {
+        throw new Error('forward-to-aide.yml should invoke scripts/translation-context-packets.js');
+      }
+    });
+
+    test('forward workflow includes context artifacts and type in payload', () => {
+      if (!forwardWorkflow.includes('context_artifacts')) {
+        throw new Error('payload should include context_artifacts');
+      }
+      if (!forwardWorkflow.includes('--arg type')) {
+        throw new Error('payload should include type');
+      }
+    });
+
+
+    test('forward workflow commits context artifacts before sending payload', () => {
+      if (!forwardWorkflow.includes('contents: write')) {
+        throw new Error('forward workflow needs contents: write to persist generated context artifacts');
+      }
+      if (!forwardWorkflow.includes('git add translation-context/php')) {
+        throw new Error('generated context artifacts should be staged');
+      }
+      if (!forwardWorkflow.includes('chore: update PHP translation context artifacts')) {
+        throw new Error('generated context artifacts should be committed before forwarding');
+      }
+      if (!forwardWorkflow.includes('source_ref')) {
+        throw new Error('payload should include source_ref/head_sha for the committed artifact revision');
+      }
+    });
+
+    test('forward workflow generates PHP context artifacts per locale', () => {
+      if (!forwardWorkflow.includes('find translations/php -mindepth 1 -maxdepth 1 -type d')) {
+        throw new Error('PHP context artifacts should be generated for each existing locale directory');
+      }
+      if (!forwardWorkflow.includes('--locale "$locale"')) {
+        throw new Error('translation-context-packets.js should receive the locale for PHP context artifacts');
+      }
+      if (!forwardWorkflow.includes('translation-context/php/${locale}')) {
+        throw new Error('locale-specific context artifacts should use distinct output directories');
+      }
+    });
+
     // Step 1: Extract strings
     step('Running extraction on test fixtures');
 
