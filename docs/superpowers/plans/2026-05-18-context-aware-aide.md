@@ -435,6 +435,33 @@ git add scripts/translate-locale.js tests/test-translation.js
 git commit -m "feat: use context packets in PHP translation prompts"
 ```
 
+
+## Cross-Repo and Hotpatch Requirements (Added 2026-05-18)
+
+This implementation is not complete when the translations repository can generate context artifacts. The full rollout requires companion work in the repositories that produce and consume translation context.
+
+### Required companion scope
+
+- `wcpos-openclaw`: Aide/OpenClaw must parse `context_artifacts` from the translation webhook payload, fetch/read those artifacts from the translations repo checkout, and include context packets in the translation task prompt/review path.
+- `woocommerce-pos`: Verify PHP POT translator comments and source references cover ambiguous receipt/payment labels. Add or improve source translator comments for gaps found while testing, especially labels like `Tendered`, `Change`, `Void`, `Register`, `Drawer`, `Rate`, `State`, and `Key`.
+- `monorepo-v2`: Verify JS source extraction limitations. If JS context is required for this rollout, add upstream metadata preservation for namespace/key origin paths or explicit source comments before expecting Aide to solve JS ambiguity.
+
+### Mandatory server hotpatch before PR handoff
+
+Before submitting any additional PR for this effort, hotpatch the running OpenClaw/Aide server and run smoke tests against the live or staging webhook path. Minimum evidence required in the PR body:
+
+1. The deployed server accepts a payload containing `project`, `type`, `changed_files`, and `context_artifacts`.
+2. The server reads at least one generated PHP context artifact.
+3. A translation task prompt/log/debug fixture shows the `Tendered` packet includes receipt/template comments, source references, related Danish translations, and `amount_tendered` concept hints.
+4. Existing payloads without `context_artifacts` remain backward-compatible.
+5. Local unit tests and live smoke tests are recorded with exact commands and results.
+
+### PR sequencing
+
+1. Translations repo producer PR may exist as a dependency, but it is not sufficient on its own.
+2. OpenClaw consumer hotpatch and tests must happen before opening/handing off the OpenClaw PR.
+3. `woocommerce-pos` and `monorepo-v2` companion PRs are required if inspection shows missing source comments/references or missing JS origin metadata blocks context quality.
+
 ## Task 5: Final Verification and PR
 
 **Files:**
