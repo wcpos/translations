@@ -107,6 +107,36 @@ test('builds PHP context packet with translator comments and source references',
   assert.ok(tendered.source_usage.nearby_source_strings.includes('Change'));
 });
 
+test('adds capped related same-locale translations for matching source terms', () => {
+  const root = makeTempRepo();
+  const packets = buildPhpContextPackets({ rootDir: root, locale: 'da_DK', domain: 'woocommerce-pos' });
+  const tendered = packets.entries.find(packet => packet.entry.msgid === 'Tendered');
+  const relatedIds = tendered.related_existing_translations.map(entry => entry.msgid);
+
+  assert.ok(relatedIds.includes('Amount Tendered'));
+  assert.ok(relatedIds.includes('Tendered amount must be zero or greater.'));
+  assert.ok(tendered.related_existing_translations.length <= 10);
+  assert.strictEqual(tendered.risk.level, 'high');
+});
+
+test('CLI writes a stable PHP context artifact and prints its path', () => {
+  const { execFileSync } = require('child_process');
+  const root = makeTempRepo();
+  const outDir = path.join(root, 'translation-context/php');
+  const stdout = execFileSync(process.execPath, [
+    path.join(__dirname, '../scripts/translation-context-packets.js'),
+    '--type', 'php',
+    '--locale', 'da_DK',
+    '--domain', 'woocommerce-pos',
+    '--root-dir', root,
+    '--out-dir', outDir,
+  ], { encoding: 'utf8' }).trim();
+
+  assert.strictEqual(stdout, path.join(outDir, 'woocommerce-pos.context.json'));
+  const artifact = JSON.parse(fs.readFileSync(stdout, 'utf8'));
+  assert.strictEqual(artifact.domain, 'woocommerce-pos');
+  assert.ok(artifact.entries.some(packet => packet.entry.msgid === 'Tendered'));
+});
 if (failed > 0) {
   console.error(`\n${passed} passed, ${failed} failed`);
   process.exit(1);

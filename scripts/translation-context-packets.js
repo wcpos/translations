@@ -109,12 +109,88 @@ function riskFor(entryPacket) {
   };
 }
 
+
+function entryKey(ctx, msgid) {
+  return ctx ? `${ctx}\x04${msgid}` : msgid;
+}
+
+function tokenizeSource(value) {
+  return normalizeSourceTerm(value).match(/[\p{L}\p{N}]+/gu) || [];
+}
+
+function loadExistingPoEntries({ rootDir, locale, domain }) {
+  if (!locale) return [];
+  const poPath = path.join(rootDir, 'translations/php', locale, `${domain}-${locale}.po`);
+  if (!fs.existsSync(poPath)) return [];
+
+  const po = gettextParser.po.parse(fs.readFileSync(poPath));
+  const existing = [];
+  for (const [ctx, entries] of Object.entries(po.translations)) {
+    for (const [msgid, entry] of Object.entries(entries)) {
+      if (!msgid || !entry.msgstr || !entry.msgstr[0]) continue;
+      existing.push({
+        msgid,
+        msgctxt: ctx || null,
+        msgstr: Array.isArray(entry.msgstr) ? entry.msgstr[0] : entry.msgstr,
+        references: splitReferenceLines(entry.comments && entry.comments.reference),
+        concept_ids: matchConcepts(msgid).map(concept => concept.id),
+      });
+    }
+  }
+  return existing;
+}
+
+function referenceDirectories(references) {
+  return new Set(references.map(reference => path.dirname(reference.split(':')[0])));
+}
+
+function rankRelatedTranslations(packet, existingEntries) {
+  const source = packet.entry.msgid;
+  const sourceNorm = normalizeSourceTerm(source);
+  const sourceTokens = new Set(tokenizeSource(source));
+  const sourceConceptIds = new Set(packet.concept_hints.map(concept => concept.id));
+  const sourceReferenceDirs = referenceDirectories(packet.entry.references);
+
+  return existingEntries
+    .filter(existing => existing.msgid !== source)
+    .map(existing => {
+      let score = 0;
+      const existingNorm = normalizeSourceTerm(existing.msgid);
+      if (existingNorm === sourceNorm) score += 100;
+      if (existingNorm.includes(sourceNorm) || sourceNorm.includes(existingNorm)) score += 50;
+
+      const existingTokens = new Set(tokenizeSource(existing.msgid));
+      for (const token of sourceTokens) {
+        if (existingTokens.has(token)) score += 15;
+      }
+
+      for (const conceptId of existing.concept_ids) {
+        if (sourceConceptIds.has(conceptId)) score += 20;
+      }
+
+      for (const reference of existing.references) {
+        if (sourceReferenceDirs.has(path.dirname(reference.split(':')[0]))) score += 10;
+      }
+
+      return { existing, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.existing.msgid.localeCompare(b.existing.msgid))
+    .slice(0, 10)
+    .map(({ existing }) => ({
+      msgid: existing.msgid,
+      msgctxt: existing.msgctxt,
+      msgstr: existing.msgstr,
+    }));
+}
+
 function buildPhpContextPackets({ rootDir = DEFAULT_ROOT, locale = null, domain }) {
   if (!domain) throw new Error('domain is required');
 
   const potPath = path.join(rootDir, 'source/php', `${domain}.pot`);
   const pot = gettextParser.po.parse(fs.readFileSync(potPath));
   const flattened = flattenPotEntries(pot);
+  const existingEntries = loadExistingPoEntries({ rootDir, locale, domain });
   const entries = flattened.map(({ ctx, msgid, entry }, index) => {
     const translatorComments = splitCommentLines(entry.comments && (entry.comments.translator || entry.comments.extracted));
     const references = splitReferenceLines(entry.comments && entry.comments.reference);
@@ -138,6 +214,7 @@ function buildPhpContextPackets({ rootDir = DEFAULT_ROOT, locale = null, domain 
       concept_hints: matchConcepts(msgid),
       risk: { level: 'normal', reasons: [] },
     };
+    packet.related_existing_translations = rankRelatedTranslations(packet, existingEntries);
     packet.risk = riskFor(packet);
     return packet;
   });
@@ -151,8 +228,44 @@ function buildPhpContextPackets({ rootDir = DEFAULT_ROOT, locale = null, domain 
   };
 }
 
+
+function parseArgs(argv) {
+  const args = {};
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (!arg.startsWith('--')) continue;
+    const key = arg.slice(2).replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+    args[key] = argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[++i] : true;
+  }
+  return args;
+}
+
+function runCli(argv = process.argv.slice(2)) {
+  const args = parseArgs(argv);
+  if (args.type !== 'php') {
+    throw new Error('Only --type php is currently supported');
+  }
+  const rootDir = args.rootDir ? path.resolve(args.rootDir) : DEFAULT_ROOT;
+  const outDir = path.resolve(rootDir, args.outDir || 'translation-context/php');
+  const packets = buildPhpContextPackets({ rootDir, locale: args.locale || null, domain: args.domain });
+  fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, `${args.domain}.context.json`);
+  fs.writeFileSync(outPath, JSON.stringify(packets, null, 2) + '\n');
+  process.stdout.write(`${outPath}\n`);
+}
+
+if (require.main === module) {
+  try {
+    runCli();
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
+  }
+}
+
 module.exports = {
   buildPhpContextPackets,
   matchConcepts,
   normalizeSourceTerm,
+  runCli,
 };
