@@ -37,7 +37,8 @@ msgid "http://www.kilbot.com"
 msgstr "http://www.kilbot.com"
 
 #. translators: Stores are physical POS store/location records.
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Stores are physical retail POS locations/outlets managed in the admin, not the verb "to store".
+#. translators: Admin list label for all physical retail POS locations/outlets.
 #: includes/Admin/Menu.php:43
 #: includes/Admin/Menu.php:111
 #: includes/Services/Stores.php:66
@@ -66,6 +67,7 @@ msgid ""
 msgstr "Pro 插件包含免費版本的所有功能。您可以安全地停用並刪除此插件。"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to edit a physical retail POS location/outlet.
 #: includes/Admin/Stores/Edit_Store.php:49
 #: includes/Admin/Stores/Edit_Store.php:66
 #: includes/Services/Stores.php:78
@@ -92,7 +94,8 @@ msgstr "左側含空格"
 msgid "Right with space"
 msgstr "右側含空格"
 
-#: includes/Admin/Stores/Edit_Store.php:246
+#. translators: Timezone setting option for a POS store/location; use the website's default timezone.
+#: includes/Admin/Stores/Edit_Store.php:247
 msgid "Inherit site timezone"
 msgstr "沿用網站時區"
 
@@ -108,8 +111,9 @@ msgstr "全部"
 msgid "Open POS"
 msgstr "開啟 POS"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin list column heading for a physical POS store/location, not the verb "to store".
 #. translators: Store is a physical POS store/location assigned to the order.
+#. translators: Store is a physical retail POS location/outlet managed in the admin, not the verb "to store".
 #. translators: Store is a physical POS store/location selected during login.
 #: includes/Admin/Stores/List_Stores.php:108
 #: includes/Admin/templates/order-details.php:10
@@ -119,23 +123,23 @@ msgid "Store"
 msgstr "商店"
 
 #. translators: Users who are allowed to access a POS store/location.
-#. translators: Users who are allowed to access this POS store/location.
+#. translators: Meta box title for selecting users allowed to access this physical POS store/location.
 #: includes/Admin/Stores/List_Stores.php:112
 #: includes/Admin/Stores/Single_Store.php:75
 msgid "Authorized Users"
 msgstr "授權用戶"
 
-#. translators: Business opening hours for this POS store/location.
+#. translators: Meta box title for business opening hours for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:95
 msgid "Opening Hours"
 msgstr "營業時間"
 
-#. translators: Logo image for this POS store/location.
+#. translators: Meta box title for the logo image printed/displayed for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:107
 msgid "Logo"
 msgstr "標誌"
 
-#. translators: wordpress.
+#. translators: Meta box title for phone, email, and website details for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:127
 msgid "Contact Info"
 msgstr "聯絡資訊"
@@ -167,42 +171,42 @@ msgstr "移除商店標誌"
 msgid "Set Store Logo"
 msgstr "設置商店標誌"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:269
 msgid "Monday"
 msgstr "星期一"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:271
 msgid "Tuesday"
 msgstr "星期二"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:273
 msgid "Wednesday"
 msgstr "星期三"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:275
 msgid "Thursday"
 msgstr "星期四"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:277
 msgid "Friday"
 msgstr "星期五"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:279
 msgid "Saturday"
 msgstr "星期六"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:281
 msgid "Sunday"
 msgstr "星期日"
 
-#. translators: wordpress
+#. translators: Temporary loading option while address regions are fetched.
 #: includes/Admin/templates/stores/address.php:130
 msgid "Loading&#8230;"
 msgstr "載入中&#8230;"
@@ -218,12 +222,12 @@ msgid ""
 "Note: only the users with the proper privileges will be available for selection. <a href=\"%s\" target=\"_blank\">See the documentation for details.</a>"
 msgstr "注意：只有具有適當權限的用戶才能被選擇。<a href=\"%s\" target=\"_blank\">查看文檔以獲取詳細資訊。</a>"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store website URL.
 #: includes/Admin/templates/stores/contact.php:12
 msgid "Web Address"
 msgstr "網站地址"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store email address.
 #: includes/Admin/templates/stores/contact.php:20
 msgid "Email"
 msgstr "電子郵件"
@@ -393,21 +397,25 @@ msgstr "找不到商店。"
 msgid "Failed to trash store."
 msgstr "無法刪除商店。"
 
-#: includes/Payments/Idempotency_Repository.php:130
-#: includes/Payments/Idempotency_Repository.php:175
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:131
+#: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "冪等金鑰已被不同的請求重複使用。"
 
-#: includes/Payments/Idempotency_Repository.php:137
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:139
 msgid "A request with this idempotency key is already being processed."
 msgstr "已有使用此冪等金鑰的請求正在處理中。"
 
-#: includes/Payments/Refund_Orchestrator.php:34
+#. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
+#: includes/Payments/Refund_Orchestrator.php:35
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr "無效的退款目的地。允許的值：original_method、cash、manual。"
 
-#: includes/Payments/Refund_Orchestrator.php:52
+#. translators: Refund API error shown when the original payment gateway cannot process the refund.
+#: includes/Payments/Refund_Orchestrator.php:54
 msgid "The original payment gateway is not available for refunds."
 msgstr "原始付款閘道無法用於退款。"
 
@@ -415,38 +423,38 @@ msgstr "原始付款閘道無法用於退款。"
 msgid "Failed to save settings."
 msgstr "設定儲存失敗。"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to create a new physical retail POS location/outlet.
 #: includes/Services/Stores.php:72
 #: includes/Services/Stores.php:74
 msgid "Add New Store"
 msgstr "新增商店"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin label for a newly created physical retail POS location/outlet.
 #: includes/Services/Stores.php:76
 msgid "New Store"
 msgstr "新商店"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to view a physical retail POS location/outlet.
 #: includes/Services/Stores.php:80
 msgid "View Store"
 msgstr "查看商店"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin search action for physical retail POS locations/outlets.
 #: includes/Services/Stores.php:84
 msgid "Search Stores"
 msgstr "搜尋商店"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin hierarchy label for a parent physical retail POS location/outlet.
 #: includes/Services/Stores.php:86
 msgid "Parent Store:"
 msgstr "父商店："
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:88
 msgid "No Stores found."
 msgstr "未找到商店。"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin trash empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:90
 msgid "No Stores found in Trash."
 msgstr "垃圾桶中未找到商店。"
