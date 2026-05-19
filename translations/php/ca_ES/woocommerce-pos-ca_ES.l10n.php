@@ -186,7 +186,7 @@ return array(
 		'Amount Tendered' => 'Import rebut',
 		'Change' => 'Canvi',
 		'Money returned from cash sale' . "\x04" . 'Change' => 'Canvi',
-		'Tendered amount must be zero or greater.' => 'L\'import lliurat ha de ser zero o superior.',
+		'Tendered amount must be zero or greater.' => 'L\'import rebut ha de ser zero o superior.',
 		'Partial cash payments are not supported by the POS API checkout flow.' => 'Els pagaments parcials en efectiu no són compatibles amb el flux de pagament de l\'API del POS.',
 		'Partial Payment' => 'Pagament parcial',
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS no pot funcionar juntament amb el plugin wePOS a causa de problemes de compatibilitat. WCPOS ha estat desactivat.',
