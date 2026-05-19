@@ -67,7 +67,7 @@ msgstr "Kích hoạt permalinks"
 
 #. translators: Plugin activation notice label.
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Activator.php:364
 #: includes/Services/Receipt_Data_Schema.php:395
@@ -118,7 +118,8 @@ msgstr "POS"
 msgid "View POS"
 msgstr "Xem POS"
 
-#. translators: wordpress.
+#. translators: WordPress admin submenu label that opens WCPOS settings.
+#. translators: Plugin row action link that opens WCPOS settings.
 #: includes/Admin/Menu.php:166
 #: includes/Admin/Menu.php:168
 #: includes/Admin/Plugins.php:38
@@ -180,7 +181,7 @@ msgctxt "Permalink setting, eg: /pos"
 msgid "POS base"
 msgstr "Cơ sở POS"
 
-#. translators: wordpress.
+#. translators: Prefix for an important plugin update notice in the WordPress plugins screen.
 #: includes/Admin/Plugins.php:82
 msgid "Important:"
 msgstr "Quan trọng:"
@@ -262,17 +263,17 @@ msgstr "Kích hoạt thuế cụ thể cho POS."
 msgid "POS visibility"
 msgstr "Khả năng hiển thị POS"
 
-#. translators: wordpress.
+#. translators: Link text for editing product POS visibility in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:27
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#. translators: wordpress.
+#. translators: Button text confirming product POS visibility changes in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:46
 msgid "OK"
 msgstr "OK"
 
-#. translators: wordpress.
+#. translators: Link text cancelling product POS visibility changes in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:53
 msgid "Cancel"
 msgstr "Hủy"
@@ -898,16 +899,19 @@ msgstr "Số tiền cashback phải từ 0 trở lên."
 msgid "Cash"
 msgstr "Tiền mặt"
 
-#. translators: POS payment gateway label shown during checkout.
+#. translators: Cash checkout field label for the amount of money received from the customer.
+#. translators: Cash numpad label for the amount of money received from the customer.
+#. translators: Order note label for the cash amount received from the customer at checkout.
 #: includes/Gateways/Cash.php:92
 #: includes/Gateways/Cash.php:95
 #: includes/Gateways/Cash.php:201
 msgid "Amount Tendered"
 msgstr "Số tiền đã thanh toán"
 
-#. translators: POS payment gateway label shown during checkout.
-#. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Cash checkout label for money returned to the customer when the received amount exceeds the total.
+#. translators: Template-editor field label for total cash returned to the customer after payments; not "change" meaning modify.
+#. translators: Template-editor field label for cash returned to the customer after payment; not "change" meaning modify.
+#. translators: Receipt/payment label for cash returned to the customer when the received amount is greater than the total; not "change" meaning modify.
 #: includes/Gateways/Cash.php:100
 #: includes/Services/Receipt_Data_Schema.php:742
 #: includes/Services/Receipt_Data_Schema.php:857
@@ -922,16 +926,17 @@ msgctxt "Money returned from cash sale"
 msgid "Change"
 msgstr "Thay đổi"
 
-#: includes/Gateways/Cash.php:336
+#. translators: Checkout validation error for the cash amount received from the customer.
+#: includes/Gateways/Cash.php:337
 msgid "Tendered amount must be zero or greater."
 msgstr "Số tiền khách đưa phải từ 0 trở lên."
 
-#: includes/Gateways/Cash.php:355
+#: includes/Gateways/Cash.php:356
 msgid "Partial cash payments are not supported by the POS API checkout flow."
 msgstr "POS API checkout flow không hỗ trợ thanh toán tiền mặt một phần."
 
 #. translators: Fee line-item name added when a cash payment is partial.
-#: includes/Gateways/Cash.php:363
+#: includes/Gateways/Cash.php:364
 msgid "Partial Payment"
 msgstr "Thanh toán một phần"
 
@@ -969,14 +974,16 @@ msgid "POS - Partial Payment <span class=\"count\">(%s)</span>"
 msgid_plural "POS - Partial Payment <span class=\"count\">(%s)</span>"
 msgstr[0] "POS - Thanh toán một phần <span class=\"count\">(%s)</span>"
 
-#: includes/Payments/Idempotency_Repository.php:83
-#: includes/Payments/Idempotency_Repository.php:121
-#: includes/Payments/Idempotency_Repository.php:132
-#: includes/Payments/Idempotency_Repository.php:159
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:84
+#: includes/Payments/Idempotency_Repository.php:123
+#: includes/Payments/Idempotency_Repository.php:135
+#: includes/Payments/Idempotency_Repository.php:164
 msgid "Idempotency key was reused with a different request."
 msgstr "Khóa idempotency đã được dùng lại với một yêu cầu khác."
 
-#: includes/Payments/Idempotency_Repository.php:139
+#. translators: API conflict error shown while an identical POS payment request is still running.
+#: includes/Payments/Idempotency_Repository.php:143
 msgid "An identical request is already being processed."
 msgstr "Một yêu cầu giống hệt đang được xử lý."
 
@@ -1017,7 +1024,9 @@ msgid "Tax Receipt"
 msgstr "Hóa đơn thuế"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Preview_Receipt_Builder.php:794
 #: includes/Services/Receipt_I18n_Labels.php:67
@@ -1043,7 +1052,7 @@ msgid ""
 msgstr ""
 "Chấp nhận trả hàng trong vòng 30 ngày với hóa đơn gốc. Sản phẩm phải chưa sử dụng và còn nguyên bao bì gốc."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt footer message thanking the customer for a completed purchase.
 #: includes/Services/Preview_Receipt_Builder.php:904
 #: includes/Services/Receipt_I18n_Labels.php:212
 #: templates/receipt.php:376
@@ -1052,7 +1061,7 @@ msgstr "Cảm ơn quý khách!"
 
 #. translators: Sample receipt label or value used in receipt template previews.
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for tax/VAT/GST amount, not a tax rate percentage.
 #: includes/Services/Preview_Receipt_Builder.php:1226
 #: includes/Services/Preview_Receipt_Builder.php:1251
 #: includes/Services/Receipt_Data_Schema.php:764
@@ -1075,7 +1084,7 @@ msgid "Guest"
 msgstr "Khách"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the order number or order reference.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Receipt_Data_Schema.php:274
 #: includes/Services/Receipt_I18n_Labels.php:44
@@ -1099,7 +1108,7 @@ msgid "Currency"
 msgstr "Đơn vị tiền tệ"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for a note/message supplied by or about the customer.
 #: includes/Services/Receipt_Data_Schema.php:290
 #: includes/Services/Receipt_I18n_Labels.php:195
 msgid "Customer Note"
@@ -1186,7 +1195,7 @@ msgid "Logo URL"
 msgstr "URL Logo"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the store business opening hours.
 #: includes/Services/Receipt_Data_Schema.php:360
 #: includes/Services/Receipt_I18n_Labels.php:233
 msgid "Opening Hours"
@@ -1233,7 +1242,7 @@ msgid "Cashier Name"
 msgstr "Tên thu ngân"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the customer name or customer details.
 #: includes/Services/Receipt_Data_Schema.php:408
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/receipt.php:204
@@ -1251,7 +1260,7 @@ msgid "Customer Name"
 msgstr "Tên khách hàng"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the billing address.
 #: includes/Services/Receipt_Data_Schema.php:420
 #: includes/Services/Receipt_I18n_Labels.php:133
 msgid "Billing Address"
@@ -1263,7 +1272,7 @@ msgid "Shipping Address"
 msgstr "Địa chỉ giao hàng"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section label for multiple customer tax/VAT/GST identification numbers.
 #: includes/Services/Receipt_Data_Schema.php:429
 #: includes/Services/Receipt_I18n_Labels.php:53
 msgid "Customer Tax IDs"
@@ -1342,7 +1351,7 @@ msgid "Item Key"
 msgstr "Mã mục hàng"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for product SKU/reference code.
 #: includes/Services/Receipt_Data_Schema.php:511
 #: includes/Services/Receipt_Data_Schema.php:941
 #: includes/Services/Receipt_I18n_Labels.php:137
@@ -1382,7 +1391,7 @@ msgid "Unit Subtotal (excl tax)"
 msgstr "Tạm tính mỗi đơn vị (chưa thuế)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for unit price.
 #: includes/Services/Receipt_Data_Schema.php:539
 #: includes/Services/Receipt_I18n_Labels.php:139
 msgid "Unit Price"
@@ -1399,7 +1408,7 @@ msgid "Unit Price (excl tax)"
 msgstr "Giá đơn vị (không thuế)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the order subtotal before final total adjustments.
 #: includes/Services/Receipt_Data_Schema.php:551
 #: includes/Services/Receipt_Data_Schema.php:698
 #: includes/Services/Receipt_I18n_Labels.php:159
@@ -1450,7 +1459,7 @@ msgid "Line Total (excl tax)"
 msgstr "Tổng tiền hàng (không thuế)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the total amount refunded to the customer.
 #: includes/Services/Receipt_Data_Schema.php:587
 #: includes/Services/Receipt_I18n_Labels.php:190
 msgid "Total Refunded"
@@ -1483,7 +1492,7 @@ msgid "Fee Label"
 msgstr "Nhãn phí"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the final amount due/paid for the order.
 #: includes/Services/Receipt_Data_Schema.php:613
 #: includes/Services/Receipt_Data_Schema.php:647
 #: includes/Services/Receipt_Data_Schema.php:681
@@ -1580,7 +1589,7 @@ msgid "Tax Total"
 msgstr "Tổng thuế"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the order total including tax/VAT/GST.
 #: includes/Services/Receipt_Data_Schema.php:730
 #: includes/Services/Receipt_I18n_Labels.php:164
 msgid "Total (incl. tax)"
@@ -1602,7 +1611,7 @@ msgid "Refund Total"
 msgstr "Tổng hoàn"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for total after subtracting refunds.
 #: includes/Services/Receipt_Data_Schema.php:750
 #: includes/Services/Receipt_I18n_Labels.php:192
 #: templates/receipt.php:313
@@ -1660,7 +1669,7 @@ msgid "Has Tax Summary"
 msgstr "Có tóm tắt thuế"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for the tax/VAT/GST breakdown.
 #: includes/Services/Receipt_Data_Schema.php:802
 #: includes/Services/Receipt_I18n_Labels.php:173
 msgid "Tax Summary"
@@ -1692,7 +1701,7 @@ msgid "Taxable Amount (excl)"
 msgstr "Khoản phải chịu thuế (không bao gồm)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for tax/VAT/GST amount, not a tax rate percentage.
 #: includes/Services/Receipt_Data_Schema.php:827
 #: includes/Services/Receipt_I18n_Labels.php:175
 msgid "Tax Amount"
@@ -1719,14 +1728,14 @@ msgid "Payment Method"
 msgstr "Phương thức thanh toán"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Generic receipt column/field label for a monetary amount.
 #: includes/Services/Receipt_Data_Schema.php:849
 #: includes/Services/Receipt_I18n_Labels.php:189
 msgid "Amount"
 msgstr "Số tiền"
 
-#. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Template-editor field label for the money received from the customer at checkout; use the target-language equivalent of "Received", not procurement tender/bid language.
+#. translators: Standalone receipt/payment label meaning money received from the customer at checkout. Use the target-language equivalent of "Received" as a concise label; do not use wording that means "Amount paid/deposited", and do not use procurement tender/bid language.
 #: includes/Services/Receipt_Data_Schema.php:853
 #: includes/Services/Receipt_I18n_Labels.php:169
 #: templates/receipt.php:360
@@ -1965,7 +1974,7 @@ msgid "Date & Time"
 msgstr "Ngày & giờ"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the sale/order date.
 #: includes/Services/Receipt_Data_Schema.php:1128
 #: includes/Services/Receipt_I18n_Labels.php:45
 msgid "Date"
@@ -2056,22 +2065,22 @@ msgstr "Tháng đầy đủ"
 msgid "Year"
 msgstr "Năm"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for an invoice number.
 #: includes/Services/Receipt_I18n_Labels.php:46
 msgid "Invoice No."
 msgstr "Số hóa đơn"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a reference code, transaction reference, or document reference.
 #: includes/Services/Receipt_I18n_Labels.php:47
 msgid "Reference"
 msgstr "Tham chiếu"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for one customer tax/VAT/GST identification number.
 #: includes/Services/Receipt_I18n_Labels.php:52
 msgid "Customer Tax ID"
 msgstr "Mã số thuế khách hàng"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:54
 #: includes/Services/Receipt_I18n_Labels.php:55
@@ -2080,7 +2089,9 @@ msgstr "Mã số thuế khách hàng"
 msgid "VAT Number"
 msgstr "Mã số VAT"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:57
 #: includes/Services/Receipt_I18n_Labels.php:77
@@ -2089,7 +2100,9 @@ msgstr "Mã số VAT"
 msgid "ABN"
 msgstr "ABN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:58
 #: includes/Services/Receipt_I18n_Labels.php:78
@@ -2098,7 +2111,9 @@ msgstr "ABN"
 msgid "CPF"
 msgstr "CPF"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:59
 #: includes/Services/Receipt_I18n_Labels.php:79
@@ -2107,7 +2122,9 @@ msgstr "CPF"
 msgid "CNPJ"
 msgstr "CNPJ"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:60
 #: includes/Services/Receipt_I18n_Labels.php:80
@@ -2116,7 +2133,9 @@ msgstr "CNPJ"
 msgid "GSTIN"
 msgstr "GSTIN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:61
 #: includes/Services/Receipt_I18n_Labels.php:81
@@ -2125,14 +2144,16 @@ msgstr "GSTIN"
 msgid "Codice Fiscale"
 msgstr "Codice Fiscale"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:62
 #: includes/Services/Tax_Id_Types.php:260
 msgid "Partita IVA"
 msgstr "Partita IVA"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:63
 #: includes/Services/Receipt_I18n_Labels.php:83
@@ -2141,7 +2162,9 @@ msgstr "Partita IVA"
 msgid "NIF"
 msgstr "NIF"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:64
 #: includes/Services/Receipt_I18n_Labels.php:84
@@ -2150,14 +2173,16 @@ msgstr "NIF"
 msgid "CUIT"
 msgstr "CUIT"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:65
 #: includes/Services/Tax_Id_Types.php:269
 msgid "GST/HST"
 msgstr "GST/HST"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:66
 #: includes/Services/Receipt_I18n_Labels.php:86
@@ -2166,18 +2191,20 @@ msgstr "GST/HST"
 msgid "EIN"
 msgstr "EIN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section label for store tax/VAT/GST/business identification numbers.
 #: includes/Services/Receipt_I18n_Labels.php:70
 msgid "Tax IDs"
 msgstr "Mã số thuế"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:74
 #: includes/Services/Receipt_I18n_Labels.php:103
 msgid "VAT ID"
 msgstr "Mã số VAT"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:75
 #: includes/Services/Receipt_I18n_Labels.php:76
 #: includes/Services/Receipt_I18n_Labels.php:104
@@ -2185,19 +2212,22 @@ msgstr "Mã số VAT"
 msgid "VAT No."
 msgstr "Số VAT"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:82
 #: includes/Services/Receipt_I18n_Labels.php:111
 msgid "P.IVA"
 msgstr "P.IVA"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:85
 #: includes/Services/Receipt_I18n_Labels.php:114
 msgid "GST/HST No."
 msgstr "Số GST/HST"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:87
 #: includes/Services/Receipt_I18n_Labels.php:116
@@ -2205,7 +2235,8 @@ msgstr "Số GST/HST"
 msgid "USt-IdNr."
 msgstr "USt-IdNr."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:88
 #: includes/Services/Receipt_I18n_Labels.php:117
@@ -2213,7 +2244,8 @@ msgstr "USt-IdNr."
 msgid "Steuernummer"
 msgstr "Steuernummer"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:89
 #: includes/Services/Receipt_I18n_Labels.php:118
@@ -2221,7 +2253,8 @@ msgstr "Steuernummer"
 msgid "HRB"
 msgstr "HRB"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Receipt_I18n_Labels.php:119
@@ -2229,7 +2262,8 @@ msgstr "HRB"
 msgid "KVK"
 msgstr "KVK"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:91
 #: includes/Services/Receipt_I18n_Labels.php:120
@@ -2237,7 +2271,8 @@ msgstr "KVK"
 msgid "SIRET"
 msgstr "SIRET"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:92
 #: includes/Services/Receipt_I18n_Labels.php:121
@@ -2245,7 +2280,8 @@ msgstr "SIRET"
 msgid "SIREN"
 msgstr "SIREN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:93
 #: includes/Services/Receipt_I18n_Labels.php:122
@@ -2253,7 +2289,8 @@ msgstr "SIREN"
 msgid "Company No."
 msgstr "Số công ty"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:94
 #: includes/Services/Receipt_I18n_Labels.php:123
@@ -2261,59 +2298,59 @@ msgstr "Số công ty"
 msgid "UID"
 msgstr "Mã số thuế"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/quote label for the customer or recipient the document was prepared for.
 #: includes/Services/Receipt_I18n_Labels.php:126
 msgid "Prepared For"
 msgstr "Chuẩn bị cho"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the staff member/cashier who processed the order.
 #: includes/Services/Receipt_I18n_Labels.php:127
 msgid "Processed by"
 msgstr "Xử lý bởi"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the billing customer.
 #: includes/Services/Receipt_I18n_Labels.php:130
 msgid "Bill To"
 msgstr "Hóa đơn cho"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the shipping recipient.
 #: includes/Services/Receipt_I18n_Labels.php:131
 msgid "Ship To"
 msgstr "Giao đến"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the customer being billed.
 #: includes/Services/Receipt_I18n_Labels.php:132
 msgid "Billed To"
 msgstr "Thanh toán cho"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for product/item name.
 #: includes/Services/Receipt_I18n_Labels.php:136
 #: templates/receipt.php:224
 msgid "Item"
 msgstr "Mặt hàng"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for quantity.
 #: includes/Services/Receipt_I18n_Labels.php:138
 #: templates/receipt.php:225
 msgid "Qty"
 msgstr "SL"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for unit price excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:140
 msgid "Unit (excl.)"
 msgstr "Đơn giá (chưa thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for line total excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:141
 msgid "Total (excl.)"
 msgstr "Tổng (chưa thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for discount amount or discount line.
 #: includes/Services/Receipt_I18n_Labels.php:142
 msgid "Discount"
 msgstr "Giảm giá"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Packing slip label indicating an item/order has been packed.
 #: includes/Services/Receipt_I18n_Labels.php:143
 msgid "Packed"
 msgstr "Đã đóng gói"
@@ -2382,12 +2419,12 @@ msgctxt "short receipt table header"
 msgid "Taxable incl."
 msgstr "Chịu thuế (có thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the subtotal excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:160
 msgid "Subtotal (excl. tax)"
 msgstr "Tạm tính (chưa thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the total tax/VAT/GST amount.
 #: includes/Services/Receipt_I18n_Labels.php:162
 msgid "Total Tax"
 msgstr "Tổng thuế"
@@ -2397,33 +2434,33 @@ msgstr "Tổng thuế"
 msgid "Tax included"
 msgstr "Đã gồm thuế"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the grand total including tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:165
 msgid "Grand Total (incl. tax)"
 msgstr "Tổng cộng (có thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt payment-section heading for amounts already paid by the customer.
 #: includes/Services/Receipt_I18n_Labels.php:167
 #: templates/receipt.php:352
 msgid "Paid"
 msgstr "Đã thanh toán"
 
-#. translators: Label prefix used before a payment method in printed receipt templates.
+#. translators: Receipt label prefix shown before a payment method, for example "Paid via Cash".
 #: includes/Services/Receipt_I18n_Labels.php:168
 msgid "Paid via"
 msgstr "Đã thanh toán qua"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for taxable amount excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:174
 msgid "Taxable (excl.)"
 msgstr "Chịu thuế (chưa thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for taxable amount including tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:176
 msgid "Taxable (incl.)"
 msgstr "Chịu thuế (có thuế)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of an invoice template.
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:179
@@ -2432,17 +2469,17 @@ msgstr "Chịu thuế (có thuế)"
 msgid "Invoice"
 msgstr "Hóa đơn"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of a tax invoice/VAT invoice template.
 #: includes/Services/Receipt_I18n_Labels.php:180
 msgid "Tax Invoice"
 msgstr "Hóa đơn thuế"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a quotation/estimate, not a receipt or completed purchase.
 #: includes/Services/Receipt_I18n_Labels.php:181
 msgid "Quote"
 msgstr "Báo giá"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of a completed sale receipt.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:182
 #: includes/Templates.php:1117
@@ -2450,7 +2487,7 @@ msgstr "Báo giá"
 msgid "Receipt"
 msgstr "Hóa đơn"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a gift receipt that usually hides prices.
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:183
@@ -2459,37 +2496,37 @@ msgstr "Hóa đơn"
 msgid "Gift Receipt"
 msgstr "Biên lai quà tặng"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a credit note/refund document.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:184
 #: includes/Templates.php:1120
 msgid "Credit Note"
 msgstr "Giấy ghi có"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a packing slip used to pick/pack shipped items.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:185
 #: includes/Templates/Gallery_Registry.php:93
 msgid "Packing Slip"
 msgstr "Phiếu đóng gói"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for products returned/refunded from the order.
 #: includes/Services/Receipt_I18n_Labels.php:188
 #: templates/receipt.php:322
 msgid "Returned Items"
 msgstr "Hàng trả lại"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for an amount refunded to the customer.
 #: includes/Services/Receipt_I18n_Labels.php:191
 msgid "Refunded"
 msgstr "Đã hoàn tiền"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for sale terms and conditions text.
 #: includes/Services/Receipt_I18n_Labels.php:196
 msgid "Terms & Conditions"
 msgstr "Điều khoản & Điều kiện"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for a short merchant message to the customer.
 #: includes/Services/Receipt_I18n_Labels.php:197
 msgid "A message for you"
 msgstr "Một thông điệp dành cho bạn"
@@ -2534,73 +2571,79 @@ msgstr "Quét mã QR hoặc truy cập:"
 msgid "Account"
 msgstr "Tài khoản"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Short receipt footer message thanking the customer.
 #: includes/Services/Receipt_I18n_Labels.php:211
 msgid "Thank you!"
 msgstr "Cảm ơn!"
 
+#. translators: Receipt footer message thanking the customer for shopping at the store.
 #: includes/Services/Receipt_I18n_Labels.php:213
 msgid "Thank you for shopping with us!"
 msgstr "Cảm ơn quý khách đã mua sắm tại cửa hàng chúng tôi!"
 
+#. translators: Receipt footer message thanking the customer for their business.
 #: includes/Services/Receipt_I18n_Labels.php:214
 msgid "Thank you for your business."
 msgstr "Cảm ơn quý khách đã tin dùng dịch vụ của chúng tôi."
 
+#. translators: Gift receipt footer explaining the return/exchange period.
 #: includes/Services/Receipt_I18n_Labels.php:215
 msgid "Items may be returned or exchanged within 30 days with this receipt."
 msgstr "Hàng có thể được đổi trả hoặc đổi trong vòng 30 ngày với hóa đơn này."
 
+#. translators: Quote document footer explaining validity period and that the quote is not a receipt.
 #: includes/Services/Receipt_I18n_Labels.php:216
 msgid ""
 "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase."
 msgstr ""
 "Báo giá này có hiệu lực trong 30 ngày kể từ ngày phát hành. Giá có thể thay đổi sau thời hạn hiệu lực. Đây không phải là hóa đơn hoặc xác nhận mua hàng."
 
+#. translators: Quote document notice clarifying it is not a completed-sale receipt.
 #: includes/Services/Receipt_I18n_Labels.php:217
 msgid "This is a quote, not a receipt"
 msgstr "Đây là báo giá, không phải hóa đơn"
 
+#. translators: Receipt footer asking the customer to keep the receipt for returns/records.
 #: includes/Services/Receipt_I18n_Labels.php:218
 msgid "Please retain this receipt for your records."
 msgstr "Vui lòng giữ lại hóa đơn này để lưu hồ sơ."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Kitchen ticket document label for food/drink preparation; keep concise and uppercase if natural in the target language.
 #: includes/Services/Receipt_I18n_Labels.php:221
 msgid "KITCHEN"
 msgstr "Bếp"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a customer or staff signature line.
 #: includes/Services/Receipt_I18n_Labels.php:224
 msgid "Signature"
 msgstr "Chữ ký"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for document type/category.
 #: includes/Services/Receipt_I18n_Labels.php:225
 msgid "Document Type"
 msgstr "Loại chứng từ"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for a printed copy of a document.
 #: includes/Services/Receipt_I18n_Labels.php:226
 msgid "Copy"
 msgstr "Sao chép"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for copy number/sequence.
 #: includes/Services/Receipt_I18n_Labels.php:227
 msgid "Copy No."
 msgstr "Số bản sao"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for order/document status.
 #: includes/Services/Receipt_I18n_Labels.php:230
 msgid "Status"
 msgstr "Trạng thái"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt status value meaning the order/document is completed.
 #: includes/Services/Receipt_I18n_Labels.php:231
 msgid "Completed"
 msgstr "Hoàn tất"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt status value meaning the document has been printed.
 #: includes/Services/Receipt_I18n_Labels.php:232
 msgid "Printed"
 msgstr "Đã in"
@@ -3076,7 +3119,7 @@ msgstr "Vui lòng nhập cả tên đăng nhập và mật khẩu."
 msgid "Invalid username or password."
 msgstr "Tên đăng nhập hoặc mật khẩu không hợp lệ."
 
-#. translators: wordpress.
+#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
 #: includes/Templates/Frontend.php:56
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Bạn không có đủ quyền để truy cập trang này."

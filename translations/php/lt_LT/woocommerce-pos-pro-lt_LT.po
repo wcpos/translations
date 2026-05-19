@@ -38,7 +38,8 @@ msgid "http://www.kilbot.com"
 msgstr "http://www.kilbot.com"
 
 #. translators: Stores are physical POS store/location records.
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Stores are physical retail POS locations/outlets managed in the admin, not the verb "to store".
+#. translators: Admin list label for all physical retail POS locations/outlets.
 #: includes/Admin/Menu.php:43
 #: includes/Admin/Menu.php:111
 #: includes/Services/Stores.php:66
@@ -68,6 +69,7 @@ msgstr ""
 "Pro įskiepis apima visas nemokamos versijos funkcijas. Galite saugiai išjungti ir ištrinti šį įskiepį."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to edit a physical retail POS location/outlet.
 #: includes/Admin/Stores/Edit_Store.php:49
 #: includes/Admin/Stores/Edit_Store.php:66
 #: includes/Services/Stores.php:78
@@ -94,7 +96,8 @@ msgstr "Kairėje su tarpu"
 msgid "Right with space"
 msgstr "Dešinėje su tarpu"
 
-#: includes/Admin/Stores/Edit_Store.php:246
+#. translators: Timezone setting option for a POS store/location; use the website's default timezone.
+#: includes/Admin/Stores/Edit_Store.php:247
 msgid "Inherit site timezone"
 msgstr "Naudoti svetainės laiko juostą"
 
@@ -110,8 +113,9 @@ msgstr "Viskas"
 msgid "Open POS"
 msgstr "Atidaryti POS"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin list column heading for a physical POS store/location, not the verb "to store".
 #. translators: Store is a physical POS store/location assigned to the order.
+#. translators: Store is a physical retail POS location/outlet managed in the admin, not the verb "to store".
 #. translators: Store is a physical POS store/location selected during login.
 #: includes/Admin/Stores/List_Stores.php:108
 #: includes/Admin/templates/order-details.php:10
@@ -121,23 +125,23 @@ msgid "Store"
 msgstr "Parduotuvė"
 
 #. translators: Users who are allowed to access a POS store/location.
-#. translators: Users who are allowed to access this POS store/location.
+#. translators: Meta box title for selecting users allowed to access this physical POS store/location.
 #: includes/Admin/Stores/List_Stores.php:112
 #: includes/Admin/Stores/Single_Store.php:75
 msgid "Authorized Users"
 msgstr "Įgalioti vartotojai"
 
-#. translators: Business opening hours for this POS store/location.
+#. translators: Meta box title for business opening hours for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:95
 msgid "Opening Hours"
 msgstr "Darbo laikas"
 
-#. translators: Logo image for this POS store/location.
+#. translators: Meta box title for the logo image printed/displayed for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:107
 msgid "Logo"
 msgstr "Logotipas"
 
-#. translators: wordpress.
+#. translators: Meta box title for phone, email, and website details for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:127
 msgid "Contact Info"
 msgstr "Kontaktinė informacija"
@@ -169,42 +173,42 @@ msgstr "Pašalinti parduotuvės logotipą"
 msgid "Set Store Logo"
 msgstr "Nustatyti parduotuvės logotipą"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:269
 msgid "Monday"
 msgstr "Pirmadienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:271
 msgid "Tuesday"
 msgstr "Antradienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:273
 msgid "Wednesday"
 msgstr "Trečiadienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:275
 msgid "Thursday"
 msgstr "Ketvirtadienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:277
 msgid "Friday"
 msgstr "Penktadienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:279
 msgid "Saturday"
 msgstr "Šeštadienis"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:281
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#. translators: wordpress
+#. translators: Temporary loading option while address regions are fetched.
 #: includes/Admin/templates/stores/address.php:130
 msgid "Loading&#8230;"
 msgstr "Įkeliama&#8230;"
@@ -221,12 +225,12 @@ msgid ""
 msgstr ""
 "Pastaba: pasirinkti bus galima tik vartotojus su tinkamomis privilegijomis. <a href=\"%s\" target=\"_blank\">Išsamiau žiūrėkite dokumentacijoje.</a>"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store website URL.
 #: includes/Admin/templates/stores/contact.php:12
 msgid "Web Address"
 msgstr "Interneto adresas"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store email address.
 #: includes/Admin/templates/stores/contact.php:20
 msgid "Email"
 msgstr "El. paštas"
@@ -399,22 +403,26 @@ msgstr "Parduotuvė nerasta."
 msgid "Failed to trash store."
 msgstr "Nepavyko ištrinti parduotuvės."
 
-#: includes/Payments/Idempotency_Repository.php:130
-#: includes/Payments/Idempotency_Repository.php:175
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:131
+#: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotencijos raktas buvo panaudotas su kitokia užklausa."
 
-#: includes/Payments/Idempotency_Repository.php:137
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:139
 msgid "A request with this idempotency key is already being processed."
 msgstr "Užklausa su šiuo idempotencijos raktu jau yra apdorojama."
 
-#: includes/Payments/Refund_Orchestrator.php:34
+#. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
+#: includes/Payments/Refund_Orchestrator.php:35
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
 "Neteisinga grąžinimo paskirtis. Leistinos reikšmės: original_method, cash, manual."
 
-#: includes/Payments/Refund_Orchestrator.php:52
+#. translators: Refund API error shown when the original payment gateway cannot process the refund.
+#: includes/Payments/Refund_Orchestrator.php:54
 msgid "The original payment gateway is not available for refunds."
 msgstr "Pirminis mokėjimo šliuzas nepasiekiamas grąžinimams."
 
@@ -422,38 +430,38 @@ msgstr "Pirminis mokėjimo šliuzas nepasiekiamas grąžinimams."
 msgid "Failed to save settings."
 msgstr "Nepavyko išsaugoti nustatymų."
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to create a new physical retail POS location/outlet.
 #: includes/Services/Stores.php:72
 #: includes/Services/Stores.php:74
 msgid "Add New Store"
 msgstr "Pridėti naują parduotuvę"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin label for a newly created physical retail POS location/outlet.
 #: includes/Services/Stores.php:76
 msgid "New Store"
 msgstr "Nauja parduotuvė"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to view a physical retail POS location/outlet.
 #: includes/Services/Stores.php:80
 msgid "View Store"
 msgstr "Peržiūrėti parduotuvę"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin search action for physical retail POS locations/outlets.
 #: includes/Services/Stores.php:84
 msgid "Search Stores"
 msgstr "Ieškoti parduotuvių"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin hierarchy label for a parent physical retail POS location/outlet.
 #: includes/Services/Stores.php:86
 msgid "Parent Store:"
 msgstr "Pagrindinė parduotuvė:"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:88
 msgid "No Stores found."
 msgstr "Parduotuvės nerastos."
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin trash empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:90
 msgid "No Stores found in Trash."
 msgstr "Šiukšlinėje parduotuvių nerasta."

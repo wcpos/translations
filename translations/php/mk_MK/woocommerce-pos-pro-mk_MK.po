@@ -38,7 +38,8 @@ msgid "http://www.kilbot.com"
 msgstr "http://www.kilbot.com"
 
 #. translators: Stores are physical POS store/location records.
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Stores are physical retail POS locations/outlets managed in the admin, not the verb "to store".
+#. translators: Admin list label for all physical retail POS locations/outlets.
 #: includes/Admin/Menu.php:43
 #: includes/Admin/Menu.php:111
 #: includes/Services/Stores.php:66
@@ -68,6 +69,7 @@ msgstr ""
 "Pro додатокот ги вклучува сите функции од бесплатната верзија. Можете безбедно да го деактивирате и избришете овој додаток."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to edit a physical retail POS location/outlet.
 #: includes/Admin/Stores/Edit_Store.php:49
 #: includes/Admin/Stores/Edit_Store.php:66
 #: includes/Services/Stores.php:78
@@ -94,7 +96,8 @@ msgstr "Лево со празно место"
 msgid "Right with space"
 msgstr "Десно со празно место"
 
-#: includes/Admin/Stores/Edit_Store.php:246
+#. translators: Timezone setting option for a POS store/location; use the website's default timezone.
+#: includes/Admin/Stores/Edit_Store.php:247
 msgid "Inherit site timezone"
 msgstr "Наследи ја временската зона на сајтот"
 
@@ -110,8 +113,9 @@ msgstr "Сите"
 msgid "Open POS"
 msgstr "Отвори POS"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin list column heading for a physical POS store/location, not the verb "to store".
 #. translators: Store is a physical POS store/location assigned to the order.
+#. translators: Store is a physical retail POS location/outlet managed in the admin, not the verb "to store".
 #. translators: Store is a physical POS store/location selected during login.
 #: includes/Admin/Stores/List_Stores.php:108
 #: includes/Admin/templates/order-details.php:10
@@ -121,23 +125,23 @@ msgid "Store"
 msgstr "Продавница"
 
 #. translators: Users who are allowed to access a POS store/location.
-#. translators: Users who are allowed to access this POS store/location.
+#. translators: Meta box title for selecting users allowed to access this physical POS store/location.
 #: includes/Admin/Stores/List_Stores.php:112
 #: includes/Admin/Stores/Single_Store.php:75
 msgid "Authorized Users"
 msgstr "Авторизирани корисници"
 
-#. translators: Business opening hours for this POS store/location.
+#. translators: Meta box title for business opening hours for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:95
 msgid "Opening Hours"
 msgstr "Работно време"
 
-#. translators: Logo image for this POS store/location.
+#. translators: Meta box title for the logo image printed/displayed for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:107
 msgid "Logo"
 msgstr "Лого"
 
-#. translators: wordpress.
+#. translators: Meta box title for phone, email, and website details for this POS store/location.
 #: includes/Admin/Stores/Single_Store.php:127
 msgid "Contact Info"
 msgstr "Контакт информации"
@@ -169,42 +173,42 @@ msgstr "Отстрани лого на продавница"
 msgid "Set Store Logo"
 msgstr "Постави лого на продавница"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:269
 msgid "Monday"
 msgstr "Понеделник"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:271
 msgid "Tuesday"
 msgstr "Вторник"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:273
 msgid "Wednesday"
 msgstr "Среда"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:275
 msgid "Thursday"
 msgstr "Четврток"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:277
 msgid "Friday"
 msgstr "Петок"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:279
 msgid "Saturday"
 msgstr "Сабота"
 
-#. translators: wordpress.
+#. translators: Day-of-week label in POS store opening hours.
 #: includes/Admin/Stores/Single_Store.php:281
 msgid "Sunday"
 msgstr "Недела"
 
-#. translators: wordpress
+#. translators: Temporary loading option while address regions are fetched.
 #: includes/Admin/templates/stores/address.php:130
 msgid "Loading&#8230;"
 msgstr "Вчитување&#8230;"
@@ -222,12 +226,12 @@ msgid ""
 msgstr ""
 "Забелешка: само корисниците со соодветни привилегии ќе бидат достапни за избор. <a href=\"%s\" target=\"_blank\">Погледнете ја документацијата за детали.</a>"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store website URL.
 #: includes/Admin/templates/stores/contact.php:12
 msgid "Web Address"
 msgstr "Веб адреса"
 
-#. translators: wordpress
+#. translators: Store contact field label for the store email address.
 #: includes/Admin/templates/stores/contact.php:20
 msgid "Email"
 msgstr "Е-пошта"
@@ -400,22 +404,26 @@ msgstr "Продавницата не е пронајдена."
 msgid "Failed to trash store."
 msgstr "Неуспешно бришење на продавницата."
 
-#: includes/Payments/Idempotency_Repository.php:130
-#: includes/Payments/Idempotency_Repository.php:175
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:131
+#: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Клучот за идемпотентност беше повторно искористен со различно барање."
 
-#: includes/Payments/Idempotency_Repository.php:137
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:139
 msgid "A request with this idempotency key is already being processed."
 msgstr "Барање со овој клуч за идемпотентност веќе се обработува."
 
-#: includes/Payments/Refund_Orchestrator.php:34
+#. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
+#: includes/Payments/Refund_Orchestrator.php:35
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
 "Невалидна дестинација за поврат. Дозволени вредности: original_method, cash, manual."
 
-#: includes/Payments/Refund_Orchestrator.php:52
+#. translators: Refund API error shown when the original payment gateway cannot process the refund.
+#: includes/Payments/Refund_Orchestrator.php:54
 msgid "The original payment gateway is not available for refunds."
 msgstr "Оригиналниот начин на плаќање не е достапен за поврат на средства."
 
@@ -423,38 +431,38 @@ msgstr "Оригиналниот начин на плаќање не е дост
 msgid "Failed to save settings."
 msgstr "Неуспешно зачувување на поставките."
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to create a new physical retail POS location/outlet.
 #: includes/Services/Stores.php:72
 #: includes/Services/Stores.php:74
 msgid "Add New Store"
 msgstr "Додај нова продавница"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin label for a newly created physical retail POS location/outlet.
 #: includes/Services/Stores.php:76
 msgid "New Store"
 msgstr "Нова продавница"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin action to view a physical retail POS location/outlet.
 #: includes/Services/Stores.php:80
 msgid "View Store"
 msgstr "Прегледај продавница"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin search action for physical retail POS locations/outlets.
 #: includes/Services/Stores.php:84
 msgid "Search Stores"
 msgstr "Пребарувај продавници"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin hierarchy label for a parent physical retail POS location/outlet.
 #: includes/Services/Stores.php:86
 msgid "Parent Store:"
 msgstr "Главна продавница:"
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:88
 msgid "No Stores found."
 msgstr "Не се пронајдени продавници."
 
-#. translators: Store is a physical POS store/location, not the verb "to store".
+#. translators: Admin trash empty-state message when no physical retail POS locations/outlets were found.
 #: includes/Services/Stores.php:90
 msgid "No Stores found in Trash."
 msgstr "Не се пронајдени продавници во ѓубрето."

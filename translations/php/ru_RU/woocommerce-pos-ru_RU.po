@@ -67,7 +67,7 @@ msgstr "Включить постоянные ссылки"
 
 #. translators: Plugin activation notice label.
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Activator.php:364
 #: includes/Services/Receipt_Data_Schema.php:395
@@ -118,7 +118,8 @@ msgstr "POS"
 msgid "View POS"
 msgstr "Просмотр POS"
 
-#. translators: wordpress.
+#. translators: WordPress admin submenu label that opens WCPOS settings.
+#. translators: Plugin row action link that opens WCPOS settings.
 #: includes/Admin/Menu.php:166
 #: includes/Admin/Menu.php:168
 #: includes/Admin/Plugins.php:38
@@ -180,7 +181,7 @@ msgctxt "Permalink setting, eg: /pos"
 msgid "POS base"
 msgstr "Основа POS"
 
-#. translators: wordpress.
+#. translators: Prefix for an important plugin update notice in the WordPress plugins screen.
 #: includes/Admin/Plugins.php:82
 msgid "Important:"
 msgstr "Важно:"
@@ -263,17 +264,17 @@ msgstr "Включить специальные налоги для POS."
 msgid "POS visibility"
 msgstr "Видимость POS"
 
-#. translators: wordpress.
+#. translators: Link text for editing product POS visibility in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:27
 msgid "Edit"
 msgstr "Редактировать"
 
-#. translators: wordpress.
+#. translators: Button text confirming product POS visibility changes in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:46
 msgid "OK"
 msgstr "ОК"
 
-#. translators: wordpress.
+#. translators: Link text cancelling product POS visibility changes in the WooCommerce product publish box.
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:53
 msgid "Cancel"
 msgstr "Отмена"
@@ -903,16 +904,19 @@ msgstr "Сумма кэшбэка должна быть не меньше нул
 msgid "Cash"
 msgstr "Наличные"
 
-#. translators: POS payment gateway label shown during checkout.
+#. translators: Cash checkout field label for the amount of money received from the customer.
+#. translators: Cash numpad label for the amount of money received from the customer.
+#. translators: Order note label for the cash amount received from the customer at checkout.
 #: includes/Gateways/Cash.php:92
 #: includes/Gateways/Cash.php:95
 #: includes/Gateways/Cash.php:201
 msgid "Amount Tendered"
 msgstr "Сумма к оплате"
 
-#. translators: POS payment gateway label shown during checkout.
-#. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Cash checkout label for money returned to the customer when the received amount exceeds the total.
+#. translators: Template-editor field label for total cash returned to the customer after payments; not "change" meaning modify.
+#. translators: Template-editor field label for cash returned to the customer after payment; not "change" meaning modify.
+#. translators: Receipt/payment label for cash returned to the customer when the received amount is greater than the total; not "change" meaning modify.
 #: includes/Gateways/Cash.php:100
 #: includes/Services/Receipt_Data_Schema.php:742
 #: includes/Services/Receipt_Data_Schema.php:857
@@ -927,17 +931,18 @@ msgctxt "Money returned from cash sale"
 msgid "Change"
 msgstr "Изменить"
 
-#: includes/Gateways/Cash.php:336
+#. translators: Checkout validation error for the cash amount received from the customer.
+#: includes/Gateways/Cash.php:337
 msgid "Tendered amount must be zero or greater."
 msgstr "Сумма внесённых средств должна быть не меньше нуля."
 
-#: includes/Gateways/Cash.php:355
+#: includes/Gateways/Cash.php:356
 msgid "Partial cash payments are not supported by the POS API checkout flow."
 msgstr ""
 "Частичные наличные платежи не поддерживаются в потоке оформления заказа API POS."
 
 #. translators: Fee line-item name added when a cash payment is partial.
-#: includes/Gateways/Cash.php:363
+#: includes/Gateways/Cash.php:364
 msgid "Partial Payment"
 msgstr "Частичная оплата"
 
@@ -979,14 +984,16 @@ msgstr[0] "POS - Частичная оплата <span class=\"count\">(%s)</spa
 msgstr[1] "POS - Частичная оплата <span class=\"count\">(%s)</span>"
 msgstr[2] "POS - Частичная оплата <span class=\"count\">(%s)</span>"
 
-#: includes/Payments/Idempotency_Repository.php:83
-#: includes/Payments/Idempotency_Repository.php:121
-#: includes/Payments/Idempotency_Repository.php:132
-#: includes/Payments/Idempotency_Repository.php:159
+#. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
+#: includes/Payments/Idempotency_Repository.php:84
+#: includes/Payments/Idempotency_Repository.php:123
+#: includes/Payments/Idempotency_Repository.php:135
+#: includes/Payments/Idempotency_Repository.php:164
 msgid "Idempotency key was reused with a different request."
 msgstr "Ключ идемпотентности был использован повторно с другим запросом."
 
-#: includes/Payments/Idempotency_Repository.php:139
+#. translators: API conflict error shown while an identical POS payment request is still running.
+#: includes/Payments/Idempotency_Repository.php:143
 msgid "An identical request is already being processed."
 msgstr "Уже обрабатывается идентичный запрос."
 
@@ -1027,7 +1034,9 @@ msgid "Tax Receipt"
 msgstr "Налоговый чек"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Preview_Receipt_Builder.php:794
 #: includes/Services/Receipt_I18n_Labels.php:67
@@ -1052,7 +1061,7 @@ msgid ""
 msgstr ""
 "Возврат принимается в течение 30 дней при наличии оригинального чека. Товары должны быть неиспользованными и в оригинальной упаковке."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt footer message thanking the customer for a completed purchase.
 #: includes/Services/Preview_Receipt_Builder.php:904
 #: includes/Services/Receipt_I18n_Labels.php:212
 #: templates/receipt.php:376
@@ -1061,7 +1070,7 @@ msgstr "Спасибо за покупку!"
 
 #. translators: Sample receipt label or value used in receipt template previews.
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for tax/VAT/GST amount, not a tax rate percentage.
 #: includes/Services/Preview_Receipt_Builder.php:1226
 #: includes/Services/Preview_Receipt_Builder.php:1251
 #: includes/Services/Receipt_Data_Schema.php:764
@@ -1084,7 +1093,7 @@ msgid "Guest"
 msgstr "Гость"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the order number or order reference.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Receipt_Data_Schema.php:274
 #: includes/Services/Receipt_I18n_Labels.php:44
@@ -1108,7 +1117,7 @@ msgid "Currency"
 msgstr "Валюта"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for a note/message supplied by or about the customer.
 #: includes/Services/Receipt_Data_Schema.php:290
 #: includes/Services/Receipt_I18n_Labels.php:195
 msgid "Customer Note"
@@ -1195,7 +1204,7 @@ msgid "Logo URL"
 msgstr "URL логотипа"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the store business opening hours.
 #: includes/Services/Receipt_Data_Schema.php:360
 #: includes/Services/Receipt_I18n_Labels.php:233
 msgid "Opening Hours"
@@ -1242,7 +1251,7 @@ msgid "Cashier Name"
 msgstr "Имя кассира"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the customer name or customer details.
 #: includes/Services/Receipt_Data_Schema.php:408
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/receipt.php:204
@@ -1260,7 +1269,7 @@ msgid "Customer Name"
 msgstr "Имя покупателя"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the billing address.
 #: includes/Services/Receipt_Data_Schema.php:420
 #: includes/Services/Receipt_I18n_Labels.php:133
 msgid "Billing Address"
@@ -1272,7 +1281,7 @@ msgid "Shipping Address"
 msgstr "Адрес доставки"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section label for multiple customer tax/VAT/GST identification numbers.
 #: includes/Services/Receipt_Data_Schema.php:429
 #: includes/Services/Receipt_I18n_Labels.php:53
 msgid "Customer Tax IDs"
@@ -1351,7 +1360,7 @@ msgid "Item Key"
 msgstr "Ключ товара"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for product SKU/reference code.
 #: includes/Services/Receipt_Data_Schema.php:511
 #: includes/Services/Receipt_Data_Schema.php:941
 #: includes/Services/Receipt_I18n_Labels.php:137
@@ -1391,7 +1400,7 @@ msgid "Unit Subtotal (excl tax)"
 msgstr "Промежуточная сумма за единицу (без налога)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for unit price.
 #: includes/Services/Receipt_Data_Schema.php:539
 #: includes/Services/Receipt_I18n_Labels.php:139
 msgid "Unit Price"
@@ -1408,7 +1417,7 @@ msgid "Unit Price (excl tax)"
 msgstr "Цена за единицу (без налога)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the order subtotal before final total adjustments.
 #: includes/Services/Receipt_Data_Schema.php:551
 #: includes/Services/Receipt_Data_Schema.php:698
 #: includes/Services/Receipt_I18n_Labels.php:159
@@ -1459,7 +1468,7 @@ msgid "Line Total (excl tax)"
 msgstr "Итого по позиции (без налога)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the total amount refunded to the customer.
 #: includes/Services/Receipt_Data_Schema.php:587
 #: includes/Services/Receipt_I18n_Labels.php:190
 msgid "Total Refunded"
@@ -1492,7 +1501,7 @@ msgid "Fee Label"
 msgstr "Метка платежа"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the final amount due/paid for the order.
 #: includes/Services/Receipt_Data_Schema.php:613
 #: includes/Services/Receipt_Data_Schema.php:647
 #: includes/Services/Receipt_Data_Schema.php:681
@@ -1589,7 +1598,7 @@ msgid "Tax Total"
 msgstr "НДС"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the order total including tax/VAT/GST.
 #: includes/Services/Receipt_Data_Schema.php:730
 #: includes/Services/Receipt_I18n_Labels.php:164
 msgid "Total (incl. tax)"
@@ -1611,7 +1620,7 @@ msgid "Refund Total"
 msgstr "Сумма возврата"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for total after subtracting refunds.
 #: includes/Services/Receipt_Data_Schema.php:750
 #: includes/Services/Receipt_I18n_Labels.php:192
 #: templates/receipt.php:313
@@ -1669,7 +1678,7 @@ msgid "Has Tax Summary"
 msgstr "Есть сводка по налогу"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for the tax/VAT/GST breakdown.
 #: includes/Services/Receipt_Data_Schema.php:802
 #: includes/Services/Receipt_I18n_Labels.php:173
 msgid "Tax Summary"
@@ -1701,7 +1710,7 @@ msgid "Taxable Amount (excl)"
 msgstr "Налогооблагаемая сумма (без учета)"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for tax/VAT/GST amount, not a tax rate percentage.
 #: includes/Services/Receipt_Data_Schema.php:827
 #: includes/Services/Receipt_I18n_Labels.php:175
 msgid "Tax Amount"
@@ -1728,14 +1737,14 @@ msgid "Payment Method"
 msgstr "Способ оплаты"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Generic receipt column/field label for a monetary amount.
 #: includes/Services/Receipt_Data_Schema.php:849
 #: includes/Services/Receipt_I18n_Labels.php:189
 msgid "Amount"
 msgstr "Сумма"
 
-#. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Template-editor field label for the money received from the customer at checkout; use the target-language equivalent of "Received", not procurement tender/bid language.
+#. translators: Standalone receipt/payment label meaning money received from the customer at checkout. Use the target-language equivalent of "Received" as a concise label; do not use wording that means "Amount paid/deposited", and do not use procurement tender/bid language.
 #: includes/Services/Receipt_Data_Schema.php:853
 #: includes/Services/Receipt_I18n_Labels.php:169
 #: templates/receipt.php:360
@@ -1974,7 +1983,7 @@ msgid "Date & Time"
 msgstr "Дата и время"
 
 #. translators: Label for a receipt data field in the template editor.
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the sale/order date.
 #: includes/Services/Receipt_Data_Schema.php:1128
 #: includes/Services/Receipt_I18n_Labels.php:45
 msgid "Date"
@@ -2065,22 +2074,22 @@ msgstr "Полный месяц"
 msgid "Year"
 msgstr "Год"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for an invoice number.
 #: includes/Services/Receipt_I18n_Labels.php:46
 msgid "Invoice No."
 msgstr "№ счета-фактуры"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a reference code, transaction reference, or document reference.
 #: includes/Services/Receipt_I18n_Labels.php:47
 msgid "Reference"
 msgstr "Ссылка"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for one customer tax/VAT/GST identification number.
 #: includes/Services/Receipt_I18n_Labels.php:52
 msgid "Customer Tax ID"
 msgstr "ИНН клиента"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:54
 #: includes/Services/Receipt_I18n_Labels.php:55
@@ -2089,7 +2098,9 @@ msgstr "ИНН клиента"
 msgid "VAT Number"
 msgstr "Номер НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:57
 #: includes/Services/Receipt_I18n_Labels.php:77
@@ -2098,7 +2109,9 @@ msgstr "Номер НДС"
 msgid "ABN"
 msgstr "ABN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:58
 #: includes/Services/Receipt_I18n_Labels.php:78
@@ -2107,7 +2120,9 @@ msgstr "ABN"
 msgid "CPF"
 msgstr "CPF"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:59
 #: includes/Services/Receipt_I18n_Labels.php:79
@@ -2116,7 +2131,9 @@ msgstr "CPF"
 msgid "CNPJ"
 msgstr "CNPJ"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:60
 #: includes/Services/Receipt_I18n_Labels.php:80
@@ -2125,7 +2142,9 @@ msgstr "CNPJ"
 msgid "GSTIN"
 msgstr "GSTIN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:61
 #: includes/Services/Receipt_I18n_Labels.php:81
@@ -2134,14 +2153,16 @@ msgstr "GSTIN"
 msgid "Codice Fiscale"
 msgstr "Codice Fiscale"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:62
 #: includes/Services/Tax_Id_Types.php:260
 msgid "Partita IVA"
 msgstr "Partita IVA"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:63
 #: includes/Services/Receipt_I18n_Labels.php:83
@@ -2150,7 +2171,9 @@ msgstr "Partita IVA"
 msgid "NIF"
 msgstr "NIF"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:64
 #: includes/Services/Receipt_I18n_Labels.php:84
@@ -2159,14 +2182,16 @@ msgstr "NIF"
 msgid "CUIT"
 msgstr "CUIT"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:65
 #: includes/Services/Tax_Id_Types.php:269
 msgid "GST/HST"
 msgstr "GST/HST"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:66
 #: includes/Services/Receipt_I18n_Labels.php:86
@@ -2175,18 +2200,20 @@ msgstr "GST/HST"
 msgid "EIN"
 msgstr "EIN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section label for store tax/VAT/GST/business identification numbers.
 #: includes/Services/Receipt_I18n_Labels.php:70
 msgid "Tax IDs"
 msgstr "Налоговые ID"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:74
 #: includes/Services/Receipt_I18n_Labels.php:103
 msgid "VAT ID"
 msgstr "ID НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:75
 #: includes/Services/Receipt_I18n_Labels.php:76
 #: includes/Services/Receipt_I18n_Labels.php:104
@@ -2194,19 +2221,22 @@ msgstr "ID НДС"
 msgid "VAT No."
 msgstr "№ НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:82
 #: includes/Services/Receipt_I18n_Labels.php:111
 msgid "P.IVA"
 msgstr "P.IVA"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #: includes/Services/Receipt_I18n_Labels.php:85
 #: includes/Services/Receipt_I18n_Labels.php:114
 msgid "GST/HST No."
 msgstr "GST/HST No."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:87
 #: includes/Services/Receipt_I18n_Labels.php:116
@@ -2214,7 +2244,8 @@ msgstr "GST/HST No."
 msgid "USt-IdNr."
 msgstr "USt-IdNr."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:88
 #: includes/Services/Receipt_I18n_Labels.php:117
@@ -2222,7 +2253,8 @@ msgstr "USt-IdNr."
 msgid "Steuernummer"
 msgstr "Steuernummer"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:89
 #: includes/Services/Receipt_I18n_Labels.php:118
@@ -2230,7 +2262,8 @@ msgstr "Steuernummer"
 msgid "HRB"
 msgstr "HRB"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Receipt_I18n_Labels.php:119
@@ -2238,7 +2271,8 @@ msgstr "HRB"
 msgid "KVK"
 msgstr "KVK"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:91
 #: includes/Services/Receipt_I18n_Labels.php:120
@@ -2246,7 +2280,8 @@ msgstr "KVK"
 msgid "SIRET"
 msgstr "SIRET"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:92
 #: includes/Services/Receipt_I18n_Labels.php:121
@@ -2254,7 +2289,8 @@ msgstr "SIRET"
 msgid "SIREN"
 msgstr "SIREN"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:93
 #: includes/Services/Receipt_I18n_Labels.php:122
@@ -2262,7 +2298,8 @@ msgstr "SIREN"
 msgid "Company No."
 msgstr "№ компании"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
+#. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
 #: includes/Services/Receipt_I18n_Labels.php:94
 #: includes/Services/Receipt_I18n_Labels.php:123
@@ -2270,59 +2307,59 @@ msgstr "№ компании"
 msgid "UID"
 msgstr "UID"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/quote label for the customer or recipient the document was prepared for.
 #: includes/Services/Receipt_I18n_Labels.php:126
 msgid "Prepared For"
 msgstr "Подготовлено для"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for the staff member/cashier who processed the order.
 #: includes/Services/Receipt_I18n_Labels.php:127
 msgid "Processed by"
 msgstr "Обработано"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the billing customer.
 #: includes/Services/Receipt_I18n_Labels.php:130
 msgid "Bill To"
 msgstr "Плательщик"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the shipping recipient.
 #: includes/Services/Receipt_I18n_Labels.php:131
 msgid "Ship To"
 msgstr "Адрес доставки"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt/invoice address heading for the customer being billed.
 #: includes/Services/Receipt_I18n_Labels.php:132
 msgid "Billed To"
 msgstr "Плательщик"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for product/item name.
 #: includes/Services/Receipt_I18n_Labels.php:136
 #: templates/receipt.php:224
 msgid "Item"
 msgstr "Товар"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for quantity.
 #: includes/Services/Receipt_I18n_Labels.php:138
 #: templates/receipt.php:225
 msgid "Qty"
 msgstr "Кол-во"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for unit price excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:140
 msgid "Unit (excl.)"
 msgstr "Цена без НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt table column heading for line total excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:141
 msgid "Total (excl.)"
 msgstr "Итого без НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for discount amount or discount line.
 #: includes/Services/Receipt_I18n_Labels.php:142
 msgid "Discount"
 msgstr "Скидка"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Packing slip label indicating an item/order has been packed.
 #: includes/Services/Receipt_I18n_Labels.php:143
 msgid "Packed"
 msgstr "Упаковано"
@@ -2391,12 +2428,12 @@ msgctxt "short receipt table header"
 msgid "Taxable incl."
 msgstr "Нал. база с НДС"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the subtotal excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:160
 msgid "Subtotal (excl. tax)"
 msgstr "Промеж. итог (без НДС)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the total tax/VAT/GST amount.
 #: includes/Services/Receipt_I18n_Labels.php:162
 msgid "Total Tax"
 msgstr "Сумма налога"
@@ -2406,33 +2443,33 @@ msgstr "Сумма налога"
 msgid "Tax included"
 msgstr "Налог включён"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt total-row label for the grand total including tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:165
 msgid "Grand Total (incl. tax)"
 msgstr "Итог (с НДС)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt payment-section heading for amounts already paid by the customer.
 #: includes/Services/Receipt_I18n_Labels.php:167
 #: templates/receipt.php:352
 msgid "Paid"
 msgstr "Оплачено"
 
-#. translators: Label prefix used before a payment method in printed receipt templates.
+#. translators: Receipt label prefix shown before a payment method, for example "Paid via Cash".
 #: includes/Services/Receipt_I18n_Labels.php:168
 msgid "Paid via"
 msgstr "Оплачено через"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for taxable amount excluding tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:174
 msgid "Taxable (excl.)"
 msgstr "Нал. база (без НДС)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt tax summary label for taxable amount including tax/VAT/GST.
 #: includes/Services/Receipt_I18n_Labels.php:176
 msgid "Taxable (incl.)"
 msgstr "Нал. база (с НДС)"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of an invoice template.
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:179
@@ -2441,17 +2478,17 @@ msgstr "Нал. база (с НДС)"
 msgid "Invoice"
 msgstr "Счет-фактура"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of a tax invoice/VAT invoice template.
 #: includes/Services/Receipt_I18n_Labels.php:180
 msgid "Tax Invoice"
 msgstr "Счет-фактура"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a quotation/estimate, not a receipt or completed purchase.
 #: includes/Services/Receipt_I18n_Labels.php:181
 msgid "Quote"
 msgstr "Коммерческое предложение"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title printed at the top of a completed sale receipt.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:182
 #: includes/Templates.php:1117
@@ -2459,7 +2496,7 @@ msgstr "Коммерческое предложение"
 msgid "Receipt"
 msgstr "Чек"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a gift receipt that usually hides prices.
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:183
@@ -2468,37 +2505,37 @@ msgstr "Чек"
 msgid "Gift Receipt"
 msgstr "Подарочный чек"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a credit note/refund document.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:184
 #: includes/Templates.php:1120
 msgid "Credit Note"
 msgstr "Кредитная накладная"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Document title for a packing slip used to pick/pack shipped items.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:185
 #: includes/Templates/Gallery_Registry.php:93
 msgid "Packing Slip"
 msgstr "Упаковочный лист"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for products returned/refunded from the order.
 #: includes/Services/Receipt_I18n_Labels.php:188
 #: templates/receipt.php:322
 msgid "Returned Items"
 msgstr "Возвращённые товары"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for an amount refunded to the customer.
 #: includes/Services/Receipt_I18n_Labels.php:191
 msgid "Refunded"
 msgstr "Возмещено"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for sale terms and conditions text.
 #: includes/Services/Receipt_I18n_Labels.php:196
 msgid "Terms & Conditions"
 msgstr "Условия и положения"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt section heading for a short merchant message to the customer.
 #: includes/Services/Receipt_I18n_Labels.php:197
 msgid "A message for you"
 msgstr "Сообщение для вас"
@@ -2543,74 +2580,80 @@ msgstr "Отсканируйте QR-код или перейдите:"
 msgid "Account"
 msgstr "Счет"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Short receipt footer message thanking the customer.
 #: includes/Services/Receipt_I18n_Labels.php:211
 msgid "Thank you!"
 msgstr "Спасибо!"
 
+#. translators: Receipt footer message thanking the customer for shopping at the store.
 #: includes/Services/Receipt_I18n_Labels.php:213
 msgid "Thank you for shopping with us!"
 msgstr "Спасибо, что покупаете у нас!"
 
+#. translators: Receipt footer message thanking the customer for their business.
 #: includes/Services/Receipt_I18n_Labels.php:214
 msgid "Thank you for your business."
 msgstr "Спасибо за покупку."
 
+#. translators: Gift receipt footer explaining the return/exchange period.
 #: includes/Services/Receipt_I18n_Labels.php:215
 msgid "Items may be returned or exchanged within 30 days with this receipt."
 msgstr ""
 "Товары можно вернуть или обменять в течение 30 дней при наличии этого чека."
 
+#. translators: Quote document footer explaining validity period and that the quote is not a receipt.
 #: includes/Services/Receipt_I18n_Labels.php:216
 msgid ""
 "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase."
 msgstr ""
 "Это предложение действительно 30 дней с даты выдачи. После окончания срока действия цены могут измениться. Это не чек и не подтверждение покупки."
 
+#. translators: Quote document notice clarifying it is not a completed-sale receipt.
 #: includes/Services/Receipt_I18n_Labels.php:217
 msgid "This is a quote, not a receipt"
 msgstr "Это предложение, а не чек"
 
+#. translators: Receipt footer asking the customer to keep the receipt for returns/records.
 #: includes/Services/Receipt_I18n_Labels.php:218
 msgid "Please retain this receipt for your records."
 msgstr "Пожалуйста, сохраните этот чек для своих записей."
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Kitchen ticket document label for food/drink preparation; keep concise and uppercase if natural in the target language.
 #: includes/Services/Receipt_I18n_Labels.php:221
 msgid "KITCHEN"
 msgstr "КУХНЯ"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for a customer or staff signature line.
 #: includes/Services/Receipt_I18n_Labels.php:224
 msgid "Signature"
 msgstr "Подпись"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for document type/category.
 #: includes/Services/Receipt_I18n_Labels.php:225
 msgid "Document Type"
 msgstr "Тип документа"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for a printed copy of a document.
 #: includes/Services/Receipt_I18n_Labels.php:226
 msgid "Copy"
 msgstr "Копировать"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Fiscal receipt label for copy number/sequence.
 #: includes/Services/Receipt_I18n_Labels.php:227
 msgid "Copy No."
 msgstr "Копия №"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt label for order/document status.
 #: includes/Services/Receipt_I18n_Labels.php:230
 msgid "Status"
 msgstr "Статус"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt status value meaning the order/document is completed.
 #: includes/Services/Receipt_I18n_Labels.php:231
 msgid "Completed"
 msgstr "Завершено"
 
-#. translators: Standalone label used in printed receipt templates.
+#. translators: Receipt status value meaning the document has been printed.
 #: includes/Services/Receipt_I18n_Labels.php:232
 msgid "Printed"
 msgstr "Напечатано"
@@ -3088,7 +3131,7 @@ msgstr "Пожалуйста, введите и имя пользователя,
 msgid "Invalid username or password."
 msgstr "Неверное имя пользователя или пароль."
 
-#. translators: wordpress.
+#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
 #: includes/Templates/Frontend.php:56
 msgid "You do not have sufficient permissions to access this page."
 msgstr "У вас недостаточно прав для доступа к этой странице."
