@@ -599,9 +599,9 @@
           "msgstr": "Ενεργοποίηση permalinks"
         },
         {
-          "msgid": "Uploaded to this template",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Μεταφορτώθηκε σε αυτό το πρότυπο"
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -3744,6 +3744,16 @@
           "msgstr": "Συμπερίληψη προσωρινών διαγνωστικών HTML που αποδίδονται από PHP για προεπισκοπήσεις χωρίς λογική."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "58mm (Narrow)",
           "msgctxt": null,
           "msgstr": "58mm (Στενό)"
@@ -3767,16 +3777,6 @@
           "msgid": "Paper Size",
           "msgctxt": null,
           "msgstr": "Μέγεθος Χαρτιού"
-        },
-        {
-          "msgid": "PHP (Legacy)",
-          "msgctxt": null,
-          "msgstr": "PHP (Παλιός Τρόπος)"
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Τυπώνει με τη χρήση του διαλόγου εκτύπωσης του προγράμματος περιήγησής σας. Εμφανίζεται στη συσκευή χωρίς προσωρινή σύνδεση με server."
         }
       ],
       "concept_hints": [],
@@ -4460,19 +4460,19 @@
           "msgstr": "Ένα απλό front-end για λήψη παραγγελιών WooCommerce στο Σημείο Πώλησης. Απαιτεί <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Streamlined receipt with logo, store info, itemized lines, totals and payment — covers what most stores need without the kitchen sink.",
           "msgctxt": null,
           "msgstr": "Απλουστευμένη απόδειξη με λογότυπο, στοιχεία καταστήματος, αναλυτικές γραμμές, σύνολα και πληρωμή — καλύπτει ό,τι χρειάζονται τα περισσότερα καταστήματα, χωρίς περιττά στοιχεία."
-        },
-        {
-          "msgid": "The refresh token to use for generating a new access token.",
-          "msgctxt": null,
-          "msgstr": "Το ανανεωτικό token για τη δημιουργία ενός νέου token πρόσβασης."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Υπήρξε πρόβλημα με την απόδοση του προτύπου απόδειξης. Αυτό συνήθως προκαλείται από σφάλμα σύνταξης ή μη ορισμένη μεταβλητή στον κώδικα του προτύπου."
         }
       ],
       "concept_hints": [],
@@ -5014,7 +5014,7 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API.php:414",
+          "includes/API.php:419",
           "includes/API/Cashier.php:124"
         ]
       },
@@ -5101,7 +5101,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API.php:421",
+          "includes/API.php:426",
           "includes/Templates/Auth.php:314"
         ]
       },
@@ -6060,9 +6060,9 @@
           "msgstr": "Δημιουργήθηκε το πρότυπο αλλά το αγνές περιεχόμενο δεν μπόρεσε να αποθηκευτεί."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         }
       ],
       "concept_hints": [],
@@ -7256,19 +7256,19 @@
           "msgstr": "Το πρότυπο περιέχει επικίνδυνη συνάρτηση: %s(). Αυτή η συνάρτηση δεν επιτρέπεται για λόγους ασφαλείας."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "Αναγνωριστικό παραγγελίας ή \"latest\" για την πιο πρόσφατη παραγγελία POS. Παραλείψτε για δείγμα δεδομένων."
         }
       ],
       "concept_hints": [],
@@ -8537,7 +8537,7 @@
         ],
         "references": [
           "includes/API/Orders_Controller.php:302",
-          "includes/API/Products_Controller.php:105",
+          "includes/API/Products_Controller.php:112",
           "includes/API/Product_Variations_Controller.php:109"
         ]
       },
@@ -9207,7 +9207,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "Invalid order."
+          "Print job not found."
         ]
       },
       "related_existing_translations": [
@@ -9257,9 +9257,9 @@
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να πληρωθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
         },
         {
-          "msgid": "Cashier not found.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Ο ταμίας δεν βρέθηκε."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         }
       ],
       "concept_hints": [],
@@ -9287,8 +9287,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "Invalid order.",
-          "Invalid receipt mode."
+          "Print job not found.",
+          "Print job could not be created."
         ]
       },
       "related_existing_translations": [
@@ -9355,6 +9355,990 @@
       "format": "php-po",
       "locale": "el",
       "entry": {
+        "msgid": "Print job not found.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:157",
+          "includes/API/Print_Jobs_Controller.php:177",
+          "includes/API/Print_Jobs_Controller.php:198",
+          "includes/API/Print_Jobs_Controller.php:312"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Print job could not be created.",
+          "Invalid printer token."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Not found",
+          "msgctxt": null,
+          "msgstr": "Δεν βρέθηκε"
+        },
+        {
+          "msgid": "Not Found",
+          "msgctxt": null,
+          "msgstr": "Δεν Βρέθηκε"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Η πύλη πληρωμής δεν βρέθηκε."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν βρέθηκε ή δεν είναι παραγγελία POS."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν βρέθηκε."
+        },
+        {
+          "msgid": "Store not found",
+          "msgctxt": null,
+          "msgstr": "Το κατάστημα δεν βρέθηκε"
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Το κατάστημα δεν βρέθηκε ή δεν είναι προσβάσιμο από αυτό το ταμείο."
+        },
+        {
+          "msgid": "Store not found.",
+          "msgctxt": null,
+          "msgstr": "Δεν βρέθηκε κατάστημα."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Print job could not be created.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:214",
+          "includes/API/Print_Jobs_Controller.php:438"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Print job not found.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Template was created but raw content could not be saved.",
+          "msgctxt": null,
+          "msgstr": "Δημιουργήθηκε το πρότυπο αλλά το αγνές περιεχόμενο δεν μπόρεσε να αποθηκευτεί."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Template was installed but could not be retrieved.",
+          "msgctxt": null,
+          "msgstr": "Το πρότυπο έχει εγκατασταθεί αλλά δεν μπορεί να ανακτηθεί."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "Could not determine current session.",
+          "msgctxt": null,
+          "msgstr": "Δεν ήταν δυνατός ο προσδιορισμός της τρέχουσας συνεδρίας."
+        },
+        {
+          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt δεν μπορεί να είναι πάνω από 24 ώρες στο μέλλον."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Η πύλη πληρωμής δεν βρέθηκε."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:291"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job not found.",
+          "Print job could not be created.",
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "OK",
+          "msgctxt": null,
+          "msgstr": "Εντάξει"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Invalid email address.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρη διεύθυνση email."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Invalid order.",
+          "msgctxt": null,
+          "msgstr": "Παρεκκλιπτική παραγγελία."
+        },
+        {
+          "msgid": "Invalid receipt mode.",
+          "msgctxt": null,
+          "msgstr": "Ακατάλληλος τρόπος απόδειξης."
+        },
+        {
+          "msgid": "The refresh token to use for generating a new access token.",
+          "msgctxt": null,
+          "msgstr": "Το ανανεωτικό token για τη δημιουργία ενός νέου token πρόσβασης."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "A printer_id is required.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:412"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "Invalid printer token.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Το στοιχείο batch %d πρέπει να περιλαμβάνει αριθμητικό ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν βρέθηκε ή δεν είναι παραγγελία POS."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Τύπος ΑΦΜ."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Τιμή ΑΦΜ."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "Θερμική απόδειξη από δεξιά προς τα αριστερά για εκτυπωτές 80mm. Αντιστρέφει τη στοίχιση των στηλών για αραβικά, εβραϊκά, περσικά και ουρντού. Απαιτεί εκτυπωτή που υποστηρίζει αραβική codepage (CP864 ή Windows-1256) — ελέγξτε το εγχειρίδιο του εκτυπωτή πριν την παραγγελία."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:468"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Invalid printer token.",
+          "A printer_id is required.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Παραγγελία"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν βρέθηκε ή δεν είναι παραγγελία POS."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν βρέθηκε."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Η πύλη πληρωμής δεν βρέθηκε."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν υπάρχει."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Epson Server Direct Print requires the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:475"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Prints using your browser's print dialog. Requires a server connection to generate the receipt.",
+          "msgctxt": null,
+          "msgstr": "Τυπώνει με τη χρήση του διαλόγου εκτύπωσης του προγράμματος περιήγησής σας. Χρειάζεται σύνδεση σε server για να γεννηθεί η απόδειξη."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
+          "msgctxt": null,
+          "msgstr": "Τυπώνει με τη χρήση του διαλόγου εκτύπωσης του προγράμματος περιήγησής σας. Εμφανίζεται στη συσκευή χωρίς προσωρινή σύνδεση με server."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "Ένα απλό front-end για λήψη παραγγελιών WooCommerce στο Σημείο Πώλησης. Απαιτεί <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Current page of the collection.",
+          "msgctxt": null,
+          "msgstr": "Τρέχουσα σελίδα της συλλογής."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Star CloudPRNT does not accept the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:486"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "User does not have POS cashier permissions.",
+          "msgctxt": null,
+          "msgstr": "Ο χρήστης δεν έχει δικαιώματα ταμία POS."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Η πύλη πληρωμής δεν βρέθηκε."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "JWT is not configured properly, please contact the admin",
+          "msgctxt": null,
+          "msgstr": "Το JWT δεν έχει ρυθμιστεί σωστά, παρακαλώ επικοινωνήστε με τον διαχειριστή"
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Η παραγγελία δεν υπάρχει."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Sorry, you cannot manage print jobs.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:505"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, you cannot bootstrap payment gateways.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να αρχικοποιήσετε πύλες πληρωμής."
+        },
+        {
+          "msgid": "Sorry, you cannot list templates.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να καταχωρίσετε πρότυπα."
+        },
+        {
+          "msgid": "Sorry, you cannot preview this template.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να προβάλετε αυτό το πρότυπο."
+        },
+        {
+          "msgid": "Sorry, you cannot process checkout.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να επεξεργαστείτε το ταμείο."
+        },
+        {
+          "msgid": "Sorry, you cannot update templates.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, πρότυπα δεν μπορούν να ενημερωθούν."
+        },
+        {
+          "msgid": "Sorry, you cannot view checkout state.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να δείτε την κατάσταση του ταμείου."
+        },
+        {
+          "msgid": "Sorry, you cannot view receipts.",
+          "msgctxt": null,
+          "msgstr": "Δυστυχώς, δεν επιτρέπεται η προβολή των αποδείξεων."
+        },
+        {
+          "msgid": "Sorry, you cannot view this template.",
+          "msgctxt": null,
+          "msgstr": "Λυπούμαστε, δεν μπορείτε να δείτε αυτό το πρότυπο."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:150"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Maximum number of items to be returned in result set.",
+          "msgctxt": null,
+          "msgstr": "Μέγιστος αριθμός αντικειμένων που θα επιστραφούν στο σύνολο αποτελεσμάτων."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς απενεργοποίηση."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς ενεργοποίηση."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "Περιορισμός αποτελεσμάτων σε πρότυπα που έχουν επιλυθεί για συγκεκριμένο κατάστημα."
+        },
+        {
+          "msgid": "Limit to templates modified after this ISO 8601 date.",
+          "msgctxt": null,
+          "msgstr": "Όριο σε πρότυπα τροποποιημένα μετά από την ημερομηνία ISO 8601."
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "Αναζήτηση προτύπων κατά τίτλο ή περιγραφή."
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Το κατάστημα δεν βρέθηκε ή δεν είναι προσβάσιμο από αυτό το ταμείο."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Φίλτρο κατά slug κατηγορίας προτύπου."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Operator to compare product brand terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:158"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας προτύπων που πρέπει να ενημερωθούν."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς απενεργοποίηση."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς ενεργοποίηση."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Η διεύθυνση email %s προστέθηκε στα στοιχεία χρέωσης από το WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Απέτυχε η διαγραφή του προτύπου."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Operator to compare product category terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:168"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product tag terms.",
+          "Invalid order."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Φίλτρο κατά slug κατηγορίας προτύπου."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας προτύπων που πρέπει να ενημερωθούν."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς απενεργοποίηση."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς ενεργοποίηση."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Η διεύθυνση email %s προστέθηκε στα στοιχεία χρέωσης από το WCPOS."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
+        "msgid": "Operator to compare product tag terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms.",
+          "Invalid order.",
+          "Invalid receipt mode."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας προτύπων που πρέπει να ενημερωθούν."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς απενεργοποίηση."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Πίνακας ID virtual προτύπων προς ενεργοποίηση."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Η διεύθυνση email %s προστέθηκε στα στοιχεία χρέωσης από το WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Απέτυχε η διαγραφή του προτύπου."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
         "msgid": "Invalid order.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9370,8 +10354,8 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms.",
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order."
         ]
@@ -9458,7 +10442,7 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Operator to compare product tag terms.",
           "Invalid order.",
           "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts."
@@ -9546,7 +10530,7 @@
           "Invalid order.",
           "Invalid receipt mode.",
           "Sorry, you cannot view receipts.",
-          "Failed to retrieve store data"
+          "Duplicate printer id."
         ]
       },
       "related_existing_translations": [
@@ -9591,14 +10575,14 @@
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία είναι άκυρη και δεν μπορεί να πληρωθεί."
         },
         {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Αυτή η παραγγελία δεν μπορεί να πληρωθεί. Παρακαλώ επικοινωνήστε μαζί μας αν χρειάζεστε βοήθεια."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         }
       ],
       "concept_hints": [],
@@ -9630,8 +10614,8 @@
         "nearby_source_strings": [
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order.",
-          "Failed to retrieve store data",
-          "Store not found"
+          "Duplicate printer id.",
+          "Failed to retrieve store data"
         ]
       },
       "related_existing_translations": [
@@ -9700,6 +10684,91 @@
       "format": "php-po",
       "locale": "el",
       "entry": {
+        "msgid": "Duplicate printer id.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Settings.php:684"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "settings"
+        ],
+        "nearby_source_strings": [
+          "No fiscal snapshot found for this order.",
+          "Sorry, you cannot view receipts.",
+          "Failed to retrieve store data",
+          "Store not found"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Μη έγκυρο ID προτύπου."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Μοναδικός αναγνωριστικός για τον ταμία (WordPress user ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Ο ταμίας δεν βρέθηκε."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Τύπος ΑΦΜ."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Τιμή ΑΦΜ."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Barcode"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Το στοιχείο batch %d πρέπει να περιλαμβάνει αριθμητικό ID."
+        },
+        {
+          "msgid": "Missing user_id parameter.",
+          "msgctxt": null,
+          "msgstr": "Λείπει η παράμετρος user_id."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "Αναγνωριστικό παραγγελίας ή \"latest\" για την πιο πρόσφατη παραγγελία POS. Παραλείψτε για δείγμα δεδομένων."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "el",
+      "entry": {
         "msgid": "Failed to retrieve store data",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9711,8 +10780,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Store not found",
           "You do not have permissions to view this data."
         ]
@@ -9794,7 +10863,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Failed to retrieve store data",
           "You do not have permissions to view this data.",
           "Template type."
@@ -11185,6 +12254,16 @@
           "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "Batch item %d must include a numeric id.",
           "msgctxt": null,
           "msgstr": "Το στοιχείο batch %d πρέπει να περιλαμβάνει αριθμητικό ID."
@@ -11193,16 +12272,6 @@
           "msgid": "Limit results to templates resolved for a specific store.",
           "msgctxt": null,
           "msgstr": "Περιορισμός αποτελεσμάτων σε πρότυπα που έχουν επιλυθεί για συγκεκριμένο κατάστημα."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "Αναγνωριστικό παραγγελίας ή \"latest\" για την πιο πρόσφατη παραγγελία POS. Παραλείψτε για δείγμα δεδομένων."
         }
       ],
       "concept_hints": [],
@@ -12117,19 +13186,19 @@
           "msgstr": "Το date_created_gmt πρέπει να είναι έγκυρη ημερομηνία UTC σε μορφή ISO 8601."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "Could not determine current session.",
           "msgctxt": null,
           "msgstr": "Δεν ήταν δυνατός ο προσδιορισμός της τρέχουσας συνεδρίας."
-        },
-        {
-          "msgid": "Sorry, you are not allowed to edit this template.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, δεν επιτρέπεται να επεξεργαστείτε αυτό το πρότυπο."
-        },
-        {
-          "msgid": "Template not found after update.",
-          "msgctxt": null,
-          "msgstr": "Πρότυπο δεν βρέθηκε μετά την ενημέρωση."
         }
       ],
       "concept_hints": [],
@@ -12627,9 +13696,9 @@
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
         },
         {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgid": "The WP Overnight invoice document is not available.",
           "msgctxt": null,
-          "msgstr": "Υπήρξε πρόβλημα με την απόδοση του προτύπου απόδειξης. Αυτό συνήθως προκαλείται από σφάλμα σύνταξης ή μη ορισμένη μεταβλητή στον κώδικα του προτύπου."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
         }
       ],
       "concept_hints": [],
@@ -13442,6 +14511,16 @@
           "msgstr": "Η παραγγελία δεν βρέθηκε."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "User does not have POS cashier permissions.",
           "msgctxt": null,
           "msgstr": "Ο χρήστης δεν έχει δικαιώματα ταμία POS."
@@ -13450,16 +14529,6 @@
           "msgid": "Could not read starter template file.",
           "msgctxt": null,
           "msgstr": "Αδύνατο να διαβαστεί το αρχικό αρχείο προτύπου."
-        },
-        {
-          "msgid": "Gallery template not found.",
-          "msgctxt": null,
-          "msgstr": "Πρότυπο γκαλερί δεν βρέθηκε."
-        },
-        {
-          "msgid": "Not found",
-          "msgctxt": null,
-          "msgstr": "Δεν βρέθηκε"
         }
       ],
       "concept_hints": [],
@@ -15139,6 +16208,16 @@
           "msgstr": "Παρακαλώ επικοινωνήστε με τον διαχειριστή του ιστότοπου για βοήθεια."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -15157,16 +16236,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
         }
       ],
       "concept_hints": [],
@@ -36947,9 +38016,19 @@
           "msgstr": "Τιμολόγιο πλήρους σελίδας A4/Letter με διευθύνσεις χρέωσης/αποστολής, πίνακα προϊόντων με αναλυτικά στοιχεία και προαιρετικό πάνελ «Πώς να πληρώσετε» (τραπεζική μεταφορά + URL order-pay κωδικοποιημένο σε QR), που εμφανίζεται όταν η παραγγελία χρειάζεται ακόμα πληρωμή."
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Τιμολόγιο (WP Overnight)"
+        },
+        {
           "msgid": "Invoice No.",
           "msgctxt": null,
           "msgstr": "Αρ. Τιμολογίου"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
         },
         {
           "msgid": "Tax Invoice",
@@ -36962,34 +38041,24 @@
           "msgstr": "Σφάλμα"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "Αναγνωριστικό Φόρου (ΤΑΒ)"
-        },
-        {
-          "msgid": "Total",
-          "msgctxt": null,
-          "msgstr": "Σύνολο"
-        },
-        {
-          "msgid": "ABN",
-          "msgctxt": null,
-          "msgstr": "ABN"
-        },
-        {
-          "msgid": "Cashier",
-          "msgctxt": null,
-          "msgstr": "Ταμίας"
-        },
-        {
-          "msgid": "CNPJ",
-          "msgctxt": null,
-          "msgstr": "CNPJ"
-        },
-        {
-          "msgid": "Codice Fiscale",
-          "msgctxt": null,
-          "msgstr": "Codice Fiscale"
         }
       ],
       "concept_hints": [],
@@ -37485,6 +38554,31 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "Αναγνωριστικό Φόρου (ΤΑΒ)"
@@ -37508,31 +38602,6 @@
           "msgid": "Codice Fiscale",
           "msgctxt": null,
           "msgstr": "Codice Fiscale"
-        },
-        {
-          "msgid": "CPF",
-          "msgctxt": null,
-          "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
-        },
-        {
-          "msgid": "GSTIN",
-          "msgctxt": null,
-          "msgstr": "GSTIN"
-        },
-        {
-          "msgid": "NIF",
-          "msgctxt": null,
-          "msgstr": "NIF"
         }
       ],
       "concept_hints": [],
@@ -44756,14 +45825,14 @@
           "msgstr": "Το WCPOS Pro είναι πλέον ένα ανεξάρτητο plugin. Κατεβάστε την τελευταία έκδοση από %s"
         },
         {
-          "msgid": "You do not have permission to access the POS.",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Δεν έχετε άδεια πρόσβασης στο POS."
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
         },
         {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Ανοιχτό"
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -45571,49 +46640,49 @@
           "msgstr": "Τιμολόγιο"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Σφάλμα"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Ανοιχτό"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Μερική Πληρωμή"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Πρότυπο"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Το πρότυπο δεν βρέθηκε."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Δημιουργήθηκε το πρότυπο αλλά το αγνές περιεχόμενο δεν μπόρεσε να αποθηκευτεί."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Πρότυπα"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Απενεργοποίηση wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Απενεργοποίηση wp_head"
         }
       ],
       "concept_hints": [],
@@ -45649,9 +46718,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Τιμολόγιο"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
         },
         {
           "msgid": "Packing Slip",
@@ -45659,44 +46753,19 @@
           "msgstr": "Δελτίο αποστολής"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Τιμολόγιο (WP Overnight)"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Σφάλμα"
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Τιμολόγιο πλήρους σελίδας A4/Letter με διευθύνσεις χρέωσης/αποστολής, πίνακα προϊόντων με αναλυτικά στοιχεία και προαιρετικό πάνελ «Πώς να πληρώσετε» (τραπεζική μεταφορά + URL order-pay κωδικοποιημένο σε QR), που εμφανίζεται όταν η παραγγελία χρειάζεται ακόμα πληρωμή."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Οι μερικές πληρωμές με μετρητά δεν υποστηρίζονται από τη ροή ολοκλήρωσης συναλλαγής του POS API."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Τυπώνει με τη χρήση του διαλόγου εκτύπωσης του προγράμματος περιήγησής σας. Εμφανίζεται στη συσκευή χωρίς προσωρινή σύνδεση με server."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> απαιτεί <em>όμορφα</em> permalinks για να λειτουργήσει σωστά"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Επιλέξτε από τα πιο χρησιμοποιημένα"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Δεν έχετε άδεια πρόσβασης στο POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Ανοιχτό"
         }
       ],
       "concept_hints": [],
@@ -45737,49 +46806,49 @@
           "msgstr": "Δελτίο αποστολής"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Σφάλμα"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Τιμολόγιο (WP Overnight)"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Ανοιχτό"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Μερική Πληρωμή"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Πρότυπο"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Το πρότυπο δεν βρέθηκε."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Δημιουργήθηκε το πρότυπο αλλά το αγνές περιεχόμενο δεν μπόρεσε να αποθηκευτεί."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Πρότυπα"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Απενεργοποίηση wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Απενεργοποίηση wp_head"
         }
       ],
       "concept_hints": [],
@@ -45815,9 +46884,29 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Δελτίο αποστολής"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
         },
         {
           "msgid": "Invoice",
@@ -45825,44 +46914,24 @@
           "msgstr": "Τιμολόγιο"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Σφάλμα"
         },
         {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Οι μερικές πληρωμές με μετρητά δεν υποστηρίζονται από τη ροή ολοκλήρωσης συναλλαγής του POS API."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Τυπώνει με τη χρήση του διαλόγου εκτύπωσης του προγράμματος περιήγησής σας. Εμφανίζεται στη συσκευή χωρίς προσωρινή σύνδεση με server."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> απαιτεί <em>όμορφα</em> permalinks για να λειτουργήσει σωστά"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Επιλέξτε από τα πιο χρησιμοποιημένα"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Δεν έχετε άδεια πρόσβασης στο POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Ανοιχτό"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Μερική Πληρωμή"
+          "msgstr": "Τιμολόγιο (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -46090,6 +47159,16 @@
           "msgstr": "Το πρότυπο δεν βρέθηκε."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Σφάλμα"
@@ -46103,16 +47182,6 @@
           "msgid": "Starter template not found.",
           "msgctxt": null,
           "msgstr": "Δεν βρέθηκε εκκινητικό πρότυπο."
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "Δεν ήταν δυνατός ο προσδιορισμός της τρέχουσας συνεδρίας."
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "Το date_created_gmt δεν μπορεί να είναι πάνω από 24 ώρες στο μέλλον."
         }
       ],
       "concept_hints": [],
@@ -49922,6 +50991,16 @@
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία έχει ήδη πληρωθεί."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
@@ -49935,16 +51014,6 @@
           "msgid": "Order",
           "msgctxt": null,
           "msgstr": "Παραγγελία"
-        },
-        {
-          "msgid": "Paid",
-          "msgctxt": null,
-          "msgstr": "Πληρώθηκε"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Ελέγξτε το αρχείο προτύπου για σφάλματα σύνταξης (λείπουν ερωτηματικά, αγκύλες, κλπ.)"
         }
       ],
       "concept_hints": [
@@ -50033,14 +51102,14 @@
           "msgstr": "Παρακαλώ συσκευάστε αυτήν την παραγγελία ως δώρο. Ευχαριστούμε!"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία είναι άκυρη."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         },
         {
-          "msgid": "No fiscal snapshot found for this order.",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         }
       ],
       "concept_hints": [],
@@ -50470,14 +51539,14 @@
           "msgstr": "Πίνακας ID virtual προτύπων προς απενεργοποίηση."
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Η συνεδρία αυθεντικοποίησης έληξε. Παρακαλώ δοκιμάστε να συνδεθείτε ξανά από την εφαρμογή."
+          "msgstr": "Τιμολόγιο (WP Overnight)"
         },
         {
-          "msgid": "Authentication failed.",
+          "msgid": "Packing Slip (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Η αυθεντικοποίηση απέτυχε."
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50564,9 +51633,9 @@
           "msgstr": "Αναγραφή στο υποσέλιδο"
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Η συνεδρία αυθεντικοποίησης έληξε. Παρακαλώ δοκιμάστε να συνδεθείτε ξανά από την εφαρμογή."
+          "msgstr": "Τιμολόγιο (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50994,19 +52063,19 @@
           "msgstr": "Πληρώθηκε"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
           "msgctxt": null,
           "msgstr": "Το πρότυπο περιέχει επικίνδυνη συνάρτηση: %s(). Αυτή η συνάρτηση δεν επιτρέπεται για λόγους ασφαλείας."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
-        },
-        {
-          "msgid": "Sorry, you cannot preview this template.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, δεν μπορείτε να προβάλετε αυτό το πρότυπο."
         }
       ],
       "concept_hints": [],
@@ -51085,14 +52154,14 @@
           "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
         },
         {
-          "msgid": "Order items only with large font, no pricing. Designed for kitchen display or prep stations.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Μόνο τα είδη της παραγγελίας με μεγάλο μέγεθος γραμματοσειράς, χωρίς τιμολόγηση. Σχεδιασμένο για προβολή κουζίνας ή σταθμούς προετοιμασίας."
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         },
         {
-          "msgid": "Pay for order",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Πληρωμή παραγγελίας"
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
         }
       ],
       "concept_hints": [],
@@ -52387,6 +53456,16 @@
           "msgstr": "Παραγγελία"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
@@ -52395,16 +53474,6 @@
           "msgid": "Missing or invalid redirect_uri parameter.",
           "msgctxt": null,
           "msgstr": "Λείπει ή είναι άκυρη η παράμετρος redirect_uri."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία έχει ήδη πληρωθεί."
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Μη έγκυρο όνομα χρήστη ή κωδικός πρόσβασης."
         }
       ],
       "concept_hints": [
@@ -53128,9 +54197,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Τιμολόγιο"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Τιμολόγιο (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53146,36 +54245,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Τιμολόγιο πλήρους σελίδας A4/Letter με διευθύνσεις χρέωσης/αποστολής, πίνακα προϊόντων με αναλυτικά στοιχεία και προαιρετικό πάνελ «Πώς να πληρώσετε» (τραπεζική μεταφορά + URL order-pay κωδικοποιημένο σε QR), που εμφανίζεται όταν η παραγγελία χρειάζεται ακόμα πληρωμή."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Η παραγγελία δεν βρέθηκε ή δεν είναι παραγγελία POS."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Οι μερικές πληρωμές με μετρητά δεν υποστηρίζονται από τη ροή ολοκλήρωσης συναλλαγής του POS API."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Πεδίο στο οποίο γίνεται το αίτημα."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να πληρωθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
         }
       ],
       "concept_hints": [],
@@ -53211,6 +54280,26 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να πληρωθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
@@ -53226,6 +54315,11 @@
           "msgstr": "Παραγγελία"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
@@ -53234,31 +54328,6 @@
           "msgid": "Sorry, this order is invalid and cannot be paid for.",
           "msgctxt": null,
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία είναι άκυρη και δεν μπορεί να πληρωθεί."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Αυτή η παραγγελία δεν μπορεί να πληρωθεί. Παρακαλώ επικοινωνήστε μαζί μας αν χρειάζεστε βοήθεια."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Τιμολόγιο πλήρους σελίδας A4/Letter με διευθύνσεις χρέωσης/αποστολής, πίνακα προϊόντων με αναλυτικά στοιχεία και προαιρετικό πάνελ «Πώς να πληρώσετε» (τραπεζική μεταφορά + URL order-pay κωδικοποιημένο σε QR), που εμφανίζεται όταν η παραγγελία χρειάζεται ακόμα πληρωμή."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία έχει ήδη πληρωθεί."
         }
       ],
       "concept_hints": [],
@@ -53294,9 +54363,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Δελτίο αποστολής"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53312,36 +54411,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Η παραγγελία δεν βρέθηκε ή δεν είναι παραγγελία POS."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Οι μερικές πληρωμές με μετρητά δεν υποστηρίζονται από τη ροή ολοκλήρωσης συναλλαγής του POS API."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Πεδίο στο οποίο γίνεται το αίτημα."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να πληρωθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Το πρότυπο περιέχει επικίνδυνη συνάρτηση: %s(). Αυτή η συνάρτηση δεν επιτρέπεται για λόγους ασφαλείας."
         }
       ],
       "concept_hints": [],
@@ -53377,9 +54446,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του δελτίου συσκευασίας από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Το έγγραφο τιμολογίου του WP Overnight δεν είναι διαθέσιμο."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Δελτίο αποστολής"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Αποδίδει το HTML του τιμολογίου από το PDF Invoices & Packing Slips μέσω του API εγγράφων του WP Overnight."
         },
         {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
@@ -53392,39 +54486,14 @@
           "msgstr": "Παραγγελία"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Δελτίο συσκευασίας (WP Overnight)"
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο."
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία είναι άκυρη και δεν μπορεί να πληρωθεί."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Αυτή η παραγγελία δεν μπορεί να πληρωθεί. Παρακαλώ επικοινωνήστε μαζί μας αν χρειάζεστε βοήθεια."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Η προσφορά ισχύει για 30 ημέρες από την ημερομηνία έκδοσης. Οι τιμές ενδέχεται να αλλάξουν μετά τη λήξη ισχύος. Αυτό δεν αποτελεί απόδειξη ή επιβεβαίωση αγοράς."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Κανένα φορολογικό στιγμιότυπο δεν βρέθηκε για αυτήν την παραγγελία."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Λυπούμαστε, αυτή η παραγγελία έχει ήδη πληρωθεί."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Το πρότυπο περιέχει επικίνδυνη συνάρτηση: %s(). Αυτή η συνάρτηση δεν επιτρέπεται για λόγους ασφαλείας."
         }
       ],
       "concept_hints": [],

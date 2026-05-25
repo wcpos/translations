@@ -599,9 +599,9 @@
           "msgstr": "Włącz permalinki"
         },
         {
-          "msgid": "Uploaded to this template",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Przesłane do tego szablonu"
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -3744,6 +3744,16 @@
           "msgstr": "Uwzględnij tymczasowe diagnostyki HTML renderowane przez PHP dla podglądów bez logiki."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "58mm (Narrow)",
           "msgctxt": null,
           "msgstr": "58mm (Wąski)"
@@ -3767,16 +3777,6 @@
           "msgid": "Paper Size",
           "msgctxt": null,
           "msgstr": "Rozmiar papieru"
-        },
-        {
-          "msgid": "PHP (Legacy)",
-          "msgctxt": null,
-          "msgstr": "PHP (Legacy)"
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Drukowane przy użyciu dialogu druku przeglądarki. Renderuje się na urządzeniu bez konieczności połączenia z serwerem."
         }
       ],
       "concept_hints": [],
@@ -4460,19 +4460,19 @@
           "msgstr": "Prosty interfejs do przyjmowania zamówień WooCommerce w punkcie sprzedaży. Wymaga <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Streamlined receipt with logo, store info, itemized lines, totals and payment — covers what most stores need without the kitchen sink.",
           "msgctxt": null,
           "msgstr": "Uproszczony paragon z logo, danymi sklepu, pozycjami, sumami i płatnością - obejmuje wszystko, czego potrzebuje większość sklepów, bez zbędnych dodatków."
-        },
-        {
-          "msgid": "The refresh token to use for generating a new access token.",
-          "msgctxt": null,
-          "msgstr": "Token odświeżania do użycia w celu wygenerowania nowego tokenu dostępu."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Wystąpił problem z renderowaniem szablonu paragonu. Zwykle jest to spowodowane błędem składniowym lub niezdefiniowaną zmienną w kodzie szablonu."
         }
       ],
       "concept_hints": [],
@@ -5014,7 +5014,7 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API.php:414",
+          "includes/API.php:419",
           "includes/API/Cashier.php:124"
         ]
       },
@@ -5101,7 +5101,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API.php:421",
+          "includes/API.php:426",
           "includes/Templates/Auth.php:314"
         ]
       },
@@ -6060,9 +6060,9 @@
           "msgstr": "Szablon został utworzony, ale nie można zachować surowej zawartości."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
         }
       ],
       "concept_hints": [],
@@ -7256,19 +7256,19 @@
           "msgstr": "Szablon zawiera niebezpieczną funkcję: %s(). Ta funkcja nie jest dozwolona ze względów bezpieczeństwa."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "ID zamówienia lub \"latest\" dla najnowszego zamówienia POS. Pomiń dla danych przykładowych."
         }
       ],
       "concept_hints": [],
@@ -8537,7 +8537,7 @@
         ],
         "references": [
           "includes/API/Orders_Controller.php:302",
-          "includes/API/Products_Controller.php:105",
+          "includes/API/Products_Controller.php:112",
           "includes/API/Product_Variations_Controller.php:109"
         ]
       },
@@ -9207,7 +9207,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "Invalid order."
+          "Print job not found."
         ]
       },
       "related_existing_translations": [
@@ -9257,9 +9257,9 @@
           "msgstr": "Niestety, to zamówienie nie może zostać opłacone. Klucz zamówienia jest brakujący lub nieprawidłowy."
         },
         {
-          "msgid": "Cashier not found.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Nie znaleziono kasjera."
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
         }
       ],
       "concept_hints": [],
@@ -9287,8 +9287,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "Invalid order.",
-          "Invalid receipt mode."
+          "Print job not found.",
+          "Print job could not be created."
         ]
       },
       "related_existing_translations": [
@@ -9355,6 +9355,990 @@
       "format": "php-po",
       "locale": "pl_PL",
       "entry": {
+        "msgid": "Print job not found.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:157",
+          "includes/API/Print_Jobs_Controller.php:177",
+          "includes/API/Print_Jobs_Controller.php:198",
+          "includes/API/Print_Jobs_Controller.php:312"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Print job could not be created.",
+          "Invalid printer token."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Not found",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono"
+        },
+        {
+          "msgid": "Not Found",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono bramki płatności."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono zamówienia."
+        },
+        {
+          "msgid": "Store not found",
+          "msgctxt": null,
+          "msgstr": "Sklep nie znaleziony"
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Sklep nie znaleziony lub niedostępny dla tego kasjera."
+        },
+        {
+          "msgid": "Store not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono sklepu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Print job could not be created.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:214",
+          "includes/API/Print_Jobs_Controller.php:438"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Print job not found.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Template was created but raw content could not be saved.",
+          "msgctxt": null,
+          "msgstr": "Szablon został utworzony, ale nie można zachować surowej zawartości."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Template was installed but could not be retrieved.",
+          "msgctxt": null,
+          "msgstr": "Szablon został zainstalowany, ale nie można go pobrać."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "Could not determine current session.",
+          "msgctxt": null,
+          "msgstr": "Nie można określić bieżącej sesji."
+        },
+        {
+          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt nie może być więcej niż 24 godziny w przyszłości."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono bramki płatności."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:291"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job not found.",
+          "Print job could not be created.",
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "OK",
+          "msgctxt": null,
+          "msgstr": "OK"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Invalid email address.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy adres e-mail."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Invalid order.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowe zamówienie."
+        },
+        {
+          "msgid": "Invalid receipt mode.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy tryb paragonu."
+        },
+        {
+          "msgid": "The refresh token to use for generating a new access token.",
+          "msgctxt": null,
+          "msgstr": "Token odświeżania do użycia w celu wygenerowania nowego tokenu dostępu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "A printer_id is required.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:412"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "Invalid printer token.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Element partii %d musi zawierać numeryczny identyfikator."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Typ identyfikatora podatkowego."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Wartość identyfikatora podatkowego."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "Termiczny paragon od prawej do lewej dla drukarek 80 mm. Odbija wyrównanie kolumn dla arabskiego, hebrajskiego, perskiego i urdu. Wymaga drukarki obsługującej arabską stronę kodową (CP864 lub Windows-1256) - przed zakupem sprawdź instrukcję drukarki."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:468"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Invalid printer token.",
+          "A printer_id is required.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Zamówienie"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono zamówienia."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono bramki płatności."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Zamówienie nie istnieje."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Epson Server Direct Print requires the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:475"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Prints using your browser's print dialog. Requires a server connection to generate the receipt.",
+          "msgctxt": null,
+          "msgstr": "Drukowane przy użyciu dialogu druku przeglądarki. Wymagane jest połączenie z serwerem do wygenerowania paragonu."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
+          "msgctxt": null,
+          "msgstr": "Drukowane przy użyciu dialogu druku przeglądarki. Renderuje się na urządzeniu bez konieczności połączenia z serwerem."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "Prosty interfejs do przyjmowania zamówień WooCommerce w punkcie sprzedaży. Wymaga <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Current page of the collection.",
+          "msgctxt": null,
+          "msgstr": "Bieżąca strona kolekcji."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Star CloudPRNT does not accept the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:486"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "User does not have POS cashier permissions.",
+          "msgctxt": null,
+          "msgstr": "Użytkownik nie ma uprawnień kasjera POS."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono bramki płatności."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "JWT is not configured properly, please contact the admin",
+          "msgctxt": null,
+          "msgstr": "JWT nie jest poprawnie skonfigurowany, skontaktuj się z administratorem"
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Zamówienie nie istnieje."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Sorry, you cannot manage print jobs.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:505"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, you cannot bootstrap payment gateways.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz uruchamiać bramek płatności."
+        },
+        {
+          "msgid": "Sorry, you cannot list templates.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz wyświetlić listy szablonów."
+        },
+        {
+          "msgid": "Sorry, you cannot preview this template.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz zapoznać się z tym szablonem."
+        },
+        {
+          "msgid": "Sorry, you cannot process checkout.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz przeprowadzić kasowania."
+        },
+        {
+          "msgid": "Sorry, you cannot update templates.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz aktualizować szablonów."
+        },
+        {
+          "msgid": "Sorry, you cannot view checkout state.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz wyświetlić stanu kasowania."
+        },
+        {
+          "msgid": "Sorry, you cannot view receipts.",
+          "msgctxt": null,
+          "msgstr": "Przykro mi, nie możesz przeglądać paragonów."
+        },
+        {
+          "msgid": "Sorry, you cannot view this template.",
+          "msgctxt": null,
+          "msgstr": "Przepraszamy, nie możesz wyświetlić tego szablonu."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:150"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Maximum number of items to be returned in result set.",
+          "msgctxt": null,
+          "msgstr": "Maksymalna liczba elementów do zwrócenia w zestawie wyników."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do wyłączania."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do włączania."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "Ogranicz wyniki do szablonów przypisanych do konkretnego sklepu."
+        },
+        {
+          "msgid": "Limit to templates modified after this ISO 8601 date.",
+          "msgctxt": null,
+          "msgstr": "Ogranicz do szablonów zmodyfikowanych po tej dacie w formacie ISO 8601."
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "Wyszukuj szablony po tytule lub opisie."
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Sklep nie znaleziony lub niedostępny dla tego kasjera."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Filtruj według slugu kategorii szablonu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Operator to compare product brand terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:158"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Tablica szablonów do aktualizacji."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do wyłączania."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do włączania."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Adres e-mail %s dodany do danych rozliczeniowych z WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się usunąć szablonu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Operator to compare product category terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:168"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product tag terms.",
+          "Invalid order."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Filtruj według slugu kategorii szablonu."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Tablica szablonów do aktualizacji."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do wyłączania."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do włączania."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Adres e-mail %s dodany do danych rozliczeniowych z WCPOS."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
+        "msgid": "Operator to compare product tag terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms.",
+          "Invalid order.",
+          "Invalid receipt mode."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Tablica szablonów do aktualizacji."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do wyłączania."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Tablica identyfikatorów wirtualnych szablonów do włączania."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "Adres e-mail %s dodany do danych rozliczeniowych z WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się usunąć szablonu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
         "msgid": "Invalid order.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9370,8 +10354,8 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms.",
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order."
         ]
@@ -9458,7 +10442,7 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Operator to compare product tag terms.",
           "Invalid order.",
           "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts."
@@ -9546,7 +10530,7 @@
           "Invalid order.",
           "Invalid receipt mode.",
           "Sorry, you cannot view receipts.",
-          "Failed to retrieve store data"
+          "Duplicate printer id."
         ]
       },
       "related_existing_translations": [
@@ -9591,14 +10575,14 @@
           "msgstr": "Przepraszamy, to zamówienie jest nieważne i nie można go opłacić."
         },
         {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Nie można opłacić tego zamówienia. Skontaktuj się z nami, jeśli potrzebujesz pomocy."
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
         }
       ],
       "concept_hints": [],
@@ -9630,8 +10614,8 @@
         "nearby_source_strings": [
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order.",
-          "Failed to retrieve store data",
-          "Store not found"
+          "Duplicate printer id.",
+          "Failed to retrieve store data"
         ]
       },
       "related_existing_translations": [
@@ -9700,6 +10684,91 @@
       "format": "php-po",
       "locale": "pl_PL",
       "entry": {
+        "msgid": "Duplicate printer id.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Settings.php:684"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "settings"
+        ],
+        "nearby_source_strings": [
+          "No fiscal snapshot found for this order.",
+          "Sorry, you cannot view receipts.",
+          "Failed to retrieve store data",
+          "Store not found"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Nieprawidłowy ID szablonu."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Nie znaleziono kasjera."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Typ identyfikatora podatkowego."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Wartość identyfikatora podatkowego."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Kod kreskowy"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Element partii %d musi zawierać numeryczny identyfikator."
+        },
+        {
+          "msgid": "Missing user_id parameter.",
+          "msgctxt": null,
+          "msgstr": "Brak parametru user_id."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "ID zamówienia lub \"latest\" dla najnowszego zamówienia POS. Pomiń dla danych przykładowych."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "pl_PL",
+      "entry": {
         "msgid": "Failed to retrieve store data",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9711,8 +10780,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Store not found",
           "You do not have permissions to view this data."
         ]
@@ -9794,7 +10863,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Failed to retrieve store data",
           "You do not have permissions to view this data.",
           "Template type."
@@ -11185,6 +12254,16 @@
           "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "Batch item %d must include a numeric id.",
           "msgctxt": null,
           "msgstr": "Element partii %d musi zawierać numeryczny identyfikator."
@@ -11193,16 +12272,6 @@
           "msgid": "Limit results to templates resolved for a specific store.",
           "msgctxt": null,
           "msgstr": "Ogranicz wyniki do szablonów przypisanych do konkretnego sklepu."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "ID zamówienia lub \"latest\" dla najnowszego zamówienia POS. Pomiń dla danych przykładowych."
         }
       ],
       "concept_hints": [],
@@ -12117,19 +13186,19 @@
           "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "Could not determine current session.",
           "msgctxt": null,
           "msgstr": "Nie można określić bieżącej sesji."
-        },
-        {
-          "msgid": "Sorry, you are not allowed to edit this template.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, nie możesz edytować tego szablonu."
-        },
-        {
-          "msgid": "Template not found after update.",
-          "msgctxt": null,
-          "msgstr": "Szablon nie znaleziony po aktualizacji."
         }
       ],
       "concept_hints": [],
@@ -12627,9 +13696,9 @@
           "msgstr": "Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy."
         },
         {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgid": "The WP Overnight invoice document is not available.",
           "msgctxt": null,
-          "msgstr": "Wystąpił problem z renderowaniem szablonu paragonu. Zwykle jest to spowodowane błędem składniowym lub niezdefiniowaną zmienną w kodzie szablonu."
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
         }
       ],
       "concept_hints": [],
@@ -13442,6 +14511,16 @@
           "msgstr": "Nie znaleziono zamówienia."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "User does not have POS cashier permissions.",
           "msgctxt": null,
           "msgstr": "Użytkownik nie ma uprawnień kasjera POS."
@@ -13450,16 +14529,6 @@
           "msgid": "Could not read starter template file.",
           "msgctxt": null,
           "msgstr": "Nie można odczytać pliku szablonu startowego."
-        },
-        {
-          "msgid": "Gallery template not found.",
-          "msgctxt": null,
-          "msgstr": "Szablon galerii nie został znaleziony."
-        },
-        {
-          "msgid": "Not found",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono"
         }
       ],
       "concept_hints": [],
@@ -15139,6 +16208,16 @@
           "msgstr": "Skontaktuj się z administratorem strony, aby uzyskać pomoc."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -15157,16 +16236,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
         }
       ],
       "concept_hints": [],
@@ -36947,9 +38016,19 @@
           "msgstr": "Faktura na całą stronę A4/Letter z adresami rozliczeniowym i dostawy, tabelą pozycji oraz opcjonalnym panelem „Jak zapłacić” (przelew bankowy + kodowany w QR adres URL order-pay), wyświetlanym, gdy zamówienie nadal wymaga płatności."
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
           "msgid": "Invoice No.",
           "msgctxt": null,
           "msgstr": "Nr faktury"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
         },
         {
           "msgid": "Tax Invoice",
@@ -36962,34 +38041,24 @@
           "msgstr": "Błąd"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "NIP"
-        },
-        {
-          "msgid": "Total",
-          "msgctxt": null,
-          "msgstr": "Razem"
-        },
-        {
-          "msgid": "ABN",
-          "msgctxt": null,
-          "msgstr": "ABN"
-        },
-        {
-          "msgid": "Cashier",
-          "msgctxt": null,
-          "msgstr": "Kasjer"
-        },
-        {
-          "msgid": "CNPJ",
-          "msgctxt": null,
-          "msgstr": "CNPJ"
-        },
-        {
-          "msgid": "Codice Fiscale",
-          "msgctxt": null,
-          "msgstr": "Codice Fiscale"
         }
       ],
       "concept_hints": [],
@@ -37485,6 +38554,31 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "NIP"
@@ -37508,31 +38602,6 @@
           "msgid": "Codice Fiscale",
           "msgctxt": null,
           "msgstr": "Codice Fiscale"
-        },
-        {
-          "msgid": "CPF",
-          "msgctxt": null,
-          "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
-        },
-        {
-          "msgid": "GSTIN",
-          "msgctxt": null,
-          "msgstr": "GSTIN"
-        },
-        {
-          "msgid": "NIF",
-          "msgctxt": null,
-          "msgstr": "NIF"
         }
       ],
       "concept_hints": [],
@@ -44756,14 +45825,14 @@
           "msgstr": "WCPOS Pro jest teraz samodzielną wtyczką. Pobierz najnowszą wersję z %s"
         },
         {
-          "msgid": "You do not have permission to access the POS.",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Nie masz uprawnień do dostępu do POS."
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
         },
         {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Otwarte"
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -45571,49 +46640,49 @@
           "msgstr": "Faktura"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Błąd"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Otwarte"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Płatność częściowa"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Szablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono szablonu."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Szablon został utworzony, ale nie można zachować surowej zawartości."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Szablony"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Wyłącz wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Wyłącz wp_head"
         }
       ],
       "concept_hints": [],
@@ -45649,9 +46718,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Faktura"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
         },
         {
           "msgid": "Packing Slip",
@@ -45659,44 +46753,19 @@
           "msgstr": "List pakowy"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Błąd"
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura na całą stronę A4/Letter z adresami rozliczeniowym i dostawy, tabelą pozycji oraz opcjonalnym panelem „Jak zapłacić” (przelew bankowy + kodowany w QR adres URL order-pay), wyświetlanym, gdy zamówienie nadal wymaga płatności."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Częściowe płatności gotówkowe nie są obsługiwane przez przepływ kasowania w API POS."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Drukowane przy użyciu dialogu druku przeglądarki. Renderuje się na urządzeniu bez konieczności połączenia z serwerem."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> wymaga <em>ładnych</em> permalinków do poprawnego działania"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Wybierz z najczęściej używanych"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Nie masz uprawnień do dostępu do POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Otwarte"
         }
       ],
       "concept_hints": [],
@@ -45737,49 +46806,49 @@
           "msgstr": "List pakowy"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Błąd"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Otwarte"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Płatność częściowa"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Szablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono szablonu."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Szablon został utworzony, ale nie można zachować surowej zawartości."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Szablony"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Wyłącz wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Wyłącz wp_head"
         }
       ],
       "concept_hints": [],
@@ -45815,9 +46884,29 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "List pakowy"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
         },
         {
           "msgid": "Invoice",
@@ -45825,44 +46914,24 @@
           "msgstr": "Faktura"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Błąd"
         },
         {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Częściowe płatności gotówkowe nie są obsługiwane przez przepływ kasowania w API POS."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Drukowane przy użyciu dialogu druku przeglądarki. Renderuje się na urządzeniu bez konieczności połączenia z serwerem."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> wymaga <em>ładnych</em> permalinków do poprawnego działania"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Wybierz z najczęściej używanych"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Nie masz uprawnień do dostępu do POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Otwarte"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Płatność częściowa"
+          "msgstr": "Faktura (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -46090,6 +47159,16 @@
           "msgstr": "Nie znaleziono szablonu."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Błąd"
@@ -46103,16 +47182,6 @@
           "msgid": "Starter template not found.",
           "msgctxt": null,
           "msgstr": "Nie znaleziono szablonu startowego."
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "Nie można określić bieżącej sesji."
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "date_created_gmt nie może być więcej niż 24 godziny w przyszłości."
         }
       ],
       "concept_hints": [],
@@ -49922,6 +50991,16 @@
           "msgstr": "Przepraszamy, to zamówienie zostało już opłacone."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
@@ -49935,16 +51014,6 @@
           "msgid": "Order",
           "msgctxt": null,
           "msgstr": "Zamówienie"
-        },
-        {
-          "msgid": "Paid",
-          "msgctxt": null,
-          "msgstr": "Zapłacono"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Sprawdź plik szablonu pod kątem błędów składniowych (brakujących średników, nawiasów itp.)"
         }
       ],
       "concept_hints": [
@@ -50033,14 +51102,14 @@
           "msgstr": "Proszę opakować to zamówienie prezentowe. Dziękujemy!"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Przepraszamy, to zamówienie jest nieważne."
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
         },
         {
-          "msgid": "No fiscal snapshot found for this order.",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
         }
       ],
       "concept_hints": [],
@@ -50470,14 +51539,14 @@
           "msgstr": "Tablica identyfikatorów wirtualnych szablonów do wyłączania."
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Sesja uwierzytelniania wygasła. Spróbuj zalogować się ponownie z aplikacji."
+          "msgstr": "Faktura (WP Overnight)"
         },
         {
-          "msgid": "Authentication failed.",
+          "msgid": "Packing Slip (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Uwierzytelnianie nie powiodło się."
+          "msgstr": "Dokument pakowania (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50564,9 +51633,9 @@
           "msgstr": "Pieczęć stopki"
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Sesja uwierzytelniania wygasła. Spróbuj zalogować się ponownie z aplikacji."
+          "msgstr": "Faktura (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50994,19 +52063,19 @@
           "msgstr": "Zapłacono"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
           "msgctxt": null,
           "msgstr": "Szablon zawiera niebezpieczną funkcję: %s(). Ta funkcja nie jest dozwolona ze względów bezpieczeństwa."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
-        },
-        {
-          "msgid": "Sorry, you cannot preview this template.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, nie możesz zapoznać się z tym szablonem."
         }
       ],
       "concept_hints": [],
@@ -51085,14 +52154,14 @@
           "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
         },
         {
-          "msgid": "Order items only with large font, no pricing. Designed for kitchen display or prep stations.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Tylko pozycje zamówienia, dużą czcionką, bez cen. Przeznaczone do wyświetlacza kuchennego lub stanowisk przygotowania."
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
         },
         {
-          "msgid": "Pay for order",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Opłać zamówienie"
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
         }
       ],
       "concept_hints": [],
@@ -52387,6 +53456,16 @@
           "msgstr": "Zamówienie"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
@@ -52395,16 +53474,6 @@
           "msgid": "Missing or invalid redirect_uri parameter.",
           "msgctxt": null,
           "msgstr": "Brakujący lub nieprawidłowy parametr redirect_uri."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, to zamówienie zostało już opłacone."
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Nieprawidłowa nazwa użytkownika lub hasło."
         }
       ],
       "concept_hints": [
@@ -53128,9 +54197,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Faktura"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53146,36 +54245,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura na całą stronę A4/Letter z adresami rozliczeniowym i dostawy, tabelą pozycji oraz opcjonalnym panelem „Jak zapłacić” (przelew bankowy + kodowany w QR adres URL order-pay), wyświetlanym, gdy zamówienie nadal wymaga płatności."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Częściowe płatności gotówkowe nie są obsługiwane przez przepływ kasowania w API POS."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Zakres, w jakim składane jest żądanie."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Niestety, to zamówienie nie może zostać opłacone. Klucz zamówienia jest brakujący lub nieprawidłowy."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy."
         }
       ],
       "concept_hints": [],
@@ -53211,6 +54280,26 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Niestety, to zamówienie nie może zostać opłacone. Klucz zamówienia jest brakujący lub nieprawidłowy."
@@ -53226,6 +54315,11 @@
           "msgstr": "Zamówienie"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy."
@@ -53234,31 +54328,6 @@
           "msgid": "Sorry, this order is invalid and cannot be paid for.",
           "msgctxt": null,
           "msgstr": "Przepraszamy, to zamówienie jest nieważne i nie można go opłacić."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Nie można opłacić tego zamówienia. Skontaktuj się z nami, jeśli potrzebujesz pomocy."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura na całą stronę A4/Letter z adresami rozliczeniowym i dostawy, tabelą pozycji oraz opcjonalnym panelem „Jak zapłacić” (przelew bankowy + kodowany w QR adres URL order-pay), wyświetlanym, gdy zamówienie nadal wymaga płatności."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, to zamówienie zostało już opłacone."
         }
       ],
       "concept_hints": [],
@@ -53294,9 +54363,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "List pakowy"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53312,36 +54411,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Częściowe płatności gotówkowe nie są obsługiwane przez przepływ kasowania w API POS."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Zakres, w jakim składane jest żądanie."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Niestety, to zamówienie nie może zostać opłacone. Klucz zamówienia jest brakujący lub nieprawidłowy."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Szablon zawiera niebezpieczną funkcję: %s(). Ta funkcja nie jest dozwolona ze względów bezpieczeństwa."
         }
       ],
       "concept_hints": [],
@@ -53377,9 +54446,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "Nie udało się wyrenderować dokumentu faktury WP Overnight dla tego zamówienia."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania WP Overnight jest niedostępny."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML dokumentu pakowania PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight jest niedostępny."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "List pakowy"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Renderuje HTML faktury PDF Invoices & Packing Slips przez API dokumentów WP Overnight."
         },
         {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
@@ -53392,39 +54486,14 @@
           "msgstr": "Zamówienie"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Dokument pakowania (WP Overnight)"
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy."
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, to zamówienie jest nieważne i nie można go opłacić."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Nie można opłacić tego zamówienia. Skontaktuj się z nami, jeśli potrzebujesz pomocy."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Oferta ważna jest przez 30 dni od daty wystawienia. Po upływie tego terminu ceny mogą ulec zmianie. To nie jest paragon ani potwierdzenie zakupu."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono fiskalnego ujęcia dla tego zamówienia."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Przepraszamy, to zamówienie zostało już opłacone."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Szablon zawiera niebezpieczną funkcję: %s(). Ta funkcja nie jest dozwolona ze względów bezpieczeństwa."
         }
       ],
       "concept_hints": [],

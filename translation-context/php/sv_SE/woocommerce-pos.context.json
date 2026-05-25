@@ -599,9 +599,9 @@
           "msgstr": "Aktivera permalänkar"
         },
         {
-          "msgid": "Uploaded to this template",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Uppladdad till denna mall"
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
         }
       ],
       "concept_hints": [],
@@ -3744,6 +3744,16 @@
           "msgstr": "Inkludera tillfälliga PHP-renderade HTML-diagnoser för förhandsvisningar utan logik."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "58mm (Narrow)",
           "msgctxt": null,
           "msgstr": "58 mm (Smalt)"
@@ -3767,16 +3777,6 @@
           "msgid": "Paper Size",
           "msgctxt": null,
           "msgstr": "Pappersstorlek"
-        },
-        {
-          "msgid": "PHP (Legacy)",
-          "msgctxt": null,
-          "msgstr": "PHP (Ärftlig)"
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Skrivs ut med din browsers skrivdialog. Renderas på enheten utan att behöva en serveranslutning."
         }
       ],
       "concept_hints": [],
@@ -4460,19 +4460,19 @@
           "msgstr": "Ett enkelt gränssnitt för att ta WooCommerce-beställningar vid kassan. Kräver <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Streamlined receipt with logo, store info, itemized lines, totals and payment — covers what most stores need without the kitchen sink.",
           "msgctxt": null,
           "msgstr": "Strömlinjeformat kvitto med logotyp, butiksinfo, specificerade rader, totaler och betalning – täcker vad de flesta butiker behöver utan onödiga detaljer."
-        },
-        {
-          "msgid": "The refresh token to use for generating a new access token.",
-          "msgctxt": null,
-          "msgstr": "Uppdateringstoken för att generera en ny åtkomsttoken."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Det uppstod ett problem med att rendera kvittomallen. Detta orsakas vanligtvis av ett syntaxfel eller en odefinierad variabel i mallkoden."
         }
       ],
       "concept_hints": [],
@@ -5014,7 +5014,7 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API.php:414",
+          "includes/API.php:419",
           "includes/API/Cashier.php:124"
         ]
       },
@@ -5101,7 +5101,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API.php:421",
+          "includes/API.php:426",
           "includes/Templates/Auth.php:314"
         ]
       },
@@ -6060,9 +6060,9 @@
           "msgstr": "Mallen skapades men rått innehåll kunde inte sparas."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
         }
       ],
       "concept_hints": [],
@@ -7256,19 +7256,19 @@
           "msgstr": "Mallen innehåller farlig funktion: %s(). Denna funktion är inte tillåten av säkerhetsskäl."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "Order-ID eller \"latest\" för senaste POS-order. Utelämna för exempeldata."
         }
       ],
       "concept_hints": [],
@@ -8537,7 +8537,7 @@
         ],
         "references": [
           "includes/API/Orders_Controller.php:302",
-          "includes/API/Products_Controller.php:105",
+          "includes/API/Products_Controller.php:112",
           "includes/API/Product_Variations_Controller.php:109"
         ]
       },
@@ -9207,7 +9207,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "Invalid order."
+          "Print job not found."
         ]
       },
       "related_existing_translations": [
@@ -9257,9 +9257,9 @@
           "msgstr": "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
         },
         {
-          "msgid": "Cashier not found.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Kassören hittades inte."
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
         }
       ],
       "concept_hints": [],
@@ -9287,8 +9287,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "Invalid order.",
-          "Invalid receipt mode."
+          "Print job not found.",
+          "Print job could not be created."
         ]
       },
       "related_existing_translations": [
@@ -9355,6 +9355,990 @@
       "format": "php-po",
       "locale": "sv_SE",
       "entry": {
+        "msgid": "Print job not found.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:157",
+          "includes/API/Print_Jobs_Controller.php:177",
+          "includes/API/Print_Jobs_Controller.php:198",
+          "includes/API/Print_Jobs_Controller.php:312"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Print job could not be created.",
+          "Invalid printer token."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Not found",
+          "msgctxt": null,
+          "msgstr": "Hittades inte"
+        },
+        {
+          "msgid": "Not Found",
+          "msgctxt": null,
+          "msgstr": "Hittades inte"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte eller är inte en POS-order."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte."
+        },
+        {
+          "msgid": "Store not found",
+          "msgctxt": null,
+          "msgstr": "Butiken hittades inte"
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Butiken hittades inte eller är inte tillgänglig för denna kassör."
+        },
+        {
+          "msgid": "Store not found.",
+          "msgctxt": null,
+          "msgstr": "Butik hittades inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Print job could not be created.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:214",
+          "includes/API/Print_Jobs_Controller.php:438"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Print job not found.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Template was created but raw content could not be saved.",
+          "msgctxt": null,
+          "msgstr": "Mallen skapades men rått innehåll kunde inte sparas."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Template was installed but could not be retrieved.",
+          "msgctxt": null,
+          "msgstr": "Mallen var installerad men kunde inte hämtas."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "Could not determine current session.",
+          "msgctxt": null,
+          "msgstr": "Kunde inte fastställa aktuell session."
+        },
+        {
+          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt får inte vara mer än 24 timmar framåt i tiden."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:291"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job not found.",
+          "Print job could not be created.",
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "OK",
+          "msgctxt": null,
+          "msgstr": "OK"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Invalid email address.",
+          "msgctxt": null,
+          "msgstr": "Ogiltig e-postadress."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Invalid order.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt uppdrag."
+        },
+        {
+          "msgid": "Invalid receipt mode.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt kvittotläge."
+        },
+        {
+          "msgid": "The refresh token to use for generating a new access token.",
+          "msgctxt": null,
+          "msgstr": "Uppdateringstoken för att generera en ny åtkomsttoken."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "A printer_id is required.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:412"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "Invalid printer token.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Batchobjektet %d måste innehålla ett numeriskt id."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte eller är inte en POS-order."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Typ av skatte-ID."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Värde för skatte-ID."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "Höger-till-vänster-termokvitto för 80 mm-skrivare. Speglar kolumnjusteringarna för arabiska, hebreiska, persiska och urdu. Kräver en skrivare som stöder en arabisk kodsida (CP864 eller Windows-1256) — kontrollera skrivarens manual innan du beställer."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:468"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Invalid printer token.",
+          "A printer_id is required.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Order"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte eller är inte en POS-order."
+        },
+        {
+          "msgid": "Order not found.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Ordern existerar inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Epson Server Direct Print requires the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:475"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "A printer_id is required.",
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Prints using your browser's print dialog. Requires a server connection to generate the receipt.",
+          "msgctxt": null,
+          "msgstr": "Skrivs ut med din browsers skrivdialog. Kräver en serveranslutning för att generera kvittot."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
+          "msgctxt": null,
+          "msgstr": "Skrivs ut med din browsers skrivdialog. Renderas på enheten utan att behöva en serveranslutning."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "Ett enkelt gränssnitt för att ta WooCommerce-beställningar vid kassan. Kräver <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Current page of the collection.",
+          "msgctxt": null,
+          "msgstr": "Aktuell sida av samlingen."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Star CloudPRNT does not accept the epos-xml format.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:486"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "User does not have POS cashier permissions.",
+          "msgctxt": null,
+          "msgstr": "Användaren har inte POS-kassörsbehörigheter."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "JWT is not configured properly, please contact the admin",
+          "msgctxt": null,
+          "msgstr": "JWT är inte korrekt konfigurerad, vänligen kontakta administratören"
+        },
+        {
+          "msgid": "Order does not exist.",
+          "msgctxt": null,
+          "msgstr": "Ordern existerar inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Sorry, you cannot manage print jobs.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:505"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Epson Server Direct Print requires the epos-xml format.",
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, you cannot bootstrap payment gateways.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr, du kan inte starta betalningsgateways."
+        },
+        {
+          "msgid": "Sorry, you cannot list templates.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr, du kan inte lista mallar."
+        },
+        {
+          "msgid": "Sorry, you cannot preview this template.",
+          "msgctxt": null,
+          "msgstr": "Beklagar, du kan inte visa denna mall."
+        },
+        {
+          "msgid": "Sorry, you cannot process checkout.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr, du kan inte genomföra utcheckning."
+        },
+        {
+          "msgid": "Sorry, you cannot update templates.",
+          "msgctxt": null,
+          "msgstr": "Beklagar, du kan inte uppdatera mallar."
+        },
+        {
+          "msgid": "Sorry, you cannot view checkout state.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr, du kan inte visa utcheckningsstatus."
+        },
+        {
+          "msgid": "Sorry, you cannot view receipts.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr kan du inte visa kvitton."
+        },
+        {
+          "msgid": "Sorry, you cannot view this template.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr, du kan inte visa denna mall."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:150"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Sorry, you cannot manage print jobs.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Maximum number of items to be returned in result set.",
+          "msgctxt": null,
+          "msgstr": "Maximalt antal objekt som ska returneras i resultatmängden."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att inaktivera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att aktivera."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "Begränsa resultaten till mallar som är lösta för en viss butik."
+        },
+        {
+          "msgid": "Limit to templates modified after this ISO 8601 date.",
+          "msgctxt": null,
+          "msgstr": "Begränsa till mallar modifierade efter detta ISO 8601-datum."
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "Sök mallar efter titel eller beskrivning."
+        },
+        {
+          "msgid": "Store not found or not accessible by this cashier.",
+          "msgctxt": null,
+          "msgstr": "Butiken hittades inte eller är inte tillgänglig för denna kassör."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Filtrera efter mallkategorins slug."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Operator to compare product brand terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:158"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Sorry, you cannot manage print jobs.",
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Matris med mallar att uppdatera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att inaktivera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att aktivera."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "E-postadress %s har lagts till i faktureringsdetaljer från WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Misslyckades att radera mall."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Operator to compare product category terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:168"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
+          "Operator to compare product brand terms.",
+          "Operator to compare product tag terms.",
+          "Invalid order."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Filter by template category slug.",
+          "msgctxt": null,
+          "msgstr": "Filtrera efter mallkategorins slug."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Matris med mallar att uppdatera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att inaktivera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att aktivera."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "E-postadress %s har lagts till i faktureringsdetaljer från WCPOS."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Operator to compare product tag terms.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "REST API collection parameter description."
+        ],
+        "references": [
+          "includes/API/Products_Controller.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Operator to compare product brand terms.",
+          "Operator to compare product category terms.",
+          "Invalid order.",
+          "Invalid receipt mode."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Array of templates to update.",
+          "msgctxt": null,
+          "msgstr": "Matris med mallar att uppdatera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to disable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att inaktivera."
+        },
+        {
+          "msgid": "Array of virtual template IDs to enable.",
+          "msgctxt": null,
+          "msgstr": "Matris med virtuella mall-ID:er att aktivera."
+        },
+        {
+          "msgid": "Email address %s added to billing details from WCPOS.",
+          "msgctxt": null,
+          "msgstr": "E-postadress %s har lagts till i faktureringsdetaljer från WCPOS."
+        },
+        {
+          "msgid": "Failed to delete template.",
+          "msgctxt": null,
+          "msgstr": "Misslyckades att radera mall."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
         "msgid": "Invalid order.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9370,8 +10354,8 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "Operator to compare product category terms.",
+          "Operator to compare product tag terms.",
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order."
         ]
@@ -9458,7 +10442,7 @@
           "receipt"
         ],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Operator to compare product tag terms.",
           "Invalid order.",
           "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts."
@@ -9546,7 +10530,7 @@
           "Invalid order.",
           "Invalid receipt mode.",
           "Sorry, you cannot view receipts.",
-          "Failed to retrieve store data"
+          "Duplicate printer id."
         ]
       },
       "related_existing_translations": [
@@ -9591,14 +10575,14 @@
           "msgstr": "Tyvärr, denna beställning är ogiltig och kan inte betalas."
         },
         {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Denna beställning kan inte betalas. Kontakta oss om du behöver hjälp."
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
         },
         {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
         }
       ],
       "concept_hints": [],
@@ -9630,8 +10614,8 @@
         "nearby_source_strings": [
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order.",
-          "Failed to retrieve store data",
-          "Store not found"
+          "Duplicate printer id.",
+          "Failed to retrieve store data"
         ]
       },
       "related_existing_translations": [
@@ -9700,6 +10684,91 @@
       "format": "php-po",
       "locale": "sv_SE",
       "entry": {
+        "msgid": "Duplicate printer id.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Settings.php:684"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "settings"
+        ],
+        "nearby_source_strings": [
+          "No fiscal snapshot found for this order.",
+          "Sorry, you cannot view receipts.",
+          "Failed to retrieve store data",
+          "Store not found"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Typ av skatte-ID."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Värde för skatte-ID."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Batch item %d must include a numeric id.",
+          "msgctxt": null,
+          "msgstr": "Batchobjektet %d måste innehålla ett numeriskt id."
+        },
+        {
+          "msgid": "Missing user_id parameter.",
+          "msgctxt": null,
+          "msgstr": "Saknad user_id parameter."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "Order-ID eller \"latest\" för senaste POS-order. Utelämna för exempeldata."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
         "msgid": "Failed to retrieve store data",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9711,8 +10780,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "No fiscal snapshot found for this order.",
           "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Store not found",
           "You do not have permissions to view this data."
         ]
@@ -9794,7 +10863,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
           "Failed to retrieve store data",
           "You do not have permissions to view this data.",
           "Template type."
@@ -11185,6 +12254,16 @@
           "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "Batch item %d must include a numeric id.",
           "msgctxt": null,
           "msgstr": "Batchobjektet %d måste innehålla ett numeriskt id."
@@ -11193,16 +12272,6 @@
           "msgid": "Limit results to templates resolved for a specific store.",
           "msgctxt": null,
           "msgstr": "Begränsa resultaten till mallar som är lösta för en viss butik."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "Order-ID eller \"latest\" för senaste POS-order. Utelämna för exempeldata."
         }
       ],
       "concept_hints": [],
@@ -12117,19 +13186,19 @@
           "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "Could not determine current session.",
           "msgctxt": null,
           "msgstr": "Kunde inte fastställa aktuell session."
-        },
-        {
-          "msgid": "Sorry, you are not allowed to edit this template.",
-          "msgctxt": null,
-          "msgstr": "Beklagar, du har inte tillstånd att redigera denna mall."
-        },
-        {
-          "msgid": "Template not found after update.",
-          "msgctxt": null,
-          "msgstr": "Mall hittades inte efter uppdatering."
         }
       ],
       "concept_hints": [],
@@ -12627,9 +13696,9 @@
           "msgstr": "Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig."
         },
         {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgid": "The WP Overnight invoice document is not available.",
           "msgctxt": null,
-          "msgstr": "Det uppstod ett problem med att rendera kvittomallen. Detta orsakas vanligtvis av ett syntaxfel eller en odefinierad variabel i mallkoden."
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
         }
       ],
       "concept_hints": [],
@@ -13442,6 +14511,16 @@
           "msgstr": "Order hittades inte."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "User does not have POS cashier permissions.",
           "msgctxt": null,
           "msgstr": "Användaren har inte POS-kassörsbehörigheter."
@@ -13450,16 +14529,6 @@
           "msgid": "Could not read starter template file.",
           "msgctxt": null,
           "msgstr": "Kunde inte läsa startmallens fil."
-        },
-        {
-          "msgid": "Gallery template not found.",
-          "msgctxt": null,
-          "msgstr": "Gallerimallen kunde inte hittas."
-        },
-        {
-          "msgid": "Not found",
-          "msgctxt": null,
-          "msgstr": "Hittades inte"
         }
       ],
       "concept_hints": [],
@@ -15139,6 +16208,16 @@
           "msgstr": "Kontakta webbplatsadministratören för hjälp."
         },
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -15157,16 +16236,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
         }
       ],
       "concept_hints": [],
@@ -36947,9 +38016,19 @@
           "msgstr": "Faktura i A4/Letter-format med faktura- och leveransadresser, en tabell med specificerade varor och en valfri panel för hur man betalar (banköverföring + QR-kodad order-pay-URL) som visas när ordern fortfarande behöver betalas."
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
           "msgid": "Invoice No.",
           "msgctxt": null,
           "msgstr": "Fakturanr."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
         },
         {
           "msgid": "Tax Invoice",
@@ -36962,34 +38041,24 @@
           "msgstr": "Fel"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "Momsregistreringsnummer"
-        },
-        {
-          "msgid": "Total",
-          "msgctxt": null,
-          "msgstr": "Totalt"
-        },
-        {
-          "msgid": "ABN",
-          "msgctxt": null,
-          "msgstr": "ABN"
-        },
-        {
-          "msgid": "Cashier",
-          "msgctxt": null,
-          "msgstr": "Kassör"
-        },
-        {
-          "msgid": "CNPJ",
-          "msgctxt": null,
-          "msgstr": "CNPJ"
-        },
-        {
-          "msgid": "Codice Fiscale",
-          "msgctxt": null,
-          "msgstr": "Codice Fiscale"
         }
       ],
       "concept_hints": [],
@@ -37485,6 +38554,31 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Tax ID",
           "msgctxt": null,
           "msgstr": "Momsregistreringsnummer"
@@ -37508,31 +38602,6 @@
           "msgid": "Codice Fiscale",
           "msgctxt": null,
           "msgstr": "Codice Fiscale"
-        },
-        {
-          "msgid": "CPF",
-          "msgctxt": null,
-          "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
-        },
-        {
-          "msgid": "EIN",
-          "msgctxt": null,
-          "msgstr": "EIN"
-        },
-        {
-          "msgid": "GSTIN",
-          "msgctxt": null,
-          "msgstr": "GSTIN"
-        },
-        {
-          "msgid": "NIF",
-          "msgctxt": null,
-          "msgstr": "NIF"
         }
       ],
       "concept_hints": [],
@@ -44756,14 +45825,14 @@
           "msgstr": "WCPOS Pro är nu ett fristående plugin. Ladda ner den senaste versionen från %s"
         },
         {
-          "msgid": "You do not have permission to access the POS.",
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
           "msgctxt": null,
-          "msgstr": "Du har inte behörighet att komma åt POS."
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
         },
         {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Öppen"
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
         }
       ],
       "concept_hints": [],
@@ -45571,49 +46640,49 @@
           "msgstr": "Faktura"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Fel"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Öppen"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Delbetalning"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mall"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Mallen hittades inte."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Mallen skapades men rått innehåll kunde inte sparas."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mallar"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Inaktivera wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Inaktivera wp_head"
         }
       ],
       "concept_hints": [],
@@ -45649,9 +46718,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Faktura"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
         },
         {
           "msgid": "Packing Slip",
@@ -45659,44 +46753,19 @@
           "msgstr": "Packlista"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Fel"
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura i A4/Letter-format med faktura- och leveransadresser, en tabell med specificerade varor och en valfri panel för hur man betalar (banköverföring + QR-kodad order-pay-URL) som visas när ordern fortfarande behöver betalas."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Delbetalningar med kontanter stöds inte av POS API-utcheckningen."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Skrivs ut med din browsers skrivdialog. Renderas på enheten utan att behöva en serveranslutning."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> kräver <em>snygga</em> permalänkar för att fungera korrekt"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Välj bland de mest använda"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Du har inte behörighet att komma åt POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Öppen"
         }
       ],
       "concept_hints": [],
@@ -45737,49 +46806,49 @@
           "msgstr": "Packlista"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Fel"
         },
         {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
           "msgid": "POS - Open",
           "msgctxt": "Order status",
           "msgstr": "POS - Öppen"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Delbetalning"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mall"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Mallen hittades inte."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Mallen skapades men rått innehåll kunde inte sparas."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mallar"
-        },
-        {
-          "msgid": "Disable wp_footer",
-          "msgctxt": null,
-          "msgstr": "Inaktivera wp_footer"
-        },
-        {
-          "msgid": "Disable wp_head",
-          "msgctxt": null,
-          "msgstr": "Inaktivera wp_head"
         }
       ],
       "concept_hints": [],
@@ -45815,9 +46884,29 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Packlista"
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
         },
         {
           "msgid": "Invoice",
@@ -45825,44 +46914,24 @@
           "msgstr": "Faktura"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Fel"
         },
         {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Delbetalningar med kontanter stöds inte av POS API-utcheckningen."
-        },
-        {
-          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
-          "msgctxt": null,
-          "msgstr": "Skrivs ut med din browsers skrivdialog. Renderas på enheten utan att behöva en serveranslutning."
-        },
-        {
-          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
-          "msgctxt": null,
-          "msgstr": "<strong>WooCommerce REST API</strong> kräver <em>snygga</em> permalänkar för att fungera korrekt"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Välj bland de mest använda"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Du har inte behörighet att komma åt POS."
-        },
-        {
-          "msgid": "POS - Open",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Öppen"
-        },
-        {
-          "msgid": "POS - Partial Payment",
-          "msgctxt": "Order status",
-          "msgstr": "POS - Delbetalning"
+          "msgstr": "Faktura (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -46090,6 +47159,16 @@
           "msgstr": "Mallen hittades inte."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Fel"
@@ -46103,16 +47182,6 @@
           "msgid": "Starter template not found.",
           "msgctxt": null,
           "msgstr": "Startmallen kunde inte hittas."
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "Kunde inte fastställa aktuell session."
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "date_created_gmt får inte vara mer än 24 timmar framåt i tiden."
         }
       ],
       "concept_hints": [],
@@ -49922,6 +50991,16 @@
           "msgstr": "Tyvärr, denna beställning har redan betalats."
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
@@ -49935,16 +51014,6 @@
           "msgid": "Order",
           "msgctxt": null,
           "msgstr": "Order"
-        },
-        {
-          "msgid": "Paid",
-          "msgctxt": null,
-          "msgstr": "Betald"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Kontrollera mallfilen för syntaxfel (saknade semikolon, parenteser, etc.)"
         }
       ],
       "concept_hints": [
@@ -50033,14 +51102,14 @@
           "msgstr": "Vänligen packa detta paket med presentpapper. Tack!"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Tyvärr, denna beställning är ogiltig."
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
         },
         {
-          "msgid": "No fiscal snapshot found for this order.",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
         }
       ],
       "concept_hints": [],
@@ -50470,14 +51539,14 @@
           "msgstr": "Matris med virtuella mall-ID:er att inaktivera."
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Autentiseringssessionen har gått ut. Försök logga in igen från appen."
+          "msgstr": "Faktura (WP Overnight)"
         },
         {
-          "msgid": "Authentication failed.",
+          "msgid": "Packing Slip (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Autentisering misslyckades."
+          "msgstr": "Packsedel (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50564,9 +51633,9 @@
           "msgstr": "Sidfotens innehåll"
         },
         {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgid": "Invoice (WP Overnight)",
           "msgctxt": null,
-          "msgstr": "Autentiseringssessionen har gått ut. Försök logga in igen från appen."
+          "msgstr": "Faktura (WP Overnight)"
         }
       ],
       "concept_hints": [],
@@ -50994,19 +52063,19 @@
           "msgstr": "Betald"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
           "msgctxt": null,
           "msgstr": "Mallen innehåller farlig funktion: %s(). Denna funktion är inte tillåten av säkerhetsskäl."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
-        },
-        {
-          "msgid": "Sorry, you cannot preview this template.",
-          "msgctxt": null,
-          "msgstr": "Beklagar, du kan inte visa denna mall."
         }
       ],
       "concept_hints": [],
@@ -51085,14 +52154,14 @@
           "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
         },
         {
-          "msgid": "Order items only with large font, no pricing. Designed for kitchen display or prep stations.",
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Endast ordervaror med stor text, inga priser. Utformat för köksdisplay eller förberedelsestationer."
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
         },
         {
-          "msgid": "Pay for order",
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
-          "msgstr": "Betala för beställning"
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
         }
       ],
       "concept_hints": [],
@@ -52387,6 +53456,16 @@
           "msgstr": "Order"
         },
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
@@ -52395,16 +53474,6 @@
           "msgid": "Missing or invalid redirect_uri parameter.",
           "msgctxt": null,
           "msgstr": "Saknad eller ogiltig redirect_uri parameter."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr, denna beställning har redan betalats."
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Ogiltigt användarnamn eller lösenord."
         }
       ],
       "concept_hints": [
@@ -53128,9 +54197,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Invoice",
           "msgctxt": null,
           "msgstr": "Faktura"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "Invoice (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Faktura (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53146,36 +54245,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura i A4/Letter-format med faktura- och leveransadresser, en tabell med specificerade varor och en valfri panel för hur man betalar (banköverföring + QR-kodad order-pay-URL) som visas när ordern fortfarande behöver betalas."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Order hittades inte eller är inte en POS-order."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Delbetalningar med kontanter stöds inte av POS API-utcheckningen."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Omfattning inom vilken begäran görs."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig."
         }
       ],
       "concept_hints": [],
@@ -53211,6 +54280,26 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
@@ -53226,6 +54315,11 @@
           "msgstr": "Order"
         },
         {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig."
@@ -53234,31 +54328,6 @@
           "msgid": "Sorry, this order is invalid and cannot be paid for.",
           "msgctxt": null,
           "msgstr": "Tyvärr, denna beställning är ogiltig och kan inte betalas."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Denna beställning kan inte betalas. Kontakta oss om du behöver hjälp."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
-        },
-        {
-          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
-          "msgctxt": null,
-          "msgstr": "Faktura i A4/Letter-format med faktura- och leveransadresser, en tabell med specificerade varor och en valfri panel för hur man betalar (banköverföring + QR-kodad order-pay-URL) som visas när ordern fortfarande behöver betalas."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr, denna beställning har redan betalats."
         }
       ],
       "concept_hints": [],
@@ -53294,9 +54363,39 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Packlista"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
         },
         {
           "msgid": "JWT is not configured properly, please contact the admin",
@@ -53312,36 +54411,6 @@
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Order hittades inte eller är inte en POS-order."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Delbetalningar med kontanter stöds inte av POS API-utcheckningen."
-        },
-        {
-          "msgid": "Scope under which the request is made.",
-          "msgctxt": null,
-          "msgstr": "Omfattning inom vilken begäran görs."
-        },
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Mallen innehåller farlig funktion: %s(). Denna funktion är inte tillåten av säkerhetsskäl."
         }
       ],
       "concept_hints": [],
@@ -53377,9 +54446,34 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "The WP Overnight invoice document could not be rendered for this order.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument kunde inte återges för denna order."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights packsedelsdokument är inte tillgängligt."
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger packsedel-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnights fakturadokument är inte tillgängligt."
+        },
+        {
           "msgid": "Packing Slip",
           "msgctxt": null,
           "msgstr": "Packlista"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Återger faktura-HTML för PDF Invoices & Packing Slips via WP Overnights dokument-API."
         },
         {
           "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
@@ -53392,39 +54486,14 @@
           "msgstr": "Order"
         },
         {
+          "msgid": "Packing Slip (WP Overnight)",
+          "msgctxt": null,
+          "msgstr": "Packsedel (WP Overnight)"
+        },
+        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig."
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr, denna beställning är ogiltig och kan inte betalas."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Denna beställning kan inte betalas. Kontakta oss om du behöver hjälp."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Ingen fiskalinformation hittades för detta uppdrag."
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Tyvärr, denna beställning har redan betalats."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Mallen innehåller farlig funktion: %s(). Denna funktion är inte tillåten av säkerhetsskäl."
         }
       ],
       "concept_hints": [],
