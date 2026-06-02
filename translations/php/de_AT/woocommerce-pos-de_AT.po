@@ -627,41 +627,88 @@ msgstr "Eindeutiger Bezeichner für den Bestellstatus."
 msgid "Display name of the order status."
 msgstr "Anzeigename des Bestellstatus."
 
-#: includes/API/Print_Jobs_Controller.php:157
-#: includes/API/Print_Jobs_Controller.php:177
-#: includes/API/Print_Jobs_Controller.php:198
-#: includes/API/Print_Jobs_Controller.php:312
+#: includes/API/Print_Jobs_Controller.php:181
+msgid ""
+"The PrintNode API key must be sent in the request body, not the query string."
+msgstr ""
+"Der PrintNode-API-Schlüssel muss im Request-Body gesendet werden, nicht im Query-String."
+
+#: includes/API/Print_Jobs_Controller.php:194
+msgid "A PrintNode API key is required."
+msgstr "Ein PrintNode-API-Schlüssel ist erforderlich."
+
+#: includes/API/Print_Jobs_Controller.php:260
+#: includes/API/Print_Jobs_Controller.php:280
+#: includes/API/Print_Jobs_Controller.php:301
+#: includes/API/Print_Jobs_Controller.php:415
 msgid "Print job not found."
 msgstr "Druckauftrag nicht gefunden."
 
-#: includes/API/Print_Jobs_Controller.php:214
-#: includes/API/Print_Jobs_Controller.php:438
+#: includes/API/Print_Jobs_Controller.php:317
+#: includes/API/Print_Jobs_Controller.php:574
+#: includes/API/Print_Jobs_Controller.php:680
 msgid "Print job could not be created."
 msgstr "Druckauftrag konnte nicht erstellt werden."
 
-#: includes/API/Print_Jobs_Controller.php:291
+#: includes/API/Print_Jobs_Controller.php:394
 msgid "Invalid printer token."
 msgstr "Ungültiges Drucker-Token."
 
-#: includes/API/Print_Jobs_Controller.php:412
+#: includes/API/Print_Jobs_Controller.php:516
 msgid "A printer_id is required."
 msgstr "Eine printer_id ist erforderlich."
 
-#: includes/API/Print_Jobs_Controller.php:468
+#: includes/API/Print_Jobs_Controller.php:539
+msgid "PrintNode print jobs require an order and a template."
+msgstr ""
+"Für PrintNode-Druckaufträge werden eine Bestellung und eine Vorlage benötigt."
+
+#: includes/API/Print_Jobs_Controller.php:554
+#: includes/API/Print_Jobs_Controller.php:651
+msgid "Unknown printer."
+msgstr "Unbekannter Drucker."
+
+#: includes/API/Print_Jobs_Controller.php:602
+msgid "Unknown order."
+msgstr "Unbekannte Bestellung."
+
+#: includes/API/Print_Jobs_Controller.php:611
+msgid "Unknown template."
+msgstr "Unbekannte Vorlage."
+
+#: includes/API/Print_Jobs_Controller.php:627
+msgid "The selected template cannot be printed on this printer."
+msgstr ""
+"Die ausgewählte Vorlage kann mit diesem Drucker nicht gedruckt werden."
+
+#: includes/API/Print_Jobs_Controller.php:665
+msgid "Test print is not available for this printer yet."
+msgstr "Der Testdruck ist für diesen Drucker noch nicht verfügbar."
+
+#: includes/API/Print_Jobs_Controller.php:704
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr ""
+"Bei diesem PrintNode-Drucker fehlen der API-Schlüssel oder die Drucker-ID."
+
+#: includes/API/Print_Jobs_Controller.php:718
+msgid "Could not generate the test print."
+msgstr "Der Testdruck konnte nicht erstellt werden."
+
+#: includes/API/Print_Jobs_Controller.php:766
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print akzeptiert nur bestellungsbasierte ePOS-Print-Aufträge, keine Rohdaten."
 
-#: includes/API/Print_Jobs_Controller.php:475
+#: includes/API/Print_Jobs_Controller.php:773
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print benötigt das epos-xml-Format."
 
-#: includes/API/Print_Jobs_Controller.php:486
+#: includes/API/Print_Jobs_Controller.php:784
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT akzeptiert das epos-xml-Format nicht."
 
-#: includes/API/Print_Jobs_Controller.php:505
+#: includes/API/Print_Jobs_Controller.php:803
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Leider haben Sie keine Berechtigung, Druckaufträge zu verwalten."
 
@@ -705,7 +752,7 @@ msgstr "Es wurde kein fiskalischer Snapshot für diese Bestellung gefunden."
 msgid "Sorry, you cannot view receipts."
 msgstr "Es tut uns leid, Sie können keine Belege anzeigen."
 
-#: includes/API/Settings.php:684
+#: includes/API/Settings.php:706
 msgid "Duplicate printer id."
 msgstr "Doppelte printer_id."
 
@@ -1143,6 +1190,21 @@ msgstr "Danke für Ihren Einkauf!"
 #: includes/Services/Receipt_I18n_Labels.php:166
 msgid "Tax"
 msgstr "Steuern"
+
+#: includes/Services/PrintNode_Client.php:200
+msgid "PrintNode authentication failed."
+msgstr "Die PrintNode-Authentifizierung ist fehlgeschlagen."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/PrintNode_Client.php:222
+#, php-format
+msgid "PrintNode request failed with status %d."
+msgstr "PrintNode-Anfrage mit Status %d fehlgeschlagen."
+
+#: includes/Services/PrintNode_Client.php:250
+msgid "PrintNode returned an unexpected print job response."
+msgstr ""
+"PrintNode hat eine unerwartete Antwort für den Druckauftrag zurückgegeben."
 
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Receipt_Data_Builder.php:94

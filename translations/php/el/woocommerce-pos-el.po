@@ -628,41 +628,87 @@ msgstr "Μοναδικός αναγνωριστικός για την κατάσ
 msgid "Display name of the order status."
 msgstr "Όνομα εμφάνισης της κατάστασης παραγγελίας."
 
-#: includes/API/Print_Jobs_Controller.php:157
-#: includes/API/Print_Jobs_Controller.php:177
-#: includes/API/Print_Jobs_Controller.php:198
-#: includes/API/Print_Jobs_Controller.php:312
+#: includes/API/Print_Jobs_Controller.php:181
+msgid ""
+"The PrintNode API key must be sent in the request body, not the query string."
+msgstr ""
+"Το κλειδί API του PrintNode πρέπει να σταλεί στο σώμα του αιτήματος, όχι στο query string."
+
+#: includes/API/Print_Jobs_Controller.php:194
+msgid "A PrintNode API key is required."
+msgstr "Απαιτείται κλειδί API του PrintNode."
+
+#: includes/API/Print_Jobs_Controller.php:260
+#: includes/API/Print_Jobs_Controller.php:280
+#: includes/API/Print_Jobs_Controller.php:301
+#: includes/API/Print_Jobs_Controller.php:415
 msgid "Print job not found."
 msgstr "Δεν βρέθηκε εργασία εκτύπωσης."
 
-#: includes/API/Print_Jobs_Controller.php:214
-#: includes/API/Print_Jobs_Controller.php:438
+#: includes/API/Print_Jobs_Controller.php:317
+#: includes/API/Print_Jobs_Controller.php:574
+#: includes/API/Print_Jobs_Controller.php:680
 msgid "Print job could not be created."
 msgstr "Δεν ήταν δυνατή η δημιουργία της εργασίας εκτύπωσης."
 
-#: includes/API/Print_Jobs_Controller.php:291
+#: includes/API/Print_Jobs_Controller.php:394
 msgid "Invalid printer token."
 msgstr "Μη έγκυρο token εκτυπωτή."
 
-#: includes/API/Print_Jobs_Controller.php:412
+#: includes/API/Print_Jobs_Controller.php:516
 msgid "A printer_id is required."
 msgstr "Απαιτείται printer_id."
 
-#: includes/API/Print_Jobs_Controller.php:468
+#: includes/API/Print_Jobs_Controller.php:539
+msgid "PrintNode print jobs require an order and a template."
+msgstr ""
+"Οι εργασίες εκτύπωσης του PrintNode απαιτούν μια παραγγελία και ένα πρότυπο."
+
+#: includes/API/Print_Jobs_Controller.php:554
+#: includes/API/Print_Jobs_Controller.php:651
+msgid "Unknown printer."
+msgstr "Άγνωστος εκτυπωτής."
+
+#: includes/API/Print_Jobs_Controller.php:602
+msgid "Unknown order."
+msgstr "Άγνωστη παραγγελία."
+
+#: includes/API/Print_Jobs_Controller.php:611
+msgid "Unknown template."
+msgstr "Άγνωστο πρότυπο."
+
+#: includes/API/Print_Jobs_Controller.php:627
+msgid "The selected template cannot be printed on this printer."
+msgstr "Το επιλεγμένο πρότυπο δεν μπορεί να εκτυπωθεί σε αυτόν τον εκτυπωτή."
+
+#: includes/API/Print_Jobs_Controller.php:665
+msgid "Test print is not available for this printer yet."
+msgstr ""
+"Η δοκιμαστική εκτύπωση δεν είναι ακόμη διαθέσιμη για αυτόν τον εκτυπωτή."
+
+#: includes/API/Print_Jobs_Controller.php:704
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr "Αυτός ο εκτυπωτής PrintNode δεν έχει κλειδί API ή ID εκτυπωτή."
+
+#: includes/API/Print_Jobs_Controller.php:718
+msgid "Could not generate the test print."
+msgstr "Δεν ήταν δυνατή η δημιουργία της δοκιμαστικής εκτύπωσης."
+
+#: includes/API/Print_Jobs_Controller.php:766
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Το Epson Server Direct Print δέχεται μόνο εργασίες ePOS-Print βάσει παραγγελίας, όχι ακατέργαστα payloads."
 
-#: includes/API/Print_Jobs_Controller.php:475
+#: includes/API/Print_Jobs_Controller.php:773
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Το Epson Server Direct Print απαιτεί τη μορφή epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:486
+#: includes/API/Print_Jobs_Controller.php:784
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Το Star CloudPRNT δεν δέχεται τη μορφή epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:505
+#: includes/API/Print_Jobs_Controller.php:803
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Λυπούμαστε, δεν μπορείτε να διαχειριστείτε εργασίες εκτύπωσης."
 
@@ -706,7 +752,7 @@ msgstr "Κανένα φορολογικό στιγμιότυπο δεν βρέθ
 msgid "Sorry, you cannot view receipts."
 msgstr "Δυστυχώς, δεν επιτρέπεται η προβολή των αποδείξεων."
 
-#: includes/API/Settings.php:684
+#: includes/API/Settings.php:706
 msgid "Duplicate printer id."
 msgstr "Διπλό printer id."
 
@@ -1143,6 +1189,21 @@ msgstr "Ευχαριστούμε για την αγορά σας!"
 #: includes/Services/Receipt_I18n_Labels.php:166
 msgid "Tax"
 msgstr "Φόρος"
+
+#: includes/Services/PrintNode_Client.php:200
+msgid "PrintNode authentication failed."
+msgstr "Η ταυτοποίηση στο PrintNode απέτυχε."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/PrintNode_Client.php:222
+#, php-format
+msgid "PrintNode request failed with status %d."
+msgstr "Η αίτηση στο PrintNode απέτυχε με κωδικό κατάστασης %d."
+
+#: includes/Services/PrintNode_Client.php:250
+msgid "PrintNode returned an unexpected print job response."
+msgstr ""
+"Το PrintNode επέστρεψε μη αναμενόμενη απάντηση για την εργασία εκτύπωσης."
 
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Receipt_Data_Builder.php:94

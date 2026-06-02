@@ -628,41 +628,86 @@ msgstr "Egyedi azonosító a rendelés állapotához."
 msgid "Display name of the order status."
 msgstr "A rendelés állapotának megjelenítési neve."
 
-#: includes/API/Print_Jobs_Controller.php:157
-#: includes/API/Print_Jobs_Controller.php:177
-#: includes/API/Print_Jobs_Controller.php:198
-#: includes/API/Print_Jobs_Controller.php:312
+#: includes/API/Print_Jobs_Controller.php:181
+msgid ""
+"The PrintNode API key must be sent in the request body, not the query string."
+msgstr ""
+"A PrintNode API-kulcsot a kérés törzsében kell elküldeni, nem a lekérdezési sztringben."
+
+#: includes/API/Print_Jobs_Controller.php:194
+msgid "A PrintNode API key is required."
+msgstr "Szükség van egy PrintNode API-kulcsra."
+
+#: includes/API/Print_Jobs_Controller.php:260
+#: includes/API/Print_Jobs_Controller.php:280
+#: includes/API/Print_Jobs_Controller.php:301
+#: includes/API/Print_Jobs_Controller.php:415
 msgid "Print job not found."
 msgstr "A nyomtatási feladat nem található."
 
-#: includes/API/Print_Jobs_Controller.php:214
-#: includes/API/Print_Jobs_Controller.php:438
+#: includes/API/Print_Jobs_Controller.php:317
+#: includes/API/Print_Jobs_Controller.php:574
+#: includes/API/Print_Jobs_Controller.php:680
 msgid "Print job could not be created."
 msgstr "A nyomtatási feladatot nem sikerült létrehozni."
 
-#: includes/API/Print_Jobs_Controller.php:291
+#: includes/API/Print_Jobs_Controller.php:394
 msgid "Invalid printer token."
 msgstr "Érvénytelen nyomtatótoken."
 
-#: includes/API/Print_Jobs_Controller.php:412
+#: includes/API/Print_Jobs_Controller.php:516
 msgid "A printer_id is required."
 msgstr "A printer_id megadása kötelező."
 
-#: includes/API/Print_Jobs_Controller.php:468
+#: includes/API/Print_Jobs_Controller.php:539
+msgid "PrintNode print jobs require an order and a template."
+msgstr "A PrintNode nyomtatási feladatokhoz rendelés és sablon szükséges."
+
+#: includes/API/Print_Jobs_Controller.php:554
+#: includes/API/Print_Jobs_Controller.php:651
+msgid "Unknown printer."
+msgstr "Ismeretlen nyomtató."
+
+#: includes/API/Print_Jobs_Controller.php:602
+msgid "Unknown order."
+msgstr "Ismeretlen rendelés."
+
+#: includes/API/Print_Jobs_Controller.php:611
+msgid "Unknown template."
+msgstr "Ismeretlen sablon."
+
+#: includes/API/Print_Jobs_Controller.php:627
+msgid "The selected template cannot be printed on this printer."
+msgstr "A kijelölt sablont nem lehet erre a nyomtatóra nyomtatni."
+
+#: includes/API/Print_Jobs_Controller.php:665
+msgid "Test print is not available for this printer yet."
+msgstr "Ehhez a nyomtatóhoz még nem érhető el próbanyomtatás."
+
+#: includes/API/Print_Jobs_Controller.php:704
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr ""
+"Ehhez a PrintNode nyomtatóhoz hiányzik az API-kulcs vagy a nyomtatóazonosító."
+
+#: includes/API/Print_Jobs_Controller.php:718
+msgid "Could not generate the test print."
+msgstr "Nem sikerült elkészíteni a próbanyomatot."
+
+#: includes/API/Print_Jobs_Controller.php:766
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Az Epson Server Direct Print csak rendelésalapú ePOS-Print feladatokat fogad el, nyers payloadokat nem."
 
-#: includes/API/Print_Jobs_Controller.php:475
+#: includes/API/Print_Jobs_Controller.php:773
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Az Epson Server Direct Print az epos-xml formátumot igényli."
 
-#: includes/API/Print_Jobs_Controller.php:486
+#: includes/API/Print_Jobs_Controller.php:784
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "A Star CloudPRNT nem fogadja el az epos-xml formátumot."
 
-#: includes/API/Print_Jobs_Controller.php:505
+#: includes/API/Print_Jobs_Controller.php:803
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Sajnos nem kezelhet nyomtatási feladatokat."
 
@@ -706,7 +751,7 @@ msgstr "Nem található adózati pillanatkép ehhez a rendeléshez."
 msgid "Sorry, you cannot view receipts."
 msgstr "Sajnálatos módon nem tekinthet meg számlákat."
 
-#: includes/API/Settings.php:684
+#: includes/API/Settings.php:706
 msgid "Duplicate printer id."
 msgstr "Duplikált nyomtatóazonosító."
 
@@ -1140,6 +1185,20 @@ msgstr "Köszönjük vásárlását!"
 #: includes/Services/Receipt_I18n_Labels.php:166
 msgid "Tax"
 msgstr "ÁFA"
+
+#: includes/Services/PrintNode_Client.php:200
+msgid "PrintNode authentication failed."
+msgstr "A PrintNode hitelesítése sikertelen."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/PrintNode_Client.php:222
+#, php-format
+msgid "PrintNode request failed with status %d."
+msgstr "A PrintNode-kérés %d HTTP-állapotkóddal sikertelen."
+
+#: includes/Services/PrintNode_Client.php:250
+msgid "PrintNode returned an unexpected print job response."
+msgstr "A PrintNode váratlan nyomtatási feladat-választ adott vissza."
 
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Receipt_Data_Builder.php:94

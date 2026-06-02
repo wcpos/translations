@@ -619,41 +619,84 @@ msgstr "注文ステータスの一意識別子。"
 msgid "Display name of the order status."
 msgstr "注文ステータスの表示名。"
 
-#: includes/API/Print_Jobs_Controller.php:157
-#: includes/API/Print_Jobs_Controller.php:177
-#: includes/API/Print_Jobs_Controller.php:198
-#: includes/API/Print_Jobs_Controller.php:312
+#: includes/API/Print_Jobs_Controller.php:181
+msgid ""
+"The PrintNode API key must be sent in the request body, not the query string."
+msgstr "PrintNode APIキーは、クエリ文字列ではなくリクエストボディで送信する必要があります。"
+
+#: includes/API/Print_Jobs_Controller.php:194
+msgid "A PrintNode API key is required."
+msgstr "PrintNode APIキーが必要です。"
+
+#: includes/API/Print_Jobs_Controller.php:260
+#: includes/API/Print_Jobs_Controller.php:280
+#: includes/API/Print_Jobs_Controller.php:301
+#: includes/API/Print_Jobs_Controller.php:415
 msgid "Print job not found."
 msgstr "印刷ジョブが見つかりません。"
 
-#: includes/API/Print_Jobs_Controller.php:214
-#: includes/API/Print_Jobs_Controller.php:438
+#: includes/API/Print_Jobs_Controller.php:317
+#: includes/API/Print_Jobs_Controller.php:574
+#: includes/API/Print_Jobs_Controller.php:680
 msgid "Print job could not be created."
 msgstr "印刷ジョブを作成できませんでした。"
 
-#: includes/API/Print_Jobs_Controller.php:291
+#: includes/API/Print_Jobs_Controller.php:394
 msgid "Invalid printer token."
 msgstr "プリンターのトークンが無効です。"
 
-#: includes/API/Print_Jobs_Controller.php:412
+#: includes/API/Print_Jobs_Controller.php:516
 msgid "A printer_id is required."
 msgstr "printer_id は必須です。"
 
-#: includes/API/Print_Jobs_Controller.php:468
+#: includes/API/Print_Jobs_Controller.php:539
+msgid "PrintNode print jobs require an order and a template."
+msgstr "PrintNodeの印刷ジョブには、注文とテンプレートが必要です。"
+
+#: includes/API/Print_Jobs_Controller.php:554
+#: includes/API/Print_Jobs_Controller.php:651
+msgid "Unknown printer."
+msgstr "プリンターが見つかりません。"
+
+#: includes/API/Print_Jobs_Controller.php:602
+msgid "Unknown order."
+msgstr "注文が見つかりません。"
+
+#: includes/API/Print_Jobs_Controller.php:611
+msgid "Unknown template."
+msgstr "テンプレートが見つかりません。"
+
+#: includes/API/Print_Jobs_Controller.php:627
+msgid "The selected template cannot be printed on this printer."
+msgstr "選択したテンプレートは、このプリンターでは印刷できません。"
+
+#: includes/API/Print_Jobs_Controller.php:665
+msgid "Test print is not available for this printer yet."
+msgstr "このプリンターではまだテスト印刷を利用できません。"
+
+#: includes/API/Print_Jobs_Controller.php:704
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr "このPrintNodeプリンターには、APIキーまたはプリンターIDがありません。"
+
+#: includes/API/Print_Jobs_Controller.php:718
+msgid "Could not generate the test print."
+msgstr "テスト印刷を生成できませんでした。"
+
+#: includes/API/Print_Jobs_Controller.php:766
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print は、raw ペイロードではなく、注文ベースの ePOS-Print ジョブのみを受け付けます。"
 
-#: includes/API/Print_Jobs_Controller.php:475
+#: includes/API/Print_Jobs_Controller.php:773
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print には epos-xml 形式が必要です。"
 
-#: includes/API/Print_Jobs_Controller.php:486
+#: includes/API/Print_Jobs_Controller.php:784
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT は epos-xml 形式を受け付けません。"
 
-#: includes/API/Print_Jobs_Controller.php:505
+#: includes/API/Print_Jobs_Controller.php:803
 msgid "Sorry, you cannot manage print jobs."
 msgstr "申し訳ありませんが、印刷ジョブを管理する権限がありません。"
 
@@ -696,7 +739,7 @@ msgstr "この注文には会計スナップショットがありません。"
 msgid "Sorry, you cannot view receipts."
 msgstr "申し訳ございませんが、レシートを表示できません。"
 
-#: includes/API/Settings.php:684
+#: includes/API/Settings.php:706
 msgid "Duplicate printer id."
 msgstr "プリンター ID が重複しています。"
 
@@ -1120,6 +1163,20 @@ msgstr "ご購入ありがとうございます！"
 #: includes/Services/Receipt_I18n_Labels.php:166
 msgid "Tax"
 msgstr "税金"
+
+#: includes/Services/PrintNode_Client.php:200
+msgid "PrintNode authentication failed."
+msgstr "PrintNodeの認証に失敗しました。"
+
+#. translators: %d: HTTP status code.
+#: includes/Services/PrintNode_Client.php:222
+#, php-format
+msgid "PrintNode request failed with status %d."
+msgstr "PrintNodeのリクエストはステータス %d で失敗しました。"
+
+#: includes/Services/PrintNode_Client.php:250
+msgid "PrintNode returned an unexpected print job response."
+msgstr "PrintNodeから予期しない印刷ジョブ応答が返されました。"
 
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Receipt_Data_Builder.php:94

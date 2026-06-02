@@ -623,41 +623,84 @@ msgstr "ตัวระบุเฉพาะสำหรับสถานะค
 msgid "Display name of the order status."
 msgstr "ชื่อที่แสดงของสถานะคำสั่งซื้อ"
 
-#: includes/API/Print_Jobs_Controller.php:157
-#: includes/API/Print_Jobs_Controller.php:177
-#: includes/API/Print_Jobs_Controller.php:198
-#: includes/API/Print_Jobs_Controller.php:312
+#: includes/API/Print_Jobs_Controller.php:181
+msgid ""
+"The PrintNode API key must be sent in the request body, not the query string."
+msgstr "ต้องส่งคีย์ PrintNode API ในเนื้อหาคำขอ ไม่ใช่ใน query string."
+
+#: includes/API/Print_Jobs_Controller.php:194
+msgid "A PrintNode API key is required."
+msgstr "ต้องใช้คีย์ PrintNode API"
+
+#: includes/API/Print_Jobs_Controller.php:260
+#: includes/API/Print_Jobs_Controller.php:280
+#: includes/API/Print_Jobs_Controller.php:301
+#: includes/API/Print_Jobs_Controller.php:415
 msgid "Print job not found."
 msgstr "ไม่พบงานพิมพ์"
 
-#: includes/API/Print_Jobs_Controller.php:214
-#: includes/API/Print_Jobs_Controller.php:438
+#: includes/API/Print_Jobs_Controller.php:317
+#: includes/API/Print_Jobs_Controller.php:574
+#: includes/API/Print_Jobs_Controller.php:680
 msgid "Print job could not be created."
 msgstr "ไม่สามารถสร้างงานพิมพ์ได้"
 
-#: includes/API/Print_Jobs_Controller.php:291
+#: includes/API/Print_Jobs_Controller.php:394
 msgid "Invalid printer token."
 msgstr "โทเค็นเครื่องพิมพ์ไม่ถูกต้อง"
 
-#: includes/API/Print_Jobs_Controller.php:412
+#: includes/API/Print_Jobs_Controller.php:516
 msgid "A printer_id is required."
 msgstr "ต้องระบุ printer_id"
 
-#: includes/API/Print_Jobs_Controller.php:468
+#: includes/API/Print_Jobs_Controller.php:539
+msgid "PrintNode print jobs require an order and a template."
+msgstr "งานพิมพ์ PrintNode ต้องมีคำสั่งซื้อและเทมเพลต"
+
+#: includes/API/Print_Jobs_Controller.php:554
+#: includes/API/Print_Jobs_Controller.php:651
+msgid "Unknown printer."
+msgstr "ไม่รู้จักเครื่องพิมพ์"
+
+#: includes/API/Print_Jobs_Controller.php:602
+msgid "Unknown order."
+msgstr "ไม่รู้จักคำสั่งซื้อ"
+
+#: includes/API/Print_Jobs_Controller.php:611
+msgid "Unknown template."
+msgstr "ไม่รู้จักเทมเพลต"
+
+#: includes/API/Print_Jobs_Controller.php:627
+msgid "The selected template cannot be printed on this printer."
+msgstr "เทมเพลตที่เลือกไม่สามารถพิมพ์บนเครื่องพิมพ์นี้ได้"
+
+#: includes/API/Print_Jobs_Controller.php:665
+msgid "Test print is not available for this printer yet."
+msgstr "ยังไม่รองรับการพิมพ์ทดสอบสำหรับเครื่องพิมพ์นี้"
+
+#: includes/API/Print_Jobs_Controller.php:704
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr "เครื่องพิมพ์ PrintNode นี้ไม่มีคีย์ API หรือรหัสเครื่องพิมพ์"
+
+#: includes/API/Print_Jobs_Controller.php:718
+msgid "Could not generate the test print."
+msgstr "ไม่สามารถสร้างงานพิมพ์ทดสอบได้"
+
+#: includes/API/Print_Jobs_Controller.php:766
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print รองรับเฉพาะงาน ePOS-Print ที่อิงตามคำสั่งซื้อเท่านั้น ไม่รองรับเพย์โหลดดิบ"
 
-#: includes/API/Print_Jobs_Controller.php:475
+#: includes/API/Print_Jobs_Controller.php:773
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print ต้องใช้รูปแบบ epos-xml"
 
-#: includes/API/Print_Jobs_Controller.php:486
+#: includes/API/Print_Jobs_Controller.php:784
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT ไม่รองรับรูปแบบ epos-xml"
 
-#: includes/API/Print_Jobs_Controller.php:505
+#: includes/API/Print_Jobs_Controller.php:803
 msgid "Sorry, you cannot manage print jobs."
 msgstr "ขออภัย คุณไม่มีสิทธิ์จัดการงานพิมพ์"
 
@@ -701,7 +744,7 @@ msgstr "ไม่พบข้อมูลสรุปการเงินสำ
 msgid "Sorry, you cannot view receipts."
 msgstr "ขออภัย คุณไม่สามารถดูใบเสร็จได้"
 
-#: includes/API/Settings.php:684
+#: includes/API/Settings.php:706
 msgid "Duplicate printer id."
 msgstr "พบ printer_id ซ้ำ"
 
@@ -1130,6 +1173,20 @@ msgstr "ขอบคุณสำหรับการซื้อสินค้
 #: includes/Services/Receipt_I18n_Labels.php:166
 msgid "Tax"
 msgstr "ภาษี"
+
+#: includes/Services/PrintNode_Client.php:200
+msgid "PrintNode authentication failed."
+msgstr "การตรวจสอบสิทธิ์ PrintNode ล้มเหลว"
+
+#. translators: %d: HTTP status code.
+#: includes/Services/PrintNode_Client.php:222
+#, php-format
+msgid "PrintNode request failed with status %d."
+msgstr "คำขอ PrintNode ล้มเหลวด้วยสถานะ %d."
+
+#: includes/Services/PrintNode_Client.php:250
+msgid "PrintNode returned an unexpected print job response."
+msgstr "PrintNode ส่งคืนการตอบกลับงานพิมพ์ที่ไม่คาดคิด"
 
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Receipt_Data_Builder.php:94
