@@ -85,21 +85,21 @@ msgid ""
 msgstr ""
 "<strong>WCPOS</strong> nécessite <a href=\"%1$s\">WCPOS Pro %2$s ou supérieur</a>. Veuillez <a href=\"%3$s\">installer et activer WCPOS Pro</a>"
 
-#: includes/Admin/Consent.php:311
+#: includes/Admin/Consent.php:317
 msgid "You do not have permission to update WCPOS settings."
 msgstr "Vous n’avez pas l’autorisation de modifier les réglages de WCPOS."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:327
+#: includes/Admin/Consent.php:333
 msgid "Invalid consent value."
 msgstr "Valeur de consentement invalide."
 
-#: includes/Admin/Consent.php:332
+#: includes/Admin/Consent.php:338
 msgid "Unable to load general settings."
 msgstr "Impossible de charger les réglages généraux."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:364
+#: includes/Admin/Consent.php:370
 msgid "No current user."
 msgstr "Aucun utilisateur actuel."
 
@@ -503,6 +503,7 @@ msgstr "La passerelle de paiement n’est pas disponible pour le paiement POS."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Checkout_Controller.php:249
+#: includes/API/Receipts_Controller.php:159
 msgid "Order not found."
 msgstr "Commande introuvable."
 
@@ -628,87 +629,100 @@ msgstr "Identifiant unique pour le statut de la commande."
 msgid "Display name of the order status."
 msgstr "Nom d'affichage du statut de la commande."
 
-#: includes/API/Print_Jobs_Controller.php:181
+#: includes/API/Print_Jobs_Controller.php:194
 msgid ""
 "The PrintNode API key must be sent in the request body, not the query string."
 msgstr ""
 "La clé API PrintNode doit être envoyée dans le corps de la requête, pas dans la chaîne de requête."
 
-#: includes/API/Print_Jobs_Controller.php:194
+#: includes/API/Print_Jobs_Controller.php:207
 msgid "A PrintNode API key is required."
 msgstr "Une clé API PrintNode est requise."
 
-#: includes/API/Print_Jobs_Controller.php:260
-#: includes/API/Print_Jobs_Controller.php:280
-#: includes/API/Print_Jobs_Controller.php:301
-#: includes/API/Print_Jobs_Controller.php:415
+#: includes/API/Print_Jobs_Controller.php:254
+msgid ""
+"The Star Online API key must be sent in the request body, not the query string."
+msgstr ""
+"La clé API Star Online doit être envoyée dans le corps de la requête, pas dans la chaîne de requête."
+
+#: includes/API/Print_Jobs_Controller.php:269
+msgid ""
+"A Star Online API key and a valid stario.online CloudPRNT URL are required."
+msgstr ""
+"Une clé API Star Online et une URL CloudPRNT stario.online valide sont requises."
+
+#: includes/API/Print_Jobs_Controller.php:330
+#: includes/API/Print_Jobs_Controller.php:350
+#: includes/API/Print_Jobs_Controller.php:371
+#: includes/API/Print_Jobs_Controller.php:485
 msgid "Print job not found."
 msgstr "Travail d'impression introuvable."
 
-#: includes/API/Print_Jobs_Controller.php:317
-#: includes/API/Print_Jobs_Controller.php:574
-#: includes/API/Print_Jobs_Controller.php:680
+#: includes/API/Print_Jobs_Controller.php:387
+#: includes/API/Print_Jobs_Controller.php:624
+#: includes/API/Print_Jobs_Controller.php:736
+#: includes/API/Print_Jobs_Controller.php:774
 msgid "Print job could not be created."
 msgstr "Le travail d'impression n’a pas pu être créé."
 
-#: includes/API/Print_Jobs_Controller.php:394
+#: includes/API/Print_Jobs_Controller.php:464
 msgid "Invalid printer token."
 msgstr "Jeton d’imprimante invalide."
 
-#: includes/API/Print_Jobs_Controller.php:516
+#: includes/API/Print_Jobs_Controller.php:566
 msgid "A printer_id is required."
 msgstr "Un printer_id est requis."
 
-#: includes/API/Print_Jobs_Controller.php:539
+#: includes/API/Print_Jobs_Controller.php:589
 msgid "PrintNode print jobs require an order and a template."
 msgstr ""
 "Les tâches d’impression PrintNode nécessitent une commande et un modèle."
 
-#: includes/API/Print_Jobs_Controller.php:554
-#: includes/API/Print_Jobs_Controller.php:651
+#: includes/API/Print_Jobs_Controller.php:604
+#: includes/API/Print_Jobs_Controller.php:701
 msgid "Unknown printer."
 msgstr "Imprimante inconnue."
 
-#: includes/API/Print_Jobs_Controller.php:602
+#: includes/API/Print_Jobs_Controller.php:652
 msgid "Unknown order."
 msgstr "Commande inconnue."
 
-#: includes/API/Print_Jobs_Controller.php:611
+#: includes/API/Print_Jobs_Controller.php:661
 msgid "Unknown template."
 msgstr "Modèle inconnu."
 
-#: includes/API/Print_Jobs_Controller.php:627
+#: includes/API/Print_Jobs_Controller.php:677
 msgid "The selected template cannot be printed on this printer."
 msgstr "Le modèle sélectionné ne peut pas être imprimé sur cette imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:665
+#: includes/API/Print_Jobs_Controller.php:721
 msgid "Test print is not available for this printer yet."
 msgstr ""
 "L’impression de test n’est pas encore disponible pour cette imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:704
+#: includes/API/Print_Jobs_Controller.php:812
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr "Cette imprimante PrintNode n’a pas sa clé API ou son ID d’imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:718
+#: includes/API/Print_Jobs_Controller.php:826
 msgid "Could not generate the test print."
 msgstr "Impossible de générer l’impression de test."
 
-#: includes/API/Print_Jobs_Controller.php:766
+#: includes/API/Print_Jobs_Controller.php:876
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print n’accepte que les travaux ePOS-Print basés sur des commandes, pas les charges utiles brutes."
 
-#: includes/API/Print_Jobs_Controller.php:773
+#: includes/API/Print_Jobs_Controller.php:883
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print exige le format epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:784
+#: includes/API/Print_Jobs_Controller.php:894
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT n’accepte pas le format epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:803
+#: includes/API/Print_Jobs_Controller.php:913
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Désolé, vous ne pouvez pas gérer les travaux d'impression."
 
@@ -735,24 +749,46 @@ msgid "Operator to compare product tag terms."
 msgstr "Opérateur de comparaison des termes d’étiquette des produits."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:81
+#: includes/API/Receipts_Controller.php:106
 msgid "Invalid order."
 msgstr "Commande invalide."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:92
+#: includes/API/Receipts_Controller.php:117
 msgid "Invalid receipt mode."
 msgstr "Mode de reçu invalide."
 
-#: includes/API/Receipts_Controller.php:105
+#: includes/API/Receipts_Controller.php:130
 msgid "No fiscal snapshot found for this order."
 msgstr "Aucune capture fiscale trouvée pour cette commande."
 
-#: includes/API/Receipts_Controller.php:133
+#: includes/API/Receipts_Controller.php:168
+msgid "A template_id is required."
+msgstr "Un template_id est requis."
+
+#. translators: Error message displayed when a template cannot be found.
+#: includes/API/Receipts_Controller.php:177
+#: includes/Template_Router.php:221
+#: includes/Template_Router.php:239
+msgid "Template not found."
+msgstr "Modèle non trouvé."
+
+#: includes/API/Receipts_Controller.php:189
+#: includes/API/Receipts_Controller.php:197
+msgid "Could not generate the receipt PDF."
+msgstr "Impossible de générer le PDF du reçu."
+
+#: includes/API/Receipts_Controller.php:224
 msgid "Sorry, you cannot view receipts."
 msgstr "Désolé, vous ne pouvez pas consulter les reçus."
 
-#: includes/API/Settings.php:706
+#: includes/API/Settings.php:717
+msgid ""
+"Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
+msgstr ""
+"Les imprimantes Star Online nécessitent une clé API, une URL CloudPRNT stario.online valide et un appareil."
+
+#: includes/API/Settings.php:728
 msgid "Duplicate printer id."
 msgstr "ID d’imprimante en double."
 
@@ -2901,6 +2937,34 @@ msgstr "Arguments invalides fournis"
 msgid "Invalid visibility option provided"
 msgstr "Option de visibilité invalide fournie"
 
+#: includes/Services/Star_Online_Client.php:133
+msgid "Star Online returned an unexpected print job response."
+msgstr ""
+"Star Online a renvoyé une réponse inattendue pour la tâche d'impression."
+
+#: includes/Services/Star_Online_Client.php:209
+msgid "Star Online authentication failed."
+msgstr "L'authentification Star Online a échoué."
+
+#: includes/Services/Star_Online_Client.php:217
+msgid ""
+"Star Online rejected the request. Check that the API key has the required permissions."
+msgstr ""
+"Star Online a rejeté la requête. Vérifiez que la clé API dispose des autorisations requises."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/Star_Online_Client.php:228
+#, php-format
+msgid "Star Online request failed with status %d."
+msgstr "La requête Star Online a échoué avec le code d'état %d."
+
+#. translators: %s: WP Overnight document type.
+#: includes/Services/Template_Pdf_Service.php:92
+#: includes/Services/Template_Pdf_Service.php:105
+#, php-format
+msgid "WP Overnight %s PDF could not be generated."
+msgstr "Le PDF %s de WP Overnight n'a pas pu être généré."
+
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:68
 msgctxt "Post Type General Name"
@@ -3623,12 +3687,6 @@ msgid ""
 msgstr ""
 "Le modèle contient une fonction dangereuse : %s(). Cette fonction n'est pas autorisée pour des raisons de sécurité."
 
-#. translators: Error message displayed when a template cannot be found.
-#: includes/Template_Router.php:221
-#: includes/Template_Router.php:239
-msgid "Template not found."
-msgstr "Modèle non trouvé."
-
 #. translators: Document title shown for the POS page.
 #: templates/pos.php:14
 msgid "Point of Sale"
@@ -3654,6 +3712,6 @@ msgid ""
 msgstr ""
 "Le document de bon de livraison WP Overnight n’a pas pu être généré pour cette commande."
 
-#: woocommerce-pos.php:131
+#: woocommerce-pos.php:132
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "Le plugin WCPOS n'a pas pu se charger correctement."
