@@ -851,7 +851,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Consent.php:311"
+          "includes/Admin/Consent.php:317"
         ]
       },
       "source_usage": {
@@ -936,7 +936,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Admin/Consent.php:327"
+          "includes/Admin/Consent.php:333"
         ]
       },
       "source_usage": {
@@ -1019,7 +1019,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Consent.php:332"
+          "includes/Admin/Consent.php:338"
         ]
       },
       "source_usage": {
@@ -1104,7 +1104,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Admin/Consent.php:364"
+          "includes/Admin/Consent.php:370"
         ]
       },
       "source_usage": {
@@ -6546,11 +6546,14 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API/Checkout_Controller.php:249"
+          "includes/API/Checkout_Controller.php:249",
+          "includes/API/Receipts_Controller.php:159"
         ]
       },
       "source_usage": {
-        "areas": [],
+        "areas": [
+          "receipt"
+        ],
         "nearby_source_strings": [
           "Payment gateway not found.",
           "Payment gateway is not available for POS checkout.",
@@ -6612,8 +6615,10 @@
       ],
       "concept_hints": [],
       "risk": {
-        "level": "normal",
-        "reasons": []
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
       }
     },
     {
@@ -8416,7 +8421,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:181"
+          "includes/API/Print_Jobs_Controller.php:194"
         ]
       },
       "source_usage": {
@@ -8425,7 +8430,7 @@
           "Unique identifier for the order status.",
           "Display name of the order status.",
           "A PrintNode API key is required.",
-          "Print job not found."
+          "The Star Online API key must be sent in the request body, not the query string."
         ]
       },
       "related_existing_translations": [
@@ -8508,7 +8513,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:194"
+          "includes/API/Print_Jobs_Controller.php:207"
         ]
       },
       "source_usage": {
@@ -8516,8 +8521,8 @@
         "nearby_source_strings": [
           "Display name of the order status.",
           "The PrintNode API key must be sent in the request body, not the query string.",
-          "Print job not found.",
-          "Print job could not be created."
+          "The Star Online API key must be sent in the request body, not the query string.",
+          "A Star Online API key and a valid stario.online CloudPRNT URL are required."
         ]
       },
       "related_existing_translations": [
@@ -8595,15 +8600,12 @@
       "format": "php-po",
       "locale": "en_US",
       "entry": {
-        "msgid": "Print job not found.",
+        "msgid": "The Star Online API key must be sent in the request body, not the query string.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:260",
-          "includes/API/Print_Jobs_Controller.php:280",
-          "includes/API/Print_Jobs_Controller.php:301",
-          "includes/API/Print_Jobs_Controller.php:415"
+          "includes/API/Print_Jobs_Controller.php:254"
         ]
       },
       "source_usage": {
@@ -8611,6 +8613,193 @@
         "nearby_source_strings": [
           "The PrintNode API key must be sent in the request body, not the query string.",
           "A PrintNode API key is required.",
+          "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "Print job not found."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Order key mismatch.",
+          "msgctxt": null,
+          "msgstr": "Order key mismatch."
+        },
+        {
+          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgctxt": null,
+          "msgstr": "Auth session expired. Please try logging in again from the app."
+        },
+        {
+          "msgid": "Edit your template code in the editor below. The content editor uses syntax highlighting based on the template language.",
+          "msgctxt": null,
+          "msgstr": "Edit your template code in the editor below. The content editor uses syntax highlighting based on the template language."
+        },
+        {
+          "msgid": "Ensure all variables used in the template are defined",
+          "msgctxt": null,
+          "msgstr": "Ensure all variables used in the template are defined"
+        },
+        {
+          "msgid": "Invalid auth session. Please try logging in again from the app.",
+          "msgctxt": null,
+          "msgstr": "Invalid auth session. Please try logging in again from the app."
+        },
+        {
+          "msgid": "JWT is not configured properly, please contact the admin",
+          "msgctxt": null,
+          "msgstr": "JWT is not configured properly, please contact the admin"
+        },
+        {
+          "msgid": "Maximum number of items to be returned in result set.",
+          "msgctxt": null,
+          "msgstr": "Maximum number of items to be returned in result set."
+        },
+        {
+          "msgid": "No POS orders found. Create an order in the POS to preview templates.",
+          "msgctxt": null,
+          "msgstr": "No POS orders found. Create an order in the POS to preview templates."
+        }
+      ],
+      "concept_hints": [
+        {
+          "id": "key_identifier_vs_keyboard_key",
+          "meaning": "Identifier, credential, or keyboard key depending on the source context.",
+          "avoid_meanings": [
+            "physical door key unless source context clearly says lock or door"
+          ],
+          "style": "Use the source comments, key name, and references to choose credential versus keyboard meaning."
+        }
+      ],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "concept glossary match"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:269"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "A PrintNode API key is required.",
+          "The Star Online API key must be sent in the request body, not the query string.",
+          "Print job not found.",
+          "Print job could not be created."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Order key mismatch.",
+          "msgctxt": null,
+          "msgstr": "Order key mismatch."
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
+        },
+        {
+          "msgid": "These templates are automatically detected from your plugin and theme files. They cannot be deleted.",
+          "msgctxt": null,
+          "msgstr": "These templates are automatically detected from your plugin and theme files. They cannot be deleted."
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
+        },
+        {
+          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
+          "msgctxt": null,
+          "msgstr": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Authentication required.",
+          "msgctxt": null,
+          "msgstr": "Authentication required."
+        }
+      ],
+      "concept_hints": [
+        {
+          "id": "key_identifier_vs_keyboard_key",
+          "meaning": "Identifier, credential, or keyboard key depending on the source context.",
+          "avoid_meanings": [
+            "physical door key unless source context clearly says lock or door"
+          ],
+          "style": "Use the source comments, key name, and references to choose credential versus keyboard meaning."
+        }
+      ],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "concept glossary match"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Print job not found.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:330",
+          "includes/API/Print_Jobs_Controller.php:350",
+          "includes/API/Print_Jobs_Controller.php:371",
+          "includes/API/Print_Jobs_Controller.php:485"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "The Star Online API key must be sent in the request body, not the query string.",
+          "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job could not be created.",
           "Invalid printer token."
         ]
@@ -8684,15 +8873,16 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:317",
-          "includes/API/Print_Jobs_Controller.php:574",
-          "includes/API/Print_Jobs_Controller.php:680"
+          "includes/API/Print_Jobs_Controller.php:387",
+          "includes/API/Print_Jobs_Controller.php:624",
+          "includes/API/Print_Jobs_Controller.php:736",
+          "includes/API/Print_Jobs_Controller.php:774"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "A PrintNode API key is required.",
+          "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Invalid printer token.",
           "A printer_id is required."
@@ -8767,7 +8957,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:394"
+          "includes/API/Print_Jobs_Controller.php:464"
         ]
       },
       "source_usage": {
@@ -8848,7 +9038,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:516"
+          "includes/API/Print_Jobs_Controller.php:566"
         ]
       },
       "source_usage": {
@@ -8929,7 +9119,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:539"
+          "includes/API/Print_Jobs_Controller.php:589"
         ]
       },
       "source_usage": {
@@ -9010,8 +9200,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:554",
-          "includes/API/Print_Jobs_Controller.php:651"
+          "includes/API/Print_Jobs_Controller.php:604",
+          "includes/API/Print_Jobs_Controller.php:701"
         ]
       },
       "source_usage": {
@@ -9049,7 +9239,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:602"
+          "includes/API/Print_Jobs_Controller.php:652"
         ]
       },
       "source_usage": {
@@ -9132,7 +9322,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:611"
+          "includes/API/Print_Jobs_Controller.php:661"
         ]
       },
       "source_usage": {
@@ -9215,7 +9405,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:627"
+          "includes/API/Print_Jobs_Controller.php:677"
         ]
       },
       "source_usage": {
@@ -9296,7 +9486,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:665"
+          "includes/API/Print_Jobs_Controller.php:721"
         ]
       },
       "source_usage": {
@@ -9377,7 +9567,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:704"
+          "includes/API/Print_Jobs_Controller.php:812"
         ]
       },
       "source_usage": {
@@ -9469,7 +9659,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:718"
+          "includes/API/Print_Jobs_Controller.php:826"
         ]
       },
       "source_usage": {
@@ -9550,7 +9740,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:766"
+          "includes/API/Print_Jobs_Controller.php:876"
         ]
       },
       "source_usage": {
@@ -9631,7 +9821,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:773"
+          "includes/API/Print_Jobs_Controller.php:883"
         ]
       },
       "source_usage": {
@@ -9712,7 +9902,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:784"
+          "includes/API/Print_Jobs_Controller.php:894"
         ]
       },
       "source_usage": {
@@ -9793,7 +9983,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:803"
+          "includes/API/Print_Jobs_Controller.php:913"
         ]
       },
       "source_usage": {
@@ -10208,7 +10398,7 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API/Receipts_Controller.php:81"
+          "includes/API/Receipts_Controller.php:106"
         ]
       },
       "source_usage": {
@@ -10296,7 +10486,7 @@
           "REST API schema field label or error message."
         ],
         "references": [
-          "includes/API/Receipts_Controller.php:92"
+          "includes/API/Receipts_Controller.php:117"
         ]
       },
       "source_usage": {
@@ -10307,7 +10497,7 @@
           "Operator to compare product tag terms.",
           "Invalid order.",
           "No fiscal snapshot found for this order.",
-          "Sorry, you cannot view receipts."
+          "A template_id is required."
         ]
       },
       "related_existing_translations": [
@@ -10381,7 +10571,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Receipts_Controller.php:105"
+          "includes/API/Receipts_Controller.php:130"
         ]
       },
       "source_usage": {
@@ -10391,8 +10581,8 @@
         "nearby_source_strings": [
           "Invalid order.",
           "Invalid receipt mode.",
-          "Sorry, you cannot view receipts.",
-          "Duplicate printer id."
+          "A template_id is required.",
+          "Template not found."
         ]
       },
       "related_existing_translations": [
@@ -10461,12 +10651,12 @@
       "format": "php-po",
       "locale": "en_US",
       "entry": {
-        "msgid": "Sorry, you cannot view receipts.",
+        "msgid": "A template_id is required.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Receipts_Controller.php:133"
+          "includes/API/Receipts_Controller.php:168"
         ]
       },
       "source_usage": {
@@ -10476,8 +10666,269 @@
         "nearby_source_strings": [
           "Invalid receipt mode.",
           "No fiscal snapshot found for this order.",
-          "Duplicate printer id.",
-          "Failed to retrieve store data"
+          "Template not found.",
+          "Could not generate the receipt PDF."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Template"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Template"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
+        },
+        {
+          "msgid": "Create your own custom templates or copy a default template to customize.",
+          "msgctxt": null,
+          "msgstr": "Create your own custom templates or copy a default template to customize."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Invalid template ID."
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Template contains dangerous function: %s(). This function is not allowed for security reasons."
+        },
+        {
+          "msgid": "This template is currently active",
+          "msgctxt": null,
+          "msgstr": "This template is currently active"
+        },
+        {
+          "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
+          "msgctxt": null,
+          "msgstr": "WCPOS Pro is now a standalone plugin. Download the latest version from %s"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Template not found.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "Error message displayed when a template cannot be found."
+        ],
+        "references": [
+          "includes/API/Receipts_Controller.php:177",
+          "includes/Template_Router.php:221",
+          "includes/Template_Router.php:239"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt",
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "No fiscal snapshot found for this order.",
+          "A template_id is required.",
+          "Could not generate the receipt PDF.",
+          "Sorry, you cannot view receipts."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Not found",
+          "msgctxt": null,
+          "msgstr": "Not found"
+        },
+        {
+          "msgid": "Not Found",
+          "msgctxt": null,
+          "msgstr": "Not Found"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Template"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Template"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Cashier not found."
+        },
+        {
+          "msgid": "No active template found.",
+          "msgctxt": null,
+          "msgstr": "No active template found."
+        },
+        {
+          "msgid": "Not found in Trash",
+          "msgctxt": null,
+          "msgstr": "Not found in Trash"
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Settings with id %s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %s not found"
+        },
+        {
+          "msgid": "Store not found",
+          "msgctxt": null,
+          "msgstr": "Store not found"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Could not generate the receipt PDF.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Receipts_Controller.php:189",
+          "includes/API/Receipts_Controller.php:197"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "A template_id is required.",
+          "Template not found.",
+          "Sorry, you cannot view receipts.",
+          "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Could not determine current session.",
+          "msgctxt": null,
+          "msgstr": "Could not determine current session."
+        },
+        {
+          "msgid": "JWT is not configured properly, please contact the admin",
+          "msgctxt": null,
+          "msgstr": "JWT is not configured properly, please contact the admin"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
+        },
+        {
+          "msgid": "Try resetting to the default receipt template",
+          "msgctxt": null,
+          "msgstr": "Try resetting to the default receipt template"
+        },
+        {
+          "msgid": "You do not have permission to access the POS.",
+          "msgctxt": null,
+          "msgstr": "You do not have permission to access the POS."
+        },
+        {
+          "msgid": "You do not have permission to view this receipt.",
+          "msgctxt": null,
+          "msgstr": "You do not have permission to view this receipt."
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgctxt": null,
+          "msgstr": "Auth session expired. Please try logging in again from the app."
+        },
+        {
+          "msgid": "Can not save settings with id %s",
+          "msgctxt": null,
+          "msgstr": "Can not save settings with id %s"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Cashier not found."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Sorry, you cannot view receipts.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Receipts_Controller.php:224"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "Template not found.",
+          "Could not generate the receipt PDF.",
+          "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "Duplicate printer id."
         ]
       },
       "related_existing_translations": [
@@ -10546,12 +10997,12 @@
       "format": "php-po",
       "locale": "en_US",
       "entry": {
-        "msgid": "Duplicate printer id.",
+        "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:706"
+          "includes/API/Settings.php:717"
         ]
       },
       "source_usage": {
@@ -10559,8 +11010,103 @@
           "settings"
         ],
         "nearby_source_strings": [
-          "No fiscal snapshot found for this order.",
+          "Could not generate the receipt PDF.",
           "Sorry, you cannot view receipts.",
+          "Duplicate printer id.",
+          "Failed to retrieve store data"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Order key mismatch.",
+          "msgctxt": null,
+          "msgstr": "Order key mismatch."
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
+        },
+        {
+          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
+          "msgctxt": null,
+          "msgstr": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Create your own custom templates or copy a default template to customize.",
+          "msgctxt": null,
+          "msgstr": "Create your own custom templates or copy a default template to customize."
+        },
+        {
+          "msgid": "Disable All Styles and Scripts",
+          "msgctxt": null,
+          "msgstr": "Disable All Styles and Scripts"
+        }
+      ],
+      "concept_hints": [
+        {
+          "id": "key_identifier_vs_keyboard_key",
+          "meaning": "Identifier, credential, or keyboard key depending on the source context.",
+          "avoid_meanings": [
+            "physical door key unless source context clearly says lock or door"
+          ],
+          "style": "Use the source comments, key name, and references to choose credential versus keyboard meaning."
+        }
+      ],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "concept glossary match",
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Duplicate printer id.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Settings.php:728"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "settings"
+        ],
+        "nearby_source_strings": [
+          "Sorry, you cannot view receipts.",
+          "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
           "Failed to retrieve store data",
           "Store not found"
         ]
@@ -10637,7 +11183,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Sorry, you cannot view receipts.",
+          "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
           "Duplicate printer id.",
           "Store not found",
           "You do not have permissions to view this data."
@@ -32365,7 +32911,7 @@
           "Settings with id %s not found",
           "Can not save settings with id %s",
           "Invalid visibility option provided",
-          "Template"
+          "Star Online returned an unexpected print job response."
         ]
       },
       "related_existing_translations": [
@@ -32449,8 +32995,8 @@
         "nearby_source_strings": [
           "Can not save settings with id %s",
           "Invalid arguments provided",
-          "Template",
-          "Template Archives"
+          "Star Online returned an unexpected print job response.",
+          "Star Online authentication failed."
         ]
       },
       "related_existing_translations": [
@@ -32519,6 +33065,404 @@
       "format": "php-po",
       "locale": "en_US",
       "entry": {
+        "msgid": "Star Online returned an unexpected print job response.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Services/Star_Online_Client.php:133"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Invalid arguments provided",
+          "Invalid visibility option provided",
+          "Star Online authentication failed.",
+          "Star Online rejected the request. Check that the API key has the required permissions."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Maximum number of items to be returned in result set.",
+          "msgctxt": null,
+          "msgstr": "Maximum number of items to be returned in result set."
+        },
+        {
+          "msgid": "No POS orders found. Create an order in the POS to preview templates.",
+          "msgctxt": null,
+          "msgstr": "No POS orders found. Create an order in the POS to preview templates."
+        },
+        {
+          "msgid": "Online Only",
+          "msgctxt": null,
+          "msgstr": "Online Only"
+        },
+        {
+          "msgid": "POS & Online",
+          "msgctxt": null,
+          "msgstr": "POS & Online"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Star Online authentication failed.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Services/Star_Online_Client.php:209"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Invalid visibility option provided",
+          "Star Online returned an unexpected print job response.",
+          "Star Online rejected the request. Check that the API key has the required permissions.",
+          "Star Online request failed with status %d."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Authentication failed.",
+          "msgctxt": null,
+          "msgstr": "Authentication failed."
+        },
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Failed to generate authentication tokens.",
+          "msgctxt": null,
+          "msgstr": "Failed to generate authentication tokens."
+        },
+        {
+          "msgid": "Authentication required.",
+          "msgctxt": null,
+          "msgstr": "Authentication required."
+        },
+        {
+          "msgid": "Failed to activate template.",
+          "msgctxt": null,
+          "msgstr": "Failed to activate template."
+        },
+        {
+          "msgid": "Failed to create template copy.",
+          "msgctxt": null,
+          "msgstr": "Failed to create template copy."
+        },
+        {
+          "msgid": "Failed to retrieve store data",
+          "msgctxt": null,
+          "msgstr": "Failed to retrieve store data"
+        },
+        {
+          "msgid": "Failed to retrieve store data.",
+          "msgctxt": null,
+          "msgstr": "Failed to retrieve store data."
+        },
+        {
+          "msgid": "Failed to revoke session.",
+          "msgctxt": null,
+          "msgstr": "Failed to revoke session."
+        },
+        {
+          "msgid": "Failed to revoke sessions.",
+          "msgctxt": null,
+          "msgstr": "Failed to revoke sessions."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Star Online rejected the request. Check that the API key has the required permissions.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Services/Star_Online_Client.php:217"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star Online returned an unexpected print job response.",
+          "Star Online authentication failed.",
+          "Star Online request failed with status %d.",
+          "WP Overnight %s PDF could not be generated."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Order key mismatch.",
+          "msgctxt": null,
+          "msgstr": "Order key mismatch."
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
+          "msgctxt": null,
+          "msgstr": "Check the template file for syntax errors (missing semicolons, brackets, etc.)"
+        },
+        {
+          "msgid": "Scope under which the request is made.",
+          "msgctxt": null,
+          "msgstr": "Scope under which the request is made."
+        },
+        {
+          "msgid": "The user ID that owns the session.",
+          "msgctxt": null,
+          "msgstr": "The user ID that owns the session."
+        },
+        {
+          "msgid": "WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.",
+          "msgctxt": null,
+          "msgstr": "WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated."
+        },
+        {
+          "msgid": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly",
+          "msgctxt": null,
+          "msgstr": "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
+        },
+        {
+          "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
+          "msgctxt": null,
+          "msgstr": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
+        },
+        {
+          "msgid": "Auth session expired. Please try logging in again from the app.",
+          "msgctxt": null,
+          "msgstr": "Auth session expired. Please try logging in again from the app."
+        }
+      ],
+      "concept_hints": [
+        {
+          "id": "key_identifier_vs_keyboard_key",
+          "meaning": "Identifier, credential, or keyboard key depending on the source context.",
+          "avoid_meanings": [
+            "physical door key unless source context clearly says lock or door"
+          ],
+          "style": "Use the source comments, key name, and references to choose credential versus keyboard meaning."
+        }
+      ],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "concept glossary match"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "Star Online request failed with status %d.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%d: HTTP status code."
+        ],
+        "references": [
+          "includes/Services/Star_Online_Client.php:228"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star Online authentication failed.",
+          "Star Online rejected the request. Check that the API key has the required permissions.",
+          "WP Overnight %s PDF could not be generated.",
+          "Template"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Online",
+          "msgctxt": null,
+          "msgstr": "Online"
+        },
+        {
+          "msgid": "Status",
+          "msgctxt": null,
+          "msgstr": "Status"
+        },
+        {
+          "msgid": "Authentication failed.",
+          "msgctxt": null,
+          "msgstr": "Authentication failed."
+        },
+        {
+          "msgid": "Can not save settings with id %s",
+          "msgctxt": null,
+          "msgstr": "Can not save settings with id %s"
+        },
+        {
+          "msgid": "Display name of the order status.",
+          "msgctxt": null,
+          "msgstr": "Display name of the order status."
+        },
+        {
+          "msgid": "Failed to activate template.",
+          "msgctxt": null,
+          "msgstr": "Failed to activate template."
+        },
+        {
+          "msgid": "Failed to create template copy.",
+          "msgctxt": null,
+          "msgstr": "Failed to create template copy."
+        },
+        {
+          "msgid": "Failed to generate authentication tokens.",
+          "msgctxt": null,
+          "msgstr": "Failed to generate authentication tokens."
+        },
+        {
+          "msgid": "Failed to retrieve store data",
+          "msgctxt": null,
+          "msgstr": "Failed to retrieve store data"
+        },
+        {
+          "msgid": "Failed to retrieve store data.",
+          "msgctxt": null,
+          "msgstr": "Failed to retrieve store data."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
+        "msgid": "WP Overnight %s PDF could not be generated.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: WP Overnight document type."
+        ],
+        "references": [
+          "includes/Services/Template_Pdf_Service.php:92",
+          "includes/Services/Template_Pdf_Service.php:105"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "Star Online rejected the request. Check that the API key has the required permissions.",
+          "Star Online request failed with status %d.",
+          "Template",
+          "Template Archives"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Can not save settings with id %s",
+          "msgctxt": null,
+          "msgstr": "Can not save settings with id %s"
+        },
+        {
+          "msgid": "Could not determine current session.",
+          "msgctxt": null,
+          "msgstr": "Could not determine current session."
+        },
+        {
+          "msgid": "Settings with id %1$s and key %2$s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %1$s and key %2$s not found"
+        },
+        {
+          "msgid": "Settings with id %s not found",
+          "msgctxt": null,
+          "msgstr": "Settings with id %s not found"
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Template contains dangerous function: %s(). This function is not allowed for security reasons."
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Cashier not found."
+        },
+        {
+          "msgid": "Copy of %s",
+          "msgctxt": null,
+          "msgstr": "Copy of %s"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "en_US",
+      "entry": {
         "msgid": "Template",
         "msgctxt": null,
         "msgid_plural": null,
@@ -32535,8 +33479,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Invalid arguments provided",
-          "Invalid visibility option provided",
+          "Star Online request failed with status %d.",
+          "WP Overnight %s PDF could not be generated.",
           "Template Archives",
           "Template Attributes"
         ]
@@ -32622,7 +33566,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Invalid visibility option provided",
+          "WP Overnight %s PDF could not be generated.",
           "Template",
           "Template Attributes",
           "Parent Template:"
@@ -42812,7 +43756,7 @@
           "Template contains potentially dangerous JavaScript code: %s",
           "PHP syntax error: %s",
           "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "Template not found."
+          "Point of Sale"
         ]
       },
       "related_existing_translations": [
@@ -42886,8 +43830,8 @@
         "nearby_source_strings": [
           "PHP syntax error: %s",
           "PHP syntax error: Mismatched PHP tags.",
-          "Template not found.",
-          "Point of Sale"
+          "Point of Sale",
+          "The WP Overnight invoice document is not available."
         ]
       },
       "related_existing_translations": [
@@ -42954,92 +43898,6 @@
       "format": "php-po",
       "locale": "en_US",
       "entry": {
-        "msgid": "Template not found.",
-        "msgctxt": null,
-        "msgid_plural": null,
-        "translator_comments": [
-          "Error message displayed when a template cannot be found."
-        ],
-        "references": [
-          "includes/Template_Router.php:221",
-          "includes/Template_Router.php:239"
-        ]
-      },
-      "source_usage": {
-        "areas": [
-          "template editor"
-        ],
-        "nearby_source_strings": [
-          "PHP syntax error: Mismatched PHP tags.",
-          "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "Point of Sale",
-          "The WP Overnight invoice document is not available."
-        ]
-      },
-      "related_existing_translations": [
-        {
-          "msgid": "Not found",
-          "msgctxt": null,
-          "msgstr": "Not found"
-        },
-        {
-          "msgid": "Not Found",
-          "msgctxt": null,
-          "msgstr": "Not Found"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Template"
-        },
-        {
-          "msgid": "Template",
-          "msgctxt": "Post Type Singular Name",
-          "msgstr": "Template"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Cashier not found."
-        },
-        {
-          "msgid": "No active template found.",
-          "msgctxt": null,
-          "msgstr": "No active template found."
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Not found in Trash"
-        },
-        {
-          "msgid": "Settings with id %1$s and key %2$s not found",
-          "msgctxt": null,
-          "msgstr": "Settings with id %1$s and key %2$s not found"
-        },
-        {
-          "msgid": "Settings with id %s not found",
-          "msgctxt": null,
-          "msgstr": "Settings with id %s not found"
-        },
-        {
-          "msgid": "Store not found",
-          "msgctxt": null,
-          "msgstr": "Store not found"
-        }
-      ],
-      "concept_hints": [],
-      "risk": {
-        "level": "normal",
-        "reasons": []
-      }
-    },
-    {
-      "project": "woocommerce-pos",
-      "domain": "woocommerce-pos",
-      "format": "php-po",
-      "locale": "en_US",
-      "entry": {
         "msgid": "Point of Sale",
         "msgctxt": null,
         "msgid_plural": null,
@@ -43055,8 +43913,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
+          "PHP syntax error: Mismatched PHP tags.",
           "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "Template not found.",
           "The WP Overnight invoice document is not available.",
           "The WP Overnight invoice document could not be rendered for this order."
         ]
@@ -43123,7 +43981,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Template not found.",
+          "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
           "Point of Sale",
           "The WP Overnight invoice document could not be rendered for this order.",
           "The WP Overnight packing slip document is not available."
@@ -43447,7 +44305,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "woocommerce-pos.php:131"
+          "woocommerce-pos.php:132"
         ]
       },
       "source_usage": {
