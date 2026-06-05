@@ -85,21 +85,21 @@ msgid ""
 msgstr ""
 "<strong>WCPOS</strong> reikalauja <a href=\"%1$s\">WCPOS Pro %2$s ar naujesnės versijos</a>. Prašome <a href=\"%3$s\">įdiegti ir aktyvuoti WCPOS Pro</a>"
 
-#: includes/Admin/Consent.php:311
+#: includes/Admin/Consent.php:317
 msgid "You do not have permission to update WCPOS settings."
 msgstr "Neturite teisės atnaujinti WCPOS nustatymų."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:327
+#: includes/Admin/Consent.php:333
 msgid "Invalid consent value."
 msgstr "Neteisinga sutikimo reikšmė."
 
-#: includes/Admin/Consent.php:332
+#: includes/Admin/Consent.php:338
 msgid "Unable to load general settings."
 msgstr "Nepavyko įkelti bendrųjų nustatymų."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:364
+#: includes/Admin/Consent.php:370
 msgid "No current user."
 msgstr "Nėra dabartinio naudotojo."
 
@@ -502,6 +502,7 @@ msgstr "Mokėjimo būdas negalimas POS atsiskaitymui."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Checkout_Controller.php:249
+#: includes/API/Receipts_Controller.php:159
 msgid "Order not found."
 msgstr "Užsakymas nerastas."
 
@@ -625,85 +626,98 @@ msgstr "Unikalus užsakymo būsenos identifikatorius."
 msgid "Display name of the order status."
 msgstr "Užsakymo būsenos rodymo pavadinimas."
 
-#: includes/API/Print_Jobs_Controller.php:181
+#: includes/API/Print_Jobs_Controller.php:194
 msgid ""
 "The PrintNode API key must be sent in the request body, not the query string."
 msgstr ""
 "PrintNode API raktas turi būti siunčiamas užklausos kūne, o ne užklausos eilutėje."
 
-#: includes/API/Print_Jobs_Controller.php:194
+#: includes/API/Print_Jobs_Controller.php:207
 msgid "A PrintNode API key is required."
 msgstr "Reikalingas PrintNode API raktas."
 
-#: includes/API/Print_Jobs_Controller.php:260
-#: includes/API/Print_Jobs_Controller.php:280
-#: includes/API/Print_Jobs_Controller.php:301
-#: includes/API/Print_Jobs_Controller.php:415
+#: includes/API/Print_Jobs_Controller.php:254
+msgid ""
+"The Star Online API key must be sent in the request body, not the query string."
+msgstr ""
+"Star Online API raktas turi būti siunčiamas užklausos turinyje, o ne užklausos eilutėje."
+
+#: includes/API/Print_Jobs_Controller.php:269
+msgid ""
+"A Star Online API key and a valid stario.online CloudPRNT URL are required."
+msgstr ""
+"Reikalingas Star Online API raktas ir galiojantis stario.online CloudPRNT URL."
+
+#: includes/API/Print_Jobs_Controller.php:330
+#: includes/API/Print_Jobs_Controller.php:350
+#: includes/API/Print_Jobs_Controller.php:371
+#: includes/API/Print_Jobs_Controller.php:485
 msgid "Print job not found."
 msgstr "Spausdinimo užduotis nerasta."
 
-#: includes/API/Print_Jobs_Controller.php:317
-#: includes/API/Print_Jobs_Controller.php:574
-#: includes/API/Print_Jobs_Controller.php:680
+#: includes/API/Print_Jobs_Controller.php:387
+#: includes/API/Print_Jobs_Controller.php:624
+#: includes/API/Print_Jobs_Controller.php:736
+#: includes/API/Print_Jobs_Controller.php:774
 msgid "Print job could not be created."
 msgstr "Spausdinimo užduoties sukurti nepavyko."
 
-#: includes/API/Print_Jobs_Controller.php:394
+#: includes/API/Print_Jobs_Controller.php:464
 msgid "Invalid printer token."
 msgstr "Neteisingas spausdintuvo prieigos raktas."
 
-#: includes/API/Print_Jobs_Controller.php:516
+#: includes/API/Print_Jobs_Controller.php:566
 msgid "A printer_id is required."
 msgstr "Reikalingas printer_id."
 
-#: includes/API/Print_Jobs_Controller.php:539
+#: includes/API/Print_Jobs_Controller.php:589
 msgid "PrintNode print jobs require an order and a template."
 msgstr "PrintNode spausdinimo darbams reikia užsakymo ir šablono."
 
-#: includes/API/Print_Jobs_Controller.php:554
-#: includes/API/Print_Jobs_Controller.php:651
+#: includes/API/Print_Jobs_Controller.php:604
+#: includes/API/Print_Jobs_Controller.php:701
 msgid "Unknown printer."
 msgstr "Nežinomas spausdintuvas."
 
-#: includes/API/Print_Jobs_Controller.php:602
+#: includes/API/Print_Jobs_Controller.php:652
 msgid "Unknown order."
 msgstr "Nežinomas užsakymas."
 
-#: includes/API/Print_Jobs_Controller.php:611
+#: includes/API/Print_Jobs_Controller.php:661
 msgid "Unknown template."
 msgstr "Nežinamas šablonas."
 
-#: includes/API/Print_Jobs_Controller.php:627
+#: includes/API/Print_Jobs_Controller.php:677
 msgid "The selected template cannot be printed on this printer."
 msgstr "Pasirinkto šablono šiame spausdintuve spausdinti negalima."
 
-#: includes/API/Print_Jobs_Controller.php:665
+#: includes/API/Print_Jobs_Controller.php:721
 msgid "Test print is not available for this printer yet."
 msgstr "Bandomasis spausdinimas šiam spausdintuvui dar neprieinamas."
 
-#: includes/API/Print_Jobs_Controller.php:704
+#: includes/API/Print_Jobs_Controller.php:812
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr "Šiam PrintNode spausdintuvui trūksta API rakto arba spausdintuvo ID."
 
-#: includes/API/Print_Jobs_Controller.php:718
+#: includes/API/Print_Jobs_Controller.php:826
 msgid "Could not generate the test print."
 msgstr "Nepavyko sugeneruoti bandomojo spausdinimo."
 
-#: includes/API/Print_Jobs_Controller.php:766
+#: includes/API/Print_Jobs_Controller.php:876
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print priima tik su užsakymu susietas ePOS-Print užduotis, o ne neapdorotus duomenis."
 
-#: includes/API/Print_Jobs_Controller.php:773
+#: includes/API/Print_Jobs_Controller.php:883
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print reikalauja epos-xml formato."
 
-#: includes/API/Print_Jobs_Controller.php:784
+#: includes/API/Print_Jobs_Controller.php:894
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT nepriima epos-xml formato."
 
-#: includes/API/Print_Jobs_Controller.php:803
+#: includes/API/Print_Jobs_Controller.php:913
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Atsiprašome, šių spausdinimo užduočių valdyti negalite."
 
@@ -730,24 +744,46 @@ msgid "Operator to compare product tag terms."
 msgstr "Produktų žymų terminams palyginti naudojamas operatorius."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:81
+#: includes/API/Receipts_Controller.php:106
 msgid "Invalid order."
 msgstr "Neteisingas užsakymas."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:92
+#: includes/API/Receipts_Controller.php:117
 msgid "Invalid receipt mode."
 msgstr "Neteisingas kviteto režimas."
 
-#: includes/API/Receipts_Controller.php:105
+#: includes/API/Receipts_Controller.php:130
 msgid "No fiscal snapshot found for this order."
 msgstr "Šiam užsakymui nerasto fiskalinio įrašo."
 
-#: includes/API/Receipts_Controller.php:133
+#: includes/API/Receipts_Controller.php:168
+msgid "A template_id is required."
+msgstr "Reikalingas template_id."
+
+#. translators: Error message displayed when a template cannot be found.
+#: includes/API/Receipts_Controller.php:177
+#: includes/Template_Router.php:221
+#: includes/Template_Router.php:239
+msgid "Template not found."
+msgstr "Šablonas nerastas."
+
+#: includes/API/Receipts_Controller.php:189
+#: includes/API/Receipts_Controller.php:197
+msgid "Could not generate the receipt PDF."
+msgstr "Nepavyko sugeneruoti kvito PDF."
+
+#: includes/API/Receipts_Controller.php:224
 msgid "Sorry, you cannot view receipts."
 msgstr "Atsiprašome, negalite peržiūrėti kvitentų."
 
-#: includes/API/Settings.php:706
+#: includes/API/Settings.php:717
+msgid ""
+"Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
+msgstr ""
+"Star Online spausdintuvams reikia API rakto, galiojančio stario.online CloudPRNT URL ir įrenginio."
+
+#: includes/API/Settings.php:728
 msgid "Duplicate printer id."
 msgstr "Pasikartojantis spausdintuvo ID."
 
@@ -2897,6 +2933,33 @@ msgstr "Pateikti neteisingi argumentai"
 msgid "Invalid visibility option provided"
 msgstr "Pateikta neteisinga matomumo parinktis"
 
+#: includes/Services/Star_Online_Client.php:133
+msgid "Star Online returned an unexpected print job response."
+msgstr "Star Online grąžino netikėtą spausdinimo užduoties atsakymą."
+
+#: includes/Services/Star_Online_Client.php:209
+msgid "Star Online authentication failed."
+msgstr "Star Online autentifikavimas nepavyko."
+
+#: includes/Services/Star_Online_Client.php:217
+msgid ""
+"Star Online rejected the request. Check that the API key has the required permissions."
+msgstr ""
+"Star Online atmetė užklausą. Patikrinkite, ar API raktas turi reikiamus leidimus."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/Star_Online_Client.php:228
+#, php-format
+msgid "Star Online request failed with status %d."
+msgstr "Star Online užklausa nepavyko, būsenos kodas %d."
+
+#. translators: %s: WP Overnight document type.
+#: includes/Services/Template_Pdf_Service.php:92
+#: includes/Services/Template_Pdf_Service.php:105
+#, php-format
+msgid "WP Overnight %s PDF could not be generated."
+msgstr "WP Overnight %s PDF nepavyko sugeneruoti."
+
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:68
 msgctxt "Post Type General Name"
@@ -3615,12 +3678,6 @@ msgid ""
 msgstr ""
 "Šablone yra pavojinga funkcija: %s(). Ši funkcija neleidžiama dėl saugumo priežasčių."
 
-#. translators: Error message displayed when a template cannot be found.
-#: includes/Template_Router.php:221
-#: includes/Template_Router.php:239
-msgid "Template not found."
-msgstr "Šablonas nerastas."
-
 #. translators: Document title shown for the POS page.
 #: templates/pos.php:14
 msgid "Point of Sale"
@@ -3646,6 +3703,6 @@ msgid ""
 msgstr ""
 "Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti."
 
-#: woocommerce-pos.php:131
+#: woocommerce-pos.php:132
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "WCPOS įskiepis nepavyko tinkamai įkelti."
