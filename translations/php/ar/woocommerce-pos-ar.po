@@ -85,21 +85,21 @@ msgid ""
 msgstr ""
 "<strong>WCPOS</strong> يتطلب <a href=\"%1$s\">WCPOS Pro %2$s أو أعلى</a>. يرجى <a href=\"%3$s\">تثبيت وتفعيل WCPOS Pro</a>"
 
-#: includes/Admin/Consent.php:311
+#: includes/Admin/Consent.php:317
 msgid "You do not have permission to update WCPOS settings."
 msgstr "ليس لديك صلاحية لتحديث إعدادات WCPOS."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:327
+#: includes/Admin/Consent.php:333
 msgid "Invalid consent value."
 msgstr "قيمة الموافقة غير صالحة."
 
-#: includes/Admin/Consent.php:332
+#: includes/Admin/Consent.php:338
 msgid "Unable to load general settings."
 msgstr "تعذر تحميل الإعدادات العامة."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:364
+#: includes/Admin/Consent.php:370
 msgid "No current user."
 msgstr "لا يوجد مستخدم حالي."
 
@@ -500,6 +500,7 @@ msgstr "بوابة الدفع غير متاحة للدفع عبر نقطة ال�
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Checkout_Controller.php:249
+#: includes/API/Receipts_Controller.php:159
 msgid "Order not found."
 msgstr "الطلب غير موجود."
 
@@ -623,86 +624,97 @@ msgstr "معرف فريد لحالة الطلب."
 msgid "Display name of the order status."
 msgstr "اسم العرض لحالة الطلب."
 
-#: includes/API/Print_Jobs_Controller.php:181
+#: includes/API/Print_Jobs_Controller.php:194
 msgid ""
 "The PrintNode API key must be sent in the request body, not the query string."
 msgstr ""
 "يجب إرسال مفتاح واجهة برمجة التطبيقات لـ PrintNode في نص الطلب، لا في سلسلة الاستعلام."
 
-#: includes/API/Print_Jobs_Controller.php:194
+#: includes/API/Print_Jobs_Controller.php:207
 msgid "A PrintNode API key is required."
 msgstr "مفتاح واجهة برمجة التطبيقات لـ PrintNode مطلوب."
 
-#: includes/API/Print_Jobs_Controller.php:260
-#: includes/API/Print_Jobs_Controller.php:280
-#: includes/API/Print_Jobs_Controller.php:301
-#: includes/API/Print_Jobs_Controller.php:415
+#: includes/API/Print_Jobs_Controller.php:254
+msgid ""
+"The Star Online API key must be sent in the request body, not the query string."
+msgstr "يجب إرسال مفتاح Star Online API في نص الطلب، وليس في سلسلة الاستعلام."
+
+#: includes/API/Print_Jobs_Controller.php:269
+msgid ""
+"A Star Online API key and a valid stario.online CloudPRNT URL are required."
+msgstr "يلزم مفتاح Star Online API وعنوان CloudPRNT صالح من stario.online."
+
+#: includes/API/Print_Jobs_Controller.php:330
+#: includes/API/Print_Jobs_Controller.php:350
+#: includes/API/Print_Jobs_Controller.php:371
+#: includes/API/Print_Jobs_Controller.php:485
 msgid "Print job not found."
 msgstr "لم يتم العثور على مهمة الطباعة."
 
-#: includes/API/Print_Jobs_Controller.php:317
-#: includes/API/Print_Jobs_Controller.php:574
-#: includes/API/Print_Jobs_Controller.php:680
+#: includes/API/Print_Jobs_Controller.php:387
+#: includes/API/Print_Jobs_Controller.php:624
+#: includes/API/Print_Jobs_Controller.php:736
+#: includes/API/Print_Jobs_Controller.php:774
 msgid "Print job could not be created."
 msgstr "تعذر إنشاء مهمة الطباعة."
 
-#: includes/API/Print_Jobs_Controller.php:394
+#: includes/API/Print_Jobs_Controller.php:464
 msgid "Invalid printer token."
 msgstr "رمز الطابعة غير صالح."
 
-#: includes/API/Print_Jobs_Controller.php:516
+#: includes/API/Print_Jobs_Controller.php:566
 msgid "A printer_id is required."
 msgstr "يلزم وجود printer_id."
 
-#: includes/API/Print_Jobs_Controller.php:539
+#: includes/API/Print_Jobs_Controller.php:589
 msgid "PrintNode print jobs require an order and a template."
 msgstr "تتطلب مهام طباعة PrintNode طلبًا وقالبًا."
 
-#: includes/API/Print_Jobs_Controller.php:554
-#: includes/API/Print_Jobs_Controller.php:651
+#: includes/API/Print_Jobs_Controller.php:604
+#: includes/API/Print_Jobs_Controller.php:701
 msgid "Unknown printer."
 msgstr "الطابعة غير معروفة."
 
-#: includes/API/Print_Jobs_Controller.php:602
+#: includes/API/Print_Jobs_Controller.php:652
 msgid "Unknown order."
 msgstr "الطلب غير معروف."
 
-#: includes/API/Print_Jobs_Controller.php:611
+#: includes/API/Print_Jobs_Controller.php:661
 msgid "Unknown template."
 msgstr "القالب غير معروف."
 
-#: includes/API/Print_Jobs_Controller.php:627
+#: includes/API/Print_Jobs_Controller.php:677
 msgid "The selected template cannot be printed on this printer."
 msgstr "لا يمكن طباعة القالب المحدد على هذه الطابعة."
 
-#: includes/API/Print_Jobs_Controller.php:665
+#: includes/API/Print_Jobs_Controller.php:721
 msgid "Test print is not available for this printer yet."
 msgstr "الطباعة التجريبية غير متاحة لهذه الطابعة بعد."
 
-#: includes/API/Print_Jobs_Controller.php:704
+#: includes/API/Print_Jobs_Controller.php:812
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr ""
 "طابعة PrintNode هذه تفتقد مفتاح واجهة برمجة التطبيقات أو معرّف الطابعة."
 
-#: includes/API/Print_Jobs_Controller.php:718
+#: includes/API/Print_Jobs_Controller.php:826
 msgid "Could not generate the test print."
 msgstr "تعذّر إنشاء الطباعة التجريبية."
 
-#: includes/API/Print_Jobs_Controller.php:766
+#: includes/API/Print_Jobs_Controller.php:876
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "يقبل Epson Server Direct Print مهام ePOS-Print المبنية على الطلبات فقط، وليس الحمولة الخام."
 
-#: includes/API/Print_Jobs_Controller.php:773
+#: includes/API/Print_Jobs_Controller.php:883
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "يتطلب Epson Server Direct Print تنسيق epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:784
+#: includes/API/Print_Jobs_Controller.php:894
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "لا يقبل Star CloudPRNT تنسيق epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:803
+#: includes/API/Print_Jobs_Controller.php:913
 msgid "Sorry, you cannot manage print jobs."
 msgstr "عذرًا، لا يمكنك إدارة مهام الطباعة."
 
@@ -729,24 +741,46 @@ msgid "Operator to compare product tag terms."
 msgstr "المعامل المستخدم لمقارنة مصطلحات وسم المنتج."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:81
+#: includes/API/Receipts_Controller.php:106
 msgid "Invalid order."
 msgstr "طلبية غير صالحة."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:92
+#: includes/API/Receipts_Controller.php:117
 msgid "Invalid receipt mode."
 msgstr "وضع الفاتورة غير صالح."
 
-#: includes/API/Receipts_Controller.php:105
+#: includes/API/Receipts_Controller.php:130
 msgid "No fiscal snapshot found for this order."
 msgstr "لم يتم العثور على لقطة مالية لهذه الطلبية."
 
-#: includes/API/Receipts_Controller.php:133
+#: includes/API/Receipts_Controller.php:168
+msgid "A template_id is required."
+msgstr "يلزم template_id."
+
+#. translators: Error message displayed when a template cannot be found.
+#: includes/API/Receipts_Controller.php:177
+#: includes/Template_Router.php:221
+#: includes/Template_Router.php:239
+msgid "Template not found."
+msgstr "لم يتم العثور على القالب."
+
+#: includes/API/Receipts_Controller.php:189
+#: includes/API/Receipts_Controller.php:197
+msgid "Could not generate the receipt PDF."
+msgstr "تعذر إنشاء ملف PDF للإيصال."
+
+#: includes/API/Receipts_Controller.php:224
 msgid "Sorry, you cannot view receipts."
 msgstr "عذرًا، لا يمكنك عرض الفواتير."
 
-#: includes/API/Settings.php:706
+#: includes/API/Settings.php:717
+msgid ""
+"Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
+msgstr ""
+"تحتاج طابعات Star Online إلى مفتاح API، وعنوان CloudPRNT صالح من stario.online، وجهاز."
+
+#: includes/API/Settings.php:728
 msgid "Duplicate printer id."
 msgstr "معرّف الطابعة مكرر."
 
@@ -2896,6 +2930,32 @@ msgstr "تم توفير حجج غير صالحة"
 msgid "Invalid visibility option provided"
 msgstr "تم توفير خيار رؤية غير صالح"
 
+#: includes/Services/Star_Online_Client.php:133
+msgid "Star Online returned an unexpected print job response."
+msgstr "أرجع Star Online استجابة غير متوقعة لمهمة الطباعة."
+
+#: includes/Services/Star_Online_Client.php:209
+msgid "Star Online authentication failed."
+msgstr "فشلت مصادقة Star Online."
+
+#: includes/Services/Star_Online_Client.php:217
+msgid ""
+"Star Online rejected the request. Check that the API key has the required permissions."
+msgstr "رفض Star Online الطلب. تحقّق من أن مفتاح API يملك الأذونات المطلوبة."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/Star_Online_Client.php:228
+#, php-format
+msgid "Star Online request failed with status %d."
+msgstr "فشل طلب Star Online مع الحالة %d."
+
+#. translators: %s: WP Overnight document type.
+#: includes/Services/Template_Pdf_Service.php:92
+#: includes/Services/Template_Pdf_Service.php:105
+#, php-format
+msgid "WP Overnight %s PDF could not be generated."
+msgstr "تعذر إنشاء ملف PDF لـ WP Overnight %s."
+
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:68
 msgctxt "Post Type General Name"
@@ -3610,12 +3670,6 @@ msgid ""
 msgstr ""
 "يحتوي القالب على دالة خطيرة: %s(). هذه الدالة غير مسموح بها لأسباب أمنية."
 
-#. translators: Error message displayed when a template cannot be found.
-#: includes/Template_Router.php:221
-#: includes/Template_Router.php:239
-msgid "Template not found."
-msgstr "لم يتم العثور على القالب."
-
 #. translators: Document title shown for the POS page.
 #: templates/pos.php:14
 msgid "Point of Sale"
@@ -3639,6 +3693,6 @@ msgid ""
 "The WP Overnight packing slip document could not be rendered for this order."
 msgstr "تعذر عرض مستند قسيمة التعبئة WP Overnight لهذا الطلب."
 
-#: woocommerce-pos.php:131
+#: woocommerce-pos.php:132
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "فشل تحميل إضافة WCPOS بشكل صحيح."
