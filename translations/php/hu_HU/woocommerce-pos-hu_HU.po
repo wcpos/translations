@@ -85,21 +85,21 @@ msgid ""
 msgstr ""
 "<strong>WCPOS</strong> a <a href=\"%1$s\">WCPOS Pro %2$s vagy újabb</a> verziót igényli. Kérjük, <a href=\"%3$s\">telepítse és aktiválja a WCPOS Pro-t</a>"
 
-#: includes/Admin/Consent.php:311
+#: includes/Admin/Consent.php:317
 msgid "You do not have permission to update WCPOS settings."
 msgstr "Nincs jogosultságod a WCPOS beállításainak módosításához."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:327
+#: includes/Admin/Consent.php:333
 msgid "Invalid consent value."
 msgstr "Érvénytelen hozzájárulási érték."
 
-#: includes/Admin/Consent.php:332
+#: includes/Admin/Consent.php:338
 msgid "Unable to load general settings."
 msgstr "Az általános beállítások betöltése sikertelen."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Admin/Consent.php:364
+#: includes/Admin/Consent.php:370
 msgid "No current user."
 msgstr "Nincs aktuális felhasználó."
 
@@ -505,6 +505,7 @@ msgstr "A fizetési átjáró nem érhető el a POS-fizetéshez."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/Checkout_Controller.php:249
+#: includes/API/Receipts_Controller.php:159
 msgid "Order not found."
 msgstr "A rendelés nem található."
 
@@ -628,86 +629,99 @@ msgstr "Egyedi azonosító a rendelés állapotához."
 msgid "Display name of the order status."
 msgstr "A rendelés állapotának megjelenítési neve."
 
-#: includes/API/Print_Jobs_Controller.php:181
+#: includes/API/Print_Jobs_Controller.php:194
 msgid ""
 "The PrintNode API key must be sent in the request body, not the query string."
 msgstr ""
 "A PrintNode API-kulcsot a kérés törzsében kell elküldeni, nem a lekérdezési sztringben."
 
-#: includes/API/Print_Jobs_Controller.php:194
+#: includes/API/Print_Jobs_Controller.php:207
 msgid "A PrintNode API key is required."
 msgstr "Szükség van egy PrintNode API-kulcsra."
 
-#: includes/API/Print_Jobs_Controller.php:260
-#: includes/API/Print_Jobs_Controller.php:280
-#: includes/API/Print_Jobs_Controller.php:301
-#: includes/API/Print_Jobs_Controller.php:415
+#: includes/API/Print_Jobs_Controller.php:254
+msgid ""
+"The Star Online API key must be sent in the request body, not the query string."
+msgstr ""
+"A Star Online API-kulcsot a kérés törzsében kell elküldeni, nem a lekérdezési sztringben."
+
+#: includes/API/Print_Jobs_Controller.php:269
+msgid ""
+"A Star Online API key and a valid stario.online CloudPRNT URL are required."
+msgstr ""
+"Star Online API-kulcsra és érvényes stario.online CloudPRNT URL-re van szükség."
+
+#: includes/API/Print_Jobs_Controller.php:330
+#: includes/API/Print_Jobs_Controller.php:350
+#: includes/API/Print_Jobs_Controller.php:371
+#: includes/API/Print_Jobs_Controller.php:485
 msgid "Print job not found."
 msgstr "A nyomtatási feladat nem található."
 
-#: includes/API/Print_Jobs_Controller.php:317
-#: includes/API/Print_Jobs_Controller.php:574
-#: includes/API/Print_Jobs_Controller.php:680
+#: includes/API/Print_Jobs_Controller.php:387
+#: includes/API/Print_Jobs_Controller.php:624
+#: includes/API/Print_Jobs_Controller.php:736
+#: includes/API/Print_Jobs_Controller.php:774
 msgid "Print job could not be created."
 msgstr "A nyomtatási feladatot nem sikerült létrehozni."
 
-#: includes/API/Print_Jobs_Controller.php:394
+#: includes/API/Print_Jobs_Controller.php:464
 msgid "Invalid printer token."
 msgstr "Érvénytelen nyomtatótoken."
 
-#: includes/API/Print_Jobs_Controller.php:516
+#: includes/API/Print_Jobs_Controller.php:566
 msgid "A printer_id is required."
 msgstr "A printer_id megadása kötelező."
 
-#: includes/API/Print_Jobs_Controller.php:539
+#: includes/API/Print_Jobs_Controller.php:589
 msgid "PrintNode print jobs require an order and a template."
 msgstr "A PrintNode nyomtatási feladatokhoz rendelés és sablon szükséges."
 
-#: includes/API/Print_Jobs_Controller.php:554
-#: includes/API/Print_Jobs_Controller.php:651
+#: includes/API/Print_Jobs_Controller.php:604
+#: includes/API/Print_Jobs_Controller.php:701
 msgid "Unknown printer."
 msgstr "Ismeretlen nyomtató."
 
-#: includes/API/Print_Jobs_Controller.php:602
+#: includes/API/Print_Jobs_Controller.php:652
 msgid "Unknown order."
 msgstr "Ismeretlen rendelés."
 
-#: includes/API/Print_Jobs_Controller.php:611
+#: includes/API/Print_Jobs_Controller.php:661
 msgid "Unknown template."
 msgstr "Ismeretlen sablon."
 
-#: includes/API/Print_Jobs_Controller.php:627
+#: includes/API/Print_Jobs_Controller.php:677
 msgid "The selected template cannot be printed on this printer."
 msgstr "A kijelölt sablont nem lehet erre a nyomtatóra nyomtatni."
 
-#: includes/API/Print_Jobs_Controller.php:665
+#: includes/API/Print_Jobs_Controller.php:721
 msgid "Test print is not available for this printer yet."
 msgstr "Ehhez a nyomtatóhoz még nem érhető el próbanyomtatás."
 
-#: includes/API/Print_Jobs_Controller.php:704
+#: includes/API/Print_Jobs_Controller.php:812
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr ""
 "Ehhez a PrintNode nyomtatóhoz hiányzik az API-kulcs vagy a nyomtatóazonosító."
 
-#: includes/API/Print_Jobs_Controller.php:718
+#: includes/API/Print_Jobs_Controller.php:826
 msgid "Could not generate the test print."
 msgstr "Nem sikerült elkészíteni a próbanyomatot."
 
-#: includes/API/Print_Jobs_Controller.php:766
+#: includes/API/Print_Jobs_Controller.php:876
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Az Epson Server Direct Print csak rendelésalapú ePOS-Print feladatokat fogad el, nyers payloadokat nem."
 
-#: includes/API/Print_Jobs_Controller.php:773
+#: includes/API/Print_Jobs_Controller.php:883
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Az Epson Server Direct Print az epos-xml formátumot igényli."
 
-#: includes/API/Print_Jobs_Controller.php:784
+#: includes/API/Print_Jobs_Controller.php:894
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "A Star CloudPRNT nem fogadja el az epos-xml formátumot."
 
-#: includes/API/Print_Jobs_Controller.php:803
+#: includes/API/Print_Jobs_Controller.php:913
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Sajnos nem kezelhet nyomtatási feladatokat."
 
@@ -734,24 +748,46 @@ msgid "Operator to compare product tag terms."
 msgstr "Termékcímke-kifejezések összehasonlítására szolgáló operátor."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:81
+#: includes/API/Receipts_Controller.php:106
 msgid "Invalid order."
 msgstr "Érvénytelen rendelés."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/Receipts_Controller.php:92
+#: includes/API/Receipts_Controller.php:117
 msgid "Invalid receipt mode."
 msgstr "Érvénytelen számla mód."
 
-#: includes/API/Receipts_Controller.php:105
+#: includes/API/Receipts_Controller.php:130
 msgid "No fiscal snapshot found for this order."
 msgstr "Nem található adózati pillanatkép ehhez a rendeléshez."
 
-#: includes/API/Receipts_Controller.php:133
+#: includes/API/Receipts_Controller.php:168
+msgid "A template_id is required."
+msgstr "A template_id megadása kötelező."
+
+#. translators: Error message displayed when a template cannot be found.
+#: includes/API/Receipts_Controller.php:177
+#: includes/Template_Router.php:221
+#: includes/Template_Router.php:239
+msgid "Template not found."
+msgstr "A sablon nem található."
+
+#: includes/API/Receipts_Controller.php:189
+#: includes/API/Receipts_Controller.php:197
+msgid "Could not generate the receipt PDF."
+msgstr "A nyugta PDF nem hozható létre."
+
+#: includes/API/Receipts_Controller.php:224
 msgid "Sorry, you cannot view receipts."
 msgstr "Sajnálatos módon nem tekinthet meg számlákat."
 
-#: includes/API/Settings.php:706
+#: includes/API/Settings.php:717
+msgid ""
+"Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
+msgstr ""
+"A Star Online nyomtatókhoz API-kulcs, érvényes stario.online CloudPRNT URL és egy eszköz szükséges."
+
+#: includes/API/Settings.php:728
 msgid "Duplicate printer id."
 msgstr "Duplikált nyomtatóazonosító."
 
@@ -2900,6 +2936,33 @@ msgstr "Érvénytelen argumentumok lettek megadva"
 msgid "Invalid visibility option provided"
 msgstr "Érvénytelen láthatósági opció lett megadva"
 
+#: includes/Services/Star_Online_Client.php:133
+msgid "Star Online returned an unexpected print job response."
+msgstr "A Star Online váratlan nyomtatási feladat választ adott vissza."
+
+#: includes/Services/Star_Online_Client.php:209
+msgid "Star Online authentication failed."
+msgstr "A Star Online hitelesítése sikertelen volt."
+
+#: includes/Services/Star_Online_Client.php:217
+msgid ""
+"Star Online rejected the request. Check that the API key has the required permissions."
+msgstr ""
+"A Star Online elutasította a kérést. Ellenőrizd, hogy az API-kulcs rendelkezik-e a szükséges jogosultságokkal."
+
+#. translators: %d: HTTP status code.
+#: includes/Services/Star_Online_Client.php:228
+#, php-format
+msgid "Star Online request failed with status %d."
+msgstr "A Star Online kérés sikertelen volt, állapotkód: %d."
+
+#. translators: %s: WP Overnight document type.
+#: includes/Services/Template_Pdf_Service.php:92
+#: includes/Services/Template_Pdf_Service.php:105
+#, php-format
+msgid "WP Overnight %s PDF could not be generated."
+msgstr "A WP Overnight %s PDF létrehozása nem sikerült."
+
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:68
 msgctxt "Post Type General Name"
@@ -3619,12 +3682,6 @@ msgid ""
 msgstr ""
 "A sablon veszélyes függvényt tartalmaz: %s(). Ez a függvény biztonsági okokból nem engedélyezett."
 
-#. translators: Error message displayed when a template cannot be found.
-#: includes/Template_Router.php:221
-#: includes/Template_Router.php:239
-msgid "Template not found."
-msgstr "A sablon nem található."
-
 #. translators: Document title shown for the POS page.
 #: templates/pos.php:14
 msgid "Point of Sale"
@@ -3649,6 +3706,6 @@ msgid ""
 "The WP Overnight packing slip document could not be rendered for this order."
 msgstr "A WP Overnight csomagjegyzék nem jeleníthető meg ehhez a rendeléshez."
 
-#: woocommerce-pos.php:131
+#: woocommerce-pos.php:132
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "A WCPOS bővítmény nem töltődött be megfelelően."
