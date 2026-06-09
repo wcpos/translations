@@ -8,6 +8,7 @@ const DEFAULT_TIMEOUT_MS = 2 * 60 * 60 * 1000;
 const REQUEST_TIMEOUT_MS = 30_000;
 const TERMINAL_SUCCESS_STATUS = 'completed';
 const TERMINAL_FAILURE_STATUSES = new Set(['failed', 'relay_failed']);
+const FAILURE_OUTPUT_STATUSES = new Set(['error', 'failed', 'failure', 'partial', 'relay_failed']);
 
 function readJsonFile(filePath) {
   let raw;
@@ -81,6 +82,37 @@ function formatTaskDetails(task) {
   return details.length > 0 ? details.join(' ') : 'no details';
 }
 
+function hasValidationErrors(validationErrorsByCheck) {
+  if (!validationErrorsByCheck || typeof validationErrorsByCheck !== 'object' || Array.isArray(validationErrorsByCheck)) {
+    return false;
+  }
+
+  return Object.values(validationErrorsByCheck).some((count) => Number(count) > 0);
+}
+
+function validateCompletedTranslationTask(task, { requireTranslationCommit = false } = {}) {
+  const parsedOutput = maybeParseJson(task.output);
+
+  if (!parsedOutput || typeof parsedOutput !== 'object' || Array.isArray(parsedOutput)) {
+    return;
+  }
+
+  const outputStatus = typeof parsedOutput.status === 'string' ? parsedOutput.status.trim().toLowerCase() : '';
+  const errors = Array.isArray(parsedOutput.errors) ? parsedOutput.errors : [];
+
+  if (
+    FAILURE_OUTPUT_STATUSES.has(outputStatus)
+    || errors.length > 0
+    || hasValidationErrors(parsedOutput.validation_errors_by_check)
+  ) {
+    throw new Error(`OpenClaw completed task reported translation failure: ${formatTaskDetails(task)}`);
+  }
+
+  if (requireTranslationCommit && parsedOutput.committed === false) {
+    throw new Error(`OpenClaw completed task did not commit translation changes: ${formatTaskDetails(task)}`);
+  }
+}
+
 async function readJsonResponse(response) {
   if (typeof response.json === 'function') {
     return response.json();
@@ -95,6 +127,7 @@ async function readJsonResponse(response) {
 async function pollTaskUntilTerminal({
   pollUrl,
   apiToken,
+  requireTranslationCommit = false,
   fetchImpl = globalThis.fetch,
   intervalMs = DEFAULT_INTERVAL_MS,
   timeoutMs = DEFAULT_TIMEOUT_MS,
@@ -157,6 +190,7 @@ async function pollTaskUntilTerminal({
     }
 
     if (status === TERMINAL_SUCCESS_STATUS) {
+      validateCompletedTranslationTask(task, { requireTranslationCommit });
       logger.log(`OpenClaw task reached terminal success: ${formatTaskDetails(task)}`);
       return task;
     }
@@ -186,6 +220,8 @@ async function main(argv = process.argv.slice(2), env = process.env) {
   const intervalMs = Number.parseInt(env.OPENCLAW_POLL_INTERVAL_MS || '', 10);
   const timeoutMs = Number.parseInt(env.OPENCLAW_POLL_TIMEOUT_MS || '', 10);
   const resolvedPollUrl = resolvePollUrl(pollUrl, baseUrl);
+  const requireTranslationCommit = env.OPENCLAW_REQUIRE_TRANSLATION_COMMIT === '1'
+    || env.OPENCLAW_REQUIRE_TRANSLATION_COMMIT === 'true';
 
   console.log(`OpenClaw accepted translation job ${jobId}`);
   console.log(`Polling OpenClaw task URL: ${resolvedPollUrl}`);
@@ -193,6 +229,7 @@ async function main(argv = process.argv.slice(2), env = process.env) {
   const task = await pollTaskUntilTerminal({
     pollUrl: resolvedPollUrl,
     apiToken,
+    requireTranslationCommit,
     intervalMs: Number.isFinite(intervalMs) && intervalMs >= 0 ? intervalMs : DEFAULT_INTERVAL_MS,
     timeoutMs: Number.isFinite(timeoutMs) && timeoutMs >= 0 ? timeoutMs : DEFAULT_TIMEOUT_MS,
   });
@@ -211,6 +248,7 @@ module.exports = {
   pollTaskUntilTerminal,
   readJsonFile,
   resolvePollUrl,
+  validateCompletedTranslationTask,
 };
 
 if (require.main === module) {

@@ -141,6 +141,11 @@ async function main() {
       }
     });
 
+    test('forward workflow fails when Aide completes without committing translations', () => {
+      if (!forwardWorkflow.includes('OPENCLAW_REQUIRE_TRANSLATION_COMMIT')) {
+        throw new Error('forward workflow should require Aide to commit translation changes');
+      }
+    });
 
     test('forward workflow commits context artifacts before sending payload', () => {
       if (!forwardWorkflow.includes('contents: write')) {
