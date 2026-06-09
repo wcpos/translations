@@ -118,6 +118,72 @@ test('throws on failed terminal status with task details', async () => {
   );
 });
 
+test('throws when completed task output reports a partial translation', async () => {
+  await assert.rejects(
+    () => pollTaskUntilTerminal({
+      pollUrl: 'https://openclaw.example/api/tasks/translation:partial',
+      apiToken: 'secret-token',
+      fetchImpl: async () => ({
+        ok: true,
+        status: 200,
+        async json() {
+          return {
+            status: 'completed',
+            output: JSON.stringify({
+              status: 'partial',
+              committed: false,
+              release_triggered: false,
+              pull_request_url: '',
+              errors: [
+                {
+                  locale: 'it_IT',
+                  key: 'existing/wp-admin-settings',
+                  error: 'GitHub fetch translations/js/it_IT/woocommerce-pos/wp-admin-settings.json@main: 401 Unauthorized',
+                },
+              ],
+            }),
+          };
+        },
+      }),
+      intervalMs: 0,
+      timeoutMs: 100,
+      sleep: async () => {},
+      logger: { log() {} },
+    }),
+    /completed task reported translation failure.*partial.*it_IT.*401 Unauthorized/s
+  );
+});
+
+test('throws when a completed translation task is required to commit but did not', async () => {
+  await assert.rejects(
+    () => pollTaskUntilTerminal({
+      pollUrl: 'https://openclaw.example/api/tasks/translation:no-commit',
+      apiToken: 'secret-token',
+      requireTranslationCommit: true,
+      fetchImpl: async () => ({
+        ok: true,
+        status: 200,
+        async json() {
+          return {
+            status: 'completed',
+            output: JSON.stringify({
+              status: 'ok',
+              committed: false,
+              release_triggered: false,
+              pull_request_url: '',
+            }),
+          };
+        },
+      }),
+      intervalMs: 0,
+      timeoutMs: 100,
+      sleep: async () => {},
+      logger: { log() {} },
+    }),
+    /completed task did not commit translation changes/
+  );
+});
+
 test('main requires TRANSLATION_STATUS_TOKEN for polling', async () => {
   const fs = require('node:fs');
   const os = require('node:os');
