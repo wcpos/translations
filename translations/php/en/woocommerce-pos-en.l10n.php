@@ -10,7 +10,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'en',
+	'language' => 'en_US',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Point of Sale for WooCommerce',
