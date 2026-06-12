@@ -325,3 +325,57 @@ Before outputting, verify:
 | Tax | TVA | Impôt |
 | State | État/Région | Département |
 | Teal | Bleu-vert/Sarcelle | Vert |
+
+## wp-admin-landing namespaces
+
+The `wp-admin-landing` project carries the strings for the WCPOS landing/upgrade
+experience shown inside wp-admin. It ships three namespaces that may arrive for
+translation:
+
+- `wp-admin-landing-shared.json` — strings common to every landing variant.
+- `wp-admin-landing-indie.json` — the "indie" variant.
+- `wp-admin-landing-free-plus.json` — the "free-plus" variant.
+
+Unlike the rest of WCPOS (terse POS terminal labels), these are **marketing /
+narrative copy**. The length-preservation rule above is relaxed here: translate
+for natural, persuasive reading in the target locale, not for a fixed character
+budget. Everything else in this document still applies.
+
+### Tone
+
+- **indie** — a **shopkeeper-to-shopkeeper letter**. First person, warm,
+  personal, slightly informal but never sloppy. It reads like the developer (who
+  ran a shop himself) writing to another independent retailer. Keep that voice in
+  every locale; do not flatten it into corporate marketing.
+- **free-plus** — a **plain product page**. Clear, neutral, factual. Describe
+  what the free and Pro tiers do. No hype.
+
+### Retail idioms — adapt, never translate literally
+
+These are shop-floor idioms. Render the **meaning** with the natural equivalent a
+retail worker in the target region would use. A word-for-word translation will be
+wrong.
+
+- **till** = the cash register / point of sale. (UK "till", US "register".) NOT
+  farm tillage, NOT "until".
+- **ring up a sale** = process / record a sale at the register. NOT a phone call.
+- **cash up** = end-of-day register reconciliation / closing the till. NOT
+  "withdraw cash".
+- **counter** = the shop counter where the register sits, when used in that sense.
+
+See `translation-concepts.json` (`till_register`, `ring_up_sale`, `cash_up`) for
+the disambiguation packets.
+
+### Brand rules (landing copy)
+
+- **No urgency / scarcity language.** Do not introduce "act now", "limited time",
+  "hurry", countdowns, or pressure phrasing — even if the target locale's
+  marketing norm would. The brand deliberately avoids it.
+- **No emoji.** Do not add emoji or decorative symbols.
+- **Computed `{placeholders}` must be preserved.** They may be **repositioned** to
+  suit target grammar but must **never be removed, renamed, or added to**. (Same
+  rule as the Placeholder section above.)
+- **Prices and currency stay as-is.** Amounts are quoted in USD; do not convert,
+  re-localise the currency symbol, or change the figure.
+- **Proper nouns stay untranslated:** WooCommerce POS, WordPress.org, Discord,
+  Urban Locavore, Perth. (Plus the standard brand/technical terms above.)
