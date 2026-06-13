@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
-	'language' => 'de',
+	'language' => 'de_DE',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – Kassensystem für WooCommerce',
@@ -83,7 +83,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin wurde installiert, konnte aber nicht gefunden werden.',
 		'Extension is not installed.' => 'Erweiterung ist nicht installiert.',
 		'Plugin update failed.' => 'Plugin-Aktualisierung fehlgeschlagen.',
-		'Invalid order ID.' => 'Ungültige Bestell-ID.',
+		'Invalid order ID.' => 'Ungültige Bestellnummer.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Header X-WCPOS-Idempotency-Key fehlt.',
 		'You do not have permission to manage stores.' => 'Sie haben keine Berechtigung, Geschäfte zu verwalten.',
 		'Store not found.' => 'Geschäft nicht gefunden.',
