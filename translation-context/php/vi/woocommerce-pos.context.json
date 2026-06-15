@@ -9237,7 +9237,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string."
+          "Payment gateway ID."
         ]
       },
       "related_existing_translations": [
@@ -9317,8 +9317,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string.",
-          "A PrintNode API key is required."
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS."
         ]
       },
       "related_existing_translations": [
@@ -9385,6 +9385,686 @@
       "format": "php-po",
       "locale": "vi",
       "entry": {
+        "msgid": "Payment gateway ID.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:154"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy cổng thanh toán."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Loại mã số thuế."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Giá trị mã số thuế."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Mã vạch"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Payment gateway title shown at the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:160"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Payment gateway ID.",
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy cổng thanh toán."
+        },
+        {
+          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn A4/Letter toàn trang với địa chỉ người thanh toán/người nhận hàng, bảng sản phẩm theo từng dòng và bảng \"Cách thanh toán\" tùy chọn (chuyển khoản ngân hàng + URL order-pay mã QR) hiển thị khi đơn hàng vẫn cần thanh toán."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Payment gateway description.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:166"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS.",
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy cổng thanh toán."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Mã vạch"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt phải là ngày UTC hợp lệ theo ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "Tìm kiếm template theo tiêu đề hoặc mô tả."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Whether the gateway is enabled for the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:172"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description.",
+          "Provider family identifier.",
+          "POS handling type for the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Xin lỗi, đơn hàng này không thể thanh toán. Mã đơn hàng không tồn tại hoặc không hợp lệ."
+        },
+        {
+          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
+          "msgctxt": null,
+          "msgstr": "Báo giá này có hiệu lực trong 30 ngày kể từ ngày phát hành. Giá có thể thay đổi sau thời hạn hiệu lực. Đây không phải là hóa đơn hoặc xác nhận mua hàng."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "ID đơn hàng hoặc \"latest\" cho đơn hàng POS gần nhất. Bỏ qua để dùng dữ liệu mẫu."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy đơn hàng hoặc đây không phải là đơn hàng POS."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "ID cửa hàng POS cho dữ liệu theo từng cửa hàng."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Provider family identifier.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS.",
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Mã vạch"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt phải là ngày UTC hợp lệ theo ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the order status.",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho trạng thái đơn hàng."
+        },
+        {
+          "msgid": "Unique identifier for the store.",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho cửa hàng."
+        },
+        {
+          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho mẫu (số cho cơ sở dữ liệu, chuỗi cho ảo)."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "POS handling type for the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:184"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Loại"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "ID đơn hàng hoặc \"latest\" cho đơn hàng POS gần nhất. Bỏ qua để dùng dữ liệu mẫu."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "ID cửa hàng POS cho dữ liệu theo từng cửa hàng."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "POS capabilities exposed by the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:190"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Provider family identifier.",
+          "POS handling type for the gateway.",
+          "Provider-specific public metadata.",
+          "The PrintNode API key must be sent in the request body, not the query string."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgctxt": null,
+          "msgstr": "POS API checkout flow không hỗ trợ thanh toán tiền mặt một phần."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Filter orders by POS cashier.",
+          "msgctxt": null,
+          "msgstr": "Lọc đơn hàng theo thu ngân POS."
+        },
+        {
+          "msgid": "Filter orders by POS store.",
+          "msgctxt": null,
+          "msgstr": "Lọc đơn hàng theo cửa hàng POS."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Provider-specific public metadata.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:214"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway.",
+          "The PrintNode API key must be sent in the request body, not the query string.",
+          "A PrintNode API key is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Mã vạch"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt phải là ngày UTC hợp lệ theo ISO 8601."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Định danh duy nhất cho thu ngân (ID người dùng WordPress)."
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "Giới hạn kết quả ở các mẫu được phân giải cho một cửa hàng cụ thể."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "ID cửa hàng POS cho dữ liệu theo từng cửa hàng."
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
         "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9396,8 +10076,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata.",
           "A PrintNode API key is required.",
           "The Star Online API key must be sent in the request body, not the query string."
         ]
@@ -9488,7 +10168,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Provider-specific public metadata.",
           "The PrintNode API key must be sent in the request body, not the query string.",
           "The Star Online API key must be sent in the request body, not the query string.",
           "A Star Online API key and a valid stario.online CloudPRNT URL are required."

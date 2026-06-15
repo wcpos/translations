@@ -9237,7 +9237,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string."
+          "Payment gateway ID."
         ]
       },
       "related_existing_translations": [
@@ -9317,8 +9317,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string.",
-          "A PrintNode API key is required."
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS."
         ]
       },
       "related_existing_translations": [
@@ -9385,6 +9385,686 @@
       "format": "php-po",
       "locale": "sv_SE",
       "entry": {
+        "msgid": "Payment gateway ID.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:154"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "Typ av skatte-ID."
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "Värde för skatte-ID."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Payment gateway title shown at the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:160"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Payment gateway ID.",
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
+          "msgctxt": null,
+          "msgstr": "Faktura i A4/Letter-format med faktura- och leveransadresser, en tabell med specificerade varor och en valfri panel för hur man betalar (banköverföring + QR-kodad order-pay-URL) som visas när ordern fortfarande behöver betalas."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Det gick inte att generera kvittots PDF."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Payment gateway description.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:166"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS.",
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgateway hittades inte."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "Sök mallar efter titel eller beskrivning."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Whether the gateway is enabled for the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:172"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description.",
+          "Provider family identifier.",
+          "POS handling type for the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
+        },
+        {
+          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
+          "msgctxt": null,
+          "msgstr": "Denna offert är giltig i 30 dagar från utfärdandedatumet. Priser kan ändras efter giltighetstiden. Detta är inte ett kvitto eller en bekräftelse på köp."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "Order-ID eller \"latest\" för senaste POS-order. Utelämna för exempeldata."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Order hittades inte eller är inte en POS-order."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "POS-butiks-ID för butikspecifik data."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Provider family identifier.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS.",
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the order status.",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för orderstatus."
+        },
+        {
+          "msgid": "Unique identifier for the store.",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för butiken."
+        },
+        {
+          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för mallen (numerisk för databas, sträng för virtuell)."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "POS handling type for the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:184"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Typ"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "Order-ID eller \"latest\" för senaste POS-order. Utelämna för exempeldata."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "POS-butiks-ID för butikspecifik data."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "POS capabilities exposed by the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:190"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Provider family identifier.",
+          "POS handling type for the gateway.",
+          "Provider-specific public metadata.",
+          "The PrintNode API key must be sent in the request body, not the query string."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgctxt": null,
+          "msgstr": "Delbetalningar med kontanter stöds inte av POS API-utcheckningen."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Filter orders by POS cashier.",
+          "msgctxt": null,
+          "msgstr": "Filtrera beställningar efter POS-kassör."
+        },
+        {
+          "msgid": "Filter orders by POS store.",
+          "msgctxt": null,
+          "msgstr": "Filtrera beställningar efter POS-butik."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
+        "msgid": "Provider-specific public metadata.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:214"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway.",
+          "The PrintNode API key must be sent in the request body, not the query string.",
+          "A PrintNode API key is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ogiltigt mall-ID."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassören hittades inte."
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet kunde inte skapas."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Utskriftsjobbet hittades inte."
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "Streckkod"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt måste vara ett giltigt ISO 8601-datum i UTC."
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "Unik identifierare för kassören (WordPress användar-ID)."
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "Begränsa resultaten till mallar som är lösta för en viss butik."
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "POS-butiks-ID för butikspecifik data."
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Det gick inte att generera kvittots PDF."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "sv_SE",
+      "entry": {
         "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9396,8 +10076,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata.",
           "A PrintNode API key is required.",
           "The Star Online API key must be sent in the request body, not the query string."
         ]
@@ -9488,7 +10168,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Provider-specific public metadata.",
           "The PrintNode API key must be sent in the request body, not the query string.",
           "The Star Online API key must be sent in the request body, not the query string.",
           "A Star Online API key and a valid stario.online CloudPRNT URL are required."

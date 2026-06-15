@@ -9237,7 +9237,7 @@
           "Email address %s added to billing details from WCPOS.",
           "Order details manually sent to %s from WCPOS.",
           "Display name of the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string."
+          "Payment gateway ID."
         ]
       },
       "related_existing_translations": [
@@ -9317,8 +9317,8 @@
         "nearby_source_strings": [
           "Order details manually sent to %s from WCPOS.",
           "Unique identifier for the order status.",
-          "The PrintNode API key must be sent in the request body, not the query string.",
-          "A PrintNode API key is required."
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS."
         ]
       },
       "related_existing_translations": [
@@ -9385,6 +9385,686 @@
       "format": "php-po",
       "locale": "zh_CN",
       "entry": {
+        "msgid": "Payment gateway ID.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:154"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Unique identifier for the order status.",
+          "Display name of the order status.",
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "未找到支付网关。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Tax ID type.",
+          "msgctxt": null,
+          "msgstr": "税号类型。"
+        },
+        {
+          "msgid": "Tax ID value.",
+          "msgctxt": null,
+          "msgstr": "税号值。"
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "条形码"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Payment gateway title shown at the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:160"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Display name of the order status.",
+          "Payment gateway ID.",
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "未找到支付网关。"
+        },
+        {
+          "msgid": "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment.",
+          "msgctxt": null,
+          "msgstr": "A4/Letter 整页发票，包含账单地址/收货地址、商品明细表，以及可选的“付款方式”面板（银行转账 + 二维码编码的 order-pay URL），仅在订单仍需付款时显示。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Payment gateway description.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:166"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway ID.",
+          "Payment gateway title shown at the POS.",
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Payment gateway not found.",
+          "msgctxt": null,
+          "msgstr": "未找到支付网关。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "条形码"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt 必须是有效的 ISO 8601 UTC 日期。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Search templates by title or description.",
+          "msgctxt": null,
+          "msgstr": "按标题或描述搜索模板。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Whether the gateway is enabled for the POS.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:172"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway title shown at the POS.",
+          "Payment gateway description.",
+          "Provider family identifier.",
+          "POS handling type for the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "对不起，无法为该订单付款。订单密钥缺失或无效。"
+        },
+        {
+          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
+          "msgctxt": null,
+          "msgstr": "此报价单自开具之日起 30 天内有效。有效期后价格可能变动。此单不是收据，也不是购买确认。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "订单 ID，或用“latest”表示最近的 POS 订单。省略则使用示例数据。"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "未找到订单，或该订单不是 POS 订单。"
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "用于特定门店数据的 POS 门店 ID。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Provider family identifier.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:178"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Payment gateway description.",
+          "Whether the gateway is enabled for the POS.",
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "条形码"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt 必须是有效的 ISO 8601 UTC 日期。"
+        },
+        {
+          "msgid": "Unique identifier for the order status.",
+          "msgctxt": null,
+          "msgstr": "订单状态的唯一标识符。"
+        },
+        {
+          "msgid": "Unique identifier for the store.",
+          "msgctxt": null,
+          "msgstr": "商店的唯一标识符。"
+        },
+        {
+          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
+          "msgctxt": null,
+          "msgstr": "模板的唯一标识符（数据库为数字，虚拟为字符串）。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "POS handling type for the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:184"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Whether the gateway is enabled for the POS.",
+          "Provider family identifier.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "类型"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
+          "msgctxt": null,
+          "msgstr": "订单 ID，或用“latest”表示最近的 POS 订单。省略则使用示例数据。"
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "用于特定门店数据的 POS 门店 ID。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "POS capabilities exposed by the gateway.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:190"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "Provider family identifier.",
+          "POS handling type for the gateway.",
+          "Provider-specific public metadata.",
+          "The PrintNode API key must be sent in the request body, not the query string."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
+          "msgctxt": null,
+          "msgstr": "POS API 结账流程不支持部分现金支付。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Filter orders by POS cashier.",
+          "msgctxt": null,
+          "msgstr": "按POS收银员筛选订单。"
+        },
+        {
+          "msgid": "Filter orders by POS store.",
+          "msgctxt": null,
+          "msgstr": "按POS商店筛选订单。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Provider-specific public metadata.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Payment_Gateways.php:214"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "POS handling type for the gateway.",
+          "POS capabilities exposed by the gateway.",
+          "The PrintNode API key must be sent in the request body, not the query string.",
+          "A PrintNode API key is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Barcode",
+          "msgctxt": null,
+          "msgstr": "条形码"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt 必须是有效的 ISO 8601 UTC 日期。"
+        },
+        {
+          "msgid": "Unique identifier for the cashier (WordPress user ID).",
+          "msgctxt": null,
+          "msgstr": "收银员的唯一标识符（WordPress用户ID）。"
+        },
+        {
+          "msgid": "Limit results to templates resolved for a specific store.",
+          "msgctxt": null,
+          "msgstr": "将结果限制为针对特定门店解析的模板。"
+        },
+        {
+          "msgid": "POS store ID for store-specific data.",
+          "msgctxt": null,
+          "msgstr": "用于特定门店数据的 POS 门店 ID。"
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
         "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -9396,8 +10076,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Unique identifier for the order status.",
-          "Display name of the order status.",
+          "POS capabilities exposed by the gateway.",
+          "Provider-specific public metadata.",
           "A PrintNode API key is required.",
           "The Star Online API key must be sent in the request body, not the query string."
         ]
@@ -9488,7 +10168,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Display name of the order status.",
+          "Provider-specific public metadata.",
           "The PrintNode API key must be sent in the request body, not the query string.",
           "The Star Online API key must be sent in the request body, not the query string.",
           "A Star Online API key and a valid stario.online CloudPRNT URL are required."
