@@ -1588,8 +1588,8 @@
         ],
         "references": [
           "includes/Admin/Menu.php:190",
-          "includes/Admin/Plugins.php:52",
-          "includes/Admin/Products/Single_Product.php:207"
+          "includes/Admin/Plugins.php:53",
+          "includes/Admin/Products/Single_Product.php:209"
         ]
       },
       "source_usage": {
@@ -2179,7 +2179,7 @@
           "Prefix for an important plugin update notice in the WordPress plugins screen."
         ],
         "references": [
-          "includes/Admin/Plugins.php:82"
+          "includes/Admin/Plugins.php:83"
         ]
       },
       "source_usage": {
@@ -2266,7 +2266,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:96"
+          "includes/Admin/Plugins.php:97"
         ]
       },
       "source_usage": {
@@ -2351,7 +2351,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Plugins.php:99"
+          "includes/Admin/Plugins.php:100"
         ]
       },
       "source_usage": {
@@ -2436,7 +2436,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:103"
+          "includes/Admin/Plugins.php:104"
         ]
       },
       "source_usage": {
@@ -2523,7 +2523,7 @@
           "%s: URL to My Account page"
         ],
         "references": [
-          "includes/Admin/Plugins.php:107"
+          "includes/Admin/Plugins.php:108"
         ]
       },
       "source_usage": {
@@ -3050,8 +3050,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:105",
-          "includes/Admin/Products/Single_Product.php:180"
+          "includes/Admin/Products/Single_Product.php:106",
+          "includes/Admin/Products/Single_Product.php:182"
         ]
       },
       "source_usage": {
@@ -3136,8 +3136,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:128",
-          "includes/Admin/Products/Single_Product.php:194"
+          "includes/Admin/Products/Single_Product.php:130",
+          "includes/Admin/Products/Single_Product.php:196"
         ]
       },
       "source_usage": {
@@ -6411,6 +6411,11 @@
           "msgstr": "Ogranicz wyniki do szablonów przypisanych do konkretnego sklepu."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
           "msgid": "POS store ID for store-specific data.",
           "msgctxt": null,
           "msgstr": "ID sklepu POS dla danych specyficznych dla sklepu."
@@ -6419,11 +6424,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Nie udało się utworzyć zadania drukowania."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zadania drukowania."
         }
       ],
       "concept_hints": [],
@@ -7208,9 +7208,9 @@
           "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
         },
         {
-          "msgid": "Store not found",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Sklep nie znaleziony"
+          "msgstr": "Opis bramki płatności."
         }
       ],
       "concept_hints": [],
@@ -7251,6 +7251,11 @@
           "msgstr": "Druk testowy nie jest jeszcze dostępny dla tej drukarki."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Czy bramka jest włączona w POS."
+        },
+        {
           "msgid": "Payment gateway not found.",
           "msgctxt": null,
           "msgstr": "Nie znaleziono bramki płatności."
@@ -7271,6 +7276,16 @@
           "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Nie udało się utworzyć zadania drukowania."
@@ -7279,21 +7294,6 @@
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Nie znaleziono zadania drukowania."
-        },
-        {
-          "msgid": "Invalid template ID.",
-          "msgctxt": null,
-          "msgstr": "Nieprawidłowy ID szablonu."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Częściowe płatności gotówkowe nie są obsługiwane przez przepływ kasowania w API POS."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Szablon zawiera niebezpieczną funkcję: %s(). Ta funkcja nie jest dozwolona ze względów bezpieczeństwa."
         }
       ],
       "concept_hints": [],
@@ -9040,9 +9040,9 @@
           "msgstr": "Filtruj klientów według ról."
         },
         {
-          "msgid": "POS store ID for store-specific data.",
+          "msgid": "POS capabilities exposed by the gateway.",
           "msgctxt": null,
-          "msgstr": "ID sklepu POS dla danych specyficznych dla sklepu."
+          "msgstr": "Funkcje POS udostępniane przez bramkę."
         }
       ],
       "concept_hints": [],
@@ -9426,9 +9426,19 @@
           "msgstr": "Nie znaleziono kasjera."
         },
         {
+          "msgid": "Payment gateway description.",
+          "msgctxt": null,
+          "msgstr": "Opis bramki płatności."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9444,16 +9454,6 @@
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Typ identyfikatora podatkowego."
-        },
-        {
-          "msgid": "Tax ID value.",
-          "msgctxt": null,
-          "msgstr": "Wartość identyfikatora podatkowego."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Kod kreskowy"
         }
       ],
       "concept_hints": [],
@@ -9501,6 +9501,21 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Funkcje POS udostępniane przez bramkę."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Czy bramka jest włączona w POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Nieprawidłowy ID szablonu."
@@ -9524,21 +9539,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Nie znaleziono kasjera."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Nie udało się utworzyć zadania drukowania."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zadania drukowania."
-        },
-        {
-          "msgid": "Could not generate the receipt PDF.",
-          "msgctxt": null,
-          "msgstr": "Nie udało się wygenerować pliku PDF paragonu."
         }
       ],
       "concept_hints": [],
@@ -9591,9 +9591,19 @@
           "msgstr": "Nie znaleziono kasjera."
         },
         {
+          "msgid": "Payment gateway ID.",
+          "msgctxt": null,
+          "msgstr": "ID bramki płatności."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9614,16 +9624,6 @@
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
-        },
-        {
-          "msgid": "Search templates by title or description.",
-          "msgctxt": null,
-          "msgstr": "Wyszukuj szablony po tytule lub opisie."
         }
       ],
       "concept_hints": [],
@@ -9666,6 +9666,11 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9674,6 +9679,16 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Unikalny identyfikator dla kasjera (ID użytkownika WordPress)."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Funkcje POS udostępniane przez bramkę."
         },
         {
           "msgid": "Invalid template ID.",
@@ -9694,21 +9709,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Nie znaleziono kasjera."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "ID zamówienia lub \"latest\" dla najnowszego zamówienia POS. Pomiń dla danych przykładowych."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zamówienia lub nie jest to zamówienie POS."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID sklepu POS dla danych specyficznych dla sklepu."
         }
       ],
       "concept_hints": [],
@@ -9781,6 +9781,11 @@
           "msgstr": "date_created_gmt musi być prawidłową datą UTC w formacie ISO 8601."
         },
         {
+          "msgid": "Provider-specific public metadata.",
+          "msgctxt": null,
+          "msgstr": "Publiczne metadane specyficzne dla dostawcy."
+        },
+        {
           "msgid": "Unique identifier for the order status.",
           "msgctxt": null,
           "msgstr": "Unikalny identyfikator statusu zamówienia."
@@ -9789,11 +9794,6 @@
           "msgid": "Unique identifier for the store.",
           "msgctxt": null,
           "msgstr": "Unikalny identyfikator dla sklepu."
-        },
-        {
-          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
-          "msgctxt": null,
-          "msgstr": "Unikalny identyfikator szablonu (numeryczny dla bazy danych, tekstowy dla wirtualnego)."
         }
       ],
       "concept_hints": [],
@@ -9831,6 +9831,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Czy bramka jest włączona w POS."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9851,6 +9856,16 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Funkcje POS udostępniane przez bramkę."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Nieprawidłowy ID szablonu."
@@ -9864,21 +9879,6 @@
           "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
           "msgctxt": null,
           "msgstr": "ID zamówienia lub \"latest\" dla najnowszego zamówienia POS. Pomiń dla danych przykładowych."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID sklepu POS dla danych specyficznych dla sklepu."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Nie udało się utworzyć zadania drukowania."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zadania drukowania."
         }
       ],
       "concept_hints": [],
@@ -9921,6 +9921,21 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Czy bramka jest włączona w POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Nieprawidłowy ID szablonu."
@@ -9949,21 +9964,6 @@
           "msgid": "Filter orders by POS store.",
           "msgctxt": null,
           "msgstr": "Filtruj zamówienia według sklepu POS."
-        },
-        {
-          "msgid": "Payment gateway is not available for POS checkout.",
-          "msgctxt": null,
-          "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Nie udało się utworzyć zadania drukowania."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Nie znaleziono zadania drukowania."
         }
       ],
       "concept_hints": [],
@@ -10046,9 +10046,9 @@
           "msgstr": "ID sklepu POS dla danych specyficznych dla sklepu."
         },
         {
-          "msgid": "Could not generate the receipt PDF.",
+          "msgid": "Provider family identifier.",
           "msgctxt": null,
-          "msgstr": "Nie udało się wygenerować pliku PDF paragonu."
+          "msgstr": "Identyfikator rodziny dostawcy."
         }
       ],
       "concept_hints": [],
@@ -15788,6 +15788,11 @@
           "msgstr": "Klucz API Star Online należy wysłać w treści żądania, a nie w ciągu zapytania."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Czy bramka jest włączona w POS."
+        },
+        {
           "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
           "msgstr": "Nie udało się wygenerować pliku PDF paragonu."
@@ -15796,11 +15801,6 @@
           "msgid": "An identical request is already being processed.",
           "msgctxt": null,
           "msgstr": "Identyczne żądanie jest już przetwarzane."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Kod kreskowy"
         }
       ],
       "concept_hints": [],
@@ -17704,6 +17704,11 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Funkcje POS udostępniane przez bramkę."
+        },
+        {
           "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
           "msgctxt": null,
           "msgstr": "Klucz API PrintNode należy przesłać w treści żądania, a nie w ciągu zapytania."
@@ -17727,11 +17732,6 @@
           "msgid": "Cashback",
           "msgctxt": null,
           "msgstr": "Zwrot gotówki"
-        },
-        {
-          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
-          "msgctxt": null,
-          "msgstr": "Wymagany jest klucz API Star Online i prawidłowy adres URL CloudPRNT w stario.online."
         }
       ],
       "concept_hints": [],
@@ -17811,14 +17811,14 @@
           "msgstr": "Do zapłaty"
         },
         {
-          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
+          "msgstr": "Opis bramki płatności."
         },
         {
-          "msgid": "Payment gateway not found.",
+          "msgid": "Payment gateway ID.",
           "msgctxt": null,
-          "msgstr": "Nie znaleziono bramki płatności."
+          "msgstr": "ID bramki płatności."
         }
       ],
       "concept_hints": [],
@@ -18061,14 +18061,14 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
           "msgid": "POS cashier changed from %1$s to %2$s.",
           "msgctxt": null,
           "msgstr": "Kasjer POS zmieniony z %1$s na %2$s."
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> wymaga <a href=\"%1$s\">WCPOS Pro %2$s lub nowszego</a>. Proszę <a href=\"%3$s\">zainstalować i aktywować WCPOS Pro</a>"
         }
       ],
       "concept_hints": [],
@@ -23085,6 +23085,11 @@
           "msgstr": "Typ szablonu nadrzędnego:"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ obsługi POS dla bramki."
+        },
+        {
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Typ identyfikatora podatkowego."
@@ -23093,11 +23098,6 @@
           "msgid": "Template Type",
           "msgctxt": "Taxonomy Singular Name",
           "msgstr": "Typ szablonu"
-        },
-        {
-          "msgid": "Template type for ordering.",
-          "msgctxt": null,
-          "msgstr": "Typ szablonu do sortowania."
         }
       ],
       "concept_hints": [],
@@ -58111,6 +58111,11 @@
           "msgstr": "Bramka płatności nie jest dostępna dla kasowania POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tytuł bramki płatności wyświetlany w POS."
+        },
+        {
           "msgid": "POS - Open <span class=\"count\">(%s)</span>",
           "msgctxt": null,
           "msgstr": "POS - Otwarty <span class=\"count\">(%s)</span>"
@@ -58119,11 +58124,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Szablony POS"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Nie masz uprawnień do dostępu do POS."
         }
       ],
       "concept_hints": [],

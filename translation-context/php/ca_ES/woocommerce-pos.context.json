@@ -1588,8 +1588,8 @@
         ],
         "references": [
           "includes/Admin/Menu.php:190",
-          "includes/Admin/Plugins.php:52",
-          "includes/Admin/Products/Single_Product.php:207"
+          "includes/Admin/Plugins.php:53",
+          "includes/Admin/Products/Single_Product.php:209"
         ]
       },
       "source_usage": {
@@ -2179,7 +2179,7 @@
           "Prefix for an important plugin update notice in the WordPress plugins screen."
         ],
         "references": [
-          "includes/Admin/Plugins.php:82"
+          "includes/Admin/Plugins.php:83"
         ]
       },
       "source_usage": {
@@ -2266,7 +2266,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:96"
+          "includes/Admin/Plugins.php:97"
         ]
       },
       "source_usage": {
@@ -2351,7 +2351,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Plugins.php:99"
+          "includes/Admin/Plugins.php:100"
         ]
       },
       "source_usage": {
@@ -2436,7 +2436,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:103"
+          "includes/Admin/Plugins.php:104"
         ]
       },
       "source_usage": {
@@ -2523,7 +2523,7 @@
           "%s: URL to My Account page"
         ],
         "references": [
-          "includes/Admin/Plugins.php:107"
+          "includes/Admin/Plugins.php:108"
         ]
       },
       "source_usage": {
@@ -3050,8 +3050,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:105",
-          "includes/Admin/Products/Single_Product.php:180"
+          "includes/Admin/Products/Single_Product.php:106",
+          "includes/Admin/Products/Single_Product.php:182"
         ]
       },
       "source_usage": {
@@ -3136,8 +3136,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:128",
-          "includes/Admin/Products/Single_Product.php:194"
+          "includes/Admin/Products/Single_Product.php:130",
+          "includes/Admin/Products/Single_Product.php:196"
         ]
       },
       "source_usage": {
@@ -6411,6 +6411,11 @@
           "msgstr": "Limita els resultats a les plantilles resoltes per a una botiga concreta."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
           "msgid": "POS store ID for store-specific data.",
           "msgctxt": null,
           "msgstr": "ID de la botiga del POS per a dades específiques de la botiga."
@@ -6419,11 +6424,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "No s'ha pogut crear la tasca d'impressió."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "No s'ha trobat la tasca d'impressió."
         }
       ],
       "concept_hints": [],
@@ -7208,9 +7208,9 @@
           "msgstr": "Comanda no trobada o no és una comanda de POS."
         },
         {
-          "msgid": "Store not found",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Botiga no trobada"
+          "msgstr": "Descripció de la passarel·la de pagament."
         }
       ],
       "concept_hints": [],
@@ -7251,6 +7251,11 @@
           "msgstr": "La impressió de prova encara no està disponible per a aquesta impressora."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Si la passarel·la està activada per al POS."
+        },
+        {
           "msgid": "Payment gateway not found.",
           "msgctxt": null,
           "msgstr": "Passarel·la de pagament no trobada."
@@ -7271,6 +7276,16 @@
           "msgstr": "Comanda no trobada o no és una comanda de POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "No s'ha pogut crear la tasca d'impressió."
@@ -7279,21 +7294,6 @@
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "No s'ha trobat la tasca d'impressió."
-        },
-        {
-          "msgid": "Invalid template ID.",
-          "msgctxt": null,
-          "msgstr": "ID de plantilla no vàlid."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Els pagaments parcials en efectiu no són compatibles amb el flux de pagament de l'API del POS."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "La plantilla conté una funció perillosa: %s(). Aquesta funció no està permesa per raons de seguretat."
         }
       ],
       "concept_hints": [],
@@ -9040,9 +9040,9 @@
           "msgstr": "Filtra clients per rols."
         },
         {
-          "msgid": "POS store ID for store-specific data.",
+          "msgid": "POS capabilities exposed by the gateway.",
           "msgctxt": null,
-          "msgstr": "ID de la botiga del POS per a dades específiques de la botiga."
+          "msgstr": "Capacitats de POS que exposa la passarel·la."
         }
       ],
       "concept_hints": [],
@@ -9426,9 +9426,19 @@
           "msgstr": "Caixer no trobat."
         },
         {
+          "msgid": "Payment gateway description.",
+          "msgctxt": null,
+          "msgstr": "Descripció de la passarel·la de pagament."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9444,16 +9454,6 @@
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Tipus d'identificador fiscal."
-        },
-        {
-          "msgid": "Tax ID value.",
-          "msgctxt": null,
-          "msgstr": "Valor de l'identificador fiscal."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Codi de barres"
         }
       ],
       "concept_hints": [],
@@ -9501,6 +9501,21 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Capacitats de POS que exposa la passarel·la."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Si la passarel·la està activada per al POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "ID de plantilla no vàlid."
@@ -9524,21 +9539,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Caixer no trobat."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "No s'ha pogut crear la tasca d'impressió."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "No s'ha trobat la tasca d'impressió."
-        },
-        {
-          "msgid": "Could not generate the receipt PDF.",
-          "msgctxt": null,
-          "msgstr": "No s'ha pogut generar el PDF del rebut."
         }
       ],
       "concept_hints": [],
@@ -9591,9 +9591,19 @@
           "msgstr": "Caixer no trobat."
         },
         {
+          "msgid": "Payment gateway ID.",
+          "msgctxt": null,
+          "msgstr": "ID de la passarel·la de pagament."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9614,16 +9624,6 @@
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt ha de ser una data UTC ISO 8601 vàlida."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Identificador únic per al caixer (ID d'usuari de WordPress)."
-        },
-        {
-          "msgid": "Search templates by title or description.",
-          "msgctxt": null,
-          "msgstr": "Cerqueu models pel títol o la descripció."
         }
       ],
       "concept_hints": [],
@@ -9666,6 +9666,11 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9674,6 +9679,16 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Identificador únic per al caixer (ID d'usuari de WordPress)."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Capacitats de POS que exposa la passarel·la."
         },
         {
           "msgid": "Invalid template ID.",
@@ -9694,21 +9709,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Caixer no trobat."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "ID de la comanda o «latest» per a la comanda de POS més recent. Ometeu-lo per a dades de mostra."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Comanda no trobada o no és una comanda de POS."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID de la botiga del POS per a dades específiques de la botiga."
         }
       ],
       "concept_hints": [],
@@ -9781,6 +9781,11 @@
           "msgstr": "date_created_gmt ha de ser una data UTC ISO 8601 vàlida."
         },
         {
+          "msgid": "Provider-specific public metadata.",
+          "msgctxt": null,
+          "msgstr": "Metadades públiques específiques del proveïdor."
+        },
+        {
           "msgid": "Unique identifier for the order status.",
           "msgctxt": null,
           "msgstr": "Identificador únic per a l'estat de la comanda."
@@ -9789,11 +9794,6 @@
           "msgid": "Unique identifier for the store.",
           "msgctxt": null,
           "msgstr": "Identificador únic per a la botiga."
-        },
-        {
-          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
-          "msgctxt": null,
-          "msgstr": "Identificador únic per a la plantilla (numèric per a la base de dades, cadena per a virtual)."
         }
       ],
       "concept_hints": [],
@@ -9831,6 +9831,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Si la passarel·la està activada per al POS."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9851,6 +9856,16 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Capacitats de POS que exposa la passarel·la."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "ID de plantilla no vàlid."
@@ -9864,21 +9879,6 @@
           "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
           "msgctxt": null,
           "msgstr": "ID de la comanda o «latest» per a la comanda de POS més recent. Ometeu-lo per a dades de mostra."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID de la botiga del POS per a dades específiques de la botiga."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "No s'ha pogut crear la tasca d'impressió."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "No s'ha trobat la tasca d'impressió."
         }
       ],
       "concept_hints": [],
@@ -9921,6 +9921,21 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Si la passarel·la està activada per al POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "ID de plantilla no vàlid."
@@ -9949,21 +9964,6 @@
           "msgid": "Filter orders by POS store.",
           "msgctxt": null,
           "msgstr": "Filtra comandes per botiga del POS."
-        },
-        {
-          "msgid": "Payment gateway is not available for POS checkout.",
-          "msgctxt": null,
-          "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "No s'ha pogut crear la tasca d'impressió."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "No s'ha trobat la tasca d'impressió."
         }
       ],
       "concept_hints": [],
@@ -10046,9 +10046,9 @@
           "msgstr": "ID de la botiga del POS per a dades específiques de la botiga."
         },
         {
-          "msgid": "Could not generate the receipt PDF.",
+          "msgid": "Provider family identifier.",
           "msgctxt": null,
-          "msgstr": "No s'ha pogut generar el PDF del rebut."
+          "msgstr": "Identificador de la família del proveïdor."
         }
       ],
       "concept_hints": [],
@@ -15788,6 +15788,11 @@
           "msgstr": "La clau de l'API de Star Online s'ha d'enviar al cos de la sol·licitud, no a la cadena de consulta."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Si la passarel·la està activada per al POS."
+        },
+        {
           "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
           "msgstr": "No s'ha pogut generar el PDF del rebut."
@@ -15796,11 +15801,6 @@
           "msgid": "An identical request is already being processed.",
           "msgctxt": null,
           "msgstr": "Ja s'està processant una sol·licitud idèntica."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Codi de barres"
         }
       ],
       "concept_hints": [],
@@ -17704,6 +17704,11 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Capacitats de POS que exposa la passarel·la."
+        },
+        {
           "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
           "msgctxt": null,
           "msgstr": "La clau de l'API de PrintNode s'ha d'enviar al cos de la sol·licitud, no a la cadena de consulta."
@@ -17727,11 +17732,6 @@
           "msgid": "Cashback",
           "msgctxt": null,
           "msgstr": "Reemborsament"
-        },
-        {
-          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
-          "msgctxt": null,
-          "msgstr": "Cal una clau de l'API de Star Online i una URL CloudPRNT de stario.online vàlida."
         }
       ],
       "concept_hints": [],
@@ -17811,14 +17811,14 @@
           "msgstr": "Pendent de pagament"
         },
         {
-          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
+          "msgstr": "Descripció de la passarel·la de pagament."
         },
         {
-          "msgid": "Payment gateway not found.",
+          "msgid": "Payment gateway ID.",
           "msgctxt": null,
-          "msgstr": "Passarel·la de pagament no trobada."
+          "msgstr": "ID de la passarel·la de pagament."
         }
       ],
       "concept_hints": [],
@@ -18061,14 +18061,14 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
           "msgid": "POS cashier changed from %1$s to %2$s.",
           "msgctxt": null,
           "msgstr": "El caixer POS ha canviat de %1$s a %2$s."
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> requereix <a href=\"%1$s\">WCPOS Pro %2$s o superior</a>. Si us plau, <a href=\"%3$s\">instal·la i activa WCPOS Pro</a>"
         }
       ],
       "concept_hints": [],
@@ -23085,6 +23085,11 @@
           "msgstr": "Tipus de plantilla pare:"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Tipus de gestió del POS per a la passarel·la."
+        },
+        {
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Tipus d'identificador fiscal."
@@ -23093,11 +23098,6 @@
           "msgid": "Template Type",
           "msgctxt": "Taxonomy Singular Name",
           "msgstr": "Tipus de plantilla"
-        },
-        {
-          "msgid": "Template type for ordering.",
-          "msgctxt": null,
-          "msgstr": "Tipus de plantilla per ordenar."
         }
       ],
       "concept_hints": [],
@@ -58111,6 +58111,11 @@
           "msgstr": "La passarel·la de pagament no està disponible per al cobrament al POS."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Títol de la passarel·la de pagament que es mostra al POS."
+        },
+        {
           "msgid": "POS - Open <span class=\"count\">(%s)</span>",
           "msgctxt": null,
           "msgstr": "POS - Obert <span class=\"count\">(%s)</span>"
@@ -58119,11 +58124,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Plantilles POS"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "No tens permís per accedir al POS."
         }
       ],
       "concept_hints": [],

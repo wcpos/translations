@@ -1588,8 +1588,8 @@
         ],
         "references": [
           "includes/Admin/Menu.php:190",
-          "includes/Admin/Plugins.php:52",
-          "includes/Admin/Products/Single_Product.php:207"
+          "includes/Admin/Plugins.php:53",
+          "includes/Admin/Products/Single_Product.php:209"
         ]
       },
       "source_usage": {
@@ -2179,7 +2179,7 @@
           "Prefix for an important plugin update notice in the WordPress plugins screen."
         ],
         "references": [
-          "includes/Admin/Plugins.php:82"
+          "includes/Admin/Plugins.php:83"
         ]
       },
       "source_usage": {
@@ -2266,7 +2266,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:96"
+          "includes/Admin/Plugins.php:97"
         ]
       },
       "source_usage": {
@@ -2351,7 +2351,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Plugins.php:99"
+          "includes/Admin/Plugins.php:100"
         ]
       },
       "source_usage": {
@@ -2436,7 +2436,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:103"
+          "includes/Admin/Plugins.php:104"
         ]
       },
       "source_usage": {
@@ -2523,7 +2523,7 @@
           "%s: URL to My Account page"
         ],
         "references": [
-          "includes/Admin/Plugins.php:107"
+          "includes/Admin/Plugins.php:108"
         ]
       },
       "source_usage": {
@@ -3050,8 +3050,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:105",
-          "includes/Admin/Products/Single_Product.php:180"
+          "includes/Admin/Products/Single_Product.php:106",
+          "includes/Admin/Products/Single_Product.php:182"
         ]
       },
       "source_usage": {
@@ -3136,8 +3136,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:128",
-          "includes/Admin/Products/Single_Product.php:194"
+          "includes/Admin/Products/Single_Product.php:130",
+          "includes/Admin/Products/Single_Product.php:196"
         ]
       },
       "source_usage": {
@@ -6411,6 +6411,11 @@
           "msgstr": "結果を特定の店舗向けに解決されたテンプレートに限定します。"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
           "msgid": "POS store ID for store-specific data.",
           "msgctxt": null,
           "msgstr": "店舗固有データ用のPOS店舗ID。"
@@ -6419,11 +6424,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "印刷ジョブを作成できませんでした。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -7208,9 +7208,9 @@
           "msgstr": "注文が見つからないか、POS注文ではありません。"
         },
         {
-          "msgid": "Store not found",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "店舗が見つかりません"
+          "msgstr": "決済ゲートウェイの説明。"
         }
       ],
       "concept_hints": [],
@@ -7251,6 +7251,11 @@
           "msgstr": "このプリンターではまだテスト印刷を利用できません。"
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "POSでこのゲートウェイを有効にするかどうか。"
+        },
+        {
           "msgid": "Payment gateway not found.",
           "msgctxt": null,
           "msgstr": "支払いゲートウェイが見つかりません。"
@@ -7271,6 +7276,16 @@
           "msgstr": "注文が見つからないか、POS注文ではありません。"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "印刷ジョブを作成できませんでした。"
@@ -7279,21 +7294,6 @@
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "印刷ジョブが見つかりません。"
-        },
-        {
-          "msgid": "Invalid template ID.",
-          "msgctxt": null,
-          "msgstr": "無効なテンプレートIDです。"
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "POS APIのチェックアウトフローでは一部の現金支払いはサポートされていません。"
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "テンプレートに危険な関数が含まれています：%s()。この関数はセキュリティ上の理由で許可されていません。"
         }
       ],
       "concept_hints": [],
@@ -9040,9 +9040,9 @@
           "msgstr": "役割で顧客をフィルタリング。"
         },
         {
-          "msgid": "POS store ID for store-specific data.",
+          "msgid": "POS capabilities exposed by the gateway.",
           "msgctxt": null,
-          "msgstr": "店舗固有データ用のPOS店舗ID。"
+          "msgstr": "このゲートウェイが公開するPOS機能。"
         }
       ],
       "concept_hints": [],
@@ -9426,9 +9426,19 @@
           "msgstr": "キャッシャーが見つかりません。"
         },
         {
+          "msgid": "Payment gateway description.",
+          "msgctxt": null,
+          "msgstr": "決済ゲートウェイの説明。"
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
         },
         {
           "msgid": "Print job could not be created.",
@@ -9444,16 +9454,6 @@
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "税IDの種類。"
-        },
-        {
-          "msgid": "Tax ID value.",
-          "msgctxt": null,
-          "msgstr": "税IDの値。"
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "バーコード"
         }
       ],
       "concept_hints": [],
@@ -9501,6 +9501,21 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイが公開するPOS機能。"
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "POSでこのゲートウェイを有効にするかどうか。"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "無効なテンプレートIDです。"
@@ -9524,21 +9539,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "キャッシャーが見つかりません。"
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブを作成できませんでした。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブが見つかりません。"
-        },
-        {
-          "msgid": "Could not generate the receipt PDF.",
-          "msgctxt": null,
-          "msgstr": "レシートPDFを生成できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -9591,9 +9591,19 @@
           "msgstr": "キャッシャーが見つかりません。"
         },
         {
+          "msgid": "Payment gateway ID.",
+          "msgctxt": null,
+          "msgstr": "決済ゲートウェイID。"
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
         },
         {
           "msgid": "Print job could not be created.",
@@ -9614,16 +9624,6 @@
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt は有効な ISO 8601 の UTC 日時である必要があります。"
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "キャッシャーのユニーク識別子（WordPressユーザーID）。"
-        },
-        {
-          "msgid": "Search templates by title or description.",
-          "msgctxt": null,
-          "msgstr": "タイトルまたは説明でテンプレートを検索します。"
         }
       ],
       "concept_hints": [],
@@ -9666,6 +9666,11 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9674,6 +9679,16 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "キャッシャーのユニーク識別子（WordPressユーザーID）。"
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイが公開するPOS機能。"
         },
         {
           "msgid": "Invalid template ID.",
@@ -9694,21 +9709,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "キャッシャーが見つかりません。"
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "注文ID、または最新のPOS注文として \"latest\" を指定します。サンプルデータの場合は省略してください。"
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "注文が見つからないか、POS注文ではありません。"
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "店舗固有データ用のPOS店舗ID。"
         }
       ],
       "concept_hints": [],
@@ -9781,6 +9781,11 @@
           "msgstr": "date_created_gmt は有効な ISO 8601 の UTC 日時である必要があります。"
         },
         {
+          "msgid": "Provider-specific public metadata.",
+          "msgctxt": null,
+          "msgstr": "プロバイダー固有の公開メタデータ。"
+        },
+        {
           "msgid": "Unique identifier for the order status.",
           "msgctxt": null,
           "msgstr": "注文ステータスの一意識別子。"
@@ -9789,11 +9794,6 @@
           "msgid": "Unique identifier for the store.",
           "msgctxt": null,
           "msgstr": "ストアのユニーク識別子。"
-        },
-        {
-          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
-          "msgctxt": null,
-          "msgstr": "テンプレートの一意識別子（データベース用は数値、仮想用は文字列）。"
         }
       ],
       "concept_hints": [],
@@ -9831,6 +9831,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "POSでこのゲートウェイを有効にするかどうか。"
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9851,6 +9856,16 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイが公開するPOS機能。"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "無効なテンプレートIDです。"
@@ -9864,21 +9879,6 @@
           "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
           "msgctxt": null,
           "msgstr": "注文ID、または最新のPOS注文として \"latest\" を指定します。サンプルデータの場合は省略してください。"
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "店舗固有データ用のPOS店舗ID。"
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブを作成できませんでした。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -9921,6 +9921,21 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "POSでこのゲートウェイを有効にするかどうか。"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "無効なテンプレートIDです。"
@@ -9949,21 +9964,6 @@
           "msgid": "Filter orders by POS store.",
           "msgctxt": null,
           "msgstr": "POS店舗で注文をフィルタリング。"
-        },
-        {
-          "msgid": "Payment gateway is not available for POS checkout.",
-          "msgctxt": null,
-          "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブを作成できませんでした。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -10046,9 +10046,9 @@
           "msgstr": "店舗固有データ用のPOS店舗ID。"
         },
         {
-          "msgid": "Could not generate the receipt PDF.",
+          "msgid": "Provider family identifier.",
           "msgctxt": null,
-          "msgstr": "レシートPDFを生成できませんでした。"
+          "msgstr": "プロバイダーファミリーの識別子。"
         }
       ],
       "concept_hints": [],
@@ -15788,6 +15788,11 @@
           "msgstr": "Star Online APIキーはクエリ文字列ではなく、リクエスト本文で送信する必要があります。"
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "POSでこのゲートウェイを有効にするかどうか。"
+        },
+        {
           "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
           "msgstr": "レシートPDFを生成できませんでした。"
@@ -15796,11 +15801,6 @@
           "msgid": "An identical request is already being processed.",
           "msgctxt": null,
           "msgstr": "同一のリクエストがすでに処理中です。"
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "バーコード"
         }
       ],
       "concept_hints": [],
@@ -17704,6 +17704,11 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイが公開するPOS機能。"
+        },
+        {
           "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
           "msgctxt": null,
           "msgstr": "PrintNode APIキーは、クエリ文字列ではなくリクエストボディで送信する必要があります。"
@@ -17727,11 +17732,6 @@
           "msgid": "Cashback",
           "msgctxt": null,
           "msgstr": "キャッシュバック"
-        },
-        {
-          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
-          "msgctxt": null,
-          "msgstr": "Star Online APIキーと有効な stario.online CloudPRNT URL が必要です。"
         }
       ],
       "concept_hints": [],
@@ -17811,14 +17811,14 @@
           "msgstr": "支払い必要"
         },
         {
-          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
+          "msgstr": "決済ゲートウェイの説明。"
         },
         {
-          "msgid": "Payment gateway not found.",
+          "msgid": "Payment gateway ID.",
           "msgctxt": null,
-          "msgstr": "支払いゲートウェイが見つかりません。"
+          "msgstr": "決済ゲートウェイID。"
         }
       ],
       "concept_hints": [],
@@ -18061,14 +18061,14 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
           "msgid": "POS cashier changed from %1$s to %2$s.",
           "msgctxt": null,
           "msgstr": "POSレジ係が%1$sから%2$sに変更されました。"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong>は<a href=\"%1$s\">WCPOS Pro %2$s以上</a>が必要です。<a href=\"%3$s\">WCPOS Proをインストールして有効化してください</a>"
         }
       ],
       "concept_hints": [],
@@ -23085,6 +23085,11 @@
           "msgstr": "親テンプレートタイプ:"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "このゲートウェイのPOS処理タイプ。"
+        },
+        {
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "税IDの種類。"
@@ -23093,11 +23098,6 @@
           "msgid": "Template Type",
           "msgctxt": "Taxonomy Singular Name",
           "msgstr": "テンプレートタイプ"
-        },
-        {
-          "msgid": "Template type for ordering.",
-          "msgctxt": null,
-          "msgstr": "注文用のテンプレートタイプ"
         }
       ],
       "concept_hints": [],
@@ -58111,6 +58111,11 @@
           "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "POSに表示する決済ゲートウェイのタイトル。"
+        },
+        {
           "msgid": "POS - Open <span class=\"count\">(%s)</span>",
           "msgctxt": null,
           "msgstr": "POS - オープン <span class=\"count\">(%s)</span>"
@@ -58119,11 +58124,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POSテンプレート"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "POSにアクセスする権限がありません。"
         }
       ],
       "concept_hints": [],

@@ -1588,8 +1588,8 @@
         ],
         "references": [
           "includes/Admin/Menu.php:190",
-          "includes/Admin/Plugins.php:52",
-          "includes/Admin/Products/Single_Product.php:207"
+          "includes/Admin/Plugins.php:53",
+          "includes/Admin/Products/Single_Product.php:209"
         ]
       },
       "source_usage": {
@@ -2179,7 +2179,7 @@
           "Prefix for an important plugin update notice in the WordPress plugins screen."
         ],
         "references": [
-          "includes/Admin/Plugins.php:82"
+          "includes/Admin/Plugins.php:83"
         ]
       },
       "source_usage": {
@@ -2266,7 +2266,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:96"
+          "includes/Admin/Plugins.php:97"
         ]
       },
       "source_usage": {
@@ -2351,7 +2351,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Plugins.php:99"
+          "includes/Admin/Plugins.php:100"
         ]
       },
       "source_usage": {
@@ -2436,7 +2436,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:103"
+          "includes/Admin/Plugins.php:104"
         ]
       },
       "source_usage": {
@@ -2523,7 +2523,7 @@
           "%s: URL to My Account page"
         ],
         "references": [
-          "includes/Admin/Plugins.php:107"
+          "includes/Admin/Plugins.php:108"
         ]
       },
       "source_usage": {
@@ -3050,8 +3050,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:105",
-          "includes/Admin/Products/Single_Product.php:180"
+          "includes/Admin/Products/Single_Product.php:106",
+          "includes/Admin/Products/Single_Product.php:182"
         ]
       },
       "source_usage": {
@@ -3136,8 +3136,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:128",
-          "includes/Admin/Products/Single_Product.php:194"
+          "includes/Admin/Products/Single_Product.php:130",
+          "includes/Admin/Products/Single_Product.php:196"
         ]
       },
       "source_usage": {
@@ -6411,6 +6411,11 @@
           "msgstr": "Begrens resultatene til maler som er løst for en bestemt butikk."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
           "msgid": "POS store ID for store-specific data.",
           "msgctxt": null,
           "msgstr": "POS-butikk-ID for butikkspecifikke data."
@@ -6419,11 +6424,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Utskriftsjobben kunne ikke opprettes."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobb ble ikke funnet."
         }
       ],
       "concept_hints": [],
@@ -7208,9 +7208,9 @@
           "msgstr": "Ordre ble ikke funnet, eller den er ikke en POS-ordre."
         },
         {
-          "msgid": "Store not found",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Butikk ikke funnet"
+          "msgstr": "Beskrivelse av betalingsløsningen."
         }
       ],
       "concept_hints": [],
@@ -7251,6 +7251,11 @@
           "msgstr": "Testutskrift er ikke tilgjengelig for denne skriveren ennå."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Om betalingsløsningen er aktivert for POS."
+        },
+        {
           "msgid": "Payment gateway not found.",
           "msgctxt": null,
           "msgstr": "Betalingsgateway ble ikke funnet."
@@ -7271,6 +7276,16 @@
           "msgstr": "Ordre ble ikke funnet, eller den er ikke en POS-ordre."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Utskriftsjobben kunne ikke opprettes."
@@ -7279,21 +7294,6 @@
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Utskriftsjobb ble ikke funnet."
-        },
-        {
-          "msgid": "Invalid template ID.",
-          "msgctxt": null,
-          "msgstr": "Ugyldig mal-ID."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Delbetaling med kontanter støttes ikke av utsjekkingsflyten i POS-API-et."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Malen inneholder farlig funksjon: %s(). Denne funksjonen er ikke tillatt av sikkerhetsgrunner."
         }
       ],
       "concept_hints": [],
@@ -9040,9 +9040,9 @@
           "msgstr": "Filtrer kunder etter roller."
         },
         {
-          "msgid": "POS store ID for store-specific data.",
+          "msgid": "POS capabilities exposed by the gateway.",
           "msgctxt": null,
-          "msgstr": "POS-butikk-ID for butikkspecifikke data."
+          "msgstr": "POS-funksjoner som tilbys av betalingsløsningen."
         }
       ],
       "concept_hints": [],
@@ -9426,9 +9426,19 @@
           "msgstr": "Kasserer ikke funnet."
         },
         {
+          "msgid": "Payment gateway description.",
+          "msgctxt": null,
+          "msgstr": "Beskrivelse av betalingsløsningen."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9444,16 +9454,6 @@
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Type skatte-ID."
-        },
-        {
-          "msgid": "Tax ID value.",
-          "msgctxt": null,
-          "msgstr": "Verdi for skatte-ID."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Strekkode"
         }
       ],
       "concept_hints": [],
@@ -9501,6 +9501,21 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-funksjoner som tilbys av betalingsløsningen."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Om betalingsløsningen er aktivert for POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Ugyldig mal-ID."
@@ -9524,21 +9539,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Kasserer ikke funnet."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobben kunne ikke opprettes."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobb ble ikke funnet."
-        },
-        {
-          "msgid": "Could not generate the receipt PDF.",
-          "msgctxt": null,
-          "msgstr": "Kunne ikke generere kvitterings-PDF-en."
         }
       ],
       "concept_hints": [],
@@ -9591,9 +9591,19 @@
           "msgstr": "Kasserer ikke funnet."
         },
         {
+          "msgid": "Payment gateway ID.",
+          "msgctxt": null,
+          "msgstr": "ID for betalingsløsning."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9614,16 +9624,6 @@
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt må være en gyldig ISO 8601 UTC-dato."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unik identifikator for kassereren (WordPress bruker-ID)."
-        },
-        {
-          "msgid": "Search templates by title or description.",
-          "msgctxt": null,
-          "msgstr": "Søk etter maler etter tittel eller beskrivelse."
         }
       ],
       "concept_hints": [],
@@ -9666,6 +9666,11 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9674,6 +9679,16 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Unik identifikator for kassereren (WordPress bruker-ID)."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-funksjoner som tilbys av betalingsløsningen."
         },
         {
           "msgid": "Invalid template ID.",
@@ -9694,21 +9709,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Kasserer ikke funnet."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "Ordre-ID eller \"latest\" for den nyeste POS-ordren. Utelat for eksempeldata."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Ordre ble ikke funnet, eller den er ikke en POS-ordre."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "POS-butikk-ID for butikkspecifikke data."
         }
       ],
       "concept_hints": [],
@@ -9781,6 +9781,11 @@
           "msgstr": "date_created_gmt må være en gyldig ISO 8601 UTC-dato."
         },
         {
+          "msgid": "Provider-specific public metadata.",
+          "msgctxt": null,
+          "msgstr": "Offentlige metadata fra leverandøren."
+        },
+        {
           "msgid": "Unique identifier for the order status.",
           "msgctxt": null,
           "msgstr": "Unik identifikator for bestillingsstatusen."
@@ -9789,11 +9794,6 @@
           "msgid": "Unique identifier for the store.",
           "msgctxt": null,
           "msgstr": "Unik identifikator for butikken."
-        },
-        {
-          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
-          "msgctxt": null,
-          "msgstr": "Unik identifikator for malen (numerisk for database, streng for virtuell)."
         }
       ],
       "concept_hints": [],
@@ -9831,6 +9831,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Om betalingsløsningen er aktivert for POS."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9851,6 +9856,16 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-funksjoner som tilbys av betalingsløsningen."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Ugyldig mal-ID."
@@ -9864,21 +9879,6 @@
           "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
           "msgctxt": null,
           "msgstr": "Ordre-ID eller \"latest\" for den nyeste POS-ordren. Utelat for eksempeldata."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "POS-butikk-ID for butikkspecifikke data."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobben kunne ikke opprettes."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobb ble ikke funnet."
         }
       ],
       "concept_hints": [],
@@ -9921,6 +9921,21 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Om betalingsløsningen er aktivert for POS."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Ugyldig mal-ID."
@@ -9949,21 +9964,6 @@
           "msgid": "Filter orders by POS store.",
           "msgctxt": null,
           "msgstr": "Filtrer bestillinger etter POS-butikk."
-        },
-        {
-          "msgid": "Payment gateway is not available for POS checkout.",
-          "msgctxt": null,
-          "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobben kunne ikke opprettes."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Utskriftsjobb ble ikke funnet."
         }
       ],
       "concept_hints": [],
@@ -10046,9 +10046,9 @@
           "msgstr": "POS-butikk-ID for butikkspecifikke data."
         },
         {
-          "msgid": "Could not generate the receipt PDF.",
+          "msgid": "Provider family identifier.",
           "msgctxt": null,
-          "msgstr": "Kunne ikke generere kvitterings-PDF-en."
+          "msgstr": "Identifikator for leverandørfamilien."
         }
       ],
       "concept_hints": [],
@@ -15788,6 +15788,11 @@
           "msgstr": "Star Online API-nøkkelen må sendes i forespørselens brødtekst, ikke i spørringsstrengen."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Om betalingsløsningen er aktivert for POS."
+        },
+        {
           "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
           "msgstr": "Kunne ikke generere kvitterings-PDF-en."
@@ -15796,11 +15801,6 @@
           "msgid": "An identical request is already being processed.",
           "msgctxt": null,
           "msgstr": "En identisk forespørsel behandles allerede."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Strekkode"
         }
       ],
       "concept_hints": [],
@@ -17704,6 +17704,11 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-funksjoner som tilbys av betalingsløsningen."
+        },
+        {
           "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
           "msgctxt": null,
           "msgstr": "PrintNode API-nøkkelen må sendes i forespørselens brødtekst, ikke i spørringsstrengen."
@@ -17727,11 +17732,6 @@
           "msgid": "Cashback",
           "msgctxt": null,
           "msgstr": "Cashback"
-        },
-        {
-          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
-          "msgctxt": null,
-          "msgstr": "En Star Online API-nøkkel og en gyldig stario.online CloudPRNT-URL kreves."
         }
       ],
       "concept_hints": [],
@@ -17811,14 +17811,14 @@
           "msgstr": "Betaling kreves"
         },
         {
-          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
+          "msgstr": "Beskrivelse av betalingsløsningen."
         },
         {
-          "msgid": "Payment gateway not found.",
+          "msgid": "Payment gateway ID.",
           "msgctxt": null,
-          "msgstr": "Betalingsgateway ble ikke funnet."
+          "msgstr": "ID for betalingsløsning."
         }
       ],
       "concept_hints": [],
@@ -18061,14 +18061,14 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
           "msgid": "POS cashier changed from %1$s to %2$s.",
           "msgctxt": null,
           "msgstr": "POS-kasserer endret fra %1$s til %2$s."
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> krever <a href=\"%1$s\">WCPOS Pro %2$s eller høyere</a>. Vennligst <a href=\"%3$s\">installer og aktiver WCPOS Pro</a>"
         }
       ],
       "concept_hints": [],
@@ -23085,6 +23085,11 @@
           "msgstr": "Overordnet maltype:"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "POS-håndteringstype for betalingsløsningen."
+        },
+        {
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Type skatte-ID."
@@ -23093,11 +23098,6 @@
           "msgid": "Template Type",
           "msgctxt": "Taxonomy Singular Name",
           "msgstr": "Maltype"
-        },
-        {
-          "msgid": "Template type for ordering.",
-          "msgctxt": null,
-          "msgstr": "Maltype for sortering."
         }
       ],
       "concept_hints": [],
@@ -58111,6 +58111,11 @@
           "msgstr": "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Tittel på betalingsløsningen som vises i POS."
+        },
+        {
           "msgid": "POS - Open <span class=\"count\">(%s)</span>",
           "msgctxt": null,
           "msgstr": "POS - Åpen <span class=\"count\">(%s)</span>"
@@ -58119,11 +58124,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS-maler"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Du har ikke tillatelse til å få tilgang til POS."
         }
       ],
       "concept_hints": [],

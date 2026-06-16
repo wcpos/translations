@@ -1588,8 +1588,8 @@
         ],
         "references": [
           "includes/Admin/Menu.php:190",
-          "includes/Admin/Plugins.php:52",
-          "includes/Admin/Products/Single_Product.php:207"
+          "includes/Admin/Plugins.php:53",
+          "includes/Admin/Products/Single_Product.php:209"
         ]
       },
       "source_usage": {
@@ -2179,7 +2179,7 @@
           "Prefix for an important plugin update notice in the WordPress plugins screen."
         ],
         "references": [
-          "includes/Admin/Plugins.php:82"
+          "includes/Admin/Plugins.php:83"
         ]
       },
       "source_usage": {
@@ -2266,7 +2266,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:96"
+          "includes/Admin/Plugins.php:97"
         ]
       },
       "source_usage": {
@@ -2351,7 +2351,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Admin/Plugins.php:99"
+          "includes/Admin/Plugins.php:100"
         ]
       },
       "source_usage": {
@@ -2436,7 +2436,7 @@
           "Plugin admin screen label or notice for WCPOS."
         ],
         "references": [
-          "includes/Admin/Plugins.php:103"
+          "includes/Admin/Plugins.php:104"
         ]
       },
       "source_usage": {
@@ -2523,7 +2523,7 @@
           "%s: URL to My Account page"
         ],
         "references": [
-          "includes/Admin/Plugins.php:107"
+          "includes/Admin/Plugins.php:108"
         ]
       },
       "source_usage": {
@@ -3050,8 +3050,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:105",
-          "includes/Admin/Products/Single_Product.php:180"
+          "includes/Admin/Products/Single_Product.php:106",
+          "includes/Admin/Products/Single_Product.php:182"
         ]
       },
       "source_usage": {
@@ -3136,8 +3136,8 @@
           "Product POS visibility or barcode label in WooCommerce admin."
         ],
         "references": [
-          "includes/Admin/Products/Single_Product.php:128",
-          "includes/Admin/Products/Single_Product.php:194"
+          "includes/Admin/Products/Single_Product.php:130",
+          "includes/Admin/Products/Single_Product.php:196"
         ]
       },
       "source_usage": {
@@ -6411,6 +6411,11 @@
           "msgstr": "Omezit výsledky na šablony přiřazené konkrétnímu obchodu."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
           "msgid": "POS store ID for store-specific data.",
           "msgctxt": null,
           "msgstr": "ID POS prodejny pro data specifická pro prodejnu."
@@ -6419,11 +6424,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tisková úloha nebyla nalezena."
         }
       ],
       "concept_hints": [],
@@ -7208,9 +7208,9 @@
           "msgstr": "Objednávka nebyla nalezena nebo není POS objednávkou."
         },
         {
-          "msgid": "Store not found",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Obchod nebyl nalezen"
+          "msgstr": "Popis platební brány."
         }
       ],
       "concept_hints": [],
@@ -7251,6 +7251,11 @@
           "msgstr": "Zkušební tisk zatím není pro tuto tiskárnu k dispozici."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Zda je brána pro POS povolena."
+        },
+        {
           "msgid": "Payment gateway not found.",
           "msgctxt": null,
           "msgstr": "Platební brána nebyla nalezena."
@@ -7271,6 +7276,16 @@
           "msgstr": "Objednávka nebyla nalezena nebo není POS objednávkou."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
@@ -7279,21 +7294,6 @@
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Tisková úloha nebyla nalezena."
-        },
-        {
-          "msgid": "Invalid template ID.",
-          "msgctxt": null,
-          "msgstr": "Neplatné ID šablony."
-        },
-        {
-          "msgid": "Partial cash payments are not supported by the POS API checkout flow.",
-          "msgctxt": null,
-          "msgstr": "Částečné platby v hotovosti nejsou podporovány v procesu pokladny POS API."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Šablona obsahuje nebezpečnou funkci: %s(). Tato funkce není povolena z bezpečnostních důvodů."
         }
       ],
       "concept_hints": [],
@@ -9040,9 +9040,9 @@
           "msgstr": "Filtrovat zákazníky podle rolí."
         },
         {
-          "msgid": "POS store ID for store-specific data.",
+          "msgid": "POS capabilities exposed by the gateway.",
           "msgctxt": null,
-          "msgstr": "ID POS prodejny pro data specifická pro prodejnu."
+          "msgstr": "Možnosti POS zpřístupněné bránou."
         }
       ],
       "concept_hints": [],
@@ -9426,9 +9426,19 @@
           "msgstr": "Pokladník nenalezen."
         },
         {
+          "msgid": "Payment gateway description.",
+          "msgctxt": null,
+          "msgstr": "Popis platební brány."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9444,16 +9454,6 @@
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Typ daňového identifikačního čísla."
-        },
-        {
-          "msgid": "Tax ID value.",
-          "msgctxt": null,
-          "msgstr": "Hodnota daňového identifikačního čísla."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Čárový kód"
         }
       ],
       "concept_hints": [],
@@ -9501,6 +9501,21 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Možnosti POS zpřístupněné bránou."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Zda je brána pro POS povolena."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Neplatné ID šablony."
@@ -9524,21 +9539,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Pokladník nenalezen."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tisková úloha nebyla nalezena."
-        },
-        {
-          "msgid": "Could not generate the receipt PDF.",
-          "msgctxt": null,
-          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         }
       ],
       "concept_hints": [],
@@ -9591,9 +9591,19 @@
           "msgstr": "Pokladník nenalezen."
         },
         {
+          "msgid": "Payment gateway ID.",
+          "msgctxt": null,
+          "msgstr": "ID platební brány."
+        },
+        {
           "msgid": "Payment gateway is not available for POS checkout.",
           "msgctxt": null,
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
         },
         {
           "msgid": "Print job could not be created.",
@@ -9614,16 +9624,6 @@
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt musí být platné datum ve formátu ISO 8601 UTC."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unikátní identifikátor pro pokladníka (WordPress user ID)."
-        },
-        {
-          "msgid": "Search templates by title or description.",
-          "msgctxt": null,
-          "msgstr": "Vyhledávejte šablony podle názvu nebo popisu."
         }
       ],
       "concept_hints": [],
@@ -9666,6 +9666,11 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9674,6 +9679,16 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Unikátní identifikátor pro pokladníka (WordPress user ID)."
+        },
+        {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Možnosti POS zpřístupněné bránou."
         },
         {
           "msgid": "Invalid template ID.",
@@ -9694,21 +9709,6 @@
           "msgid": "Cashier not found.",
           "msgctxt": null,
           "msgstr": "Pokladník nenalezen."
-        },
-        {
-          "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
-          "msgctxt": null,
-          "msgstr": "ID objednávky nebo „latest“ pro nejnovější POS objednávku. Vynechejte pro ukázková data."
-        },
-        {
-          "msgid": "Order not found or is not a POS order.",
-          "msgctxt": null,
-          "msgstr": "Objednávka nebyla nalezena nebo není POS objednávkou."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID POS prodejny pro data specifická pro prodejnu."
         }
       ],
       "concept_hints": [],
@@ -9781,6 +9781,11 @@
           "msgstr": "date_created_gmt musí být platné datum ve formátu ISO 8601 UTC."
         },
         {
+          "msgid": "Provider-specific public metadata.",
+          "msgctxt": null,
+          "msgstr": "Veřejná metadata specifická pro poskytovatele."
+        },
+        {
           "msgid": "Unique identifier for the order status.",
           "msgctxt": null,
           "msgstr": "Unikátní identifikátor pro stav objednávky."
@@ -9789,11 +9794,6 @@
           "msgid": "Unique identifier for the store.",
           "msgctxt": null,
           "msgstr": "Unikátní identifikátor pro obchod."
-        },
-        {
-          "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
-          "msgctxt": null,
-          "msgstr": "Unikátní identifikátor pro šablonu (číselný pro databázi, řetězec pro virtuální)."
         }
       ],
       "concept_hints": [],
@@ -9831,6 +9831,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Zda je brána pro POS povolena."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
@@ -9851,6 +9856,16 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Možnosti POS zpřístupněné bránou."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Neplatné ID šablony."
@@ -9864,21 +9879,6 @@
           "msgid": "Order ID or \"latest\" for most recent POS order. Omit for sample data.",
           "msgctxt": null,
           "msgstr": "ID objednávky nebo „latest“ pro nejnovější POS objednávku. Vynechejte pro ukázková data."
-        },
-        {
-          "msgid": "POS store ID for store-specific data.",
-          "msgctxt": null,
-          "msgstr": "ID POS prodejny pro data specifická pro prodejnu."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tisková úloha nebyla nalezena."
         }
       ],
       "concept_hints": [],
@@ -9921,6 +9921,21 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Zda je brána pro POS povolena."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Neplatné ID šablony."
@@ -9949,21 +9964,6 @@
           "msgid": "Filter orders by POS store.",
           "msgctxt": null,
           "msgstr": "Filtrovat objednávky podle obchodu POS."
-        },
-        {
-          "msgid": "Payment gateway is not available for POS checkout.",
-          "msgctxt": null,
-          "msgstr": "Platební brána není dostupná pro POS pokladnu."
-        },
-        {
-          "msgid": "Print job could not be created.",
-          "msgctxt": null,
-          "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tisková úloha nebyla nalezena."
         }
       ],
       "concept_hints": [],
@@ -10046,9 +10046,9 @@
           "msgstr": "ID POS prodejny pro data specifická pro prodejnu."
         },
         {
-          "msgid": "Could not generate the receipt PDF.",
+          "msgid": "Provider family identifier.",
           "msgctxt": null,
-          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+          "msgstr": "Identifikátor rodiny poskytovatele."
         }
       ],
       "concept_hints": [],
@@ -15788,6 +15788,11 @@
           "msgstr": "Klíč API Star Online musí být odeslán v těle požadavku, ne v query stringu."
         },
         {
+          "msgid": "Whether the gateway is enabled for the POS.",
+          "msgctxt": null,
+          "msgstr": "Zda je brána pro POS povolena."
+        },
+        {
           "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
@@ -15796,11 +15801,6 @@
           "msgid": "An identical request is already being processed.",
           "msgctxt": null,
           "msgstr": "Identický požadavek se již zpracovává."
-        },
-        {
-          "msgid": "Barcode",
-          "msgctxt": null,
-          "msgstr": "Čárový kód"
         }
       ],
       "concept_hints": [],
@@ -17704,6 +17704,11 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "Možnosti POS zpřístupněné bránou."
+        },
+        {
           "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
           "msgctxt": null,
           "msgstr": "Klíč PrintNode API musí být odeslán v těle požadavku, ne v query stringu."
@@ -17727,11 +17732,6 @@
           "msgid": "Cashback",
           "msgctxt": null,
           "msgstr": "Cashback"
-        },
-        {
-          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
-          "msgctxt": null,
-          "msgstr": "Je vyžadován klíč API Star Online a platná URL stario.online CloudPRNT."
         }
       ],
       "concept_hints": [],
@@ -17811,14 +17811,14 @@
           "msgstr": "K úhradě"
         },
         {
-          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgid": "Payment gateway description.",
           "msgctxt": null,
-          "msgstr": "Platební brána není dostupná pro POS pokladnu."
+          "msgstr": "Popis platební brány."
         },
         {
-          "msgid": "Payment gateway not found.",
+          "msgid": "Payment gateway ID.",
           "msgctxt": null,
-          "msgstr": "Platební brána nebyla nalezena."
+          "msgstr": "ID platební brány."
         }
       ],
       "concept_hints": [],
@@ -18061,14 +18061,14 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
           "msgid": "POS cashier changed from %1$s to %2$s.",
           "msgctxt": null,
           "msgstr": "Pokladní POS změněn z %1$s na %2$s."
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> vyžaduje <a href=\"%1$s\">WCPOS Pro %2$s nebo vyšší</a>. Prosím <a href=\"%3$s\">nainstalujte a aktivujte WCPOS Pro</a>"
         }
       ],
       "concept_hints": [],
@@ -23085,6 +23085,11 @@
           "msgstr": "Nadřazený typ šablony:"
         },
         {
+          "msgid": "POS handling type for the gateway.",
+          "msgctxt": null,
+          "msgstr": "Typ zpracování brány v POS."
+        },
+        {
           "msgid": "Tax ID type.",
           "msgctxt": null,
           "msgstr": "Typ daňového identifikačního čísla."
@@ -23093,11 +23098,6 @@
           "msgid": "Template Type",
           "msgctxt": "Taxonomy Singular Name",
           "msgstr": "Typ šablony"
-        },
-        {
-          "msgid": "Template type for ordering.",
-          "msgctxt": null,
-          "msgstr": "Typ šablony pro seřazení."
         }
       ],
       "concept_hints": [],
@@ -58111,6 +58111,11 @@
           "msgstr": "Platební brána není dostupná pro POS pokladnu."
         },
         {
+          "msgid": "Payment gateway title shown at the POS.",
+          "msgctxt": null,
+          "msgstr": "Název platební brány zobrazený v POS."
+        },
+        {
           "msgid": "POS - Open <span class=\"count\">(%s)</span>",
           "msgctxt": null,
           "msgstr": "POS - Otevřeno <span class=\"count\">(%s)</span>"
@@ -58119,11 +58124,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Šablony POS"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "Nemáte oprávnění k přístupu k POS."
         }
       ],
       "concept_hints": [],
