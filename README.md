@@ -111,3 +111,7 @@ pnpm run generate:php
 # QA check
 OPENAI_API_KEY=sk-... pnpm run qa -- de --structural-only
 ```
+
+## License
+
+The tooling, scripts, and configuration in this repository are licensed under [MIT](./LICENSE). The generated translation files under `translations/` and the extracted sources under `source/` are derived from their upstream WordPress plugins and retain those projects' original licenses (GPL-3.0-or-later for the WooCommerce POS PHP plugins). MIT applies to this repository's original tooling, not to the translated plugin strings.
