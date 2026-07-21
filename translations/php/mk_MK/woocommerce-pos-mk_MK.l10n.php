@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Невалидна е-пошта.',
 		'Order Status.' => 'Статус на нарачка.',
 		'Order Status Label.' => 'Етикета за статус на нарачка.',
+		'Could not clear the extensions cache.' => 'Не може да се исчисти кешот на екстензиите.',
+		'Could not refresh extensions. Please try again.' => 'Не може да се освежат екстензиите. Обидете се повторно.',
 		'You do not have permission to view extensions.' => 'Немате дозвола да ги гледате екстензиите.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Жал ни е, не можете да ги стартувате платежните порти.',
 		'You do not have permission to view logs.' => 'Немате дозвола да ги гледате логовите.',

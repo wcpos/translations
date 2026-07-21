@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Virheellinen sähköpostiosoite.',
 		'Order Status.' => 'Tilaustila.',
 		'Order Status Label.' => 'Tilaustilan nimike.',
+		'Could not clear the extensions cache.' => 'Laajennusten välimuistin tyhjentäminen epäonnistui.',
+		'Could not refresh extensions. Please try again.' => 'Laajennusten päivitys epäonnistui. Yritä uudelleen.',
 		'You do not have permission to view extensions.' => 'Sinulla ei ole oikeuksia laajennusten katseluun.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Et voi alustaa maksutapoja.',
 		'You do not have permission to view logs.' => 'Sinulla ei ole oikeuksia lokien katseluun.',

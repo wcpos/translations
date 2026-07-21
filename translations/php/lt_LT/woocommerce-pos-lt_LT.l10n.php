@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Neteisingas el. pašto adresas.',
 		'Order Status.' => 'Užsakymo būsena.',
 		'Order Status Label.' => 'Užsakymo būsenos etiketė.',
+		'Could not clear the extensions cache.' => 'Nepavyko išvalyti plėtinių talpyklos.',
+		'Could not refresh extensions. Please try again.' => 'Nepavyko atnaujinti plėtinių. Bandykite dar kartą.',
 		'You do not have permission to view extensions.' => 'Neturite teisės peržiūrėti plėtinių.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Atsiprašome, negalite inicijuoti mokėjimo būdų.',
 		'You do not have permission to view logs.' => 'Neturite teisės peržiūrėti žurnalų.',

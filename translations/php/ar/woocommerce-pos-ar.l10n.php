@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'عنوان البريد الإلكتروني غير صالح.',
 		'Order Status.' => 'حالة الطلب.',
 		'Order Status Label.' => 'تسمية حالة الطلب.',
+		'Could not clear the extensions cache.' => 'تعذّر مسح ذاكرة التخزين المؤقت للامتدادات.',
+		'Could not refresh extensions. Please try again.' => 'تعذّر تحديث الامتدادات. يُرجى المحاولة مرة أخرى.',
 		'You do not have permission to view extensions.' => 'ليس لديك إذن لعرض الإضافات.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'عذراً، لا يمكنك تهيئة بوابات الدفع.',
 		'You do not have permission to view logs.' => 'ليس لديك إذن لعرض السجلات.',

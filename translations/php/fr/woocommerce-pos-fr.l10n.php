@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Adresse e-mail invalide.',
 		'Order Status.' => 'Statut de la commande.',
 		'Order Status Label.' => 'Étiquette du statut de la commande.',
+		'Could not clear the extensions cache.' => 'Impossible de vider le cache des extensions.',
+		'Could not refresh extensions. Please try again.' => 'Impossible d’actualiser les extensions. Veuillez réessayer.',
 		'You do not have permission to view extensions.' => 'Vous n\'avez pas la permission de voir les extensions.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Désolé, vous ne pouvez pas initialiser les passerelles de paiement.',
 		'You do not have permission to view logs.' => 'Vous n\'avez pas la permission de voir les logs.',

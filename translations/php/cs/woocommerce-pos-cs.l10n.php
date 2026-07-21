@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Neplatná e-mailová adresa.',
 		'Order Status.' => 'Stav objednávky.',
 		'Order Status Label.' => 'Štítek stavu objednávky.',
+		'Could not clear the extensions cache.' => 'Mezipaměť rozšíření se nepodařilo vymazat.',
+		'Could not refresh extensions. Please try again.' => 'Rozšíření se nepodařilo obnovit. Zkuste to znovu.',
 		'You do not have permission to view extensions.' => 'Nemáte oprávnění zobrazit rozšíření.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Je nám líto, nemůžete inicializovat platební brány.',
 		'You do not have permission to view logs.' => 'Nemáte oprávnění zobrazit záznamy.',

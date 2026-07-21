@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => '유효하지 않은 이메일 주소입니다.',
 		'Order Status.' => '주문 상태.',
 		'Order Status Label.' => '주문 상태 라벨.',
+		'Could not clear the extensions cache.' => '확장 프로그램 캐시를 삭제할 수 없습니다.',
+		'Could not refresh extensions. Please try again.' => '확장 프로그램을 새로고침할 수 없습니다. 다시 시도해 주세요.',
 		'You do not have permission to view extensions.' => '확장 기능을 볼 수 있는 권한이 없습니다.',
 		'Sorry, you cannot bootstrap payment gateways.' => '죄송합니다. 결제 게이트웨이를 초기화할 수 없습니다.',
 		'You do not have permission to view logs.' => '로그를 볼 수 있는 권한이 없습니다.',

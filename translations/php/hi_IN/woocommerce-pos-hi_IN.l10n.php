@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'अमान्य ईमेल पता।',
 		'Order Status.' => 'ऑर्डर स्थिति।',
 		'Order Status Label.' => 'ऑर्डर स्थिति लेबल।',
+		'Could not clear the extensions cache.' => 'एक्सटेंशन कैश साफ़ नहीं किया जा सका।',
+		'Could not refresh extensions. Please try again.' => 'एक्सटेंशन रीफ़्रेश नहीं किए जा सके। कृपया फिर से प्रयास करें।',
 		'You do not have permission to view extensions.' => 'आपको एक्सटेंशन देखने की अनुमति नहीं है।',
 		'Sorry, you cannot bootstrap payment gateways.' => 'क्षमा करें, आप payment gateways bootstrap नहीं कर सकते।',
 		'You do not have permission to view logs.' => 'आपको लॉग देखने की अनुमति नहीं है।',

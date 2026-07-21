@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Ógilt netfang.',
 		'Order Status.' => 'Staða pöntunar.',
 		'Order Status Label.' => 'Merki pöntunarstöðu.',
+		'Could not clear the extensions cache.' => 'Ekki tókst að hreinsa skyndiminni viðbótanna.',
+		'Could not refresh extensions. Please try again.' => 'Ekki tókst að endurnýja viðbæturnar. Reyndu aftur.',
 		'You do not have permission to view extensions.' => 'Þú hefur ekki heimild til að skoða viðbætur.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Því miður hefur þú ekki heimild til að frumstilla greiðslugáttir.',
 		'You do not have permission to view logs.' => 'Þú hefur ekki heimild til að skoða skráningar.',
