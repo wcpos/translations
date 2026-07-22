@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => '無効なメールアドレスです。',
 		'Order Status.' => '注文ステータス。',
 		'Order Status Label.' => '注文ステータスラベル。',
+		'Could not clear the extensions cache.' => '拡張機能のキャッシュをクリアできませんでした。',
+		'Could not refresh extensions. Please try again.' => '拡張機能を更新できませんでした。もう一度お試しください。',
 		'You do not have permission to view extensions.' => '拡張機能を表示する権限がありません。',
 		'Sorry, you cannot bootstrap payment gateways.' => '申し訳ありませんが、支払いゲートウェイを初期化できません。',
 		'You do not have permission to view logs.' => 'ログを表示する権限がありません。',

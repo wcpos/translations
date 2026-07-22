@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Недействительный адрес электронной почты.',
 		'Order Status.' => 'Статус заказа.',
 		'Order Status Label.' => 'Метка статуса заказа.',
+		'Could not clear the extensions cache.' => 'Не удалось очистить кэш расширений.',
+		'Could not refresh extensions. Please try again.' => 'Не удалось обновить расширения. Повторите попытку.',
 		'You do not have permission to view extensions.' => 'У вас нет прав для просмотра расширений.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Извините, вы не можете инициализировать платёжные шлюзы.',
 		'You do not have permission to view logs.' => 'У вас нет прав для просмотра логов.',

@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'អាសយដ្ឋានអ៊ីមែលមិនត្រឹមត្រូវ។',
 		'Order Status.' => 'ស្ថានភាពការបញ្ជាទិញ។',
 		'Order Status Label.' => 'ស្លាកស្ថានភាពការបញ្ជាទិញ។',
+		'Could not clear the extensions cache.' => 'មិនអាចសម្អាតឃ្លាំងសម្ងាត់របស់ផ្នែកបន្ថែមបានទេ។',
+		'Could not refresh extensions. Please try again.' => 'មិនអាចធ្វើឱ្យផ្នែកបន្ថែមស្រស់ឡើងវិញបានទេ។ សូមព្យាយាមម្តងទៀត។',
 		'You do not have permission to view extensions.' => 'អ្នកមិនមានសិទ្ធិមើលផ្នែកបន្ថែមទេ។',
 		'Sorry, you cannot bootstrap payment gateways.' => 'សូមទោស អ្នកមិនអាច bootstrap payment gateways បានទេ។',
 		'You do not have permission to view logs.' => 'អ្នកមិនមានសិទ្ធិមើលកំណត់ហេតុទេ។',

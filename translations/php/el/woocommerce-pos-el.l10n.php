@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Μη έγκυρη διεύθυνση email.',
 		'Order Status.' => 'Κατάσταση Παραγγελίας.',
 		'Order Status Label.' => 'Ετικέτα Κατάστασης Παραγγελίας.',
+		'Could not clear the extensions cache.' => 'Δεν ήταν δυνατή η εκκαθάριση της προσωρινής μνήμης των επεκτάσεων.',
+		'Could not refresh extensions. Please try again.' => 'Δεν ήταν δυνατή η ανανέωση των επεκτάσεων. Δοκιμάστε ξανά.',
 		'You do not have permission to view extensions.' => 'Δεν έχετε άδεια να δείτε τις επεκτάσεις.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Λυπούμαστε, δεν μπορείτε να αρχικοποιήσετε πύλες πληρωμής.',
 		'You do not have permission to view logs.' => 'Δεν έχετε άδεια να δείτε τα αρχεία καταγραφής.',

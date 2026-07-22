@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Alamat email tidak valid.',
 		'Order Status.' => 'Status Pesanan.',
 		'Order Status Label.' => 'Label Status Pesanan.',
+		'Could not clear the extensions cache.' => 'Cache ekstensi tidak dapat dihapus.',
+		'Could not refresh extensions. Please try again.' => 'Ekstensi gagal diperbarui. Silakan coba lagi.',
 		'You do not have permission to view extensions.' => 'Anda tidak memiliki izin untuk melihat ekstensi.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Maaf, Anda tidak dapat memulai gateway pembayaran.',
 		'You do not have permission to view logs.' => 'Anda tidak memiliki izin untuk melihat log.',

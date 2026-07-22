@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Adreça de correu electrònic no vàlida.',
 		'Order Status.' => 'Estat de la comanda.',
 		'Order Status Label.' => 'Etiqueta de l\'estat de la comanda.',
+		'Could not clear the extensions cache.' => 'No s\'ha pogut buidar la memòria cau de les extensions.',
+		'Could not refresh extensions. Please try again.' => 'No s\'han pogut actualitzar les extensions. Torneu-ho a provar.',
 		'You do not have permission to view extensions.' => 'No tens permís per veure extensions.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'No teniu permís per inicialitzar les passarel·les de pagament.',
 		'You do not have permission to view logs.' => 'No tens permís per veure registres.',

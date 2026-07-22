@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => '无效的电子邮件地址。',
 		'Order Status.' => '订单状态。',
 		'Order Status Label.' => '订单状态标签。',
+		'Could not clear the extensions cache.' => '无法清除扩展缓存。',
+		'Could not refresh extensions. Please try again.' => '无法刷新扩展，请重试。',
 		'You do not have permission to view extensions.' => '您没有权限查看扩展。',
 		'Sorry, you cannot bootstrap payment gateways.' => '抱歉，您不能初始化支付网关。',
 		'You do not have permission to view logs.' => '您没有权限查看日志。',

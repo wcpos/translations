@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Địa chỉ email không hợp lệ.',
 		'Order Status.' => 'Trạng thái đơn hàng.',
 		'Order Status Label.' => 'Nhãn trạng thái đơn hàng.',
+		'Could not clear the extensions cache.' => 'Không thể xóa bộ nhớ đệm của các tiện ích mở rộng.',
+		'Could not refresh extensions. Please try again.' => 'Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại.',
 		'You do not have permission to view extensions.' => 'Bạn không có quyền xem tiện ích mở rộng.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Xin lỗi, bạn không thể khởi tạo cổng thanh toán.',
 		'You do not have permission to view logs.' => 'Bạn không có quyền xem nhật ký.',

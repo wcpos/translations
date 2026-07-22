@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Vigane e-posti aadress.',
 		'Order Status.' => 'Tellimuse staatus.',
 		'Order Status Label.' => 'Tellimuse staatuse silt.',
+		'Could not clear the extensions cache.' => 'Laienduste vahemälu ei saanud tühjendada.',
+		'Could not refresh extensions. Please try again.' => 'Laiendusi ei saanud värskendada. Palun proovige uuesti.',
 		'You do not have permission to view extensions.' => 'Teil pole luba laiendusi vaadata.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Kahjuks ei saa te makseväravaid algatada.',
 		'You do not have permission to view logs.' => 'Teil pole luba logisid vaadata.',

@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Alamat e-mel tidak sah.',
 		'Order Status.' => 'Status Pesanan.',
 		'Order Status Label.' => 'Label Status Pesanan.',
+		'Could not clear the extensions cache.' => 'Tidak dapat mengosongkan cache sambungan.',
+		'Could not refresh extensions. Please try again.' => 'Tidak dapat memuat semula sambungan. Sila cuba lagi.',
 		'You do not have permission to view extensions.' => 'Anda tidak mempunyai kebenaran untuk melihat sambungan.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Maaf, anda tidak boleh memulakan gerbang pembayaran.',
 		'You do not have permission to view logs.' => 'Anda tidak mempunyai kebenaran untuk melihat log.',

@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Érvénytelen email cím.',
 		'Order Status.' => 'Rendelés állapota.',
 		'Order Status Label.' => 'Rendelés állapot címke.',
+		'Could not clear the extensions cache.' => 'Nem sikerült törölni a bővítmények gyorsítótárát.',
+		'Could not refresh extensions. Please try again.' => 'Nem sikerült frissíteni a bővítményeket. Próbálja meg újra.',
 		'You do not have permission to view extensions.' => 'Nincs jogosultságod a bővítmények megtekintéséhez.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Sajnáljuk, nincs jogosultságod a fizetési átjárók inicializálásához.',
 		'You do not have permission to view logs.' => 'Nincs jogosultságod a naplók megtekintéséhez.',

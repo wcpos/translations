@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Ugyldig e-mailadresse.',
 		'Order Status.' => 'Ordrestatus.',
 		'Order Status Label.' => 'Etiket for ordrestatus.',
+		'Could not clear the extensions cache.' => 'Kunne ikke rydde cachen for udvidelser.',
+		'Could not refresh extensions. Please try again.' => 'Kunne ikke opdatere udvidelserne. Prøv igen.',
 		'You do not have permission to view extensions.' => 'Du har ikke tilladelse til at se udvidelser.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Beklager, du kan ikke initialisere betalingsgateways.',
 		'You do not have permission to view logs.' => 'Du har ikke tilladelse til at se logfiler.',

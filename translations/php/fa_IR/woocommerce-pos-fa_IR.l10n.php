@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'آدرس ایمیل نامعتبر است.',
 		'Order Status.' => 'وضعیت سفارش.',
 		'Order Status Label.' => 'برچسب وضعیت سفارش.',
+		'Could not clear the extensions cache.' => 'پاک کردن کش افزونه‌ها ممکن نشد.',
+		'Could not refresh extensions. Please try again.' => 'تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید.',
 		'You do not have permission to view extensions.' => 'شما اجازه مشاهده افزونه‌ها را ندارید.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'متأسفیم، نمی‌توانید درگاه‌های پرداخت را راه‌اندازی کنید.',
 		'You do not have permission to view logs.' => 'شما اجازه مشاهده گزارش‌ها را ندارید.',

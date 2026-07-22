@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'כתובת דוא"ל לא תקינה.',
 		'Order Status.' => 'סטטוס הזמנה.',
 		'Order Status Label.' => 'תווית סטטוס הזמנה.',
+		'Could not clear the extensions cache.' => 'לא ניתן לנקות את מטמון ההרחבות.',
+		'Could not refresh extensions. Please try again.' => 'לא ניתן לרענן את ההרחבות. נסו שוב.',
 		'You do not have permission to view extensions.' => 'אין לך הרשאה לצפות בתוספים.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'מצטערים, אין לך אפשרות לאתחל שערי תשלום.',
 		'You do not have permission to view logs.' => 'אין לך הרשאה לצפות ביומנים.',
