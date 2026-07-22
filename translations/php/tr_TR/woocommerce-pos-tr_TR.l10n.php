@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Geçersiz e-posta adresi.',
 		'Order Status.' => 'Sipariş Durumu.',
 		'Order Status Label.' => 'Sipariş Durumu Etiketi.',
+		'Could not clear the extensions cache.' => 'Uzantı önbelleği temizlenemedi.',
+		'Could not refresh extensions. Please try again.' => 'Uzantılar yenilenemedi. Lütfen tekrar deneyin.',
 		'You do not have permission to view extensions.' => 'Eklentileri görüntüleme izniniz yok.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Üzgünüz, ödeme ağ geçitlerini başlatamazsınız.',
 		'You do not have permission to view logs.' => 'Kayıtları görüntüleme izniniz yok.',

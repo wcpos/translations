@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'ที่อยู่อีเมลไม่ถูกต้อง',
 		'Order Status.' => 'สถานะคำสั่งซื้อ',
 		'Order Status Label.' => 'ป้ายสถานะคำสั่งซื้อ',
+		'Could not clear the extensions cache.' => 'ไม่สามารถล้างแคชส่วนขยายได้',
+		'Could not refresh extensions. Please try again.' => 'ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง',
 		'You do not have permission to view extensions.' => 'คุณไม่มีสิทธิ์ในการดูส่วนขยาย',
 		'Sorry, you cannot bootstrap payment gateways.' => 'ขออภัย คุณไม่สามารถเริ่มระบบเกตเวย์การชำระเงินได้',
 		'You do not have permission to view logs.' => 'คุณไม่มีสิทธิ์ในการดูบันทึก',

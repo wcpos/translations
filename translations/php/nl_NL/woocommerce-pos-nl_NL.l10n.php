@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Ongeldig e-mailadres.',
 		'Order Status.' => 'Bestelstatus.',
 		'Order Status Label.' => 'Label bestelstatus.',
+		'Could not clear the extensions cache.' => 'De cache voor extensies kon niet worden gewist.',
+		'Could not refresh extensions. Please try again.' => 'De extensies konden niet worden vernieuwd. Probeer het opnieuw.',
 		'You do not have permission to view extensions.' => 'U heeft geen toestemming om extensies te bekijken.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Sorry, u kunt betaalgateways niet initialiseren.',
 		'You do not have permission to view logs.' => 'U heeft geen toestemming om logs te bekijken.',

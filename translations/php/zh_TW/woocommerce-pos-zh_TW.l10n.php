@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => '電子郵件地址無效。',
 		'Order Status.' => '訂單狀態。',
 		'Order Status Label.' => '訂單狀態標籤。',
+		'Could not clear the extensions cache.' => '無法清除擴充功能快取。',
+		'Could not refresh extensions. Please try again.' => '無法重新整理擴充功能。請再試一次。',
 		'You do not have permission to view extensions.' => '您沒有權限查看擴充功能。',
 		'Sorry, you cannot bootstrap payment gateways.' => '抱歉，你無法初始化付款閘道。',
 		'You do not have permission to view logs.' => '您沒有權限查看日誌。',

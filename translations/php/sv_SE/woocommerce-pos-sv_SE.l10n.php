@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Ogiltig e-postadress.',
 		'Order Status.' => 'Orderstatus.',
 		'Order Status Label.' => 'Orderstatusetikett.',
+		'Could not clear the extensions cache.' => 'Det gick inte att rensa cacheminnet för tilläggen.',
+		'Could not refresh extensions. Please try again.' => 'Det gick inte att uppdatera tilläggen. Försök igen.',
 		'You do not have permission to view extensions.' => 'Du har inte behörighet att visa tillägg.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Tyvärr, du kan inte starta betalningsgateways.',
 		'You do not have permission to view logs.' => 'Du har inte behörighet att visa loggar.',

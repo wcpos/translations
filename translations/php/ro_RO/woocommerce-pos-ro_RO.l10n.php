@@ -111,6 +111,8 @@ return array(
 		'Invalid email address.' => 'Adresă de email invalidă.',
 		'Order Status.' => 'Starea comenzii.',
 		'Order Status Label.' => 'Eticheta stării comenzii.',
+		'Could not clear the extensions cache.' => 'Nu s-a putut goli cache-ul extensiilor.',
+		'Could not refresh extensions. Please try again.' => 'Nu s-au putut reîmprospăta extensiile. Încearcă din nou.',
 		'You do not have permission to view extensions.' => 'Nu aveți permisiunea de a vizualiza extensiile.',
 		'Sorry, you cannot bootstrap payment gateways.' => 'Ne pare rău, nu puteți inițializa gateway-urile de plată.',
 		'You do not have permission to view logs.' => 'Nu aveți permisiunea de a vizualiza jurnalele.',
