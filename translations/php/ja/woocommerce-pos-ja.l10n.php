@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight の納品書ドキュメントは利用できません。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'この注文の WP Overnight 納品書ドキュメントを表示できませんでした。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOSプラグインの読み込みに失敗しました。',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。',
+		'No relay verification is pending.' => '保留中のリレー検証はありません。',
+		'WCPOS Cloud Print is disabled on this site.' => 'このサイトでは WCPOS Cloud Print が無効になっています。',
+		'Could not create a relay verification token.' => 'リレー検証トークンを作成できませんでした。',
+		'Relay registration failed.' => '中継器の登録に失敗しました。',
+		'Relay registration returned invalid credentials.' => 'リレー登録で無効な資格情報が返されました。',
 	),
 );

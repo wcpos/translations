@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Documentul de aviz de expediție WP Overnight nu este disponibil.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Documentul de aviz de expediție WP Overnight nu a putut fi generat pentru această comandă.',
 		'The WCPOS plugin failed to load correctly.' => 'Pluginul WCPOS nu s-a încărcat corect.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Chitanța stocată a acestei lucrări a fost curățată și nu are nici un șablon de la care să se redeze din nou.',
+		'No relay verification is pending.' => 'Nicio verificare a releului nu este în așteptare.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print este dezactivat pe acest site.',
+		'Could not create a relay verification token.' => 'Nu s-a putut crea un jeton de verificare de retransmitere.',
+		'Relay registration failed.' => 'Înregistrarea releului a eșuat.',
+		'Relay registration returned invalid credentials.' => 'Înregistrarea prin retransmitere a returnat acreditări nevalide.',
 	),
 );

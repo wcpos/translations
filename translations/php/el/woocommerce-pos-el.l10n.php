@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
 		'The WCPOS plugin failed to load correctly.' => 'Το πρόσθετο WCPOS απέτυχε να φορτωθεί σωστά.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Η αποθηκευμένη απόδειξη αυτής της εργασίας έχει καθαριστεί και δεν έχει πρότυπο για εκ νέου απόδοση.',
+		'No relay verification is pending.' => 'Δεν εκκρεμεί επαλήθευση ρελέ.',
+		'WCPOS Cloud Print is disabled on this site.' => 'Το WCPOS Cloud Print είναι απενεργοποιημένο σε αυτόν τον ιστότοπο.',
+		'Could not create a relay verification token.' => 'Δεν ήταν δυνατή η δημιουργία διακριτικού επαλήθευσης αναμετάδοσης.',
+		'Relay registration failed.' => 'Η εγγραφή ρελέ απέτυχε.',
+		'Relay registration returned invalid credentials.' => 'Η εγγραφή ρελέ επέστρεψε μη έγκυρα διαπιστευτήρια.',
 	),
 );

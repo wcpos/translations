@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Dokumen slip pengemasan WP Overnight tidak tersedia.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokumen slip pengemasan WP Overnight tidak dapat dirender untuk pesanan ini.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS gagal dimuat dengan benar.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Tanda terima pekerjaan yang disimpan ini telah dibersihkan dan tidak memiliki templat untuk dirender ulang.',
+		'No relay verification is pending.' => 'Tidak ada verifikasi relai yang tertunda.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print dinonaktifkan di situs ini.',
+		'Could not create a relay verification token.' => 'Tidak dapat membuat token verifikasi relai.',
+		'Relay registration failed.' => 'Pendaftaran relai gagal.',
+		'Relay registration returned invalid credentials.' => 'Pendaftaran relai mengembalikan kredensial yang tidak valid.',
 	),
 );

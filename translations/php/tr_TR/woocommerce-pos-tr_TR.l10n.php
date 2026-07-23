@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight paket fişi belgesi kullanılamıyor.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Bu sipariş için WP Overnight paket fişi belgesi oluşturulamadı.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS eklentisi doğru yüklenemedi.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok.',
+		'No relay verification is pending.' => 'Geçiş doğrulaması beklemede değil.',
+		'WCPOS Cloud Print is disabled on this site.' => 'Bu sitede WCPOS Cloud Print devre dışı bırakıldı.',
+		'Could not create a relay verification token.' => 'Geçiş doğrulama jetonu oluşturulamadı.',
+		'Relay registration failed.' => 'Aktarma kaydı başarısız oldu.',
+		'Relay registration returned invalid credentials.' => 'Aktarma kaydı geçersiz kimlik bilgileri döndürdü.',
 	),
 );

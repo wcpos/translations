@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 装箱单文档不可用。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '无法为此订单渲染 WP Overnight 装箱单文档。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 插件未能正确加载。',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => '该作业存储的收据已被清理，并且没有可供重新渲染的模板。',
+		'No relay verification is pending.' => '没有待处理的中继验证。',
+		'WCPOS Cloud Print is disabled on this site.' => '此站点已禁用 WCPOS Cloud Print。',
+		'Could not create a relay verification token.' => '无法创建中继验证令牌。',
+		'Relay registration failed.' => '中继注册失败。',
+		'Relay registration returned invalid credentials.' => '中继注册返回无效凭据。',
 	),
 );

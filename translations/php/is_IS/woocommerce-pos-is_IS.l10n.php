@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight fylgiseðillinn er ekki tiltækur.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight fylgiseðilinn fyrir þessa pöntun.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS viðbótin mistókst að hlaðast rétt.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá.',
+		'No relay verification is pending.' => 'Engin gengisstaðfesting er í bið.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print er óvirkt á þessari síðu.',
+		'Could not create a relay verification token.' => 'Gat ekki búið til gengisstaðfestingarlykilinn.',
+		'Relay registration failed.' => 'Gengisskráning mistókst.',
+		'Relay registration returned invalid credentials.' => 'Relay skráning skilaði ógildum skilríkjum.',
 	),
 );

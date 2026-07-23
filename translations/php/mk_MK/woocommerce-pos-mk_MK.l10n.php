@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Документот за ливче за пакување на WP Overnight не е достапен.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Документот за ливче за пакување на WP Overnight не можеше да се прикаже за оваа нарачка.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS приклучокот не успеа да се вчита правилно.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Складираната потврда за оваа работа е исчистена и нема шаблон за повторно прикажување.',
+		'No relay verification is pending.' => 'Не чека верификација со реле.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print е оневозможен на оваа локација.',
+		'Could not create a relay verification token.' => 'Не може да се создаде токен за потврда на реле.',
+		'Relay registration failed.' => 'Регистрацијата на релето не успеа.',
+		'Relay registration returned invalid credentials.' => 'Регистрацијата на реле врати неважечки акредитиви.',
 	),
 );

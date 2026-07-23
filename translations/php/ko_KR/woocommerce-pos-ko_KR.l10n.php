@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 포장 명세서 문서를 사용할 수 없습니다.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 포장 명세서 문서를 렌더링할 수 없습니다.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 플러그인이 올바르게 로드되지 않았습니다.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => '이 작업의 저장된 영수증이 정리되었으며 다시 렌더링할 템플릿이 없습니다.',
+		'No relay verification is pending.' => '보류 중인 릴레이 확인이 없습니다.',
+		'WCPOS Cloud Print is disabled on this site.' => '이 사이트에서는 WCPOS Cloud Print가 비활성화되어 있습니다.',
+		'Could not create a relay verification token.' => '릴레이 확인 토큰을 생성할 수 없습니다.',
+		'Relay registration failed.' => '릴레이 등록에 실패했습니다.',
+		'Relay registration returned invalid credentials.' => '릴레이 등록에서 잘못된 자격 증명을 반환했습니다.',
 	),
 );

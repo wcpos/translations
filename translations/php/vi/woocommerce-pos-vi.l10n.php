@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Tài liệu phiếu đóng gói WP Overnight không khả dụng.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Không thể hiển thị tài liệu phiếu đóng gói WP Overnight cho đơn hàng này.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS không tải đúng cách.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại.',
+		'No relay verification is pending.' => 'Không có xác minh chuyển tiếp nào đang chờ xử lý.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print bị vô hiệu hóa trên trang này.',
+		'Could not create a relay verification token.' => 'Không thể tạo mã thông báo xác minh chuyển tiếp.',
+		'Relay registration failed.' => 'Đăng ký chuyển tiếp không thành công.',
+		'Relay registration returned invalid credentials.' => 'Đăng ký chuyển tiếp trả lại thông tin đăng nhập không hợp lệ.',
 	),
 );

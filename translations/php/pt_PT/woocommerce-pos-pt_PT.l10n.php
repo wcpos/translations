@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'O documento de guia de remessa do WP Overnight não está disponível.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Não foi possível renderizar o documento de guia de remessa do WP Overnight para esta encomenda.',
 		'The WCPOS plugin failed to load correctly.' => 'O plugin WCPOS falhou ao carregar corretamente.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'O recibo armazenado deste trabalho foi limpo e não possui modelo para renderização novamente.',
+		'No relay verification is pending.' => 'Nenhuma verificação de relé está pendente.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print está desativado neste site.',
+		'Could not create a relay verification token.' => 'Não foi possível criar um token de verificação de retransmissão.',
+		'Relay registration failed.' => 'O registro do relé falhou.',
+		'Relay registration returned invalid credentials.' => 'O registro de retransmissão retornou credenciais inválidas.',
 	),
 );

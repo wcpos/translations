@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'A WP Overnight csomagjegyzék nem érhető el.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'A WP Overnight csomagjegyzék nem jeleníthető meg ehhez a rendeléshez.',
 		'The WCPOS plugin failed to load correctly.' => 'A WCPOS bővítmény nem töltődött be megfelelően.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne.',
+		'No relay verification is pending.' => 'Nincs függőben lévő relé ellenőrzése.',
+		'WCPOS Cloud Print is disabled on this site.' => 'A WCPOS Cloud Print le van tiltva ezen az oldalon.',
+		'Could not create a relay verification token.' => 'Nem sikerült létrehozni a közvetítő ellenőrző tokent.',
+		'Relay registration failed.' => 'A relé regisztráció sikertelen.',
+		'Relay registration returned invalid credentials.' => 'A továbbító regisztráció érvénytelen hitelesítő adatokat adott vissza.',
 	),
 );

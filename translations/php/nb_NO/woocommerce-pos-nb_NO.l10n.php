@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight-pakkeseddeldokumentet er ikke tilgjengelig.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnight-pakkeseddeldokumentet kunne ikke gjengis for denne bestillingen.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS-pluginen kunne ikke lastes riktig.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Denne jobbens lagrede kvittering er ryddet opp og den har ingen mal å gjengi fra.',
+		'No relay verification is pending.' => 'Ingen reléverifisering venter.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print er deaktivert på dette nettstedet.',
+		'Could not create a relay verification token.' => 'Kunne ikke opprette et reléverifiseringstoken.',
+		'Relay registration failed.' => 'Reléregistrering mislyktes.',
+		'Relay registration returned invalid credentials.' => 'Reléregistrering returnerte ugyldig legitimasjon.',
 	),
 );

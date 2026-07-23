@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight पैकिंग स्लिप दस्तावेज़ उपलब्ध नहीं है।',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'इस ऑर्डर के लिए WP Overnight पैकिंग स्लिप दस्तावेज़ रेंडर नहीं किया जा सका।',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS प्लगइन सही ढंग से लोड नहीं हो सका।',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'इस कार्य की संग्रहीत रसीद साफ़ कर दी गई है और इसमें दोबारा प्रस्तुत करने के लिए कोई टेम्पलेट नहीं है।',
+		'No relay verification is pending.' => 'कोई रिले सत्यापन लंबित नहीं है.',
+		'WCPOS Cloud Print is disabled on this site.' => 'इस साइट पर WCPOS Cloud Print अक्षम है।',
+		'Could not create a relay verification token.' => 'रिले सत्यापन टोकन नहीं बनाया जा सका.',
+		'Relay registration failed.' => 'रिले पंजीकरण विफल रहा.',
+		'Relay registration returned invalid credentials.' => 'रिले पंजीकरण ने अमान्य क्रेडेंशियल लौटाए।',
 	),
 );

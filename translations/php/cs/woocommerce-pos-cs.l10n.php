@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Dokument dodacího listu WP Overnight není k dispozici.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokument dodacího listu WP Overnight se pro tuto objednávku nepodařilo vykreslit.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS se nepodařilo správně načíst.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Uložená účtenka této úlohy byla vyčištěna a nemá žádnou šablonu, kterou by bylo možné znovu vykreslit.',
+		'No relay verification is pending.' => 'Nečeká se na ověření přenosu.',
+		'WCPOS Cloud Print is disabled on this site.' => 'Služba WCPOS Cloud Print je na tomto webu zakázána.',
+		'Could not create a relay verification token.' => 'Nelze vytvořit ověřovací token přenosu.',
+		'Relay registration failed.' => 'Registrace relé se nezdařila.',
+		'Relay registration returned invalid credentials.' => 'Registrace relé vrátila neplatné přihlašovací údaje.',
 	),
 );

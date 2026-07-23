@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Документ пакувального листа WP Overnight недоступний.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Не вдалося відобразити документ пакувального листа WP Overnight для цього замовлення.',
 		'The WCPOS plugin failed to load correctly.' => 'Плагін WCPOS не вдалося завантажити правильно.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Збережену квитанцію про цю роботу очищено, і вона не має шаблону для повторного відтворення.',
+		'No relay verification is pending.' => 'Перевірка реле не очікується.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print вимкнено на цьому сайті.',
+		'Could not create a relay verification token.' => 'Не вдалося створити маркер перевірки ретрансляції.',
+		'Relay registration failed.' => 'Помилка реєстрації реле.',
+		'Relay registration returned invalid credentials.' => 'Реєстрація реле повернула недійсні облікові дані.',
 	),
 );

@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnighti saatelehedokument pole saadaval.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnighti saatelehedokumenti ei saanud selle tellimuse jaoks renderdada.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS plugin ei laadinud õigesti.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Selle töö salvestatud kviitung on puhastatud ja sellel pole malli, millest uuesti renderdada.',
+		'No relay verification is pending.' => 'Ükski relee kinnitamine ei ole ootel.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print on sellel saidil keelatud.',
+		'Could not create a relay verification token.' => 'Relee kinnitusluba ei saanud luua.',
+		'Relay registration failed.' => 'Relee registreerimine ebaõnnestus.',
+		'Relay registration returned invalid credentials.' => 'Relee registreerimine tagastas kehtetud mandaadid.',
 	),
 );

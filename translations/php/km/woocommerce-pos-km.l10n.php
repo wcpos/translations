@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'ឯកសារប័ណ្ណខ្ចប់ WP Overnight មិនមានទេ។',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'មិនអាចបង្ហាញឯកសារប័ណ្ណខ្ចប់ WP Overnight សម្រាប់ការបញ្ជាទិញនេះបានទេ។',
 		'The WCPOS plugin failed to load correctly.' => 'កម្មវិធីជំនួយ WCPOS បានបរាជ័យក្នុងការផ្ទុកត្រឹមត្រូវ។',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'បង្កាន់ដៃដែលរក្សាទុករបស់ការងារនេះត្រូវបានសម្អាត ហើយវាមិនមានគំរូសម្រាប់បង្ហាញឡើងវិញពីការងារនេះទេ។',
+		'No relay verification is pending.' => 'គ្មានការផ្ទៀងផ្ទាត់ការបញ្ជូនតកំពុងរង់ចាំទេ។',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print ត្រូវបានបិទនៅលើគេហទំព័រនេះ។',
+		'Could not create a relay verification token.' => 'មិនអាចបង្កើតនិមិត្តសញ្ញាផ្ទៀងផ្ទាត់ការបញ្ជូនតបានទេ។',
+		'Relay registration failed.' => 'ការចុះឈ្មោះបញ្ជូនបន្តបានបរាជ័យ។',
+		'Relay registration returned invalid credentials.' => 'ការចុះឈ្មោះបញ្ជូនបន្តបានត្រឡប់លិខិតសម្គាល់មិនត្រឹមត្រូវ។',
 	),
 );

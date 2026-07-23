@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight pakavimo lapo dokumentas neprieinamas.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS įskiepis nepavyko tinkamai įkelti.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Išsaugotas šios užduoties kvitas buvo išvalytas ir jame nėra šablono, kurį būtų galima iš naujo pateikti.',
+		'No relay verification is pending.' => 'Relės patvirtinimo nelaukiama.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print šioje svetainėje išjungtas.',
+		'Could not create a relay verification token.' => 'Nepavyko sukurti perdavimo patvirtinimo prieigos rakto.',
+		'Relay registration failed.' => 'Relės registracija nepavyko.',
+		'Relay registration returned invalid credentials.' => 'Relės registracija grąžino neteisingus kredencialus.',
 	),
 );

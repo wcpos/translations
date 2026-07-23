@@ -734,5 +734,11 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Het pakbondocument van WP Overnight is niet beschikbaar.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Het pakbondocument van WP Overnight kan niet worden weergegeven voor deze bestelling.',
 		'The WCPOS plugin failed to load correctly.' => 'De WCPOS-plugin kon niet correct worden geladen.',
+		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'De opgeslagen bon van deze taak is opgeschoond en heeft geen sjabloon om opnieuw te renderen.',
+		'No relay verification is pending.' => 'Er is geen relaisverificatie in behandeling.',
+		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print is uitgeschakeld op deze site.',
+		'Could not create a relay verification token.' => 'Kan geen relay-verificatietoken maken.',
+		'Relay registration failed.' => 'Relay-registratie mislukt.',
+		'Relay registration returned invalid credentials.' => 'Relay-registratie heeft ongeldige inloggegevens geretourneerd.',
 	),
 );
