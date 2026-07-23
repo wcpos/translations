@@ -127,6 +127,20 @@ jobs:
                 fi
                 echo "Push rejected (attempt $attempt); rebasing onto latest main"
                 git pull --rebase origin main
+                while IFS= read -r file; do
+                  domain=$(basename "$file" .pot)
+                  while IFS= read -r locale; do
+                    node scripts/translation-context-packets.js \
+                      --type php \
+                      --locale "$locale" \
+                      --domain "$domain" \
+                      --out-dir "translation-context/php/${locale}" > /dev/null
+                  done < <(find translations/php -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
+                done < <(echo "$changed_files" | jq -r '.[]')
+                git add translation-context/php
+                if ! git diff --staged --quiet; then
+                  git commit --amend --no-edit
+                fi
                 sleep $((attempt * 5))
               done
               if [ "$pushed" -ne 1 ]; then
