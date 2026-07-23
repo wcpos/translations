@@ -30,6 +30,9 @@ jobs:
     steps:
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Full history so the push-retry rebase below has a merge base.
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v4
@@ -114,7 +117,22 @@ jobs:
               echo "No context artifact changes to commit"
             else
               git commit -m "chore: update PHP translation context artifacts"
-              git push
+              # main moves underneath us (Dependabot merges, other runs); a bare
+              # push loses that race and kills the forward before Aide is called.
+              pushed=0
+              for attempt in 1 2 3 4 5; do
+                if git push; then
+                  pushed=1
+                  break
+                fi
+                echo "Push rejected (attempt $attempt); rebasing onto latest main"
+                git pull --rebase origin main
+                sleep $((attempt * 5))
+              done
+              if [ "$pushed" -ne 1 ]; then
+                echo "::error::Failed to push context artifacts after 5 attempts"
+                exit 1
+              fi
             fi
           fi
 
