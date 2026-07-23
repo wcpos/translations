@@ -6065,9 +6065,19 @@
           "msgstr": "無効なテンプレートIDです。"
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "拡張機能のキャッシュをクリアできませんでした。"
+        },
+        {
           "msgid": "Could not generate the test print.",
           "msgctxt": null,
           "msgstr": "テスト印刷を生成できませんでした。"
+        },
+        {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
         },
         {
           "msgid": "Template was installed but could not be retrieved.",
@@ -6078,16 +6088,6 @@
           "msgid": "Whether to keep the current session.",
           "msgctxt": null,
           "msgstr": "現在のセッションを保持するかどうか。"
-        },
-        {
-          "msgid": "Order not found.",
-          "msgctxt": null,
-          "msgstr": "注文が見つかりません。"
-        },
-        {
-          "msgid": "Payment gateway not found.",
-          "msgctxt": null,
-          "msgstr": "支払いゲートウェイが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -8185,6 +8185,11 @@
           "msgstr": "テスト印刷を生成できませんでした。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "印刷ジョブが見つかりません。"
@@ -8208,11 +8213,6 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "キャッシャーのユニーク識別子（WordPressユーザーID）。"
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "現在のセッションを特定できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -8256,6 +8256,11 @@
           "msgstr": "キャッシャーが見つかりません。"
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "拡張機能のキャッシュをクリアできませんでした。"
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "印刷ジョブが見つかりません。"
@@ -8289,11 +8294,6 @@
           "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
           "msgctxt": null,
           "msgstr": "ログイン試行が多すぎるため、このアカウントは一時的にロックされています。後でもう一度お試しください。"
-        },
-        {
-          "msgid": "Too many requests. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         }
       ],
       "concept_hints": [],
@@ -11549,6 +11549,11 @@
           "msgstr": "キャッシャーが見つかりません。"
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "拡張機能のキャッシュをクリアできませんでした。"
+        },
+        {
           "msgid": "Test print is not available for this printer yet.",
           "msgctxt": null,
           "msgstr": "このプリンターではまだテスト印刷を利用できません。"
@@ -11572,11 +11577,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "この注文の WP Overnight 納品書ドキュメントを表示できませんでした。"
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "キャッシャーのユニーク識別子（WordPressユーザーID）。"
         }
       ],
       "concept_hints": [],
@@ -12688,12 +12688,16 @@
         "translator_comments": [],
         "references": [
           "includes/API/Receipts_Controller.php:189",
-          "includes/API/Receipts_Controller.php:197"
+          "includes/API/Receipts_Controller.php:197",
+          "includes/Templates/Receipt.php:193",
+          "includes/Templates/Receipt.php:201",
+          "includes/Templates/Receipt.php:212"
         ]
       },
       "source_usage": {
         "areas": [
-          "receipt"
+          "receipt",
+          "template editor"
         ],
         "nearby_source_strings": [
           "A template_id is required.",
@@ -12724,6 +12728,11 @@
           "msgstr": "キャッシャーが見つかりません。"
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "拡張機能のキャッシュをクリアできませんでした。"
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "印刷ジョブが見つかりません。"
@@ -12747,11 +12756,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "この注文の WP Overnight 納品書ドキュメントを表示できませんでした。"
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "この見積書は発行日から30日間有効です。有効期間後は価格が変更される場合があります。これはレシートでも購入確認書でもありません。"
         }
       ],
       "concept_hints": [],
@@ -43386,6 +43390,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
+          "includes/Storefront_Receipts.php:127",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -48153,7 +48158,7 @@
           "Star Online authentication failed.",
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "WP Overnight %s PDF could not be generated.",
-          "Template"
+          "Download receipt (PDF)"
         ]
       },
       "related_existing_translations": [
@@ -48238,8 +48243,8 @@
         "nearby_source_strings": [
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "Star Online request failed with status %d.",
-          "Template",
-          "Template Archives"
+          "Download receipt (PDF)",
+          "Download receipt for order #%s"
         ]
       },
       "related_existing_translations": [
@@ -48306,6 +48311,178 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
+        "msgid": "Download receipt (PDF)",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Storefront_Receipts.php:38"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "Star Online request failed with status %d.",
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
+          "Template"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "エラー"
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
+          "msgid": "Gift Receipt",
+          "msgctxt": null,
+          "msgstr": "ギフトレシート"
+        },
+        {
+          "msgid": "HTML Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "HTMLレシートテンプレート #%d"
+        },
+        {
+          "msgid": "PHP Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "PHPレシートテンプレート #%d"
+        },
+        {
+          "msgid": "Pro Receipt Template",
+          "msgctxt": null,
+          "msgstr": "プロレシートテンプレート"
+        },
+        {
+          "msgid": "Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "レシートテンプレート #%d"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "注文印刷用レシートテンプレート"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "PDF Invoices & Packing Slips の請求書 HTML を WP Overnight のドキュメント API 経由で表示します。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
+        "msgid": "Download receipt for order #%s",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: order number."
+        ],
+        "references": [
+          "includes/Storefront_Receipts.php:129"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Template",
+          "Template Archives"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "注文"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "80mm プリンター向けの右から左への感熱レシートです。アラビア語、ヘブライ語、ペルシア語、ウルドゥー語向けに列の配置を反転します。アラビア語のコードページ（CP864 または Windows-1256）に対応したプリンターが必要です。注文前にプリンターのマニュアルを確認してください。"
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "エラー"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "注文印刷用レシートテンプレート"
+        },
+        {
+          "msgid": "Thermal Receipt Template (%1$s) #%2$d",
+          "msgctxt": null,
+          "msgstr": "感熱レシートテンプレート（%1$s）#%2$d"
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
+          "msgctxt": null,
+          "msgstr": "幅 58mm の用紙向けの、すっきりしたミニマルな感熱レシート。80mm と同じレイアウトを、32 文字幅に合わせて調整しています。"
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
+          "msgctxt": null,
+          "msgstr": "標準 80mm 用紙向けの、すっきりしたミニマルな感熱レシート。店舗ヘッダー、商品明細、合計、バーコードを表示します。"
+        },
+        {
+          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
+          "msgctxt": null,
+          "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
+        },
+        {
+          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
+          "msgctxt": null,
+          "msgstr": "中央揃えの店舗ヘッダー、太い二重罫線の注文帯、密な商品行を備えたコンパクトなレシート。Standard と同じ必須項目を、より少ない縦スペースで表示します。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
         "msgid": "Template",
         "msgctxt": null,
         "msgid_plural": null,
@@ -48322,8 +48499,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Star Online request failed with status %d.",
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Download receipt for order #%s",
           "Template Archives",
           "Template Attributes"
         ]
@@ -48409,7 +48586,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
           "Template",
           "Template Attributes",
           "Parent Template:"
@@ -53153,9 +53330,9 @@
           "msgstr": "テンプレートファイルに構文エラー（セミコロン、括弧などの欠落）がないか確認してください。"
         },
         {
-          "msgid": "Could not determine current session.",
+          "msgid": "Could not clear the extensions cache.",
           "msgctxt": null,
-          "msgstr": "現在のセッションを特定できませんでした。"
+          "msgstr": "拡張機能のキャッシュをクリアできませんでした。"
         }
       ],
       "concept_hints": [],
@@ -53990,6 +54167,11 @@
           "msgstr": "セキュリティチェックに失敗しました。もう一度お試しください。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54013,11 +54195,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ユーザー名またはパスワードが無効です。"
         }
       ],
       "concept_hints": [],
@@ -54073,6 +54250,11 @@
           "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "テンプレートで使用されるすべての変数が定義されていることを確認してください。"
@@ -54096,11 +54278,6 @@
           "msgid": "Choose from the most used",
           "msgctxt": null,
           "msgstr": "最も使用されているものから選択"
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "date_created_gmt は未来24時間を超えて指定できません。"
         }
       ],
       "concept_hints": [],
@@ -54156,6 +54333,11 @@
           "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "テンプレートで使用されるすべての変数が定義されていることを確認してください。"
@@ -54179,11 +54361,6 @@
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "msgctxt": null,
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
         }
       ],
       "concept_hints": [],
@@ -54239,6 +54416,11 @@
           "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54262,11 +54444,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "認証トークンの生成に失敗しました。"
-        },
-        {
-          "msgid": "Please contact the site administrator for assistance.",
-          "msgctxt": null,
-          "msgstr": "サポートが必要な場合は、サイト管理者に連絡してください。"
         }
       ],
       "concept_hints": [],
@@ -54419,6 +54596,11 @@
           "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
+        },
+        {
           "msgid": "Settings failed to load, please contact support",
           "msgctxt": null,
           "msgstr": "設定の読み込みに失敗しました。サポートに連絡してください"
@@ -54432,11 +54614,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "認証トークンの生成に失敗しました。"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "スクリプトとスタイルがカスタム支払いテンプレートに干渉する可能性があります。このフォームを使用して問題のあるスクリプトを解除してください。"
         }
       ],
       "concept_hints": [],
@@ -58167,7 +58344,7 @@
           "Paying as customer",
           "Sorry, this order is invalid and cannot be paid for.",
           "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid."
+          "You do not have permission to view this receipt."
         ]
       },
       "related_existing_translations": [
@@ -58252,8 +58429,8 @@
         "nearby_source_strings": [
           "Sorry, this order is invalid and cannot be paid for.",
           "Sorry, this order has already been paid for.",
-          "Sorry, this order is invalid.",
-          "You do not have permission to view this receipt."
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured."
         ]
       },
       "related_existing_translations": [
@@ -58322,13 +58499,12 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
-        "msgid": "Sorry, this order is invalid.",
+        "msgid": "You do not have permission to view this receipt.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:81",
-          "includes/Templates/Received.php:76"
+          "includes/Templates/Receipt.php:85"
         ]
       },
       "source_usage": {
@@ -58339,94 +58515,8 @@
         "nearby_source_strings": [
           "Sorry, this order has already been paid for.",
           "You do not have permission to modify checkout settings.",
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error"
-        ]
-      },
-      "related_existing_translations": [
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ございませんが、この注文は支払うことができません。注文キーが存在しないか無効です。"
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効で支払いできません。"
-        },
-        {
-          "msgid": "Order",
-          "msgctxt": null,
-          "msgstr": "注文"
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文はすでに支払われています。"
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "テンプレートに危険な関数が含まれています：%s()。この関数はセキュリティ上の理由で許可されていません。"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
-        },
-        {
-          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "ログイン試行が多すぎるため、このアカウントは一時的にロックされています。後でもう一度お試しください。"
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ユーザー名またはパスワードが無効です。"
-        }
-      ],
-      "concept_hints": [],
-      "risk": {
-        "level": "high",
-        "reasons": [
-          "receipt/payment/settings source references"
-        ]
-      }
-    },
-    {
-      "project": "woocommerce-pos",
-      "domain": "woocommerce-pos",
-      "format": "php-po",
-      "locale": "ja",
-      "entry": {
-        "msgid": "You do not have permission to view this receipt.",
-        "msgctxt": null,
-        "msgid_plural": null,
-        "translator_comments": [],
-        "references": [
-          "includes/Templates/Receipt.php:87"
-        ]
-      },
-      "source_usage": {
-        "areas": [
-          "receipt",
-          "template editor"
-        ],
-        "nearby_source_strings": [
-          "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid.",
-          "Receipt Error",
-          "Receipt Template Error"
         ]
       },
       "related_existing_translations": [
@@ -58495,14 +58585,12 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
-        "msgid": "Receipt Error",
+        "msgid": "No receipt template is configured.",
         "msgctxt": null,
         "msgid_plural": null,
-        "translator_comments": [
-          "Short WCPOS UI label; keep concise."
-        ],
+        "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:238"
+          "includes/Templates/Receipt.php:182"
         ]
       },
       "source_usage": {
@@ -58511,8 +58599,96 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Sorry, this order is invalid.",
+          "You do not have permission to modify checkout settings.",
           "You do not have permission to view this receipt.",
+          "Receipt Error",
+          "Receipt Template Error"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "テンプレート"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
+        },
+        {
+          "msgid": "Receipt Template Error",
+          "msgctxt": null,
+          "msgstr": "領収書テンプレートエラー"
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "テンプレートに危険な関数が含まれています：%s()。この関数はセキュリティ上の理由で許可されていません。"
+        },
+        {
+          "msgid": "Try resetting to the default receipt template",
+          "msgctxt": null,
+          "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効です。"
+        },
+        {
+          "msgid": "A template_id is required.",
+          "msgctxt": null,
+          "msgstr": "template_id が必要です。"
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "エラー"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
+        "msgid": "Receipt Error",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "Short WCPOS UI label; keep concise."
+        ],
+        "references": [
+          "includes/Templates/Receipt.php:323"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt",
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Template Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
         ]
@@ -58591,7 +58767,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:299"
+          "includes/Templates/Receipt.php:384"
         ]
       },
       "source_usage": {
@@ -58600,7 +58776,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "File:"
@@ -58679,7 +58855,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:300"
+          "includes/Templates/Receipt.php:385"
         ]
       },
       "source_usage": {
@@ -58767,7 +58943,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:306"
+          "includes/Templates/Receipt.php:391"
         ]
       },
       "source_usage": {
@@ -58856,7 +59032,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:307"
+          "includes/Templates/Receipt.php:392"
         ]
       },
       "source_usage": {
@@ -58945,7 +59121,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:311"
+          "includes/Templates/Receipt.php:396"
         ]
       },
       "source_usage": {
@@ -59034,7 +59210,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:313"
+          "includes/Templates/Receipt.php:398"
         ]
       },
       "source_usage": {
@@ -59122,7 +59298,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:314"
+          "includes/Templates/Receipt.php:399"
         ]
       },
       "source_usage": {
@@ -59210,7 +59386,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:315"
+          "includes/Templates/Receipt.php:400"
         ]
       },
       "source_usage": {
@@ -59296,7 +59472,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:316"
+          "includes/Templates/Receipt.php:401"
         ]
       },
       "source_usage": {
@@ -59308,7 +59484,7 @@
           "Ensure all variables used in the template are defined",
           "Verify that any custom functions or classes exist",
           "Please contact the site administrator for assistance.",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid."
+          "Sorry, this order is invalid."
         ]
       },
       "related_existing_translations": [
@@ -59382,7 +59558,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:320"
+          "includes/Templates/Receipt.php:405"
         ]
       },
       "source_usage": {
@@ -59393,8 +59569,8 @@
         "nearby_source_strings": [
           "Verify that any custom functions or classes exist",
           "Try resetting to the default receipt template",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "Failed to create temporary template file."
+          "Sorry, this order is invalid.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid."
         ]
       },
       "related_existing_translations": [
@@ -59463,6 +59639,89 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
+        "msgid": "Sorry, this order is invalid.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Templates/Received.php:76"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "Try resetting to the default receipt template",
+          "Please contact the site administrator for assistance.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "Failed to create temporary template file."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ございませんが、この注文は支払うことができません。注文キーが存在しないか無効です。"
+        },
+        {
+          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid and cannot be paid for.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効で支払いできません。"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "注文"
+        },
+        {
+          "msgid": "Sorry, this order has already been paid for.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文はすでに支払われています。"
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "テンプレートに危険な関数が含まれています：%s()。この関数はセキュリティ上の理由で許可されていません。"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
+        },
+        {
+          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
+          "msgctxt": null,
+          "msgstr": "ログイン試行が多すぎるため、このアカウントは一時的にロックされています。後でもう一度お試しください。"
+        },
+        {
+          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgctxt": null,
+          "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
+        },
+        {
+          "msgid": "Invalid username or password.",
+          "msgctxt": null,
+          "msgstr": "ユーザー名またはパスワードが無効です。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
         "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -59476,8 +59735,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Try resetting to the default receipt template",
           "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Failed to create temporary template file.",
           "Invalid template language."
         ]
@@ -59570,7 +59829,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "Invalid template language.",
           "Template contains potentially dangerous JavaScript code: %s"

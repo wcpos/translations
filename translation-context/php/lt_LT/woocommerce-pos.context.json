@@ -6065,9 +6065,19 @@
           "msgstr": "Neteisingas šablono ID."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko išvalyti plėtinių talpyklos."
+        },
+        {
           "msgid": "Could not generate the test print.",
           "msgctxt": null,
           "msgstr": "Nepavyko sugeneruoti bandomojo spausdinimo."
+        },
+        {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
         },
         {
           "msgid": "Template was installed but could not be retrieved.",
@@ -6078,16 +6088,6 @@
           "msgid": "Whether to keep the current session.",
           "msgctxt": null,
           "msgstr": "Ar išlaikyti dabartinę sesiją."
-        },
-        {
-          "msgid": "Order not found.",
-          "msgctxt": null,
-          "msgstr": "Užsakymas nerastas."
-        },
-        {
-          "msgid": "Payment gateway not found.",
-          "msgctxt": null,
-          "msgstr": "Mokėjimo būdas nerastas."
         }
       ],
       "concept_hints": [],
@@ -8185,6 +8185,11 @@
           "msgstr": "Nepavyko sugeneruoti bandomojo spausdinimo."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Spausdinimo užduotis nerasta."
@@ -8208,11 +8213,6 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Unikalus kasininko identifikatorius (WordPress vartotojo ID)."
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "Nepavyko nustatyti dabartinės sesijos."
         }
       ],
       "concept_hints": [],
@@ -8256,6 +8256,11 @@
           "msgstr": "Kasininkas nerastas."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko išvalyti plėtinių talpyklos."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Spausdinimo užduotis nerasta."
@@ -8289,11 +8294,6 @@
           "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
           "msgctxt": null,
           "msgstr": "Ši paskyra laikinai užrakinta dėl per daug nesėkmingų prisijungimo bandymų. Bandykite vėliau."
-        },
-        {
-          "msgid": "Too many requests. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "Per daug užklausų. Bandykite dar kartą vėliau."
         }
       ],
       "concept_hints": [],
@@ -11549,6 +11549,11 @@
           "msgstr": "Kasininkas nerastas."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko išvalyti plėtinių talpyklos."
+        },
+        {
           "msgid": "Test print is not available for this printer yet.",
           "msgctxt": null,
           "msgstr": "Bandomasis spausdinimas šiam spausdintuvui dar neprieinamas."
@@ -11572,11 +11577,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Unikalus kasininko identifikatorius (WordPress vartotojo ID)."
         }
       ],
       "concept_hints": [],
@@ -12688,12 +12688,16 @@
         "translator_comments": [],
         "references": [
           "includes/API/Receipts_Controller.php:189",
-          "includes/API/Receipts_Controller.php:197"
+          "includes/API/Receipts_Controller.php:197",
+          "includes/Templates/Receipt.php:193",
+          "includes/Templates/Receipt.php:201",
+          "includes/Templates/Receipt.php:212"
         ]
       },
       "source_usage": {
         "areas": [
-          "receipt"
+          "receipt",
+          "template editor"
         ],
         "nearby_source_strings": [
           "A template_id is required.",
@@ -12724,6 +12728,11 @@
           "msgstr": "Kasininkas nerastas."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko išvalyti plėtinių talpyklos."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Spausdinimo užduotis nerasta."
@@ -12747,11 +12756,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Šis pasiūlymas galioja 30 dienų nuo išdavimo datos. Pasibaigus galiojimui, kainos gali keistis. Tai nėra kvitas ar pirkimo patvirtinimas."
         }
       ],
       "concept_hints": [],
@@ -43386,6 +43390,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
+          "includes/Storefront_Receipts.php:127",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -48153,7 +48158,7 @@
           "Star Online authentication failed.",
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "WP Overnight %s PDF could not be generated.",
-          "Template"
+          "Download receipt (PDF)"
         ]
       },
       "related_existing_translations": [
@@ -48238,8 +48243,8 @@
         "nearby_source_strings": [
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "Star Online request failed with status %d.",
-          "Template",
-          "Template Archives"
+          "Download receipt (PDF)",
+          "Download receipt for order #%s"
         ]
       },
       "related_existing_translations": [
@@ -48306,6 +48311,178 @@
       "format": "php-po",
       "locale": "lt_LT",
       "entry": {
+        "msgid": "Download receipt (PDF)",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Storefront_Receipts.php:38"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "Star Online request failed with status %d.",
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
+          "Template"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Avalynė"
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Klaida"
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko sugeneruoti kvito PDF."
+        },
+        {
+          "msgid": "Gift Receipt",
+          "msgctxt": null,
+          "msgstr": "Dovanų kvitas"
+        },
+        {
+          "msgid": "HTML Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "HTML kvito šablonas #%d"
+        },
+        {
+          "msgid": "PHP Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "PHP kvito šablonas #%d"
+        },
+        {
+          "msgid": "Pro Receipt Template",
+          "msgctxt": null,
+          "msgstr": "Pro kvito šablonas"
+        },
+        {
+          "msgid": "Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "Kvito šablonas #%d"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "Kvito šablonai užsakymų spausdinimui"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Atvaizduoja PDF Invoices & Packing Slips sąskaitos faktūros HTML per WP Overnight dokumentų API."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "lt_LT",
+      "entry": {
+        "msgid": "Download receipt for order #%s",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: order number."
+        ],
+        "references": [
+          "includes/Storefront_Receipts.php:129"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Template",
+          "Template Archives"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Avalynė"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Užsakymas"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "Iš dešinės į kairę spausdinamas 80 mm terminių spausdintuvų kvitas. Veidrodiniu principu išdėsto stulpelius arabų, hebrajų, persų ir urdų kalboms. Reikia spausdintuvo, palaikančio arabų koduotę (CP864 arba Windows-1256) - prieš užsakydami pasitikrinkite spausdintuvo vadovą."
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Klaida"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "Kvito šablonai užsakymų spausdinimui"
+        },
+        {
+          "msgid": "Thermal Receipt Template (%1$s) #%2$d",
+          "msgctxt": null,
+          "msgstr": "Terminio kvito šablonas (%1$s) #%2$d"
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
+          "msgctxt": null,
+          "msgstr": "Švarus, minimalus terminis kvitas siauram 58 mm popieriui. Tas pats maketas kaip 80 mm versijoje, pritaikytas 32 simbolių pločiui."
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
+          "msgctxt": null,
+          "msgstr": "Švarus, minimalus terminis kvitas standartiniam 80 mm popieriui. Parduotuvės antraštė, prekių eilutės, sumos ir brūkšninis kodas."
+        },
+        {
+          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
+          "msgctxt": null,
+          "msgstr": "Kompaktiškas kvitas monospacijiniu šriftu, skirtas siauram popieriui arba HTML palaikantiems terminiams spausdintuvams. Spausdinamas tvarkingai juodai baltai."
+        },
+        {
+          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
+          "msgctxt": null,
+          "msgstr": "Kompaktiškas kvitas su centruotu parduotuvės antraštės bloku, paryškinta dvigubo rėmelio užsakymo juosta ir tankiomis prekių eilutėmis. Turi tas pačias pagrindines dalis kaip Standartinis, bet užima mažiau vertikalios vietos."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "lt_LT",
+      "entry": {
         "msgid": "Template",
         "msgctxt": null,
         "msgid_plural": null,
@@ -48322,8 +48499,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Star Online request failed with status %d.",
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Download receipt for order #%s",
           "Template Archives",
           "Template Attributes"
         ]
@@ -48409,7 +48586,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
           "Template",
           "Template Attributes",
           "Parent Template:"
@@ -53153,9 +53330,9 @@
           "msgstr": "Patikrinkite šablono failą dėl sintaksės klaidų (trūksta kabliataškių, skliaustų ir pan.)"
         },
         {
-          "msgid": "Could not determine current session.",
+          "msgid": "Could not clear the extensions cache.",
           "msgctxt": null,
-          "msgstr": "Nepavyko nustatyti dabartinės sesijos."
+          "msgstr": "Nepavyko išvalyti plėtinių talpyklos."
         }
       ],
       "concept_hints": [],
@@ -53990,6 +54167,11 @@
           "msgstr": "Saugumo patikrinimas nepavyko. Bandykite dar kartą."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Klaida"
@@ -54013,11 +54195,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Pabandykite atstatyti į numatytąjį kvito šabloną"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Neteisingas vartotojo vardas arba slaptažodis."
         }
       ],
       "concept_hints": [],
@@ -54073,6 +54250,11 @@
           "msgstr": "Per daug užklausų. Bandykite dar kartą vėliau."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Įsitikinkite, kad visi šablone naudojami kintamieji yra apibrėžti"
@@ -54096,11 +54278,6 @@
           "msgid": "Choose from the most used",
           "msgctxt": null,
           "msgstr": "Pasirinkite iš dažniausiai naudojamų"
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "date_created_gmt negali būti daugiau nei 24 valandas ateityje."
         }
       ],
       "concept_hints": [],
@@ -54156,6 +54333,11 @@
           "msgstr": "Per daug užklausų. Bandykite dar kartą vėliau."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Įsitikinkite, kad visi šablone naudojami kintamieji yra apibrėžti"
@@ -54179,11 +54361,6 @@
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "msgctxt": null,
           "msgstr": "Įvyko problema generuojant kvito šabloną. Tai dažniausiai sukelia sintaksės klaida arba neapibrėžtas kintamasis šablono kode."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Pabandykite atstatyti į numatytąjį kvito šabloną"
         }
       ],
       "concept_hints": [],
@@ -54239,6 +54416,11 @@
           "msgstr": "Per daug užklausų. Bandykite dar kartą vėliau."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Klaida"
@@ -54262,11 +54444,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nepavyko sugeneruoti autentifikavimo žetonų."
-        },
-        {
-          "msgid": "Please contact the site administrator for assistance.",
-          "msgctxt": null,
-          "msgstr": "Prašome kreiptis į svetainės administratorių pagalbos."
         }
       ],
       "concept_hints": [],
@@ -54419,6 +54596,11 @@
           "msgstr": "Atsiprašome, šis užsakymas neteisingas."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nepavyko atnaujinti plėtinių. Bandykite dar kartą."
+        },
+        {
           "msgid": "Settings failed to load, please contact support",
           "msgctxt": null,
           "msgstr": "Nepavyko įkelti nustatymų, prašome susisiekti su palaikymu"
@@ -54432,11 +54614,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nepavyko sugeneruoti autentifikavimo žetonų."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skriptai ir stiliai gali trukdyti pritaikytam mokėjimo šablonui, naudokite šią formą, kad pašalintumėte probleminius skriptus."
         }
       ],
       "concept_hints": [],
@@ -58167,7 +58344,7 @@
           "Paying as customer",
           "Sorry, this order is invalid and cannot be paid for.",
           "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid."
+          "You do not have permission to view this receipt."
         ]
       },
       "related_existing_translations": [
@@ -58252,8 +58429,8 @@
         "nearby_source_strings": [
           "Sorry, this order is invalid and cannot be paid for.",
           "Sorry, this order has already been paid for.",
-          "Sorry, this order is invalid.",
-          "You do not have permission to view this receipt."
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured."
         ]
       },
       "related_existing_translations": [
@@ -58322,13 +58499,12 @@
       "format": "php-po",
       "locale": "lt_LT",
       "entry": {
-        "msgid": "Sorry, this order is invalid.",
+        "msgid": "You do not have permission to view this receipt.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:81",
-          "includes/Templates/Received.php:76"
+          "includes/Templates/Receipt.php:85"
         ]
       },
       "source_usage": {
@@ -58339,94 +58515,8 @@
         "nearby_source_strings": [
           "Sorry, this order has already been paid for.",
           "You do not have permission to modify checkout settings.",
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error"
-        ]
-      },
-      "related_existing_translations": [
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Deja, šis užsakymas negali būti apmokestintas. Užsakymo raktas trūksta ar yra neteisingas."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Deja, šis užsakymas negali būti peržiūrėtas. Užsakymo raktas trūksta ar yra neteisingas."
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "Atsiprašome, šis užsakymas neteisingas ir negali būti apmokėtas."
-        },
-        {
-          "msgid": "Order",
-          "msgctxt": null,
-          "msgstr": "Užsakymas"
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Atsiprašome, šis užsakymas jau buvo apmokėtas."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Šablone yra pavojinga funkcija: %s(). Ši funkcija neleidžiama dėl saugumo priežasčių."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Įvyko problema generuojant kvito šabloną. Tai dažniausiai sukelia sintaksės klaida arba neapibrėžtas kintamasis šablono kode."
-        },
-        {
-          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "Ši paskyra laikinai užrakinta dėl per daug nesėkmingų prisijungimo bandymų. Bandykite vėliau."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Šis užsakymas negali būti apmokėtas. Jei reikia pagalbos, susisiekite su mumis."
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Neteisingas vartotojo vardas arba slaptažodis."
-        }
-      ],
-      "concept_hints": [],
-      "risk": {
-        "level": "high",
-        "reasons": [
-          "receipt/payment/settings source references"
-        ]
-      }
-    },
-    {
-      "project": "woocommerce-pos",
-      "domain": "woocommerce-pos",
-      "format": "php-po",
-      "locale": "lt_LT",
-      "entry": {
-        "msgid": "You do not have permission to view this receipt.",
-        "msgctxt": null,
-        "msgid_plural": null,
-        "translator_comments": [],
-        "references": [
-          "includes/Templates/Receipt.php:87"
-        ]
-      },
-      "source_usage": {
-        "areas": [
-          "receipt",
-          "template editor"
-        ],
-        "nearby_source_strings": [
-          "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid.",
-          "Receipt Error",
-          "Receipt Template Error"
         ]
       },
       "related_existing_translations": [
@@ -58495,14 +58585,12 @@
       "format": "php-po",
       "locale": "lt_LT",
       "entry": {
-        "msgid": "Receipt Error",
+        "msgid": "No receipt template is configured.",
         "msgctxt": null,
         "msgid_plural": null,
-        "translator_comments": [
-          "Short WCPOS UI label; keep concise."
-        ],
+        "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:238"
+          "includes/Templates/Receipt.php:182"
         ]
       },
       "source_usage": {
@@ -58511,8 +58599,96 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Sorry, this order is invalid.",
+          "You do not have permission to modify checkout settings.",
           "You do not have permission to view this receipt.",
+          "Receipt Error",
+          "Receipt Template Error"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Avalynė"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablonas"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Šablonas"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "Įvyko problema generuojant kvito šabloną. Tai dažniausiai sukelia sintaksės klaida arba neapibrėžtas kintamasis šablono kode."
+        },
+        {
+          "msgid": "Receipt Template Error",
+          "msgctxt": null,
+          "msgstr": "Kvito šablono klaida"
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Šablone yra pavojinga funkcija: %s(). Ši funkcija neleidžiama dėl saugumo priežasčių."
+        },
+        {
+          "msgid": "Try resetting to the default receipt template",
+          "msgctxt": null,
+          "msgstr": "Pabandykite atstatyti į numatytąjį kvito šabloną"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Atsiprašome, šis užsakymas neteisingas."
+        },
+        {
+          "msgid": "A template_id is required.",
+          "msgctxt": null,
+          "msgstr": "Reikalingas template_id."
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Klaida"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "lt_LT",
+      "entry": {
+        "msgid": "Receipt Error",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "Short WCPOS UI label; keep concise."
+        ],
+        "references": [
+          "includes/Templates/Receipt.php:323"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt",
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Template Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
         ]
@@ -58591,7 +58767,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:299"
+          "includes/Templates/Receipt.php:384"
         ]
       },
       "source_usage": {
@@ -58600,7 +58776,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "File:"
@@ -58679,7 +58855,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:300"
+          "includes/Templates/Receipt.php:385"
         ]
       },
       "source_usage": {
@@ -58767,7 +58943,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:306"
+          "includes/Templates/Receipt.php:391"
         ]
       },
       "source_usage": {
@@ -58856,7 +59032,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:307"
+          "includes/Templates/Receipt.php:392"
         ]
       },
       "source_usage": {
@@ -58945,7 +59121,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:311"
+          "includes/Templates/Receipt.php:396"
         ]
       },
       "source_usage": {
@@ -59034,7 +59210,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:313"
+          "includes/Templates/Receipt.php:398"
         ]
       },
       "source_usage": {
@@ -59122,7 +59298,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:314"
+          "includes/Templates/Receipt.php:399"
         ]
       },
       "source_usage": {
@@ -59210,7 +59386,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:315"
+          "includes/Templates/Receipt.php:400"
         ]
       },
       "source_usage": {
@@ -59296,7 +59472,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:316"
+          "includes/Templates/Receipt.php:401"
         ]
       },
       "source_usage": {
@@ -59308,7 +59484,7 @@
           "Ensure all variables used in the template are defined",
           "Verify that any custom functions or classes exist",
           "Please contact the site administrator for assistance.",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid."
+          "Sorry, this order is invalid."
         ]
       },
       "related_existing_translations": [
@@ -59382,7 +59558,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:320"
+          "includes/Templates/Receipt.php:405"
         ]
       },
       "source_usage": {
@@ -59393,8 +59569,8 @@
         "nearby_source_strings": [
           "Verify that any custom functions or classes exist",
           "Try resetting to the default receipt template",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "Failed to create temporary template file."
+          "Sorry, this order is invalid.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid."
         ]
       },
       "related_existing_translations": [
@@ -59463,6 +59639,89 @@
       "format": "php-po",
       "locale": "lt_LT",
       "entry": {
+        "msgid": "Sorry, this order is invalid.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Templates/Received.php:76"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "Try resetting to the default receipt template",
+          "Please contact the site administrator for assistance.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "Failed to create temporary template file."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Deja, šis užsakymas negali būti apmokestintas. Užsakymo raktas trūksta ar yra neteisingas."
+        },
+        {
+          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Deja, šis užsakymas negali būti peržiūrėtas. Užsakymo raktas trūksta ar yra neteisingas."
+        },
+        {
+          "msgid": "Sorry, this order is invalid and cannot be paid for.",
+          "msgctxt": null,
+          "msgstr": "Atsiprašome, šis užsakymas neteisingas ir negali būti apmokėtas."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Užsakymas"
+        },
+        {
+          "msgid": "Sorry, this order has already been paid for.",
+          "msgctxt": null,
+          "msgstr": "Atsiprašome, šis užsakymas jau buvo apmokėtas."
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Šablone yra pavojinga funkcija: %s(). Ši funkcija neleidžiama dėl saugumo priežasčių."
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "Įvyko problema generuojant kvito šabloną. Tai dažniausiai sukelia sintaksės klaida arba neapibrėžtas kintamasis šablono kode."
+        },
+        {
+          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
+          "msgctxt": null,
+          "msgstr": "Ši paskyra laikinai užrakinta dėl per daug nesėkmingų prisijungimo bandymų. Bandykite vėliau."
+        },
+        {
+          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgctxt": null,
+          "msgstr": "Šis užsakymas negali būti apmokėtas. Jei reikia pagalbos, susisiekite su mumis."
+        },
+        {
+          "msgid": "Invalid username or password.",
+          "msgctxt": null,
+          "msgstr": "Neteisingas vartotojo vardas arba slaptažodis."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "lt_LT",
+      "entry": {
         "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -59476,8 +59735,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Try resetting to the default receipt template",
           "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Failed to create temporary template file.",
           "Invalid template language."
         ]
@@ -59570,7 +59829,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "Invalid template language.",
           "Template contains potentially dangerous JavaScript code: %s"

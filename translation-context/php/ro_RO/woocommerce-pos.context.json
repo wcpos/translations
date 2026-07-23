@@ -6065,9 +6065,19 @@
           "msgstr": "ID de șablon invalid."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nu s-a putut goli cache-ul extensiilor."
+        },
+        {
           "msgid": "Could not generate the test print.",
           "msgctxt": null,
           "msgstr": "Nu s-a putut genera imprimarea de test."
+        },
+        {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
         },
         {
           "msgid": "Template was installed but could not be retrieved.",
@@ -6078,16 +6088,6 @@
           "msgid": "Whether to keep the current session.",
           "msgctxt": null,
           "msgstr": "Dacă se păstrează sesiunea curentă."
-        },
-        {
-          "msgid": "Order not found.",
-          "msgctxt": null,
-          "msgstr": "Comanda nu a fost găsită."
-        },
-        {
-          "msgid": "Payment gateway not found.",
-          "msgctxt": null,
-          "msgstr": "Gateway-ul de plată nu a fost găsit."
         }
       ],
       "concept_hints": [],
@@ -8185,6 +8185,11 @@
           "msgstr": "Nu s-a putut genera imprimarea de test."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Jobul de imprimare nu a fost găsit."
@@ -8208,11 +8213,6 @@
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
           "msgctxt": null,
           "msgstr": "Identificator unic pentru casier (ID utilizator WordPress)."
-        },
-        {
-          "msgid": "Could not determine current session.",
-          "msgctxt": null,
-          "msgstr": "Nu s-a putut determina sesiunea curentă."
         }
       ],
       "concept_hints": [],
@@ -8256,6 +8256,11 @@
           "msgstr": "Casierul nu a fost găsit."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nu s-a putut goli cache-ul extensiilor."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Jobul de imprimare nu a fost găsit."
@@ -8289,11 +8294,6 @@
           "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
           "msgctxt": null,
           "msgstr": "Acest cont este blocat temporar din cauza prea multor încercări eșuate de autentificare. Vă rugăm să încercați din nou mai târziu."
-        },
-        {
-          "msgid": "Too many requests. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "Prea multe cereri. Vă rugăm să încercați din nou mai târziu."
         }
       ],
       "concept_hints": [],
@@ -11549,6 +11549,11 @@
           "msgstr": "Casierul nu a fost găsit."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nu s-a putut goli cache-ul extensiilor."
+        },
+        {
           "msgid": "Test print is not available for this printer yet.",
           "msgctxt": null,
           "msgstr": "Imprimarea de test nu este încă disponibilă pentru această imprimantă."
@@ -11572,11 +11577,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "Documentul de aviz de expediție WP Overnight nu a putut fi generat pentru această comandă."
-        },
-        {
-          "msgid": "Unique identifier for the cashier (WordPress user ID).",
-          "msgctxt": null,
-          "msgstr": "Identificator unic pentru casier (ID utilizator WordPress)."
         }
       ],
       "concept_hints": [],
@@ -12688,12 +12688,16 @@
         "translator_comments": [],
         "references": [
           "includes/API/Receipts_Controller.php:189",
-          "includes/API/Receipts_Controller.php:197"
+          "includes/API/Receipts_Controller.php:197",
+          "includes/Templates/Receipt.php:193",
+          "includes/Templates/Receipt.php:201",
+          "includes/Templates/Receipt.php:212"
         ]
       },
       "source_usage": {
         "areas": [
-          "receipt"
+          "receipt",
+          "template editor"
         ],
         "nearby_source_strings": [
           "A template_id is required.",
@@ -12724,6 +12728,11 @@
           "msgstr": "Casierul nu a fost găsit."
         },
         {
+          "msgid": "Could not clear the extensions cache.",
+          "msgctxt": null,
+          "msgstr": "Nu s-a putut goli cache-ul extensiilor."
+        },
+        {
           "msgid": "Print job not found.",
           "msgctxt": null,
           "msgstr": "Jobul de imprimare nu a fost găsit."
@@ -12747,11 +12756,6 @@
           "msgid": "The WP Overnight packing slip document could not be rendered for this order.",
           "msgctxt": null,
           "msgstr": "Documentul de aviz de expediție WP Overnight nu a putut fi generat pentru această comandă."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Această ofertă este valabilă 30 de zile de la data emiterii. Prețurile pot suferi modificări după expirarea perioadei de valabilitate. Acesta nu este un bon sau o confirmare de cumpărare."
         }
       ],
       "concept_hints": [],
@@ -43386,6 +43390,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
+          "includes/Storefront_Receipts.php:127",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -48153,7 +48158,7 @@
           "Star Online authentication failed.",
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "WP Overnight %s PDF could not be generated.",
-          "Template"
+          "Download receipt (PDF)"
         ]
       },
       "related_existing_translations": [
@@ -48238,8 +48243,8 @@
         "nearby_source_strings": [
           "Star Online rejected the request. Check that the API key has the required permissions.",
           "Star Online request failed with status %d.",
-          "Template",
-          "Template Archives"
+          "Download receipt (PDF)",
+          "Download receipt for order #%s"
         ]
       },
       "related_existing_translations": [
@@ -48306,6 +48311,178 @@
       "format": "php-po",
       "locale": "ro_RO",
       "entry": {
+        "msgid": "Download receipt (PDF)",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Storefront_Receipts.php:38"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "Star Online request failed with status %d.",
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
+          "Template"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Bon de vânzare"
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Eroare"
+        },
+        {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nu s-a putut genera PDF-ul chitanței."
+        },
+        {
+          "msgid": "Gift Receipt",
+          "msgctxt": null,
+          "msgstr": "Bon de cadou"
+        },
+        {
+          "msgid": "HTML Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "Șablon chitanță HTML #%d"
+        },
+        {
+          "msgid": "PHP Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "Șablon chitanță PHP #%d"
+        },
+        {
+          "msgid": "Pro Receipt Template",
+          "msgctxt": null,
+          "msgstr": "Șablon de chitanță Pro"
+        },
+        {
+          "msgid": "Receipt Template #%d",
+          "msgctxt": null,
+          "msgstr": "Șablon chitanță #%d"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "Șabloane de chitanțe pentru imprimarea comenzilor"
+        },
+        {
+          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
+          "msgctxt": null,
+          "msgstr": "Generează HTML-ul facturii din PDF Invoices & Packing Slips prin API-ul de documente WP Overnight."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ro_RO",
+      "entry": {
+        "msgid": "Download receipt for order #%s",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: order number."
+        ],
+        "references": [
+          "includes/Storefront_Receipts.php:129"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt"
+        ],
+        "nearby_source_strings": [
+          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Template",
+          "Template Archives"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Bon de vânzare"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Comandă"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "Bon termic de la dreapta la stânga pentru imprimante de 80mm. Reflectă alinierea coloanelor pentru arabă, ebraică, persană și urdu. Necesită o imprimantă care acceptă o codepage arabă (CP864 sau Windows-1256) — verificați manualul imprimantei înainte de a comanda."
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Eroare"
+        },
+        {
+          "msgid": "Receipt templates for printing orders",
+          "msgctxt": null,
+          "msgstr": "Șabloane de chitanțe pentru imprimarea comenzilor"
+        },
+        {
+          "msgid": "Thermal Receipt Template (%1$s) #%2$d",
+          "msgctxt": null,
+          "msgstr": "Șablon chitanță termică (%1$s) #%2$d"
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
+          "msgctxt": null,
+          "msgstr": "Bon termic curat și minimalist pentru hârtie îngustă de 58mm. Aceeași structură ca la 80mm, ajustată pentru o lățime de 32 de caractere."
+        },
+        {
+          "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
+          "msgctxt": null,
+          "msgstr": "Bon termic curat și minimalist pentru hârtie standard de 80mm. Antetul magazinului, liniile articolelor, totalurile și codul de bare."
+        },
+        {
+          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
+          "msgctxt": null,
+          "msgstr": "Bon compact cu font monospațiat, dimensionat pentru hârtie îngustă sau imprimante termice cu suport HTML. Se imprimă curat, alb-negru."
+        },
+        {
+          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
+          "msgctxt": null,
+          "msgstr": "Bon compact cu antetul magazinului centrat, bandă de comandă cu chenar dublu și linii de articole dense. Aceleași elemente esențiale ca Standard, dar cu mai puțin spațiu pe verticală."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ro_RO",
+      "entry": {
         "msgid": "Template",
         "msgctxt": null,
         "msgid_plural": null,
@@ -48322,8 +48499,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Star Online request failed with status %d.",
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt (PDF)",
+          "Download receipt for order #%s",
           "Template Archives",
           "Template Attributes"
         ]
@@ -48409,7 +48586,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "WP Overnight %s PDF could not be generated.",
+          "Download receipt for order #%s",
           "Template",
           "Template Attributes",
           "Parent Template:"
@@ -53153,9 +53330,9 @@
           "msgstr": "Verificați fișierul șablon pentru erori de sintaxă (puncte și virgule lipsă, paranteze etc.)"
         },
         {
-          "msgid": "Could not determine current session.",
+          "msgid": "Could not clear the extensions cache.",
           "msgctxt": null,
-          "msgstr": "Nu s-a putut determina sesiunea curentă."
+          "msgstr": "Nu s-a putut goli cache-ul extensiilor."
         }
       ],
       "concept_hints": [],
@@ -53990,6 +54167,11 @@
           "msgstr": "Verificarea de securitate a eșuat. Vă rugăm să încercați din nou."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Eroare"
@@ -54013,11 +54195,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Încercați să resetați la șablonul de chitanță implicit"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Nume de utilizator sau parolă invalidă."
         }
       ],
       "concept_hints": [],
@@ -54073,6 +54250,11 @@
           "msgstr": "Prea multe cereri. Vă rugăm să încercați din nou mai târziu."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Asigurați-vă că toate variabilele utilizate în șablon sunt definite"
@@ -54096,11 +54278,6 @@
           "msgid": "Choose from the most used",
           "msgctxt": null,
           "msgstr": "Alege dintre cele mai utilizate"
-        },
-        {
-          "msgid": "date_created_gmt cannot be more than 24 hours in the future.",
-          "msgctxt": null,
-          "msgstr": "date_created_gmt nu poate fi mai mult de 24 de ore în viitor."
         }
       ],
       "concept_hints": [],
@@ -54156,6 +54333,11 @@
           "msgstr": "Prea multe cereri. Vă rugăm să încercați din nou mai târziu."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Asigurați-vă că toate variabilele utilizate în șablon sunt definite"
@@ -54179,11 +54361,6 @@
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "msgctxt": null,
           "msgstr": "A apărut o problemă la redarea șablonului de chitanță. Aceasta este de obicei cauzată de o eroare de sintaxă sau de o variabilă nedefinită în codul șablonului."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Încercați să resetați la șablonul de chitanță implicit"
         }
       ],
       "concept_hints": [],
@@ -54239,6 +54416,11 @@
           "msgstr": "Prea multe cereri. Vă rugăm să încercați din nou mai târziu."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Eroare"
@@ -54262,11 +54444,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Generarea token-urilor de autentificare a eșuat."
-        },
-        {
-          "msgid": "Please contact the site administrator for assistance.",
-          "msgctxt": null,
-          "msgstr": "Vă rugăm să contactați administratorul site-ului pentru asistență."
         }
       ],
       "concept_hints": [],
@@ -54419,6 +54596,11 @@
           "msgstr": "Ne pare rău, această comandă este invalidă."
         },
         {
+          "msgid": "Could not refresh extensions. Please try again.",
+          "msgctxt": null,
+          "msgstr": "Nu s-au putut reîmprospăta extensiile. Încearcă din nou."
+        },
+        {
           "msgid": "Settings failed to load, please contact support",
           "msgctxt": null,
           "msgstr": "Setările nu au fost încărcate, vă rugăm să contactați suportul"
@@ -54432,11 +54614,6 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Generarea token-urilor de autentificare a eșuat."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Scripturile și stilurile pot interfera cu șablonul de plată personalizat, folosiți acest formular pentru a elimina scripturile problematice."
         }
       ],
       "concept_hints": [],
@@ -58167,7 +58344,7 @@
           "Paying as customer",
           "Sorry, this order is invalid and cannot be paid for.",
           "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid."
+          "You do not have permission to view this receipt."
         ]
       },
       "related_existing_translations": [
@@ -58252,8 +58429,8 @@
         "nearby_source_strings": [
           "Sorry, this order is invalid and cannot be paid for.",
           "Sorry, this order has already been paid for.",
-          "Sorry, this order is invalid.",
-          "You do not have permission to view this receipt."
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured."
         ]
       },
       "related_existing_translations": [
@@ -58322,13 +58499,12 @@
       "format": "php-po",
       "locale": "ro_RO",
       "entry": {
-        "msgid": "Sorry, this order is invalid.",
+        "msgid": "You do not have permission to view this receipt.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:81",
-          "includes/Templates/Received.php:76"
+          "includes/Templates/Receipt.php:85"
         ]
       },
       "source_usage": {
@@ -58339,94 +58515,8 @@
         "nearby_source_strings": [
           "Sorry, this order has already been paid for.",
           "You do not have permission to modify checkout settings.",
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error"
-        ]
-      },
-      "related_existing_translations": [
-        {
-          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Ne pare rău, această comandă nu poate fi achitată. Cheia comenzi este lipsă sau invalidă."
-        },
-        {
-          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "msgctxt": null,
-          "msgstr": "Ne pare rău, această comandă nu poate fi vizualizată. Cheia comenzi este lipsă sau invalidă."
-        },
-        {
-          "msgid": "Sorry, this order is invalid and cannot be paid for.",
-          "msgctxt": null,
-          "msgstr": "Ne pare rău, această comandă este invalidă și nu poate fi plătită."
-        },
-        {
-          "msgid": "Order",
-          "msgctxt": null,
-          "msgstr": "Comandă"
-        },
-        {
-          "msgid": "Sorry, this order has already been paid for.",
-          "msgctxt": null,
-          "msgstr": "Ne pare rău, această comandă a fost deja plătită."
-        },
-        {
-          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
-          "msgctxt": null,
-          "msgstr": "Șablonul conține o funcție periculoasă: %s(). Această funcție nu este permisă din motive de securitate."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "A apărut o problemă la redarea șablonului de chitanță. Aceasta este de obicei cauzată de o eroare de sintaxă sau de o variabilă nedefinită în codul șablonului."
-        },
-        {
-          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
-          "msgctxt": null,
-          "msgstr": "Acest cont este blocat temporar din cauza prea multor încercări eșuate de autentificare. Vă rugăm să încercați din nou mai târziu."
-        },
-        {
-          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
-          "msgctxt": null,
-          "msgstr": "Această comandă nu poate fi plătită. Vă rugăm să ne contactați dacă aveți nevoie de asistență."
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Nume de utilizator sau parolă invalidă."
-        }
-      ],
-      "concept_hints": [],
-      "risk": {
-        "level": "high",
-        "reasons": [
-          "receipt/payment/settings source references"
-        ]
-      }
-    },
-    {
-      "project": "woocommerce-pos",
-      "domain": "woocommerce-pos",
-      "format": "php-po",
-      "locale": "ro_RO",
-      "entry": {
-        "msgid": "You do not have permission to view this receipt.",
-        "msgctxt": null,
-        "msgid_plural": null,
-        "translator_comments": [],
-        "references": [
-          "includes/Templates/Receipt.php:87"
-        ]
-      },
-      "source_usage": {
-        "areas": [
-          "receipt",
-          "template editor"
-        ],
-        "nearby_source_strings": [
-          "You do not have permission to modify checkout settings.",
-          "Sorry, this order is invalid.",
-          "Receipt Error",
-          "Receipt Template Error"
         ]
       },
       "related_existing_translations": [
@@ -58495,14 +58585,12 @@
       "format": "php-po",
       "locale": "ro_RO",
       "entry": {
-        "msgid": "Receipt Error",
+        "msgid": "No receipt template is configured.",
         "msgctxt": null,
         "msgid_plural": null,
-        "translator_comments": [
-          "Short WCPOS UI label; keep concise."
-        ],
+        "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:238"
+          "includes/Templates/Receipt.php:182"
         ]
       },
       "source_usage": {
@@ -58511,8 +58599,96 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Sorry, this order is invalid.",
+          "You do not have permission to modify checkout settings.",
           "You do not have permission to view this receipt.",
+          "Receipt Error",
+          "Receipt Template Error"
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Bon de vânzare"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Șablon"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Șablon"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "A apărut o problemă la redarea șablonului de chitanță. Aceasta este de obicei cauzată de o eroare de sintaxă sau de o variabilă nedefinită în codul șablonului."
+        },
+        {
+          "msgid": "Receipt Template Error",
+          "msgctxt": null,
+          "msgstr": "Eroare de șablon de chitanță"
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Șablonul conține o funcție periculoasă: %s(). Această funcție nu este permisă din motive de securitate."
+        },
+        {
+          "msgid": "Try resetting to the default receipt template",
+          "msgctxt": null,
+          "msgstr": "Încercați să resetați la șablonul de chitanță implicit"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Ne pare rău, această comandă este invalidă."
+        },
+        {
+          "msgid": "A template_id is required.",
+          "msgctxt": null,
+          "msgstr": "Este necesar un template_id."
+        },
+        {
+          "msgid": "Error",
+          "msgctxt": null,
+          "msgstr": "Eroare"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ro_RO",
+      "entry": {
+        "msgid": "Receipt Error",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "Short WCPOS UI label; keep concise."
+        ],
+        "references": [
+          "includes/Templates/Receipt.php:323"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "receipt",
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Template Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
         ]
@@ -58591,7 +58767,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:299"
+          "includes/Templates/Receipt.php:384"
         ]
       },
       "source_usage": {
@@ -58600,7 +58776,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "You do not have permission to view this receipt.",
+          "No receipt template is configured.",
           "Receipt Error",
           "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
           "File:"
@@ -58679,7 +58855,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:300"
+          "includes/Templates/Receipt.php:385"
         ]
       },
       "source_usage": {
@@ -58767,7 +58943,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:306"
+          "includes/Templates/Receipt.php:391"
         ]
       },
       "source_usage": {
@@ -58856,7 +59032,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:307"
+          "includes/Templates/Receipt.php:392"
         ]
       },
       "source_usage": {
@@ -58945,7 +59121,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Receipt.php:311"
+          "includes/Templates/Receipt.php:396"
         ]
       },
       "source_usage": {
@@ -59034,7 +59210,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:313"
+          "includes/Templates/Receipt.php:398"
         ]
       },
       "source_usage": {
@@ -59122,7 +59298,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:314"
+          "includes/Templates/Receipt.php:399"
         ]
       },
       "source_usage": {
@@ -59210,7 +59386,7 @@
           "Help text shown on the receipt template fatal error page."
         ],
         "references": [
-          "includes/Templates/Receipt.php:315"
+          "includes/Templates/Receipt.php:400"
         ]
       },
       "source_usage": {
@@ -59296,7 +59472,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:316"
+          "includes/Templates/Receipt.php:401"
         ]
       },
       "source_usage": {
@@ -59308,7 +59484,7 @@
           "Ensure all variables used in the template are defined",
           "Verify that any custom functions or classes exist",
           "Please contact the site administrator for assistance.",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid."
+          "Sorry, this order is invalid."
         ]
       },
       "related_existing_translations": [
@@ -59382,7 +59558,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Receipt.php:320"
+          "includes/Templates/Receipt.php:405"
         ]
       },
       "source_usage": {
@@ -59393,8 +59569,8 @@
         "nearby_source_strings": [
           "Verify that any custom functions or classes exist",
           "Try resetting to the default receipt template",
-          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
-          "Failed to create temporary template file."
+          "Sorry, this order is invalid.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid."
         ]
       },
       "related_existing_translations": [
@@ -59463,6 +59639,89 @@
       "format": "php-po",
       "locale": "ro_RO",
       "entry": {
+        "msgid": "Sorry, this order is invalid.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/Templates/Received.php:76"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "template editor"
+        ],
+        "nearby_source_strings": [
+          "Try resetting to the default receipt template",
+          "Please contact the site administrator for assistance.",
+          "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "Failed to create temporary template file."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Ne pare rău, această comandă nu poate fi achitată. Cheia comenzi este lipsă sau invalidă."
+        },
+        {
+          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "Ne pare rău, această comandă nu poate fi vizualizată. Cheia comenzi este lipsă sau invalidă."
+        },
+        {
+          "msgid": "Sorry, this order is invalid and cannot be paid for.",
+          "msgctxt": null,
+          "msgstr": "Ne pare rău, această comandă este invalidă și nu poate fi plătită."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Comandă"
+        },
+        {
+          "msgid": "Sorry, this order has already been paid for.",
+          "msgctxt": null,
+          "msgstr": "Ne pare rău, această comandă a fost deja plătită."
+        },
+        {
+          "msgid": "Template contains dangerous function: %s(). This function is not allowed for security reasons.",
+          "msgctxt": null,
+          "msgstr": "Șablonul conține o funcție periculoasă: %s(). Această funcție nu este permisă din motive de securitate."
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "A apărut o problemă la redarea șablonului de chitanță. Aceasta este de obicei cauzată de o eroare de sintaxă sau de o variabilă nedefinită în codul șablonului."
+        },
+        {
+          "msgid": "This account is temporarily locked due to too many failed login attempts. Please try again later.",
+          "msgctxt": null,
+          "msgstr": "Acest cont este blocat temporar din cauza prea multor încercări eșuate de autentificare. Vă rugăm să încercați din nou mai târziu."
+        },
+        {
+          "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
+          "msgctxt": null,
+          "msgstr": "Această comandă nu poate fi plătită. Vă rugăm să ne contactați dacă aveți nevoie de asistență."
+        },
+        {
+          "msgid": "Invalid username or password.",
+          "msgctxt": null,
+          "msgstr": "Nume de utilizator sau parolă invalidă."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ro_RO",
+      "entry": {
         "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -59476,8 +59735,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Try resetting to the default receipt template",
           "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Failed to create temporary template file.",
           "Invalid template language."
         ]
@@ -59570,7 +59829,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "Please contact the site administrator for assistance.",
+          "Sorry, this order is invalid.",
           "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "Invalid template language.",
           "Template contains potentially dangerous JavaScript code: %s"
