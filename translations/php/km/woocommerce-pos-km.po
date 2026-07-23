@@ -807,6 +807,9 @@ msgstr "ពុម្ពមិនបានរកឃើញ។"
 
 #: includes/API/Receipts_Controller.php:189
 #: includes/API/Receipts_Controller.php:197
+#: includes/Templates/Receipt.php:193
+#: includes/Templates/Receipt.php:201
+#: includes/Templates/Receipt.php:212
 msgid "Could not generate the receipt PDF."
 msgstr "មិនអាចបង្កើត PDF របស់បង្កាន់ដៃបានទេ។"
 
@@ -2832,6 +2835,7 @@ msgstr "សម្រង់តម្លៃ"
 #. translators: Document title printed at the top of a completed sale receipt.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:186
+#: includes/Storefront_Receipts.php:127
 #: includes/Templates.php:1256
 #: templates/receipt.php:184
 msgid "Receipt"
@@ -3143,6 +3147,16 @@ msgstr "Star Online request បរាជ័យដោយស្ថានភាព 
 #, php-format
 msgid "WP Overnight %s PDF could not be generated."
 msgstr "មិនអាចបង្កើត PDF %s របស់ WP Overnight បានទេ។"
+
+#: includes/Storefront_Receipts.php:38
+msgid "Download receipt (PDF)"
+msgstr "ទាញយកបង្កាន់ដៃ (PDF)"
+
+#. translators: %s: order number.
+#: includes/Storefront_Receipts.php:129
+#, php-format
+msgid "Download receipt for order #%s"
+msgstr "ទាញយកបង្កាន់ដៃសម្រាប់ការបញ្ជាទិញ #%s"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:68
@@ -3791,71 +3805,74 @@ msgstr "សូមទោស, ការបញ្ជាទិញនេះត្រ�
 msgid "You do not have permission to modify checkout settings."
 msgstr "អ្នក​មិន​មានសិទ្ធិ សម្រាប់កែប្រែពត័មានរបស់ប្លែងចំណាយ។"
 
-#: includes/Templates/Receipt.php:81
-#: includes/Templates/Received.php:76
-msgid "Sorry, this order is invalid."
-msgstr "សូមទោស, ការបញ្ជាទិញនេះមិនត្រឹមត្រូវ។"
-
-#: includes/Templates/Receipt.php:87
+#: includes/Templates/Receipt.php:85
 msgid "You do not have permission to view this receipt."
 msgstr "អ្នកមិនមានសិទ្ធិមើលបង្កាន់ដៃនេះទេ។"
 
+#: includes/Templates/Receipt.php:182
+msgid "No receipt template is configured."
+msgstr "មិនទាន់បានកំណត់គំរូបង្កាន់ដៃទេ។"
+
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:238
+#: includes/Templates/Receipt.php:323
 msgid "Receipt Error"
 msgstr "កំហុសបង្កាន់ដៃ"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:299
+#: includes/Templates/Receipt.php:384
 msgid "Receipt Template Error"
 msgstr "កំហុសពុម្ពបង្កាន់ដៃ"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:300
+#: includes/Templates/Receipt.php:385
 msgid ""
 "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code."
 msgstr ""
 "មានបញ្ហាក្នុងការបង្ហាញពុម្ពបង្កាន់ដៃ។ នេះជាធម្មតាបណ្តាលមកពីកំហុសវាក្យសម្ពន្ធ ឬអថេរមិនបានកំណត់ក្នុងកូដពុម្ព។"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:306
+#: includes/Templates/Receipt.php:391
 msgid "File:"
 msgstr "ឯកសារ:"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:307
+#: includes/Templates/Receipt.php:392
 msgid "Line:"
 msgstr "បន្ទាត់:"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Receipt.php:311
+#: includes/Templates/Receipt.php:396
 msgid "Suggestions:"
 msgstr "សំណើ:"
 
 #. translators: Help text shown on the receipt template fatal error page.
-#: includes/Templates/Receipt.php:313
+#: includes/Templates/Receipt.php:398
 msgid ""
 "Check the template file for syntax errors (missing semicolons, brackets, etc.)"
 msgstr ""
 "ពិនិត្យឯកសារពុម្ពសម្រាប់កំហុសវាក្យសម្ពន្ធ (ខ្វះសញ្ញាសម្រួល, សញ្ញាក្រចក, ល។)"
 
 #. translators: Help text shown on the receipt template fatal error page.
-#: includes/Templates/Receipt.php:314
+#: includes/Templates/Receipt.php:399
 msgid "Ensure all variables used in the template are defined"
 msgstr "ធានាថាអថេរទាំងអស់ដែលប្រើនៅក្នុងពុម្ពត្រូវបានកំណត់"
 
 #. translators: Help text shown on the receipt template fatal error page.
-#: includes/Templates/Receipt.php:315
+#: includes/Templates/Receipt.php:400
 msgid "Verify that any custom functions or classes exist"
 msgstr "ផ្ទៀងផ្ទាត់ថាមុខងារផ្ទាល់ខ្លួន ឬថ្នាក់ណាមួយមាន"
 
-#: includes/Templates/Receipt.php:316
+#: includes/Templates/Receipt.php:401
 msgid "Try resetting to the default receipt template"
 msgstr "សូមព្យាយាមកំណត់ឡើងវិញទៅពុម្ពបង្កាន់ដៃលំនាំដើម"
 
-#: includes/Templates/Receipt.php:320
+#: includes/Templates/Receipt.php:405
 msgid "Please contact the site administrator for assistance."
 msgstr "សូមទាក់ទងអ្នកគ្រប់គ្រងតំបន់បណ្តាញសម្រាប់ជំនួយ។"
+
+#: includes/Templates/Received.php:76
+msgid "Sorry, this order is invalid."
+msgstr "សូមទោស, ការបញ្ជាទិញនេះមិនត្រឹមត្រូវ។"
 
 #: includes/Templates/Received.php:84
 msgid ""
