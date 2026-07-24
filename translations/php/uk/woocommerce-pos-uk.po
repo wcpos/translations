@@ -691,7 +691,7 @@ msgstr ""
 #: includes/API/Print_Jobs_Controller.php:402
 #: includes/API/Print_Jobs_Controller.php:422
 #: includes/API/Print_Jobs_Controller.php:582
-#: includes/API/Print_Jobs_Controller.php:746
+#: includes/API/Print_Jobs_Controller.php:788
 msgid "Print job not found."
 msgstr "Завдання друку не знайдено."
 
@@ -701,73 +701,83 @@ msgid ""
 msgstr ""
 "Збережену квитанцію про цю роботу очищено, і вона не має шаблону для повторного відтворення."
 
-#: includes/API/Print_Jobs_Controller.php:614
-#: includes/API/Print_Jobs_Controller.php:915
-#: includes/API/Print_Jobs_Controller.php:1029
-#: includes/API/Print_Jobs_Controller.php:1067
+#: includes/API/Print_Jobs_Controller.php:621
+#: includes/API/Print_Jobs_Controller.php:958
+#: includes/API/Print_Jobs_Controller.php:1072
+#: includes/API/Print_Jobs_Controller.php:1110
 msgid "Print job could not be created."
 msgstr "Не вдалося створити завдання друку."
 
-#: includes/API/Print_Jobs_Controller.php:715
+#: includes/API/Print_Jobs_Controller.php:711
+msgid "The print job is not available in the requested media type."
+msgstr "Завдання друку недоступне для вибраного типу носія."
+
+#: includes/API/Print_Jobs_Controller.php:757
 msgid "Invalid printer token."
 msgstr "Недійсний токен принтера."
 
-#: includes/API/Print_Jobs_Controller.php:856
+#: includes/API/Print_Jobs_Controller.php:898
 msgid "A printer_id is required."
 msgstr "Потрібен printer_id."
 
-#: includes/API/Print_Jobs_Controller.php:880
+#: includes/API/Print_Jobs_Controller.php:923
 msgid "PrintNode print jobs require an order and a template."
 msgstr "Для завдань друку PrintNode потрібні замовлення та шаблон."
 
-#: includes/API/Print_Jobs_Controller.php:895
-#: includes/API/Print_Jobs_Controller.php:994
+#: includes/API/Print_Jobs_Controller.php:938
+#: includes/API/Print_Jobs_Controller.php:1037
 msgid "Unknown printer."
 msgstr "Невідомий принтер."
 
-#: includes/API/Print_Jobs_Controller.php:944
+#: includes/API/Print_Jobs_Controller.php:987
 msgid "Unknown order."
 msgstr "Невідоме замовлення."
 
-#: includes/API/Print_Jobs_Controller.php:953
+#: includes/API/Print_Jobs_Controller.php:996
 msgid "Unknown template."
 msgstr "Невідомий шаблон."
 
-#: includes/API/Print_Jobs_Controller.php:970
+#: includes/API/Print_Jobs_Controller.php:1013
 msgid "The selected template cannot be printed on this printer."
 msgstr "Вибраний шаблон не можна надрукувати на цьому принтері."
 
-#: includes/API/Print_Jobs_Controller.php:1014
+#: includes/API/Print_Jobs_Controller.php:1057
 msgid "Test print is not available for this printer yet."
 msgstr "Тестовий друк ще недоступний для цього принтера."
 
-#: includes/API/Print_Jobs_Controller.php:1105
+#: includes/API/Print_Jobs_Controller.php:1148
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr "У цього принтера PrintNode відсутній ключ API або ID принтера."
 
-#: includes/API/Print_Jobs_Controller.php:1119
+#: includes/API/Print_Jobs_Controller.php:1162
 msgid "Could not generate the test print."
 msgstr "Не вдалося згенерувати тестовий друк."
 
-#: includes/API/Print_Jobs_Controller.php:1193
+#: includes/API/Print_Jobs_Controller.php:1237
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print приймає лише завдання ePOS-Print на основі замовлень, а не сирі дані."
 
-#: includes/API/Print_Jobs_Controller.php:1200
+#: includes/API/Print_Jobs_Controller.php:1244
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Для Epson Server Direct Print потрібен формат epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:1211
+#: includes/API/Print_Jobs_Controller.php:1255
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT не приймає формат epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:1229
+#: includes/API/Print_Jobs_Controller.php:1267
+msgid ""
+"Star CloudPRNT printers require order-based template jobs or a raw payload."
+msgstr ""
+"Принтерам Star CloudPRNT потрібні завдання на основі шаблону замовлення або необроблений payload."
+
+#: includes/API/Print_Jobs_Controller.php:1285
 msgid "No relay verification is pending."
 msgstr "Перевірка реле не очікується."
 
-#: includes/API/Print_Jobs_Controller.php:1269
+#: includes/API/Print_Jobs_Controller.php:1325
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Вибачте, ви не можете керувати завданнями друку."
 
@@ -830,13 +840,13 @@ msgstr "Не вдалося згенерувати PDF квитанції."
 msgid "Sorry, you cannot view receipts."
 msgstr "На жаль, ви не можете переглядати чеки."
 
-#: includes/API/Settings.php:725
+#: includes/API/Settings.php:735
 msgid ""
 "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
 msgstr ""
 "Для принтерів Star Online потрібні ключ API, дійсна URL-адреса stario.online CloudPRNT і пристрій."
 
-#: includes/API/Settings.php:736
+#: includes/API/Settings.php:746
 msgid "Duplicate printer id."
 msgstr "Дубльований ідентифікатор принтера."
 
@@ -2868,7 +2878,7 @@ msgstr "Кошторис"
 #. translators: Document title printed at the top of a completed sale receipt.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:186
-#: includes/Storefront_Receipts.php:127
+#: includes/Storefront_Receipts.php:138
 #: includes/Templates.php:1256
 #: templates/receipt.php:184
 msgid "Receipt"
@@ -3128,29 +3138,29 @@ msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Платежівчений запис створений (документ #%d)."
 
 #. translators: 1. %s: Settings group id, 2. %s: Settings key.
-#: includes/Services/Settings.php:222
+#: includes/Services/Settings.php:224
 #, php-format
 msgid "Settings with id %1$s and key %2$s not found"
 msgstr "Налаштування з id %1$s та ключем %2$s не знайдено"
 
 #. translators: %s: Settings group id, ie: 'general' or 'checkout'.
-#: includes/Services/Settings.php:233
+#: includes/Services/Settings.php:235
 #, php-format
 msgid "Settings with id %s not found"
 msgstr "Налаштування з id %s не знайдено"
 
 #. translators: %s: Settings group id, ie: 'general' or 'checkout'.
-#: includes/Services/Settings.php:297
+#: includes/Services/Settings.php:299
 #, php-format
 msgid "Can not save settings with id %s"
 msgstr "Не можна зберегти налаштування з id %s"
 
 #. translators: Error message shown when invalid arguments are provided.
-#: includes/Services/Settings.php:791
+#: includes/Services/Settings.php:806
 msgid "Invalid arguments provided"
 msgstr "Надані недійсні аргументи"
 
-#: includes/Services/Settings.php:803
+#: includes/Services/Settings.php:818
 msgid "Invalid visibility option provided"
 msgstr "Надано недійсний параметр видимості"
 
@@ -3186,7 +3196,7 @@ msgid "Download receipt (PDF)"
 msgstr "Завантажити чек (PDF)"
 
 #. translators: %s: order number.
-#: includes/Storefront_Receipts.php:129
+#: includes/Storefront_Receipts.php:140
 #, php-format
 msgid "Download receipt for order #%s"
 msgstr "Завантажити чек для замовлення №%s"

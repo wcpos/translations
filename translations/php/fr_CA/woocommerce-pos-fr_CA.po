@@ -692,7 +692,7 @@ msgstr ""
 #: includes/API/Print_Jobs_Controller.php:402
 #: includes/API/Print_Jobs_Controller.php:422
 #: includes/API/Print_Jobs_Controller.php:582
-#: includes/API/Print_Jobs_Controller.php:746
+#: includes/API/Print_Jobs_Controller.php:788
 msgid "Print job not found."
 msgstr "Tâche d’impression introuvable."
 
@@ -702,75 +702,86 @@ msgid ""
 msgstr ""
 "Le reçu stocké de cette tâche a été nettoyé et il n'a aucun modèle à partir duquel effectuer un nouveau rendu."
 
-#: includes/API/Print_Jobs_Controller.php:614
-#: includes/API/Print_Jobs_Controller.php:915
-#: includes/API/Print_Jobs_Controller.php:1029
-#: includes/API/Print_Jobs_Controller.php:1067
+#: includes/API/Print_Jobs_Controller.php:621
+#: includes/API/Print_Jobs_Controller.php:958
+#: includes/API/Print_Jobs_Controller.php:1072
+#: includes/API/Print_Jobs_Controller.php:1110
 msgid "Print job could not be created."
 msgstr "La tâche d’impression n’a pas pu être créée."
 
-#: includes/API/Print_Jobs_Controller.php:715
+#: includes/API/Print_Jobs_Controller.php:711
+msgid "The print job is not available in the requested media type."
+msgstr ""
+"La tâche d’impression n’est pas disponible dans le type de support demandé."
+
+#: includes/API/Print_Jobs_Controller.php:757
 msgid "Invalid printer token."
 msgstr "Jeton d’imprimante invalide."
 
-#: includes/API/Print_Jobs_Controller.php:856
+#: includes/API/Print_Jobs_Controller.php:898
 msgid "A printer_id is required."
 msgstr "Un printer_id est requis."
 
-#: includes/API/Print_Jobs_Controller.php:880
+#: includes/API/Print_Jobs_Controller.php:923
 msgid "PrintNode print jobs require an order and a template."
 msgstr ""
 "Les tâches d'impression PrintNode nécessitent une commande et un modèle."
 
-#: includes/API/Print_Jobs_Controller.php:895
-#: includes/API/Print_Jobs_Controller.php:994
+#: includes/API/Print_Jobs_Controller.php:938
+#: includes/API/Print_Jobs_Controller.php:1037
 msgid "Unknown printer."
 msgstr "Imprimante inconnue."
 
-#: includes/API/Print_Jobs_Controller.php:944
+#: includes/API/Print_Jobs_Controller.php:987
 msgid "Unknown order."
 msgstr "Commande inconnue."
 
-#: includes/API/Print_Jobs_Controller.php:953
+#: includes/API/Print_Jobs_Controller.php:996
 msgid "Unknown template."
 msgstr "Modèle inconnu."
 
-#: includes/API/Print_Jobs_Controller.php:970
+#: includes/API/Print_Jobs_Controller.php:1013
 msgid "The selected template cannot be printed on this printer."
 msgstr "Le modèle sélectionné ne peut pas être imprimé sur cette imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:1014
+#: includes/API/Print_Jobs_Controller.php:1057
 msgid "Test print is not available for this printer yet."
 msgstr ""
 "L'impression de test n'est pas encore disponible pour cette imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:1105
+#: includes/API/Print_Jobs_Controller.php:1148
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr "Cette imprimante PrintNode n'a pas sa clé API ou son ID d'imprimante."
 
-#: includes/API/Print_Jobs_Controller.php:1119
+#: includes/API/Print_Jobs_Controller.php:1162
 msgid "Could not generate the test print."
 msgstr "Impossible de générer l'impression de test."
 
-#: includes/API/Print_Jobs_Controller.php:1193
+#: includes/API/Print_Jobs_Controller.php:1237
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "Epson Server Direct Print accepte uniquement les tâches ePOS-Print basées sur des commandes, pas les charges utiles brutes."
 
-#: includes/API/Print_Jobs_Controller.php:1200
+#: includes/API/Print_Jobs_Controller.php:1244
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "Epson Server Direct Print nécessite le format epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:1211
+#: includes/API/Print_Jobs_Controller.php:1255
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "Star CloudPRNT n’accepte pas le format epos-xml."
 
-#: includes/API/Print_Jobs_Controller.php:1229
+#: includes/API/Print_Jobs_Controller.php:1267
+msgid ""
+"Star CloudPRNT printers require order-based template jobs or a raw payload."
+msgstr ""
+"Les imprimantes Star CloudPRNT nécessitent des tâches de modèle basées sur les commandes ou une charge utile brute."
+
+#: includes/API/Print_Jobs_Controller.php:1285
 msgid "No relay verification is pending."
 msgstr "Aucune vérification de relais n'est en attente."
 
-#: includes/API/Print_Jobs_Controller.php:1269
+#: includes/API/Print_Jobs_Controller.php:1325
 msgid "Sorry, you cannot manage print jobs."
 msgstr "Désolé, vous ne pouvez pas gérer les tâches d’impression."
 
@@ -833,13 +844,13 @@ msgstr "Impossible de générer le PDF du reçu."
 msgid "Sorry, you cannot view receipts."
 msgstr "Désolé, vous ne pouvez pas visualiser les reçus."
 
-#: includes/API/Settings.php:725
+#: includes/API/Settings.php:735
 msgid ""
 "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device."
 msgstr ""
 "Les imprimantes Star Online ont besoin d’une clé API, d’une URL CloudPRNT stario.online valide et d’un appareil."
 
-#: includes/API/Settings.php:736
+#: includes/API/Settings.php:746
 msgid "Duplicate printer id."
 msgstr "ID d’imprimante en double."
 
@@ -2869,7 +2880,7 @@ msgstr "Soumission"
 #. translators: Document title printed at the top of a completed sale receipt.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:186
-#: includes/Storefront_Receipts.php:127
+#: includes/Storefront_Receipts.php:138
 #: includes/Templates.php:1256
 #: templates/receipt.php:184
 msgid "Receipt"
@@ -3130,29 +3141,29 @@ msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Instantané du reçu fiscal POS créé (reçu #%d)."
 
 #. translators: 1. %s: Settings group id, 2. %s: Settings key.
-#: includes/Services/Settings.php:222
+#: includes/Services/Settings.php:224
 #, php-format
 msgid "Settings with id %1$s and key %2$s not found"
 msgstr "Paramètres avec id %1$s et clé %2$s introuvables"
 
 #. translators: %s: Settings group id, ie: 'general' or 'checkout'.
-#: includes/Services/Settings.php:233
+#: includes/Services/Settings.php:235
 #, php-format
 msgid "Settings with id %s not found"
 msgstr "Paramètres avec id %s introuvables"
 
 #. translators: %s: Settings group id, ie: 'general' or 'checkout'.
-#: includes/Services/Settings.php:297
+#: includes/Services/Settings.php:299
 #, php-format
 msgid "Can not save settings with id %s"
 msgstr "Impossible d'enregistrer les paramètres avec id %s"
 
 #. translators: Error message shown when invalid arguments are provided.
-#: includes/Services/Settings.php:791
+#: includes/Services/Settings.php:806
 msgid "Invalid arguments provided"
 msgstr "Arguments invalides fournis"
 
-#: includes/Services/Settings.php:803
+#: includes/Services/Settings.php:818
 msgid "Invalid visibility option provided"
 msgstr "Option de visibilité invalide fournie"
 
@@ -3189,7 +3200,7 @@ msgid "Download receipt (PDF)"
 msgstr "Télécharger le reçu (PDF)"
 
 #. translators: %s: order number.
-#: includes/Storefront_Receipts.php:129
+#: includes/Storefront_Receipts.php:140
 #, php-format
 msgid "Download receipt for order #%s"
 msgstr "Télécharger le reçu de la commande nº %s"
