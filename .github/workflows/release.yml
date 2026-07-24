@@ -109,8 +109,33 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git tag "$VERSION"
-          git push origin "$VERSION"
+          # Push the housekeeping commit to main first ([skip ci] prevents
+          # this push from re-triggering release.yml), then create the tag via
+          # the REST API. A plain `git push origin <tag>` is rejected whenever
+          # the tag range contains workflow-file changes (e.g. Dependabot
+          # action bumps), because GITHUB_TOKEN lacks the `workflows`
+          # permission — that broke release 2026.7.4. API ref creation points
+          # at an already-pushed commit, so no workflow scan applies.
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            git commit --amend -m "chore: auto-cleanup stale keys and regenerate fallbacks [skip ci]"
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                pushed=1
+                break
+              fi
+              echo "Push rejected (attempt $attempt); rebasing onto latest main"
+              git pull --rebase origin main
+              sleep $((attempt * 5))
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push release housekeeping commit after 3 attempts"
+              exit 1
+            fi
+          fi
+          gh api "repos/${{ github.repository }}/git/refs" \
+            -f ref="refs/tags/$VERSION" \
+            -f sha="$(git rev-parse HEAD)"
 
           gh release create "$VERSION" \
             --title "$VERSION" \
