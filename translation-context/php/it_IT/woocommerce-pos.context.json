@@ -657,6 +657,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Array degli ID dei template virtuali da attivare."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Abilita prezzi specifici per POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Token del cassiere non corrispondente."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Impossibile creare un token di verifica dell'inoltro."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Generazione dei token di autenticazione fallita."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Token non fornito."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "Visibilità POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Modelli"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Impostazioni"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "Email"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Indirizzo email non valido."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro è ora un plugin autonomo. Scarica l'ultima versione da %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Cassiere non trovato."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Ordine"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "ID modello non valido."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Impossibile creare il processo di stampa."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Processo di stampa non trovato."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "it_IT",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Impossibile creare il processo di stampa."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Processo di stampa non trovato."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "La stampa di prova non è ancora disponibile per questa stampante."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Tipo"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Il documento fattura di WP Overnight non è disponibile."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Il documento bolla di accompagnamento di WP Overnight non è disponibile."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Cassiere non trovato."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare la stampa di prova."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Il gateway di pagamento non è disponibile per il checkout POS."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "La chiave API di PrintNode deve essere inviata nel corpo della richiesta, non nella stringa di query."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "it_IT",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "it_IT",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "I lavori di stampa di PrintNode richiedono un ordine e un modello."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print accetta solo job ePOS-Print basati sugli ordini, non payload grezzi."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Le stampanti Star Online richiedono una chiave API, un URL CloudPRNT valido di stario.online e un dispositivo."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID modello non valido."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Ordine"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Modello"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Sono necessari una chiave API di Star Online e un URL CloudPRNT valido di stario.online."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Ordine non trovato o non è un ordine POS."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt deve essere una data UTC ISO 8601 valida."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "it_IT",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Codice a barre"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Impossibile creare un token di verifica dell'inoltro."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt deve essere una data UTC ISO 8601 valida."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Non è configurato alcun modello di ricevuta."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "È richiesto un printer_id."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "È necessaria una chiave API di PrintNode."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "È richiesto un template_id."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Modello non trovato."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Filtra per slug della categoria di template."
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Impossibile creare un token di verifica dell'inoltro."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Token del cassiere non corrispondente."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Non Trovato"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Non trovato nel Cestino"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Modello non trovato."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Autenticazione fallita."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Impossibile creare un token di verifica dell'inoltro."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Impossibile creare il file modello temporaneo."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Recupero dei dati del negozio fallito."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Revoca della sessione fallita."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro è ora un plugin autonomo. Scarica l'ultima versione da %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Versione da destra a sinistra della Ricevuta standard per siti in arabo, ebraico, persiano e urdu. Rispecchia il layout e usa una pila di font adatta all'RTL."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Gli script e gli stili possono interferire con il modello di pagamento personalizzato, usa questo modulo per rimuovere gli script problematici."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> richiede PHP %1$s o superiore. Leggi ulteriori informazioni su <a href=\"%2$s\">come aggiornare</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Templates POS"
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT non è configurato correttamente, contatta l'amministratore"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Ordine non trovato o non è un ordine POS."
+          "msgstr": "Non è configurato alcun modello di ricevuta."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Nome visualizzato dello stato dell'ordine."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print accetta solo job ePOS-Print basati sugli ordini, non payload grezzi."
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta Regalo"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Numero Ricevuta"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Scontrino stampato"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Modello ricevuta #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Totale"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Template di ricevuta per la stampa degli ordini"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Renderizza l'HTML della fattura di PDF Invoices & Packing Slips tramite l'API dei documenti di WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Ricevuta termica da destra a sinistra per stampanti da 80 mm. Rispecchia l'allineamento delle colonne per arabo, ebraico, persiano e urdu. Richiede una stampante che supporti una codepage araba (CP864 o Windows-1256) — controlla il manuale della stampante prima di ordinare."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta compatta con intestazione del negozio centrata, fascia ordine con doppio bordo in grassetto e righe articoli dense. Gli stessi elementi essenziali dello Standard, con meno spazio verticale."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Modello non trovato."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Modelli"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Modelli"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Modello non trovato."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Modelli"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Spiacente, non è autorizzato a modificare questo modello."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Array degli ID dei template virtuali da attivare."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Impossibile creare il file modello temporaneo."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Modello ricevuta #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Modello ricevuta #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Modello ricevuta #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Modello ricevuta termica #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Modello"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Modello"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Modelli"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Modelli"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Ordine"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Un'interfaccia semplice per prendere ordini WooCommerce al Punto vendita. Richiede <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta termica pulita e minimalista per carta stretta da 58 mm. Stesso layout dell'80 mm, adattato a una larghezza di 32 caratteri."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Limita i risultati ai template risolti per un negozio specifico."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Filtra elenco templates"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Templates POS"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Modello report #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Errore"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "L'ordine non esiste."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Modello non trovato."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Modelli"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "CUCINA"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Ticket Bar"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta Regalo"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Nome utente o password non validi."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Pagamento Parziale"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> richiede <a href=\"%1$s\">WCPOS Pro %2$s o superiore</a>. Si prega di <a href=\"%3$s\">installare e attivare WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> richiede <a href=\"%1$s\">WooCommerce %2$s o superiore</a>. Si prega di <a href=\"%3$s\">installare e attivare WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Parametro stato mancante."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Stato / Regione"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Impossibile aggiornare le estensioni. Riprova."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Prova a reimpostare il modello di ricevuta predefinito"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Troppe richieste. Riprova più tardi."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Impossibile aggiornare le estensioni. Riprova."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Prova a reimpostare il modello di ricevuta predefinito"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Scegli tra i più usati"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Troppe richieste. Riprova più tardi."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Impossibile aggiornare le estensioni. Riprova."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Spiacenti, non è possibile visualizzare questo ordine. La chiave dell'ordine è mancante o non valida."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Impossibile aggiornare le estensioni. Riprova."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Controlla il file del modello per errori di sintassi (punti e virgola mancanti, parentesi, ecc.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Generazione dei token di autenticazione fallita."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Generazione dei token di autenticazione fallita."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Sessione di autenticazione non valida. Riprova ad accedere dall'app."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Impossibile aggiornare le estensioni. Riprova."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Generazione dei token di autenticazione fallita."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Gli script e gli stili possono interferire con il modello di pagamento personalizzato, usa questo modulo per rimuovere gli script problematici."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Autenticazione fallita."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Recupero dei dati del negozio fallito."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Revoca della sessione fallita."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> richiede <a href=\"%1$s\">WooCommerce %2$s o superiore</a>. Si prega di <a href=\"%3$s\">installare e attivare WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta con intestazione del negozio centrata, fascia ordine con doppio bordo in grassetto e righe articoli dense. Gli stessi elementi essenziali dello Standard, con meno spazio verticale."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Disabilita tutti gli stili e gli script"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Spiacenti, non è possibile visualizzare questo ordine. La chiave dell'ordine è mancante o non valida."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Spiacente, non è autorizzato a modificare questo modello."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, non è autorizzato a modificare i modelli."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ricevuta termica dettagliata (58 mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta Regalo"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta 58 mm completa: dati completi del cliente e indirizzi, dettaglio imposte, rimborsi, pagamenti, termini e codice a barre dell'ordine."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per carta stretta da 58 mm. Stesso layout dell'80 mm, adattato a una larghezza di 32 caratteri."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Ricevuta termica dettagliata (80 mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Ricevuta Regalo"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Resi accettati entro 30 giorni con scontrino originale. Gli articoli devono essere inutilizzati e nella confezione originale."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Invia direttamente alle stampanti termiche come Epson o Star. Funziona offline."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Questo preventivo è valido per 30 giorni dalla data di emissione. I prezzi possono subire variazioni dopo il periodo di validità. Questo non è uno scontrino né una conferma d'acquisto."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Preventivo"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per la carta standard da 80 mm. Intestazione del negozio, articoli, totali e codice a barre."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta dettagliata"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ricevuta termica dettagliata (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Versione da destra a sinistra della Ricevuta standard per siti in arabo, ebraico, persiano e urdu. Rispecchia il layout e usa una pila di font adatta all'RTL."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per la carta standard da 80 mm. Intestazione del negozio, articoli, totali e codice a barre."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Ricevuta dettagliata"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per carta stretta da 58 mm. Stesso layout dell'80 mm, adattato a una larghezza di 32 caratteri."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta con intestazione del negozio centrata, fascia ordine con doppio bordo in grassetto e righe articoli dense. Gli stessi elementi essenziali dello Standard, con meno spazio verticale."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Gli script e gli stili possono interferire con il modello di pagamento personalizzato, usa questo modulo per rimuovere gli script problematici."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Ricevuta termica semplice (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per la carta standard da 80 mm. Intestazione del negozio, articoli, totali e codice a barre."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica da destra a sinistra per stampanti da 80 mm. Rispecchia l'allineamento delle colonne per arabo, ebraico, persiano e urdu. Richiede una stampante che supporti una codepage araba (CP864 o Windows-1256) — controlla il manuale della stampante prima di ordinare."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Ricevuta termica semplice (80 mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Ricevuta termica semplice 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta dettagliata"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta 80 mm completa: dati completi del cliente e indirizzi, dettaglio imposte, rimborsi, pagamenti, termini e codice a barre dell'ordine."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Ricevuta termica semplice 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Ricevuta termica pulita e minimalista per la carta standard da 80 mm. Intestazione del negozio, articoli, totali e codice a barre."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Ricevuta 58 mm completa: dati completi del cliente e indirizzi, dettaglio imposte, rimborsi, pagamenti, termini e codice a barre dell'ordine."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta termica da destra a sinistra per stampanti da 80 mm. Rispecchia l'allineamento delle colonne per arabo, ebraico, persiano e urdu. Richiede una stampante che supporti una codepage araba (CP864 o Windows-1256) — controlla il manuale della stampante prima di ordinare."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Ricevuta termica semplice (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ricevuta termica dettagliata (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta 80 mm completa: dati completi del cliente e indirizzi, dettaglio imposte, rimborsi, pagamenti, termini e codice a barre dell'ordine."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Ricevuta termica semplice (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ricevuta termica dettagliata (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta 80 mm completa: dati completi del cliente e indirizzi, dettaglio imposte, rimborsi, pagamenti, termini e codice a barre dell'ordine."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "A questa stampante PrintNode mancano la chiave API o l'ID della stampante."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Spiacente, questo ordine è già stato pagato."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Scarica la ricevuta dell’ordine n. %s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nessuna fotografia fiscale trovata per questo ordine."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Impostazioni"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Modello"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Disabilita tutti gli stili e gli script"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Prova a reimpostare il modello di ricevuta predefinito"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Gli articoli possono essere restituiti o cambiati entro 30 giorni con questo scontrino."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Disabilita gli stili selezionati"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Disabilita wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Assicurati che tutte le variabili utilizzate nel modello siano definite"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Disabilita wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Disabilita wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Disabilita gli script selezionati"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Disabilita gli stili selezionati"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Cliente"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Spiacente, questo ordine è già stato pagato."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Pagato"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Spiacenti, non è possibile visualizzare questo ordine. La chiave dell'ordine è mancante o non valida."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Ricevuta"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, non è autorizzato a modificare questo modello."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Errore nel modello di ricevuta"
@@ -59128,19 +59300,9 @@
           "msgstr": "Prova a reimpostare il modello di ricevuta predefinito"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "È richiesto un template_id."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Errore"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Ricevuta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Errore nel modello di ricevuta"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ricevuta dettagliata"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ricevuta termica dettagliata (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Non è configurato alcun modello di ricevuta."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Errore di ricevuta"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "Modello ricevuta HTML #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Errore di sintassi del template Mustache. Controlla il template."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Modello ricevuta PHP #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Modello"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Questo è un preventivo, non uno scontrino"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Controlla il file del modello per errori di sintassi (punti e virgola mancanti, parentesi, ecc.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Ricevuta compatta in monospace, pensata per carta stretta o stampanti termiche compatibili con HTML. Stampa pulita in bianco e nero."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Nome utente o password non validi."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "IVA"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Errore di sintassi del template Mustache. Controlla il template."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Identificatore univoco per il modello (numerico per il database, stringa per il virtuale)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Assicurati che tutte le variabili utilizzate nel modello siano definite"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Sessione di autenticazione scaduta. Riprova ad accedere dall'app."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Tutti i Tipi di Template"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Scegli tra i più usati"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Nome utente o password non validi."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Spiacenti, non è possibile visualizzare questo ordine. La chiave dell'ordine è mancante o non valida."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Modello"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Versione da destra a sinistra della Ricevuta standard per siti in arabo, ebraico, persiano e urdu. Rispecchia il layout e usa una pila di font adatta all'RTL."
@@ -60010,19 +60177,14 @@
           "msgstr": "Stampa utilizzando la finestra di dialogo di stampa del browser. È necessaria una connessione server per generare lo scontrino."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Questo preventivo è valido per 30 giorni dalla data di emissione. I prezzi possono subire variazioni dopo il periodo di validità. Questo non è uno scontrino né una conferma d'acquisto."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Sessione di autenticazione scaduta. Riprova ad accedere dall'app."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Controlla il file del modello per errori di sintassi (punti e virgola mancanti, parentesi, ecc.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT non è configurato correttamente, contatta l'amministratore"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Conserva questo scontrino per i tuoi archivi."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Spiacente, questo ordine non è valido e non può essere pagato."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "A questa stampante PrintNode mancano la chiave API o l'ID della stampante."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Spiacente, questo ordine non è valido."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Nome utente o password non validi."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Errore"
@@ -60523,6 +60690,11 @@
           "msgstr": "Modello ricevuta termica (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "La ricevuta archiviata di questo lavoro è stata ripulita e non dispone di un modello da cui eseguire nuovamente il rendering."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Controlla il file del modello per errori di sintassi (punti e virgola mancanti, parentesi, ecc.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Assicurati che tutte le variabili utilizzate nel modello siano definite"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Lingua del modello non valida."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "Errore di sintassi PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> richiede PHP %1$s o superiore. Leggi ulteriori informazioni su <a href=\"%2$s\">come aggiornare</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Errore di sintassi del template Mustache. Controlla il template."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Errore di ricevuta"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Errore nel modello di ricevuta"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Impossibile generare il PDF della ricevuta."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Errore di sintassi del template Mustache. Controlla il template."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Errore nel modello di ricevuta"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Nome utente o password non validi."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Si è verificato un problema nel rendering del modello di ricevuta. Di solito è causato da un errore di sintassi o da una variabile non definita nel codice del modello."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Spiacente, questo ordine non è valido."
+          "msgstr": "Impossibile generare il PDF della ricevuta."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Non hai il permesso di accedere al POS."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Ricevuta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Modello"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Modello non trovato."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Il modello è stato creato ma il contenuto grezzo non è potuto essere salvato."
         }
       ],
       "concept_hints": [],

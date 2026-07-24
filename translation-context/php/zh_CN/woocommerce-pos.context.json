@@ -657,6 +657,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "要启用的虚拟模板ID数组。"
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "启用POS特定价格。"
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "收银员令牌不匹配。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "无法创建中继验证令牌。"
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "生成身份验证令牌失败。"
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "未提供令牌。"
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POS可见性"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "模板"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "设置"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "电子邮件"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "无效的电子邮件地址。"
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro现在是一个独立插件。从%s下载最新版本"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "未找到收银员。"
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "订单"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "无效的模板ID。"
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "无法创建打印任务。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "未找到打印任务。"
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "zh_CN",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "无法创建打印任务。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "未找到打印任务。"
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "此打印机暂不支持测试打印。"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "类型"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight 发票文档不可用。"
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight 装箱单文档不可用。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "未找到收银员。"
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "无法生成测试打印。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支付网关不适用于 POS 结账。"
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "PrintNode API 密钥必须放在请求正文中，不能放在查询字符串中。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "zh_CN",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "PrintNode 打印任务需要订单和模板。"
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print 仅接受基于订单的 ePOS-Print 任务，不接受原始有效载荷。"
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Star Online 打印机需要 API key、有效的 stario.online CloudPRNT URL 和设备。"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "无效的模板ID。"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "订单"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "模板"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "需要 Star Online API key 和有效的 stario.online CloudPRNT URL。"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "未找到订单，或该订单不是 POS 订单。"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt 必须是有效的 ISO 8601 UTC 日期。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "zh_CN",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "条形码"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "无法创建中继验证令牌。"
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt 必须是有效的 ISO 8601 UTC 日期。"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "未配置收据模板。"
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "需要提供 printer_id。"
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "需要 PrintNode API 密钥。"
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "需要 template_id。"
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "未找到模板。"
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "按模板分类 slug 过滤。"
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "模板已创建，但原始内容无法保存。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "无法创建中继验证令牌。"
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "收银员令牌不匹配。"
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "未找到"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "垃圾箱中未找到"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "未找到模板。"
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "身份验证失败。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "无法创建中继验证令牌。"
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "无法创建临时模板文件。"
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "无法获取商店数据。"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "撤销会话失败。"
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro现在是一个独立插件。从%s下载最新版本"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "适用于阿拉伯语、希伯来语、波斯语和乌尔都语站点的标准小票右到左版本。镜像布局，并使用适合 RTL 的字体栈。"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "脚本和样式可能会干扰自定义支付模板，请使用此表单取消排队任何有问题的脚本。"
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong>需要PHP %1$s或更高版本。阅读更多关于<a href=\"%2$s\">如何更新</a>的信息"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS模板"
+          "msgstr": "下载订单 #%s 的收据"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT配置不正确，请联系管理员"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "未找到订单，或该订单不是 POS 订单。"
+          "msgstr": "未配置收据模板。"
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "订单状态的显示名称。"
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print 仅接受基于订单的 ePOS-Print 任务，不接受原始有效载荷。"
+          "msgstr": "下载订单 #%s 的收据"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "礼品收据"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "下载收据（PDF）"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "收据编号"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "小票已打印"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "小票模板 #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "总计"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "用于打印订单的收据模板"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "通过 WP Overnight 文档 API 渲染 PDF Invoices & Packing Slips 发票 HTML。"
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "适用于 80mm 打印机的右到左热敏小票。为阿拉伯语、希伯来语、波斯语和乌尔都语镜像列对齐。需要支持阿拉伯代码页（CP864 或 Windows-1256）的打印机 - 订购前请查看打印机手册。"
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "下载收据（PDF）"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "紧凑型小票，居中店铺页眉、粗双边框订单栏和密集的商品行。与标准版相同的核心内容，但占用更少的垂直空间。"
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "未找到模板。"
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "模板已创建，但原始内容无法保存。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "模板"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "模板已创建，但原始内容无法保存。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "模板"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "未找到模板。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "模板已创建，但原始内容无法保存。"
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "模板已创建，但原始内容无法保存。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "模板"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "抱歉，您无权编辑此模板。"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "要启用的虚拟模板ID数组。"
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "无法创建临时模板文件。"
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "小票模板 #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "小票模板 #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "小票模板 #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "热敏小票模板 #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "模板"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "收据"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "模板"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "订单"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "一个用于在销售点处理WooCommerce订单的简单前端。需要<a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>。"
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "适用于窄幅 58mm 纸张的简洁极简热敏小票。布局与 80mm 版本相同，按 32 个字符宽度调整。"
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "将结果限制为针对特定门店解析的模板。"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "筛选模板列表"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS模板"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "报表模板 #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "错误"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "订单不存在。"
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "未找到模板。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "模板已创建，但原始内容无法保存。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "模板"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "厨房"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "酒吧小票"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "礼品收据"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "用户名或密码无效。"
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - 部分支付"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong>需要<a href=\"%1$s\">WCPOS Pro %2$s或更高版本</a>。请<a href=\"%3$s\">安装并激活WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong>需要<a href=\"%1$s\">WooCommerce %2$s或更高版本</a>。请<a href=\"%3$s\">安装并激活WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "缺少state参数。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
+          "msgstr": "无法生成收据 PDF。"
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "州 / 地区"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "无法刷新扩展，请重试。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "此订单无法支付。如需帮助，请联系我们。"
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "尝试重置为默认收据模板"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "请求过多。请稍后再试。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "无法刷新扩展，请重试。"
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "尝试重置为默认收据模板"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "从常用中选择"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "请求过多。请稍后再试。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "无法刷新扩展，请重试。"
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "对不起，无法查看该订单。订单密钥缺失或无效。"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "无法刷新扩展，请重试。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "检查模板文件是否有语法错误（缺少分号、括号等）"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "生成身份验证令牌失败。"
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "生成身份验证令牌失败。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "无效的认证会话。请从应用程序重新登录。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "无法刷新扩展，请重试。"
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "生成身份验证令牌失败。"
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "脚本和样式可能会干扰自定义支付模板，请使用此表单取消排队任何有问题的脚本。"
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "确定"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "身份验证失败。"
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "无法获取商店数据。"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "撤销会话失败。"
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong>需要<a href=\"%1$s\">WooCommerce %2$s或更高版本</a>。请<a href=\"%3$s\">安装并激活WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "紧凑型小票，居中店铺页眉、粗双边框订单栏和密集的商品行。与标准版相同的核心内容，但占用更少的垂直空间。"
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "禁用所有样式和脚本"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "对不起，无法查看该订单。订单密钥缺失或无效。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
+          "msgstr": "无法生成收据 PDF。"
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "抱歉，您无权编辑此模板。"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，您无权编辑模板。"
+          "msgstr": "无法生成收据 PDF。"
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "详细热敏小票（58mm）"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "礼品收据"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "功能齐全的 58mm 小票：完整客户信息 + 地址、税费明细、退款、付款、条款和订单条码。"
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "适用于窄幅 58mm 纸张的简洁极简热敏小票。布局与 80mm 版本相同，按 32 个字符宽度调整。"
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "详细热敏小票（80mm）"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "礼品收据"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "凭原始收据可在 30 天内退货。商品必须未使用且保留原包装。"
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "将输出直接发送到如爱普生（Epson）或星（Star）之类的热敏打印机。可离线工作。"
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "此报价单自开具之日起 30 天内有效。有效期后价格可能变动。此单不是收据，也不是购买确认。"
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "报价单"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "适用于标准 80mm 纸张的简洁极简热敏小票。包含店铺页眉、商品明细、合计和条码。"
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "详细小票"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "详细热敏小票（58mm）"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "适用于阿拉伯语、希伯来语、波斯语和乌尔都语站点的标准小票右到左版本。镜像布局，并使用适合 RTL 的字体栈。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "适用于标准 80mm 纸张的简洁极简热敏小票。包含店铺页眉、商品明细、合计和条码。"
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "详细小票"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "适用于窄幅 58mm 纸张的简洁极简热敏小票。布局与 80mm 版本相同，按 32 个字符宽度调整。"
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "紧凑型小票，居中店铺页眉、粗双边框订单栏和密集的商品行。与标准版相同的核心内容，但占用更少的垂直空间。"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "脚本和样式可能会干扰自定义支付模板，请使用此表单取消排队任何有问题的脚本。"
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "简洁热敏小票（58mm）"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "适用于标准 80mm 纸张的简洁极简热敏小票。包含店铺页眉、商品明细、合计和条码。"
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "适用于 80mm 打印机的右到左热敏小票。为阿拉伯语、希伯来语、波斯语和乌尔都语镜像列对齐。需要支持阿拉伯代码页（CP864 或 Windows-1256）的打印机 - 订购前请查看打印机手册。"
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "简洁热敏小票（80mm）"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "简洁热敏小票 80mm（RTL）"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "详细小票"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "功能齐全的 80mm 小票：完整客户信息 + 地址、税费明细、退款、付款、条款和订单条码。"
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "简洁热敏小票 80mm（RTL）"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "适用于标准 80mm 纸张的简洁极简热敏小票。包含店铺页眉、商品明细、合计和条码。"
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "功能齐全的 58mm 小票：完整客户信息 + 地址、税费明细、退款、付款、条款和订单条码。"
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "适用于 80mm 打印机的右到左热敏小票。为阿拉伯语、希伯来语、波斯语和乌尔都语镜像列对齐。需要支持阿拉伯代码页（CP864 或 Windows-1256）的打印机 - 订购前请查看打印机手册。"
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "简洁热敏小票（58mm）"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "详细热敏小票（58mm）"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "功能齐全的 80mm 小票：完整客户信息 + 地址、税费明细、退款、付款、条款和订单条码。"
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "简洁热敏小票（58mm）"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "详细热敏小票（58mm）"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "功能齐全的 80mm 小票：完整客户信息 + 地址、税费明细、退款、付款、条款和订单条码。"
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "此订单无法支付。如需帮助，请联系我们。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "此 PrintNode 打印机缺少 API 密钥或打印机 ID。"
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "抱歉，此订单已支付。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "此订单无法支付。如需帮助，请联系我们。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "下载订单 #%s 的收据"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "未找到此订单的财政快照。"
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "设置"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "模板"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "禁用所有样式和脚本"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "尝试重置为默认收据模板"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "凭此收据，商品可在 30 天内退货或换货。"
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "禁用选定的样式"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "禁用 wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "确保模板中使用的所有变量都已定义"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "禁用 wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "禁用 wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "禁用选定的脚本"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "禁用选定的样式"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "客户"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "此订单无法支付。如需帮助，请联系我们。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "抱歉，此订单已支付。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "已付款"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "对不起，无法查看该订单。订单密钥缺失或无效。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "收据"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，您无权编辑此模板。"
+          "msgstr": "无法生成收据 PDF。"
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "收据模板错误"
@@ -59128,19 +59300,9 @@
           "msgstr": "尝试重置为默认收据模板"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "需要 template_id。"
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "错误"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "收据"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "收据模板错误"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "详细小票"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "详细热敏小票（58mm）"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "未配置收据模板。"
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "收据错误"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML 小票模板 #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Mustache 模板语法错误。请检查您的模板。"
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP 小票模板 #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "模板"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "这是报价单，不是收据"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "检查模板文件是否有语法错误（缺少分号、括号等）"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "适用于窄幅纸张或支持 HTML 的热敏打印机的紧凑等宽字体小票。黑白打印清晰。"
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "用户名或密码无效。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "税额"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache 模板语法错误。请检查您的模板。"
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "模板的唯一标识符（数据库为数字，虚拟为字符串）。"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "确保模板中使用的所有变量都已定义"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "认证会话已过期。请从应用程序重新登录。"
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "所有模板类型"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "从常用中选择"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "用户名或密码无效。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "对不起，无法查看该订单。订单密钥缺失或无效。"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "模板"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "适用于阿拉伯语、希伯来语、波斯语和乌尔都语站点的标准小票右到左版本。镜像布局，并使用适合 RTL 的字体栈。"
@@ -60010,19 +60177,14 @@
           "msgstr": "通过浏览器的打印对话框打印。生成小票需要服务器连接。"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "此报价单自开具之日起 30 天内有效。有效期后价格可能变动。此单不是收据，也不是购买确认。"
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "认证会话已过期。请从应用程序重新登录。"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "检查模板文件是否有语法错误（缺少分号、括号等）"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "此订单无法支付。如需帮助，请联系我们。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT配置不正确，请联系管理员"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "请保留此收据以备存档。"
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "抱歉，此订单无效，无法支付。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "此 PrintNode 打印机缺少 API 密钥或打印机 ID。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "抱歉，此订单无效。"
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "用户名或密码无效。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
+          "msgstr": "无法生成收据 PDF。"
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "错误"
@@ -60523,6 +60690,11 @@
           "msgstr": "热敏小票模板（%1$s）#%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "该作业存储的收据已被清理，并且没有可供重新渲染的模板。"
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "检查模板文件是否有语法错误（缺少分号、括号等）"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "确保模板中使用的所有变量都已定义"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "模板语言无效。"
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP 语法错误：%s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong>需要PHP %1$s或更高版本。阅读更多关于<a href=\"%2$s\">如何更新</a>的信息"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache 模板语法错误。请检查您的模板。"
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "收据错误"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "收据模板错误"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "无法生成收据 PDF。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache 模板语法错误。请检查您的模板。"
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "收据模板错误"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "用户名或密码无效。"
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "渲染收据模板时出现问题。这通常是由模板代码中的语法错误或未定义的变量引起的。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "抱歉，此订单无效。"
+          "msgstr": "无法生成收据 PDF。"
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "您没有权限访问POS。"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "收据"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "模板"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "未找到模板。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "模板已创建，但原始内容无法保存。"
         }
       ],
       "concept_hints": [],

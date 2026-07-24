@@ -657,6 +657,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Масив от идентификатори на виртуални шаблони за активиране."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Активирайте специфични цени за POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Несъответствие на токена на касиера."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Токенът за проверка на Relay не може да бъде създаден."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Неуспешно генериране на токени за удостоверяване."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Токенът не е предоставен."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "Видимост на POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Шаблони"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Настройки"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "Имейл"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Невалиден имейл адрес."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro вече е самостоятелен плъгин. Изтеглете последната версия от %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Касиерът не е намерен."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Поръчка"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Невалиден ID на шаблон."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Задачата за печат не можа да бъде създадена."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Задачата за печат не е намерена."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "bg_BG",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Задачата за печат не можа да бъде създадена."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Задачата за печат не е намерена."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Тестовият печат още не е наличен за този принтер."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Тип"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Документът за фактура на WP Overnight не е наличен."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Документът за опаковъчен лист на WP Overnight не е наличен."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Касиерът не е намерен."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Неуспешно генериране на тестовия печат."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Платежният шлюз не е наличен за POS плащане."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "API ключът за PrintNode трябва да се изпрати в тялото на заявката, а не в query string-а."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "bg_BG",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "bg_BG",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "Заданията за печат в PrintNode изискват поръчка и шаблон."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print приема само задания ePOS-Print, базирани на поръчки, а не сурови payload-и."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "За принтерите Star Online са необходими ключ за API, валиден stario.online CloudPRNT URL и устройство."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Невалиден ID на шаблон."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Поръчка"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Шаблон"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Изискват се ключ за Star Online API и валиден stario.online CloudPRNT URL."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Поръчката не е намерена или не е POS поръчка."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt трябва да е валидна UTC дата във формат ISO 8601."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "bg_BG",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Баркод"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Токенът за проверка на Relay не може да бъде създаден."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt трябва да е валидна UTC дата във формат ISO 8601."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Няма настроен шаблон за касова бележка."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "Изисква се printer_id."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "Изисква се API ключ за PrintNode."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "Изисква се template_id."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Шаблонът не е намерен."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Филтриране по slug на категория шаблони."
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Токенът за проверка на Relay не може да бъде създаден."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Несъответствие на токена на касиера."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Не е намерено"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Не е намерено в кошчето"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Шаблонът не е намерен."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Удостоверяването не бе успешно."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Токенът за проверка на Relay не може да бъде създаден."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Неуспешно създаване на временен шаблонен файл."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Неуспешно извличане на данни за магазина."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Неуспешно отменяне на сесията."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro вече е самостоятелен плъгин. Изтеглете последната версия от %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Версия с дясно-наляво подреждане на Стандартна разписка за сайтове на арабски, иврит, персийски и урду. Огледално разположение и шрифтов стек, подходящ за RTL."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Скриптовете и стиловете могат да пречат на персонализирания шаблон за плащане, използвайте тази форма, за да премахнете проблемните скриптове."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> изисква PHP %1$s или по-висока версия. Прочетете повече информация за <a href=\"%2$s\">как да актуализирате</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS шаблони"
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT не е конфигуриран правилно, моля свържете се с администратора"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Поръчката не е намерена или не е POS поръчка."
+          "msgstr": "Няма настроен шаблон за касова бележка."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Показвано име на статуса на поръчката."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print приема само задания ePOS-Print, базирани на поръчки, а не сурови payload-и."
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Бон за подарък"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Номер на чек"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Разписката е отпечатана"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Шаблон за касов бон #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Общо"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Шаблони за касови бележки за печат на поръчки"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Рендерира HTML на фактурата от PDF Invoices & Packing Slips чрез API-то за документи на WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Термохартиена разписка с дясно-наляво подреждане за 80 мм принтери. Огледално подравнява колоните за арабски, иврит, персийски и урду. Изисква принтер, който поддържа арабска кодова таблица (CP864 или Windows-1256) — проверете ръководството на принтера преди поръчка."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Компактна разписка с центриран хедър на магазина, удебелена лента с двойна рамка за поръчката и плътни редове с артикули. Същите основни елементи като Standard, но с по-малка височина."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Шаблонът не е намерен."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Шаблони"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Шаблони"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Шаблонът не е намерен."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Шаблони"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Съжаляваме, нямате разрешение да редактирате този шаблон."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Масив от идентификатори на виртуални шаблони за активиране."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Неуспешно създаване на временен шаблонен файл."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Шаблон за касов бон #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Шаблон за касов бон #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Шаблон за касов бон #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Шаблон за термален касов бон #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Шаблон"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Шаблон"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Шаблони"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Фискален бон"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Шаблони"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Поръчка"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Прост интерфейс за приемане на поръчки в WooCommerce на точката на продажба. Изисква <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Чиста, минималистична термохартиена разписка за тясна 58 мм хартия. Същото оформление като 80 мм, адаптирано за ширина от 32 знака."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Ограничаване на резултатите до шаблони, разрешени за конкретен магазин."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Филтриране на списъка с шаблони"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS шаблони"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Шаблон за отчет #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Грешка"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Поръчката не съществува."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Шаблонът не е намерен."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Шаблони"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "КУХНЯ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Бар купон"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Бон за подарък"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Невалидно потребителско име или парола."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Частично плащане"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> изисква <a href=\"%1$s\">WCPOS Pro %2$s или по-висока версия</a>. Моля, <a href=\"%3$s\">инсталирайте и активирайте WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> изисква <a href=\"%1$s\">WooCommerce %2$s или по-висока версия</a>. Моля, <a href=\"%3$s\">инсталирайте и активирайте WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Липсващ параметър за състояние."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Област / Регион"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Разширенията не могат да бъдат обновени. Моля, опитайте отново."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Опитайте да върнете към стандартния шаблон на разписката"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Твърде много заявки. Моля, опитайте отново по-късно."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Разширенията не могат да бъдат обновени. Моля, опитайте отново."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Опитайте да върнете към стандартния шаблон на разписката"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Изберете от най-използваните"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Твърде много заявки. Моля, опитайте отново по-късно."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Разширенията не могат да бъдат обновени. Моля, опитайте отново."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Съжаляваме, тази поръчка не може да бъде прегледана. Липсва ключ за поръчка или е невалиден."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Разширенията не могат да бъдат обновени. Моля, опитайте отново."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Проверете файла на шаблона за синтактични грешки (липсващи точки и запетаи, скоби и т.н.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Неуспешно генериране на токени за удостоверяване."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Неуспешно генериране на токени за удостоверяване."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Невалидна сесия за удостоверяване. Моля, опитайте да влезете отново от приложението."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Разширенията не могат да бъдат обновени. Моля, опитайте отново."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Неуспешно генериране на токени за удостоверяване."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Скриптовете и стиловете могат да пречат на персонализирания шаблон за плащане, използвайте тази форма, за да премахнете проблемните скриптове."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "ОК"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Удостоверяването не бе успешно."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Неуспешно извличане на данни за магазина."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Неуспешно отменяне на сесията."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> изисква <a href=\"%1$s\">WooCommerce %2$s или по-висока версия</a>. Моля, <a href=\"%3$s\">инсталирайте и активирайте WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с центриран хедър на магазина, удебелена лента с двойна рамка за поръчката и плътни редове с артикули. Същите основни елементи като Standard, но с по-малка височина."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Деактивиране на всички стилове и скриптове"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Съжаляваме, тази поръчка не може да бъде прегледана. Липсва ключ за поръчка или е невалиден."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Съжаляваме, нямате разрешение да редактирате този шаблон."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, нямате разрешение да редактирате шаблони."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Подробна термохартиена разписка (58 мм)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Бон за подарък"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "58 мм разписка с всичко: пълни данни на клиента + адреси, данъчен разбив, възстановявания, плащания, условия и баркод на поръчката."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за тясна 58 мм хартия. Същото оформление като 80 мм, адаптирано за ширина от 32 знака."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Подробна термохартиена разписка (80 мм)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Бон за подарък"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Връщанията се приемат в рамките на 30 дни с оригиналната касова бележка. Артикулите трябва да са неизползвани и в оригинална опаковка."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Изпраща директно към термопечатаци като Epson или Star. Работи автономно."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Тази оферта е валидна 30 дни от датата на издаване. Цените подлежат на промяна след изтичане на срока на валидност. Това не е касова бележка или потвърждение за покупка."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Оферта"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за стандартна 80 мм хартия. Хедър на магазина, редове с артикули, общи суми и баркод."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Подробна разписка"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Подробна термохартиена разписка (58 мм)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Версия с дясно-наляво подреждане на Стандартна разписка за сайтове на арабски, иврит, персийски и урду. Огледално разположение и шрифтов стек, подходящ за RTL."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за стандартна 80 мм хартия. Хедър на магазина, редове с артикули, общи суми и баркод."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Подробна разписка"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за тясна 58 мм хартия. Същото оформление като 80 мм, адаптирано за ширина от 32 знака."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с центриран хедър на магазина, удебелена лента с двойна рамка за поръчката и плътни редове с артикули. Същите основни елементи като Standard, но с по-малка височина."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Скриптовете и стиловете могат да пречат на персонализирания шаблон за плащане, използвайте тази форма, за да премахнете проблемните скриптове."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Проста термохартиена разписка (58 мм)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за стандартна 80 мм хартия. Хедър на магазина, редове с артикули, общи суми и баркод."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Термохартиена разписка с дясно-наляво подреждане за 80 мм принтери. Огледално подравнява колоните за арабски, иврит, персийски и урду. Изисква принтер, който поддържа арабска кодова таблица (CP864 или Windows-1256) — проверете ръководството на принтера преди поръчка."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Проста термохартиена разписка (80 мм)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Проста термохартиена разписка 80 мм (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Подробна разписка"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80 мм разписка с всичко: пълни данни на клиента + адреси, данъчен разбив, възстановявания, плащания, условия и баркод на поръчката."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Проста термохартиена разписка 80 мм (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Чиста, минималистична термохартиена разписка за стандартна 80 мм хартия. Хедър на магазина, редове с артикули, общи суми и баркод."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "58 мм разписка с всичко: пълни данни на клиента + адреси, данъчен разбив, възстановявания, плащания, условия и баркод на поръчката."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Термохартиена разписка с дясно-наляво подреждане за 80 мм принтери. Огледално подравнява колоните за арабски, иврит, персийски и урду. Изисква принтер, който поддържа арабска кодова таблица (CP864 или Windows-1256) — проверете ръководството на принтера преди поръчка."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Проста термохартиена разписка (58 мм)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Подробна термохартиена разписка (58 мм)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80 мм разписка с всичко: пълни данни на клиента + адреси, данъчен разбив, възстановявания, плащания, условия и баркод на поръчката."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Проста термохартиена разписка (58 мм)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Подробна термохартиена разписка (58 мм)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80 мм разписка с всичко: пълни данни на клиента + адреси, данъчен разбив, възстановявания, плащания, условия и баркод на поръчката."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "На този принтер PrintNode липсва API ключ или ID на принтера."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Съжаляваме, тази поръчка вече е платена."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Изтегляне на касовата бележка за поръчка №%s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Няма намерен фискален снимък за този заказ."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Настройки"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Шаблон"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Деактивиране на всички стилове и скриптове"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Опитайте да върнете към стандартния шаблон на разписката"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Артикулите могат да бъдат върнати или заменени в рамките на 30 дни с тази касова бележка."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Деактивиране на избраните стилове"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Деактивиране на wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Уверете се, че всички променливи, използвани в шаблона, са определени"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Деактивиране на wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Деактивиране на wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Деактивиране на избраните скриптове"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Деактивиране на избраните стилове"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Клиент"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Съжаляваме, тази поръчка вече е платена."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Платено"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Съжаляваме, тази поръчка не може да бъде прегледана. Липсва ключ за поръчка или е невалиден."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Фискален бон"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, нямате разрешение да редактирате този шаблон."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Грешка в шаблона на разписката"
@@ -59128,19 +59300,9 @@
           "msgstr": "Опитайте да върнете към стандартния шаблон на разписката"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "Изисква се template_id."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Грешка"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Фискален бон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Грешка в шаблона на разписката"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Подробна разписка"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Подробна термохартиена разписка (58 мм)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Няма настроен шаблон за касова бележка."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Грешка в разписката"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML шаблон за касов бон #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Синтактична грешка в шаблона Mustache. Проверете шаблона си."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP шаблон за касов бон #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Шаблон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Това е оферта, а не касова бележка"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Проверете файла на шаблона за синтактични грешки (липсващи точки и запетаи, скоби и т.н.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Компактна разписка с моноширинен шрифт, подходяща за тясна хартия или термопринтери с HTML поддръжка. Печат в черно и бяло без проблеми."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Невалидно потребителско име или парола."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "ДДС"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Синтактична грешка в шаблона Mustache. Проверете шаблона си."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Уникален идентификатор за шаблона (числов за база данни, низ за виртуален)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Уверете се, че всички променливи, използвани в шаблона, са определени"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Сесията за удостоверяване е изтекла. Моля, опитайте да влезете отново от приложението."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Всички типове шаблони"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Изберете от най-използваните"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Невалидно потребителско име или парола."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Съжаляваме, тази поръчка не може да бъде прегледана. Липсва ключ за поръчка или е невалиден."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Шаблон"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Версия с дясно-наляво подреждане на Стандартна разписка за сайтове на арабски, иврит, персийски и урду. Огледално разположение и шрифтов стек, подходящ за RTL."
@@ -60010,19 +60177,14 @@
           "msgstr": "Печата с диалога за печат на браузъра. Изисква връзка със сървъра за генериране на сч. настан."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Тази оферта е валидна 30 дни от датата на издаване. Цените подлежат на промяна след изтичане на срока на валидност. Това не е касова бележка или потвърждение за покупка."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Сесията за удостоверяване е изтекла. Моля, опитайте да влезете отново от приложението."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Проверете файла на шаблона за синтактични грешки (липсващи точки и запетаи, скоби и т.н.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT не е конфигуриран правилно, моля свържете се с администратора"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Моля, запазете тази касова бележка за Вашата документация."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Съжаляваме, тази поръчка е невалидна и не може да бъде платена."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "На този принтер PrintNode липсва API ключ или ID на принтера."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Съжаляваме, тази поръчка е невалидна."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Невалидно потребителско име или парола."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Грешка"
@@ -60523,6 +60690,11 @@
           "msgstr": "Шаблон за термален касов бон (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Проверете файла на шаблона за синтактични грешки (липсващи точки и запетаи, скоби и т.н.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Уверете се, че всички променливи, използвани в шаблона, са определени"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Невалиден език на шаблона."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "Синтактична грешка в PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> изисква PHP %1$s или по-висока версия. Прочетете повече информация за <a href=\"%2$s\">как да актуализирате</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Синтактична грешка в шаблона Mustache. Проверете шаблона си."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Грешка в разписката"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Грешка в шаблона на разписката"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Синтактична грешка в шаблона Mustache. Проверете шаблона си."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Грешка в шаблона на разписката"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Невалидно потребителско име или парола."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Имаше проблем с рендирането на шаблона на разписката. Това обикновено се причинява от синтактична грешка или неопределена променлива в кода на шаблона."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Съжаляваме, тази поръчка е невалидна."
+          "msgstr": "Не можа да се генерира PDF на касовата бележка."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Нямате разрешение за достъп до POS."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Фискален бон"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Шаблон"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Шаблонът не е намерен."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Шаблонът е създаден, но не можа да бъде записан суровият му съдържание."
         }
       ],
       "concept_hints": [],

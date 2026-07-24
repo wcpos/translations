@@ -657,6 +657,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Pole ID virtuálních šablon k zapnutí."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Povolit ceny specifické pro POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Nesoulad tokenu pokladní."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vytvořit token pro ověření Relay."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se vygenerovat autentizační tokeny."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Token nebyl poskytnut."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "Viditelnost POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Šablony"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Nastavení"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "E-mail"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Neplatná e-mailová adresa."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro je nyní samostatný plugin. Stáhněte si nejnovější verzi z %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Pokladník nenalezen."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Objednávka"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Neplatné ID šablony."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tisková úloha nebyla nalezena."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "cs",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Tiskovou úlohu se nepodařilo vytvořit."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Tisková úloha nebyla nalezena."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Zkušební tisk zatím není pro tuto tiskárnu k dispozici."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Typ"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument faktury WP Overnight není k dispozici."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Dokument dodacího listu WP Overnight není k dispozici."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Pokladník nenalezen."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat zkušební tisk."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Platební brána není dostupná pro POS pokladnu."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "Klíč PrintNode API musí být odeslán v těle požadavku, ne v query stringu."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "cs",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "cs",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "Tiskové úlohy PrintNode vyžadují objednávku a šablonu."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print přijímá pouze úlohy ePOS-Print založené na objednávce, nikoli surové payloady."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Tiskárny Star Online potřebují klíč API, platnou URL stario.online CloudPRNT a zařízení."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Neplatné ID šablony."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Objednávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Šablona"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Je vyžadován klíč API Star Online a platná URL stario.online CloudPRNT."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Objednávka nebyla nalezena nebo není POS objednávkou."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt musí být platné datum ve formátu ISO 8601 UTC."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "cs",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Čárový kód"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vytvořit token pro ověření Relay."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt musí být platné datum ve formátu ISO 8601 UTC."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Šablona účtenky není nastavena."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "Je vyžadován printer_id."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "Je vyžadován klíč PrintNode API."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "Je vyžadováno `template_id`."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Šablona nenalezena."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Filtrovat podle slugu kategorie šablon."
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vytvořit token pro ověření Relay."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Nesoulad tokenu pokladní."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Nenalezeno"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Nenalezeno v koši"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Šablona nenalezena."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Autentizace selhala."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vytvořit token pro ověření Relay."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se vytvořit dočasný soubor šablony."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se načíst data obchodu."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Zrušení relace selhalo."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro je nyní samostatný plugin. Stáhněte si nejnovější verzi z %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Pravostranná verze Standardní účtenky pro weby v arabštině, hebrejštině, perštině a urdštině. Zrcadlí rozložení a používá sadu písem vhodnou pro RTL."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skripty a styly mohou zasahovat do vlastního platebního šablony, použijte tento formulář k odebrání problematických skriptů."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> vyžaduje PHP %1$s nebo vyšší. Přečtěte si více informací o <a href=\"%2$s\">aktualizaci</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Šablony POS"
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT není správně nakonfigurován, kontaktujte prosím administrátora"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Objednávka nebyla nalezena nebo není POS objednávkou."
+          "msgstr": "Šablona účtenky není nastavena."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Zobrazované jméno stavu objednávky."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print přijímá pouze úlohy ePOS-Print založené na objednávce, nikoli surové payloady."
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Dárek doklad"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Číslo dokladu"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Účtenka vytištěna"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Šablona účtenky #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Celkem"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Šablony účtenek pro tisk objednávek"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Vykreslí HTML faktury z PDF Invoices & Packing Slips prostřednictvím API dokumentů WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Pravostranná termální účtenka pro 80mm tiskárny. Zrcadlí zarovnání sloupců pro arabštinu, hebrejštinu, perštinu a urdštinu. Vyžaduje tiskárnu s podporou arabské kódové stránky (CP864 nebo Windows-1256) — před objednáním si ověřte v návodu k tiskárně."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Kompaktní účtenka se hlavičkou obchodu na střed, výrazným pruhováním objednávky s dvojitým okrajem a hutnými řádky položek. Stejné podstatné údaje jako Standard, s menší výškou."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Šablona nenalezena."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Šablony"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Šablony"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Šablona nenalezena."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Šablony"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Omlouváme se, nemáte oprávnění upravovat tuto šablonu."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Pole ID virtuálních šablon k zapnutí."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Nepodařilo se vytvořit dočasný soubor šablony."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Šablona účtenky #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Šablona účtenky #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Šablona účtenky #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Šablona termální účtenky #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Šablona"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Šablona"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Šablony"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Pohledávka"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Šablony"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Objednávka"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Jednoduché rozhraní pro přijímání objednávek WooCommerce v místě prodeje. Vyžaduje <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Čistá, minimalistická termální účtenka pro úzký 58mm papír. Stejné rozložení jako 80mm, upravené pro šířku 32 znaků."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Omezit výsledky na šablony přiřazené konkrétnímu obchodu."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Filtrovat seznam šablon"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Šablony POS"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Šablona reportu #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Chyba"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Objednávka neexistuje."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Šablona nenalezena."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Šablony"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "KUCHYNĚ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Barový lístek"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Dárek doklad"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Neplatné uživatelské jméno nebo heslo."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Částečná platba"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> vyžaduje <a href=\"%1$s\">WCPOS Pro %2$s nebo vyšší</a>. Prosím <a href=\"%3$s\">nainstalujte a aktivujte WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> vyžaduje <a href=\"%1$s\">WooCommerce %2$s nebo vyšší</a>. Prosím <a href=\"%3$s\">nainstalujte a aktivujte WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Chybějící parametr stavu."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Stát / Region"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Rozšíření se nepodařilo obnovit. Zkuste to znovu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Zkuste obnovit výchozí šablonu účtenky"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Příliš mnoho požadavků. Zkuste to prosím později."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Rozšíření se nepodařilo obnovit. Zkuste to znovu."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Zkuste obnovit výchozí šablonu účtenky"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Vyberte z nejpoužívanějších"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Příliš mnoho požadavků. Zkuste to prosím později."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Rozšíření se nepodařilo obnovit. Zkuste to znovu."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Omlouváme se, tuto objednávku nelze zobrazit. Objednávkový klíč chybí nebo je neplatný."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Rozšíření se nepodařilo obnovit. Zkuste to znovu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Zkontrolujte soubor šablony na syntaktické chyby (chybějící středníky, závorky atd.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Nepodařilo se vygenerovat autentizační tokeny."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Nepodařilo se vygenerovat autentizační tokeny."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Neplatná autentizační relace. Zkuste se znovu přihlásit z aplikace."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Rozšíření se nepodařilo obnovit. Zkuste to znovu."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se vygenerovat autentizační tokeny."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Skripty a styly mohou zasahovat do vlastního platebního šablony, použijte tento formulář k odebrání problematických skriptů."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Autentizace selhala."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Nepodařilo se načíst data obchodu."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Zrušení relace selhalo."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> vyžaduje <a href=\"%1$s\">WooCommerce %2$s nebo vyšší</a>. Prosím <a href=\"%3$s\">nainstalujte a aktivujte WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka se hlavičkou obchodu na střed, výrazným pruhováním objednávky s dvojitým okrajem a hutnými řádky položek. Stejné podstatné údaje jako Standard, s menší výškou."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Zakázat všechny styly a skripty"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Omlouváme se, tuto objednávku nelze zobrazit. Objednávkový klíč chybí nebo je neplatný."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Omlouváme se, nemáte oprávnění upravovat tuto šablonu."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, nemáte oprávnění upravovat šablony."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Podrobná termální účtenka (58 mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Dárek doklad"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "58mm účtenka se vším: zákazník, adresy, rozpis daně, vratky, platby, podmínky a čárový kód objednávky."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro úzký 58mm papír. Stejné rozložení jako 80mm, upravené pro šířku 32 znaků."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Podrobná termální účtenka (80 mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Dárek doklad"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Vrácení zboží přijímáme do 30 dnů s originálním účtenkou. Zboží musí být nepoužité a v originálním balení."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Odesílá výstup přímo do termických tiskáren, jako jsou Epson nebo Star. Funkční offline."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Tato nabídka je platná 30 dnů od data vystavení. Ceny se po uplynutí doby platnosti mohou změnit. Toto není doklad o nákupu ani potvrzení o nákupu."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Nabídka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro standardní 80mm papír. Hlavička obchodu, položky, součty a čárový kód."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Podrobná účtenka"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Podrobná termální účtenka (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Pravostranná verze Standardní účtenky pro weby v arabštině, hebrejštině, perštině a urdštině. Zrcadlí rozložení a používá sadu písem vhodnou pro RTL."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro standardní 80mm papír. Hlavička obchodu, položky, součty a čárový kód."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Podrobná účtenka"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro úzký 58mm papír. Stejné rozložení jako 80mm, upravené pro šířku 32 znaků."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka se hlavičkou obchodu na střed, výrazným pruhováním objednávky s dvojitým okrajem a hutnými řádky položek. Stejné podstatné údaje jako Standard, s menší výškou."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skripty a styly mohou zasahovat do vlastního platebního šablony, použijte tento formulář k odebrání problematických skriptů."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Jednoduchá termální účtenka (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro standardní 80mm papír. Hlavička obchodu, položky, součty a čárový kód."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Pravostranná termální účtenka pro 80mm tiskárny. Zrcadlí zarovnání sloupců pro arabštinu, hebrejštinu, perštinu a urdštinu. Vyžaduje tiskárnu s podporou arabské kódové stránky (CP864 nebo Windows-1256) — před objednáním si ověřte v návodu k tiskárně."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Jednoduchá termální účtenka (80 mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Jednoduchá termální účtenka 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Podrobná účtenka"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80mm účtenka se vším: zákazník, adresy, rozpis daně, vratky, platby, podmínky a čárový kód objednávky."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Jednoduchá termální účtenka 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Čistá, minimalistická termální účtenka pro standardní 80mm papír. Hlavička obchodu, položky, součty a čárový kód."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "58mm účtenka se vším: zákazník, adresy, rozpis daně, vratky, platby, podmínky a čárový kód objednávky."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Pravostranná termální účtenka pro 80mm tiskárny. Zrcadlí zarovnání sloupců pro arabštinu, hebrejštinu, perštinu a urdštinu. Vyžaduje tiskárnu s podporou arabské kódové stránky (CP864 nebo Windows-1256) — před objednáním si ověřte v návodu k tiskárně."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Jednoduchá termální účtenka (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Podrobná termální účtenka (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80mm účtenka se vším: zákazník, adresy, rozpis daně, vratky, platby, podmínky a čárový kód objednávky."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Jednoduchá termální účtenka (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Podrobná termální účtenka (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "80mm účtenka se vším: zákazník, adresy, rozpis daně, vratky, platby, podmínky a čárový kód objednávky."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Této tiskárně PrintNode chybí klíč API nebo ID tiskárny."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Omlouváme se, tato objednávka již byla zaplacena."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Stáhnout účtenku k objednávce č. %s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Pro tento prodej nebyl nalezen žádný daňový snímek."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Nastavení"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Šablona"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Zakázat všechny styly a skripty"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Zkuste obnovit výchozí šablonu účtenky"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Položky lze vrátit nebo vyměnit do 30 dnů s tímto dokladem."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Zakázat vybrané styly"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Zakázat wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Ujistěte se, že všechny proměnné použité v šabloně jsou definovány"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Zakázat wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Zakázat wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Zakázat vybrané skripty"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Zakázat vybrané styly"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Zákazník"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Omlouváme se, tato objednávka již byla zaplacena."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Zaplaceno"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Omlouváme se, tuto objednávku nelze zobrazit. Objednávkový klíč chybí nebo je neplatný."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Pohledávka"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, nemáte oprávnění upravovat tuto šablonu."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Chyba šablony účtenky"
@@ -59128,19 +59300,9 @@
           "msgstr": "Zkuste obnovit výchozí šablonu účtenky"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "Je vyžadováno `template_id`."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Chyba"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Pohledávka"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Chyba šablony účtenky"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Podrobná účtenka"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Podrobná termální účtenka (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Šablona účtenky není nastavena."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Chyba účtenky"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML šablona účtenky #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Chyba syntaxe šablony Mustache. Zkontrolujte šablonu."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP šablona účtenky #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Šablona"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Toto je nabídka, nikoli doklad o nákupu"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Zkontrolujte soubor šablony na syntaktické chyby (chybějící středníky, závorky atd.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Kompaktní účtenka v monospace písmu pro úzký papír nebo termotiskárny s podporou HTML. Tiskne se čistě černobíle."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "DPH"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Chyba syntaxe šablony Mustache. Zkontrolujte šablonu."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Unikátní identifikátor pro šablonu (číselný pro databázi, řetězec pro virtuální)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Ujistěte se, že všechny proměnné použité v šabloně jsou definovány"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Autentizační relace vypršela. Zkuste se znovu přihlásit z aplikace."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Všechny typy šablon"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Vyberte z nejpoužívanějších"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Omlouváme se, tuto objednávku nelze zobrazit. Objednávkový klíč chybí nebo je neplatný."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Šablona"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Pravostranná verze Standardní účtenky pro weby v arabštině, hebrejštině, perštině a urdštině. Zrcadlí rozložení a používá sadu písem vhodnou pro RTL."
@@ -60010,19 +60177,14 @@
           "msgstr": "Vytiskne pomocí tiskového dialogu vašeho prohlížeče. Vyžaduje připojení k serveru pro generování potvrzení prodeje."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Tato nabídka je platná 30 dnů od data vystavení. Ceny se po uplynutí doby platnosti mohou změnit. Toto není doklad o nákupu ani potvrzení o nákupu."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Autentizační relace vypršela. Zkuste se znovu přihlásit z aplikace."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Zkontrolujte soubor šablony na syntaktické chyby (chybějící středníky, závorky atd.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT není správně nakonfigurován, kontaktujte prosím administrátora"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Uschovejte si tento doklad pro své záznamy."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Omlouváme se, tato objednávka je neplatná a nelze ji zaplatit."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Této tiskárně PrintNode chybí klíč API nebo ID tiskárny."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Omlouváme se, tato objednávka je neplatná."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Neplatné uživatelské jméno nebo heslo."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Chyba"
@@ -60523,6 +60690,11 @@
           "msgstr": "Šablona termální účtenky (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Zkontrolujte soubor šablony na syntaktické chyby (chybějící středníky, závorky atd.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Ujistěte se, že všechny proměnné použité v šabloně jsou definovány"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Neplatný jazyk šablony."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "Chyba syntaxe PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> vyžaduje PHP %1$s nebo vyšší. Přečtěte si více informací o <a href=\"%2$s\">aktualizaci</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Chyba syntaxe šablony Mustache. Zkontrolujte šablonu."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Chyba účtenky"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Chyba šablony účtenky"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Chyba syntaxe šablony Mustache. Zkontrolujte šablonu."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Chyba šablony účtenky"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Neplatné uživatelské jméno nebo heslo."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Při vykreslování šablony účtenky došlo k problému. To je obvykle způsobeno syntaktickou chybou nebo nedefinovanou proměnnou v kódu šablony."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Omlouváme se, tato objednávka je neplatná."
+          "msgstr": "Nepodařilo se vygenerovat PDF účtenky."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Nemáte oprávnění k přístupu k POS."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Pohledávka"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Šablona"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Šablona nenalezena."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Šablona byla vytvořena, ale obsah nebylo možné uložit."
         }
       ],
       "concept_hints": [],

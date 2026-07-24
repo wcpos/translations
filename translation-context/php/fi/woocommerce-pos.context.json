@@ -657,6 +657,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Aktivoitavien virtuaalimallien ID-taulukko."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Ota käyttöön POS-kohtaiset hinnat."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Kassan tunnus ei täsmää."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Välityksen vahvistustunnusta ei voitu luoda."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Todennustunnusten luominen epäonnistui."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Tunnusta ei annettu."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POS näkyvyys"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Pohjat"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Asetukset"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "Sähköposti"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Virheellinen sähköpostiosoite."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro on nyt itsenäinen lisäosa. Lataa uusin versio %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Kassanhoitajaa ei löytynyt."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Tilaus"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Virheellinen mallipohjan ID."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Tulostustyötä ei voitu luoda."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Tulostustyötä ei löytynyt."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "fi",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Tulostustyötä ei voitu luoda."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Tulostustyötä ei löytynyt."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Testitulostus ei ole vielä käytettävissä tälle tulostimelle."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Tyyppi"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight -laskudokumentti ei ole käytettävissä."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight -pakkauslistadokumentti ei ole käytettävissä."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kassanhoitajaa ei löytynyt."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Testitulosteen luonti epäonnistui."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Maksutapa ei ole käytettävissä POS-maksussa."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "PrintNode API -avain täytyy lähettää pyynnön rungossa, ei kyselymerkkijonossa."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "fi",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "fi",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "PrintNode-tulostustehtävät vaativat tilauksen ja mallipohjan."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print hyväksyy vain tilaukseen perustuvat ePOS-Print-työt, ei raakasisältöä."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Star Online -tulostimet tarvitsevat API-avaimen, kelvollisen stario.online CloudPRNT -URL:n ja laitteen."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Virheellinen mallipohjan ID."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Tilaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Malli"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Star Online API-avain ja kelvollinen stario.online CloudPRNT -URL ovat pakollisia."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Tilausta ei löytynyt tai se ei ole POS-tilaus."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt:n on oltava kelvollinen ISO 8601 UTC -päivämäärä."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "fi",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Viivakoodi"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Välityksen vahvistustunnusta ei voitu luoda."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt:n on oltava kelvollinen ISO 8601 UTC -päivämäärä."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Kuittipohjaa ei ole määritetty."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "printer_id on pakollinen."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "PrintNode API -avain vaaditaan."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "template_id on pakollinen."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Mallipohjaa ei löytynyt."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Suodata mallintajan kategorian slugin mukaan."
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Välityksen vahvistustunnusta ei voitu luoda."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Kassan tunnus ei täsmää."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Ei löytynyt"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Ei löytynyt roskakorista"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Mallipohjaa ei löytynyt."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Todennus epäonnistui."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Välityksen vahvistustunnusta ei voitu luoda."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Väliaikaisen tyylipohjatiedoston luominen epäonnistui."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Myymälän tietojen hakeminen epäonnistui."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Istunnon peruuttaminen epäonnistui."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro on nyt itsenäinen lisäosa. Lataa uusin versio %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Oikealta vasemmalle -versio Vakiokuitista arabiankielisille, hepreankielisille, persiankielisille ja urdunkielisille sivustoille. Peilaa asettelun ja käyttää RTL-ystävällistä fonttipinoa."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skriptit ja tyylit voivat häiritä mukautettua maksupohjaa, käytä tätä lomaketta poistaaksesi ongelmalliset skriptit."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> vaatii PHP %1$s tai uudemman. Lue lisää <a href=\"%2$s\">päivittämisestä</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS-mallit"
+          "msgstr": "Lataa tilauksen #%s kuitti"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT ei ole oikein määritetty, ota yhteyttä ylläpitäjään"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Tilausta ei löytynyt tai se ei ole POS-tilaus."
+          "msgstr": "Kuittipohjaa ei ole määritetty."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Tilaustilan näyttönimi."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print hyväksyy vain tilaukseen perustuvat ePOS-Print-työt, ei raakasisältöä."
+          "msgstr": "Lataa tilauksen #%s kuitti"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Lahjavastaanotto"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Lataa kuitti (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Kuitunumero"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Kuitti tulostettu"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Kuittipohja #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Yhteensä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Kuittimallit tilausten tulostamiseen"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Näyttää PDF Invoices & Packing Slips -laskun HTML:n WP Overnight -dokumentti-API:n kautta."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Oikealta vasemmalle -lämpöpaperikuitti 80 mm:n tulostimille. Peilaa sarakkeiden kohdistukset arabiankielisiä, hepreankielisiä, persiankielisiä ja urdunkielisiä sivustoja varten. Vaatii tulostimen, joka tukee arabialaista koodisivua (CP864 tai Windows-1256) — tarkista tulostimesi käyttöoppaasta ennen tilaamista."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Lataa kuitti (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Kompakti kuitti, jossa on keskitetty myymäläotsake, lihavoitu kaksireunainen tilausalue ja tiiviit tuoterivit. Sama sisältö kuin Standardissa, mutta vähemmän pystysuuntaista tilaa."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Mallipohjaa ei löytynyt."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Pohjat"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Pohjat"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Mallipohjaa ei löytynyt."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Pohjat"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Valitettavasti sinulla ei ole oikeutta muokata tätä mallia."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Aktivoitavien virtuaalimallien ID-taulukko."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Väliaikaisen tyylipohjatiedoston luominen epäonnistui."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Kuittipohja #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Kuittipohja #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Kuittipohja #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Lämpökuittipohja #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Pohja"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Pohja"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Pohjat"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Kuittaus"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Pohjat"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Tilaus"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Yksinkertainen käyttöliittymä WooCommerce-tilausten vastaanottamiseen myyntipisteessä. Vaatii <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommercen</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Siisti, pelkistetty lämpöpaperikuitti kapealle 58 mm:n paperille. Sama asettelu kuin 80 mm:n versiossa, sovitettu 32 merkin levyydelle."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Rajoita tulokset tietylle myymälälle ratkaistuihin mallipohjiin."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Suodata malliluetteloa"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS-mallit"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Raporttipohja #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Virhe"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Tilausta ei ole olemassa."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Mallipohjaa ei löytynyt."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Pohjat"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "KEITTIÖ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Bartuntista"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Lahjavastaanotto"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Virheellinen käyttäjätunnus tai salasana."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Osittainen maksu"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> vaatii <a href=\"%1$s\">WCPOS Pro %2$s tai uudemman</a>. Ole hyvä ja <a href=\"%3$s\">asenna ja aktivoi WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> vaatii <a href=\"%1$s\">WooCommerce %2$s tai uudemman</a>. Ole hyvä ja <a href=\"%3$s\">asenna ja aktivoi WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Puuttuva state-parametri."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Osavaltio / alue"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Laajennusten päivitys epäonnistui. Yritä uudelleen."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Yritä palauttaa oletuskuittipohja"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Liian monta pyyntöä. Yritä myöhemmin uudelleen."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Laajennusten päivitys epäonnistui. Yritä uudelleen."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Yritä palauttaa oletuskuittipohja"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Valitse käytetyimmistä"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Liian monta pyyntöä. Yritä myöhemmin uudelleen."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Laajennusten päivitys epäonnistui. Yritä uudelleen."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Valitettavasti tätä tilausta ei voida tarkastella. Tilaustubarnin avain puuttuu tai on voimoton."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Laajennusten päivitys epäonnistui. Yritä uudelleen."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Tarkista pohjatiedosto syntaksivirheiden varalta (puuttuvat puolipisteet, sulut jne.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Todennustunnusten luominen epäonnistui."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Todennustunnusten luominen epäonnistui."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Virheellinen istunto. Yritä kirjautua uudelleen sovelluksesta."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Laajennusten päivitys epäonnistui. Yritä uudelleen."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Todennustunnusten luominen epäonnistui."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Skriptit ja tyylit voivat häiritä mukautettua maksupohjaa, käytä tätä lomaketta poistaaksesi ongelmalliset skriptit."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Todennus epäonnistui."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Myymälän tietojen hakeminen epäonnistui."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Istunnon peruuttaminen epäonnistui."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> vaatii <a href=\"%1$s\">WooCommerce %2$s tai uudemman</a>. Ole hyvä ja <a href=\"%3$s\">asenna ja aktivoi WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompakti kuitti, jossa on keskitetty myymäläotsake, lihavoitu kaksireunainen tilausalue ja tiiviit tuoterivit. Sama sisältö kuin Standardissa, mutta vähemmän pystysuuntaista tilaa."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Poista kaikki tyylit ja skriptit käytöstä"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Valitettavasti tätä tilausta ei voida tarkastella. Tilaustubarnin avain puuttuu tai on voimoton."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Valitettavasti sinulla ei ole oikeutta muokata tätä mallia."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti sinulla ei ole oikeutta muokata malleja."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen lämpöpaperikuitti (58 mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Lahjavastaanotto"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Kaikki mahdollinen 58 mm:n kuitti: täydelliset asiakas- ja osoitetiedot, veroerittely, hyvitykset, maksut, ehdot ja tilauksen viivakoodi."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti kapealle 58 mm:n paperille. Sama asettelu kuin 80 mm:n versiossa, sovitettu 32 merkin levyydelle."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen lämpöpaperikuitti (80 mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Lahjavastaanotto"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Palautukset hyväksytään 30 päivän kuluessa alkuperäisen kuitin kanssa. Tuotteiden on oltava käyttämättömiä ja alkuperäispakkauksessa."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Lähettää tulosteen suoraan kuumapinta-tulostimille, kuten Epson tai Star. Toimii ilman verkkoyhteyttä."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Tämä tarjous on voimassa 30 päivää antopäivästä. Hinnat voivat muuttua voimassaoloajan jälkeen. Tämä ei ole kuitti eikä ostovahvistus."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Tarjous"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti tavalliselle 80 mm:n paperille. Myymälän otsake, rivituotteet, summat ja viivakoodi."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen kuitti"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Yksityiskohtainen lämpöpaperikuitti (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Oikealta vasemmalle -versio Vakiokuitista arabiankielisille, hepreankielisille, persiankielisille ja urdunkielisille sivustoille. Peilaa asettelun ja käyttää RTL-ystävällistä fonttipinoa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti tavalliselle 80 mm:n paperille. Myymälän otsake, rivituotteet, summat ja viivakoodi."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Yksityiskohtainen kuitti"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti kapealle 58 mm:n paperille. Sama asettelu kuin 80 mm:n versiossa, sovitettu 32 merkin levyydelle."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompakti kuitti, jossa on keskitetty myymäläotsake, lihavoitu kaksireunainen tilausalue ja tiiviit tuoterivit. Sama sisältö kuin Standardissa, mutta vähemmän pystysuuntaista tilaa."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skriptit ja tyylit voivat häiritä mukautettua maksupohjaa, käytä tätä lomaketta poistaaksesi ongelmalliset skriptit."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Yksinkertainen lämpöpaperikuitti (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti tavalliselle 80 mm:n paperille. Myymälän otsake, rivituotteet, summat ja viivakoodi."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Oikealta vasemmalle -lämpöpaperikuitti 80 mm:n tulostimille. Peilaa sarakkeiden kohdistukset arabiankielisiä, hepreankielisiä, persiankielisiä ja urdunkielisiä sivustoja varten. Vaatii tulostimen, joka tukee arabialaista koodisivua (CP864 tai Windows-1256) — tarkista tulostimesi käyttöoppaasta ennen tilaamista."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Yksinkertainen lämpöpaperikuitti (80 mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Yksinkertainen lämpöpaperikuitti 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen kuitti"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Kaikki mahdollinen 80 mm:n kuitti: täydelliset asiakas- ja osoitetiedot, veroerittely, hyvitykset, maksut, ehdot ja tilauksen viivakoodi."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Yksinkertainen lämpöpaperikuitti 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Siisti, pelkistetty lämpöpaperikuitti tavalliselle 80 mm:n paperille. Myymälän otsake, rivituotteet, summat ja viivakoodi."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Kaikki mahdollinen 58 mm:n kuitti: täydelliset asiakas- ja osoitetiedot, veroerittely, hyvitykset, maksut, ehdot ja tilauksen viivakoodi."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Oikealta vasemmalle -lämpöpaperikuitti 80 mm:n tulostimille. Peilaa sarakkeiden kohdistukset arabiankielisiä, hepreankielisiä, persiankielisiä ja urdunkielisiä sivustoja varten. Vaatii tulostimen, joka tukee arabialaista koodisivua (CP864 tai Windows-1256) — tarkista tulostimesi käyttöoppaasta ennen tilaamista."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Yksinkertainen lämpöpaperikuitti (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen lämpöpaperikuitti (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Kaikki mahdollinen 80 mm:n kuitti: täydelliset asiakas- ja osoitetiedot, veroerittely, hyvitykset, maksut, ehdot ja tilauksen viivakoodi."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Yksinkertainen lämpöpaperikuitti (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen lämpöpaperikuitti (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Kaikki mahdollinen 80 mm:n kuitti: täydelliset asiakas- ja osoitetiedot, veroerittely, hyvitykset, maksut, ehdot ja tilauksen viivakoodi."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Tästä PrintNode-tulostimesta puuttuu API-avain tai tulostimen tunnus."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Valitettavasti tämä tilaus on jo maksettu."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Lataa tilauksen #%s kuitti"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Tätä tilausta vastaavaa verotaittonäytön ei löytynyt."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Asetukset"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Malli"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Poista kaikki tyylit ja skriptit käytöstä"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Yritä palauttaa oletuskuittipohja"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Tuotteet voi palauttaa tai vaihtaa 30 päivän kuluessa tätä kuittia vastaan."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Poista valitut tyylit käytöstä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Poista wp_head käytöstä"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Varmista, että kaikki pohjassa käytetyt muuttujat on määritelty"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Poista wp_footer käytöstä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Poista wp_head käytöstä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Poista valitut skriptit käytöstä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Poista valitut tyylit käytöstä"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Asiakas"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Valitettavasti tämä tilaus on jo maksettu."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Maksettu"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Valitettavasti tätä tilausta ei voida tarkastella. Tilaustubarnin avain puuttuu tai on voimoton."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Kuittaus"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti sinulla ei ole oikeutta muokata tätä mallia."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Kuittipohjan virhe"
@@ -59128,19 +59300,9 @@
           "msgstr": "Yritä palauttaa oletuskuittipohja"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "template_id on pakollinen."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Virhe"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Kuittaus"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Kuittipohjan virhe"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Yksityiskohtainen kuitti"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Yksityiskohtainen lämpöpaperikuitti (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Kuittipohjaa ei ole määritetty."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Kuittivirhe"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML-kuittipohja #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Mustache-mallipohjan syntaksivirhe. Tarkista mallipohjasi."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP-kuittipohja #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Malli"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Tämä on tarjous, ei kuitti"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Tarkista pohjatiedosto syntaksivirheiden varalta (puuttuvat puolipisteet, sulut jne.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Kompakti monospace-kuitti, joka on mitoitettu kapealle paperille tai HTML-yhteensopiville lämpötulostimille. Tulostuu siististi mustavalkoisena."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "Alv"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache-mallipohjan syntaksivirhe. Tarkista mallipohjasi."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Mallin yksilöllinen tunniste (numeerinen tietokannalle, merkkijono virtuaaliselle)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Varmista, että kaikki pohjassa käytetyt muuttujat on määritelty"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Istunto vanhentunut. Yritä kirjautua uudelleen sovelluksesta."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Kaikki mallityypit"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Valitse käytetyimmistä"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Valitettavasti tätä tilausta ei voida tarkastella. Tilaustubarnin avain puuttuu tai on voimoton."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Malli"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Oikealta vasemmalle -versio Vakiokuitista arabiankielisille, hepreankielisille, persiankielisille ja urdunkielisille sivustoille. Peilaa asettelun ja käyttää RTL-ystävällistä fonttipinoa."
@@ -60010,19 +60177,14 @@
           "msgstr": "Tulostaa käyttämällä selaimen tulostusikkunaa. Vaatii palveluyhteyden saadaksesi tulosteen."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Tämä tarjous on voimassa 30 päivää antopäivästä. Hinnat voivat muuttua voimassaoloajan jälkeen. Tämä ei ole kuitti eikä ostovahvistus."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Istunto vanhentunut. Yritä kirjautua uudelleen sovelluksesta."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Tarkista pohjatiedosto syntaksivirheiden varalta (puuttuvat puolipisteet, sulut jne.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT ei ole oikein määritetty, ota yhteyttä ylläpitäjään"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Säilytä tämä kuitti kirjanpitoasi varten."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Valitettavasti tämä tilaus on virheellinen eikä sitä voi maksaa."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Tästä PrintNode-tulostimesta puuttuu API-avain tai tulostimen tunnus."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Virheellinen käyttäjätunnus tai salasana."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Virhe"
@@ -60523,6 +60690,11 @@
           "msgstr": "Lämpökuittipohja (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Tarkista pohjatiedosto syntaksivirheiden varalta (puuttuvat puolipisteet, sulut jne.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Varmista, että kaikki pohjassa käytetyt muuttujat on määritelty"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Virheellinen pohjakieli."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP-syntaksivirhe: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> vaatii PHP %1$s tai uudemman. Lue lisää <a href=\"%2$s\">päivittämisestä</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache-mallipohjan syntaksivirhe. Tarkista mallipohjasi."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Kuittivirhe"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Kuittipohjan virhe"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache-mallipohjan syntaksivirhe. Tarkista mallipohjasi."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Kuittipohjan virhe"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Virheellinen käyttäjätunnus tai salasana."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Kuittipohjan renderöinnissä oli ongelma. Tämä johtuu yleensä syntaksivirheestä tai määrittelemättömästä muuttujasta pohjakoodissa."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Valitettavasti tämä tilaus on virheellinen."
+          "msgstr": "Kuitin PDF-tiedostoa ei voitu luoda."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Sinulla ei ole oikeuksia käyttää POS:ia."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Kuittaus"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Pohja"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Mallipohjaa ei löytynyt."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Mallia on luotu, mutta raaka sisältö ei voitu tallentaa."
         }
       ],
       "concept_hints": [],

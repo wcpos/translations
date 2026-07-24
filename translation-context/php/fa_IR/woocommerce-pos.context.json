@@ -657,6 +657,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "آرایه‌ای از شناسه‌های الگوهای مجازی برای فعال کردن."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "فعال‌سازی قیمت‌های خاص POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "توکن صندوق‌دار مطابقت ندارد."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "رمز تأیید رله ایجاد نشد."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "تولید توکن‌های احراز هویت ناموفق بود."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "توکن ارائه نشده است."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "قابلیت مشاهده POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "قالب‌ها"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "تنظیمات"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "پست الکترونیک"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "آدرس ایمیل نامعتبر است."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro اکنون یک افزونه مستقل است. آخرین نسخه را از %s دانلود کنید"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "صندوقدار یافت نشد."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "سفارش"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "شناسه قالب نامعتبر است."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "ایجاد وظیفه چاپ ممکن نبود."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "وظیفه چاپ پیدا نشد."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "fa_IR",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "ایجاد وظیفه چاپ ممکن نبود."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "وظیفه چاپ پیدا نشد."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "چاپ آزمایشی هنوز برای این چاپگر در دسترس نیست."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "نوع"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "سند فاکتور WP Overnight در دسترس نیست."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "سند برگه بسته‌بندی WP Overnight در دسترس نیست."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "صندوقدار یافت نشد."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "ایجاد چاپ آزمایشی ممکن نبود."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "درگاه پرداخت برای تسویه POS در دسترس نیست."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "کلید API پرینت‌نود باید در بدنهٔ درخواست ارسال شود، نه در رشتهٔ پرس‌وجو."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "fa_IR",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "fa_IR",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "کارهای چاپ PrintNode به یک سفارش و یک قالب نیاز دارند."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print فقط کارهای ePOS-Print مبتنی بر سفارش را می‌پذیرد، نه payload خام."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "چاپگرهای Star Online به یک کلید API، یک نشانی معتبر CloudPRNT در stario.online و یک دستگاه نیاز دارند."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "شناسه قالب نامعتبر است."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "سفارش"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "قالب"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "یک کلید API استار آنلاین و یک نشانی معتبر CloudPRNT در stario.online لازم است."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "سفارش پیدا نشد یا سفارش POS نیست."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt باید یک تاریخ UTC معتبر ISO 8601 باشد."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "fa_IR",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "بارکد"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "رمز تأیید رله ایجاد نشد."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt باید یک تاریخ UTC معتبر ISO 8601 باشد."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "هیچ قالبی برای رسید تنظیم نشده است."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "printer_id الزامی است."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "یک کلید API برای PrintNode لازم است."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "یک template_id لازم است."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "قالب یافت نشد."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "فیلتر بر اساس سرویس شناسه دسته‌بندی الگو."
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "رمز تأیید رله ایجاد نشد."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "توکن صندوق‌دار مطابقت ندارد."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "یافت نشد"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "در زباله‌دان یافت نشد"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "قالب یافت نشد."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "احراز هویت ناموفق بود."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "رمز تأیید رله ایجاد نشد."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "ایجاد فایل موقت قالب انجام نشد."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "بازیابی داده‌های فروشگاه ناموفق بود."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "لغو جلسه ناموفق بود."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro اکنون یک افزونه مستقل است. آخرین نسخه را از %s دانلود کنید"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "نسخه راست‌به‌چپ رسید استاندارد برای سایت‌های عربی، عبری، فارسی و اردو. چیدمان را آینه می‌کند و از مجموعه فونت سازگار با RTL استفاده می‌کند."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "اسکریپت‌ها و استایل‌ها ممکن است با قالب پرداخت سفارشی تداخل داشته باشند، از این فرم برای حذف صف هر اسکریپت مشکل‌ساز استفاده کنید."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> نیاز به PHP %1$s یا بالاتر دارد. اطلاعات بیشتر درباره <a href=\"%2$s\">چگونگی به‌روزرسانی</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "قالب‌های POS"
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT به درستی پیکربندی نشده است، لطفاً با مدیر تماس بگیرید"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "سفارش پیدا نشد یا سفارش POS نیست."
+          "msgstr": "هیچ قالبی برای رسید تنظیم نشده است."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "نام نمایشی وضعیت سفارش."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print فقط کارهای ePOS-Print مبتنی بر سفارش را می‌پذیرد، نه payload خام."
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "فاکس‌بال هدیه"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "شماره رسید"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "رسید چاپ‌شده"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "قالب رسید #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "جمع کل"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "قالب‌های رسید برای چاپ سفارشات"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "HTML فاکتورهای PDF Invoices & Packing Slips را از طریق API اسناد WP Overnight رندر می‌کند."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "رسید حرارتی راست‌به‌چپ برای چاپگرهای 80 میلی‌متری. هم‌ترازی ستون‌ها را برای عربی، عبری، فارسی و اردو آینه می‌کند. به چاپگری نیاز دارد که از کدپیج عربی (CP864 یا Windows-1256) پشتیبانی کند - پیش از سفارش، دفترچه چاپگر را بررسی کنید."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "رسید فشرده با سربرگ فروشگاه در مرکز، نوار سفارش با حاشیه دوتایی و ضخیم، و ردیف‌های فشرده اقلام. همان موارد ضروری نسخه Standard، با فضای عمودی کمتر."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "قالب یافت نشد."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "قالب‌ها"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "قالب‌ها"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "قالب یافت نشد."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "قالب‌ها"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "متاسفانه اجازه ویرایش این الگو را ندارید."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "آرایه‌ای از شناسه‌های الگوهای مجازی برای فعال کردن."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "ایجاد فایل موقت قالب انجام نشد."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "قالب رسید #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "قالب رسید #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "قالب رسید #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "قالب رسید حرارتی #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "قالب"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "قالب"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "قالب‌ها"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "رسید"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "قالب‌ها"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "سفارش"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "یک رابط کاربری ساده برای گرفتن سفارشات ووکامرس در نقطه فروش. نیازمند <a href=\"http://wordpress.org/plugins/woocommerce/\">ووکامرس</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ باریک 58 میلی‌متری. همان چیدمان نسخه 80mm، با تنظیم برای عرض 32 نویسه."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "نتایج را به قالب‌های حل‌شده برای یک فروشگاه خاص محدود کنید."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "فیلتر فهرست قالب‌ها"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "قالب‌های POS"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "قالب گزارش #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "خطا"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "سفارش وجود ندارد."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "قالب یافت نشد."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "قالب‌ها"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "آشپزخانه"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "تیکت بار"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "فاکس‌بال هدیه"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - پرداخت جزئی"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> نیاز به <a href=\"%1$s\">WCPOS Pro %2$s یا بالاتر</a> دارد. لطفاً <a href=\"%3$s\">WCPOS Pro را نصب و فعال کنید</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> نیاز به <a href=\"%1$s\">ووکامرس %2$s یا بالاتر</a> دارد. لطفاً <a href=\"%3$s\">ووکامرس را نصب و فعال کنید</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "پارامتر state گم شده است."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "استان / منطقه"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "سعی کنید به قالب رسید پیش‌فرض بازنشانی کنید"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "درخواست‌های زیادی ارسال شده است. لطفاً بعداً دوباره تلاش کنید."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "سعی کنید به قالب رسید پیش‌فرض بازنشانی کنید"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "انتخاب از پر استفاده‌ترین‌ها"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "درخواست‌های زیادی ارسال شده است. لطفاً بعداً دوباره تلاش کنید."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ماسفیانه، این سفارش نمی‌تواند دیده شود. کلید سفارش اشتباه یا ناوجود است."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "فایل قالب را برای خطاهای نحوی (نقطه‌ویرگول‌های گمشده، کروشه‌ها، و غیره) بررسی کنید."
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "تولید توکن‌های احراز هویت ناموفق بود."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "تولید توکن‌های احراز هویت ناموفق بود."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "نشست احراز هویت نامعتبر است. لطفاً دوباره از طریق برنامه وارد شوید."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "تازه‌سازی افزونه‌ها ممکن نشد. لطفاً دوباره تلاش کنید."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "تولید توکن‌های احراز هویت ناموفق بود."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "اسکریپت‌ها و استایل‌ها ممکن است با قالب پرداخت سفارشی تداخل داشته باشند، از این فرم برای حذف صف هر اسکریپت مشکل‌ساز استفاده کنید."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "باشه"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "احراز هویت ناموفق بود."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "بازیابی داده‌های فروشگاه ناموفق بود."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "لغو جلسه ناموفق بود."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> نیاز به <a href=\"%1$s\">ووکامرس %2$s یا بالاتر</a> دارد. لطفاً <a href=\"%3$s\">ووکامرس را نصب و فعال کنید</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با سربرگ فروشگاه در مرکز، نوار سفارش با حاشیه دوتایی و ضخیم، و ردیف‌های فشرده اقلام. همان موارد ضروری نسخه Standard، با فضای عمودی کمتر."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "غیرفعال کردن همه استایل‌ها و اسکریپت‌ها"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "ماسفیانه، این سفارش نمی‌تواند دیده شود. کلید سفارش اشتباه یا ناوجود است."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "متاسفانه اجازه ویرایش این الگو را ندارید."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متاسفانه اجازه ویرایش الگوها را ندارید."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "رسید حرارتی با جزئیات (58mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "فاکس‌بال هدیه"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "رسید 58 میلی‌متریِ پرجزئیات: اطلاعات کامل مشتری + نشانی‌ها، جزئیات مالیات، مرجوعی‌ها، پرداخت‌ها، شرایط و بارکد سفارش."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ باریک 58 میلی‌متری. همان چیدمان نسخه 80mm، با تنظیم برای عرض 32 نویسه."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "رسید حرارتی با جزئیات (80mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "فاکس‌بال هدیه"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "مرجوعی‌ها تا 30 روز با رسید اصلی پذیرفته می‌شوند. کالاها باید استفاده‌نشده و در بسته‌بندی اصلی باشند."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "خروجی را مستقیماً به چاپگرهای حرارتی مانند Epson یا Star ارسال می‌کند. بدون نیاز به اتصال اینترنت کار می‌کند."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "این پیش‌فاکتور از تاریخ صدور به مدت ۳۰ روز معتبر است. قیمت‌ها پس از پایان این مدت ممکن است تغییر کنند. این سند رسید یا تأیید خرید نیست."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "پیش‌فاکتور"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ استاندارد 80 میلی‌متری. سربرگ فروشگاه، اقلام، جمع‌ها و بارکد."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "رسید با جزئیات"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "رسید حرارتی با جزئیات (58mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "نسخه راست‌به‌چپ رسید استاندارد برای سایت‌های عربی، عبری، فارسی و اردو. چیدمان را آینه می‌کند و از مجموعه فونت سازگار با RTL استفاده می‌کند."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ استاندارد 80 میلی‌متری. سربرگ فروشگاه، اقلام، جمع‌ها و بارکد."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "رسید با جزئیات"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ باریک 58 میلی‌متری. همان چیدمان نسخه 80mm، با تنظیم برای عرض 32 نویسه."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با سربرگ فروشگاه در مرکز، نوار سفارش با حاشیه دوتایی و ضخیم، و ردیف‌های فشرده اقلام. همان موارد ضروری نسخه Standard، با فضای عمودی کمتر."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "اسکریپت‌ها و استایل‌ها ممکن است با قالب پرداخت سفارشی تداخل داشته باشند، از این فرم برای حذف صف هر اسکریپت مشکل‌ساز استفاده کنید."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "رسید حرارتی ساده (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ استاندارد 80 میلی‌متری. سربرگ فروشگاه، اقلام، جمع‌ها و بارکد."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی راست‌به‌چپ برای چاپگرهای 80 میلی‌متری. هم‌ترازی ستون‌ها را برای عربی، عبری، فارسی و اردو آینه می‌کند. به چاپگری نیاز دارد که از کدپیج عربی (CP864 یا Windows-1256) پشتیبانی کند - پیش از سفارش، دفترچه چاپگر را بررسی کنید."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "رسید حرارتی ساده (80mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "رسید حرارتی ساده 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "رسید با جزئیات"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "رسید 80 میلی‌متریِ پرجزئیات: اطلاعات کامل مشتری + نشانی‌ها، جزئیات مالیات، مرجوعی‌ها، پرداخت‌ها، شرایط و بارکد سفارش."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "رسید حرارتی ساده 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "رسید حرارتی تمیز و مینیمال برای کاغذ استاندارد 80 میلی‌متری. سربرگ فروشگاه، اقلام، جمع‌ها و بارکد."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "رسید 58 میلی‌متریِ پرجزئیات: اطلاعات کامل مشتری + نشانی‌ها، جزئیات مالیات، مرجوعی‌ها، پرداخت‌ها، شرایط و بارکد سفارش."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "رسید حرارتی راست‌به‌چپ برای چاپگرهای 80 میلی‌متری. هم‌ترازی ستون‌ها را برای عربی، عبری، فارسی و اردو آینه می‌کند. به چاپگری نیاز دارد که از کدپیج عربی (CP864 یا Windows-1256) پشتیبانی کند - پیش از سفارش، دفترچه چاپگر را بررسی کنید."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "رسید حرارتی ساده (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "رسید حرارتی با جزئیات (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "رسید 80 میلی‌متریِ پرجزئیات: اطلاعات کامل مشتری + نشانی‌ها، جزئیات مالیات، مرجوعی‌ها، پرداخت‌ها، شرایط و بارکد سفارش."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "رسید حرارتی ساده (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "رسید حرارتی با جزئیات (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "رسید 80 میلی‌متریِ پرجزئیات: اطلاعات کامل مشتری + نشانی‌ها، جزئیات مالیات، مرجوعی‌ها، پرداخت‌ها، شرایط و بارکد سفارش."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "این چاپگر PrintNode کلید API یا شناسهٔ چاپگر را ندارد."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "متأسفیم، این سفارش قبلاً پرداخت شده است."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "دانلود رسید سفارش شمارهٔ %s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "برای این فاکتور سندی تراکنشی پیدا نشد."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "تنظیمات"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "قالب"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "غیرفعال کردن همه استایل‌ها و اسکریپت‌ها"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "سعی کنید به قالب رسید پیش‌فرض بازنشانی کنید"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "اقلام را می‌توان تا ۳۰ روز با این رسید مرجوع یا تعویض کرد."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "غیرفعال کردن استایل‌های انتخاب‌شده"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "غیرفعال کردن wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "اطمینان حاصل کنید که همه متغیرهای استفاده‌شده در قالب تعریف شده‌اند"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "غیرفعال کردن wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "غیرفعال کردن wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "غیرفعال کردن اسکریپت‌های انتخاب‌شده"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "غیرفعال کردن استایل‌های انتخاب‌شده"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "مشتری"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "متأسفیم، این سفارش قبلاً پرداخت شده است."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "پرداخت شد"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ماسفیانه، این سفارش نمی‌تواند دیده شود. کلید سفارش اشتباه یا ناوجود است."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "رسید"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متاسفانه اجازه ویرایش این الگو را ندارید."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "خطای قالب رسید"
@@ -59128,19 +59300,9 @@
           "msgstr": "سعی کنید به قالب رسید پیش‌فرض بازنشانی کنید"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "یک template_id لازم است."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "خطا"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "رسید"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "خطای قالب رسید"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "رسید با جزئیات"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "رسید حرارتی با جزئیات (58mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "هیچ قالبی برای رسید تنظیم نشده است."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "خطای رسید"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "قالب رسید HTML #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "خطای نحوی در قالب Mustache. قالب خود را بررسی کنید."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "قالب رسید PHP #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "قالب"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "این یک پیش‌فاکتور است، نه رسید"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "فایل قالب را برای خطاهای نحوی (نقطه‌ویرگول‌های گمشده، کروشه‌ها، و غیره) بررسی کنید."
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "رسید فشرده با فونت تک‌فاصله برای کاغذ باریک یا چاپگرهای حرارتیِ پشتیبان HTML. با چاپ سیاه‌وسفید تمیز."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "مالیات"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "خطای نحوی در قالب Mustache. قالب خود را بررسی کنید."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "شناسه منحصر به فرد برای قالب (عددی برای پایگاه داده، رشته‌ای برای مجازی)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "اطمینان حاصل کنید که همه متغیرهای استفاده‌شده در قالب تعریف شده‌اند"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "نشست احراز هویت منقضی شده است. لطفاً دوباره از طریق برنامه وارد شوید."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "همه انواع قالب"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "انتخاب از پر استفاده‌ترین‌ها"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ماسفیانه، این سفارش نمی‌تواند دیده شود. کلید سفارش اشتباه یا ناوجود است."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "قالب"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "نسخه راست‌به‌چپ رسید استاندارد برای سایت‌های عربی، عبری، فارسی و اردو. چیدمان را آینه می‌کند و از مجموعه فونت سازگار با RTL استفاده می‌کند."
@@ -60010,19 +60177,14 @@
           "msgstr": "چاپ با استفاده از منوی چاپ مرورگر شما. نیاز به اتصال به سرور برای ساخت فاکتور دارد."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "این پیش‌فاکتور از تاریخ صدور به مدت ۳۰ روز معتبر است. قیمت‌ها پس از پایان این مدت ممکن است تغییر کنند. این سند رسید یا تأیید خرید نیست."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "نشست احراز هویت منقضی شده است. لطفاً دوباره از طریق برنامه وارد شوید."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "فایل قالب را برای خطاهای نحوی (نقطه‌ویرگول‌های گمشده، کروشه‌ها، و غیره) بررسی کنید."
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT به درستی پیکربندی نشده است، لطفاً با مدیر تماس بگیرید"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "لطفاً این رسید را برای سوابق خود نگه دارید."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "متأسفیم، این سفارش نامعتبر است و قابل پرداخت نیست."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "این چاپگر PrintNode کلید API یا شناسهٔ چاپگر را ندارد."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "متأسفیم، این سفارش نامعتبر است."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "خطا"
@@ -60523,6 +60690,11 @@
           "msgstr": "قالب رسید حرارتی (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "فایل قالب را برای خطاهای نحوی (نقطه‌ویرگول‌های گمشده، کروشه‌ها، و غیره) بررسی کنید."
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "اطمینان حاصل کنید که همه متغیرهای استفاده‌شده در قالب تعریف شده‌اند"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "زبان قالب نامعتبر است."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "خطای نحوی PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> نیاز به PHP %1$s یا بالاتر دارد. اطلاعات بیشتر درباره <a href=\"%2$s\">چگونگی به‌روزرسانی</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "خطای نحوی در قالب Mustache. قالب خود را بررسی کنید."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "خطای رسید"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "خطای قالب رسید"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "خطای نحوی در قالب Mustache. قالب خود را بررسی کنید."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "خطای قالب رسید"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "نام کاربری یا رمز عبور نامعتبر است."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "مشکلی در رندر قالب رسید وجود داشت. این معمولاً به دلیل خطای نحوی یا متغیر تعریف‌نشده در کد قالب است."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "متأسفیم، این سفارش نامعتبر است."
+          "msgstr": "ایجاد PDF رسید ممکن نشد."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "شما اجازه دسترسی به POS را ندارید."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "رسید"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "قالب"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "قالب یافت نشد."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "پیش‌نویس ایجاد شد اما محتوای خام ذخیره نشد."
         }
       ],
       "concept_hints": [],

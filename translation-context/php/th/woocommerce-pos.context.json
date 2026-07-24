@@ -657,6 +657,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "อาเรย์ของ ID เทมเพลตเสมือนที่ต้องเปิดใช้งาน"
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "เปิดใช้งานราคาที่เฉพาะเจาะจงสำหรับ POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "โทเค็นแคชเชียร์ไม่ตรงกัน"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างโทเค็นการยืนยันการส่งต่อได้"
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "ไม่ได้ให้โทเค็น"
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "การมองเห็นของ POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "เทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "การตั้งค่า"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "อีเมล"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "ที่อยู่อีเมลไม่ถูกต้อง"
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro ตอนนี้เป็นปลั๊กอินแยก ดาวน์โหลดเวอร์ชันล่าสุดจาก %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "ไม่พบแคชเชียร์"
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "ออเดอร์"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "รหัสแม่แบบไม่ถูกต้อง"
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถสร้างงานพิมพ์ได้"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "ไม่พบงานพิมพ์"
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "th",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างงานพิมพ์ได้"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "ไม่พบงานพิมพ์"
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "ยังไม่รองรับการพิมพ์ทดสอบสำหรับเครื่องพิมพ์นี้"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "ประเภท"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "เอกสารใบแจ้งหนี้ของ WP Overnight ไม่พร้อมใช้งาน"
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "เอกสารใบส่งสินค้าของ WP Overnight ไม่พร้อมใช้งาน"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "ไม่พบแคชเชียร์"
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างงานพิมพ์ทดสอบได้"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "เกตเวย์การชำระเงินไม่พร้อมใช้งานสำหรับการชำระเงิน POS"
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "ต้องส่งคีย์ PrintNode API ในเนื้อหาคำขอ ไม่ใช่ใน query string."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "th",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "th",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "งานพิมพ์ PrintNode ต้องมีคำสั่งซื้อและเทมเพลต"
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print รองรับเฉพาะงาน ePOS-Print ที่อิงตามคำสั่งซื้อเท่านั้น ไม่รองรับเพย์โหลดดิบ"
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "เครื่องพิมพ์ Star Online ต้องมีคีย์ API, URL ของ stario.online CloudPRNT ที่ถูกต้อง และอุปกรณ์"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "รหัสแม่แบบไม่ถูกต้อง"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "ออเดอร์"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "เทมเพลต"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "ต้องมีคีย์ API ของ Star Online และ URL ของ stario.online CloudPRNT ที่ถูกต้อง"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "ไม่พบคำสั่งซื้อหรือไม่ใช่คำสั่งซื้อ POS"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt ต้องเป็นวันที่ UTC ตามรูปแบบ ISO 8601 ที่ถูกต้อง"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "th",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "บาร์โค้ด"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างโทเค็นการยืนยันการส่งต่อได้"
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt ต้องเป็นวันที่ UTC ตามรูปแบบ ISO 8601 ที่ถูกต้อง"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "ยังไม่ได้กำหนดค่าเทมเพลตใบเสร็จ"
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "ต้องระบุ printer_id"
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "ต้องใช้คีย์ PrintNode API"
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "ต้องระบุ template_id"
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "ไม่พบแม่แบบ"
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "กรองตาม slug ของหมวดหมู่แม่แบบ"
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างโทเค็นการยืนยันการส่งต่อได้"
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "โทเค็นแคชเชียร์ไม่ตรงกัน"
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "ไม่พบ"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "ไม่พบในถังขยะ"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "ไม่พบแม่แบบ"
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "การตรวจสอบสิทธิ์ล้มเหลว"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้างโทเค็นการยืนยันการส่งต่อได้"
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถสร้างไฟล์แม่แบบชั่วคราวได้"
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถดึงข้อมูลร้านค้าได้"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "ไม่สามารถเพิกถอนเซสชัน"
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro ตอนนี้เป็นปลั๊กอินแยก ดาวน์โหลดเวอร์ชันล่าสุดจาก %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "เวอร์ชันจากขวาไปซ้ายของใบเสร็จมาตรฐานสำหรับเว็บไซต์ภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู จัดวางเหมือนกันและใช้ชุดฟอนต์ที่รองรับ RTL"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "สคริปต์และสไตล์อาจรบกวนเทมเพลตการชำระเงินที่กำหนดเอง ใช้ฟอร์มนี้เพื่อลบสคริปต์ที่มีปัญหาออก"
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> ต้องการ PHP %1$s หรือสูงกว่า อ่านข้อมูลเพิ่มเติมเกี่ยวกับ <a href=\"%2$s\">วิธีการอัปเดต</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "เทมเพลต POS"
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT ไม่ได้ถูกตั้งค่าอย่างถูกต้อง กรุณาติดต่อผู้ดูแลระบบ"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "ไม่พบคำสั่งซื้อหรือไม่ใช่คำสั่งซื้อ POS"
+          "msgstr": "ยังไม่ได้กำหนดค่าเทมเพลตใบเสร็จ"
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "ชื่อที่แสดงของสถานะคำสั่งซื้อ"
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print รองรับเฉพาะงาน ePOS-Print ที่อิงตามคำสั่งซื้อเท่านั้น ไม่รองรับเพย์โหลดดิบ"
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จของขวัญ"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จ (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "เลขที่ใบเสร็จ"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "พิมพ์ใบเสร็จแล้ว"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "เทมเพลตใบเสร็จ #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "รวมทั้งหมด"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "เทมเพลตรับสำหรับพิมพ์คำสั่งซื้อ"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "แสดงผล HTML ใบแจ้งหนี้ของ PDF Invoices & Packing Slips ผ่าน Document API ของ WP Overnight"
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลจากขวาไปซ้ายสำหรับเครื่องพิมพ์ 80 มม. ปรับการจัดแนวคอลัมน์ให้เหมาะกับภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู ต้องใช้เครื่องพิมพ์ที่รองรับรหัสหน้าอาหรับ (CP864 หรือ Windows-1256) - โปรดตรวจสอบคู่มือเครื่องพิมพ์ก่อนสั่งซื้อ"
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จ (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จขนาดกะทัดรัดพร้อมส่วนหัวร้านค้าที่จัดกึ่งกลาง แถบคำสั่งซื้อเส้นคู่หนา และบรรทัดสินค้าแน่น ๆ มีสาระสำคัญเหมือนแบบมาตรฐาน แต่ใช้พื้นที่แนวตั้งน้อยกว่า"
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "ไม่พบแม่แบบ"
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "ไม่พบแม่แบบ"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "ขออภัย คุณไม่สามารถแก้ไขเทมเพลตนี้ได้"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "อาเรย์ของ ID เทมเพลตเสมือนที่ต้องเปิดใช้งาน"
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "ไม่สามารถสร้างไฟล์แม่แบบชั่วคราวได้"
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "เทมเพลตใบเสร็จ #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "เทมเพลตใบเสร็จ #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "เทมเพลตใบเสร็จ #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "เทมเพลตใบเสร็จแบบกระดาษความร้อน #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จ"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "เทมเพลต"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "ออเดอร์"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "ส่วนหน้าที่ง่ายสำหรับการรับคำสั่งซื้อ WooCommerce ที่จุดขาย ต้องการ <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษแคบ 58 มม. ใช้เลย์เอาต์เดียวกับ 80 มม. แต่ปรับให้เหมาะกับความกว้าง 32 ตัวอักษร"
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "จำกัดผลลัพธ์ให้เฉพาะเทมเพลตที่แก้ไขได้สำหรับร้านที่กำหนด"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "กรองรายการเทมเพลต"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "เทมเพลต POS"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "เทมเพลตรายงาน #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "ข้อผิดพลาด"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "คำสั่งซื้อไม่มีอยู่"
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "ไม่พบแม่แบบ"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "เทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "ครัว"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "ตั๋วบาร์"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จของขวัญ"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - ชำระเงินบางส่วน"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> ต้องการ <a href=\"%1$s\">WCPOS Pro %2$s หรือสูงกว่า</a> กรุณา <a href=\"%3$s\">ติดตั้งและเปิดใช้ WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> ต้องการ <a href=\"%1$s\">WooCommerce %2$s หรือสูงกว่า</a> กรุณา <a href=\"%3$s\">ติดตั้งและเปิดใช้ WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "พารามิเตอร์ state หาย"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "รัฐ / ภูมิภาค"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "ลองรีเซ็ตเป็นเทมเพลตใบเสร็จเริ่มต้น"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "มีการร้องขอมากเกินไป กรุณาลองใหม่ภายหลัง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง"
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "ลองรีเซ็ตเป็นเทมเพลตใบเสร็จเริ่มต้น"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "เลือกจากที่ใช้บ่อย"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "มีการร้องขอมากเกินไป กรุณาลองใหม่ภายหลัง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง"
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ขออภัย การค้นหาการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "ตรวจสอบไฟล์เทมเพลตว่ามีข้อผิดพลาดทางไวยากรณ์หรือไม่ (เช่น ขาดเครื่องหมายอัฒภาค วงเล็บ ฯลฯ)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "เซสชันการตรวจสอบไม่ถูกต้อง กรุณาลองเข้าสู่ระบบใหม่จากแอป"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถรีเฟรชส่วนขยายได้ โปรดลองอีกครั้ง"
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "สคริปต์และสไตล์อาจรบกวนเทมเพลตการชำระเงินที่กำหนดเอง ใช้ฟอร์มนี้เพื่อลบสคริปต์ที่มีปัญหาออก"
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "ตกลง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "การตรวจสอบสิทธิ์ล้มเหลว"
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "ไม่สามารถดึงข้อมูลร้านค้าได้"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "ไม่สามารถเพิกถอนเซสชัน"
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> ต้องการ <a href=\"%1$s\">WooCommerce %2$s หรือสูงกว่า</a> กรุณา <a href=\"%3$s\">ติดตั้งและเปิดใช้ WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จขนาดกะทัดรัดพร้อมส่วนหัวร้านค้าที่จัดกึ่งกลาง แถบคำสั่งซื้อเส้นคู่หนา และบรรทัดสินค้าแน่น ๆ มีสาระสำคัญเหมือนแบบมาตรฐาน แต่ใช้พื้นที่แนวตั้งน้อยกว่า"
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "ปิดใช้งานสไตล์และสคริปต์ทั้งหมด"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "ขออภัย การค้นหาการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "ขออภัย คุณไม่สามารถแก้ไขเทมเพลตนี้ได้"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คุณไม่สามารถแก้ไขเทมเพลตได้"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (58 มม.)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จของขวัญ"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบจัดเต็มขนาด 58 มม.: ข้อมูลลูกค้าและที่อยู่ครบถ้วน รายละเอียดภาษี การคืนเงิน การชำระเงิน เงื่อนไข และบาร์โค้ดคำสั่งซื้อ"
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษแคบ 58 มม. ใช้เลย์เอาต์เดียวกับ 80 มม. แต่ปรับให้เหมาะกับความกว้าง 32 ตัวอักษร"
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (80 มม.)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จของขวัญ"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "รับคืนได้ภายใน 30 วันเมื่อมีใบเสร็จฉบับจริง สินค้าต้องไม่ผ่านการใช้งานและอยู่ในบรรจุภัณฑ์เดิม"
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "ส่งผลลัพธ์ไปยังเครื่องพิมพ์ร้อนอย่างเช่น Epson หรือ Star เลย ทำงานได้แบบออฟไลน์"
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "ใบเสนอราคานี้มีผลใช้ได้ 30 วันนับจากวันที่ออก ราคาสินค้าอาจมีการเปลี่ยนแปลงหลังหมดระยะเวลาที่มีผลใช้ได้ นี่ไม่ใช่ใบเสร็จหรือการยืนยันการซื้อ"
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "ใบเสนอราคา"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษมาตรฐาน 80 มม. มีส่วนหัวร้าน รายการสินค้า ยอดรวม และบาร์โค้ด"
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบละเอียด"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (58 มม.)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "เวอร์ชันจากขวาไปซ้ายของใบเสร็จมาตรฐานสำหรับเว็บไซต์ภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู จัดวางเหมือนกันและใช้ชุดฟอนต์ที่รองรับ RTL"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษมาตรฐาน 80 มม. มีส่วนหัวร้าน รายการสินค้า ยอดรวม และบาร์โค้ด"
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบละเอียด"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษแคบ 58 มม. ใช้เลย์เอาต์เดียวกับ 80 มม. แต่ปรับให้เหมาะกับความกว้าง 32 ตัวอักษร"
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จขนาดกะทัดรัดพร้อมส่วนหัวร้านค้าที่จัดกึ่งกลาง แถบคำสั่งซื้อเส้นคู่หนา และบรรทัดสินค้าแน่น ๆ มีสาระสำคัญเหมือนแบบมาตรฐาน แต่ใช้พื้นที่แนวตั้งน้อยกว่า"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "สคริปต์และสไตล์อาจรบกวนเทมเพลตการชำระเงินที่กำหนดเอง ใช้ฟอร์มนี้เพื่อลบสคริปต์ที่มีปัญหาออก"
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย (58 มม.)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษมาตรฐาน 80 มม. มีส่วนหัวร้าน รายการสินค้า ยอดรวม และบาร์โค้ด"
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลจากขวาไปซ้ายสำหรับเครื่องพิมพ์ 80 มม. ปรับการจัดแนวคอลัมน์ให้เหมาะกับภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู ต้องใช้เครื่องพิมพ์ที่รองรับรหัสหน้าอาหรับ (CP864 หรือ Windows-1256) - โปรดตรวจสอบคู่มือเครื่องพิมพ์ก่อนสั่งซื้อ"
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย (80 มม.)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย 80 มม. (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบละเอียด"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบจัดเต็มขนาด 80 มม.: ข้อมูลลูกค้าและที่อยู่ครบถ้วน รายละเอียดภาษี การคืนเงิน การชำระเงิน เงื่อนไข และบาร์โค้ดคำสั่งซื้อ"
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย 80 มม. (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบสะอาดและเรียบง่าย สำหรับกระดาษมาตรฐาน 80 มม. มีส่วนหัวร้าน รายการสินค้า ยอดรวม และบาร์โค้ด"
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบจัดเต็มขนาด 58 มม.: ข้อมูลลูกค้าและที่อยู่ครบถ้วน รายละเอียดภาษี การคืนเงิน การชำระเงิน เงื่อนไข และบาร์โค้ดคำสั่งซื้อ"
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จเทอร์มอลจากขวาไปซ้ายสำหรับเครื่องพิมพ์ 80 มม. ปรับการจัดแนวคอลัมน์ให้เหมาะกับภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู ต้องใช้เครื่องพิมพ์ที่รองรับรหัสหน้าอาหรับ (CP864 หรือ Windows-1256) - โปรดตรวจสอบคู่มือเครื่องพิมพ์ก่อนสั่งซื้อ"
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย (58 มม.)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (58 มม.)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบจัดเต็มขนาด 80 มม.: ข้อมูลลูกค้าและที่อยู่ครบถ้วน รายละเอียดภาษี การคืนเงิน การชำระเงิน เงื่อนไข และบาร์โค้ดคำสั่งซื้อ"
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "ใบเสร็จเทอร์มอลแบบเรียบง่าย (58 มม.)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (58 มม.)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบจัดเต็มขนาด 80 มม.: ข้อมูลลูกค้าและที่อยู่ครบถ้วน รายละเอียดภาษี การคืนเงิน การชำระเงิน เงื่อนไข และบาร์โค้ดคำสั่งซื้อ"
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "เครื่องพิมพ์ PrintNode นี้ไม่มีคีย์ API หรือรหัสเครื่องพิมพ์"
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "ขออภัย คำสั่งซื้อนี้ได้ชำระเงินแล้ว"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "ไม่พบข้อมูลสรุปการเงินสำหรับคำสั่งซื้อนี้"
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "การตั้งค่า"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "เทมเพลต"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "ปิดใช้งานสไตล์และสคริปต์ทั้งหมด"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "ลองรีเซ็ตเป็นเทมเพลตใบเสร็จเริ่มต้น"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "สามารถคืนหรือเปลี่ยนสินค้าได้ภายใน 30 วัน โดยใช้ใบเสร็จนี้"
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "ปิดใช้งานสไตล์ที่เลือก"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "ปิดใช้งาน wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "ตรวจสอบให้แน่ใจว่าตัวแปรทั้งหมดที่ใช้ในเทมเพลตได้รับการประกาศแล้ว"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "ปิดใช้งาน wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "ปิดใช้งาน wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "ปิดใช้งานสคริปต์ที่เลือก"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "ปิดใช้งานสไตล์ที่เลือก"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "ลูกค้า"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "ขออภัย คำสั่งซื้อนี้ได้ชำระเงินแล้ว"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "ชำระแล้ว"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ขออภัย การค้นหาการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "ใบเสร็จ"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คุณไม่สามารถแก้ไขเทมเพลตนี้ได้"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาดของเทมเพลตใบเสร็จ"
@@ -59128,19 +59300,9 @@
           "msgstr": "ลองรีเซ็ตเป็นเทมเพลตใบเสร็จเริ่มต้น"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "ต้องระบุ template_id"
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "ข้อผิดพลาด"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "ใบเสร็จ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาดของเทมเพลตใบเสร็จ"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "ใบเสร็จแบบละเอียด"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จเทอร์มอลแบบละเอียด (58 มม.)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "ยังไม่ได้กำหนดค่าเทมเพลตใบเสร็จ"
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาดของใบเสร็จ"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "เทมเพลตใบเสร็จ HTML #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "ไวยากรณ์เทมเพลต Mustache ผิดพลาด โปรดตรวจสอบเทมเพลตของคุณ"
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "เทมเพลตใบเสร็จ PHP #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "เทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "นี่คือใบเสนอราคา ไม่ใช่ใบเสร็จ"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "ตรวจสอบไฟล์เทมเพลตว่ามีข้อผิดพลาดทางไวยากรณ์หรือไม่ (เช่น ขาดเครื่องหมายอัฒภาค วงเล็บ ฯลฯ)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "ใบเสร็จแบบโมโนสเปซขนาดกะทัดรัด สำหรับกระดาษแคบหรือเครื่องพิมพ์เทอร์มอลที่รองรับ HTML พิมพ์ได้คมชัดทั้งขาวดำ"
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "ภาษี"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "ไวยากรณ์เทมเพลต Mustache ผิดพลาด โปรดตรวจสอบเทมเพลตของคุณ"
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "ตัวระบุเฉพาะสำหรับเทมเพลต (ตัวเลขสำหรับฐานข้อมูล สตริงสำหรับเสมือน)"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "ตรวจสอบให้แน่ใจว่าตัวแปรทั้งหมดที่ใช้ในเทมเพลตได้รับการประกาศแล้ว"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "เซสชันการตรวจสอบหมดอายุ กรุณาลองเข้าสู่ระบบใหม่จากแอป"
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "ประเภทเทมเพลตทั้งหมด"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "เลือกจากที่ใช้บ่อย"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "ขออภัย การค้นหาการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "เทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "เวอร์ชันจากขวาไปซ้ายของใบเสร็จมาตรฐานสำหรับเว็บไซต์ภาษาอาหรับ ฮีบรู เปอร์เซีย และอูรดู จัดวางเหมือนกันและใช้ชุดฟอนต์ที่รองรับ RTL"
@@ -60010,19 +60177,14 @@
           "msgstr": "การพิมพ์โดยใช้หน้าต่างเครื่องพิมพ์ของเบราว์เซอร์ จำเป็นต้องเชื่อมต่อกับเซิร์ฟเวอร์เพื่อสร้างใบเสร็จ"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "ใบเสนอราคานี้มีผลใช้ได้ 30 วันนับจากวันที่ออก ราคาสินค้าอาจมีการเปลี่ยนแปลงหลังหมดระยะเวลาที่มีผลใช้ได้ นี่ไม่ใช่ใบเสร็จหรือการยืนยันการซื้อ"
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "เซสชันการตรวจสอบหมดอายุ กรุณาลองเข้าสู่ระบบใหม่จากแอป"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "ตรวจสอบไฟล์เทมเพลตว่ามีข้อผิดพลาดทางไวยากรณ์หรือไม่ (เช่น ขาดเครื่องหมายอัฒภาค วงเล็บ ฯลฯ)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT ไม่ได้ถูกตั้งค่าอย่างถูกต้อง กรุณาติดต่อผู้ดูแลระบบ"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "โปรดเก็บใบเสร็จนี้ไว้เป็นหลักฐาน"
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้องและไม่สามารถชำระเงินได้"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "เครื่องพิมพ์ PrintNode นี้ไม่มีคีย์ API หรือรหัสเครื่องพิมพ์"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาด"
@@ -60523,6 +60690,11 @@
           "msgstr": "เทมเพลตใบเสร็จแบบกระดาษความร้อน (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ"
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "ตรวจสอบไฟล์เทมเพลตว่ามีข้อผิดพลาดทางไวยากรณ์หรือไม่ (เช่น ขาดเครื่องหมายอัฒภาค วงเล็บ ฯลฯ)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "ตรวจสอบให้แน่ใจว่าตัวแปรทั้งหมดที่ใช้ในเทมเพลตได้รับการประกาศแล้ว"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "ภาษาของเทมเพลตไม่ถูกต้อง"
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "ข้อผิดพลาดทางไวยากรณ์ของ PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> ต้องการ PHP %1$s หรือสูงกว่า อ่านข้อมูลเพิ่มเติมเกี่ยวกับ <a href=\"%2$s\">วิธีการอัปเดต</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "ไวยากรณ์เทมเพลต Mustache ผิดพลาด โปรดตรวจสอบเทมเพลตของคุณ"
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาดของใบเสร็จ"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "ข้อผิดพลาดของเทมเพลตใบเสร็จ"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "ไวยากรณ์เทมเพลต Mustache ผิดพลาด โปรดตรวจสอบเทมเพลตของคุณ"
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "ข้อผิดพลาดของเทมเพลตใบเสร็จ"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "มีปัญหาในการแสดงผลเทมเพลตใบเสร็จ ซึ่งมักเกิดจากข้อผิดพลาดทางไวยากรณ์หรือการประกาศตัวแปรไม่ถูกต้องในโค้ดเทมเพลต"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
+          "msgstr": "ไม่สามารถสร้าง PDF ใบเสร็จได้"
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "คุณไม่มีสิทธิ์ในการเข้าถึง POS"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "ใบเสร็จ"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "เทมเพลต"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "ไม่พบแม่แบบ"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "สร้างแม่แบบสำเร็จแต่ไม่สามารถบันทึกเนื้อหาตามต้นฉบับได้"
         }
       ],
       "concept_hints": [],

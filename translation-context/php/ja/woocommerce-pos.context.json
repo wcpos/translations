@@ -657,6 +657,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "有効化する仮想テンプレートIDの配列"
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "POS特定の価格を有効にする。"
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "キャッシャートークンが一致しません。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "リレー検証トークンを作成できませんでした。"
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "認証トークンの生成に失敗しました。"
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "トークンが提供されていません。"
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POSの可視性"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "テンプレート"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "設定"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "メールアドレス"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "無効なメールアドレスです。"
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Proは現在スタンドアロンのプラグインです。最新バージョンを%sからダウンロードしてください"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "キャッシャーが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "注文"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "無効なテンプレートIDです。"
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "印刷ジョブを作成できませんでした。"
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "印刷ジョブが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "印刷ジョブを作成できませんでした。"
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "印刷ジョブが見つかりません。"
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "このプリンターではまだテスト印刷を利用できません。"
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "タイプ"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight の請求書ドキュメントは利用できません。"
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight の納品書ドキュメントは利用できません。"
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "キャッシャーが見つかりません。"
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "テスト印刷を生成できませんでした。"
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "支払いゲートウェイはPOSチェックアウトでは利用できません。"
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "PrintNode APIキーは、クエリ文字列ではなくリクエストボディで送信する必要があります。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "ja",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "PrintNodeの印刷ジョブには、注文とテンプレートが必要です。"
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print は、raw ペイロードではなく、注文ベースの ePOS-Print ジョブのみを受け付けます。"
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Star Onlineプリンターには、APIキー、有効な stario.online CloudPRNT URL、およびデバイスが必要です。"
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "無効なテンプレートIDです。"
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "注文"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "テンプレート"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Star Online APIキーと有効な stario.online CloudPRNT URL が必要です。"
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "注文が見つからないか、POS注文ではありません。"
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt は有効な ISO 8601 の UTC 日時である必要があります。"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "ja",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "バーコード"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "リレー検証トークンを作成できませんでした。"
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt は有効な ISO 8601 の UTC 日時である必要があります。"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "領収書テンプレートが設定されていません。"
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "printer_id は必須です。"
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "PrintNode APIキーが必要です。"
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "template_id が必要です。"
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "テンプレートが見つかりません。"
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "テンプレートカテゴリのスラッグでフィルタリングします。"
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "リレー検証トークンを作成できませんでした。"
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "キャッシャートークンが一致しません。"
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "見つかりません"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "ゴミ箱に見つかりません"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "テンプレートが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "認証に失敗しました。"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "リレー検証トークンを作成できませんでした。"
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "一時テンプレートファイルの作成に失敗しました。"
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "店舗データの取得に失敗しました。"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "セッションの取り消しに失敗しました。"
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Proは現在スタンドアロンのプラグインです。最新バージョンを%sからダウンロードしてください"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "アラビア語、ヘブライ語、ペルシア語、ウルドゥー語サイト向けの標準レシートの右から左への版です。レイアウトを反転し、RTL 対応のフォントスタックを使用します。"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "スクリプトとスタイルがカスタム支払いテンプレートに干渉する可能性があります。このフォームを使用して問題のあるスクリプトを解除してください。"
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong>はPHP %1$s以上が必要です。<a href=\"%2$s\">更新方法</a>についての詳細をお読みください"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POSテンプレート"
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWTが正しく設定されていません。管理者に連絡してください。"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "注文が見つからないか、POS注文ではありません。"
+          "msgstr": "領収書テンプレートが設定されていません。"
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "注文ステータスの表示名。"
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print は、raw ペイロードではなく、注文ベースの ePOS-Print ジョブのみを受け付けます。"
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ギフトレシート"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "領収書（PDF）をダウンロード"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "領収書番号"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "レシート印刷済み"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "レシートテンプレート #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "合計金額"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "注文印刷用レシートテンプレート"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "PDF Invoices & Packing Slips の請求書 HTML を WP Overnight のドキュメント API 経由で表示します。"
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "80mm プリンター向けの右から左への感熱レシートです。アラビア語、ヘブライ語、ペルシア語、ウルドゥー語向けに列の配置を反転します。アラビア語のコードページ（CP864 または Windows-1256）に対応したプリンターが必要です。注文前にプリンターのマニュアルを確認してください。"
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "領収書（PDF）をダウンロード"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "中央揃えの店舗ヘッダー、太い二重罫線の注文帯、密な商品行を備えたコンパクトなレシート。Standard と同じ必須項目を、より少ない縦スペースで表示します。"
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "テンプレートが見つかりません。"
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "テンプレートが見つかりません。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "申し訳ございません。このテンプレートを編集する権限がありません。"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "有効化する仮想テンプレートIDの配列"
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "一時テンプレートファイルの作成に失敗しました。"
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "レシートテンプレート #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "レシートテンプレート #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "レシートテンプレート #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "感熱レシートテンプレート #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "領収書"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "テンプレート"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "注文"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "販売時点でWooCommerceの注文を受けるためのシンプルなフロントエンド。<a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>が必要です。"
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "幅 58mm の用紙向けの、すっきりしたミニマルな感熱レシート。80mm と同じレイアウトを、32 文字幅に合わせて調整しています。"
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "結果を特定の店舗向けに解決されたテンプレートに限定します。"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "テンプレート一覧をフィルター"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POSテンプレート"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "レポートテンプレート #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "エラー"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "注文が存在しません。"
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "テンプレートが見つかりません。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "テンプレート"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "キッチン"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "バー・チケット"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ギフトレシート"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ユーザー名またはパスワードが無効です。"
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - 部分支払い"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong>は<a href=\"%1$s\">WCPOS Pro %2$s以上</a>が必要です。<a href=\"%3$s\">WCPOS Proをインストールして有効化してください</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong>は<a href=\"%1$s\">WooCommerce %2$s以上</a>が必要です。<a href=\"%3$s\">WooCommerceをインストールして有効化してください</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "stateパラメーターが不足しています。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "州 / 地域"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "最も使用されているものから選択"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "リクエストが多すぎます。後でもう一度お試しください。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "テンプレートファイルに構文エラー（セミコロン、括弧などの欠落）がないか確認してください。"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "認証トークンの生成に失敗しました。"
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "認証トークンの生成に失敗しました。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "無効な認証セッションです。アプリから再度ログインしてください。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "拡張機能を更新できませんでした。もう一度お試しください。"
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "認証トークンの生成に失敗しました。"
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "スクリプトとスタイルがカスタム支払いテンプレートに干渉する可能性があります。このフォームを使用して問題のあるスクリプトを解除してください。"
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "認証に失敗しました。"
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "店舗データの取得に失敗しました。"
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "セッションの取り消しに失敗しました。"
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong>は<a href=\"%1$s\">WooCommerce %2$s以上</a>が必要です。<a href=\"%3$s\">WooCommerceをインストールして有効化してください</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "中央揃えの店舗ヘッダー、太い二重罫線の注文帯、密な商品行を備えたコンパクトなレシート。Standard と同じ必須項目を、より少ない縦スペースで表示します。"
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "すべてのスタイルとスクリプトを無効にする"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "申し訳ございません。このテンプレートを編集する権限がありません。"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ございません。テンプレートを編集する権限がありません。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "詳細感熱レシート (58mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "ギフトレシート"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "全部入りの 58mm レシート: 顧客情報 + 住所、税の内訳、返金、支払い、利用規約、注文バーコード。"
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "幅 58mm の用紙向けの、すっきりしたミニマルな感熱レシート。80mm と同じレイアウトを、32 文字幅に合わせて調整しています。"
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "詳細感熱レシート (80mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "ギフトレシート"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "返品は購入日から30日以内、レシート原本が必要です。商品は未使用で、元の包装のままである必要があります。"
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "サーマルプリンタ（エプソンやスターなど）へ出力します。オフラインで動作します。"
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "この見積書は発行日から30日間有効です。有効期間後は価格が変更される場合があります。これはレシートでも購入確認書でもありません。"
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "見積書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "標準 80mm 用紙向けの、すっきりしたミニマルな感熱レシート。店舗ヘッダー、商品明細、合計、バーコードを表示します。"
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "詳細レシート"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "詳細感熱レシート (58mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "アラビア語、ヘブライ語、ペルシア語、ウルドゥー語サイト向けの標準レシートの右から左への版です。レイアウトを反転し、RTL 対応のフォントスタックを使用します。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "標準 80mm 用紙向けの、すっきりしたミニマルな感熱レシート。店舗ヘッダー、商品明細、合計、バーコードを表示します。"
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "詳細レシート"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "幅 58mm の用紙向けの、すっきりしたミニマルな感熱レシート。80mm と同じレイアウトを、32 文字幅に合わせて調整しています。"
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "中央揃えの店舗ヘッダー、太い二重罫線の注文帯、密な商品行を備えたコンパクトなレシート。Standard と同じ必須項目を、より少ない縦スペースで表示します。"
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "スクリプトとスタイルがカスタム支払いテンプレートに干渉する可能性があります。このフォームを使用して問題のあるスクリプトを解除してください。"
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "シンプル感熱レシート (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "標準 80mm 用紙向けの、すっきりしたミニマルな感熱レシート。店舗ヘッダー、商品明細、合計、バーコードを表示します。"
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "80mm プリンター向けの右から左への感熱レシートです。アラビア語、ヘブライ語、ペルシア語、ウルドゥー語向けに列の配置を反転します。アラビア語のコードページ（CP864 または Windows-1256）に対応したプリンターが必要です。注文前にプリンターのマニュアルを確認してください。"
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "シンプル感熱レシート (80mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "シンプル感熱レシート 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "詳細レシート"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "全部入りの 80mm レシート: 顧客情報 + 住所、税の内訳、返金、支払い、利用規約、注文バーコード。"
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "シンプル感熱レシート 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "標準 80mm 用紙向けの、すっきりしたミニマルな感熱レシート。店舗ヘッダー、商品明細、合計、バーコードを表示します。"
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "全部入りの 58mm レシート: 顧客情報 + 住所、税の内訳、返金、支払い、利用規約、注文バーコード。"
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "80mm プリンター向けの右から左への感熱レシートです。アラビア語、ヘブライ語、ペルシア語、ウルドゥー語向けに列の配置を反転します。アラビア語のコードページ（CP864 または Windows-1256）に対応したプリンターが必要です。注文前にプリンターのマニュアルを確認してください。"
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "シンプル感熱レシート (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "詳細感熱レシート (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "全部入りの 80mm レシート: 顧客情報 + 住所、税の内訳、返金、支払い、利用規約、注文バーコード。"
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "シンプル感熱レシート (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "詳細感熱レシート (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "全部入りの 80mm レシート: 顧客情報 + 住所、税の内訳、返金、支払い、利用規約、注文バーコード。"
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "このPrintNodeプリンターには、APIキーまたはプリンターIDがありません。"
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "申し訳ありませんが、この注文はすでに支払われています。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "注文番号 #%s の領収書をダウンロード"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "この注文には会計スナップショットがありません。"
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "設定"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "テンプレート"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "すべてのスタイルとスクリプトを無効にする"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "このレシートがあれば、30日以内の返品・交換が可能です。"
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "選択されたスタイルを無効にする"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "wp_headを無効にする"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "テンプレートで使用されるすべての変数が定義されていることを確認してください。"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "wp_footerを無効にする"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "wp_headを無効にする"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "選択されたスクリプトを無効にする"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "選択されたスタイルを無効にする"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "顧客"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "申し訳ありませんが、この注文はすでに支払われています。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "支払済み"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "領収書"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ございません。このテンプレートを編集する権限がありません。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "領収書テンプレートエラー"
@@ -59128,19 +59300,9 @@
           "msgstr": "デフォルトの領収書テンプレートにリセットしてみてください。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "template_id が必要です。"
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "エラー"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "領収書"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "領収書テンプレートエラー"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "詳細レシート"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "詳細感熱レシート (58mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "領収書テンプレートが設定されていません。"
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "領収書エラー"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTMLレシートテンプレート #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Mustacheテンプレートの構文エラーです。テンプレートを確認してください。"
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHPレシートテンプレート #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "テンプレート"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "これはレシートではなく、見積書です"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "テンプレートファイルに構文エラー（セミコロン、括弧などの欠落）がないか確認してください。"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "幅の狭い用紙や HTML 対応の感熱プリンター向けの、コンパクトな等幅フォントのレシート。白黒で鮮明に印刷できます。"
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "ユーザー名またはパスワードが無効です。"
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "税額"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustacheテンプレートの構文エラーです。テンプレートを確認してください。"
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "テンプレートの一意識別子（データベース用は数値、仮想用は文字列）。"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "テンプレートで使用されるすべての変数が定義されていることを確認してください。"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "認証セッションが期限切れです。アプリから再度ログインしてください。"
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "すべてのテンプレートタイプ"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "最も使用されているものから選択"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "ユーザー名またはパスワードが無効です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。"
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "テンプレート"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "アラビア語、ヘブライ語、ペルシア語、ウルドゥー語サイト向けの標準レシートの右から左への版です。レイアウトを反転し、RTL 対応のフォントスタックを使用します。"
@@ -60010,19 +60177,14 @@
           "msgstr": "ブラウザの印刷ダイアログを使用して印刷します。サーバー接続が必要でレシートを生成します。"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "この見積書は発行日から30日間有効です。有効期間後は価格が変更される場合があります。これはレシートでも購入確認書でもありません。"
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "認証セッションが期限切れです。アプリから再度ログインしてください。"
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "テンプレートファイルに構文エラー（セミコロン、括弧などの欠落）がないか確認してください。"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "この注文は支払いできません。サポートが必要な場合はお問い合わせください。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWTが正しく設定されていません。管理者に連絡してください。"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "記録用にこのレシートを保管してください。"
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "申し訳ありませんが、この注文は無効で支払いできません。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "このPrintNodeプリンターには、APIキーまたはプリンターIDがありません。"
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "申し訳ありませんが、この注文は無効です。"
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "ユーザー名またはパスワードが無効です。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "エラー"
@@ -60523,6 +60690,11 @@
           "msgstr": "感熱レシートテンプレート（%1$s）#%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。"
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "テンプレートファイルに構文エラー（セミコロン、括弧などの欠落）がないか確認してください。"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "テンプレートで使用されるすべての変数が定義されていることを確認してください。"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "無効なテンプレート言語です。"
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP構文エラー：%s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong>はPHP %1$s以上が必要です。<a href=\"%2$s\">更新方法</a>についての詳細をお読みください"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustacheテンプレートの構文エラーです。テンプレートを確認してください。"
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "領収書エラー"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "領収書テンプレートエラー"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "レシートPDFを生成できませんでした。"
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustacheテンプレートの構文エラーです。テンプレートを確認してください。"
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "領収書テンプレートエラー"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "ユーザー名またはパスワードが無効です。"
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "領収書テンプレートのレンダリングに問題がありました。これは通常、テンプレートコード内の構文エラーや未定義の変数が原因です。"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "申し訳ありませんが、この注文は無効です。"
+          "msgstr": "レシートPDFを生成できませんでした。"
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "POSにアクセスする権限がありません。"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "領収書"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "テンプレート"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "テンプレートが見つかりません。"
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "テンプレートは作成されましたが、生の内容を保存できませんでした。"
         }
       ],
       "concept_hints": [],

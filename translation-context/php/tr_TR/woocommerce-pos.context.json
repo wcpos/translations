@@ -657,6 +657,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Etkinleştirmek için sanal şablon kimlikleri dizisi."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "POS'a özgü fiyatları etkinleştir."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Kasiyer token uyuşmazlığı."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Geçiş doğrulama jetonu oluşturulamadı."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Kimlik doğrulama belirteçleri oluşturulamadı."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Token sağlanmadı."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POS görünürlüğü"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Şablonlar"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Ayarlar"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "E-posta"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Geçersiz e-posta adresi."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro artık bağımsız bir eklenti. En son sürümü %s'den indirin"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Kasiyer bulunamadı."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Sipariş"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Geçersiz şablon ID'si."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Yazdırma işi oluşturulamadı."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Yazdırma işi bulunamadı."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "tr_TR",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Yazdırma işi oluşturulamadı."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Yazdırma işi bulunamadı."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Bu yazıcı için test baskısı henüz kullanılamıyor."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Tür"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight fatura belgesi kullanılamıyor."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight paket fişi belgesi kullanılamıyor."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Kasiyer bulunamadı."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Test baskısı oluşturulamadı."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Ödeme ağ geçidi POS ödemesi için kullanılamıyor."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "PrintNode API anahtarı sorgu dizesinde değil, istek gövdesinde gönderilmelidir."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "tr_TR",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "tr_TR",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "PrintNode yazdırma işleri için bir sipariş ve bir şablon gerekir."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print yalnızca sipariş tabanlı ePOS-Print işleri kabul eder, ham yükleri kabul etmez."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Star Online yazıcılar için bir API anahtarı, geçerli bir stario.online CloudPRNT URL'si ve bir cihaz gerekir."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Geçersiz şablon ID'si."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Sipariş"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Şablon"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Bir Star Online API anahtarı ve geçerli bir stario.online CloudPRNT URL'si gereklidir."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Sipariş bulunamadı veya POS siparişi değil."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt geçerli bir ISO 8601 UTC tarihi olmalıdır."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "tr_TR",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Barkod"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Geçiş doğrulama jetonu oluşturulamadı."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt geçerli bir ISO 8601 UTC tarihi olmalıdır."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Fiş şablonu ayarlanmamış."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "Bir printer_id gerekli."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "Bir PrintNode API anahtarı gereklidir."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "Bir template_id gereklidir."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Şablon bulunamadı."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Şablon kategori slug'ine göre filtrele."
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Geçiş doğrulama jetonu oluşturulamadı."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Kasiyer token uyuşmazlığı."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Bulunamadı"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Çöp Kutusunda Bulunamadı"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Şablon bulunamadı."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Kimlik doğrulama başarısız."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Geçiş doğrulama jetonu oluşturulamadı."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Geçici şablon dosyası oluşturulamadı."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Mağaza verileri alınamadı."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Oturum iptal edilemedi."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro artık bağımsız bir eklenti. En son sürümü %s'den indirin"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Standart Fiş'in Arapça, İbranice, Farsça ve Urduca siteler için sağdan sola sürümü. Düzeni aynalar ve RTL dostu bir yazı tipi yığını kullanır."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Betikler ve stiller özel ödeme şablonuyla çakışabilir, bu formu kullanarak sorunlu betikleri devre dışı bırakın."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> PHP %1$s veya daha üstünü gerektirir. <a href=\"%2$s\">nasıl güncelleyebileceğiniz</a> hakkında daha fazla bilgi edinin"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS Şablonları"
+          "msgstr": "#%s numaralı siparişin fişini indir"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT düzgün yapılandırılmamış, lütfen yönetici ile iletişime geçin"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Sipariş bulunamadı veya POS siparişi değil."
+          "msgstr": "Fiş şablonu ayarlanmamış."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Sipariş durumunun görünen adı."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print yalnızca sipariş tabanlı ePOS-Print işleri kabul eder, ham yükleri kabul etmez."
+          "msgstr": "#%s numaralı siparişin fişini indir"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Hediye Faturası"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Fişi indir (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Fiş Numarası"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Fiş Yazdırıldı"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Fiş Şablonu #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "TOPLAM"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Siparişleri yazdırmak için fiş şablonları"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "PDF Invoices & Packing Slips fatura HTML'sini WP Overnight belge API'si üzerinden oluşturur."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "80mm yazıcılar için sağdan sola termal fiş. Sütun hizalarını Arapça, İbranice, Farsça ve Urduca için aynalar. Arapça kod sayfasını (CP864 veya Windows-1256) destekleyen bir yazıcı gerektirir — sipariş vermeden önce yazıcınızın kılavuzunu kontrol edin."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Fişi indir (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Ortalanmış mağaza başlığı, kalın çift çizgili sipariş bandı ve sık ürün satırlarıyla kompakt fiş. Standartla aynı temel içerik, daha az dikey alan."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Şablon bulunamadı."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Şablonlar"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Şablonlar"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Şablon bulunamadı."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Şablonlar"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Üzgünüz, bu şablonu düzenleyemezsiniz."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Etkinleştirmek için sanal şablon kimlikleri dizisi."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Geçici şablon dosyası oluşturulamadı."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Fiş Şablonu #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Fiş Şablonu #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Fiş Şablonu #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Termal Fiş Şablonu #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Şablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Şablon"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Şablonlar"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Rapor"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Şablonlar"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Sipariş"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Satış Noktasında WooCommerce siparişleri almak için basit bir ön yüz. <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a> gerektirir."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Dar 58mm kağıt için temiz, minimal termal fiş. 80mm ile aynı düzen, 32 karakter genişliğine göre ayarlanmış."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Sonuçları belirli bir mağaza için çözümlenen şablonlarla sınırla."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Şablon Listesini Filtrele"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS Şablonları"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Rapor Şablonu #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Hata"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Sipariş mevcut değil."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Şablon bulunamadı."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Şablonlar"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "MUTFAK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Bar Kartı"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Hediye Faturası"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Geçersiz kullanıcı adı veya şifre."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Kısmi Ödeme"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> <a href=\"%1$s\">WCPOS Pro %2$s veya üstünü</a> gerektirir. Lütfen <a href=\"%3$s\">WCPOS Pro'yu yükleyin ve etkinleştirin</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> <a href=\"%1$s\">WooCommerce %2$s veya üstünü</a> gerektirir. Lütfen <a href=\"%3$s\">WooCommerce'i yükleyin ve etkinleştirin</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Eksik durum parametresi."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Eyalet / Bölge"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Uzantılar yenilenemedi. Lütfen tekrar deneyin."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Varsayılan makbuz şablonuna sıfırlamayı deneyin"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Çok fazla istek. Lütfen daha sonra tekrar deneyin."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Uzantılar yenilenemedi. Lütfen tekrar deneyin."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Varsayılan makbuz şablonuna sıfırlamayı deneyin"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "En çok kullanılanlardan seçin"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Çok fazla istek. Lütfen daha sonra tekrar deneyin."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Uzantılar yenilenemedi. Lütfen tekrar deneyin."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Üzgünüz, bu sipariş görüntülenemiyor. Sipariş anahtarı eksik ya da geçersiz."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Uzantılar yenilenemedi. Lütfen tekrar deneyin."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Şablon dosyasını sözdizimi hataları için kontrol edin (eksik noktalı virgüller, parantezler vb.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Kimlik doğrulama belirteçleri oluşturulamadı."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Kimlik doğrulama belirteçleri oluşturulamadı."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Geçersiz kimlik doğrulama oturumu. Lütfen uygulamadan tekrar giriş yapmayı deneyin."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Uzantılar yenilenemedi. Lütfen tekrar deneyin."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Kimlik doğrulama belirteçleri oluşturulamadı."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Betikler ve stiller özel ödeme şablonuyla çakışabilir, bu formu kullanarak sorunlu betikleri devre dışı bırakın."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "Tamam"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Kimlik doğrulama başarısız."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Mağaza verileri alınamadı."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Oturum iptal edilemedi."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> <a href=\"%1$s\">WooCommerce %2$s veya üstünü</a> gerektirir. Lütfen <a href=\"%3$s\">WooCommerce'i yükleyin ve etkinleştirin</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Ortalanmış mağaza başlığı, kalın çift çizgili sipariş bandı ve sık ürün satırlarıyla kompakt fiş. Standartla aynı temel içerik, daha az dikey alan."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Tüm Stil ve Betikleri Devre Dışı Bırak"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Üzgünüz, bu sipariş görüntülenemiyor. Sipariş anahtarı eksik ya da geçersiz."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Üzgünüz, bu şablonu düzenleyemezsiniz."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, şablonları düzenleyemezsiniz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Termal Fiş (58mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Hediye Faturası"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Tüm müşteri + adresler, vergi dökümü, iadeler, ödemeler, şartlar ve sipariş barkodu içeren kapsamlı 58mm fiş."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Dar 58mm kağıt için temiz, minimal termal fiş. 80mm ile aynı düzen, 32 karakter genişliğine göre ayarlanmış."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Termal Fiş (80mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Hediye Faturası"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "İade, orijinal fişle birlikte 30 gün içinde kabul edilir. Ürünler kullanılmamış ve orijinal ambalajında olmalıdır."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Epson veya Star gibi termal yazıcılara doğrudan çıktı gönderir. Çevrimdışı çalışır."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Bu teklif, düzenlendiği tarihten itibaren 30 gün geçerlidir. Fiyatlar geçerlilik süresi sonunda değişebilir. Bu bir fiş veya satın alma onayı değildir."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Teklif"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Standart 80mm kağıt için temiz, minimal termal fiş. Mağaza başlığı, satır ürünleri, toplamlar ve barkod."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Fiş"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ayrıntılı Termal Fiş (58mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Standart Fiş'in Arapça, İbranice, Farsça ve Urduca siteler için sağdan sola sürümü. Düzeni aynalar ve RTL dostu bir yazı tipi yığını kullanır."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Standart 80mm kağıt için temiz, minimal termal fiş. Mağaza başlığı, satır ürünleri, toplamlar ve barkod."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Ayrıntılı Fiş"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Dar 58mm kağıt için temiz, minimal termal fiş. 80mm ile aynı düzen, 32 karakter genişliğine göre ayarlanmış."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Ortalanmış mağaza başlığı, kalın çift çizgili sipariş bandı ve sık ürün satırlarıyla kompakt fiş. Standartla aynı temel içerik, daha az dikey alan."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Betikler ve stiller özel ödeme şablonuyla çakışabilir, bu formu kullanarak sorunlu betikleri devre dışı bırakın."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Basit Termal Fiş (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Standart 80mm kağıt için temiz, minimal termal fiş. Mağaza başlığı, satır ürünleri, toplamlar ve barkod."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "80mm yazıcılar için sağdan sola termal fiş. Sütun hizalarını Arapça, İbranice, Farsça ve Urduca için aynalar. Arapça kod sayfasını (CP864 veya Windows-1256) destekleyen bir yazıcı gerektirir — sipariş vermeden önce yazıcınızın kılavuzunu kontrol edin."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Basit Termal Fiş (80mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Basit Termal Fiş 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Fiş"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Tüm müşteri + adresler, vergi dökümü, iadeler, ödemeler, şartlar ve sipariş barkodu içeren kapsamlı 80mm fiş."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Basit Termal Fiş 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Standart 80mm kağıt için temiz, minimal termal fiş. Mağaza başlığı, satır ürünleri, toplamlar ve barkod."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Tüm müşteri + adresler, vergi dökümü, iadeler, ödemeler, şartlar ve sipariş barkodu içeren kapsamlı 58mm fiş."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "80mm yazıcılar için sağdan sola termal fiş. Sütun hizalarını Arapça, İbranice, Farsça ve Urduca için aynalar. Arapça kod sayfasını (CP864 veya Windows-1256) destekleyen bir yazıcı gerektirir — sipariş vermeden önce yazıcınızın kılavuzunu kontrol edin."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Basit Termal Fiş (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Termal Fiş (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Tüm müşteri + adresler, vergi dökümü, iadeler, ödemeler, şartlar ve sipariş barkodu içeren kapsamlı 80mm fiş."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Basit Termal Fiş (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Termal Fiş (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Tüm müşteri + adresler, vergi dökümü, iadeler, ödemeler, şartlar ve sipariş barkodu içeren kapsamlı 80mm fiş."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Bu PrintNode yazıcısında API anahtarı veya yazıcı kimliği eksik."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Üzgünüz, bu sipariş zaten ödendi."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "#%s numaralı siparişin fişini indir"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Bu sipariş için mali anlık görüntü bulunamadı."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Ayarlar"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Şablon"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Tüm Stil ve Betikleri Devre Dışı Bırak"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Varsayılan makbuz şablonuna sıfırlamayı deneyin"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Bu fiş ile ürünler 30 gün içinde iade veya değişim yapılabilir."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Seçili Stilleri Devre Dışı Bırak"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "wp_head'i Devre Dışı Bırak"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Şablonda kullanılan tüm değişkenlerin tanımlandığından emin olun"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "wp_footer'ı Devre Dışı Bırak"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "wp_head'i Devre Dışı Bırak"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Seçili Betikleri Devre Dışı Bırak"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Seçili Stilleri Devre Dışı Bırak"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Müşteri"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Üzgünüz, bu sipariş zaten ödendi."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Ödendi"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Üzgünüz, bu sipariş görüntülenemiyor. Sipariş anahtarı eksik ya da geçersiz."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Rapor"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu şablonu düzenleyemezsiniz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Makbuz Şablon Hatası"
@@ -59128,19 +59300,9 @@
           "msgstr": "Varsayılan makbuz şablonuna sıfırlamayı deneyin"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "Bir template_id gereklidir."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Hata"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Rapor"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Makbuz Şablon Hatası"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ayrıntılı Fiş"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ayrıntılı Termal Fiş (58mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Fiş şablonu ayarlanmamış."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Makbuz Hatası"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML Fiş Şablonu #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Mustache şablon söz dizimi hatası. Şablonunuzu kontrol edin."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP Fiş Şablonu #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Şablon"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Bu bir teklif, fiş değil"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Şablon dosyasını sözdizimi hataları için kontrol edin (eksik noktalı virgüller, parantezler vb.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Dar kağıt veya HTML destekli termal yazıcılar için tasarlanmış kompakt monospace fiş. Siyah beyaz temiz basılır."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "Vergi"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache şablon söz dizimi hatası. Şablonunuzu kontrol edin."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Şablon için benzersiz tanımlayıcı (veritabanı için sayısal, sanal için metin)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Şablonda kullanılan tüm değişkenlerin tanımlandığından emin olun"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Kimlik doğrulama oturumu sona erdi. Lütfen uygulamadan tekrar giriş yapmayı deneyin."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Tüm Şablon Türleri"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "En çok kullanılanlardan seçin"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Üzgünüz, bu sipariş görüntülenemiyor. Sipariş anahtarı eksik ya da geçersiz."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Şablon"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Standart Fiş'in Arapça, İbranice, Farsça ve Urduca siteler için sağdan sola sürümü. Düzeni aynalar ve RTL dostu bir yazı tipi yığını kullanır."
@@ -60010,19 +60177,14 @@
           "msgstr": "Tarayıcınızın yazdırma iletişim kutusunu kullanarak yazdırır. Fatura oluşturmak için sunucu bağlantısına ihtiyaç duyulur."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Bu teklif, düzenlendiği tarihten itibaren 30 gün geçerlidir. Fiyatlar geçerlilik süresi sonunda değişebilir. Bu bir fiş veya satın alma onayı değildir."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Kimlik doğrulama oturumu sona erdi. Lütfen uygulamadan tekrar giriş yapmayı deneyin."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Şablon dosyasını sözdizimi hataları için kontrol edin (eksik noktalı virgüller, parantezler vb.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT düzgün yapılandırılmamış, lütfen yönetici ile iletişime geçin"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Lütfen kayıtlarınız için bu fişi saklayın."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Üzgünüz, bu sipariş geçersiz ve ödenemez."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Bu PrintNode yazıcısında API anahtarı veya yazıcı kimliği eksik."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Üzgünüz, bu sipariş geçersiz."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Geçersiz kullanıcı adı veya şifre."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hata"
@@ -60523,6 +60690,11 @@
           "msgstr": "Termal Fiş Şablonu (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Şablon dosyasını sözdizimi hataları için kontrol edin (eksik noktalı virgüller, parantezler vb.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Şablonda kullanılan tüm değişkenlerin tanımlandığından emin olun"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Geçersiz şablon dili."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP sözdizimi hatası: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> PHP %1$s veya daha üstünü gerektirir. <a href=\"%2$s\">nasıl güncelleyebileceğiniz</a> hakkında daha fazla bilgi edinin"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache şablon söz dizimi hatası. Şablonunuzu kontrol edin."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Makbuz Hatası"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Makbuz Şablon Hatası"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Fiş PDF'si oluşturulamadı."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache şablon söz dizimi hatası. Şablonunuzu kontrol edin."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Makbuz Şablon Hatası"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Geçersiz kullanıcı adı veya şifre."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Makbuz şablonu oluşturulurken bir sorun oluştu. Bu genellikle şablon kodunda bir sözdizimi hatası veya tanımsız değişken nedeniyle olur."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Üzgünüz, bu sipariş geçersiz."
+          "msgstr": "Fiş PDF'si oluşturulamadı."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "POS'a erişim izniniz yok."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Rapor"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Şablon"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Şablon bulunamadı."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Şablon oluşturuldu, ancak ham içerik kaydedilemedi."
         }
       ],
       "concept_hints": [],

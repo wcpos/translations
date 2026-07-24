@@ -657,6 +657,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Fylki af virtum sniðagnisdómmum til að skipta í."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Virkja sérstök POS verð."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Gjaldkeratákn passar ekki."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Gat ekki búið til gengisstaðfestingarlykilinn."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Mistókst að búa til auðkenningarmerki."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Enginn tákn gefinn."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POS sýnileiki"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Sniðmát"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Stillingar"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "Netfang"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Ógilt netfang."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro er nú sjálfstætt viðbót. Sæktu nýjustu útgáfuna frá %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Gjaldkeri fannst ekki."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Ógilt sniðmáts ID."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Ekki tókst að búa til prentverk."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Prentverk fannst ekki."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "is_IS",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til prentverk."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Prentverk fannst ekki."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Prufuprentun er ekki enn í boði fyrir þennan prentara."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Tegund"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight reikningsskjalið er ekki tiltækt."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "WP Overnight fylgiseðillinn er ekki tiltækur."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Gjaldkeri fannst ekki."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til prufuprentun."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Greiðslugáttin er ekki tiltæk fyrir POS-afgreiðslu."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "PrintNode API-lykillinn verður að vera sendur í meginmáli beiðninnar, ekki í fyrirspurnarstrengnum."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "is_IS",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "is_IS",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "PrintNode prentverk þurfa pöntun og sniðmát."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print tekur aðeins við ePOS-Print prentverkum sem byggjast á pöntunum, ekki hráum gagnapökkum."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Star Online-prentarar þurfa API-lykil, gilda stario.online CloudPRNT-vefslóð og tæki."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Ógilt sniðmáts ID."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Sniðmát"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Star Online API-lykill og gild stario.online CloudPRNT-vefslóð eru nauðsynleg."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Pöntun fannst ekki eða er ekki POS-pöntun."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt verður að vera gilt ISO 8601 UTC-dagsetning."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "is_IS",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Strikamerki"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Gat ekki búið til gengisstaðfestingarlykilinn."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt verður að vera gilt ISO 8601 UTC-dagsetning."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Ekkert kvittunarsniðmát hefur verið stillt."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "printer_id er nauðsynlegt."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "PrintNode API-lykill er nauðsynlegur."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "template_id er nauðsynlegt."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Sniðmát fannst ekki."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Vel sem eftir slópnum í mallagrúpu."
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Gat ekki búið til gengisstaðfestingarlykilinn."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Gjaldkeratákn passar ekki."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Ekkert fannst"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Ekkert fannst í rusli"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Sniðmát fannst ekki."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Auðkenning mistókst."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Gat ekki búið til gengisstaðfestingarlykilinn."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Tókst ekki að búa til tilraunarkerfisgagnasvæðið."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Mistókst að sækja verslunargögn."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Mistókst að afturkalla lotu."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro er nú sjálfstætt viðbót. Sæktu nýjustu útgáfuna frá %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "RTL-útgáfa af stöðluðu kvittuninni fyrir vefsvæði á arabísku, hebresku, persnesku og úrdú. Speglar uppsetninguna og notar letur með RTL-stuðningi."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skripti og stílar geta truflað sérsniðna greiðslusniðmátið, notaðu þetta form til að fjarlægja vandamálaskript."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> krefst PHP %1$s eða nýrra. Lestu meira um <a href=\"%2$s\">hvernig þú getur uppfært</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS sniðmát"
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT er ekki rétt stillt, vinsamlegast hafðu samband við stjórnanda"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Pöntun fannst ekki eða er ekki POS-pöntun."
+          "msgstr": "Ekkert kvittunarsniðmát hefur verið stillt."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Sýna nafn pöntunarstöðu."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print tekur aðeins við ePOS-Print prentverkum sem byggjast á pöntunum, ekki hráum gagnapökkum."
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Gefs Skeprot"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Saga-númer"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Kvittun prentuð"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Kvittunarsniðmát #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Heildarupplata"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Kvittunarsniðmát fyrir prentun pantana"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Sýnir HTML reikningsins úr PDF Invoices & Packing Slips í gegnum WP Overnight skjala-APIð."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "RTL-hitakvittun fyrir 80 mm prentara. Speglar dálkaaðlögun fyrir arabísku, hebresku, persnesku og úrdú. Krefst prentara sem styður arabíska stafatöflu (CP864 eða Windows-1256) - athugaðu handbók prentarans áður en þú pantar."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Samþjöppuð kvittun með miðjuðu verslunarhaus, feitletruðum tvöföldum pöntunarborða og þéttum vörulínum. Sömu grunnatriði og í Standard, en tekur minna lóðrétt pláss."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Sniðmát fannst ekki."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Sniðmát fannst ekki."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Því miður, þú hefur ekki leyfi til að breyta þessu skjali."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Fylki af virtum sniðagnisdómmum til að skipta í."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Tókst ekki að búa til tilraunarkerfisgagnasvæðið."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Kvittunarsniðmát #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Kvittunarsniðmát #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Kvittunarsniðmát #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Hitakvittunarsniðmát #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Áskrift"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Sniðmát"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Einfalt framendi fyrir að taka við WooCommerce pöntunum á sölustað. Krefst <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Hrein, lágmörkuð hitakvittun fyrir mjóan 58 mm pappír. Sama uppsetning og 80 mm, aðlöguð að 32 stafa breidd."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Takmarka niðurstöður við sniðmát sem eru leyst fyrir tiltekna verslun."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Sía lista yfir sniðmát"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS sniðmát"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Skýrslusniðmát #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Villa"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Pöntun er ekki til."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Sniðmát fannst ekki."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sniðmát"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "ELDHÚS"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Barfbíll"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Gefs Skeprot"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Ógilt notandanafn eða lykilorð."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Hlutagreiðsla"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> krefst <a href=\"%1$s\">WCPOS Pro %2$s eða nýrra</a>. Vinsamlegast <a href=\"%3$s\">settu upp og virkjaðu WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> krefst <a href=\"%1$s\">WooCommerce %2$s eða nýrra</a>. Vinsamlegast <a href=\"%3$s\">settu upp og virkjaðu WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Vantar state breytu."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Svæði / hérað"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Ekki tókst að endurnýja viðbæturnar. Reyndu aftur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Reyndu að endurstilla á sjálfgefið kvittunarsniðmát"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Of margar beiðnir. Vinsamlegast reyndu aftur síðar."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Ekki tókst að endurnýja viðbæturnar. Reyndu aftur."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Reyndu að endurstilla á sjálfgefið kvittunarsniðmát"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Veldu úr þeim mest notuðu"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Of margar beiðnir. Vinsamlegast reyndu aftur síðar."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Ekki tókst að endurnýja viðbæturnar. Reyndu aftur."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Því miður getur þessi áskrift ekki verið borin fram. Áskriftarmiði er ótæma eða ógilt."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Ekki tókst að endurnýja viðbæturnar. Reyndu aftur."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Athugaðu sniðmátaskrána fyrir setningafræðivillur (vantar semíkommu, sviga, o.s.frv.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Mistókst að búa til auðkenningarmerki."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Mistókst að búa til auðkenningarmerki."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Ógild auðkenningarlota. Vinsamlegast reyndu að skrá þig inn aftur í appinu."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Ekki tókst að endurnýja viðbæturnar. Reyndu aftur."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Mistókst að búa til auðkenningarmerki."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Skripti og stílar geta truflað sérsniðna greiðslusniðmátið, notaðu þetta form til að fjarlægja vandamálaskript."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "Í lagi"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Auðkenning mistókst."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Mistókst að sækja verslunargögn."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Mistókst að afturkalla lotu."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> krefst <a href=\"%1$s\">WooCommerce %2$s eða nýrra</a>. Vinsamlegast <a href=\"%3$s\">settu upp og virkjaðu WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með miðjuðu verslunarhaus, feitletruðum tvöföldum pöntunarborða og þéttum vörulínum. Sömu grunnatriði og í Standard, en tekur minna lóðrétt pláss."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Slökkva á öllum stílum og skriptum"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Því miður getur þessi áskrift ekki verið borin fram. Áskriftarmiði er ótæma eða ógilt."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Því miður, þú hefur ekki leyfi til að breyta þessu skjali."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Því miður, þú hefur ekki leyfi til að breyta skjölum."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ítarleg hitakvittun (58mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Gefs Skeprot"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Allt-í-einu 58 mm kvittun: allar upplýsingar um viðskiptavin og heimilisföng, skattaf sundurliðun, endurgreiðslur, greiðslur, skilmála og pöntunarstrikamerki."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir mjóan 58 mm pappír. Sama uppsetning og 80 mm, aðlöguð að 32 stafa breidd."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Ítarleg hitakvittun (80mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Gefs Skeprot"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Skil samþykkt innan 30 daga gegn upprunalegum kvittun. Vörur verða að vera ónotaðar og í upprunalegum umbúðum."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Sendir úttak beint til hitaþrotaprentara. Virkar án netþessari."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Þetta tilboð gildir í 30 daga frá útgáfudegi. Verð geta breyst eftir gildistíma. Þetta er hvorki kvittun né staðfesting á kaupum."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Tilboð"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir staðlaðan 80 mm pappír. Verslunarhaus, vörulínur, samtölur og strikamerki."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ítarleg kvittun"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ítarleg hitakvittun (58mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "RTL-útgáfa af stöðluðu kvittuninni fyrir vefsvæði á arabísku, hebresku, persnesku og úrdú. Speglar uppsetninguna og notar letur með RTL-stuðningi."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir staðlaðan 80 mm pappír. Verslunarhaus, vörulínur, samtölur og strikamerki."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Ítarleg kvittun"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir mjóan 58 mm pappír. Sama uppsetning og 80 mm, aðlöguð að 32 stafa breidd."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með miðjuðu verslunarhaus, feitletruðum tvöföldum pöntunarborða og þéttum vörulínum. Sömu grunnatriði og í Standard, en tekur minna lóðrétt pláss."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Skripti og stílar geta truflað sérsniðna greiðslusniðmátið, notaðu þetta form til að fjarlægja vandamálaskript."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Einföld hitakvittun (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir staðlaðan 80 mm pappír. Verslunarhaus, vörulínur, samtölur og strikamerki."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "RTL-hitakvittun fyrir 80 mm prentara. Speglar dálkaaðlögun fyrir arabísku, hebresku, persnesku og úrdú. Krefst prentara sem styður arabíska stafatöflu (CP864 eða Windows-1256) - athugaðu handbók prentarans áður en þú pantar."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Einföld hitakvittun (80mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Einföld hitakvittun 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ítarleg kvittun"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Allt-í-einu 80 mm kvittun: allar upplýsingar um viðskiptavin og heimilisföng, skattaf sundurliðun, endurgreiðslur, greiðslur, skilmála og pöntunarstrikamerki."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Einföld hitakvittun 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Hrein, lágmörkuð hitakvittun fyrir staðlaðan 80 mm pappír. Verslunarhaus, vörulínur, samtölur og strikamerki."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Allt-í-einu 58 mm kvittun: allar upplýsingar um viðskiptavin og heimilisföng, skattaf sundurliðun, endurgreiðslur, greiðslur, skilmála og pöntunarstrikamerki."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "RTL-hitakvittun fyrir 80 mm prentara. Speglar dálkaaðlögun fyrir arabísku, hebresku, persnesku og úrdú. Krefst prentara sem styður arabíska stafatöflu (CP864 eða Windows-1256) - athugaðu handbók prentarans áður en þú pantar."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Einföld hitakvittun (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ítarleg hitakvittun (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Allt-í-einu 80 mm kvittun: allar upplýsingar um viðskiptavin og heimilisföng, skattaf sundurliðun, endurgreiðslur, greiðslur, skilmála og pöntunarstrikamerki."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Einföld hitakvittun (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Ítarleg hitakvittun (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Allt-í-einu 80 mm kvittun: allar upplýsingar um viðskiptavin og heimilisföng, skattaf sundurliðun, endurgreiðslur, greiðslur, skilmála og pöntunarstrikamerki."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Þessi PrintNode-prentari vantar API-lykil eða prentarauðkenni."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Fyrirgefðu, þessi pöntun hefur þegar verið greidd."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Sækja kvittun fyrir pöntun #%s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Engin fiscal snapshot fyrir þessa áskrift."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Stillingar"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Sniðmát"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Slökkva á öllum stílum og skriptum"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Reyndu að endurstilla á sjálfgefið kvittunarsniðmát"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Vörur má skila eða skipta innan 30 daga með þessari kvittun."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Slökkva á völdum stílum"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Slökkva á wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Gakktu úr skugga um að allar breytur sem notaðar eru í sniðmátinu séu skilgreindar"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Slökkva á wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Slökkva á wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Slökkva á völdum skriptum"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Slökkva á völdum stílum"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Viðskiptavinur"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Fyrirgefðu, þessi pöntun hefur þegar verið greidd."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Greitt"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Því miður getur þessi áskrift ekki verið borin fram. Áskriftarmiði er ótæma eða ógilt."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Áskrift"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Því miður, þú hefur ekki leyfi til að breyta þessu skjali."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Villa í kvittunarsniðmáti"
@@ -59128,19 +59300,9 @@
           "msgstr": "Reyndu að endurstilla á sjálfgefið kvittunarsniðmát"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "template_id er nauðsynlegt."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Villa"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Áskrift"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Villa í kvittunarsniðmáti"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Ítarleg kvittun"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Ítarleg hitakvittun (58mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Ekkert kvittunarsniðmát hefur verið stillt."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Villa í kvittun"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML-kvittunarsniðmát #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Setningafræðivilla í Mustache-sniðmáti. Skoðaðu sniðmátið þitt."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP-kvittunarsniðmát #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Sniðmát"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Þetta er tilboð, ekki kvittun"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Athugaðu sniðmátaskrána fyrir setningafræðivillur (vantar semíkommu, sviga, o.s.frv.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Samþjöppuð kvittun með monospace-letri fyrir mjóan pappír eða HTML-samhæfða hitaprentara. Prentast hreint í svart-hvítu."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Ógilt notandanafn eða lykilorð."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "VSK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Setningafræðivilla í Mustache-sniðmáti. Skoðaðu sniðmátið þitt."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Einstakur auðkenni fyrir sniðmát (tölulegt fyrir gagnagrunn, strengur fyrir sýndarsnið)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Gakktu úr skugga um að allar breytur sem notaðar eru í sniðmátinu séu skilgreindar"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Auðkenningarlota rann út. Vinsamlegast reyndu að skrá þig inn aftur í appinu."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Allar tegundir sniðmáta"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Veldu úr þeim mest notuðu"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Ógilt notandanafn eða lykilorð."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Því miður getur þessi áskrift ekki verið borin fram. Áskriftarmiði er ótæma eða ógilt."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Sniðmát"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "RTL-útgáfa af stöðluðu kvittuninni fyrir vefsvæði á arabísku, hebresku, persnesku og úrdú. Speglar uppsetninguna og notar letur með RTL-stuðningi."
@@ -60010,19 +60177,14 @@
           "msgstr": "Prentar með svæðisprentarferðina. Krefjast tengingar við server til að útbúa viðmótsgjaldið."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Þetta tilboð gildir í 30 daga frá útgáfudegi. Verð geta breyst eftir gildistíma. Þetta er hvorki kvittun né staðfesting á kaupum."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Auðkenningarlota rann út. Vinsamlegast reyndu að skrá þig inn aftur í appinu."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Athugaðu sniðmátaskrána fyrir setningafræðivillur (vantar semíkommu, sviga, o.s.frv.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT er ekki rétt stillt, vinsamlegast hafðu samband við stjórnanda"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Vinsamlegast geymdu þessa kvittun til skjalfestingar."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Fyrirgefðu, þessi pöntun er ógild og ekki er hægt að greiða fyrir hana."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Þessi PrintNode-prentari vantar API-lykil eða prentarauðkenni."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Ógilt notandanafn eða lykilorð."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Villa"
@@ -60523,6 +60690,11 @@
           "msgstr": "Hitakvittunarsniðmát (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Athugaðu sniðmátaskrána fyrir setningafræðivillur (vantar semíkommu, sviga, o.s.frv.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Gakktu úr skugga um að allar breytur sem notaðar eru í sniðmátinu séu skilgreindar"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Ógilt sniðmál."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP setningafræðivilla: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> krefst PHP %1$s eða nýrra. Lestu meira um <a href=\"%2$s\">hvernig þú getur uppfært</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Setningafræðivilla í Mustache-sniðmáti. Skoðaðu sniðmátið þitt."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Villa í kvittun"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Villa í kvittunarsniðmáti"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Setningafræðivilla í Mustache-sniðmáti. Skoðaðu sniðmátið þitt."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Villa í kvittunarsniðmáti"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Ógilt notandanafn eða lykilorð."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Það var vandamál við að birta kvittunarsniðmátið. Þetta stafar venjulega af setningafræðivillu eða óskilgreindri breytu í sniðmátakóðanum."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Fyrirgefðu, þessi pöntun er ógild."
+          "msgstr": "Ekki tókst að búa til kvittunar-PDF."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Þú hefur ekki heimild til að fá aðgang að POS."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Áskrift"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sniðmát"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Sniðmát fannst ekki."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Snítiði var búin til en óhæð skráarleggja mistókst."
         }
       ],
       "concept_hints": [],

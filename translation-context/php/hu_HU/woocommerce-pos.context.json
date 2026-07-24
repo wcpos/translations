@@ -657,6 +657,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Engedélyezendő virtuális sablonazonosítók tömbje."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "POS-specifikus árak engedélyezése."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "A pénztáros tokenje nem egyezik."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nem sikerült létrehozni a közvetítő ellenőrző tokent."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nem sikerült hitelesítési tokeneket generálni."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Token nincs megadva."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "POS láthatóság"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Sablonok"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Beállítások"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "E-mail"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Érvénytelen email cím."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "A WCPOS Pro most már önálló bővítmény. Töltse le a legújabb verziót innen: %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "A pénztáros nem található."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Megrendelés"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "Érvénytelen sablonazonosító."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "A nyomtatási feladatot nem sikerült létrehozni."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "A nyomtatási feladat nem található."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "hu_HU",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "A nyomtatási feladatot nem sikerült létrehozni."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "A nyomtatási feladat nem található."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Ehhez a nyomtatóhoz még nem érhető el próbanyomtatás."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Típus"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "A WP Overnight számladokumentum nem érhető el."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "A WP Overnight csomagjegyzék nem érhető el."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "A pénztáros nem található."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Nem sikerült elkészíteni a próbanyomatot."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "A fizetési átjáró nem érhető el a POS-fizetéshez."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "A PrintNode API-kulcsot a kérés törzsében kell elküldeni, nem a lekérdezési sztringben."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "hu_HU",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "hu_HU",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "A PrintNode nyomtatási feladatokhoz rendelés és sablon szükséges."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Az Epson Server Direct Print csak rendelésalapú ePOS-Print feladatokat fogad el, nyers payloadokat nem."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "A Star Online nyomtatókhoz API-kulcs, érvényes stario.online CloudPRNT URL és egy eszköz szükséges."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "Érvénytelen sablonazonosító."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Megrendelés"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Sablon"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Star Online API-kulcsra és érvényes stario.online CloudPRNT URL-re van szükség."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "A rendelés nem található, vagy nem POS-rendelés."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "A date_created_gmt-nek érvényes ISO 8601 UTC dátumnak kell lennie."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "hu_HU",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Vonalkód"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nem sikerült létrehozni a közvetítő ellenőrző tokent."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "A date_created_gmt-nek érvényes ISO 8601 UTC dátumnak kell lennie."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Nincs beállítva nyugtasablon."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "A printer_id megadása kötelező."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "Szükség van egy PrintNode API-kulcsra."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "A template_id megadása kötelező."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "A sablon nem található."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Szűrés sablon kategória slug-jének alapján."
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nem sikerült létrehozni a közvetítő ellenőrző tokent."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "A pénztáros tokenje nem egyezik."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Nem található"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "A lomtárban nem található"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "A sablon nem található."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Hitelesítés sikertelen."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Nem sikerült létrehozni a közvetítő ellenőrző tokent."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Ideiglenes sablonfájl létrehozása sikertelen."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Nem sikerült lekérni az üzlet adatait."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "A munkamenet visszavonása sikertelen."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "A WCPOS Pro most már önálló bővítmény. Töltse le a legújabb verziót innen: %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "A Standard nyugta jobbról balra írt változata arab, héber, perzsa és urdu oldalakhoz. Tükrözi az elrendezést, és RTL-kompatibilis betűkészletet használ."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "A szkriptek és stílusok zavarhatják az egyedi fizetési sablont, használja ezt az űrlapot a problémás szkriptek eltávolításához."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> PHP %1$s vagy újabb verziót igényel. További információ az <a href=\"%2$s\">frissítésről</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "POS sablonok"
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "A JWT nincs megfelelően konfigurálva, kérjük, lépj kapcsolatba az adminisztrátorral"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "A rendelés nem található, vagy nem POS-rendelés."
+          "msgstr": "Nincs beállítva nyugtasablon."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "A rendelés állapotának megjelenítési neve."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Az Epson Server Direct Print csak rendelésalapú ePOS-Print feladatokat fogad el, nyers payloadokat nem."
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ajándék bizonylat"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Értesítésszám"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Nyugta nyomtatva"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Nyugtasablon #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Összesen"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Nyugtasablonok rendelés nyomtatásához"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "A PDF Invoices & Packing Slips számla HTML-jét a WP Overnight dokumentum API-ján keresztül jeleníti meg."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Jobbról balra írt hőpapíros nyugta 80 mm-es nyomtatókhoz. Tükrözi az oszlopok igazítását arab, héber, perzsa és urdu nyelvhez. Olyan nyomtatót igényel, amely támogatja az arab kódlapot (CP864 vagy Windows-1256) — rendelés előtt ellenőrizd a nyomtató kézikönyvét."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Kompakt nyugta középre igazított üzletfejléccel, félkövér dupla szegélyű rendelési sávval és sűrű tételsorokkal. Ugyanazt tudja, mint a Standard, csak kevesebb függőleges helyen."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "A sablon nem található."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sablonok"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sablonok"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "A sablon nem található."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sablonok"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Sajnálatos módon nincs jogosultsága a sablon szerkesztésére."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Engedélyezendő virtuális sablonazonosítók tömbje."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Ideiglenes sablonfájl létrehozása sikertelen."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Nyugtasablon #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Nyugtasablon #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Nyugtasablon #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Hőnyugtasablon #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Sablon"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Sablon"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sablonok"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Nyugta"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Sablonok"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Megrendelés"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Egyszerű felület a WooCommerce rendelések kezelésére az értékesítési ponton. Szükséges hozzá a <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Tiszta, letisztult hőpapíros nyugta keskeny, 58 mm-es papírhoz. Ugyanaz az elrendezés, mint a 80 mm-es változatnál, 32 karakteres szélességre igazítva."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Korlátozza az eredményeket egy adott üzlethez feloldott sablonokra."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Sablonlista szűrése"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "POS sablonok"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Jelentéssablon #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Hiba"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "A rendelés nem létezik."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "A sablon nem található."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Sablonok"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "KONYHA"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Bárszegnő"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ajándék bizonylat"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Érvénytelen felhasználónév vagy jelszó."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Részleges fizetés"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> a <a href=\"%1$s\">WCPOS Pro %2$s vagy újabb</a> verziót igényli. Kérjük, <a href=\"%3$s\">telepítse és aktiválja a WCPOS Pro-t</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> a <a href=\"%1$s\">WooCommerce %2$s vagy újabb</a> verziót igényli. Kérjük, <a href=\"%3$s\">telepítse és aktiválja a WooCommerce-t</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Hiányzó állapot paraméter."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
+          "msgstr": "A nyugta PDF nem hozható létre."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Állam / régió"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Nem sikerült frissíteni a bővítményeket. Próbálja meg újra."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Próbálja meg visszaállítani az alapértelmezett nyugta sablont"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Túl sok kérés. Kérjük, próbálja újra később."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Nem sikerült frissíteni a bővítményeket. Próbálja meg újra."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Próbálja meg visszaállítani az alapértelmezett nyugta sablont"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Válasszon a leggyakrabban használtak közül"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Túl sok kérés. Kérjük, próbálja újra később."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Nem sikerült frissíteni a bővítményeket. Próbálja meg újra."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Sajnálatos módon ez a megrendelés nem tekinthető meg. A megrendeléskulcs hiányzik vagy érvénytelen."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Nem sikerült frissíteni a bővítményeket. Próbálja meg újra."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Ellenőrizze a sablon fájlt szintaxis hibákra (hiányzó pontosvesszők, zárójelek stb.)."
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Nem sikerült hitelesítési tokeneket generálni."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Nem sikerült hitelesítési tokeneket generálni."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Érvénytelen hitelesítési munkamenet. Kérjük, próbáljon meg újra bejelentkezni az alkalmazásból."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Nem sikerült frissíteni a bővítményeket. Próbálja meg újra."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Nem sikerült hitelesítési tokeneket generálni."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "A szkriptek és stílusok zavarhatják az egyedi fizetési sablont, használja ezt az űrlapot a problémás szkriptek eltávolításához."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Hitelesítés sikertelen."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Nem sikerült lekérni az üzlet adatait."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "A munkamenet visszavonása sikertelen."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> a <a href=\"%1$s\">WooCommerce %2$s vagy újabb</a> verziót igényli. Kérjük, <a href=\"%3$s\">telepítse és aktiválja a WooCommerce-t</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompakt nyugta középre igazított üzletfejléccel, félkövér dupla szegélyű rendelési sávval és sűrű tételsorokkal. Ugyanazt tudja, mint a Standard, csak kevesebb függőleges helyen."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Minden stílus és szkript letiltása"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Sajnálatos módon ez a megrendelés nem tekinthető meg. A megrendeléskulcs hiányzik vagy érvénytelen."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
+          "msgstr": "A nyugta PDF nem hozható létre."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Sajnálatos módon nincs jogosultsága a sablon szerkesztésére."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnálatos módon nincs jogosultsága a sablonok szerkesztésére."
+          "msgstr": "A nyugta PDF nem hozható létre."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Részletes hőpapíros nyugta (58 mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Ajándék bizonylat"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Minden fontosat tartalmazó 58 mm-es nyugta: teljes vevő- és címadatok, adófelbontás, visszatérítések, fizetések, feltételek és rendelés vonalkód."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta keskeny, 58 mm-es papírhoz. Ugyanaz az elrendezés, mint a 80 mm-es változatnál, 32 karakteres szélességre igazítva."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Részletes hőpapíros nyugta (80 mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Ajándék bizonylat"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "30 napon belül visszavesszük az árut az eredeti nyugtával együtt. A termékeknek használatlan állapotban és az eredeti csomagolásban kell lenniük."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "A kimenet közvetlenül terméskinyomtatókhoz, például Epsonhez vagy Starhoz. Működik offline módban is."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Ez az árajánlat a kiállítás dátumától számított 30 napig érvényes. Az árak az érvényességi idő lejárta után változhatnak. Ez nem nyugta és nem vásárlás-visszaigazolás."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Ajánlat"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta szabványos, 80 mm-es papírhoz. Üzletfejléc, tételsorok, végösszegek és vonalkód."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Részletes nyugta"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Részletes hőpapíros nyugta (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "A Standard nyugta jobbról balra írt változata arab, héber, perzsa és urdu oldalakhoz. Tükrözi az elrendezést, és RTL-kompatibilis betűkészletet használ."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta szabványos, 80 mm-es papírhoz. Üzletfejléc, tételsorok, végösszegek és vonalkód."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Részletes nyugta"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta keskeny, 58 mm-es papírhoz. Ugyanaz az elrendezés, mint a 80 mm-es változatnál, 32 karakteres szélességre igazítva."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Kompakt nyugta középre igazított üzletfejléccel, félkövér dupla szegélyű rendelési sávval és sűrű tételsorokkal. Ugyanazt tudja, mint a Standard, csak kevesebb függőleges helyen."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "A szkriptek és stílusok zavarhatják az egyedi fizetési sablont, használja ezt az űrlapot a problémás szkriptek eltávolításához."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Egyszerű hőpapíros nyugta (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta szabványos, 80 mm-es papírhoz. Üzletfejléc, tételsorok, végösszegek és vonalkód."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Jobbról balra írt hőpapíros nyugta 80 mm-es nyomtatókhoz. Tükrözi az oszlopok igazítását arab, héber, perzsa és urdu nyelvhez. Olyan nyomtatót igényel, amely támogatja az arab kódlapot (CP864 vagy Windows-1256) — rendelés előtt ellenőrizd a nyomtató kézikönyvét."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Egyszerű hőpapíros nyugta (80 mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Egyszerű hőpapíros nyugta 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Részletes nyugta"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Minden fontosat tartalmazó 80 mm-es nyugta: teljes vevő- és címadatok, adófelbontás, visszatérítések, fizetések, feltételek és rendelés vonalkód."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Egyszerű hőpapíros nyugta 80 mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Tiszta, letisztult hőpapíros nyugta szabványos, 80 mm-es papírhoz. Üzletfejléc, tételsorok, végösszegek és vonalkód."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Minden fontosat tartalmazó 58 mm-es nyugta: teljes vevő- és címadatok, adófelbontás, visszatérítések, fizetések, feltételek és rendelés vonalkód."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Jobbról balra írt hőpapíros nyugta 80 mm-es nyomtatókhoz. Tükrözi az oszlopok igazítását arab, héber, perzsa és urdu nyelvhez. Olyan nyomtatót igényel, amely támogatja az arab kódlapot (CP864 vagy Windows-1256) — rendelés előtt ellenőrizd a nyomtató kézikönyvét."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Egyszerű hőpapíros nyugta (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Részletes hőpapíros nyugta (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Minden fontosat tartalmazó 80 mm-es nyugta: teljes vevő- és címadatok, adófelbontás, visszatérítések, fizetések, feltételek és rendelés vonalkód."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Egyszerű hőpapíros nyugta (58 mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Részletes hőpapíros nyugta (58 mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Minden fontosat tartalmazó 80 mm-es nyugta: teljes vevő- és címadatok, adófelbontás, visszatérítések, fizetések, feltételek és rendelés vonalkód."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Ehhez a PrintNode nyomtatóhoz hiányzik az API-kulcs vagy a nyomtatóazonosító."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Sajnáljuk, ezt a rendelést már kifizették."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Nyugta letöltése a #%s számú rendeléshez"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Nem található adózati pillanatkép ehhez a rendeléshez."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Beállítások"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Sablon"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Minden stílus és szkript letiltása"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Próbálja meg visszaállítani az alapértelmezett nyugta sablont"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Ezzel a nyugtával a termékek 30 napon belül visszavihetők vagy kicserélhetők."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Kiválasztott stílusok letiltása"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "wp_head letiltása"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Győződjön meg róla, hogy a sablonban használt összes változó definiálva van"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "wp_footer letiltása"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "wp_head letiltása"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Kiválasztott szkriptek letiltása"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Kiválasztott stílusok letiltása"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Ügyfél"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Sajnáljuk, ezt a rendelést már kifizették."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Fizetve"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Sajnálatos módon ez a megrendelés nem tekinthető meg. A megrendeléskulcs hiányzik vagy érvénytelen."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Nyugta"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnálatos módon nincs jogosultsága a sablon szerkesztésére."
+          "msgstr": "A nyugta PDF nem hozható létre."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Nyugta sablon hiba"
@@ -59128,19 +59300,9 @@
           "msgstr": "Próbálja meg visszaállítani az alapértelmezett nyugta sablont"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "A template_id megadása kötelező."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Hiba"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Nyugta"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Nyugta sablon hiba"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Részletes nyugta"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Részletes hőpapíros nyugta (58 mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Nincs beállítva nyugtasablon."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Nyugta hiba"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "HTML nyugtasablon #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Mustache sablonszintaktikai hiba. Ellenőrizd a sablont."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "PHP nyugtasablon #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Sablon"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Ez egy árajánlat, nem nyugta"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Ellenőrizze a sablon fájlt szintaxis hibákra (hiányzó pontosvesszők, zárójelek stb.)."
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Kompakt, monospace betűs nyugta keskeny papírhoz vagy HTML-képes hőnyomtatóhoz. Fekete-fehérben is tisztán nyomtat."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "ÁFA"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache sablonszintaktikai hiba. Ellenőrizd a sablont."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Egyedi azonosító a sablonhoz (szám az adatbázishoz, szöveg a virtuálishoz)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Győződjön meg róla, hogy a sablonban használt összes változó definiálva van"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "A hitelesítési munkamenet lejárt. Kérjük, próbáljon meg újra bejelentkezni az alkalmazásból."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Összes sablontípus"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Válasszon a leggyakrabban használtak közül"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Sajnálatos módon ez a megrendelés nem tekinthető meg. A megrendeléskulcs hiányzik vagy érvénytelen."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Sablon"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "A Standard nyugta jobbról balra írt változata arab, héber, perzsa és urdu oldalakhoz. Tükrözi az elrendezést, és RTL-kompatibilis betűkészletet használ."
@@ -60010,19 +60177,14 @@
           "msgstr": "Nyomtatás a böngésző nyomtatási párbeszédablakával. Hálózati kapcsolat szükséges a számla nyomtatásához."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Ez az árajánlat a kiállítás dátumától számított 30 napig érvényes. Az árak az érvényességi idő lejárta után változhatnak. Ez nem nyugta és nem vásárlás-visszaigazolás."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "A hitelesítési munkamenet lejárt. Kérjük, próbáljon meg újra bejelentkezni az alkalmazásból."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Ellenőrizze a sablon fájlt szintaxis hibákra (hiányzó pontosvesszők, zárójelek stb.)."
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "A JWT nincs megfelelően konfigurálva, kérjük, lépj kapcsolatba az adminisztrátorral"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Kérjük, őrizze meg ezt a nyugtát."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Sajnáljuk, ez a rendelés érvénytelen és nem fizethető ki."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Ehhez a PrintNode nyomtatóhoz hiányzik az API-kulcs vagy a nyomtatóazonosító."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Érvénytelen felhasználónév vagy jelszó."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
+          "msgstr": "A nyugta PDF nem hozható létre."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Hiba"
@@ -60523,6 +60690,11 @@
           "msgstr": "Hőnyugtasablon (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Ellenőrizze a sablon fájlt szintaxis hibákra (hiányzó pontosvesszők, zárójelek stb.)."
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Győződjön meg róla, hogy a sablonban használt összes változó definiálva van"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Érvénytelen sablon nyelv."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "PHP szintaxis hiba: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> PHP %1$s vagy újabb verziót igényel. További információ az <a href=\"%2$s\">frissítésről</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache sablonszintaktikai hiba. Ellenőrizd a sablont."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Nyugta hiba"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Nyugta sablon hiba"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "A nyugta PDF nem hozható létre."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Mustache sablonszintaktikai hiba. Ellenőrizd a sablont."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Nyugta sablon hiba"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Érvénytelen felhasználónév vagy jelszó."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Probléma merült fel a nyugta sablon megjelenítése során. Ezt általában szintaxis hiba vagy nem definiált változó okozza a sablon kódban."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Sajnáljuk, ez a rendelés érvénytelen."
+          "msgstr": "A nyugta PDF nem hozható létre."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Nincs jogosultsága a POS eléréséhez."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Nyugta"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Sablon"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "A sablon nem található."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "A sablon létrejött, de a nyers tartalom nem tárolható."
         }
       ],
       "concept_hints": [],

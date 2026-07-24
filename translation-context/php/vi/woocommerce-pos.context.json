@@ -657,6 +657,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -680,11 +685,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Mảng ID mẫu ảo cần kích hoạt."
-        },
-        {
-          "msgid": "Enable POS specific prices.",
-          "msgctxt": null,
-          "msgstr": "Kích hoạt giá cụ thể cho POS."
         }
       ],
       "concept_hints": [],
@@ -3423,6 +3423,11 @@
           "msgstr": "Mã thông báo thu ngân không khớp."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo mã thông báo xác minh chuyển tiếp."
+        },
+        {
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Không thể tạo mã xác thực."
@@ -3461,11 +3466,6 @@
           "msgid": "Token not provided.",
           "msgctxt": null,
           "msgstr": "Không cung cấp mã thông báo."
-        },
-        {
-          "msgid": "POS visibility",
-          "msgctxt": null,
-          "msgstr": "Khả năng hiển thị POS"
         }
       ],
       "concept_hints": [],
@@ -3619,14 +3619,14 @@
           "msgstr": "Mẫu"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "POS",
           "msgctxt": null,
           "msgstr": "POS"
-        },
-        {
-          "msgid": "Settings",
-          "msgctxt": null,
-          "msgstr": "Cài đặt"
         }
       ],
       "concept_hints": [],
@@ -9260,6 +9260,11 @@
           "msgstr": "Email"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Invalid email address.",
           "msgctxt": null,
           "msgstr": "Địa chỉ email không hợp lệ."
@@ -9283,11 +9288,6 @@
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro hiện là một plugin độc lập. Tải phiên bản mới nhất từ %s"
-        },
-        {
-          "msgid": "Cashier not found.",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy thu ngân."
         }
       ],
       "concept_hints": [],
@@ -9338,6 +9338,11 @@
           "msgstr": "Đơn hàng"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Invalid template ID.",
           "msgctxt": null,
           "msgstr": "ID mẫu không hợp lệ."
@@ -9366,11 +9371,6 @@
           "msgid": "Print job could not be created.",
           "msgctxt": null,
           "msgstr": "Không thể tạo tác vụ in."
-        },
-        {
-          "msgid": "Print job not found.",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy tác vụ in."
         }
       ],
       "concept_hints": [],
@@ -10603,7 +10603,7 @@
           "includes/API/Print_Jobs_Controller.php:402",
           "includes/API/Print_Jobs_Controller.php:422",
           "includes/API/Print_Jobs_Controller.php:582",
-          "includes/API/Print_Jobs_Controller.php:746"
+          "includes/API/Print_Jobs_Controller.php:788"
         ]
       },
       "source_usage": {
@@ -10693,7 +10693,7 @@
           "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
           "Print job not found.",
           "Print job could not be created.",
-          "Invalid printer token."
+          "The print job is not available in the requested media type."
         ]
       },
       "related_existing_translations": [
@@ -10765,10 +10765,10 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:614",
-          "includes/API/Print_Jobs_Controller.php:915",
-          "includes/API/Print_Jobs_Controller.php:1029",
-          "includes/API/Print_Jobs_Controller.php:1067"
+          "includes/API/Print_Jobs_Controller.php:621",
+          "includes/API/Print_Jobs_Controller.php:958",
+          "includes/API/Print_Jobs_Controller.php:1072",
+          "includes/API/Print_Jobs_Controller.php:1110"
         ]
       },
       "source_usage": {
@@ -10776,8 +10776,8 @@
         "nearby_source_strings": [
           "Print job not found.",
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
-          "Invalid printer token.",
-          "A printer_id is required."
+          "The print job is not available in the requested media type.",
+          "Invalid printer token."
         ]
       },
       "related_existing_translations": [
@@ -10844,12 +10844,12 @@
       "format": "php-po",
       "locale": "vi",
       "entry": {
-        "msgid": "Invalid printer token.",
+        "msgid": "The print job is not available in the requested media type.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:715"
+          "includes/API/Print_Jobs_Controller.php:711"
         ]
       },
       "source_usage": {
@@ -10857,6 +10857,87 @@
         "nearby_source_strings": [
           "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "Print job could not be created.",
+          "Invalid printer token.",
+          "A printer_id is required."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Print job could not be created.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo tác vụ in."
+        },
+        {
+          "msgid": "Print job not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy tác vụ in."
+        },
+        {
+          "msgid": "Test print is not available for this printer yet.",
+          "msgctxt": null,
+          "msgstr": "Máy in này hiện chưa hỗ trợ in thử."
+        },
+        {
+          "msgid": "Type",
+          "msgctxt": null,
+          "msgstr": "Loại"
+        },
+        {
+          "msgid": "The WP Overnight invoice document is not available.",
+          "msgctxt": null,
+          "msgstr": "Tài liệu hóa đơn WP Overnight không khả dụng."
+        },
+        {
+          "msgid": "The WP Overnight packing slip document is not available.",
+          "msgctxt": null,
+          "msgstr": "Tài liệu phiếu đóng gói WP Overnight không khả dụng."
+        },
+        {
+          "msgid": "Cashier not found.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy thu ngân."
+        },
+        {
+          "msgid": "Could not generate the test print.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo bản in thử."
+        },
+        {
+          "msgid": "Payment gateway is not available for POS checkout.",
+          "msgctxt": null,
+          "msgstr": "Cổng thanh toán không khả dụng cho thanh toán POS."
+        },
+        {
+          "msgid": "The PrintNode API key must be sent in the request body, not the query string.",
+          "msgctxt": null,
+          "msgstr": "Khóa API PrintNode phải được gửi trong phần thân yêu cầu, không phải trong chuỗi truy vấn."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "Invalid printer token.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:757"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "A printer_id is required.",
           "PrintNode print jobs require an order and a template."
         ]
@@ -10930,13 +11011,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:856"
+          "includes/API/Print_Jobs_Controller.php:898"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Print job could not be created.",
+          "The print job is not available in the requested media type.",
           "Invalid printer token.",
           "PrintNode print jobs require an order and a template.",
           "Unknown printer."
@@ -11011,7 +11092,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:880"
+          "includes/API/Print_Jobs_Controller.php:923"
         ]
       },
       "source_usage": {
@@ -11092,8 +11173,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:895",
-          "includes/API/Print_Jobs_Controller.php:994"
+          "includes/API/Print_Jobs_Controller.php:938",
+          "includes/API/Print_Jobs_Controller.php:1037"
         ]
       },
       "source_usage": {
@@ -11176,7 +11257,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:944"
+          "includes/API/Print_Jobs_Controller.php:987"
         ]
       },
       "source_usage": {
@@ -11259,7 +11340,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:953"
+          "includes/API/Print_Jobs_Controller.php:996"
         ]
       },
       "source_usage": {
@@ -11342,7 +11423,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:970"
+          "includes/API/Print_Jobs_Controller.php:1013"
         ]
       },
       "source_usage": {
@@ -11423,7 +11504,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1014"
+          "includes/API/Print_Jobs_Controller.php:1057"
         ]
       },
       "source_usage": {
@@ -11504,7 +11585,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1105"
+          "includes/API/Print_Jobs_Controller.php:1148"
         ]
       },
       "source_usage": {
@@ -11596,7 +11677,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1119"
+          "includes/API/Print_Jobs_Controller.php:1162"
         ]
       },
       "source_usage": {
@@ -11677,7 +11758,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1193"
+          "includes/API/Print_Jobs_Controller.php:1237"
         ]
       },
       "source_usage": {
@@ -11758,7 +11839,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1200"
+          "includes/API/Print_Jobs_Controller.php:1244"
         ]
       },
       "source_usage": {
@@ -11767,7 +11848,7 @@
           "Could not generate the test print.",
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Star CloudPRNT does not accept the epos-xml format.",
-          "No relay verification is pending."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload."
         ]
       },
       "related_existing_translations": [
@@ -11839,7 +11920,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1211"
+          "includes/API/Print_Jobs_Controller.php:1255"
         ]
       },
       "source_usage": {
@@ -11847,8 +11928,8 @@
         "nearby_source_strings": [
           "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
           "Epson Server Direct Print requires the epos-xml format.",
-          "No relay verification is pending.",
-          "Sorry, you cannot manage print jobs."
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
+          "No relay verification is pending."
         ]
       },
       "related_existing_translations": [
@@ -11915,12 +11996,12 @@
       "format": "php-po",
       "locale": "vi",
       "entry": {
-        "msgid": "No relay verification is pending.",
+        "msgid": "Star CloudPRNT printers require order-based template jobs or a raw payload.",
         "msgctxt": null,
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1229"
+          "includes/API/Print_Jobs_Controller.php:1267"
         ]
       },
       "source_usage": {
@@ -11928,6 +12009,87 @@
         "nearby_source_strings": [
           "Epson Server Direct Print requires the epos-xml format.",
           "Star CloudPRNT does not accept the epos-xml format.",
+          "No relay verification is pending.",
+          "Sorry, you cannot manage print jobs."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "PrintNode print jobs require an order and a template.",
+          "msgctxt": null,
+          "msgstr": "Công việc in PrintNode cần có đơn hàng và mẫu."
+        },
+        {
+          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgctxt": null,
+          "msgstr": "Epson Server Direct Print chỉ chấp nhận các tác vụ ePOS-Print dựa trên đơn hàng, không chấp nhận payload thô."
+        },
+        {
+          "msgid": "Star Online printers need an API key, a valid stario.online CloudPRNT URL, and a device.",
+          "msgctxt": null,
+          "msgstr": "Máy in Star Online cần có khóa API, một URL CloudPRNT hợp lệ của stario.online và một thiết bị."
+        },
+        {
+          "msgid": "Invalid template ID.",
+          "msgctxt": null,
+          "msgstr": "ID mẫu không hợp lệ."
+        },
+        {
+          "msgid": "Order",
+          "msgctxt": null,
+          "msgstr": "Đơn hàng"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": "Post Type Singular Name",
+          "msgstr": "Mẫu"
+        },
+        {
+          "msgid": "A Star Online API key and a valid stario.online CloudPRNT URL are required.",
+          "msgctxt": null,
+          "msgstr": "Cần có khóa API Star Online và một URL CloudPRNT hợp lệ của stario.online."
+        },
+        {
+          "msgid": "Order not found or is not a POS order.",
+          "msgctxt": null,
+          "msgstr": "Không tìm thấy đơn hàng hoặc đây không phải là đơn hàng POS."
+        },
+        {
+          "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
+          "msgctxt": null,
+          "msgstr": "date_created_gmt phải là ngày UTC hợp lệ theo ISO 8601."
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "normal",
+        "reasons": []
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "vi",
+      "entry": {
+        "msgid": "No relay verification is pending.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [],
+        "references": [
+          "includes/API/Print_Jobs_Controller.php:1285"
+        ]
+      },
+      "source_usage": {
+        "areas": [],
+        "nearby_source_strings": [
+          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "Sorry, you cannot manage print jobs.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas."
         ]
@@ -11959,9 +12121,19 @@
           "msgstr": "Mã vạch"
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo mã thông báo xác minh chuyển tiếp."
+        },
+        {
           "msgid": "date_created_gmt must be a valid ISO 8601 UTC date.",
           "msgctxt": null,
           "msgstr": "date_created_gmt phải là ngày UTC hợp lệ theo ISO 8601."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Chưa cấu hình mẫu biên lai."
         },
         {
           "msgid": "Unique identifier for the cashier (WordPress user ID).",
@@ -11972,16 +12144,6 @@
           "msgid": "A printer_id is required.",
           "msgctxt": null,
           "msgstr": "Cần có printer_id."
-        },
-        {
-          "msgid": "A PrintNode API key is required.",
-          "msgctxt": null,
-          "msgstr": "Cần có khóa API PrintNode."
-        },
-        {
-          "msgid": "A template_id is required.",
-          "msgctxt": null,
-          "msgstr": "Cần có template_id."
         }
       ],
       "concept_hints": [],
@@ -12001,13 +12163,13 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Print_Jobs_Controller.php:1269"
+          "includes/API/Print_Jobs_Controller.php:1325"
         ]
       },
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "Star CloudPRNT does not accept the epos-xml format.",
+          "Star CloudPRNT printers require order-based template jobs or a raw payload.",
           "No relay verification is pending.",
           "Limit result set to products assigned to brand IDs or slugs, separated by commas.",
           "Operator to compare product brand terms."
@@ -13024,7 +13186,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:725"
+          "includes/API/Settings.php:735"
         ]
       },
       "source_usage": {
@@ -13119,7 +13281,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API/Settings.php:736"
+          "includes/API/Settings.php:746"
         ]
       },
       "source_usage": {
@@ -14957,9 +15119,9 @@
           "msgstr": "Không tìm thấy mẫu."
         },
         {
-          "msgid": "Filter by template category slug.",
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
           "msgctxt": null,
-          "msgstr": "Lọc theo danh mục mẫu slug."
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
         }
       ],
       "concept_hints": [],
@@ -17109,6 +17271,11 @@
           "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo mã thông báo xác minh chuyển tiếp."
+        },
+        {
           "msgid": "Cashier token mismatch.",
           "msgctxt": null,
           "msgstr": "Mã thông báo thu ngân không khớp."
@@ -17132,11 +17299,6 @@
           "msgid": "Not Found",
           "msgctxt": null,
           "msgstr": "Không tìm thấy"
-        },
-        {
-          "msgid": "Not found in Trash",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy trong Thùng rác"
         }
       ],
       "concept_hints": [],
@@ -17212,14 +17374,14 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy mẫu."
         }
       ],
       "concept_hints": [],
@@ -17455,6 +17617,11 @@
           "msgstr": "Xác thực thất bại."
         },
         {
+          "msgid": "Could not create a relay verification token.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo mã thông báo xác minh chuyển tiếp."
+        },
+        {
           "msgid": "Failed to create temporary template file.",
           "msgctxt": null,
           "msgstr": "Không tạo được tệp tin mẫu tạm thời."
@@ -17483,11 +17650,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Không thể lấy dữ liệu cửa hàng."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Thu hồi phiên thất bại."
         }
       ],
       "concept_hints": [],
@@ -18194,6 +18356,11 @@
           "msgstr": "POS"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
           "msgctxt": null,
           "msgstr": "WCPOS Pro hiện là một plugin độc lập. Tải phiên bản mới nhất từ %s"
@@ -18227,11 +18394,6 @@
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Phiên bản từ phải sang trái của Biên lai tiêu chuẩn dành cho các site tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Giữ nguyên bố cục và dùng bộ font thân thiện với RTL."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Các script và style có thể gây cản trở cho mẫu thanh toán tùy chỉnh, sử dụng biểu mẫu này để loại bỏ các script có vấn đề."
         }
       ],
       "concept_hints": [],
@@ -18312,9 +18474,9 @@
           "msgstr": "<strong>WCPOS</strong> yêu cầu PHP %1$s trở lên. Đọc thêm thông tin về <a href=\"%2$s\">cách bạn có thể cập nhật</a>"
         },
         {
-          "msgid": "POS Templates",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Mẫu POS"
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
         }
       ],
       "concept_hints": [],
@@ -18580,9 +18742,9 @@
           "msgstr": "JWT không được cấu hình đúng, vui lòng liên hệ quản trị viên"
         },
         {
-          "msgid": "Order not found or is not a POS order.",
+          "msgid": "No receipt template is configured.",
           "msgctxt": null,
-          "msgstr": "Không tìm thấy đơn hàng hoặc đây không phải là đơn hàng POS."
+          "msgstr": "Chưa cấu hình mẫu biên lai."
         }
       ],
       "concept_hints": [],
@@ -20572,9 +20734,9 @@
           "msgstr": "Tên hiển thị của trạng thái đơn hàng."
         },
         {
-          "msgid": "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.",
+          "msgid": "Download receipt for order #%s",
           "msgctxt": null,
-          "msgstr": "Epson Server Direct Print chỉ chấp nhận các tác vụ ePOS-Print dựa trên đơn hàng, không chấp nhận payload thô."
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
         }
       ],
       "concept_hints": [],
@@ -43876,7 +44038,7 @@
         ],
         "references": [
           "includes/Services/Receipt_I18n_Labels.php:186",
-          "includes/Storefront_Receipts.php:127",
+          "includes/Storefront_Receipts.php:138",
           "includes/Templates.php:1256",
           "templates/receipt.php:184"
         ]
@@ -43898,6 +44060,16 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai quà tặng"
+        },
+        {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai (PDF)"
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
         },
         {
           "msgid": "HTML Receipt Template #%d",
@@ -43933,16 +44105,6 @@
           "msgid": "Receipt Number",
           "msgctxt": null,
           "msgstr": "Số hóa đơn"
-        },
-        {
-          "msgid": "Receipt Printed",
-          "msgctxt": null,
-          "msgstr": "Đã in biên lai"
-        },
-        {
-          "msgid": "Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Mẫu hóa đơn #%d"
         }
       ],
       "concept_hints": [],
@@ -44008,6 +44170,11 @@
           "msgstr": "Tổng cộng"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "ABN",
           "msgctxt": null,
           "msgstr": "ABN"
@@ -44031,11 +44198,6 @@
           "msgid": "CPF",
           "msgctxt": null,
           "msgstr": "CPF"
-        },
-        {
-          "msgid": "CUIT",
-          "msgctxt": null,
-          "msgstr": "CUIT"
         }
       ],
       "concept_hints": [],
@@ -47938,7 +48100,7 @@
           "1. %s: Settings group id, 2. %s: Settings key."
         ],
         "references": [
-          "includes/Services/Settings.php:222"
+          "includes/Services/Settings.php:224"
         ]
       },
       "source_usage": {
@@ -48035,7 +48197,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:233"
+          "includes/Services/Settings.php:235"
         ]
       },
       "source_usage": {
@@ -48122,7 +48284,7 @@
           "%s: Settings group id, ie: 'general' or 'checkout'."
         ],
         "references": [
-          "includes/Services/Settings.php:297"
+          "includes/Services/Settings.php:299"
         ]
       },
       "source_usage": {
@@ -48209,7 +48371,7 @@
           "Error message shown when invalid arguments are provided."
         ],
         "references": [
-          "includes/Services/Settings.php:791"
+          "includes/Services/Settings.php:806"
         ]
       },
       "source_usage": {
@@ -48294,7 +48456,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings.php:803"
+          "includes/Services/Settings.php:818"
         ]
       },
       "source_usage": {
@@ -48823,6 +48985,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -48861,11 +49028,6 @@
           "msgid": "Receipt templates for printing orders",
           "msgctxt": null,
           "msgstr": "Mẫu biên lai để in đơn hàng"
-        },
-        {
-          "msgid": "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API.",
-          "msgctxt": null,
-          "msgstr": "Hiển thị HTML hóa đơn của PDF Invoices & Packing Slips qua API tài liệu của WP Overnight."
         }
       ],
       "concept_hints": [],
@@ -48889,7 +49051,7 @@
           "%s: order number."
         ],
         "references": [
-          "includes/Storefront_Receipts.php:129"
+          "includes/Storefront_Receipts.php:140"
         ]
       },
       "source_usage": {
@@ -48920,6 +49082,11 @@
           "msgstr": "Biên lai nhiệt từ phải sang trái cho máy in 80mm. Lật ngược cách canh cột cho tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Yêu cầu máy in hỗ trợ bảng mã tiếng Ả Rập (CP864 hoặc Windows-1256) - hãy kiểm tra sách hướng dẫn của máy in trước khi đặt mua."
         },
         {
+          "msgid": "Download receipt (PDF)",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai (PDF)"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -48948,11 +49115,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
-        },
-        {
-          "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
-          "msgctxt": null,
-          "msgstr": "Biên lai gọn với phần đầu cửa hàng căn giữa, dải đơn hàng in đậm viền đôi và các dòng mặt hàng dày đặc. Giống Standard ở các phần cốt lõi, nhưng tiết kiệm chiều cao hơn."
         }
       ],
       "concept_hints": [],
@@ -49466,14 +49628,14 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
-        },
-        {
-          "msgid": "Template not found.",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy mẫu."
         }
       ],
       "concept_hints": [],
@@ -50237,6 +50399,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -50250,11 +50417,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
         }
       ],
       "concept_hints": [],
@@ -50324,6 +50486,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -50337,11 +50504,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
         }
       ],
       "concept_hints": [],
@@ -50414,6 +50576,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -50422,11 +50589,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Không tìm thấy mẫu."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
         }
       ],
       "concept_hints": [],
@@ -50494,6 +50656,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -50507,11 +50674,6 @@
           "msgid": "Template was created but raw content could not be saved.",
           "msgctxt": null,
           "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
         }
       ],
       "concept_hints": [],
@@ -50654,6 +50816,11 @@
           "msgstr": "Xin lỗi, bạn không được phép chỉnh sửa template này."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -50677,11 +50844,6 @@
           "msgid": "Array of virtual template IDs to enable.",
           "msgctxt": null,
           "msgstr": "Mảng ID mẫu ảo cần kích hoạt."
-        },
-        {
-          "msgid": "Failed to create temporary template file.",
-          "msgctxt": null,
-          "msgstr": "Không tạo được tệp tin mẫu tạm thời."
         }
       ],
       "concept_hints": [],
@@ -52678,14 +52840,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -52768,14 +52930,14 @@
           "msgstr": "Mẫu hóa đơn #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -52853,14 +53015,14 @@
           "msgstr": "Mẫu hóa đơn #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -52938,14 +53100,14 @@
           "msgstr": "Mẫu hóa đơn #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -53033,14 +53195,14 @@
           "msgstr": "Mẫu hóa đơn in nhiệt #%d"
         },
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -53103,14 +53265,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -53188,14 +53350,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Template",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Template",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Template",
@@ -54023,14 +54185,14 @@
       },
       "related_existing_translations": [
         {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
-        },
-        {
           "msgid": "Receipt",
           "msgctxt": null,
           "msgstr": "Hóa đơn"
+        },
+        {
+          "msgid": "Templates",
+          "msgctxt": null,
+          "msgstr": "Mẫu"
         },
         {
           "msgid": "Templates",
@@ -54053,6 +54215,11 @@
           "msgstr": "Đơn hàng"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -54066,11 +54233,6 @@
           "msgid": "A simple front-end for taking WooCommerce orders at the Point of Sale. Requires <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>.",
           "msgctxt": null,
           "msgstr": "Giao diện đơn giản để nhận đơn hàng WooCommerce tại điểm bán hàng. Yêu cầu <a href=\"http://wordpress.org/plugins/woocommerce/\">WooCommerce</a>."
-        },
-        {
-          "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
-          "msgctxt": null,
-          "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 58mm hẹp. Cùng bố cục với 80mm, được điều chỉnh cho độ rộng 32 ký tự."
         }
       ],
       "concept_hints": [],
@@ -54141,6 +54303,11 @@
           "msgstr": "Giới hạn kết quả ở các mẫu được phân giải cho một cửa hàng cụ thể."
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
+        },
+        {
           "msgid": "Filter templates list",
           "msgctxt": null,
           "msgstr": "Lọc danh sách Mẫu"
@@ -54149,11 +54316,6 @@
           "msgid": "POS Templates",
           "msgctxt": null,
           "msgstr": "Mẫu POS"
-        },
-        {
-          "msgid": "Report Template #%d",
-          "msgctxt": null,
-          "msgstr": "Mẫu báo cáo #%d"
         }
       ],
       "concept_hints": [],
@@ -54201,6 +54363,11 @@
           "msgstr": "Lỗi"
         },
         {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
+        },
+        {
           "msgid": "Order does not exist.",
           "msgctxt": null,
           "msgstr": "Đơn hàng không tồn tại."
@@ -54221,6 +54388,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -54229,16 +54401,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Không tìm thấy mẫu."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
-        },
-        {
-          "msgid": "Templates",
-          "msgctxt": null,
-          "msgstr": "Mẫu"
         }
       ],
       "concept_hints": [],
@@ -54290,6 +54452,11 @@
           "msgstr": "Bếp"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Bar Ticket",
           "msgctxt": null,
           "msgstr": "Vé bar"
@@ -54323,11 +54490,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai quà tặng"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
         }
       ],
       "concept_hints": [],
@@ -54387,6 +54549,11 @@
           "msgstr": "POS - Thanh toán một phần"
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -54410,11 +54577,6 @@
           "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
           "msgctxt": null,
           "msgstr": "<strong>WCPOS</strong> yêu cầu <a href=\"%1$s\">WCPOS Pro %2$s trở lên</a>. Vui lòng <a href=\"%3$s\">cài đặt và kích hoạt WCPOS Pro</a>"
-        },
-        {
-          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
-          "msgctxt": null,
-          "msgstr": "<strong>WCPOS</strong> yêu cầu <a href=\"%1$s\">WooCommerce %2$s trở lên</a>. Vui lòng <a href=\"%3$s\">cài đặt và kích hoạt WooCommerce</a>"
         }
       ],
       "concept_hints": [],
@@ -54472,9 +54634,9 @@
           "msgstr": "Thiếu tham số trạng thái."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         },
         {
           "msgid": "Error",
@@ -54552,6 +54714,11 @@
           "msgstr": "Tỉnh / vùng"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -54580,11 +54747,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         }
       ],
       "concept_hints": [
@@ -54658,6 +54820,11 @@
           "msgstr": "Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -54676,11 +54843,6 @@
           "msgid": "This order cannot be paid for. Please contact us if you need assistance.",
           "msgctxt": null,
           "msgstr": "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
-        },
-        {
-          "msgid": "Try resetting to the default receipt template",
-          "msgctxt": null,
-          "msgstr": "Thử đặt lại mẫu hóa đơn mặc định"
         }
       ],
       "concept_hints": [],
@@ -54736,6 +54898,11 @@
           "msgstr": "Quá nhiều yêu cầu. Vui lòng thử lại sau."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại."
@@ -54759,11 +54926,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Thử đặt lại mẫu hóa đơn mặc định"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Chọn từ những cái được sử dụng nhiều nhất"
         }
       ],
       "concept_hints": [],
@@ -54819,6 +54981,11 @@
           "msgstr": "Quá nhiều yêu cầu. Vui lòng thử lại sau."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại."
@@ -54842,11 +55009,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Xin lỗi, không thể xem đơn hàng này. Mã đơn hàng không tồn tại hoặc không hợp lệ."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         }
       ],
       "concept_hints": [],
@@ -54907,6 +55069,11 @@
           "msgstr": "Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -54925,11 +55092,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Kiểm tra tệp tin mẫu để tìm lỗi cú pháp (thiếu dấu chấm phẩy, dấu ngoặc, v.v.)"
-        },
-        {
-          "msgid": "Failed to generate authentication tokens.",
-          "msgctxt": null,
-          "msgstr": "Không thể tạo mã xác thực."
         }
       ],
       "concept_hints": [],
@@ -54982,6 +55144,11 @@
           "msgstr": "Không thể tạo mã xác thực."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -55000,11 +55167,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Authentication required.",
@@ -55077,11 +55239,6 @@
           "msgstr": "Phiên xác thực không hợp lệ. Vui lòng thử đăng nhập lại từ ứng dụng."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "Could not refresh extensions. Please try again.",
           "msgctxt": null,
           "msgstr": "Không thể làm mới các tiện ích mở rộng. Vui lòng thử lại."
@@ -55100,6 +55257,11 @@
           "msgid": "Failed to generate authentication tokens.",
           "msgctxt": null,
           "msgstr": "Không thể tạo mã xác thực."
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "Các script và style có thể gây cản trở cho mẫu thanh toán tùy chỉnh, sử dụng biểu mẫu này để loại bỏ các script có vấn đề."
         }
       ],
       "concept_hints": [],
@@ -55140,6 +55302,11 @@
           "msgstr": "OK"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Authentication failed.",
           "msgctxt": null,
           "msgstr": "Xác thực thất bại."
@@ -55178,11 +55345,6 @@
           "msgid": "Failed to retrieve store data.",
           "msgctxt": null,
           "msgstr": "Không thể lấy dữ liệu cửa hàng."
-        },
-        {
-          "msgid": "Failed to revoke session.",
-          "msgctxt": null,
-          "msgstr": "Thu hồi phiên thất bại."
         }
       ],
       "concept_hints": [],
@@ -55238,6 +55400,11 @@
           "msgstr": "<strong>WCPOS</strong> yêu cầu <a href=\"%1$s\">WooCommerce %2$s trở lên</a>. Vui lòng <a href=\"%3$s\">cài đặt và kích hoạt WooCommerce</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -55261,11 +55428,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Biên lai gọn với phần đầu cửa hàng căn giữa, dải đơn hàng in đậm viền đôi và các dòng mặt hàng dày đặc. Giống Standard ở các phần cốt lõi, nhưng tiết kiệm chiều cao hơn."
-        },
-        {
-          "msgid": "Disable All Styles and Scripts",
-          "msgctxt": null,
-          "msgstr": "Vô hiệu hóa tất cả Styles và Scripts"
         }
       ],
       "concept_hints": [],
@@ -55327,9 +55489,9 @@
           "msgstr": "Xin lỗi, không thể xem đơn hàng này. Mã đơn hàng không tồn tại hoặc không hợp lệ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         },
         {
           "msgid": "Error",
@@ -55432,9 +55594,9 @@
           "msgstr": "Xin lỗi, bạn không được phép chỉnh sửa template này."
         },
         {
-          "msgid": "Sorry, you are not allowed to edit templates.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, bạn không được phép chỉnh sửa template."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         }
       ],
       "concept_hints": [],
@@ -55477,6 +55639,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt chi tiết (58mm)"
@@ -55515,11 +55682,6 @@
           "msgid": "Gift Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai quà tặng"
-        },
-        {
-          "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Biên lai 58mm đầy đủ: khách hàng + địa chỉ, phân tách thuế, hoàn tiền, thanh toán, điều khoản và mã vạch đơn hàng."
         }
       ],
       "concept_hints": [],
@@ -55814,6 +55976,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -55832,11 +55999,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -55989,6 +56151,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 58mm hẹp. Cùng bố cục với 80mm, được điều chỉnh cho độ rộng 32 ký tự."
@@ -56027,11 +56194,6 @@
           "msgid": "Detailed Thermal Receipt (80mm)",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt chi tiết (80mm)"
-        },
-        {
-          "msgid": "Gift Receipt",
-          "msgctxt": null,
-          "msgstr": "Biên lai quà tặng"
         }
       ],
       "concept_hints": [],
@@ -56106,6 +56268,11 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging.",
           "msgctxt": null,
           "msgstr": "Chấp nhận trả hàng trong vòng 30 ngày với hóa đơn gốc. Sản phẩm phải chưa sử dụng và còn nguyên bao bì gốc."
@@ -56114,11 +56281,6 @@
           "msgid": "Sends output directly to thermal printers like Epson or Star. Works offline.",
           "msgctxt": null,
           "msgstr": "Loại này gửi trực tiếp đến máy in nhiệt như Epson hoặc Star. Hoạt động ngoại tuyến."
-        },
-        {
-          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
-          "msgctxt": null,
-          "msgstr": "Báo giá này có hiệu lực trong 30 ngày kể từ ngày phát hành. Giá có thể thay đổi sau thời hạn hiệu lực. Đây không phải là hóa đơn hoặc xác nhận mua hàng."
         }
       ],
       "concept_hints": [],
@@ -56246,6 +56408,11 @@
           "msgstr": "Báo giá"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -56254,11 +56421,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "This is a quote, not a receipt",
@@ -56426,6 +56588,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 80mm tiêu chuẩn. Gồm phần đầu cửa hàng, các dòng mặt hàng, tổng cộng và mã vạch."
@@ -56454,11 +56621,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai chi tiết"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Biên lai nhiệt chi tiết (58mm)"
         }
       ],
       "concept_hints": [],
@@ -56598,6 +56760,11 @@
           "msgstr": "Phiên bản từ phải sang trái của Biên lai tiêu chuẩn dành cho các site tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Giữ nguyên bố cục và dùng bộ font thân thiện với RTL."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 80mm tiêu chuẩn. Gồm phần đầu cửa hàng, các dòng mặt hàng, tổng cộng và mã vạch."
@@ -56626,11 +56793,6 @@
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
-        },
-        {
-          "msgid": "Detailed Receipt",
-          "msgctxt": null,
-          "msgstr": "Biên lai chi tiết"
         }
       ],
       "concept_hints": [],
@@ -56698,6 +56860,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for narrow 58mm paper. Same layout as 80mm, adjusted for 32-character width.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 58mm hẹp. Cùng bố cục với 80mm, được điều chỉnh cho độ rộng 32 ký tự."
@@ -56711,11 +56878,6 @@
           "msgid": "Compact receipt with a centered store header, bold double-border order band and dense item rows. Same essentials as Standard, less vertical space.",
           "msgctxt": null,
           "msgstr": "Biên lai gọn với phần đầu cửa hàng căn giữa, dải đơn hàng in đậm viền đôi và các dòng mặt hàng dày đặc. Giống Standard ở các phần cốt lõi, nhưng tiết kiệm chiều cao hơn."
-        },
-        {
-          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
-          "msgctxt": null,
-          "msgstr": "Các script và style có thể gây cản trở cho mẫu thanh toán tùy chỉnh, sử dụng biểu mẫu này để loại bỏ các script có vấn đề."
         }
       ],
       "concept_hints": [],
@@ -56773,6 +56935,11 @@
           "msgstr": "Biên lai nhiệt đơn giản (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 80mm tiêu chuẩn. Gồm phần đầu cửa hàng, các dòng mặt hàng, tổng cộng và mã vạch."
@@ -56796,11 +56963,6 @@
           "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt từ phải sang trái cho máy in 80mm. Lật ngược cách canh cột cho tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Yêu cầu máy in hỗ trợ bảng mã tiếng Ả Rập (CP864 hoặc Windows-1256) - hãy kiểm tra sách hướng dẫn của máy in trước khi đặt mua."
-        },
-        {
-          "msgid": "Simple Thermal Receipt (80mm)",
-          "msgctxt": null,
-          "msgstr": "Biên lai nhiệt đơn giản (80mm)"
         }
       ],
       "concept_hints": [],
@@ -56958,6 +57120,11 @@
           "msgstr": "Biên lai nhiệt đơn giản 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
@@ -56966,11 +57133,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai chi tiết"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Biên lai 80mm đầy đủ: khách hàng + địa chỉ, phân tách thuế, hoàn tiền, thanh toán, điều khoản và mã vạch đơn hàng."
         }
       ],
       "concept_hints": [],
@@ -57203,6 +57365,11 @@
           "msgstr": "Biên lai nhiệt đơn giản 80mm (RTL)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Clean, minimal thermal receipt for standard 80mm paper. Store header, line items, totals, and barcode.",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt sạch, tối giản cho giấy 80mm tiêu chuẩn. Gồm phần đầu cửa hàng, các dòng mặt hàng, tổng cộng và mã vạch."
@@ -57221,11 +57388,6 @@
           "msgid": "Kitchen-sink 58mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
           "msgctxt": null,
           "msgstr": "Biên lai 58mm đầy đủ: khách hàng + địa chỉ, phân tách thuế, hoàn tiền, thanh toán, điều khoản và mã vạch đơn hàng."
-        },
-        {
-          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
-          "msgctxt": null,
-          "msgstr": "Biên lai nhiệt từ phải sang trái cho máy in 80mm. Lật ngược cách canh cột cho tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Yêu cầu máy in hỗ trợ bảng mã tiếng Ả Rập (CP864 hoặc Windows-1256) - hãy kiểm tra sách hướng dẫn của máy in trước khi đặt mua."
         }
       ],
       "concept_hints": [],
@@ -57383,6 +57545,11 @@
           "msgstr": "Biên lai nhiệt đơn giản (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
@@ -57391,11 +57558,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt chi tiết (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Biên lai 80mm đầy đủ: khách hàng + địa chỉ, phân tách thuế, hoàn tiền, thanh toán, điều khoản và mã vạch đơn hàng."
         }
       ],
       "concept_hints": [],
@@ -57553,6 +57715,11 @@
           "msgstr": "Biên lai nhiệt đơn giản (58mm)"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
           "msgctxt": null,
           "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
@@ -57561,11 +57728,6 @@
           "msgid": "Detailed Thermal Receipt (58mm)",
           "msgctxt": null,
           "msgstr": "Biên lai nhiệt chi tiết (58mm)"
-        },
-        {
-          "msgid": "Kitchen-sink 80mm receipt: full customer + addresses, tax breakdown, refunds, payments, terms and order barcode.",
-          "msgctxt": null,
-          "msgstr": "Biên lai 80mm đầy đủ: khách hàng + địa chỉ, phân tách thuế, hoàn tiền, thanh toán, điều khoản và mã vạch đơn hàng."
         }
       ],
       "concept_hints": [],
@@ -57702,11 +57864,6 @@
           "msgstr": "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Máy in PrintNode này thiếu khóa API hoặc mã máy in."
@@ -57715,6 +57872,11 @@
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Xin lỗi, đơn hàng này đã được thanh toán."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "The WP Overnight invoice document could not be rendered for this order.",
@@ -57906,19 +58068,19 @@
           "msgstr": "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
+          "msgid": "Download receipt for order #%s",
+          "msgctxt": null,
+          "msgstr": "Tải biên lai cho đơn hàng #%s"
         },
         {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
-        },
-        {
-          "msgid": "No fiscal snapshot found for this order.",
-          "msgctxt": null,
-          "msgstr": "Không tìm thấy bản chụp tài chính cho đơn hàng này."
         }
       ],
       "concept_hints": [],
@@ -57969,6 +58131,11 @@
           "msgstr": "Cài đặt"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -57977,11 +58144,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Can not save settings with id %s",
@@ -58066,6 +58228,11 @@
           "msgstr": "Mẫu"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Disable All Styles and Scripts",
           "msgctxt": null,
           "msgstr": "Vô hiệu hóa tất cả Styles và Scripts"
@@ -58089,11 +58256,6 @@
           "msgid": "Try resetting to the default receipt template",
           "msgctxt": null,
           "msgstr": "Thử đặt lại mẫu hóa đơn mặc định"
-        },
-        {
-          "msgid": "Items may be returned or exchanged within 30 days with this receipt.",
-          "msgctxt": null,
-          "msgstr": "Hàng có thể được đổi trả hoặc đổi trong vòng 30 ngày với hóa đơn này."
         }
       ],
       "concept_hints": [],
@@ -58147,6 +58309,11 @@
           "msgstr": "Vô hiệu hóa Styles đã chọn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58175,11 +58342,6 @@
           "msgid": "Disable wp_head",
           "msgctxt": null,
           "msgstr": "Vô hiệu hóa wp_head"
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Đảm bảo tất cả các biến được sử dụng trong mẫu đều được định nghĩa"
         }
       ],
       "concept_hints": [],
@@ -58225,6 +58387,11 @@
           "msgstr": "Vô hiệu hóa wp_footer"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58248,11 +58415,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58314,6 +58476,11 @@
           "msgstr": "Vô hiệu hóa wp_head"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58337,11 +58504,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58408,6 +58570,11 @@
           "msgstr": "Vô hiệu hóa Scripts đã chọn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58431,11 +58598,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58496,6 +58658,11 @@
           "msgstr": "Vô hiệu hóa Styles đã chọn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58519,11 +58686,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Array of virtual template IDs to disable.",
@@ -58574,6 +58736,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58582,11 +58749,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -58668,6 +58830,11 @@
           "msgstr": "Khách hàng"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -58706,11 +58873,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         }
       ],
       "concept_hints": [],
@@ -58764,14 +58926,14 @@
           "msgstr": "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "Sorry, this order has already been paid for.",
           "msgctxt": null,
           "msgstr": "Xin lỗi, đơn hàng này đã được thanh toán."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Order",
@@ -58860,14 +59022,14 @@
           "msgstr": "Đã thanh toán"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Xin lỗi, không thể xem đơn hàng này. Mã đơn hàng không tồn tại hoặc không hợp lệ."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "No fiscal snapshot found for this order.",
@@ -59052,9 +59214,9 @@
           "msgstr": "Hóa đơn"
         },
         {
-          "msgid": "Sorry, you are not allowed to edit this template.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, bạn không được phép chỉnh sửa template này."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         }
       ],
       "concept_hints": [],
@@ -59113,6 +59275,16 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Lỗi mẫu hóa đơn"
@@ -59128,19 +59300,9 @@
           "msgstr": "Thử đặt lại mẫu hóa đơn mặc định"
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "A template_id is required.",
           "msgctxt": null,
           "msgstr": "Cần có template_id."
-        },
-        {
-          "msgid": "Error",
-          "msgctxt": null,
-          "msgstr": "Lỗi"
         }
       ],
       "concept_hints": [],
@@ -59191,6 +59353,11 @@
           "msgstr": "Hóa đơn"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Lỗi mẫu hóa đơn"
@@ -59224,11 +59391,6 @@
           "msgid": "Detailed Receipt",
           "msgctxt": null,
           "msgstr": "Biên lai chi tiết"
-        },
-        {
-          "msgid": "Detailed Thermal Receipt (58mm)",
-          "msgctxt": null,
-          "msgstr": "Biên lai nhiệt chi tiết (58mm)"
         }
       ],
       "concept_hints": [],
@@ -59295,6 +59457,16 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
+          "msgid": "No receipt template is configured.",
+          "msgctxt": null,
+          "msgstr": "Chưa cấu hình mẫu biên lai."
+        },
+        {
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Lỗi hóa đơn"
@@ -59308,16 +59480,6 @@
           "msgid": "HTML Receipt Template #%d",
           "msgctxt": null,
           "msgstr": "Mẫu hóa đơn HTML #%d"
-        },
-        {
-          "msgid": "Mustache template syntax error. Check your template.",
-          "msgctxt": null,
-          "msgstr": "Lỗi cú pháp mẫu Mustache. Hãy kiểm tra mẫu của bạn."
-        },
-        {
-          "msgid": "PHP Receipt Template #%d",
-          "msgctxt": null,
-          "msgstr": "Mẫu hóa đơn PHP #%d"
         }
       ],
       "concept_hints": [],
@@ -59393,6 +59555,11 @@
           "msgstr": "Mẫu"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "This is a quote, not a receipt",
           "msgctxt": null,
           "msgstr": "Đây là báo giá, không phải hóa đơn"
@@ -59401,11 +59568,6 @@
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Kiểm tra tệp tin mẫu để tìm lỗi cú pháp (thiếu dấu chấm phẩy, dấu ngoặc, v.v.)"
-        },
-        {
-          "msgid": "Compact monospace receipt sized for narrow paper or HTML-capable thermal printers. Prints cleanly in black and white.",
-          "msgctxt": null,
-          "msgstr": "Biên lai monospace gọn, tối ưu cho giấy hẹp hoặc máy in nhiệt hỗ trợ HTML. In sắc nét ở chế độ đen trắng."
         }
       ],
       "concept_hints": [],
@@ -59446,6 +59608,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -59459,11 +59626,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Could not read starter template file.",
@@ -59535,6 +59697,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -59548,11 +59715,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Address line 1",
@@ -59624,6 +59786,11 @@
       },
       "related_existing_translations": [
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -59632,11 +59799,6 @@
           "msgid": "Invalid username or password.",
           "msgctxt": null,
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-        },
-        {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "Auth session expired. Please try logging in again from the app.",
@@ -59748,6 +59910,11 @@
           "msgstr": "Thuế"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Lỗi cú pháp mẫu Mustache. Hãy kiểm tra mẫu của bạn."
@@ -59756,11 +59923,6 @@
           "msgid": "Unique identifier for the template (numeric for database, string for virtual).",
           "msgctxt": null,
           "msgstr": "Định danh duy nhất cho mẫu (số cho cơ sở dữ liệu, chuỗi cho ảo)."
-        },
-        {
-          "msgid": "Ensure all variables used in the template are defined",
-          "msgctxt": null,
-          "msgstr": "Đảm bảo tất cả các biến được sử dụng trong mẫu đều được định nghĩa"
         }
       ],
       "concept_hints": [],
@@ -59816,6 +59978,11 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Auth session expired. Please try logging in again from the app.",
           "msgctxt": null,
           "msgstr": "Phiên xác thực đã hết hạn. Vui lòng thử đăng nhập lại từ ứng dụng."
@@ -59844,11 +60011,6 @@
           "msgid": "All Template Types",
           "msgctxt": null,
           "msgstr": "Tất cả Loại Mẫu"
-        },
-        {
-          "msgid": "Choose from the most used",
-          "msgctxt": null,
-          "msgstr": "Chọn từ những cái được sử dụng nhiều nhất"
         }
       ],
       "concept_hints": [],
@@ -59904,6 +60066,11 @@
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -59932,11 +60099,6 @@
           "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
           "msgctxt": null,
           "msgstr": "Xin lỗi, không thể xem đơn hàng này. Mã đơn hàng không tồn tại hoặc không hợp lệ."
-        },
-        {
-          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
-          "msgctxt": null,
-          "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         }
       ],
       "concept_hints": [],
@@ -59990,6 +60152,11 @@
           "msgstr": "Mẫu"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Right-to-left version of the Standard Receipt for Arabic, Hebrew, Persian and Urdu sites. Mirrors layout and uses an RTL-friendly font stack.",
           "msgctxt": null,
           "msgstr": "Phiên bản từ phải sang trái của Biên lai tiêu chuẩn dành cho các site tiếng Ả Rập, Hebrew, Ba Tư và Urdu. Giữ nguyên bố cục và dùng bộ font thân thiện với RTL."
@@ -60010,19 +60177,14 @@
           "msgstr": "Loại này sẽ in bằng hộp thoại in của trình duyệt. Cần kết nối máy chủ để tạo hóa đơn."
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
           "msgctxt": null,
           "msgstr": "Báo giá này có hiệu lực trong 30 ngày kể từ ngày phát hành. Giá có thể thay đổi sau thời hạn hiệu lực. Đây không phải là hóa đơn hoặc xác nhận mua hàng."
-        },
-        {
-          "msgid": "Auth session expired. Please try logging in again from the app.",
-          "msgctxt": null,
-          "msgstr": "Phiên xác thực đã hết hạn. Vui lòng thử đăng nhập lại từ ứng dụng."
-        },
-        {
-          "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
-          "msgctxt": null,
-          "msgstr": "Kiểm tra tệp tin mẫu để tìm lỗi cú pháp (thiếu dấu chấm phẩy, dấu ngoặc, v.v.)"
         }
       ],
       "concept_hints": [],
@@ -60066,6 +60228,11 @@
           "msgstr": "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "JWT is not configured properly, please contact the admin",
           "msgctxt": null,
           "msgstr": "JWT không được cấu hình đúng, vui lòng liên hệ quản trị viên"
@@ -60104,11 +60271,6 @@
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
-        },
-        {
-          "msgid": "Please retain this receipt for your records.",
-          "msgctxt": null,
-          "msgstr": "Vui lòng giữ lại hóa đơn này để lưu hồ sơ."
         }
       ],
       "concept_hints": [],
@@ -60239,14 +60401,14 @@
           "msgstr": "Xin lỗi, đơn hàng này không hợp lệ và không thể thanh toán."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
-          "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
-        },
-        {
           "msgid": "This PrintNode printer is missing its API key or printer id.",
           "msgctxt": null,
           "msgstr": "Máy in PrintNode này thiếu khóa API hoặc mã máy in."
+        },
+        {
+          "msgid": "Sorry, this order is invalid.",
+          "msgctxt": null,
+          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
         },
         {
           "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
@@ -60423,9 +60585,9 @@
           "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         },
         {
           "msgid": "Error",
@@ -60513,6 +60675,11 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Error",
           "msgctxt": null,
           "msgstr": "Lỗi"
@@ -60523,6 +60690,11 @@
           "msgstr": "Mẫu hóa đơn in nhiệt (%1$s) #%2$d"
         },
         {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại."
+        },
+        {
           "msgid": "Check the template file for syntax errors (missing semicolons, brackets, etc.)",
           "msgctxt": null,
           "msgstr": "Kiểm tra tệp tin mẫu để tìm lỗi cú pháp (thiếu dấu chấm phẩy, dấu ngoặc, v.v.)"
@@ -60531,16 +60703,6 @@
           "msgid": "Ensure all variables used in the template are defined",
           "msgctxt": null,
           "msgstr": "Đảm bảo tất cả các biến được sử dụng trong mẫu đều được định nghĩa"
-        },
-        {
-          "msgid": "Invalid template language.",
-          "msgctxt": null,
-          "msgstr": "Ngôn ngữ mẫu không hợp lệ."
-        },
-        {
-          "msgid": "PHP syntax error: %s",
-          "msgctxt": null,
-          "msgstr": "Lỗi cú pháp PHP: %s"
         }
       ],
       "concept_hints": [],
@@ -60608,6 +60770,11 @@
           "msgstr": "<strong>WCPOS</strong> yêu cầu PHP %1$s trở lên. Đọc thêm thông tin về <a href=\"%2$s\">cách bạn có thể cập nhật</a>"
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Lỗi cú pháp mẫu Mustache. Hãy kiểm tra mẫu của bạn."
@@ -60621,11 +60788,6 @@
           "msgid": "Receipt Error",
           "msgctxt": null,
           "msgstr": "Lỗi hóa đơn"
-        },
-        {
-          "msgid": "Receipt Template Error",
-          "msgctxt": null,
-          "msgstr": "Lỗi mẫu hóa đơn"
         }
       ],
       "concept_hints": [],
@@ -60686,6 +60848,11 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
+          "msgid": "Could not generate the receipt PDF.",
+          "msgctxt": null,
+          "msgstr": "Không thể tạo PDF hóa đơn."
+        },
+        {
           "msgid": "Mustache template syntax error. Check your template.",
           "msgctxt": null,
           "msgstr": "Lỗi cú pháp mẫu Mustache. Hãy kiểm tra mẫu của bạn."
@@ -60704,11 +60871,6 @@
           "msgid": "Receipt Template Error",
           "msgctxt": null,
           "msgstr": "Lỗi mẫu hóa đơn"
-        },
-        {
-          "msgid": "Invalid username or password.",
-          "msgctxt": null,
-          "msgstr": "Tên đăng nhập hoặc mật khẩu không hợp lệ."
         }
       ],
       "concept_hints": [],
@@ -60791,9 +60953,9 @@
           "msgstr": "Có vấn đề khi hiển thị mẫu hóa đơn. Thường do lỗi cú pháp hoặc biến không xác định trong mã mẫu."
         },
         {
-          "msgid": "Sorry, this order is invalid.",
+          "msgid": "Could not generate the receipt PDF.",
           "msgctxt": null,
-          "msgstr": "Xin lỗi, đơn hàng này không hợp lệ."
+          "msgstr": "Không thể tạo PDF hóa đơn."
         }
       ],
       "concept_hints": [],
@@ -61550,6 +61712,11 @@
           "msgstr": "Bạn không có quyền truy cập vào POS."
         },
         {
+          "msgid": "Receipt",
+          "msgctxt": null,
+          "msgstr": "Hóa đơn"
+        },
+        {
           "msgid": "Template",
           "msgctxt": null,
           "msgstr": "Mẫu"
@@ -61558,11 +61725,6 @@
           "msgid": "Template not found.",
           "msgctxt": null,
           "msgstr": "Không tìm thấy mẫu."
-        },
-        {
-          "msgid": "Template was created but raw content could not be saved.",
-          "msgctxt": null,
-          "msgstr": "Khuôn mẫu đã được tạo nhưng nội dung thô không thể lưu."
         }
       ],
       "concept_hints": [],
