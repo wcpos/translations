@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'fr',
+	'language' => 'fr_FR',
 	'plural-forms' => 'nplurals=2; plural=n > 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Point de Vente pour WooCommerce',
@@ -143,7 +143,7 @@ return array(
 		'Print job not found.' => 'Travail d\'impression introuvable.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Le reçu stocké de cette tâche a été nettoyé et il n\'a aucun modèle à partir duquel effectuer un nouveau rendu.',
 		'Print job could not be created.' => 'Le travail d\'impression n\'a pas pu être créé.',
-		'The print job is not available in the requested media type.' => 'Le travail d’impression n’est pas disponible pour le type de support demandé.',
+		'The print job is not available in the requested media type.' => 'La tâche d’impression n’est pas disponible pour le type de support demandé.',
 		'Invalid printer token.' => 'Jeton d\'imprimante invalide.',
 		'A printer_id is required.' => 'Un `printer_id` est requis.',
 		'PrintNode print jobs require an order and a template.' => 'Les travaux d’impression PrintNode nécessitent une commande et un modèle.',

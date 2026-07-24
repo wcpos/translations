@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'de',
+	'language' => 'de_DE',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassensystem für WooCommerce',
@@ -157,7 +157,7 @@ return array(
 		'Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads.' => 'Epson Server Direct Print akzeptiert nur auf Bestellungen basierende ePOS-Print-Jobs, keine Rohdaten.',
 		'Epson Server Direct Print requires the epos-xml format.' => 'Epson Server Direct Print erfordert das Format epos-xml.',
 		'Star CloudPRNT does not accept the epos-xml format.' => 'Star CloudPRNT akzeptiert das Format epos-xml nicht.',
-		'Star CloudPRNT printers require order-based template jobs or a raw payload.' => 'Für Star CloudPRNT-Drucker sind auftragsbasierte Vorlagenaufträge oder eine Raw-Payload erforderlich.',
+		'Star CloudPRNT printers require order-based template jobs or a raw payload.' => 'Star-CloudPRNT-Drucker benötigen auftragsbasierte Vorlagenaufträge oder eine Rohdaten-Nutzlast.',
 		'No relay verification is pending.' => 'Es steht keine Relay-Verifizierung aus.',
 		'Sorry, you cannot manage print jobs.' => 'Sie haben leider keine Berechtigung, Druckaufträge zu verwalten.',
 		'Limit result set to products assigned to brand IDs or slugs, separated by commas.' => 'Ergebnis auf Produkte beschränken, die Marken-IDs oder Slugs zugewiesen sind, durch Kommas getrennt.',
