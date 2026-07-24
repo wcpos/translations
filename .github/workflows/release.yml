@@ -11,8 +11,15 @@ on:
         description: 'Version override (leave empty for auto CalVer)'
         required: false
 
+concurrency:
+  group: translations-release
+  cancel-in-progress: false
+
 jobs:
   release:
+    # Guard: a workflow_dispatch from a non-main ref would otherwise push that
+    # branch's tip to main below. push events are already main-only.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
