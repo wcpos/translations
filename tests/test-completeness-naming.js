@@ -14,6 +14,7 @@ const {
   shouldCheckPhpPoFile,
   parsePluralFormsHeader,
   l10nHasPluralFormsHeader,
+  sourceTextForTranslationKey,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -172,6 +173,18 @@ test('locale plural expected keys match current Intl plural categories for app l
   assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'zh_TW')].sort(), [
     'logs.entries_count_other',
   ]);
+});
+
+test('generated plural forms use a non-singular source fallback', () => {
+  assert.equal(sourceTextForTranslationKey({
+    'items_one': '1 item',
+    'items_other': '{count} items',
+  }, 'items_many'), '{count} items');
+
+  assert.equal(sourceTextForTranslationKey({
+    'items_one': '1 item',
+    'items_many': '{count} items',
+  }, 'items_other'), '{count} items');
 });
 
 test('checks matching PHP PO file when l10n artifact changes', () => {
