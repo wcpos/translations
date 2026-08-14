@@ -229,6 +229,20 @@ function findWcposNamingIssues(value) {
   return issues;
 }
 
+function sourceTextForTranslationKey(sourceStrings, key) {
+  if (typeof sourceStrings[key] === "string") return sourceStrings[key];
+
+  const parsed = parsePluralKey(key);
+  if (!parsed) return undefined;
+
+  for (const suffix of ["other", "many", "few", "two", "zero", "one"]) {
+    const sourceText = sourceStrings[`${parsed.base}_${suffix}`];
+    if (typeof sourceText === "string") return sourceText;
+  }
+
+  return undefined;
+}
+
 function parsePluralFormsHeader(headers) {
   const header = headers["plural-forms"] || headers["Plural-Forms"];
   if (typeof header !== "string") return null;
@@ -329,21 +343,8 @@ function checkJsCompleteness() {
           if (!(key in translations)) continue;
           if (typeof translations[key] !== "string") continue;
 
-          // Find the source string: either directly in source, or from a sibling plural form
-          let sourceText = sourceStrings[key];
-          if (typeof sourceText !== "string") {
-            const parsed = parsePluralKey(key);
-            if (parsed) {
-              // Look for any sibling plural form in source (e.g. _one or _other)
-              for (const sk of sourceKeys) {
-                const sp = parsePluralKey(sk);
-                if (sp && sp.base === parsed.base) {
-                  sourceText = sourceStrings[sk];
-                  break;
-                }
-              }
-            }
-          }
+          // Generated non-singular forms use a non-singular source form for placeholders.
+          const sourceText = sourceTextForTranslationKey(sourceStrings, key);
           if (typeof sourceText !== "string") continue;
 
           const srcPH = (sourceText.match(/\{[^}]+\}/g) || []).sort();
@@ -635,4 +636,5 @@ module.exports = {
   shouldCheckPhpPoFile,
   parsePluralFormsHeader,
   l10nHasPluralFormsHeader,
+  sourceTextForTranslationKey,
 };

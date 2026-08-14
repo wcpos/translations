@@ -14,6 +14,7 @@ const {
   shouldCheckPhpPoFile,
   parsePluralFormsHeader,
   l10nHasPluralFormsHeader,
+  sourceTextForTranslationKey,
 } = require('../scripts/check-completeness.js');
 
 function test(name, fn) {
@@ -172,6 +173,37 @@ test('locale plural expected keys match current Intl plural categories for app l
   assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'zh_TW')].sort(), [
     'logs.entries_count_other',
   ]);
+});
+
+test('generated plural forms use a non-singular source fallback', () => {
+  assert.equal(sourceTextForTranslationKey({
+    'items_one': '1 item',
+    'items_other': '{count} items',
+  }, 'items_many'), '{count} items');
+
+  assert.equal(sourceTextForTranslationKey({
+    'items_one': '1 item',
+    'items_many': '{count} items',
+  }, 'items_other'), '{count} items');
+});
+
+test('rolling monorepo translations retain locale-specific plural forms', () => {
+  const locales = [
+    'bg_BG', 'ca_ES', 'da', 'de_DE', 'el', 'es', 'es_AR', 'es_ES', 'es_MX',
+    'fr', 'fr_CA', 'fr_FR', 'hu_HU', 'id_ID', 'is_IS', 'mk_MK', 'ms_MY',
+    'nb_NO', 'nl', 'nl_BE', 'nl_NL', 'pt_BR', 'pt_PT', 'sv_SE', 'th', 'vi',
+  ];
+  const { ALL_SUFFIXES, getPluralSuffixes } = require('../scripts/plural-rules.js');
+
+  for (const locale of locales) {
+    const translations = require(`../translations/js/${locale}/monorepo/core.json`);
+    const expectedSuffixes = getPluralSuffixes(locale);
+
+    for (const base of ['health.database.attention', 'health.database.other_stores']) {
+      const actualSuffixes = ALL_SUFFIXES.filter(suffix => `${base}_${suffix}` in translations);
+      assert.deepEqual(actualSuffixes, expectedSuffixes, `${locale}: ${base}`);
+    }
+  }
 });
 
 test('checks matching PHP PO file when l10n artifact changes', () => {
