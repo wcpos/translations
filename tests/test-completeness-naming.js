@@ -187,6 +187,21 @@ test('generated plural forms use a non-singular source fallback', () => {
   }, 'items_other'), '{count} items');
 });
 
+test('rolling monorepo translations retain locale-specific plural forms', () => {
+  const locales = ['bg_BG', 'ca_ES', 'da', 'de_DE', 'el', 'es', 'es_AR', 'es_ES', 'es_MX'];
+  const { ALL_SUFFIXES, getPluralSuffixes } = require('../scripts/plural-rules.js');
+
+  for (const locale of locales) {
+    const translations = require(`../translations/js/${locale}/monorepo/core.json`);
+    const expectedSuffixes = getPluralSuffixes(locale);
+
+    for (const base of ['health.database.attention', 'health.database.other_stores']) {
+      const actualSuffixes = ALL_SUFFIXES.filter(suffix => `${base}_${suffix}` in translations);
+      assert.deepEqual(actualSuffixes, expectedSuffixes, `${locale}: ${base}`);
+    }
+  }
+});
+
 test('checks matching PHP PO file when l10n artifact changes', () => {
   const scope = createChangedScope('origin/main', [
     'translations/php/es_ES/woocommerce-pos-es_ES.l10n.php',
