@@ -154,6 +154,30 @@ if (locales.length === 0) {
 
 // ─── Placeholder Format ────────────────────────────────────────────────────────
 
+const koreanCoreFile = findTranslationFile(path.join(TRANSLATIONS_DIR, 'ko_KR'), 'core.json');
+if (koreanCoreFile) {
+  const koreanTranslations = JSON.parse(fs.readFileSync(koreanCoreFile, 'utf8'));
+
+  test('Korean recovery distinguishes discarded changes from deleted records', () => {
+    const nonDestructiveKeys = [
+      'body', 'discard', 'discard_body', 'discard_confirm', 'discard_failed',
+      'discard_maybe_title', 'discard_title', 'discarded',
+    ];
+    for (const suffix of nonDestructiveKeys) {
+      const key = `health.database.rejected.${suffix}`;
+      assert(!koreanTranslations[key].includes('삭제'), `${key} must not use delete wording`);
+    }
+    assert(koreanTranslations['health.database.rejected.discard'] === '버리기',
+      'ordinary recovery action must use discard wording');
+    assert(koreanTranslations['health.database.rejected.discard_confirm'] === '버리기',
+      'ordinary recovery confirmation must use discard wording');
+    assert(koreanTranslations['health.database.rejected.discard_maybe_body'].includes('버릴 때'),
+      'conditional recovery copy must describe discarding the change');
+    assert(koreanTranslations['health.database.rejected.discard_destroy_confirm'] === '삭제',
+      'destructive record removal must retain delete wording');
+  });
+}
+
 console.log('\nTesting placeholder format...');
 
 if (locales.length > 0) {
