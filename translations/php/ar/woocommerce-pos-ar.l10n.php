@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'لا يمكن إلغاء سوى مهام الطباعة المعلّقة أو المطالب بها.',
 		'This print job has already been retried.' => 'تمت إعادة محاولة مهمة الطباعة هذه بالفعل.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'تم تنظيف الإيصال المخزّن لهذه المهمة، ولا يوجد قالب يمكن إعادة عرضه منه.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'لم يعد قالب هذه المهمة موجودًا، لذا لا يمكن إعادة عرضه.',
 		'Print job could not be created.' => 'تعذر إنشاء مهمة الطباعة.',
 		'Print job retry could not be recorded.' => 'تعذّر تسجيل إعادة محاولة مهمة الطباعة.',
 		'The print job is not available in the requested media type.' => 'مهمة الطباعة غير متاحة لنوع الوسائط المطلوب.',

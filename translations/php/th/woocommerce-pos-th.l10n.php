@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'ยกเลิกได้เฉพาะงานพิมพ์ที่รอดำเนินการหรือถูกรับงานแล้วเท่านั้น',
 		'This print job has already been retried.' => 'งานพิมพ์นี้ถูกลองใหม่แล้ว',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'ใบเสร็จรับเงินที่เก็บไว้ของงานนี้ได้รับการล้างข้อมูลแล้ว และไม่มีเทมเพลตให้แสดงซ้ำ',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'เทมเพลตของงานนี้ไม่มีอยู่แล้ว จึงไม่สามารถแสดงผลใหม่ได้',
 		'Print job could not be created.' => 'ไม่สามารถสร้างงานพิมพ์ได้',
 		'Print job retry could not be recorded.' => 'ไม่สามารถบันทึกการลองงานพิมพ์ใหม่ได้',
 		'The print job is not available in the requested media type.' => 'ไม่พบงานพิมพ์สำหรับประเภทสื่อที่ร้องขอ',

@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'de_DE',
+	'language' => 'de',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassensystem für WooCommerce',
@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Nur ausstehende oder beanspruchte Druckaufträge können abgebrochen werden.',
 		'This print job has already been retried.' => 'Für diesen Druckauftrag wurde bereits ein weiterer Versuch unternommen.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Der gespeicherte Beleg dieses Auftrags wurde bereinigt und es gibt keine Vorlage zum erneuten Rendern.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Die Vorlage dieses Auftrags ist nicht mehr vorhanden und kann daher nicht erneut gerendert werden.',
 		'Print job could not be created.' => 'Druckauftrag konnte nicht erstellt werden.',
 		'Print job retry could not be recorded.' => 'Der erneute Versuch für den Druckauftrag konnte nicht protokolliert werden.',
 		'The print job is not available in the requested media type.' => 'Der Druckauftrag ist für den angeforderten Medientyp nicht verfügbar.',

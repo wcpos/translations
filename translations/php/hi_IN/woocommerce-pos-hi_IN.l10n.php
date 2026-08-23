@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'केवल लंबित या दावा किए गए प्रिंट जॉब रद्द किए जा सकते हैं।',
 		'This print job has already been retried.' => 'इस प्रिंट जॉब को पहले ही दोबारा आज़माया जा चुका है।',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'इस कार्य की संग्रहीत रसीद साफ़ कर दी गई है और इसमें दोबारा प्रस्तुत करने के लिए कोई टेम्पलेट नहीं है।',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'इस जॉब का टेम्पलेट अब मौजूद नहीं है, इसलिए इसे फिर से रेंडर नहीं किया जा सकता।',
 		'Print job could not be created.' => 'प्रिंट जॉब बनाया नहीं जा सका।',
 		'Print job retry could not be recorded.' => 'प्रिंट जॉब के पुनः प्रयास को दर्ज नहीं किया जा सका।',
 		'The print job is not available in the requested media type.' => 'अनुरोधित मीडिया प्रकार के लिए प्रिंट जॉब उपलब्ध नहीं है।',

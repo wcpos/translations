@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => '대기 중이거나 할당된 인쇄 작업만 취소할 수 있습니다.',
 		'This print job has already been retried.' => '이 인쇄 작업은 이미 재시도되었습니다.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => '이 작업의 저장된 영수증이 정리되었으며 다시 렌더링할 템플릿이 없습니다.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => '이 작업의 템플릿이 더 이상 존재하지 않아 다시 렌더링할 수 없습니다.',
 		'Print job could not be created.' => '인쇄 작업을 만들 수 없습니다.',
 		'Print job retry could not be recorded.' => '인쇄 작업 재시도 기록을 저장할 수 없습니다.',
 		'The print job is not available in the requested media type.' => '요청한 용지 유형에 대한 인쇄 작업을 사용할 수 없습니다.',

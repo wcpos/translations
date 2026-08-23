@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Hanya kerja cetak yang berstatus menunggu atau telah diambil boleh dibatalkan.',
 		'This print job has already been retried.' => 'Kerja cetak ini telah dicuba semula.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Resit tersimpan tugas ini telah dibersihkan dan ia tidak mempunyai templat untuk digunakan semula.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Templat kerja ini tidak lagi wujud, jadi ia tidak dapat dipaparkan semula.',
 		'Print job could not be created.' => 'Tugas cetakan tidak dapat dicipta.',
 		'Print job retry could not be recorded.' => 'Percubaan semula kerja cetak tidak dapat direkodkan.',
 		'The print job is not available in the requested media type.' => 'Tugasan cetakan tidak tersedia untuk jenis media yang diminta.',

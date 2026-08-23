@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Nur ausstehende oder beanspruchte Druckaufträge können storniert werden.',
 		'This print job has already been retried.' => 'Dieser Druckauftrag wurde bereits erneut versucht.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Der gespeicherte Beleg dieses Auftrags wurde bereinigt und es gibt keine Vorlage zum erneuten Rendern.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Die Vorlage dieses Auftrags ist nicht mehr vorhanden und kann daher nicht erneut gerendert werden.',
 		'Print job could not be created.' => 'Druckauftrag konnte nicht erstellt werden.',
 		'Print job retry could not be recorded.' => 'Der erneute Versuch für den Druckauftrag konnte nicht gespeichert werden.',
 		'The print job is not available in the requested media type.' => 'Der Druckauftrag ist für den angeforderten Medientyp nicht verfügbar.',

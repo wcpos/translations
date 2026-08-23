@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Csak a függőben lévő vagy lefoglalt nyomtatási feladatok mondhatók le.',
 		'This print job has already been retried.' => 'Ezt a nyomtatási feladatot már újrapróbálták.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Ennek a munkának a tárolt nyugtája ki lett tisztítva, és nincs sablonja, amelyből újra megjeleníthető lenne.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Ennek a feladatnak a sablonja már nem létezik, ezért nem lehet újra renderelni.',
 		'Print job could not be created.' => 'A nyomtatási feladatot nem sikerült létrehozni.',
 		'Print job retry could not be recorded.' => 'A nyomtatási feladat újrapróbálását nem sikerült rögzíteni.',
 		'The print job is not available in the requested media type.' => 'A kért médiatípushoz nem érhető el nyomtatási feladat.',

@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'fr_FR',
+	'language' => 'fr',
 	'plural-forms' => 'nplurals=2; plural=n > 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Point de Vente pour WooCommerce',
@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Seuls les travaux d’impression en attente ou pris en charge peuvent être annulés.',
 		'This print job has already been retried.' => 'Ce travail d’impression a déjà fait l’objet d’une nouvelle tentative.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Le reçu stocké de cette tâche a été nettoyé et il n\'a aucun modèle à partir duquel effectuer un nouveau rendu.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Le modèle de cette tâche n’existe plus et ne peut donc pas être à nouveau généré.',
 		'Print job could not be created.' => 'Le travail d\'impression n\'a pas pu être créé.',
 		'Print job retry could not be recorded.' => 'La nouvelle tentative du travail d’impression n’a pas pu être enregistrée.',
 		'The print job is not available in the requested media type.' => 'La tâche d’impression n’est pas disponible pour le type de support demandé.',

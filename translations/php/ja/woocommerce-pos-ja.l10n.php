@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => '保留中または取得済みの印刷ジョブのみキャンセルできます。',
 		'This print job has already been retried.' => 'この印刷ジョブはすでに再試行されています。',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'このジョブの保存されたレシートはクリーンアップされており、再レンダリングに使用できるテンプレートはありません。',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'このジョブのテンプレートは存在しなくなったため、再レンダリングできません。',
 		'Print job could not be created.' => '印刷ジョブを作成できませんでした。',
 		'Print job retry could not be recorded.' => '印刷ジョブの再試行を記録できませんでした。',
 		'The print job is not available in the requested media type.' => '指定した用紙タイプでは印刷ジョブを利用できません。',

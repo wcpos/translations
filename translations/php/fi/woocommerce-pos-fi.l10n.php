@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Vain odottavat tai varatut tulostustyöt voidaan peruuttaa.',
 		'This print job has already been retried.' => 'Tämä tulostustyö on jo yritetty uudelleen.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Tämän työn tallennettu kuitti on siivottu, eikä siinä ole mallia, josta hahmontaa uudelleen.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Tämän työn mallipohjaa ei enää ole, joten sitä ei voi hahmontaa uudelleen.',
 		'Print job could not be created.' => 'Tulostustyötä ei voitu luoda.',
 		'Print job retry could not be recorded.' => 'Tulostustyön uudelleenyritystä ei voitu tallentaa.',
 		'The print job is not available in the requested media type.' => 'Tulostustyötä ei ole saatavilla pyydetyssä mediatyypissä.',

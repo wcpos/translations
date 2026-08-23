@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Somente trabalhos de impressão pendentes ou assumidos podem ser cancelados.',
 		'This print job has already been retried.' => 'Este trabalho de impressão já passou por uma nova tentativa.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'O recibo armazenado deste trabalho foi limpo e não possui modelo para renderização novamente.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'O modelo deste trabalho não existe mais, portanto ele não pode ser renderizado novamente.',
 		'Print job could not be created.' => 'Não foi possível criar o trabalho de impressão.',
 		'Print job retry could not be recorded.' => 'Não foi possível registrar a nova tentativa do trabalho de impressão.',
 		'The print job is not available in the requested media type.' => 'O trabalho de impressão não está disponível no tipo de mídia solicitado.',

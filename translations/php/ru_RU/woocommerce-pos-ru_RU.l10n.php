@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Отменить можно только ожидающие или заявленные задания печати.',
 		'This print job has already been retried.' => 'Это задание печати уже было повторно запущено.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Сохраненная квитанция этого задания была очищена, и у нее нет шаблона для повторной обработки.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Шаблон этого задания больше не существует, поэтому его нельзя отобразить повторно.',
 		'Print job could not be created.' => 'Не удалось создать задание печати.',
 		'Print job retry could not be recorded.' => 'Не удалось сохранить информацию о повторной попытке выполнения задания печати.',
 		'The print job is not available in the requested media type.' => 'Задание печати недоступно для запрошенного типа носителя.',

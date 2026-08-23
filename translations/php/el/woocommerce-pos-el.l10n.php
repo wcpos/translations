@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Μόνο οι εκκρεμείς ή διεκδικημένες εργασίες εκτύπωσης μπορούν να ακυρωθούν.',
 		'This print job has already been retried.' => 'Αυτή η εργασία εκτύπωσης έχει ήδη επαναληφθεί.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Η αποθηκευμένη απόδειξη αυτής της εργασίας έχει καθαριστεί και δεν έχει πρότυπο για εκ νέου απόδοση.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Το πρότυπο αυτής της εργασίας δεν υπάρχει πλέον, επομένως δεν είναι δυνατή η εκ νέου απόδοσή του.',
 		'Print job could not be created.' => 'Δεν ήταν δυνατή η δημιουργία της εργασίας εκτύπωσης.',
 		'Print job retry could not be recorded.' => 'Δεν ήταν δυνατή η καταγραφή της επανάληψης της εργασίας εκτύπωσης.',
 		'The print job is not available in the requested media type.' => 'Η εργασία εκτύπωσης δεν είναι διαθέσιμη για τον ζητούμενο τύπο μέσου.',

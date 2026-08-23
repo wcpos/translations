@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Kun ventende eller påberåbte udskriftsjob kan annulleres.',
 		'This print job has already been retried.' => 'Dette udskriftsjob er allerede forsøgt igen.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Den gemte kvittering for dette job er blevet ryddet op, og den har ingen skabelon, som den kan gengives fra.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Denne opgaves skabelon findes ikke længere, så den kan ikke gengenereres.',
 		'Print job could not be created.' => 'Udskriftsjobbet kunne ikke oprettes.',
 		'Print job retry could not be recorded.' => 'Forsøg på udskriftsjob kunne ikke registreres.',
 		'The print job is not available in the requested media type.' => 'Udskriftsjobbet er ikke tilgængeligt for den ønskede medietype.',

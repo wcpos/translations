@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Anulować można tylko oczekujące lub przejęte zadania drukowania.',
 		'This print job has already been retried.' => 'To zadanie drukowania zostało już ponowione.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Przechowywane potwierdzenie tego zadania zostało wyczyszczone i nie ma szablonu, z którego można go ponownie wyrenderować.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Szablon tego zadania już nie istnieje, więc nie można go ponownie wyrenderować.',
 		'Print job could not be created.' => 'Nie udało się utworzyć zadania drukowania.',
 		'Print job retry could not be recorded.' => 'Nie udało się zarejestrować ponowienia zadania drukowania.',
 		'The print job is not available in the requested media type.' => 'Zadanie drukowania nie jest dostępne dla żądanego typu nośnika.',

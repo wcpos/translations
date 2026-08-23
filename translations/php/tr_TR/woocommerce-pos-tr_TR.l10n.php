@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Yalnızca bekleyen veya sahiplenilmiş yazdırma işleri iptal edilebilir.',
 		'This print job has already been retried.' => 'Bu yazdırma işi zaten yeniden denendi.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Bu işin saklanan makbuzu temizlendi ve yeniden oluşturulabilecek bir şablonu yok.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Bu işin şablonu artık mevcut değil, bu nedenle yeniden oluşturulamıyor.',
 		'Print job could not be created.' => 'Yazdırma işi oluşturulamadı.',
 		'Print job retry could not be recorded.' => 'Yazdırma işinin yeniden denemesi kaydedilemedi.',
 		'The print job is not available in the requested media type.' => 'İstenen medya türü için yazdırma işi mevcut değil.',

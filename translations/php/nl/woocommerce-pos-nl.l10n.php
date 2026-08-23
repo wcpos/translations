@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'nl_NL',
+	'language' => 'nl',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassasysteem voor WooCommerce',
@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Alleen afdruktaken die in behandeling zijn of zijn geclaimd, kunnen worden geannuleerd.',
 		'This print job has already been retried.' => 'Deze afdruktaak is al opnieuw uitgevoerd.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'De opgeslagen bon van deze taak is opgeschoond en heeft geen sjabloon om opnieuw te renderen.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'De template van deze taak bestaat niet meer en kan daarom niet opnieuw worden weergegeven.',
 		'Print job could not be created.' => 'Afdruktaak kon niet worden aangemaakt.',
 		'Print job retry could not be recorded.' => 'De nieuwe poging voor de afdruktaak kon niet worden geregistreerd.',
 		'The print job is not available in the requested media type.' => 'De afdruktaak is niet beschikbaar voor het aangevraagde mediatype.',

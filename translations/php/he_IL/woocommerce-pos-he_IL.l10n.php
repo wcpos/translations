@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'ניתן לבטל רק עבודות הדפסה שממתינות או שנלקחו לטיפול.',
 		'This print job has already been retried.' => 'כבר בוצע ניסיון חוזר עבור עבודת הדפסה זו.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'הקבלה המאוחסנת של עבודה זו נוקה ואין לה תבנית לעיבוד מחדש.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'התבנית של משימה זו אינה קיימת עוד, ולכן לא ניתן לעבד אותה מחדש.',
 		'Print job could not be created.' => 'לא ניתן ליצור את משימת ההדפסה.',
 		'Print job retry could not be recorded.' => 'לא ניתן לתעד את הניסיון החוזר של עבודת ההדפסה.',
 		'The print job is not available in the requested media type.' => 'משימת ההדפסה אינה זמינה עבור סוג המדיה המבוקש.',

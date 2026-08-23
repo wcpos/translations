@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Aðeins er hægt að hætta við prentverk sem eru í bið eða tekin til meðferðar.',
 		'This print job has already been retried.' => 'Reynt hefur verið aftur á þessu prentverki.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Geymd kvittun þessa verks hefur verið hreinsuð upp og það hefur ekkert sniðmát til að endurgera frá.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Sniðmát þessa verks er ekki lengur til og því er ekki hægt að birta það aftur.',
 		'Print job could not be created.' => 'Ekki tókst að búa til prentverk.',
 		'Print job retry could not be recorded.' => 'Ekki tókst að skrá nýja tilraun fyrir prentverkið.',
 		'The print job is not available in the requested media type.' => 'Prentverkið er ekki tiltækt fyrir umbeðna miðilgerð.',
