@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Само чакащи или поети задания за печат могат да бъдат отменени.',
 		'This print job has already been retried.' => 'За това задание за печат вече е направен повторен опит.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Съхранената касова бележка за тази задача е изчистена и няма шаблон, от който да бъде генерирана отново.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Шаблонът на тази задача вече не съществува, затова тя не може да бъде изобразена повторно.',
 		'Print job could not be created.' => 'Задачата за печат не можа да бъде създадена.',
 		'Print job retry could not be recorded.' => 'Повторният опит за заданието за печат не можа да бъде записан.',
 		'The print job is not available in the requested media type.' => 'Задачата за печат не е налична за заявения тип носител.',

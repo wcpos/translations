@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Tühistada saab ainult ootel või hõivatud prinditöid.',
 		'This print job has already been retried.' => 'Seda prinditööd on juba uuesti proovitud.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Selle töö salvestatud kviitung on puhastatud ja sellel pole malli, millest uuesti renderdada.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Selle töö mall ei ole enam saadaval, seega ei saa seda uuesti renderdada.',
 		'Print job could not be created.' => 'Printimistööd ei õnnestunud luua.',
 		'Print job retry could not be recorded.' => 'Prinditöö uut proovimist ei saanud registreerida.',
 		'The print job is not available in the requested media type.' => 'Prinditöö pole taotletud meediumitüübi jaoks saadaval.',

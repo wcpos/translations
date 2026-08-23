@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'فقط کارهای چاپِ در انتظار یا دریافت‌شده را می‌توان لغو کرد.',
 		'This print job has already been retried.' => 'برای این کار چاپ قبلاً تلاش مجدد انجام شده است.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'رسید ذخیره شده این کار پاکسازی شده است و هیچ الگویی برای ارائه مجدد ندارد.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'قالب این کار دیگر وجود ندارد و نمی‌توان آن را دوباره رندر کرد.',
 		'Print job could not be created.' => 'ایجاد وظیفه چاپ ممکن نبود.',
 		'Print job retry could not be recorded.' => 'ثبت تلاش مجدد کار چاپ امکان‌پذیر نبود.',
 		'The print job is not available in the requested media type.' => 'کار چاپی برای نوع رسانهٔ درخواستی در دسترس نیست.',

@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Endast väntande eller tilldelade utskriftsjobb kan avbrytas.',
 		'This print job has already been retried.' => 'Det här utskriftsjobbet har redan försökt köras igen.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Det här jobbets lagrade kvitto har rensats och det har ingen mall att återrendera från.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Den här jobbmallens mall finns inte längre och kan därför inte återrenderas.',
 		'Print job could not be created.' => 'Utskriftsjobbet kunde inte skapas.',
 		'Print job retry could not be recorded.' => 'Försöket att köra om utskriftsjobbet kunde inte registreras.',
 		'The print job is not available in the requested media type.' => 'Utskriftsjobbet är inte tillgängligt för den begärda medietypen.',

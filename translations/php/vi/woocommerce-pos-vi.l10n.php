@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Chỉ có thể hủy các tác vụ in đang chờ hoặc đã được nhận.',
 		'This print job has already been retried.' => 'Tác vụ in này đã được thử lại.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Biên nhận được lưu trữ của công việc này đã được dọn sạch và nó không có mẫu để hiển thị lại.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Mẫu của tác vụ này không còn tồn tại nên không thể kết xuất lại.',
 		'Print job could not be created.' => 'Không thể tạo tác vụ in.',
 		'Print job retry could not be recorded.' => 'Không thể ghi nhận việc thử lại tác vụ in.',
 		'The print job is not available in the requested media type.' => 'Tác vụ in không khả dụng cho loại phương tiện được yêu cầu.',

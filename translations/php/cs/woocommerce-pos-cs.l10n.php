@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Zrušit lze pouze čekající nebo převzaté tiskové úlohy.',
 		'This print job has already been retried.' => 'Tato tisková úloha již byla znovu spuštěna.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Uložená účtenka této úlohy byla odstraněna a není k dispozici žádná šablona pro její opětovné vykreslení.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Šablona této úlohy již neexistuje, takže ji nelze znovu vykreslit.',
 		'Print job could not be created.' => 'Tiskovou úlohu se nepodařilo vytvořit.',
 		'Print job retry could not be recorded.' => 'Opakování tiskové úlohy se nepodařilo zaznamenat.',
 		'The print job is not available in the requested media type.' => 'Tisková úloha není k dispozici pro požadovaný typ média.',

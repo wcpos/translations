@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Doar lucrările de imprimare în așteptare sau revendicate pot fi anulate.',
 		'This print job has already been retried.' => 'Această lucrare de imprimare a fost reîncercată deja.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Chitanța stocată a acestei lucrări a fost curățată și nu are nici un șablon de la care să se redeze din nou.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Șablonul acestei sarcini nu mai există, așadar nu poate fi redat din nou.',
 		'Print job could not be created.' => 'Jobul de imprimare nu a putut fi creat.',
 		'Print job retry could not be recorded.' => 'Reîncercarea lucrării de imprimare nu a putut fi înregistrată.',
 		'The print job is not available in the requested media type.' => 'Lucrarea de imprimare nu este disponibilă pentru tipul de suport solicitat.',

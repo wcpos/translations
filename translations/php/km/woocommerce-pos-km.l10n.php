@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'អាចបោះបង់បានតែការងារបោះពុម្ពដែលកំពុងរង់ចាំ ឬបានទទួលយកប៉ុណ្ណោះ។',
 		'This print job has already been retried.' => 'ការងារបោះពុម្ពនេះត្រូវបានព្យាយាមម្ដងទៀតរួចហើយ។',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'បង្កាន់ដៃដែលរក្សាទុករបស់ការងារនេះត្រូវបានសម្អាត ហើយវាមិនមានគំរូសម្រាប់បង្ហាញឡើងវិញពីការងារនេះទេ។',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'គំរូរបស់ការងារនេះលែងមានទៀតហើយ ដូច្នេះមិនអាចបង្ហាញឡើងវិញបានទេ។',
 		'Print job could not be created.' => 'មិនអាចបង្កើតការងារបោះពុម្ពបានទេ។',
 		'Print job retry could not be recorded.' => 'មិនអាចកត់ត្រាការព្យាយាមបោះពុម្ពម្ដងទៀតបានទេ។',
 		'The print job is not available in the requested media type.' => 'ការងារបោះពុម្ពមិនមានសម្រាប់ប្រភេទមេឌៀដែលបានស្នើសុំទេ។',

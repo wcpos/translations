@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Atšaukti galima tik laukiančias arba perimtas spausdinimo užduotis.',
 		'This print job has already been retried.' => 'Ši spausdinimo užduotis jau buvo pakartota.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Išsaugotas šios užduoties kvitas buvo išvalytas ir jame nėra šablono, kurį būtų galima iš naujo pateikti.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Šio darbo šablono nebėra, todėl jo nebegalima sugeneruoti iš naujo.',
 		'Print job could not be created.' => 'Spausdinimo užduoties sukurti nepavyko.',
 		'Print job retry could not be recorded.' => 'Nepavyko įrašyti pakartotinio spausdinimo bandymo.',
 		'The print job is not available in the requested media type.' => 'Spausdinimo užduotis nepasiekiama pagal nurodytą laikmenos tipą.',

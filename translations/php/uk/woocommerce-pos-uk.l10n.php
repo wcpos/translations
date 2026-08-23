@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Скасувати можна лише завдання друку зі статусом «очікує» або «прийнято в роботу».',
 		'This print job has already been retried.' => 'Для цього завдання друку вже виконано повторну спробу.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'Збережену квитанцію про цю роботу очищено, і вона не має шаблону для повторного відтворення.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'Шаблону цього завдання більше не існує, тому його неможливо повторно відрендерити.',
 		'Print job could not be created.' => 'Не вдалося створити завдання друку.',
 		'Print job retry could not be recorded.' => 'Не вдалося записати повторну спробу виконання завдання друку.',
 		'The print job is not available in the requested media type.' => 'Завдання друку недоступне для вибраного типу носія.',

@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => '僅可取消處於待處理或已認領狀態的列印工作。',
 		'This print job has already been retried.' => '此列印工作已重試過。',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => '該作業儲存的收據已被清理，並且沒有可供重新渲染的範本。',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => '此工作使用的範本已不存在，因此無法重新呈現。',
 		'Print job could not be created.' => '無法建立列印工作。',
 		'Print job retry could not be recorded.' => '無法記錄列印工作重試。',
 		'The print job is not available in the requested media type.' => '所要求的媒體類型無法使用此列印工作。',

@@ -141,6 +141,7 @@ return array(
 		'Only pending or claimed print jobs can be cancelled.' => 'Només es poden cancel·lar les tasques d’impressió pendents o assignades.',
 		'This print job has already been retried.' => 'Aquesta tasca d’impressió ja s’ha reintentat.',
 		'This job\'s stored receipt has been cleaned up and it has no template to re-render from.' => 'El rebut desat d\'aquesta tasca s\'ha netejat i no té cap plantilla a partir de la qual es pugui tornar a generar.',
+		'This job\'s template no longer exists, so it cannot be re-rendered.' => 'La plantilla d’aquesta tasca ja no existeix, per tant no es pot tornar a renderitzar.',
 		'Print job could not be created.' => 'No s\'ha pogut crear la tasca d\'impressió.',
 		'Print job retry could not be recorded.' => 'No s’ha pogut registrar el reintent de la tasca d’impressió.',
 		'The print job is not available in the requested media type.' => 'La tasca d’impressió no està disponible per al tipus de suport sol·licitat.',
