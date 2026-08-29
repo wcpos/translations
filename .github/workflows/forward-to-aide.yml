@@ -139,7 +139,16 @@ jobs:
                 done < <(echo "$changed_files" | jq -r '.[]')
                 git add translation-context/php
                 if ! git diff --staged --quiet; then
-                  git commit --amend --no-edit
+                  # The rebase may have dropped our commit as already applied
+                  # (an earlier run pushed identical artifacts), leaving HEAD on
+                  # someone else's published commit. Amending that would rewrite
+                  # main's tip under its own message; only amend an unpublished
+                  # commit of ours, otherwise commit fresh.
+                  if git merge-base --is-ancestor HEAD origin/main; then
+                    git commit -m "chore: update PHP translation context artifacts"
+                  else
+                    git commit --amend --no-edit
+                  fi
                 fi
                 sleep $((attempt * 5))
               done
