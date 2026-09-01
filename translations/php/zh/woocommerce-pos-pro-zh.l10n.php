@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
-	'language' => 'zh',
+	'language' => 'zh_CN',
 	'plural-forms' => 'nplurals=1; plural=0;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – WooCommerce 的销售点',
