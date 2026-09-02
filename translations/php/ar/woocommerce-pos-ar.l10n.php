@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'بيانات الشحن',
 		'Discount Label' => 'ملصح الخصم',
 		'Coupon Code' => 'رمز القسيمة',
+		'Coupon Type' => 'نوع القسيمة',
 		'Totals' => 'الإجمالى',
 		'Discount Total' => 'إجمالي الخصم',
 		'Discount Total (incl tax)' => 'إجمالى الخصم (شامل الضريبة)',

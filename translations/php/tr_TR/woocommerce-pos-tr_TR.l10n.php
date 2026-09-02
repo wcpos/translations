@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Kargo Metası',
 		'Discount Label' => 'İndirim Etiketi',
 		'Coupon Code' => 'Kupon Kodu',
+		'Coupon Type' => 'Kupon Türü',
 		'Totals' => 'Toplamlar',
 		'Discount Total' => 'İndirim Toplamı',
 		'Discount Total (incl tax)' => 'İndirim Toplamı (vergi dahil)',

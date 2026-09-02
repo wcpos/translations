@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Meta livrare',
 		'Discount Label' => 'Etichetă reducere',
 		'Coupon Code' => 'Cod cupon',
+		'Coupon Type' => 'Tip cupon',
 		'Totals' => 'Totaluri',
 		'Discount Total' => 'Total reducere',
 		'Discount Total (incl tax)' => 'Total Reduceri (inclusiv taxă)',

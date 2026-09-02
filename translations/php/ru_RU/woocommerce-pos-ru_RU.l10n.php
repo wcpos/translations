@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Метаданные доставки',
 		'Discount Label' => 'Метка скидки',
 		'Coupon Code' => 'Код купона',
+		'Coupon Type' => 'Тип купона',
 		'Totals' => 'Общие итоги',
 		'Discount Total' => 'Итого скидки',
 		'Discount Total (incl tax)' => 'Итого скидок (включая НДС)',

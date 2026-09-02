@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Forsendelsesmetadata',
 		'Discount Label' => 'Rabatetseddel',
 		'Coupon Code' => 'Rabatkode',
+		'Coupon Type' => 'Kupon-type',
 		'Totals' => 'Totaler',
 		'Discount Total' => 'Rabat i alt',
 		'Discount Total (incl tax)' => 'Rabattotal (inkl. moms)',

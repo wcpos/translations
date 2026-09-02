@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'शिपिंग मेटा',
 		'Discount Label' => 'छूट का लेबल',
 		'Coupon Code' => 'कूपन कोड',
+		'Coupon Type' => 'कूपन प्रकार',
 		'Totals' => 'कुल',
 		'Discount Total' => 'छूट कुल',
 		'Discount Total (incl tax)' => 'छूट का कुल (कर सहित)',

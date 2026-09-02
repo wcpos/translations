@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Toimituksen metatiedot',
 		'Discount Label' => 'Alennuksen nimi',
 		'Coupon Code' => 'Alennuskoodi',
+		'Coupon Type' => 'Kupongin tyyppi',
 		'Totals' => 'Summat',
 		'Discount Total' => 'Alennus yhteensä',
 		'Discount Total (incl tax)' => 'Alennuksen summa (sis. Alv)',

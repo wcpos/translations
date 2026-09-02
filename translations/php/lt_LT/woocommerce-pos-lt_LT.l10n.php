@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Pristatymo meta duomenys',
 		'Discount Label' => 'Nuolaidos etiketė',
 		'Coupon Code' => 'Nuolaidos kodas',
+		'Coupon Type' => 'Kupono tipas',
 		'Totals' => 'Viso suma',
 		'Discount Total' => 'Nuolaidos suma',
 		'Discount Total (incl tax)' => 'Nuolaidos viso (su mokesčiu)',

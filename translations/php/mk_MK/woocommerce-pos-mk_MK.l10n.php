@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Мета-податоци на испораката',
 		'Discount Label' => 'Етикета за одлози',
 		'Coupon Code' => 'Код на купон',
+		'Coupon Type' => 'Тип на купонот',
 		'Totals' => 'Вкупно',
 		'Discount Total' => 'Вкупен попуст',
 		'Discount Total (incl tax)' => 'Вкупно одлоза (вкл. ПДВ)',

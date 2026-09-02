@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'មេតាទិន្នន័យដឹកជញ្ជូន',
 		'Discount Label' => 'ស្លាកបញ្ចុះតំលៃ',
 		'Coupon Code' => 'កូដប័ណ្ណ',
+		'Coupon Type' => 'ប្រភេទគូប៉ុង',
 		'Totals' => 'សរុប',
 		'Discount Total' => 'សរុបបញ្ចុះតម្លៃ',
 		'Discount Total (incl tax)' => 'សរុបបញ្ចុះតំលៃ (ទាក់ទាញពន្ធដារ)',

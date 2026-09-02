@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Metadane wysyłki',
 		'Discount Label' => 'Etykieta zniży',
 		'Coupon Code' => 'Kod kuponu',
+		'Coupon Type' => 'Typ kuponu',
 		'Totals' => 'Sumy',
 		'Discount Total' => 'Łączna zniżka',
 		'Discount Total (incl tax)' => 'Całkowita zniża (z VAT)',

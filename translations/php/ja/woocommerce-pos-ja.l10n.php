@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => '配送メタ情報',
 		'Discount Label' => '割引ラベル',
 		'Coupon Code' => 'クーポンコード',
+		'Coupon Type' => 'クーポンタイプ',
 		'Totals' => '合計',
 		'Discount Total' => '割引合計',
 		'Discount Total (incl tax)' => '割引合計（税込）',

@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Szállítási metaadatok',
 		'Discount Label' => 'Kedvezmény címke',
 		'Coupon Code' => 'Kuponkód',
+		'Coupon Type' => 'Kupon típusa',
 		'Totals' => 'Összesen',
 		'Discount Total' => 'Kedvezmény összesen',
 		'Discount Total (incl tax)' => 'Kedvezmény teljes összege (ÁFA-vel együtt)',

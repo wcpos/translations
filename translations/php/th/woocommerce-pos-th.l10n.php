@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'ข้อมูลเมตาการจัดส่ง',
 		'Discount Label' => 'ฉลากส่วนลด',
 		'Coupon Code' => 'รหัสคูปอง',
+		'Coupon Type' => 'ประเภทคูปอง',
 		'Totals' => 'รวม',
 		'Discount Total' => 'ยอดส่วนลดรวม',
 		'Discount Total (incl tax)' => 'ยอดส่วนลด (รวมภาษี)',

@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => '배송 메타',
 		'Discount Label' => '할인 라벨',
 		'Coupon Code' => '쿠폰 코드',
+		'Coupon Type' => '쿠폰 유형',
 		'Totals' => '총 금액',
 		'Discount Total' => '할인 총액',
 		'Discount Total (incl tax)' => '할인 총액 (세포함)',

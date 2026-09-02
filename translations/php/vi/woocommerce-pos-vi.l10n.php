@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Thông tin giao hàng',
 		'Discount Label' => 'Nhãn giảm giá',
 		'Coupon Code' => 'Mã giảm giá',
+		'Coupon Type' => 'Loại mã giảm giá',
 		'Totals' => 'Tổng cộng',
 		'Discount Total' => 'Tổng giảm giá',
 		'Discount Total (incl tax)' => 'Tổng giảm giá (bao gồm thuế)',

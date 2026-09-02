@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Verzendmetadata',
 		'Discount Label' => 'Kortingslabel',
 		'Coupon Code' => 'Kortingscode',
+		'Coupon Type' => 'Coupontype',
 		'Totals' => 'Totalen',
 		'Discount Total' => 'Totaal korting',
 		'Discount Total (incl tax)' => 'Korting totaal (inclusief btw)',

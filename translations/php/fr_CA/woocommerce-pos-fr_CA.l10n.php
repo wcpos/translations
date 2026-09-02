@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Méta de livraison',
 		'Discount Label' => 'Libellé de remise',
 		'Coupon Code' => 'Code promo',
+		'Coupon Type' => 'Type de coupon',
 		'Totals' => 'Totalisateurs',
 		'Discount Total' => 'Total de la réduction',
 		'Discount Total (incl tax)' => 'Total des remises (incl. taxes)',

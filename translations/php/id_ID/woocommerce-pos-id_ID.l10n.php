@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Meta pengiriman',
 		'Discount Label' => 'Label Diskon',
 		'Coupon Code' => 'Kode kupon',
+		'Coupon Type' => 'Jenis kupon',
 		'Totals' => 'Total',
 		'Discount Total' => 'Total diskon',
 		'Discount Total (incl tax)' => 'Total Diskon (inkl. pajak)',
