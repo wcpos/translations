@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
-	'language' => 'de',
+	'language' => 'de_DE',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – Kassensystem für WooCommerce',
@@ -51,7 +51,7 @@ return array(
 		'Requires WordPress:' => 'Benötigt WordPress:',
 		'%s or higher' => '%s oder höher',
 		'Requires PHP:' => 'Benötigt PHP:',
-		'WCPOS Pro homepage' => 'WCPOS Pro-Startseite',
+		'WCPOS Pro homepage' => 'Startseite von WCPOS Pro',
 		'Documentation' => 'Dokumentation',
 		'Support' => 'Support',
 		'Links' => 'Links',

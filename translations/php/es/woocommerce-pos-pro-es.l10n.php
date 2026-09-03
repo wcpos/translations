@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos-pro',
-	'language' => 'es',
+	'language' => 'es_ES',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS Pro – Point of Sale for WooCommerce' => 'WCPOS Pro – Punto de Venta para WooCommerce',
@@ -43,7 +43,7 @@ return array(
 		'No release notes were published for this version.' => 'No se han publicado notas de la versión para esta versión.',
 		'Version %s' => 'Versión %s',
 		'Released %s' => 'Publicado el %s',
-		'You have the latest version.' => 'Tienes la última versión.',
+		'You have the latest version.' => 'Tienes la versión más reciente.',
 		'New version:' => 'Nueva versión:',
 		'Installed version:' => 'Versión instalada:',
 		'Version:' => 'Versión:',

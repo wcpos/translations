@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'nl',
+	'language' => 'nl_NL',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassasysteem voor WooCommerce',
@@ -389,7 +389,7 @@ return array(
 		'Shipping Meta' => 'Verzendmeta',
 		'Discount Label' => 'Kortingslabel',
 		'Coupon Code' => 'Kortingscode',
-		'Coupon Type' => 'Coupontype',
+		'Coupon Type' => 'Type coupon',
 		'Totals' => 'Totalen',
 		'Discount Total' => 'Kortingtotaal',
 		'Discount Total (incl tax)' => 'Totaal kortingen (incl. btw)',
