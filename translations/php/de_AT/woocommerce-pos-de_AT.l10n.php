@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Versand-Metadaten',
 		'Discount Label' => 'Rabattbezeichnung',
 		'Coupon Code' => 'Gutscheincode',
+		'Coupon Type' => 'Gutscheinart',
 		'Totals' => 'Gesamtsummen',
 		'Discount Total' => 'Rabattsumme',
 		'Discount Total (incl tax)' => 'Rabatt-Gesamtbetrag (inkl. Steuer)',

@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Метадані доставки',
 		'Discount Label' => 'Мітка знижки',
 		'Coupon Code' => 'Код купона',
+		'Coupon Type' => 'Тип купона',
 		'Totals' => 'Разом',
 		'Discount Total' => 'Загальна знижка',
 		'Discount Total (incl tax)' => 'Загалом з урахуванням знижки (з ПДВ)',

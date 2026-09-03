@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Μεταδεδομένα αποστολής',
 		'Discount Label' => 'Ετικέτα Έκπτωσης',
 		'Coupon Code' => 'Κωδικός κουπονιού',
+		'Coupon Type' => 'Τύπος κουπονιού',
 		'Totals' => 'Σύνολα',
 		'Discount Total' => 'Σύνολο έκπτωσης',
 		'Discount Total (incl tax)' => 'Σύνολο Έκπτωσης (περιλ.) ΦΠΑ',

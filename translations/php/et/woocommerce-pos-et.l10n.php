@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Tarne metaandmed',
 		'Discount Label' => 'Soodustuste silt',
 		'Coupon Code' => 'Kupongi kood',
+		'Coupon Type' => 'Kupongi tüüp',
 		'Totals' => 'Kokkus',
 		'Discount Total' => 'Allahindluse kogusumma',
 		'Discount Total (incl tax)' => 'Soodustuste kokku (koos maksuga)',

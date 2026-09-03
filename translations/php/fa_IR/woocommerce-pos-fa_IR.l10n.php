@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'فراداده ارسال',
 		'Discount Label' => 'برچسب تخفیف',
 		'Coupon Code' => 'کد کوپن',
+		'Coupon Type' => 'نوع کوپن',
 		'Totals' => 'جمع‌های کل',
 		'Discount Total' => 'جمع تخفیف',
 		'Discount Total (incl tax)' => 'جمع تخفیف (شامل مالیات)',

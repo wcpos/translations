@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'meta penghantaran',
 		'Discount Label' => 'Label Diskaun',
 		'Coupon Code' => 'kod kupon',
+		'Coupon Type' => 'Jenis Kupon',
 		'Totals' => 'Jumlah-Jumlah',
 		'Discount Total' => 'jumlah diskaun',
 		'Discount Total (incl tax)' => 'Jumlah Diskaun (termasuk cukai)',

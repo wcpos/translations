@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'pt_PT',
+	'language' => 'pt',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Ponto de Venda para WooCommerce',
@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Metadados do envio',
 		'Discount Label' => 'Rótulo de Desconto',
 		'Coupon Code' => 'Código do cupão',
+		'Coupon Type' => 'Tipo de cupom',
 		'Totals' => 'Totais',
 		'Discount Total' => 'Total do desconto',
 		'Discount Total (incl tax)' => 'Total de Desconto (incl. IVA)',

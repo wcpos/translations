@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Sendingargögn',
 		'Discount Label' => 'Afslitsskýring',
 		'Coupon Code' => 'Afsláttarkóði',
+		'Coupon Type' => 'Afsláttarmiðategund',
 		'Totals' => 'Heildaruppæðir',
 		'Discount Total' => 'Heildarafsláttur',
 		'Discount Total (incl tax)' => 'Afslitshægi (með skatt)',

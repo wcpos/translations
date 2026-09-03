@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Fraktmeta',
 		'Discount Label' => 'Rabattetikett',
 		'Coupon Code' => 'Kupongkode',
+		'Coupon Type' => 'Kupongtype',
 		'Totals' => 'Totaler',
 		'Discount Total' => 'Rabatt totalt',
 		'Discount Total (incl tax)' => 'Rabatttotal (inkl MVA)',

@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Metadades d\'enviament',
 		'Discount Label' => 'Etiqueta de descuent',
 		'Coupon Code' => 'Codi de cupó',
+		'Coupon Type' => 'Tipus de cupó',
 		'Totals' => 'Totals',
 		'Discount Total' => 'Total del descompte',
 		'Discount Total (incl tax)' => 'Total del descuent (incl. impostos)',

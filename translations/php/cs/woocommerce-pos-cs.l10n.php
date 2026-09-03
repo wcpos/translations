@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'Metadata dopravy',
 		'Discount Label' => 'Popisek slevy',
 		'Coupon Code' => 'Kód kupónu',
+		'Coupon Type' => 'Typ kupónu',
 		'Totals' => 'Zápisy',
 		'Discount Total' => 'Celková sleva',
 		'Discount Total (incl tax)' => 'Celková sleva (vč. DPH)',

@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => 'מטא המשלוח',
 		'Discount Label' => '레이בל הנחה',
 		'Coupon Code' => 'קוד קופון',
+		'Coupon Type' => 'סוג קופון',
 		'Totals' => 'סיכומים',
 		'Discount Total' => 'סה"כ הנחה',
 		'Discount Total (incl tax)' => 'סכום ההנחות (כולל מע"מ)',

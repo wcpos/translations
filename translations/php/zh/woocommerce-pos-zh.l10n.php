@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'zh_CN',
+	'language' => 'zh',
 	'plural-forms' => 'nplurals=1; plural=0;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – WooCommerce销售点',
@@ -389,6 +389,7 @@ return array(
 		'Shipping Meta' => '配送元数据',
 		'Discount Label' => '折扣标签',
 		'Coupon Code' => '优惠码',
+		'Coupon Type' => '优惠券类型',
 		'Totals' => '总计',
 		'Discount Total' => '折扣总额',
 		'Discount Total (incl tax)' => '折扣总计（含税）',
