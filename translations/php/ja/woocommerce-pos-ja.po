@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:240
+#: includes/Activator.php:255
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong>はPHP %1$s以上が必要です。<a href=\"%2$s\">更新方法</a>についての詳細をお読みください"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:264
+#: includes/Activator.php:279
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong>は<a href=\"%1$s\">WooCommerce %2$s以上</a>が必要です。<a href=\"%3$s\">WooCommerceをインストールして有効化してください</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:286
+#: includes/Activator.php:301
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong>は<em>きれいな</em>パーマリンクが正しく動作するために必要です"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:287
+#: includes/Activator.php:302
 msgid "Enable permalinks"
 msgstr "パーマリンクを有効にする"
 
@@ -69,7 +69,7 @@ msgstr "パーマリンクを有効にする"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:510
+#: includes/Activator.php:525
 #: includes/Services/Receipt_Data_Schema.php:437
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:316
@@ -78,7 +78,7 @@ msgid "Cashier"
 msgstr "レジ係"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:604
+#: includes/Activator.php:706
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -130,8 +130,8 @@ msgstr "設定"
 #. translators: Receipt template post type or template option label.
 #: includes/Admin/Menu.php:182
 #: includes/Admin/Menu.php:184
-#: includes/Templates.php:75
-#: includes/Templates.php:80
+#: includes/Templates.php:127
+#: includes/Templates.php:132
 msgid "Templates"
 msgstr "テンプレート"
 
@@ -178,7 +178,7 @@ msgid "Unknown"
 msgstr "不明"
 
 #. translators: Permalink settings label for the POS base URL.
-#: includes/Admin/Permalink.php:70
+#: includes/Admin/Permalink.php:91
 msgctxt "Permalink setting, eg: /pos"
 msgid "POS base"
 msgstr "POS基本"
@@ -2951,7 +2951,7 @@ msgstr "課税額（税込）"
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:183
-#: includes/Templates.php:1331
+#: includes/Templates.php:1380
 #: includes/Templates/Gallery_Registry.php:55
 msgid "Invoice"
 msgstr "請求書"
@@ -2970,8 +2970,14 @@ msgstr "見積書"
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:186
 #: includes/Storefront_Receipts.php:138
-#: includes/Templates.php:1330
+#: includes/Templates.php:1379
 #: templates/receipt.php:184
+#: tests/includes/Test_i18n_Storefront.php:94
+#: tests/includes/Test_i18n_Storefront.php:104
+#: tests/includes/Test_i18n_Storefront.php:117
+#: tests/includes/Test_i18n_Storefront.php:168
+#: tests/includes/Test_i18n_Storefront.php:180
+#: tests/includes/Test_i18n_Storefront.php:198
 msgid "Receipt"
 msgstr "領収書"
 
@@ -2979,7 +2985,7 @@ msgstr "領収書"
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Services/Receipt_I18n_Labels.php:187
-#: includes/Templates.php:1332
+#: includes/Templates.php:1381
 #: includes/Templates/Gallery_Registry.php:42
 msgid "Gift Receipt"
 msgstr "ギフトレシート"
@@ -2987,7 +2993,7 @@ msgstr "ギフトレシート"
 #. translators: Document title for a credit note/refund document.
 #. translators: Receipt template post type or template option label.
 #: includes/Services/Receipt_I18n_Labels.php:188
-#: includes/Templates.php:1333
+#: includes/Templates.php:1382
 msgid "Credit Note"
 msgstr "クレジットノート"
 
@@ -3240,7 +3246,7 @@ msgid "Settings with id %s not found"
 msgstr "ID %s の設定が見つかりません"
 
 #. translators: %s: Settings group id, ie: 'general' or 'checkout'.
-#: includes/Services/Settings/Abstract_Section.php:215
+#: includes/Services/Settings/Abstract_Section.php:236
 #, php-format
 msgid "Can not save settings with id %s"
 msgstr "ID %s の設定を保存できません"
@@ -3336,361 +3342,361 @@ msgstr ""
 "WCPOSの同期ストアはまだインストールされていません（初期化中か、スキーマのインストールに失敗しています）。しばらくしてから再試行してください。"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:73
+#: includes/Templates.php:125
 msgctxt "Post Type General Name"
 msgid "Templates"
 msgstr "テンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:74
+#: includes/Templates.php:126
 msgctxt "Post Type Singular Name"
 msgid "Template"
 msgstr "テンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:76
-#: includes/Templates.php:103
+#: includes/Templates.php:128
+#: includes/Templates.php:155
 msgid "Template"
 msgstr "テンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:77
+#: includes/Templates.php:129
 msgid "Template Archives"
 msgstr "テンプレートアーカイブ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:78
+#: includes/Templates.php:130
 msgid "Template Attributes"
 msgstr "テンプレート属性"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:79
+#: includes/Templates.php:131
 msgid "Parent Template:"
 msgstr "親テンプレート:"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:81
+#: includes/Templates.php:133
 msgid "Add New Template"
 msgstr "新しいテンプレートを追加"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:82
+#: includes/Templates.php:134
 msgid "Add New"
 msgstr "新規追加"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:83
+#: includes/Templates.php:135
 msgid "New Template"
 msgstr "新しいテンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:84
+#: includes/Templates.php:136
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:85
+#: includes/Templates.php:137
 msgid "Update Template"
 msgstr "テンプレートを更新"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:86
+#: includes/Templates.php:138
 msgid "View Template"
 msgstr "テンプレートを表示"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:87
+#: includes/Templates.php:139
 msgid "View Templates"
 msgstr "テンプレートを表示"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:88
+#: includes/Templates.php:140
 msgid "Search Template"
 msgstr "テンプレートを検索"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:89
+#: includes/Templates.php:141
 msgid "Not found"
 msgstr "見つかりません"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:90
+#: includes/Templates.php:142
 msgid "Not found in Trash"
 msgstr "ゴミ箱に見つかりません"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:91
+#: includes/Templates.php:143
 msgid "Featured Image"
 msgstr "アイキャッチ画像"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:92
+#: includes/Templates.php:144
 msgid "Set featured image"
 msgstr "アイキャッチ画像を設定"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:93
+#: includes/Templates.php:145
 msgid "Remove featured image"
 msgstr "アイキャッチ画像を削除"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:94
+#: includes/Templates.php:146
 msgid "Use as featured image"
 msgstr "アイキャッチ画像として使用"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:95
+#: includes/Templates.php:147
 msgid "Insert into template"
 msgstr "テンプレートに挿入"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:96
+#: includes/Templates.php:148
 msgid "Uploaded to this template"
 msgstr "このテンプレートにアップロード済み"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:97
+#: includes/Templates.php:149
 msgid "Templates list"
 msgstr "テンプレート一覧"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:98
+#: includes/Templates.php:150
 msgid "Templates list navigation"
 msgstr "テンプレート一覧ナビゲーション"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:99
+#: includes/Templates.php:151
 msgid "Filter templates list"
 msgstr "テンプレート一覧をフィルター"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:104
+#: includes/Templates.php:156
 msgid "POS Templates"
 msgstr "POSテンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:144
+#: includes/Templates.php:196
 msgctxt "Taxonomy General Name"
 msgid "Template Types"
 msgstr "テンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:145
+#: includes/Templates.php:197
 msgctxt "Taxonomy Singular Name"
 msgid "Template Type"
 msgstr "テンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:146
+#: includes/Templates.php:198
 msgid "Template Types"
 msgstr "テンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:147
+#: includes/Templates.php:199
 msgid "All Template Types"
 msgstr "すべてのテンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:148
+#: includes/Templates.php:200
 msgid "Parent Template Type"
 msgstr "親テンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:149
+#: includes/Templates.php:201
 msgid "Parent Template Type:"
 msgstr "親テンプレートタイプ:"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:150
+#: includes/Templates.php:202
 msgid "New Template Type Name"
 msgstr "新しいテンプレートタイプ名"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:151
+#: includes/Templates.php:203
 msgid "Add New Template Type"
 msgstr "新しいテンプレートタイプを追加"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:152
+#: includes/Templates.php:204
 msgid "Edit Template Type"
 msgstr "テンプレートタイプを編集"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:153
+#: includes/Templates.php:205
 msgid "Update Template Type"
 msgstr "テンプレートタイプを更新"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:154
+#: includes/Templates.php:206
 msgid "View Template Type"
 msgstr "テンプレートタイプを表示"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:155
+#: includes/Templates.php:207
 msgid "Separate template types with commas"
 msgstr "テンプレートタイプをカンマで区切る"
 
-#: includes/Templates.php:156
+#: includes/Templates.php:208
 msgid "Add or remove template types"
 msgstr "テンプレートタイプを追加または削除"
 
-#: includes/Templates.php:157
+#: includes/Templates.php:209
 msgid "Choose from the most used"
 msgstr "最も使用されているものから選択"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:158
+#: includes/Templates.php:210
 msgid "Popular Template Types"
 msgstr "人気のテンプレートタイプ"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:159
+#: includes/Templates.php:211
 msgid "Search Template Types"
 msgstr "テンプレートタイプを検索"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:160
+#: includes/Templates.php:212
 msgid "Not Found"
 msgstr "見つかりません"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:161
+#: includes/Templates.php:213
 msgid "No template types"
 msgstr "テンプレートタイプなし"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:162
+#: includes/Templates.php:214
 msgid "Template types list"
 msgstr "テンプレートタイプ一覧"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:163
+#: includes/Templates.php:215
 msgid "Template types list navigation"
 msgstr "テンプレートタイプ一覧ナビゲーション"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:195
+#: includes/Templates.php:246
 msgctxt "Taxonomy General Name"
 msgid "Template Categories"
 msgstr "テンプレートカテゴリー"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:196
+#: includes/Templates.php:247
 msgctxt "Taxonomy Singular Name"
 msgid "Template Category"
 msgstr "テンプレートカテゴリー"
 
 #. translators: %d: template post ID.
-#: includes/Templates.php:290
+#: includes/Templates.php:339
 #, php-format
 msgid "Report Template #%d"
 msgstr "レポートテンプレート #%d"
 
 #. translators: 1: thermal paper width, 2: template post ID.
-#: includes/Templates.php:296
+#: includes/Templates.php:345
 #, php-format
 msgid "Thermal Receipt Template (%1$s) #%2$d"
 msgstr "感熱レシートテンプレート（%1$s）#%2$d"
 
 #. translators: %d: template post ID.
-#: includes/Templates.php:300
+#: includes/Templates.php:349
 #, php-format
 msgid "Thermal Receipt Template #%d"
 msgstr "感熱レシートテンプレート #%d"
 
 #. translators: %d: template post ID.
-#: includes/Templates.php:305
+#: includes/Templates.php:354
 #, php-format
 msgid "HTML Receipt Template #%d"
 msgstr "HTMLレシートテンプレート #%d"
 
 #. translators: %d: template post ID.
-#: includes/Templates.php:310
+#: includes/Templates.php:359
 #, php-format
 msgid "PHP Receipt Template #%d"
 msgstr "PHPレシートテンプレート #%d"
 
 #. translators: %d: template post ID.
-#: includes/Templates.php:314
+#: includes/Templates.php:363
 #, php-format
 msgid "Receipt Template #%d"
 msgstr "レシートテンプレート #%d"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:420
+#: includes/Templates.php:469
 msgid "Theme Receipt Template"
 msgstr "テーマレシートテンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:425
+#: includes/Templates.php:474
 msgid "Pro Receipt Template"
 msgstr "プロレシートテンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:430
+#: includes/Templates.php:479
 msgid "Legacy PHP Template"
 msgstr "レガシー PHP テンプレート"
 
-#: includes/Templates.php:435
+#: includes/Templates.php:484
 msgid "Invoice (WP Overnight)"
 msgstr "請求書（WP Overnight）"
 
-#: includes/Templates.php:436
+#: includes/Templates.php:485
 msgid ""
 "Renders the PDF Invoices & Packing Slips invoice HTML through the WP Overnight document API."
 msgstr ""
 "PDF Invoices & Packing Slips の請求書 HTML を WP Overnight のドキュメント API 経由で表示します。"
 
-#: includes/Templates.php:440
+#: includes/Templates.php:489
 msgid "Packing Slip (WP Overnight)"
 msgstr "納品書（WP Overnight）"
 
-#: includes/Templates.php:441
+#: includes/Templates.php:490
 msgid ""
 "Renders the PDF Invoices & Packing Slips packing slip HTML through the WP Overnight document API."
 msgstr ""
 "PDF Invoices & Packing Slips の納品書 HTML を WP Overnight のドキュメント API 経由で表示します。"
 
-#: includes/Templates.php:1168
+#: includes/Templates.php:1217
 msgid "Starter template not found."
 msgstr "スターターテンプレートが見つかりません。"
 
-#: includes/Templates.php:1175
+#: includes/Templates.php:1224
 msgid "Could not read starter template file."
 msgstr "スターターテンプレートファイルの読み込みに失敗しました。"
 
-#: includes/Templates.php:1204
-#: includes/Templates.php:1285
+#: includes/Templates.php:1253
+#: includes/Templates.php:1334
 msgid "Template was created but raw content could not be saved."
 msgstr "テンプレートは作成されましたが、生の内容を保存できませんでした。"
 
-#: includes/Templates.php:1231
+#: includes/Templates.php:1280
 msgid "Gallery template not found."
 msgstr "ギャラリーテンプレートが見つかりません。"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1306
+#: includes/Templates.php:1355
 msgid "Receipt templates for printing orders"
 msgstr "注文印刷用レシートテンプレート"
 
-#: includes/Templates.php:1317
+#: includes/Templates.php:1366
 msgid "Report templates for analytics"
 msgstr "分析用レポートテンプレート"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1334
+#: includes/Templates.php:1383
 msgid "Purchase Order"
 msgstr "購入発注書"
 
 #. translators: Receipt template post type or template option label.
 #. translators: Gallery template name shown in the admin Template Gallery.
-#: includes/Templates.php:1335
+#: includes/Templates.php:1384
 #: includes/Templates/Gallery_Registry.php:172
 msgid "Kitchen Ticket"
 msgstr "キッチンチケット"
 
 #. translators: Receipt template post type or template option label.
-#: includes/Templates.php:1336
+#: includes/Templates.php:1385
 msgid "Bar Ticket"
 msgstr "バー・チケット"
 
