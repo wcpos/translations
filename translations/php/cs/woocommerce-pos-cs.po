@@ -383,7 +383,6 @@ msgid "Authentication required."
 msgstr "Je vyžadováno ověření."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Nemáte oprávnění k přístupu k POS."
 
@@ -508,39 +507,39 @@ msgid "Order not found."
 msgstr "Objednávka nebyla nalezena."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Daňová identifikační čísla zákazníka."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Typ daňového identifikačního čísla."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Hodnota daňového identifikačního čísla."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Kód země podle ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Volitelný čitelný popisek."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Filtrovat zákazníky podle rolí."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Neplatná e-mailová adresa."
@@ -1271,6 +1270,27 @@ msgstr "Identický požadavek se již zpracovává."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT není správně nakonfigurován, kontaktujte prosím administrátora"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "Tento účet nemůže používat POS. Chybějící oprávnění: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Má tyto role: %s. Odepření oprávnění u jedné role může převážit nad udělením oprávnění u jiné role a pluginy pro úpravu rolí, jako je Members, toto odepření uplatní jako první. Odeberte nadbytečnou roli nebo zrušte odepření v editoru rolí."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Udělete jim oprávnění v Nastavení WCPOS > Přístup nebo jim přiřaďte roli, která je má."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "Cloudový tisk WCPOS je na tomto webu zakázán."
@@ -1290,6 +1310,11 @@ msgstr "Registrace Relay vrátila neplatné přihlašovací údaje."
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "Metadata auditu POS nelze upravovat prostřednictvím této REST trasy."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "Účet zaměstnance může v POS upravovat nebo mazat pouze administrátor."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3276,7 +3301,7 @@ msgstr "Nastavení s id %s nebylo nalezeno"
 msgid "Can not save settings with id %s"
 msgstr "Nelze uložit nastavení s id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "Nemáte oprávnění k aktualizaci nastavení přístupu."
 
@@ -3727,59 +3752,54 @@ msgstr "Jídelní lístek"
 msgid "Bar Ticket"
 msgstr "Barový lístek"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Chybějící nebo neplatný parametr redirect_uri."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Chybějící parametr stavu."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Příliš mnoho požadavků. Zkuste to prosím později."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "Autentizační relace vypršela. Zkuste se znovu přihlásit z aplikace."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Neplatná autentizační relace. Zkuste se znovu přihlásit z aplikace."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Kontrola zabezpečení selhala. Zkuste to prosím znovu."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Autentizace selhala."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Tento účet je dočasně zablokován kvůli příliš mnoha neúspěšným pokusům o přihlášení. Zkuste to prosím později."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Nepodařilo se vygenerovat autentizační tokeny."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Zadejte prosím uživatelské jméno i heslo."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Neplatné uživatelské jméno nebo heslo."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Nemáte dostatečná oprávnění pro přístup na tuto stránku."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

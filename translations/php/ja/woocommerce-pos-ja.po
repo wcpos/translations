@@ -378,7 +378,6 @@ msgid "Authentication required."
 msgstr "認証が必要です。"
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "POSにアクセスする権限がありません。"
 
@@ -503,39 +502,39 @@ msgid "Order not found."
 msgstr "注文が見つかりません。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "顧客の税ID。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "税IDの種類。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "税IDの値。"
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "ISO 3166-1 alpha-2 国コード。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "任意の分かりやすいラベル。"
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "役割で顧客をフィルタリング。"
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "無効なメールアドレスです。"
@@ -1250,6 +1249,26 @@ msgstr "同一のリクエストがすでに処理中です。"
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWTが正しく設定されていません。管理者に連絡してください。"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "このアカウントはPOSを利用できません。不足している権限：%s。"
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"このアカウントには%sのロールが割り当てられています。あるロールで拒否された権限は、別のロールで付与されていても上書きされる場合があり、Membersなどのロール編集プラグインでは、その拒否設定が優先されます。余分なロールを削除するか、ロールエディターで拒否設定を解除してください。"
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr "WCPOS設定の「アクセス」で付与するか、その権限を持つロールを割り当ててください。"
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "このサイトでは WCPOS Cloud Print が無効になっています。"
@@ -1269,6 +1288,11 @@ msgstr "リレー登録で無効な資格情報が返されました。"
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "POS監査メタデータは、このRESTルートから変更できません。"
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "POSからスタッフアカウントを編集または削除できるのは、管理者だけです。"
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3251,7 +3275,7 @@ msgstr "ID %s の設定が見つかりません"
 msgid "Can not save settings with id %s"
 msgstr "ID %s の設定を保存できません"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "アクセス設定を更新する権限がありません。"
 
@@ -3700,58 +3724,53 @@ msgstr "キッチンチケット"
 msgid "Bar Ticket"
 msgstr "バー・チケット"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "redirect_uriパラメーターが不足しているか無効です。"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "stateパラメーターが不足しています。"
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "リクエストが多すぎます。後でもう一度お試しください。"
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "認証セッションが期限切れです。アプリから再度ログインしてください。"
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "無効な認証セッションです。アプリから再度ログインしてください。"
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "セキュリティチェックに失敗しました。もう一度お試しください。"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "認証に失敗しました。"
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr "ログイン試行が多すぎるため、このアカウントは一時的にロックされています。後でもう一度お試しください。"
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "認証トークンの生成に失敗しました。"
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "ユーザー名とパスワードの両方を入力してください。"
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "ユーザー名またはパスワードが無効です。"
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "このページにアクセスする権限がありません。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

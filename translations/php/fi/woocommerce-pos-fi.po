@@ -382,7 +382,6 @@ msgid "Authentication required."
 msgstr "Todennus vaaditaan."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Sinulla ei ole oikeuksia käyttää POS:ia."
 
@@ -507,39 +506,39 @@ msgid "Order not found."
 msgstr "Tilausta ei löytynyt."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Asiakkaan verotunnukset."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Verotunnuksen tyyppi."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Verotunnuksen arvo."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "ISO 3166-1 alpha-2 -maakoodi."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Valinnainen selkokielinen nimi."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Suodata asiakkaat roolien mukaan."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Virheellinen sähköpostiosoite."
@@ -1269,6 +1268,27 @@ msgstr "Samanlainen pyyntö on jo käsittelyssä."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT ei ole oikein määritetty, ota yhteyttä ylläpitäjään"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "Tämä tili ei voi käyttää POS-järjestelmää. Puuttuvat oikeudet: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Sillä on roolit %s. Yhdessä roolissa estetty oikeus voi kumota toisesta roolista myönnetyn oikeuden, ja Membersin kaltaiset roolien muokkauslisäosat soveltavat ensin estoa. Poista ylimääräinen rooli tai poista esto roolieditorissa."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Myönnä ne kohdassa WCPOS-asetukset > Käyttöoikeudet tai määritä rooli, jolla ne ovat."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print on poistettu käytöstä tällä sivustolla."
@@ -1288,6 +1308,12 @@ msgstr "Releen rekisteröinti palautti virheelliset valtuustiedot."
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "POS-tarkastuksen metatietoja ei voi muokata tämän REST-reitin kautta."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Vain ylläpitäjä voi muokata tai poistaa henkilökunnan tiliä POS-järjestelmästä."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3275,7 +3301,7 @@ msgstr "Asetuksia, joiden id on %s, ei löydy"
 msgid "Can not save settings with id %s"
 msgstr "Asetuksia, joiden id on %s, ei voida tallentaa"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "Sinulla ei ole oikeutta päivittää käyttöoikeusasetuksia."
 
@@ -3727,59 +3753,54 @@ msgstr "Keittiötunnus"
 msgid "Bar Ticket"
 msgstr "Bartuntista"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Puuttuva tai virheellinen redirect_uri-parametri."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Puuttuva state-parametri."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Liian monta pyyntöä. Yritä myöhemmin uudelleen."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "Istunto vanhentunut. Yritä kirjautua uudelleen sovelluksesta."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Virheellinen istunto. Yritä kirjautua uudelleen sovelluksesta."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Turvatarkistus epäonnistui. Yritä uudelleen."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Todennus epäonnistui."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Tämä tili on tilapäisesti lukittu liian monien epäonnistuneiden kirjautumisyritysten vuoksi. Yritä myöhemmin uudelleen."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Todennustunnusten luominen epäonnistui."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Anna sekä käyttäjätunnus että salasana."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Virheellinen käyttäjätunnus tai salasana."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Sinulla ei ole riittäviä oikeuksia tämän sivun käyttöön."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

@@ -384,7 +384,6 @@ msgid "Authentication required."
 msgstr "Hitelesítés szükséges."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Nincs jogosultsága a POS eléréséhez."
 
@@ -512,39 +511,39 @@ msgid "Order not found."
 msgstr "A rendelés nem található."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Vásárlói adóazonosítók."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Adóazonosító típusa."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Adóazonosító értéke."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "ISO 3166-1 alpha-2 országkód."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Opcionális, ember által olvasható címke."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Vevők szűrése szerepek szerint."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Érvénytelen email cím."
@@ -1277,6 +1276,27 @@ msgid "JWT is not configured properly, please contact the admin"
 msgstr ""
 "A JWT nincs megfelelően konfigurálva, kérjük, lépj kapcsolatba az adminisztrátorral"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "Ez a fiók nem használhatja a POS-t. Hiányzó jogosultságok: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"A következő szerepkörökkel rendelkezik: %s. Az egyik szerepkörben letiltott jogosultság felülírhatja egy másik szerepkör engedélyezését, és a Membershez hasonló szerepkörszerkesztő bővítmények először ezt a tiltást alkalmazzák. Távolítsa el a további szerepkört, vagy törölje a tiltást a szerepkör-szerkesztőben."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Adja meg ezeket a jogosultságokat a WCPOS Beállítások > Hozzáférés menüpontjában, vagy rendeljen hozzá olyan szerepkört, amely rendelkezik velük."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "A WCPOS Cloud Print le van tiltva ezen az oldalon."
@@ -1298,6 +1318,12 @@ msgstr ""
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "A POS-audit metaadatai ezen a REST-útvonalon keresztül nem módosíthatók."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Csak egy rendszergazda szerkesztheti vagy törölheti a munkatársi fiókot a POS-ban."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3286,7 +3312,7 @@ msgstr "A(z) %s azonosítójú beállítások nem találhatók"
 msgid "Can not save settings with id %s"
 msgstr "Nem lehet menteni a(z) %s azonosítójú beállításokat"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "Nincs jogosultsága a hozzáférési beállítások frissítéséhez."
 
@@ -3737,61 +3763,56 @@ msgstr "Konyhai jegy"
 msgid "Bar Ticket"
 msgstr "Bárszegnő"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Hiányzó vagy érvénytelen redirect_uri paraméter."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Hiányzó állapot paraméter."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Túl sok kérés. Kérjük, próbálja újra később."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "A hitelesítési munkamenet lejárt. Kérjük, próbáljon meg újra bejelentkezni az alkalmazásból."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Érvénytelen hitelesítési munkamenet. Kérjük, próbáljon meg újra bejelentkezni az alkalmazásból."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Biztonsági ellenőrzés sikertelen. Kérjük, próbálja újra."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Hitelesítés sikertelen."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Ez a fiók ideiglenesen zárolva van túl sok sikertelen bejelentkezési kísérlet miatt. Kérjük, próbálja meg később."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Nem sikerült hitelesítési tokeneket generálni."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Kérjük, adja meg mind a felhasználónevet, mind a jelszót."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Érvénytelen felhasználónév vagy jelszó."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Nincs elegendő jogosultsága az oldal eléréséhez."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

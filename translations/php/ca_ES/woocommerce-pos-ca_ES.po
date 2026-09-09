@@ -384,7 +384,6 @@ msgid "Authentication required."
 msgstr "Autenticació requerida."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "No tens permís per accedir al POS."
 
@@ -510,39 +509,39 @@ msgid "Order not found."
 msgstr "Comanda no trobada."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Identificadors fiscals del client."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Tipus d'identificador fiscal."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Valor de l'identificador fiscal."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Codi de país ISO 3166-1 alfa-2."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Etiqueta llegible opcional."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Filtra clients per rols."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Adreça de correu electrònic no vàlida."
@@ -1280,6 +1279,28 @@ msgid "JWT is not configured properly, please contact the admin"
 msgstr ""
 "JWT no està configurat correctament, si us plau contacta amb l'administrador"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr ""
+"Aquest compte no pot utilitzar el POS. Falten aquestes capacitats: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Té assignats els rols %s. Una capacitat denegada en un rol pot anul·lar una concessió d’un altre, i els connectors d’edició de rols, com ara Members, apliquen primer aquesta denegació. Elimina el rol addicional o elimina la denegació a l’editor de rols."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Concedeix-les a Configuració de WCPOS > Accés o assigna un rol que les tingui."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "La impressió al núvol de WCPOS està desactivada en aquest lloc."
@@ -1300,6 +1321,12 @@ msgstr "El registre del relay ha retornat unes credencials no vàlides."
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "Les metadades d’auditoria del POS no es poden modificar mitjançant aquesta ruta REST."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Només un administrador pot editar o eliminar un compte de personal des del POS."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3288,7 +3315,7 @@ msgstr "Configuracions amb id %s no trobades"
 msgid "Can not save settings with id %s"
 msgstr "No es poden desar les configuracions amb id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "No teniu permís per actualitzar la configuració d’accés."
 
@@ -3741,62 +3768,57 @@ msgstr "Orde de Cuina"
 msgid "Bar Ticket"
 msgstr "Orde del Bar"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Falta o és invàlid el paràmetre redirect_uri."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Falta el paràmetre d'estat."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Massa sol·licituds. Si us plau, torna-ho a intentar més tard."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "La sessió d'autenticació ha expirat. Si us plau, torneu a iniciar sessió des de l'aplicació."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Sessió d'autenticació no vàlida. Si us plau, torneu a iniciar sessió des de l'aplicació."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr ""
 "La comprovació de seguretat ha fallat. Si us plau, torneu a intentar-ho."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Autenticació fallida."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Aquest compte està temporalment bloquejat a causa de massa intents fallits d'inici de sessió. Si us plau, torneu a intentar-ho més tard."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "No s'han pogut generar els tokens d'autenticació."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Si us plau, introduïu tant el nom d'usuari com la contrasenya."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Nom d'usuari o contrasenya no vàlids."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "No teniu permisos suficients per accedir a aquesta pàgina."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

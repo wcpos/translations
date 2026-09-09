@@ -382,7 +382,6 @@ msgid "Authentication required."
 msgstr "ต้องการการยืนยันตัวตน"
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "คุณไม่มีสิทธิ์ในการเข้าถึง POS"
 
@@ -507,39 +506,39 @@ msgid "Order not found."
 msgstr "ไม่พบคำสั่งซื้อ"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "เลขประจำตัวผู้เสียภาษีของลูกค้า"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "ประเภทเลขประจำตัวผู้เสียภาษี"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "ค่าเลขประจำตัวผู้เสียภาษี"
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "รหัสประเทศตาม ISO 3166-1 alpha-2"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "ป้ายกำกับที่อ่านเข้าใจได้ ไม่บังคับ"
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "กรองลูกค้าตามบทบาท"
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "ที่อยู่อีเมลไม่ถูกต้อง"
@@ -1263,6 +1262,27 @@ msgstr "กำลังประมวลผลคำขอที่เหมื
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT ไม่ได้ถูกตั้งค่าอย่างถูกต้อง กรุณาติดต่อผู้ดูแลระบบ"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "บัญชีนี้ไม่สามารถใช้ POS ได้ สิทธิ์ที่ขาดหายไป: %s"
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"บัญชีนี้มีบทบาท %s การปฏิเสธสิทธิ์ในบทบาทหนึ่งอาจมีผลเหนือกว่าการอนุญาตจากอีกบทบาท และปลั๊กอินแก้ไขบทบาท เช่น Members จะใช้การปฏิเสธนั้นก่อน ให้ลบบทบาทเพิ่มเติมหรือยกเลิกการปฏิเสธในเครื่องมือแก้ไขบทบาท"
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"มอบสิทธิ์เหล่านี้ได้ที่การตั้งค่า WCPOS > การเข้าถึง หรือกำหนดบทบาทที่มีสิทธิ์เหล่านี้ให้กับบัญชี"
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print ถูกปิดใช้งานบนไซต์นี้"
@@ -1282,6 +1302,11 @@ msgstr "การลงทะเบียนรีเลย์ส่งคืน
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "ไม่สามารถแก้ไขข้อมูลเมตาสำหรับการตรวจสอบ POS ผ่านเส้นทาง REST นี้ได้"
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "เฉพาะผู้ดูแลระบบเท่านั้นที่สามารถแก้ไขหรือลบบัญชีพนักงานจาก POS ได้"
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3266,7 +3291,7 @@ msgstr "ไม่พบการตั้งค่าที่มี id %s"
 msgid "Can not save settings with id %s"
 msgstr "ไม่สามารถบันทึกการตั้งค่าที่มี id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "คุณไม่มีสิทธิ์อัปเดตการตั้งค่าการเข้าถึง"
 
@@ -3717,59 +3742,54 @@ msgstr "ตั๋วครัว"
 msgid "Bar Ticket"
 msgstr "ตั๋วบาร์"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "พารามิเตอร์ redirect_uri หายหรือไม่ถูกต้อง"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "พารามิเตอร์ state หาย"
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "มีการร้องขอมากเกินไป กรุณาลองใหม่ภายหลัง"
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "เซสชันการตรวจสอบหมดอายุ กรุณาลองเข้าสู่ระบบใหม่จากแอป"
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "เซสชันการตรวจสอบไม่ถูกต้อง กรุณาลองเข้าสู่ระบบใหม่จากแอป"
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "การตรวจสอบความปลอดภัยล้มเหลว กรุณาลองใหม่อีกครั้ง"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "การตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "บัญชีนี้ถูกล็อกชั่วคราวเนื่องจากพยายามเข้าสู่ระบบล้มเหลวหลายครั้ง กรุณาลองใหม่อีกครั้งภายหลัง"
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "กรุณากรอกทั้งชื่อผู้ใช้และรหัสผ่าน"
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "คุณไม่มีสิทธิ์เพียงพอในการเข้าถึงหน้านี้"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

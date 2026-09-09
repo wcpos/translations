@@ -382,7 +382,6 @@ msgid "Authentication required."
 msgstr "Yêu cầu xác thực."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Bạn không có quyền truy cập vào POS."
 
@@ -508,39 +507,39 @@ msgid "Order not found."
 msgstr "Không tìm thấy đơn hàng."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Mã số thuế của khách hàng."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Loại mã số thuế."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Giá trị mã số thuế."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Mã quốc gia ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Nhãn hiển thị tùy chọn."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Lọc khách hàng theo vai trò."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Địa chỉ email không hợp lệ."
@@ -1265,6 +1264,27 @@ msgstr "Một yêu cầu giống hệt đang được xử lý."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT không được cấu hình đúng, vui lòng liên hệ quản trị viên"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "Tài khoản này không thể sử dụng POS. Các quyền còn thiếu: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Tài khoản này có các vai trò %s. Một quyền bị từ chối ở một vai trò có thể ghi đè quyền được cấp từ vai trò khác, và các plugin chỉnh sửa vai trò như Members sẽ ưu tiên áp dụng việc từ chối đó. Hãy xóa vai trò bổ sung hoặc bỏ quyền từ chối trong trình chỉnh sửa vai trò."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Cấp các quyền đó trong Cài đặt WCPOS, mục Truy cập, hoặc gán một vai trò có các quyền đó."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print bị vô hiệu hóa trên trang này."
@@ -1284,6 +1304,12 @@ msgstr "Đăng ký chuyển tiếp trả lại thông tin đăng nhập không h
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "Không thể sửa đổi siêu dữ liệu kiểm tra POS thông qua route REST này."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Chỉ quản trị viên mới có thể chỉnh sửa hoặc xóa tài khoản nhân viên từ POS."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3272,7 +3298,7 @@ msgstr "Không tìm thấy cài đặt với id %s"
 msgid "Can not save settings with id %s"
 msgstr "Không thể lưu cài đặt với id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "Bạn không có quyền cập nhật cài đặt quyền truy cập."
 
@@ -3723,59 +3749,54 @@ msgstr "Vé bếp"
 msgid "Bar Ticket"
 msgstr "Vé bar"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Thiếu hoặc tham số redirect_uri không hợp lệ."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Thiếu tham số trạng thái."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Quá nhiều yêu cầu. Vui lòng thử lại sau."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "Phiên xác thực đã hết hạn. Vui lòng thử đăng nhập lại từ ứng dụng."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Phiên xác thực không hợp lệ. Vui lòng thử đăng nhập lại từ ứng dụng."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Kiểm tra bảo mật thất bại. Vui lòng thử lại."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Xác thực thất bại."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Tài khoản này tạm thời bị khóa do quá nhiều lần đăng nhập thất bại. Vui lòng thử lại sau."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Không thể tạo mã xác thực."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Vui lòng nhập cả tên đăng nhập và mật khẩu."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Tên đăng nhập hoặc mật khẩu không hợp lệ."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Bạn không có đủ quyền để truy cập trang này."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

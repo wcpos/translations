@@ -383,7 +383,6 @@ msgid "Authentication required."
 msgstr "Потрібна автентифікація."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Ви не маєте дозволу на доступ до POS."
 
@@ -509,39 +508,39 @@ msgid "Order not found."
 msgstr "Замовлення не знайдено."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "Податкові ID клієнта."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Тип податкового ID."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Значення податкового ID."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Дволітерний код країни ISO 3166-1."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Необов'язкова зрозуміла для людини мітка."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Фільтрувати клієнтів за ролями."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Невірна електронна адреса."
@@ -1274,6 +1273,28 @@ msgstr "Ідентичний запит уже обробляється."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT налаштовано неправильно, будь ласка, зверніться до адміністратора"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr ""
+"Цей обліковий запис не може використовувати POS. Відсутні дозволи: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Цей обліковий запис має ролі %s. Заборона дозволу в одній ролі може скасувати надання цього дозволу іншою, а плагіни для редагування ролей, як-от Members, спочатку застосовують цю заборону. Видаліть додаткову роль або скасуйте заборону в редакторі ролей."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Надайте ці дозволи в Налаштуваннях WCPOS → Доступ або призначте роль, яка їх має."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print вимкнено на цьому сайті."
@@ -1293,6 +1314,12 @@ msgstr "Реєстрація реле повернула недійсні обл
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "Метадані аудиту POS не можна змінювати через цей REST-маршрут."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Лише адміністратор може редагувати або видаляти обліковий запис працівника з POS."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3280,7 +3307,7 @@ msgstr "Налаштування з id %s не знайдено"
 msgid "Can not save settings with id %s"
 msgstr "Не можна зберегти налаштування з id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "У вас немає дозволу змінювати налаштування доступу."
 
@@ -3731,61 +3758,56 @@ msgstr "Кухонний квиток"
 msgid "Bar Ticket"
 msgstr "Барний квиток"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Відсутній або недійсний параметр redirect_uri."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Відсутній параметр state."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Занадто багато запитів. Будь ласка, спробуйте пізніше."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Сесія автентифікації закінчилася. Будь ласка, спробуйте увійти знову через додаток."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Недійсна сесія автентифікації. Будь ласка, спробуйте увійти знову через додаток."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Перевірка безпеки не вдалася. Будь ласка, спробуйте ще раз."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Аутентифікація не вдалася."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Цей обліковий запис тимчасово заблоковано через занадто багато невдалих спроб входу. Будь ласка, спробуйте пізніше."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Не вдалося створити токени аутентифікації."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Будь ласка, введіть і ім'я користувача, і пароль."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Невірне ім'я користувача або пароль."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "У вас недостатньо прав для доступу до цієї сторінки."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29
