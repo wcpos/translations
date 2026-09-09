@@ -194,12 +194,23 @@ test('rolling monorepo translations retain locale-specific plural forms', () => 
     'nb_NO', 'nl', 'nl_BE', 'nl_NL', 'pt_BR', 'pt_PT', 'sv_SE', 'th', 'vi',
   ];
   const { ALL_SUFFIXES, getPluralSuffixes } = require('../scripts/plural-rules.js');
+  // Take the plural bases from the source file so this test tracks the
+  // strings that actually exist. A hardcoded key list went stale on
+  // 2026-08-23 when `health.database.other_stores` left the source, and the
+  // test then failed for a key no locale is supposed to have.
+  const source = require('../source/js/monorepo/core.json');
+  const pluralBases = [...new Set(
+    Object.keys(source)
+      .filter(key => key.endsWith('_one') || key.endsWith('_other'))
+      .map(key => key.replace(/_(one|other)$/, '')),
+  )].sort();
+  assert.ok(pluralBases.includes('health.database.attention'), 'expected a known plural base in the source');
 
   for (const locale of locales) {
     const translations = require(`../translations/js/${locale}/monorepo/core.json`);
     const expectedSuffixes = getPluralSuffixes(locale);
 
-    for (const base of ['health.database.attention', 'health.database.other_stores']) {
+    for (const base of pluralBases) {
       const actualSuffixes = ALL_SUFFIXES.filter(suffix => `${base}_${suffix}` in translations);
       assert.deepEqual(actualSuffixes, expectedSuffixes, `${locale}: ${base}`);
     }
