@@ -108,9 +108,18 @@ function validateCompletedTranslationTask(task, { requireTranslationCommit = fal
     throw new Error(`OpenClaw completed task reported translation failure: ${formatTaskDetails(task)}`);
   }
 
-  if (requireTranslationCommit && parsedOutput.committed === false) {
+  // A commit is only owed when the run actually produced translations. A
+  // re-run with nothing new (every locale already translated) legitimately
+  // commits nothing and must not fail the workflow.
+  if (requireTranslationCommit && parsedOutput.committed === false && hasTranslatedWork(parsedOutput)) {
     throw new Error(`OpenClaw completed task did not commit translation changes: ${formatTaskDetails(task)}`);
   }
+}
+
+const TRANSLATED_WORK_COUNTERS = ['strings_translated', 'strings_new', 'docs_units_new', 'docs_files_changed'];
+
+function hasTranslatedWork(parsedOutput) {
+  return TRANSLATED_WORK_COUNTERS.some((key) => Number(parsedOutput[key]) > 0);
 }
 
 async function readJsonResponse(response) {

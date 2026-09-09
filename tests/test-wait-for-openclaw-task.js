@@ -168,6 +168,7 @@ test('throws when a completed translation task is required to commit but did not
             status: 'completed',
             output: JSON.stringify({
               status: 'ok',
+              strings_translated: 4,
               committed: false,
               release_triggered: false,
               pull_request_url: '',
@@ -182,6 +183,37 @@ test('throws when a completed translation task is required to commit but did not
     }),
     /completed task did not commit translation changes/
   );
+});
+
+test('accepts a required-commit run that had nothing to translate and therefore committed nothing', async () => {
+  const task = await pollTaskUntilTerminal({
+    pollUrl: 'https://openclaw.example/api/tasks/translation:no-op',
+    apiToken: 'secret-token',
+    requireTranslationCommit: true,
+    fetchImpl: async () => ({
+      ok: true,
+      status: 200,
+      async json() {
+        return {
+          status: 'completed',
+          output: JSON.stringify({
+            status: 'ok',
+            locales_processed: 49,
+            strings_translated: 0,
+            strings_existing: 37387,
+            errors: [],
+            committed: false,
+            release_triggered: false,
+          }),
+        };
+      },
+    }),
+    intervalMs: 0,
+    timeoutMs: 100,
+    sleep: async () => {},
+    logger: { log() {} },
+  });
+  assert.strictEqual(task.status, 'completed');
 });
 
 test('main requires TRANSLATION_STATUS_TOKEN for polling', async () => {
