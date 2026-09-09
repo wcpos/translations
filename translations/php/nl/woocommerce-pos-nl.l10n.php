@@ -257,7 +257,7 @@ return array(
 		'An identical request is already being processed.' => 'Een identiek verzoek wordt al verwerkt.',
 		'JWT is not configured properly, please contact the admin' => 'JWT is niet correct geconfigureerd, neem contact op met de beheerder',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Dit account kan de POS niet gebruiken. Ontbrekende rechten: %s.',
-		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Het heeft de rollen %s. Een geweigerd recht voor de ene rol kan een toekenning van een andere rol overschrijven, en rolbewerkingsplugins zoals Members passen die weigering als eerste toe. Verwijder de extra rol of maak de weigering ongedaan in de rolbewerker.',
+		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Dit account heeft de rollen %s. Een recht dat voor één rol is geweigerd, kan een toekenning vanuit een andere rol overschrijven; plugins voor rolbeheer zoals Members passen die weigering als eerste toe. Verwijder de extra rol of hef de weigering op in de rolbewerker.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Ken deze rechten toe via WCPOS-instellingen > Toegang, of wijs een rol toe die deze rechten heeft.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print is uitgeschakeld op deze site.',
 		'Could not create a relay verification token.' => 'Kan geen relay-verificatietoken maken.',
