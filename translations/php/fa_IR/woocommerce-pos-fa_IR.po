@@ -382,7 +382,6 @@ msgid "Authentication required."
 msgstr "احراز هویت لازم است."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "شما اجازه دسترسی به POS را ندارید."
 
@@ -507,39 +506,39 @@ msgid "Order not found."
 msgstr "سفارش پیدا نشد."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "شناسه‌های مالیاتی مشتری."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "نوع شناسه مالیاتی."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "مقدار شناسه مالیاتی."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "کد کشور ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "برچسب اختیاری و قابل‌فهم برای انسان."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "فیلتر کردن مشتریان بر اساس نقش‌ها."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "آدرس ایمیل نامعتبر است."
@@ -1267,6 +1266,28 @@ msgstr "یک درخواست یکسان از قبل در حال پردازش اس
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT به درستی پیکربندی نشده است، لطفاً با مدیر تماس بگیرید"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr ""
+"این حساب نمی‌تواند از POS استفاده کند. قابلیت‌های لازم وجود ندارند: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"این حساب دارای نقش‌های %s است. رد کردن یک قابلیت در یکی از نقش‌ها می‌تواند اعطای آن از نقش دیگری را بی‌اثر کند و افزونه‌های ویرایش نقش مانند Members ابتدا همین رد کردن را اعمال می‌کنند. نقش اضافی را حذف کنید یا رد کردن قابلیت را در ویرایشگر نقش لغو کنید."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"این قابلیت‌ها را از مسیر تنظیمات WCPOS، دسترسی، اعطا کنید یا نقشی را اختصاص دهید که این قابلیت‌ها را داشته باشد."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print در این سایت غیرفعال است."
@@ -1286,6 +1307,11 @@ msgstr "ثبت رله اعتبار نامعتبر را برگرداند."
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "متادیتای حسابرسی POS از طریق این مسیر REST قابل تغییر نیست."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "فقط یک مدیر می‌تواند حساب کارمند را از طریق POS ویرایش یا حذف کند."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3272,7 +3298,7 @@ msgstr "تنظیمات با شناسه %s یافت نشد"
 msgid "Can not save settings with id %s"
 msgstr "نمی‌توان تنظیمات با شناسه %s را ذخیره کرد"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "شما اجازه به‌روزرسانی تنظیمات دسترسی را ندارید."
 
@@ -3722,59 +3748,54 @@ msgstr "تیکت آشپزخانه"
 msgid "Bar Ticket"
 msgstr "تیکت بار"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "پارامتر redirect_uri گم شده یا نامعتبر است."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "پارامتر state گم شده است."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "درخواست‌های زیادی ارسال شده است. لطفاً بعداً دوباره تلاش کنید."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "نشست احراز هویت منقضی شده است. لطفاً دوباره از طریق برنامه وارد شوید."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "نشست احراز هویت نامعتبر است. لطفاً دوباره از طریق برنامه وارد شوید."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "بررسی امنیتی ناموفق بود. لطفاً دوباره تلاش کنید."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "احراز هویت ناموفق بود."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "این حساب به دلیل تلاش‌های ناموفق زیاد برای ورود، به طور موقت قفل شده است. لطفاً بعداً دوباره تلاش کنید."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "تولید توکن‌های احراز هویت ناموفق بود."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "لطفاً هم نام کاربری و هم رمز عبور را وارد کنید."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "نام کاربری یا رمز عبور نامعتبر است."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "شما مجوز کافی برای دسترسی به این صفحه ندارید."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

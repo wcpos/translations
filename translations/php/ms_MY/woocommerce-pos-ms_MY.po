@@ -383,7 +383,6 @@ msgid "Authentication required."
 msgstr "Pengesahan diperlukan."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "Anda tidak mempunyai kebenaran untuk mengakses POS."
 
@@ -508,39 +507,39 @@ msgid "Order not found."
 msgstr "Pesanan tidak ditemui."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "ID cukai pelanggan."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Jenis ID cukai."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Nilai ID cukai."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Kod negara ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Label pilihan yang mudah dibaca."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "Tapis pelanggan mengikut peranan."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "Alamat e-mel tidak sah."
@@ -1268,6 +1267,27 @@ msgstr "Permintaan yang sama sedang diproses."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT tidak dikonfigurasi dengan betul, sila hubungi pentadbir"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "Akaun ini tidak boleh menggunakan POS. Keupayaan yang tiada: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"Akaun ini mempunyai peranan %s. Keupayaan yang dinafikan pada satu peranan boleh mengatasi pemberian daripada peranan lain, dan pemalam penyunting peranan seperti Members akan mengutamakan penafian tersebut. Buang peranan tambahan itu atau padamkan penafian dalam penyunting peranan."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"Berikan keupayaan tersebut di bawah Tetapan WCPOS > Akses, atau tetapkan peranan yang mempunyai keupayaan tersebut."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "WCPOS Cloud Print dilumpuhkan di tapak ini."
@@ -1287,6 +1307,12 @@ msgstr "Pendaftaran relay mengembalikan kelayakan yang tidak sah."
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "Metadata audit POS tidak boleh diubah suai melalui laluan REST ini."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Hanya pentadbir boleh mengedit atau memadam akaun kakitangan daripada POS."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3276,7 +3302,7 @@ msgstr "Tetapan dengan id %s tidak ditemui"
 msgid "Can not save settings with id %s"
 msgstr "Tidak boleh menyimpan tetapan dengan id %s"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "Anda tidak mempunyai kebenaran untuk mengemas kini tetapan akses."
 
@@ -3728,61 +3754,55 @@ msgstr "Tiket Dapur"
 msgid "Bar Ticket"
 msgstr "Tiket Bar"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Parameter redirect_uri tiada atau tidak sah."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "Parameter state tiada."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "Terlalu banyak permintaan. Sila cuba lagi kemudian."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Sesi pengesahan telah tamat. Sila cuba log masuk semula dari aplikasi."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Sesi pengesahan tidak sah. Sila cuba log masuk semula dari aplikasi."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "Pemeriksaan keselamatan gagal. Sila cuba lagi."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "Pengesahan gagal."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Akaun ini dikunci sementara kerana terlalu banyak percubaan log masuk yang gagal. Sila cuba lagi kemudian."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "Gagal menjana token pengesahan."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "Sila masukkan kedua-dua nama pengguna dan kata laluan."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "Nama pengguna atau kata laluan tidak sah."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr ""
-"Anda tidak mempunyai kebenaran yang mencukupi untuk mengakses halaman ini."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

@@ -382,7 +382,6 @@ msgid "Authentication required."
 msgstr "प्रमाणीकरण आवश्यक।"
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "आपको POS तक पहुँचने की अनुमति नहीं है।"
 
@@ -508,39 +507,39 @@ msgid "Order not found."
 msgstr "ऑर्डर नहीं मिला।"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "ग्राहक कर आईडी"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "कर आईडी प्रकार"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "कर आईडी मान"
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "ISO 3166-1 alpha-2 देश कोड."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "वैकल्पिक मानव-पठनीय लेबल।"
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "ग्राहकों को भूमिकाओं के अनुसार फ़िल्टर करें।"
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "अमान्य ईमेल पता।"
@@ -1273,6 +1272,27 @@ msgid "JWT is not configured properly, please contact the admin"
 msgstr ""
 "JWT सही तरीके से कॉन्फ़िगर नहीं किया गया है, कृपया व्यवस्थापक से संपर्क करें"
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "यह खाता POS का उपयोग नहीं कर सकता। आवश्यक क्षमताएँ अनुपलब्ध हैं: %s।"
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"इस खाते में %s भूमिकाएँ हैं। एक भूमिका में अस्वीकृत क्षमता दूसरी भूमिका से मिली अनुमति को भी निष्प्रभावी कर सकती है, और Members जैसे भूमिका-संपादक प्लगइन पहले उसी अस्वीकृति को लागू करते हैं। अतिरिक्त भूमिका हटाएँ या भूमिका संपादक में उस अस्वीकृति को हटा दें।"
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr ""
+"उन्हें WCPOS Settings के Access अनुभाग में प्रदान करें, या ऐसी भूमिका असाइन करें जिसमें वे क्षमताएँ हों।"
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "इस साइट पर WCPOS Cloud Print अक्षम है।"
@@ -1292,6 +1312,11 @@ msgstr "रिले पंजीकरण ने अमान्य क्र�
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "इस REST रूट के माध्यम से POS ऑडिट मेटाडेटा संशोधित नहीं किया जा सकता।"
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "केवल प्रशासक ही POS से स्टाफ़ खाते को संपादित या हटा सकता है।"
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3277,7 +3302,7 @@ msgstr "आईडी %s के साथ सेटिंग्स नहीं �
 msgid "Can not save settings with id %s"
 msgstr "आईडी %s के साथ सेटिंग्स सहेज नहीं सकते"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "आपके पास एक्सेस सेटिंग्स अपडेट करने की अनुमति नहीं है।"
 
@@ -3728,60 +3753,55 @@ msgstr "रसोई टिकट"
 msgid "Bar Ticket"
 msgstr "बार टिकट"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "गायब या अमान्य redirect_uri पैरामीटर।"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "गायब राज्य पैरामीटर।"
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "बहुत अधिक अनुरोध। कृपया बाद में पुनः प्रयास करें।"
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "प्रमाणीकरण सत्र समाप्त हो गया। कृपया ऐप से फिर से लॉगिन करने का प्रयास करें।"
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "अमान्य प्रमाणीकरण सत्र। कृपया ऐप से फिर से लॉगिन करने का प्रयास करें।"
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "सुरक्षा जांच विफल रही। कृपया पुनः प्रयास करें।"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "प्रमाणीकरण विफल रहा।"
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "बहुत अधिक विफल लॉगिन प्रयासों के कारण यह खाता अस्थायी रूप से बंद है। कृपया बाद में पुनः प्रयास करें।"
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "प्रमाणीकरण टोकन उत्पन्न करने में विफल।"
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "कृपया उपयोगकर्ता नाम और पासवर्ड दोनों दर्ज करें।"
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड।"
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "आपके पास इस पृष्ठ तक पहुंचने की पर्याप्त अनुमति नहीं है।"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29

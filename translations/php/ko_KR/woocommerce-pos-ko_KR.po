@@ -378,7 +378,6 @@ msgid "Authentication required."
 msgstr "인증이 필요합니다."
 
 #: includes/API.php:558
-#: includes/Templates/Auth.php:322
 msgid "You do not have permission to access the POS."
 msgstr "POS에 접근할 권한이 없습니다."
 
@@ -503,39 +502,39 @@ msgid "Order not found."
 msgstr "주문을 찾을 수 없습니다."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:101
+#: includes/API/V1/Customers_Controller.php:102
 msgid "Customer tax IDs."
 msgstr "고객 세금 ID."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:110
+#: includes/API/V1/Customers_Controller.php:111
 #: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "세금 ID 유형."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:114
+#: includes/API/V1/Customers_Controller.php:115
 #: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "세금 ID 값."
 
-#: includes/API/V1/Customers_Controller.php:118
+#: includes/API/V1/Customers_Controller.php:119
 #: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "ISO 3166-1 alpha-2 국가 코드."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Customers_Controller.php:122
+#: includes/API/V1/Customers_Controller.php:123
 #: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "선택 가능한 사람이 읽을 수 있는 레이블."
 
-#: includes/API/V1/Customers_Controller.php:215
+#: includes/API/V1/Customers_Controller.php:265
 msgid "Filter customers by roles."
 msgstr "역할별로 고객 필터링."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:349
+#: includes/API/V1/Customers_Controller.php:399
 #: includes/API/V1/Orders_Controller.php:874
 msgid "Invalid email address."
 msgstr "유효하지 않은 이메일 주소입니다."
@@ -1249,6 +1248,26 @@ msgstr "동일한 요청이 이미 처리 중입니다."
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT가 제대로 구성되지 않았습니다. 관리자에게 문의하세요."
 
+#. translators: %s: Comma-separated missing capability names.
+#: includes/Services/Cashier.php:247
+#, php-format
+msgid "This account cannot use the POS. Missing capabilities: %s."
+msgstr "이 계정은 POS를 사용할 수 없습니다. 누락된 권한: %s."
+
+#. translators: %s: Comma-separated role names.
+#: includes/Services/Cashier.php:258
+#, php-format
+msgid ""
+"It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
+msgstr ""
+"이 계정에는 %s 역할이 지정되어 있습니다. 한 역할에서 거부된 권한은 다른 역할에서 부여된 권한보다 우선할 수 있으며, Members와 같은 역할 편집 플러그인은 이러한 거부를 먼저 적용합니다. 추가 역할을 제거하거나 역할 편집기에서 거부 설정을 해제하세요."
+
+#. translators: Guidance for granting missing POS capabilities.
+#: includes/Services/Cashier.php:262
+msgid ""
+"Grant them under WCPOS Settings, Access, or assign a role that has them."
+msgstr "WCPOS 설정의 액세스에서 권한을 부여하거나 해당 권한이 있는 역할을 할당하세요."
+
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "이 사이트에서는 WCPOS Cloud Print가 비활성화되어 있습니다."
@@ -1268,6 +1287,11 @@ msgstr "릴레이 등록에서 잘못된 자격 증명을 반환했습니다."
 #: includes/Services/Core_Order_Audit_Guard.php:186
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "POS 감사 메타데이터는 이 REST 경로를 통해 수정할 수 없습니다."
+
+#: includes/Services/Customer_Account_Guard.php:129
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr "관리자만 POS에서 직원 계정을 수정하거나 삭제할 수 있습니다."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -3251,7 +3275,7 @@ msgstr "ID %s의 설정을 찾을 수 없습니다"
 msgid "Can not save settings with id %s"
 msgstr "ID %s의 설정을 저장할 수 없습니다"
 
-#: includes/Services/Settings/Access_Section.php:183
+#: includes/Services/Settings/Access_Section.php:225
 msgid "You do not have permission to update access settings."
 msgstr "액세스 설정을 업데이트할 권한이 없습니다."
 
@@ -3700,58 +3724,53 @@ msgstr "주방 티켓"
 msgid "Bar Ticket"
 msgstr "바 티켓"
 
-#: includes/Templates/Auth.php:112
+#: includes/Templates/Auth.php:113
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "누락되었거나 잘못된 redirect_uri 매개변수입니다."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:118
+#: includes/Templates/Auth.php:119
 msgid "Missing state parameter."
 msgstr "누락된 상태 매개변수입니다."
 
-#: includes/Templates/Auth.php:130
+#: includes/Templates/Auth.php:131
 msgid "Too many requests. Please try again later."
 msgstr "요청이 너무 많습니다. 나중에 다시 시도하세요."
 
-#: includes/Templates/Auth.php:255
+#: includes/Templates/Auth.php:256
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "인증 세션이 만료되었습니다. 앱에서 다시 로그인해 주세요."
 
-#: includes/Templates/Auth.php:261
+#: includes/Templates/Auth.php:262
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "잘못된 인증 세션입니다. 앱에서 다시 로그인해 주세요."
 
-#: includes/Templates/Auth.php:281
+#: includes/Templates/Auth.php:282
 msgid "Security check failed. Please try again."
 msgstr "보안 검사에 실패했습니다. 다시 시도해 주세요."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:291
+#: includes/Templates/Auth.php:292
 msgid "Authentication failed."
 msgstr "인증에 실패했습니다."
 
-#: includes/Templates/Auth.php:301
+#: includes/Templates/Auth.php:302
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr "로그인 시도가 너무 많아 이 계정이 일시적으로 잠겼습니다. 나중에 다시 시도해 주세요."
 
-#: includes/Templates/Auth.php:342
+#: includes/Templates/Auth.php:343
 msgid "Failed to generate authentication tokens."
 msgstr "인증 토큰 생성에 실패했습니다."
 
-#: includes/Templates/Auth.php:392
+#: includes/Templates/Auth.php:393
 msgid "Please enter both username and password."
 msgstr "사용자 이름과 비밀번호를 모두 입력해 주세요."
 
-#: includes/Templates/Auth.php:406
-#: includes/Templates/Auth.php:415
+#: includes/Templates/Auth.php:407
+#: includes/Templates/Auth.php:416
 msgid "Invalid username or password."
 msgstr "잘못된 사용자 이름 또는 비밀번호입니다."
-
-#. translators: Authorization error shown when a logged-in user lacks permission to open the POS page.
-#: includes/Templates/Frontend.php:59
-msgid "You do not have sufficient permissions to access this page."
-msgstr "이 페이지에 접근할 권한이 없습니다."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:29
