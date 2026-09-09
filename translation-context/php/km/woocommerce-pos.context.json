@@ -5143,14 +5143,11 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/API.php:558",
-          "includes/Templates/Auth.php:322"
+          "includes/API.php:558"
         ]
       },
       "source_usage": {
-        "areas": [
-          "template editor"
-        ],
+        "areas": [],
         "nearby_source_strings": [
           "58mm (Narrow)",
           "Authentication required.",
@@ -5175,16 +5172,6 @@
           "msgstr": "អ្នក​មិន​មានសិទ្ធិ សម្រាប់កែប្រែពត័មានរបស់ប្លែងចំណាយ។"
         },
         {
-          "msgid": "You do not have permission to view this receipt.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិមើលបង្កាន់ដៃនេះទេ។"
-        },
-        {
-          "msgid": "You do not have sufficient permissions to access this page.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិគ្រប់គ្រាន់ដើម្បីចូលទៅកាន់ទំព័រនេះទេ។"
-        },
-        {
           "msgid": "You do not have permission to update WCPOS settings.",
           "msgctxt": null,
           "msgstr": "អ្នកមិនមានសិទ្ធិអាប់ដេតការកំណត់ WCPOS ទេ។"
@@ -5198,6 +5185,16 @@
           "msgid": "You do not have permission to view logs.",
           "msgctxt": null,
           "msgstr": "អ្នកមិនមានសិទ្ធិមើលកំណត់ហេតុទេ។"
+        },
+        {
+          "msgid": "You do not have permission to view this receipt.",
+          "msgctxt": null,
+          "msgstr": "អ្នកមិនមានសិទ្ធិមើលបង្កាន់ដៃនេះទេ។"
+        },
+        {
+          "msgid": "You do not have sufficient permissions to access this page.",
+          "msgctxt": null,
+          "msgstr": "អ្នកមិនមានសិទ្ធិគ្រប់គ្រាន់ដើម្បីចូលទៅកាន់ទំព័រនេះទេ។"
         },
         {
           "msgid": "Update when you have time to test the POS. You can rollback to the previous version if needed.",
@@ -20006,7 +20003,7 @@
           "POS - Partial Payment <span class=\"count\">(%s)</span>",
           "Idempotency key was reused with a different request.",
           "JWT is not configured properly, please contact the admin",
-          "WCPOS Cloud Print is disabled on this site."
+          "This account cannot use the POS. Missing capabilities: %s."
         ]
       },
       "related_existing_translations": [
@@ -20089,8 +20086,8 @@
         "nearby_source_strings": [
           "Idempotency key was reused with a different request.",
           "An identical request is already being processed.",
-          "WCPOS Cloud Print is disabled on this site.",
-          "Could not create a relay verification token."
+          "This account cannot use the POS. Missing capabilities: %s.",
+          "It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor."
         ]
       },
       "related_existing_translations": [
@@ -20157,6 +20154,267 @@
       "format": "php-po",
       "locale": "km",
       "entry": {
+        "msgid": "This account cannot use the POS. Missing capabilities: %s.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: Comma-separated missing capability names."
+        ],
+        "references": [
+          "includes/Services/Cashier.php:247"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "An identical request is already being processed.",
+          "JWT is not configured properly, please contact the admin",
+          "It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.",
+          "Grant them under WCPOS Settings, Access, or assign a role that has them."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Account",
+          "msgctxt": null,
+          "msgstr": "គណនី"
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Sorry, this order cannot be paid for. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "ស្ទើរ​ហើយ​! ការ​លក់​នេះ​គ្មាន​លទ្ធភាព​ដែលត្រូវបាន​បង់។ វា​គឺ​ជា​មូលដ្ឋាន​ការលក់ មិនទាន់មាន ឬ​មិនសកម្ម។"
+        },
+        {
+          "msgid": "Sorry, this order cannot be viewed. The order key is missing or invalid.",
+          "msgctxt": null,
+          "msgstr": "ស្ទើរ​ហើយ​! ការ​លក់​នេះ​មិនអាចមើល​បាន​សូវ។ វា​គឺ​ជា​មូលដ្ឋាន​ការលក់ មិនទាន់មាន ឬ​មិនសកម្ម។"
+        },
+        {
+          "msgid": "POS audit metadata cannot be modified through this REST route.",
+          "msgctxt": null,
+          "msgstr": "មិនអាចកែប្រែទិន្នន័យមេតាសវនកម្ម POS តាម REST route នេះបានទេ។"
+        },
+        {
+          "msgid": "Tax ID",
+          "msgctxt": null,
+          "msgstr": "លេខអត្តបណ្ណអាករ"
+        },
+        {
+          "msgid": "Total",
+          "msgctxt": null,
+          "msgstr": "សរុប"
+        },
+        {
+          "msgid": "POS capabilities exposed by the gateway.",
+          "msgctxt": null,
+          "msgstr": "សមត្ថភាព POS ដែលច្រកទូទាត់បង្ហាញ។"
+        },
+        {
+          "msgid": "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts.",
+          "msgctxt": null,
+          "msgstr": "ស្គ្រីប និងរចនាប័ទ្មអាចរំខានដល់ពុម្ពទូទាត់ផ្ទាល់ខ្លួន។ ប្រើទម្រង់នេះដើម្បីដកស្គ្រីបដែលមានបញ្ហា។"
+        },
+        {
+          "msgid": "The selected template cannot be printed on this printer.",
+          "msgctxt": null,
+          "msgstr": "គំរូដែលបានជ្រើស មិនអាចបោះពុម្ពលើម៉ាស៊ីនបោះពុម្ពនេះបានទេ។"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "km",
+      "entry": {
+        "msgid": "It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "%s: Comma-separated role names."
+        ],
+        "references": [
+          "includes/Services/Cashier.php:258"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "JWT is not configured properly, please contact the admin",
+          "This account cannot use the POS. Missing capabilities: %s.",
+          "Grant them under WCPOS Settings, Access, or assign a role that has them.",
+          "WCPOS Cloud Print is disabled on this site."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "បង្កាន់ដៃកម្ដៅពីស្តាំទៅឆ្វេង សម្រាប់ម៉ាស៊ីនបោះពុម្ព 80mm។ ប្ដូរការតម្រឹមជួរឈរ សម្រាប់ Arabic, Hebrew, Persian និង Urdu។ ត្រូវការម៉ាស៊ីនបោះពុម្ពដែលគាំទ្រ Arabic codepage (CP864 ឬ Windows-1256) — សូមពិនិត្យសៀវភៅណែនាំម៉ាស៊ីនបោះពុម្ពរបស់អ្នក មុនពេលបញ្ជាទិញ។"
+        },
+        {
+          "msgid": "This job's stored receipt has been cleaned up and it has no template to re-render from.",
+          "msgctxt": null,
+          "msgstr": "បង្កាន់ដៃដែលរក្សាទុករបស់ការងារនេះត្រូវបានសម្អាត ហើយវាមិនមានគំរូសម្រាប់បង្ហាញឡើងវិញពីការងារនេះទេ។"
+        },
+        {
+          "msgid": "This quote is valid for 30 days from the date of issue. Prices are subject to change after the validity period. This is not a receipt or confirmation of purchase.",
+          "msgctxt": null,
+          "msgstr": "សម្រង់តម្លៃនេះមានសុពលភាព 30 ថ្ងៃ គិតពីថ្ងៃចេញ។ តម្លៃអាចផ្លាស់ប្តូរបន្ទាប់ពីផុតរយៈពេលសុពលភាព។ នេះមិនមែនជាបង្កាន់ដៃ ឬការបញ្ជាក់ការទិញទេ។"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ <a href=\"%1$s\">WCPOS Pro %2$s ឬខ្ពស់ជាងនេះ</a>។ សូម<a href=\"%3$s\">ដំឡើង និងធ្វើឱ្យ WCPOS Pro សកម្ម</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ <a href=\"%1$s\">WooCommerce %2$s ឬខ្ពស់ជាងនេះ</a>។ សូម<a href=\"%3$s\">ដំឡើង និងធ្វើឱ្យ WooCommerce សកម្ម</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ PHP %1$s ឬខ្ពស់ជាងនេះ។ អានព័ត៌មានបន្ថែមអំពី <a href=\"%2$s\">វិធីធ្វើបច្ចុប្បន្នភាព</a>"
+        },
+        {
+          "msgid": "Prints using your browser's print dialog. Renders on the device without needing a server connection.",
+          "msgctxt": null,
+          "msgstr": "បោះពុម្មចាត់វិធីបញ្ជាំងនិច្ចរបស់លោកអ្នក។ បង្ហាញលើអ៊ីម៉ាស់ដោយគ្មានការតភ្ជាប់ផ្នែកសេវាកម្ម។"
+        },
+        {
+          "msgid": "There was a problem rendering the receipt template. This is usually caused by a syntax error or undefined variable in the template code.",
+          "msgctxt": null,
+          "msgstr": "មានបញ្ហាក្នុងការបង្ហាញពុម្ពបង្កាន់ដៃ។ នេះជាធម្មតាបណ្តាលមកពីកំហុសវាក្យសម្ពន្ធ ឬអថេរមិនបានកំណត់ក្នុងកូដពុម្ព។"
+        },
+        {
+          "msgid": "WCPOS Pro is now a standalone plugin. Download the latest version from %s",
+          "msgctxt": null,
+          "msgstr": "WCPOS Pro ឥឡូវនេះគឺជាប្លុកឯករាជ្យ។ ទាញយកកំណែចុងក្រោយពី %s"
+        },
+        {
+          "msgid": "Star Online rejected the request. Check that the API key has the required permissions.",
+          "msgctxt": null,
+          "msgstr": "Star Online បានបដិសេធសំណើ។ សូមពិនិត្យថា API key មានសិទ្ធិដែលត្រូវការ។"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "km",
+      "entry": {
+        "msgid": "Grant them under WCPOS Settings, Access, or assign a role that has them.",
+        "msgctxt": null,
+        "msgid_plural": null,
+        "translator_comments": [
+          "Guidance for granting missing POS capabilities."
+        ],
+        "references": [
+          "includes/Services/Cashier.php:262"
+        ]
+      },
+      "source_usage": {
+        "areas": [
+          "payment"
+        ],
+        "nearby_source_strings": [
+          "This account cannot use the POS. Missing capabilities: %s.",
+          "It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.",
+          "WCPOS Cloud Print is disabled on this site.",
+          "Could not create a relay verification token."
+        ]
+      },
+      "related_existing_translations": [
+        {
+          "msgid": "Settings",
+          "msgctxt": null,
+          "msgstr": "ការកំណត់"
+        },
+        {
+          "msgid": "POS",
+          "msgctxt": null,
+          "msgstr": "POS"
+        },
+        {
+          "msgid": "Tax ID",
+          "msgctxt": null,
+          "msgstr": "លេខអត្តបណ្ណអាករ"
+        },
+        {
+          "msgid": "Total",
+          "msgctxt": null,
+          "msgstr": "សរុប"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ <a href=\"%1$s\">WCPOS Pro %2$s ឬខ្ពស់ជាងនេះ</a>។ សូម<a href=\"%3$s\">ដំឡើង និងធ្វើឱ្យ WCPOS Pro សកម្ម</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ <a href=\"%1$s\">WooCommerce %2$s ឬខ្ពស់ជាងនេះ</a>។ សូម<a href=\"%3$s\">ដំឡើង និងធ្វើឱ្យ WooCommerce សកម្ម</a>"
+        },
+        {
+          "msgid": "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>",
+          "msgctxt": null,
+          "msgstr": "<strong>WCPOS</strong> ត្រូវការកំណែ PHP %1$s ឬខ្ពស់ជាងនេះ។ អានព័ត៌មានបន្ថែមអំពី <a href=\"%2$s\">វិធីធ្វើបច្ចុប្បន្នភាព</a>"
+        },
+        {
+          "msgid": "Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer's manual before ordering.",
+          "msgctxt": null,
+          "msgstr": "បង្កាន់ដៃកម្ដៅពីស្តាំទៅឆ្វេង សម្រាប់ម៉ាស៊ីនបោះពុម្ព 80mm។ ប្ដូរការតម្រឹមជួរឈរ សម្រាប់ Arabic, Hebrew, Persian និង Urdu។ ត្រូវការម៉ាស៊ីនបោះពុម្ពដែលគាំទ្រ Arabic codepage (CP864 ឬ Windows-1256) — សូមពិនិត្យសៀវភៅណែនាំម៉ាស៊ីនបោះពុម្ពរបស់អ្នក មុនពេលបញ្ជាទិញ។"
+        },
+        {
+          "msgid": "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly.",
+          "msgctxt": null,
+          "msgstr": "WCPOS sync store មិនទាន់បានដំឡើងទេ (កំពុងចាប់ផ្ដើម ឬការដំឡើង schema បានបរាជ័យ)។ សូមព្យាយាមម្ដងទៀតបន្តិចក្រោយ។"
+        },
+        {
+          "msgid": "ABN",
+          "msgctxt": null,
+          "msgstr": "ABN"
+        }
+      ],
+      "concept_hints": [],
+      "risk": {
+        "level": "high",
+        "reasons": [
+          "receipt/payment/settings source references"
+        ]
+      }
+    },
+    {
+      "project": "woocommerce-pos",
+      "domain": "woocommerce-pos",
+      "format": "php-po",
+      "locale": "km",
+      "entry": {
         "msgid": "WCPOS Cloud Print is disabled on this site.",
         "msgctxt": null,
         "msgid_plural": null,
@@ -20168,8 +20426,8 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "An identical request is already being processed.",
-          "JWT is not configured properly, please contact the admin",
+          "It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.",
+          "Grant them under WCPOS Settings, Access, or assign a role that has them.",
           "Could not create a relay verification token.",
           "Relay registration failed."
         ]
@@ -20249,7 +20507,7 @@
       "source_usage": {
         "areas": [],
         "nearby_source_strings": [
-          "JWT is not configured properly, please contact the admin",
+          "Grant them under WCPOS Settings, Access, or assign a role that has them.",
           "WCPOS Cloud Print is disabled on this site.",
           "Relay registration failed.",
           "Relay registration returned invalid credentials."
@@ -50387,7 +50645,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Services/Settings/Access_Section.php:183"
+          "includes/Services/Settings/Access_Section.php:225"
         ]
       },
       "source_usage": {
@@ -57296,7 +57554,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:112"
+          "includes/Templates/Auth.php:113"
         ]
       },
       "source_usage": {
@@ -57381,7 +57639,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Auth.php:118"
+          "includes/Templates/Auth.php:119"
         ]
       },
       "source_usage": {
@@ -57477,7 +57735,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:130"
+          "includes/Templates/Auth.php:131"
         ]
       },
       "source_usage": {
@@ -57560,7 +57818,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:255"
+          "includes/Templates/Auth.php:256"
         ]
       },
       "source_usage": {
@@ -57643,7 +57901,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:261"
+          "includes/Templates/Auth.php:262"
         ]
       },
       "source_usage": {
@@ -57726,7 +57984,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:281"
+          "includes/Templates/Auth.php:282"
         ]
       },
       "source_usage": {
@@ -57811,7 +58069,7 @@
           "Short WCPOS UI label; keep concise."
         ],
         "references": [
-          "includes/Templates/Auth.php:291"
+          "includes/Templates/Auth.php:292"
         ]
       },
       "source_usage": {
@@ -57896,7 +58154,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:301"
+          "includes/Templates/Auth.php:302"
         ]
       },
       "source_usage": {
@@ -57979,7 +58237,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:342"
+          "includes/Templates/Auth.php:343"
         ]
       },
       "source_usage": {
@@ -58062,7 +58320,7 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:392"
+          "includes/Templates/Auth.php:393"
         ]
       },
       "source_usage": {
@@ -58073,7 +58331,7 @@
           "This account is temporarily locked due to too many failed login attempts. Please try again later.",
           "Failed to generate authentication tokens.",
           "Invalid username or password.",
-          "You do not have sufficient permissions to access this page."
+          "Detailed Receipt"
         ]
       },
       "related_existing_translations": [
@@ -58145,8 +58403,8 @@
         "msgid_plural": null,
         "translator_comments": [],
         "references": [
-          "includes/Templates/Auth.php:406",
-          "includes/Templates/Auth.php:415"
+          "includes/Templates/Auth.php:407",
+          "includes/Templates/Auth.php:416"
         ]
       },
       "source_usage": {
@@ -58156,8 +58414,8 @@
         "nearby_source_strings": [
           "Failed to generate authentication tokens.",
           "Please enter both username and password.",
-          "You do not have sufficient permissions to access this page.",
-          "Detailed Receipt"
+          "Detailed Receipt",
+          "Extended info with SKU, unit price, full tax breakdown, customer address, and cashier details."
         ]
       },
       "related_existing_translations": [
@@ -58224,91 +58482,6 @@
       "format": "php-po",
       "locale": "km",
       "entry": {
-        "msgid": "You do not have sufficient permissions to access this page.",
-        "msgctxt": null,
-        "msgid_plural": null,
-        "translator_comments": [
-          "Authorization error shown when a logged-in user lacks permission to open the POS page."
-        ],
-        "references": [
-          "includes/Templates/Frontend.php:59"
-        ]
-      },
-      "source_usage": {
-        "areas": [
-          "template editor"
-        ],
-        "nearby_source_strings": [
-          "Please enter both username and password.",
-          "Invalid username or password.",
-          "Detailed Receipt",
-          "Extended info with SKU, unit price, full tax breakdown, customer address, and cashier details."
-        ]
-      },
-      "related_existing_translations": [
-        {
-          "msgid": "You do not have permission to access this page.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិចូលប្រើទំព័រនេះទេ។"
-        },
-        {
-          "msgid": "You do not have permissions to view this data.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិមើលទិន្នន័យនេះទេ។"
-        },
-        {
-          "msgid": "You do not have permission to access the POS.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិចូលប្រើ POS ទេ។"
-        },
-        {
-          "msgid": "You do not have permission to view this receipt.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិមើលបង្កាន់ដៃនេះទេ។"
-        },
-        {
-          "msgid": "You do not have permission to update access settings.",
-          "msgctxt": null,
-          "msgstr": "អ្នកគ្មានសិទ្ធិធ្វើបច្ចុប្បន្នភាពការកំណត់សិទ្ធិចូលប្រើទេ។"
-        },
-        {
-          "msgid": "You do not have permission to modify checkout settings.",
-          "msgctxt": null,
-          "msgstr": "អ្នក​មិន​មានសិទ្ធិ សម្រាប់កែប្រែពត័មានរបស់ប្លែងចំណាយ។"
-        },
-        {
-          "msgid": "You do not have permission to update WCPOS settings.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិអាប់ដេតការកំណត់ WCPOS ទេ។"
-        },
-        {
-          "msgid": "You do not have permission to view extensions.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិមើលផ្នែកបន្ថែមទេ។"
-        },
-        {
-          "msgid": "You do not have permission to view logs.",
-          "msgctxt": null,
-          "msgstr": "អ្នកមិនមានសិទ្ធិមើលកំណត់ហេតុទេ។"
-        },
-        {
-          "msgid": "Sorry, you are not allowed to edit this template.",
-          "msgctxt": null,
-          "msgstr": "សុំទោស លោកអ្នកមិនអាចកែប្រែ​គំរូ​នេះទេ។"
-        }
-      ],
-      "concept_hints": [],
-      "risk": {
-        "level": "normal",
-        "reasons": []
-      }
-    },
-    {
-      "project": "woocommerce-pos",
-      "domain": "woocommerce-pos",
-      "format": "php-po",
-      "locale": "km",
-      "entry": {
         "msgid": "Detailed Receipt",
         "msgctxt": null,
         "msgid_plural": null,
@@ -58324,8 +58497,8 @@
           "template editor"
         ],
         "nearby_source_strings": [
+          "Please enter both username and password.",
           "Invalid username or password.",
-          "You do not have sufficient permissions to access this page.",
           "Extended info with SKU, unit price, full tax breakdown, customer address, and cashier details.",
           "Items listed without prices. Includes gift message from customer note and return reference."
         ]
@@ -58411,7 +58584,7 @@
           "template editor"
         ],
         "nearby_source_strings": [
-          "You do not have sufficient permissions to access this page.",
+          "Invalid username or password.",
           "Detailed Receipt",
           "Items listed without prices. Includes gift message from customer note and return reference.",
           "Full-page A4/Letter invoice with bill-to/ship-to addresses, an itemised products table, and an optional \"How to pay\" panel (bank transfer + QR-encoded order-pay URL) shown when the order still needs payment."
