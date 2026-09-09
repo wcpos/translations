@@ -172,14 +172,39 @@ jobs:
           echo "Forwarding to Aide: project=$project type=$type files=$file_count"
           echo "$changed_files" | jq -r '.[]'
 
-          http_code=$(curl -s -o /tmp/aide_response.json -w "%{http_code}" \
-            --max-time 30 \
-            --retry 3 --retry-delay 5 --retry-connrefused \
-            -X POST \
-            -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "$payload" \
-            "$OPENCLAW_BASE_URL/translation/webhook")
+          # Retry only when the server could not be reached (curl exit 6/7/35:
+          # DNS, connection refused, TLS handshake). Never re-post after an HTTP
+          # answer: curl's --retry treats 5xx as transient, and on 2026-09-09 the
+          # gateway answered 502 after it had already spawned the translation
+          # run, so each push produced four duplicate Aide runs.
+          attempt=0
+          while :; do
+            attempt=$((attempt + 1))
+            curl_status=0
+            http_code=$(curl -s -o /tmp/aide_response.json -w "%{http_code}" \
+              --max-time 30 \
+              -X POST \
+              -H "Authorization: Bearer $OPENCLAW_HOOKS_TOKEN" \
+              -H "Content-Type: application/json" \
+              -d "$payload" \
+              "$OPENCLAW_BASE_URL/translation/webhook") || curl_status=$?
+            if [ "$curl_status" -eq 0 ]; then
+              break
+            fi
+            case "$curl_status" in
+              6|7|35) ;;
+              *)
+                echo "::error::Aide webhook request failed (curl exit $curl_status)"
+                exit 1
+                ;;
+            esac
+            if [ "$attempt" -ge 4 ]; then
+              echo "::error::Aide webhook unreachable after $attempt attempts (curl exit $curl_status)"
+              exit 1
+            fi
+            echo "Aide webhook unreachable (curl exit $curl_status); retrying in $((attempt * 5))s"
+            sleep $((attempt * 5))
+          done
 
           status=$(jq -r '.status // (if .accepted == true then "accepted" else "unknown" end)' /tmp/aide_response.json 2>/dev/null || echo "unknown")
           echo "Aide response: http=$http_code status=$status"
