@@ -4,6 +4,7 @@ let englishRulesCache;
 
 // Match standalone decimals, excluding version strings such as v2.0.1.
 const DECIMAL_NUMBER_RE = /(?<![.\w])\d+\.\d+(?![\d.])/;
+const DOMAIN_TERMS = ['WooCommerce', 'WCPOS Pro', 'WordPress', 'WCPOS', 'POS'];
 
 function normalizeWcposProductNames(value) {
   return value
@@ -35,6 +36,17 @@ function checkTranslation({ locale, source, translation }) {
   }
   if (translation.includes('WooCommerce POS')) {
     errors.push('Use "WCPOS" instead of "WooCommerce POS"');
+  }
+
+  let domainSource = normalizeWcposProductNames(source);
+  for (const term of DOMAIN_TERMS) {
+    const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const termRe = new RegExp(`\\b${escapedTerm}\\b`);
+    if (termRe.test(domainSource) && !termRe.test(translation)) {
+      warnings.push(`"${term}" should remain untranslated`);
+      // Avoid warning again for WCPOS inside an already-warned WCPOS Pro.
+      if (term === 'WCPOS Pro') domainSource = domainSource.replace(/\bWCPOS Pro\b/g, ' ');
+    }
   }
 
   glossaryCache ??= require('./translation-glossary.json');

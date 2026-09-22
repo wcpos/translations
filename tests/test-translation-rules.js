@@ -87,6 +87,31 @@ for (const [locale, source, translation, warnings] of [
 }
 assert.deepEqual(checkTranslation({ locale: 'de_DE', source: 'Cashier', translation: 'Cashier' }).warnings,
   ['"Cashier" should be translated as "Kassierer" for de_DE']);
+
+for (const [source, translation, missingTerms] of [
+  ['Open POS', 'POS öffnen', []],
+  ['Open POS', 'Kasse öffnen', ['POS']],
+  ['Upgrade to WCPOS Pro', 'Auf WCPOS Pro upgraden', []],
+  ['Upgrade to WCPOS Pro', 'Auf die Pro-Version upgraden', ['WCPOS Pro']],
+  ['WooCommerce POS', 'WCPOS', []],
+  ['WooCommerce POS Pro', 'WCPOS Pro', []],
+  ['WCPOS Pro and WCPOS Pro', 'Pro-Version', ['WCPOS Pro']],
+  ['WCPOS Pro and WCPOS', 'Pro-Version', ['WCPOS Pro', 'WCPOS']],
+  ['WCPOS Pro and WCPOS', 'WCPOS', ['WCPOS Pro']],
+  ['WooCommerce and WordPress', 'Shop und Website', ['WooCommerce', 'WordPress']],
+  ['WooCommerce and WordPress', 'WooCommerce und WordPress', []],
+  ['Open POS', 'pos öffnen', ['POS']],
+  ['Open pos', 'Kasse öffnen', []],
+  ['WCPOSia POSitive MyWordPress WooCommerceX', 'Text', []],
+  ['WCPOS', 'WCPOSia', ['WCPOS']],
+  ['WCPOS Pro', 'WCPOS-Pro-Lizenz', ['WCPOS Pro']],
+]) {
+  const result = checkTranslation({ locale: 'de', source, translation });
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.warnings, missingTerms.map(term => `"${term}" should remain untranslated`),
+    JSON.stringify({ source, translation }));
+}
+
 assert.deepEqual(checkEnglishSource('Customise', 'american'),
   ['Spelling: use "customize" not the matched form (American English uses -ize)']);
 assert.equal(checkEnglishSource('Customize color', 'british').length, 2);
