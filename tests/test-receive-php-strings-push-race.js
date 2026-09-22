@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 // The receive-php-strings Commit step runs from a checkout pinned to the
-// dispatch SHA. If anything lands on main between checkout and push (forward-
-// to-aide's context-artifact commit does, about a minute after every receive)
+// dispatch SHA. If another commit lands on main between checkout and push,
 // a bare `git push` is rejected and the POT update is lost. This runs the real
 // step script against a bare remote where a competitor has already pushed.
 
@@ -123,7 +122,7 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
     );
     assert.ok(
       fs.readFileSync(output, 'utf8').includes('changed=true'),
-      `${name}: expected changed=true so the forward still runs`
+      `${name}: expected changed=true so translation picks it up`
     );
 
     if (expectPush) {

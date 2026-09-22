@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: receive-js-${{ github.event.client_payload.repo_name }}
@@ -102,11 +101,3 @@ jobs:
             git push
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
-
-      - name: Trigger translation
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
-          gh workflow run forward-to-aide.yml -f project="$REPO" -f type=js
