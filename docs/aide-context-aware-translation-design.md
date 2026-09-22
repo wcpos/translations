@@ -1,5 +1,7 @@
 # Context-Aware Aide Translation Design
 
+> **Historical (September 2026):** Aide/OpenClaw has been retired. Its successor is the local pipeline in `scripts/translate-local.sh` (see README → Translation Pipeline). The context packets described here now live in the per-locale work packets from `scripts/translation-worklist.js`.
+
 ## Summary
 
 Aide should not translate isolated strings. Translation quality failures like Danish `Tendered` → `Tenderet` happen when a short ambiguous English UI label is translated without enough product, source-code, receipt/payment, and existing-translation context.
