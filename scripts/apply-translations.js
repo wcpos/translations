@@ -46,6 +46,10 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
     } catch (error) {
       if (!(error instanceof SyntaxError)) throw error;
     }
+    if (isObject(results)) {
+      if (!Object.hasOwn(results, 'js')) results.js = {};
+      if (!Object.hasOwn(results, 'php')) results.php = {};
+    }
     if (!isObject(results) || results.locale !== locale || !isObject(results.js)
         || !isObject(results.php) || !Object.values(results.js).every(isObject)) {
       for (const { file, key } of items) {

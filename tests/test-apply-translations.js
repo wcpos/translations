@@ -118,12 +118,21 @@ try {
   const count = packet.counts.js + packet.counts.php;
   for (const invalid of ['{', [], null, { locale: 'wrong', js: {}, php: {} },
     { locale: 'de_DE', js: [], php: {} }, { locale: 'de_DE', js: {}, php: [] },
-    { locale: 'de_DE', js: { 'monorepo/core.json': [] }, php: {} }, { locale: 'de_DE' }]) {
+    { locale: 'de_DE', js: { 'monorepo/core.json': [] }, php: {} },
+    { locale: 'de_DE', js: null }, { locale: 'de_DE', php: null }, { locale: 'de_DE', js: 'x' }]) {
     write('results/de_DE.json', invalid);
     report = apply();
     assert.equal(report.rejected.length, count);
     assert.ok(report.rejected.every(item => item.reasons[0] === 'invalid results file'));
     assert.ok(report.rejected.some(item => item.key === '[receipt] Tendered'));
+    assert.deepEqual(report.files_written, []);
+    assert.deepEqual(snapshot(written), after);
+  }
+  for (const omitted of [{ locale: 'de_DE' }, { locale: 'de_DE', js: {} }, { locale: 'de_DE', php: {} }]) {
+    write('results/de_DE.json', omitted);
+    report = apply();
+    assert.equal(report.rejected.length, count);
+    assert.ok(report.rejected.every(item => item.reasons[0] === 'no translation returned'));
     assert.deepEqual(report.files_written, []);
     assert.deepEqual(snapshot(written), after);
   }
@@ -136,7 +145,7 @@ try {
     assert.deepEqual(report.files_written, []);
     assert.deepEqual(snapshot(written), after);
   }
-  write('results/de_DE.json', { locale: 'de_DE', js: {}, php: { [id('%d item')]: ['%d neuer Artikel', '%d neue Artikel'] } });
+  write('results/de_DE.json', { locale: 'de_DE', php: { [id('%d item')]: ['%d neuer Artikel', '%d neue Artikel'] } });
   report = apply();
   assert.equal(report.applied, 1);
   po = parsePoFile(read(poFile));
@@ -169,6 +178,13 @@ try {
   assert.ok(read('report.md').includes('…and 2 more'));
   assert.ok(read('report.md').includes('## Warnings'));
   assert.ok(!read('report.md').includes('## Rejected'));
+  write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/only.json': { hello: { source: 'Hello' } } }, php: {} });
+  write('results/de_DE.json', { locale: 'de_DE', js: { 'monorepo/only.json': { hello: 'Hallo' } } });
+  report = apply();
+  assert.equal(report.applied, 1);
+  assert.deepEqual(report.rejected, []);
+  assert.deepEqual(report.files_written, ['translations/js/de_DE/monorepo/only.json']);
+  assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/only.json')), { hello: 'Hallo' });
   console.log('Apply translations tests passed');
 } finally {
   fs.rmSync(rootDir, { recursive: true, force: true });
