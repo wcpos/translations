@@ -2,8 +2,10 @@
 set -euo pipefail
 
 DEFAULT_TRANSLATOR=codex # Local subscription CLI used for translation and review.
-CODEX_MODEL=gpt-6-sol # Default model for Codex.
+CODEX_MODEL=gpt-6-luna # Codex translate pass, mechanical tier.
 CLAUDE_MODEL=sonnet # Default model for Claude.
+CODEX_REVIEW_MODEL=gpt-6-sol # Default model for Codex review pass.
+CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
 MAX_PER_CALL=250 # Maximum summed packet items per call, except oversized packets.
 CALL_TIMEOUT=1800 # Seconds allowed for each translation or review call.
@@ -24,6 +26,7 @@ fi
 log() { printf '[translate-local] %s\n' "$*"; }
 TRANSLATOR=${TRANSLATE_TRANSLATOR:-$DEFAULT_TRANSLATOR}
 MODEL=${TRANSLATE_MODEL:-}
+REVIEW_MODEL=${TRANSLATE_REVIEW_MODEL:-}
 EFFORT=${TRANSLATE_EFFORT:-$DEFAULT_EFFORT}
 BASE=main
 DRY_RUN=0
@@ -38,14 +41,15 @@ while [ "$#" -gt 0 ]; do
     --locale) WORKLIST_ARGS+=(--locale "$2"); shift 2 ;;
     --translator) TRANSLATOR=$2; shift 2 ;;
     --model) MODEL=$2; shift 2 ;;
+    --review-model) REVIEW_MODEL=$2; shift 2 ;;
     --effort) EFFORT=$2; shift 2 ;;
     --max-per-call) MAX_PER_CALL=$2; shift 2 ;;
     *) log "unknown argument: $1"; exit 1 ;;
   esac
 done
 case "$TRANSLATOR" in
-  codex) MODEL=${MODEL:-$CODEX_MODEL} ;;
-  claude) MODEL=${MODEL:-$CLAUDE_MODEL} ;;
+  codex) MODEL=${MODEL:-$CODEX_MODEL}; REVIEW_MODEL=${REVIEW_MODEL:-$CODEX_REVIEW_MODEL} ;;
+  claude) MODEL=${MODEL:-$CLAUDE_MODEL}; REVIEW_MODEL=${REVIEW_MODEL:-$CLAUDE_REVIEW_MODEL} ;;
   *) log "unknown translator: $TRANSLATOR"; exit 1 ;;
 esac
 case "$MAX_PER_CALL" in
@@ -117,13 +121,15 @@ run_with_timeout() {
 }
 if [ "$TRANSLATOR" = codex ]; then
   COMMAND=(codex exec -m "$MODEL" -c "model_reasoning_effort=\"$EFFORT\"" -c 'approval_policy="never"' -s workspace-write -C "$WT" -)
+  REVIEW_COMMAND=(codex exec -m "$REVIEW_MODEL" -c "model_reasoning_effort=\"$EFFORT\"" -c 'approval_policy="never"' -s workspace-write -C "$WT" -)
 else
   COMMAND=(claude -p --model "$MODEL" --permission-mode acceptEdits --allowedTools "Read,Write,Glob,Grep")
+  REVIEW_COMMAND=(claude -p --model "$REVIEW_MODEL" --permission-mode acceptEdits --allowedTools "Read,Write,Glob,Grep")
 fi
 mkdir -p .translate/results .translate/logs
 chunks .translate/work "$MAX_PER_CALL" > .translate/chunks
 CHUNK=0
-REVIEW_RAN=no
+REVIEW_USED=skipped
 while IFS= read -r LOCALES; do
   CHUNK=$((CHUNK + 1))
   cat scripts/translate-prompt.md > .translate/prompt
@@ -138,12 +144,12 @@ while IFS= read -r LOCALES; do
     if [ -f ".translate/results/$LOCALE.json" ]; then HAS_RESULTS=1; fi
   done
   if [ "$REVIEW" -eq 1 ] && [ "$HAS_RESULTS" -eq 1 ]; then
-    REVIEW_RAN=yes
+    REVIEW_USED=$REVIEW_MODEL
     cat scripts/review-prompt.md > .translate/prompt
     for LOCALE in $LOCALES; do
       printf '\n- .translate/work/%s.json -> .translate/results/%s.json\n' "$LOCALE" "$LOCALE" >> .translate/prompt
     done
-    if ! run_with_timeout "${COMMAND[@]}" < .translate/prompt > ".translate/logs/review-$CHUNK.log" 2>&1; then
+    if ! run_with_timeout "${REVIEW_COMMAND[@]}" < .translate/prompt > ".translate/logs/review-$CHUNK.log" 2>&1; then
       log "review $CHUNK failed or timed out; continuing"
     fi
   fi
@@ -159,7 +165,7 @@ APPLIED=$(jq -r .applied .translate/report.json)
 LOCALES=$(jq -r '[.files_written[] | split("/")[2]] | unique | join(", ")' .translate/report.json)
 N_LOCALES=$(jq '[.files_written[] | split("/")[2]] | unique | length' .translate/report.json)
 {
-  printf 'Applied %s strings for %s locales (%s); translator: %s (%s); review pass ran: %s.\n\n' "$APPLIED" "$N_LOCALES" "$LOCALES" "$TRANSLATOR" "$MODEL" "$REVIEW_RAN"
+  printf 'Applied %s strings for %s locales (%s); translator: %s (%s); review: %s.\n\n' "$APPLIED" "$N_LOCALES" "$LOCALES" "$TRANSLATOR" "$MODEL" "$REVIEW_USED"
   cat .translate/report.md
   printf '\n'
   node scripts/check-translation-quality.js --changed-since "origin/$BASE" --markdown
