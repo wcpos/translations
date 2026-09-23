@@ -19,7 +19,7 @@ This repository contains app/plugin translations, not documentation pages. Treat
 Missing strings are filled by `scripts/translate-local.sh`, which runs on a schedule on Paul's Mac mini (or on demand via `/translate`). It replaced the OpenClaw/Aide webhook in September 2026. It works in four stages:
 
 1. `scripts/translation-worklist.js` deterministically writes one work packet per locale with gaps. With no gaps, it stops before calling any model.
-2. A local model CLI (Codex `gpt-6-sol` by default, or Claude Sonnet) follows `scripts/translate-prompt.md` and writes a results JSON per packet. The model never edits translation files.
+2. A local model CLI (Codex `gpt-6-luna` by default, reviewed by `gpt-6-sol`; or Claude Sonnet) follows `scripts/translate-prompt.md` and writes a results JSON per packet. The model never edits translation files.
 3. `scripts/apply-translations.js` validates each translation with `scripts/translation-rules.js` (placeholders, markup, product names, glossary, locale formatting) and writes the accepted ones.
 4. The script validates, then pushes a branch and opens or updates the PR labelled `auto-translate`.
 
