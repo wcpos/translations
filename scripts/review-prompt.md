@@ -29,6 +29,8 @@ For each translation, check the following:
 5. **Mechanics.** Are all placeholders and markup identical to the source, with
    PHP plural arrays holding exactly `forms` entries for the right CLDR/gettext forms?
 
+**How to write files.** Create or edit each results file directly with your file-editing tool (for Codex, `apply_patch`). Do not write them through shell heredocs, `python -c` or other scripts: non-Latin text (Khmer, Thai, Arabic…) breaks shell encodings. If a write fails, retry another way. Never finish with a results file unwritten. This is a translation task, not a code change, so no STATUS report is needed.
+
 If a translation fails any check, rewrite it in the results file. If it passes,
 leave it unchanged. Do not reformat or reorder the file for no reason. Keep every
 key and id. Write only the results files: do not edit any other file, do not run git,
