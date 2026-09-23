@@ -55,7 +55,7 @@ https://cdn.jsdelivr.net/gh/wcpos/translations@2026.2.0/translations/js/de_DE/mo
 
 ## PHP Distribution
 
-PHP translation files (.mo, .l10n.php) are attached to GitHub Releases and can be fetched by the plugin's translation updater.
+PHP translations ship as `.l10n.php` files (WordPress 6.5+ format). The plugins download them from jsDelivr at the pinned version, and they are also attached to GitHub Releases. The `.mo` files in `translations/php/` are no longer maintained or released, because the plugins never load them.
 
 ## Consumer Integration
 

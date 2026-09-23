@@ -160,7 +160,7 @@ jobs:
           # Attach PHP translation files as release assets
           for locale_dir in translations/php/*/; do
             locale=$(basename "$locale_dir")
-            for file in "$locale_dir"*.{mo,l10n.php}; do
+            for file in "$locale_dir"*.l10n.php; do
               if [ -f "$file" ]; then
                 gh release upload "$VERSION" "$file" --clobber
               fi
