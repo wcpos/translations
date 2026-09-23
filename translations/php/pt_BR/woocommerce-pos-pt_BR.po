@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:255
+#: includes/Activator.php:276
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> requer PHP %1$s ou superior. Leia mais informações sobre <a href=\"%2$s\">como você pode atualizar</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:279
+#: includes/Activator.php:300
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> requer <a href=\"%1$s\">WooCommerce %2$s ou superior</a>. Por favor, <a href=\"%3$s\">instale e ative o WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:301
+#: includes/Activator.php:322
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> requer permalinks <em>bonitos</em> para funcionar corretamente"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:302
+#: includes/Activator.php:323
 msgid "Enable permalinks"
 msgstr "Ativar permalinks"
 
@@ -69,7 +69,7 @@ msgstr "Ativar permalinks"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:525
+#: includes/Activator.php:551
 #: includes/Services/Receipt_Data_Schema.php:437
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: includes/Templates/Payment.php:316
@@ -78,7 +78,7 @@ msgid "Cashier"
 msgstr "Caixa"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:705
+#: includes/Activator.php:733
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -376,12 +376,12 @@ msgid "58mm (Narrow)"
 msgstr "58mm (Estreito)"
 
 #. translators: REST API schema field label or error message.
-#: includes/API.php:551
+#: includes/API.php:412
 #: includes/API/V1/Cashier.php:124
 msgid "Authentication required."
 msgstr "Autenticação necessária."
 
-#: includes/API.php:558
+#: includes/API.php:419
 msgid "You do not have permission to access the POS."
 msgstr "Você não tem permissão para acessar o POS."
 
@@ -513,34 +513,30 @@ msgstr "IDs fiscais do cliente."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Customers_Controller.php:112
-#: includes/API/V1/Orders_Controller.php:376
 msgid "Tax ID type."
 msgstr "Tipo de ID fiscal."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Customers_Controller.php:116
-#: includes/API/V1/Orders_Controller.php:380
 msgid "Tax ID value."
 msgstr "Valor do ID fiscal."
 
 #: includes/API/V1/Customers_Controller.php:120
-#: includes/API/V1/Orders_Controller.php:384
 msgid "ISO 3166-1 alpha-2 country code."
 msgstr "Código do país ISO 3166-1 alpha-2."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Customers_Controller.php:124
-#: includes/API/V1/Orders_Controller.php:388
 msgid "Optional human-readable label."
 msgstr "Rótulo opcional legível."
 
-#: includes/API/V1/Customers_Controller.php:266
+#: includes/API/V1/Customers_Controller.php:194
 msgid "Filter customers by roles."
 msgstr "Filtrar clientes por funções."
 
 #. translators: Use default WordPress translation.
-#: includes/API/V1/Customers_Controller.php:400
-#: includes/API/V1/Orders_Controller.php:874
+#: includes/API/V1/Customers_Controller.php:328
+#: includes/API/V1/Orders_Controller.php:585
 msgid "Invalid email address."
 msgstr "Endereço de e-mail inválido."
 
@@ -575,51 +571,43 @@ msgid "You do not have permission to view logs."
 msgstr "Você não tem permissão para ver logs."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Orders_Controller.php:329
+#: includes/API/V1/Orders_Controller.php:280
 #: includes/API/V2/Order_Email_Controller.php:40
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
-#: includes/API/V1/Orders_Controller.php:334
+#: includes/API/V1/Orders_Controller.php:285
 #: includes/API/V2/Order_Email_Controller.php:45
 msgid "Save email to order"
 msgstr "Salvar e-mail no pedido"
 
-#: includes/API/V1/Orders_Controller.php:367
+#: includes/API/V1/Orders_Controller.php:320
 msgid "Customer tax IDs snapshotted at sale time."
 msgstr "IDs fiscais do cliente registrados no momento da venda."
 
-#: includes/API/V1/Orders_Controller.php:552
-#: includes/API/V1/Orders_Controller.php:566
-#: includes/API/V1/Orders_Controller.php:583
-#: includes/API/V2/Writers/Order_Writer.php:484
-msgid "date_created_gmt must be a valid ISO 8601 UTC date."
-msgstr "date_created_gmt deve ser uma data UTC válida em ISO 8601."
-
-#: includes/API/V1/Orders_Controller.php:593
-#: includes/API/V2/Writers/Order_Writer.php:478
-msgid "date_created_gmt cannot be more than 24 hours in the future."
-msgstr "date_created_gmt não pode estar mais de 24 horas no futuro."
-
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:929
+#: includes/API/V1/Orders_Controller.php:640
 #, php-format
 msgid "Email address %s added to billing details from WCPOS."
 msgstr "Endereço de e-mail %s adicionado aos detalhes de cobrança do WCPOS."
 
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:942
+#: includes/API/V1/Orders_Controller.php:653
 #, php-format
 msgid "Order details manually sent to %s from WCPOS."
 msgstr "Detalhes do pedido enviados manualmente para %s do WCPOS."
 
-#: includes/API/V1/Orders_Controller.php:1007
+#: includes/API/V1/Orders_Controller.php:718
 msgid "Unique identifier for the order status."
 msgstr "Identificador único para o status do pedido."
 
-#: includes/API/V1/Orders_Controller.php:1013
+#: includes/API/V1/Orders_Controller.php:724
 msgid "Display name of the order status."
 msgstr "Nome de exibição do status do pedido."
+
+#: includes/API/V1/Orders_Controller.php:750
+msgid "Whether the order email was sent."
+msgstr "Se o e-mail do pedido foi enviado."
 
 #: includes/API/V1/Payment_Gateways.php:154
 msgid "Payment gateway ID."
@@ -653,224 +641,163 @@ msgstr "Capacidades de POS expostas pela gateway."
 msgid "Provider-specific public metadata."
 msgstr "Metadados públicos específicos do provedor."
 
-#: includes/API/V1/Print_Jobs_Controller.php:311
+#: includes/API/V1/Print_Jobs_Controller.php:303
 msgid ""
 "The PrintNode API key must be sent in the request body, not the query string."
 msgstr ""
 "A chave de API do PrintNode deve ser enviada no corpo da requisição, e não na query string."
 
-#: includes/API/V1/Print_Jobs_Controller.php:324
+#: includes/API/V1/Print_Jobs_Controller.php:316
 msgid "A PrintNode API key is required."
 msgstr "É necessária uma chave de API do PrintNode."
 
-#: includes/API/V1/Print_Jobs_Controller.php:371
+#: includes/API/V1/Print_Jobs_Controller.php:363
 msgid ""
 "The Star Online API key must be sent in the request body, not the query string."
 msgstr ""
 "A chave da API Star Online deve ser enviada no corpo da requisição, não na string de consulta."
 
-#: includes/API/V1/Print_Jobs_Controller.php:386
+#: includes/API/V1/Print_Jobs_Controller.php:378
 msgid ""
 "A Star Online API key and a valid stario.online CloudPRNT URL are required."
 msgstr ""
 "É necessário informar uma chave da API Star Online e uma URL válida do CloudPRNT em stario.online."
 
-#: includes/API/V1/Print_Jobs_Controller.php:472
-#: includes/API/V1/Print_Jobs_Controller.php:493
-#: includes/API/V1/Print_Jobs_Controller.php:734
-#: includes/API/V1/Print_Jobs_Controller.php:1107
+#: includes/API/V1/Print_Jobs_Controller.php:464
+#: includes/API/V1/Print_Jobs_Controller.php:485
+#: includes/API/V1/Print_Jobs_Controller.php:726
+#: includes/Services/Providers/Star_Cloudprnt_Adapter.php:142
 msgid "Print job not found."
 msgstr "Trabalho de impressão não encontrado."
 
-#: includes/API/V1/Print_Jobs_Controller.php:506
+#: includes/API/V1/Print_Jobs_Controller.php:498
 msgid "The print job could not be deleted."
 msgstr "Não foi possível excluir o trabalho de impressão."
 
-#: includes/API/V1/Print_Jobs_Controller.php:522
+#: includes/API/V1/Print_Jobs_Controller.php:514
 msgid "Only pending or claimed print jobs can be cancelled."
 msgstr ""
 "Somente trabalhos de impressão pendentes ou assumidos podem ser cancelados."
 
-#: includes/API/V1/Print_Jobs_Controller.php:698
+#: includes/API/V1/Print_Jobs_Controller.php:690
 msgid "No print jobs were selected."
 msgstr "Nenhum trabalho de impressão foi selecionado."
 
-#: includes/API/V1/Print_Jobs_Controller.php:706
+#: includes/API/V1/Print_Jobs_Controller.php:698
 msgid "One or more selected print jobs are invalid."
 msgstr "Um ou mais trabalhos de impressão selecionados são inválidos."
 
-#: includes/API/V1/Print_Jobs_Controller.php:741
+#: includes/API/V1/Print_Jobs_Controller.php:733
 msgid "This print job has already been retried."
 msgstr "Este trabalho de impressão já passou por uma nova tentativa."
 
-#: includes/API/V1/Print_Jobs_Controller.php:753
+#: includes/API/V1/Print_Jobs_Controller.php:745
 msgid ""
 "This job's stored receipt has been cleaned up and it has no template to re-render from."
 msgstr ""
 "O recibo armazenado deste trabalho foi limpo e não possui modelo para renderização novamente."
 
-#: includes/API/V1/Print_Jobs_Controller.php:770
+#: includes/API/V1/Print_Jobs_Controller.php:762
 msgid "This job's template no longer exists, so it cannot be re-rendered."
 msgstr ""
 "O modelo deste trabalho não existe mais, portanto ele não pode ser renderizado novamente."
 
-#: includes/API/V1/Print_Jobs_Controller.php:819
-#: includes/API/V1/Print_Jobs_Controller.php:1431
-#: includes/API/V1/Print_Jobs_Controller.php:1547
-#: includes/API/V1/Print_Jobs_Controller.php:1579
+#: includes/API/V1/Print_Jobs_Controller.php:810
+#: includes/API/V1/Print_Jobs_Controller.php:1012
+#: includes/API/V1/Print_Jobs_Controller.php:1116
+#: includes/Services/Providers/Star_Online_Adapter.php:181
 msgid "Print job could not be created."
 msgstr "Não foi possível criar o trabalho de impressão."
 
-#: includes/API/V1/Print_Jobs_Controller.php:828
+#: includes/API/V1/Print_Jobs_Controller.php:819
 msgid "Print job retry could not be recorded."
 msgstr "Não foi possível registrar a nova tentativa do trabalho de impressão."
 
-#: includes/API/V1/Print_Jobs_Controller.php:974
-msgid "The print job is not available in the requested media type."
-msgstr ""
-"O trabalho de impressão não está disponível no tipo de mídia solicitado."
-
-#: includes/API/V1/Print_Jobs_Controller.php:1076
+#: includes/API/V1/Print_Jobs_Controller.php:873
+#: includes/API/V1/Print_Jobs_Controller.php:895
 msgid "Invalid printer token."
 msgstr "Token da impressora inválido."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1165
-msgid "no response from printer"
-msgstr "sem resposta da impressora"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1166
-msgid "offline"
-msgstr "offline"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1167
-msgid "cover open"
-msgstr "tampa aberta"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1168
-msgid "waiting for online recovery"
-msgstr "aguardando recuperação online"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1169
-msgid "mechanical error"
-msgstr "erro mecânico"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1170
-msgid "autocutter error"
-msgstr "erro no cortador automático"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1171
-msgid "unrecoverable error"
-msgstr "erro irrecuperável"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1172
-msgid "auto-recoverable error"
-msgstr "erro recuperável automaticamente"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1173
-msgid "paper near end"
-msgstr "papel quase no fim"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1174
-msgid "paper end"
-msgstr "fim do papel"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1175
-msgid "spooler stopped"
-msgstr "spooler parado"
-
-#: includes/API/V1/Print_Jobs_Controller.php:1371
+#: includes/API/V1/Print_Jobs_Controller.php:952
 msgid "A printer_id is required."
 msgstr "É necessário um printer_id."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1396
+#: includes/API/V1/Print_Jobs_Controller.php:977
 msgid "PrintNode print jobs require an order and a template."
 msgstr ""
 "Os trabalhos de impressão do PrintNode exigem um pedido e um template."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1411
-#: includes/API/V1/Print_Jobs_Controller.php:1510
+#: includes/API/V1/Print_Jobs_Controller.php:992
+#: includes/API/V1/Print_Jobs_Controller.php:1091
 msgid "Unknown printer."
 msgstr "Impressora desconhecida."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1460
+#: includes/API/V1/Print_Jobs_Controller.php:1041
 msgid "Unknown order."
 msgstr "Pedido desconhecido."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1469
+#: includes/API/V1/Print_Jobs_Controller.php:1050
 msgid "Unknown template."
 msgstr "Template desconhecido."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1486
+#: includes/API/V1/Print_Jobs_Controller.php:1067
 msgid "The selected template cannot be printed on this printer."
 msgstr "O template selecionado não pode ser impresso nesta impressora."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1532
-msgid "Test print is not available for this printer yet."
-msgstr "A impressão de teste ainda não está disponível para esta impressora."
-
-#: includes/API/V1/Print_Jobs_Controller.php:1606
-msgid "This PrintNode printer is missing its API key or printer id."
-msgstr ""
-"Esta impressora do PrintNode está sem a chave de API ou o ID da impressora."
-
-#: includes/API/V1/Print_Jobs_Controller.php:1620
-msgid "Could not generate the test print."
-msgstr "Não foi possível gerar a impressão de teste."
-
-#: includes/API/V1/Print_Jobs_Controller.php:1695
+#: includes/API/V1/Print_Jobs_Controller.php:1173
 msgid ""
 "Epson Server Direct Print accepts order-based ePOS-Print jobs only, not raw payloads."
 msgstr ""
 "O Epson Server Direct Print aceita apenas trabalhos ePOS-Print baseados em pedidos, não payloads brutos."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1702
+#: includes/API/V1/Print_Jobs_Controller.php:1180
 msgid "Epson Server Direct Print requires the epos-xml format."
 msgstr "O Epson Server Direct Print exige o formato epos-xml."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1713
+#: includes/API/V1/Print_Jobs_Controller.php:1191
 msgid "Star CloudPRNT does not accept the epos-xml format."
 msgstr "O Star CloudPRNT não aceita o formato epos-xml."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1725
+#: includes/API/V1/Print_Jobs_Controller.php:1203
 msgid ""
 "Star CloudPRNT printers require order-based template jobs or a raw payload."
 msgstr ""
 "As impressoras Star CloudPRNT exigem trabalhos de modelo baseados no pedido ou um payload bruto."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1743
+#: includes/API/V1/Print_Jobs_Controller.php:1221
 msgid "No relay verification is pending."
 msgstr "Nenhuma verificação de relé está pendente."
 
-#: includes/API/V1/Print_Jobs_Controller.php:1783
+#: includes/API/V1/Print_Jobs_Controller.php:1261
 msgid "Sorry, you cannot manage print jobs."
 msgstr ""
 "Desculpe, você não tem permissão para gerenciar trabalhos de impressão."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Products_Controller.php:159
-#: includes/API/V1/Product_Variations_Controller.php:159
+#: includes/API/V1/Products_Controller.php:173
+#: includes/API/V1/Product_Variations_Controller.php:174
 msgid "Barcode"
 msgstr "Código de barras"
 
 #. translators: REST API collection parameter description.
-#: includes/API/V1/Products_Controller.php:197
+#: includes/API/V1/Products_Controller.php:217
 msgid ""
 "Limit result set to products assigned to brand IDs or slugs, separated by commas."
 msgstr ""
 "Limita o conjunto de resultados aos produtos atribuídos a IDs ou slugs de marcas, separados por vírgulas."
 
 #. translators: REST API collection parameter description.
-#: includes/API/V1/Products_Controller.php:205
+#: includes/API/V1/Products_Controller.php:225
 msgid "Operator to compare product brand terms."
 msgstr "Operador para comparar termos da marca do produto."
 
 #. translators: REST API collection parameter description.
-#: includes/API/V1/Products_Controller.php:215
+#: includes/API/V1/Products_Controller.php:235
 msgid "Operator to compare product category terms."
 msgstr "Operador para comparar termos da categoria do produto."
 
 #. translators: REST API collection parameter description.
-#: includes/API/V1/Products_Controller.php:225
+#: includes/API/V1/Products_Controller.php:245
 msgid "Operator to compare product tag terms."
 msgstr "Operador para comparar termos da tag do produto."
 
@@ -1175,7 +1102,7 @@ msgstr "O valor de cashback deve ser zero ou maior."
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Sample receipt label or value used in receipt template previews.
 #: includes/Gateways/Cash.php:29
-#: includes/Services/Preview_Receipt_Builder.php:819
+#: includes/Services/Preview_Receipt_Builder.php:815
 msgid "Cash"
 msgstr "Dinheiro"
 
@@ -1271,8 +1198,8 @@ msgstr ""
 msgid "An identical request is already being processed."
 msgstr "Uma solicitação idêntica já está sendo processada."
 
-#: includes/Services/Auth.php:342
-#: includes/Services/Auth.php:421
+#: includes/Services/Auth.php:315
+#: includes/Services/Auth.php:394
 msgid "JWT is not configured properly, please contact the admin"
 msgstr ""
 "JWT não está configurado corretamente, por favor contate o administrador"
@@ -1319,12 +1246,6 @@ msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "Os metadados de auditoria do POS não podem ser modificados por esta rota da REST API."
 
-#: includes/Services/Customer_Account_Guard.php:129
-msgid ""
-"Only an administrator can edit or delete a staff account from the POS."
-msgstr ""
-"Somente um administrador pode editar ou excluir uma conta de funcionário pelo POS."
-
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
 msgid "Closed"
@@ -1333,7 +1254,7 @@ msgstr "Fechado"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:31
-#: includes/Services/Receipt_Data_Builder.php:116
+#: includes/Services/Receipt_Data_Builder.php:115
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1342,7 +1263,7 @@ msgstr "Convidado"
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
 #: includes/Services/Order_Notes.php:50
-#: includes/Services/Receipt_Data_Builder.php:96
+#: includes/Services/Receipt_Data_Builder.php:95
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1264
 #, php-format
 msgid "Store #%d"
@@ -1385,28 +1306,34 @@ msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
 "Pagamento em dinheiro recebido — valor entregue: %1$s, troco devolvido: %2$s."
 
+#: includes/Services/Permission_Rules.php:355
+msgid ""
+"Only an administrator can edit or delete a staff account from the POS."
+msgstr ""
+"Somente um administrador pode editar ou excluir uma conta de funcionário pelo POS."
+
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:629
+#: includes/Services/Preview_Receipt_Builder.php:656
 msgid "Gift Wrapping"
 msgstr "Embalagem de Presente"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:635
+#: includes/Services/Preview_Receipt_Builder.php:662
 msgid "Flat Rate Shipping"
 msgstr "Frete por Pacote"
 
 #. translators: %s: discount percentage
-#: includes/Services/Preview_Receipt_Builder.php:644
+#: includes/Services/Preview_Receipt_Builder.php:671
 #, php-format
 msgid "Summer Sale (%s%%)"
 msgstr "Oferta de Verão (%s%%)"
 
-#: includes/Services/Preview_Receipt_Builder.php:715
+#: includes/Services/Preview_Receipt_Builder.php:737
 msgid "Please gift wrap this order. Thank you!"
 msgstr "Por favor, embale este pedido como presente. Obrigado!"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:842
+#: includes/Services/Preview_Receipt_Builder.php:838
 msgid "Tax Receipt"
 msgstr "Recibo Fiscal"
 
@@ -1415,7 +1342,7 @@ msgstr "Recibo Fiscal"
 #. translators: Receipt label for a store tax/VAT/GST/business identification number of this type.
 #. translators: Receipt label for a customer tax/VAT/GST/business identification number of this type.
 #. translators: Tax identification type label.
-#: includes/Services/Preview_Receipt_Builder.php:847
+#: includes/Services/Preview_Receipt_Builder.php:843
 #: includes/Services/Receipt_I18n_Labels.php:67
 #: includes/Services/Receipt_I18n_Labels.php:95
 #: includes/Services/Receipt_I18n_Labels.php:124
@@ -1424,17 +1351,17 @@ msgid "Tax ID"
 msgstr "ID Tributário"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:851
+#: includes/Services/Preview_Receipt_Builder.php:847
 msgid "Auth Code"
 msgstr "Cód. de autorização"
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:898
+#: includes/Services/Preview_Receipt_Builder.php:894
 msgid "Thank you for shopping with us! We appreciate your business."
 msgstr "Obrigado por comprar conosco! Agradecemos sua preferência."
 
 #. translators: Sample receipt label or value used in receipt template previews.
-#: includes/Services/Preview_Receipt_Builder.php:899
+#: includes/Services/Preview_Receipt_Builder.php:895
 msgid ""
 "Returns accepted within 30 days with original receipt. Items must be unused and in original packaging."
 msgstr ""
@@ -1442,7 +1369,7 @@ msgstr ""
 
 #. translators: Sample receipt label or value used in receipt template previews.
 #. translators: Receipt footer message thanking the customer for a completed purchase.
-#: includes/Services/Preview_Receipt_Builder.php:900
+#: includes/Services/Preview_Receipt_Builder.php:896
 #: includes/Services/Receipt_I18n_Labels.php:216
 #: templates/receipt.php:374
 msgid "Thank you for your purchase!"
@@ -1451,8 +1378,8 @@ msgstr "Obrigado por sua compra!"
 #. translators: Sample receipt label or value used in receipt template previews.
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for tax/VAT/GST amount, not a tax rate percentage.
-#: includes/Services/Preview_Receipt_Builder.php:1235
-#: includes/Services/Preview_Receipt_Builder.php:1260
+#: includes/Services/Preview_Receipt_Builder.php:1212
+#: includes/Services/Preview_Receipt_Builder.php:1237
 #: includes/Services/Receipt_Data_Schema.php:938
 #: includes/Services/Receipt_I18n_Labels.php:170
 msgid "Tax"
@@ -1472,6 +1399,64 @@ msgstr "A requisição ao PrintNode falhou com o status %d."
 msgid "PrintNode returned an unexpected print job response."
 msgstr ""
 "O PrintNode retornou uma resposta inesperada para o trabalho de impressão."
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:240
+msgid "no response from printer"
+msgstr "sem resposta da impressora"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:241
+msgid "offline"
+msgstr "offline"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:242
+msgid "cover open"
+msgstr "tampa aberta"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:243
+msgid "waiting for online recovery"
+msgstr "aguardando recuperação online"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:244
+msgid "mechanical error"
+msgstr "erro mecânico"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:245
+msgid "autocutter error"
+msgstr "erro no cortador automático"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:246
+msgid "unrecoverable error"
+msgstr "erro irrecuperável"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:247
+msgid "auto-recoverable error"
+msgstr "erro recuperável automaticamente"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:248
+msgid "paper near end"
+msgstr "papel quase no fim"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:249
+msgid "paper end"
+msgstr "fim do papel"
+
+#: includes/Services/Providers/Epson_Sdp_Adapter.php:250
+msgid "spooler stopped"
+msgstr "spooler parado"
+
+#: includes/Services/Providers/Printnode_Adapter.php:202
+msgid "This PrintNode printer is missing its API key or printer id."
+msgstr ""
+"Esta impressora do PrintNode está sem a chave de API ou o ID da impressora."
+
+#: includes/Services/Providers/Printnode_Adapter.php:216
+msgid "Could not generate the test print."
+msgstr "Não foi possível gerar a impressão de teste."
+
+#: includes/Services/Providers/Star_Cloudprnt_Adapter.php:200
+msgid "The print job is not available in the requested media type."
+msgstr ""
+"O trabalho de impressão não está disponível no tipo de mídia solicitado."
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the order number or order reference.
@@ -3380,19 +3365,19 @@ msgid "Download receipt for order #%s"
 msgstr "Baixar recibo do pedido #%s"
 
 #. translators: REST API schema field label or error message.
-#: includes/Sync/Collection_Rules.php:169
+#: includes/Sync/Collection_Rules.php:190
 #: tests/includes/Sync/Test_Collection_Rules_Plan.php:246
 msgid "Filter orders by POS cashier."
 msgstr "Filtrar pedidos por caixa do POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/Sync/Collection_Rules.php:175
+#: includes/Sync/Collection_Rules.php:196
 #: tests/includes/Sync/Test_Collection_Rules_Plan.php:251
 msgid "Filter orders by POS store."
 msgstr "Filtrar pedidos por loja do POS."
 
 #. translators: %s: the unrecognised Collection Rules hook key.
-#: includes/Sync/Collection_Rules_Plan.php:294
+#: includes/Sync/Collection_Rules_Plan.php:343
 #, php-format
 msgid ""
 "Unknown Collection Rules hook \"%s\"; the value was passed through unchanged."
@@ -3404,6 +3389,14 @@ msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""
 "A loja de sincronização do WCPOS ainda não está instalada (inicialização em andamento ou falha na instalação do esquema). Tente novamente em breve."
+
+#: includes/Sync/Order_Write_Payload.php:187
+msgid "date_created_gmt cannot be more than 24 hours in the future."
+msgstr "date_created_gmt não pode estar mais de 24 horas no futuro."
+
+#: includes/Sync/Order_Write_Payload.php:193
+msgid "date_created_gmt must be a valid ISO 8601 UTC date."
+msgstr "date_created_gmt deve ser uma data UTC válida em ISO 8601."
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:144
