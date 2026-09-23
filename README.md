@@ -118,12 +118,7 @@ scripts/translate-local.sh
 
 # Generate .mo and .l10n.php
 pnpm run generate:php
-
-# Structural QA check
-pnpm run qa -- de --structural-only
 ```
-
-`scripts/translate-locale.js`, `scripts/translate-with-pr.js` and the back-translation mode of `scripts/qa-translations.js` are legacy scripts that call the OpenAI API directly. The pipeline does not use them.
 
 ## License
 
