@@ -9,6 +9,7 @@ CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
 MAX_PER_CALL=250 # Maximum summed packet items per call, except oversized packets.
 CALL_TIMEOUT=1800 # Seconds allowed for each translation or review call.
+RETRY_AFTER=86400 # Seconds before retrying work that an earlier run left untranslated.
 
 chunks() {
   node -e 'const fs=require("fs"),path=require("path"),[dir,max]=process.argv.slice(1); let chunk=[],sum=0;
@@ -30,12 +31,14 @@ REVIEW_MODEL=${TRANSLATE_REVIEW_MODEL:-}
 EFFORT=${TRANSLATE_EFFORT:-$DEFAULT_EFFORT}
 BASE=main
 DRY_RUN=0
+RETRY=0
 REVIEW=1
 WORKLIST_ARGS=(--out .translate/work)
 ORIGINAL_ARGS=("$@")
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --dry-run) DRY_RUN=1; shift ;;
+    --retry) RETRY=1; shift ;;
     --no-review) REVIEW=0; shift ;;
     --base) BASE=$2; shift 2 ;;
     --locale) WORKLIST_ARGS+=(--locale "$2"); shift 2 ;;
@@ -74,6 +77,7 @@ if [ -z "${TRANSLATE_LOCAL_REEXEC+x}" ]; then
 fi
 mkdir -p "$REPO_ROOT/.claude"
 LOCK="$REPO_ROOT/.claude/auto-translate.lock"
+STATE="$REPO_ROOT/.claude/auto-translate.state"
 exec 9>"$LOCK"
 if ! /usr/bin/lockf -s -t 0 9; then log "already running"; exit 0; fi
 
@@ -104,7 +108,15 @@ pnpm install --frozen-lockfile --prefer-offline --silent
 SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}")
 TOTAL=$(printf '%s' "$SUMMARY" | jq -r .total)
 if [ "$TOTAL" -eq 0 ]; then log "nothing to translate"; exit 0; fi
+WORK_HASH=$(cat .translate/work/*.json | shasum -a 256 | cut -d' ' -f1)
 if [ "$DRY_RUN" -eq 1 ]; then printf '%s\n' "$SUMMARY"; exit 0; fi
+if [ "$RETRY" -eq 0 ] && [ -f "$STATE" ]; then
+  read -r RECORDED < "$STATE"
+  if [ "$(( $(date +%s) - RECORDED ))" -lt "$RETRY_AFTER" ] && tail -n +2 "$STATE" | grep -Fxq "$WORK_HASH"; then
+    log "same work as an unsuccessful run at $(date -u -r "$RECORDED" +%Y-%m-%dT%H:%M:%SZ); skipping the model until $(date -u -r "$((RECORDED + RETRY_AFTER))" +%Y-%m-%dT%H:%M:%SZ) (pass --retry to override)"
+    exit 0
+  fi
+fi
 
 run_with_timeout() {
   local pid watchdog status=0
@@ -156,6 +168,13 @@ while IFS= read -r LOCALES; do
 done < .translate/chunks
 APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --report .translate/report.json --report-md .translate/report.md)
 log "$APPLY_SUMMARY"
+REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
+if [ "$(printf '%s' "$REMAINING_SUMMARY" | jq -r .total)" -gt 0 ]; then
+  REMAINING_HASH=$(cat .translate/remaining/*.json | shasum -a 256 | cut -d' ' -f1)
+  printf '%s\n' "$(date +%s)" "$WORK_HASH" "$REMAINING_HASH" > "$STATE"
+else
+  rm -f "$STATE"
+fi
 if [ -z "$(git status --porcelain -- translations)" ]; then log "no translations accepted"; exit 1; fi
 if ! node scripts/validate-translations.js; then
   log "validation failed; worktree left at $WT"

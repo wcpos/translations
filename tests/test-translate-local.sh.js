@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { createHash } = require('node:crypto');
 
 const script = path.resolve(__dirname, '../scripts/translate-local.sh');
 const source = fs.readFileSync(script, 'utf8');
@@ -67,11 +68,15 @@ if (tool === 'git') {
   if (args[0] === '-e') {
     const r = cp.spawnSync(process.execPath, args, { stdio: 'inherit' }); process.exit(r.status ?? 1);
   } else if (args[0].endsWith('translation-worklist.js')) {
-    const counts = config.counts || [2, 1], locales = {};
-    fs.mkdirSync('.translate/work', { recursive: true });
+    const counter = '.translate/worklist-count';
+    const call = fs.existsSync(counter) ? Number(fs.readFileSync(counter, 'utf8')) + 1 : 1;
+    const counts = (call === 1 ? config.counts || [2, 1] : config.remainingCounts || []), locales = {};
+    const out = args[args.lastIndexOf('--out') + 1];
+    fs.mkdirSync(out, { recursive: true });
+    fs.writeFileSync(counter, String(call));
     counts.forEach((n, i) => {
       const locale = ['aa', 'bb'][i]; locales[locale] = { js: n, php: 0 };
-      fs.writeFileSync('.translate/work/' + locale + '.json', JSON.stringify({ locale, counts: locales[locale] }));
+      fs.writeFileSync(path.join(out, locale + '.json'), JSON.stringify({ locale, counts: locales[locale], source: config.packetSource || 'original' }));
     });
     console.log(JSON.stringify({ total: counts.reduce((a, b) => a + b, 0), locales }));
   } else if (args[0].endsWith('apply-translations.js')) {
@@ -162,6 +167,55 @@ if (tool === 'git') {
   assert.match(locked.stdout, /already running/);
   assert.ok(!readCalls().some(c => isCall(c, 'git', 'reset')));
   assert.ok(fs.existsSync(path.join(root, '.claude/auto-translate.lock')));
+  const state = path.join(root, '.claude/auto-translate.state');
+  const started = Math.floor(Date.now() / 1000);
+  result = run({ counts: [1], remainingCounts: [1], fail: true }, ['--no-review', '--locale', 'aa']);
+  assert.equal(result.status, 1, result.stderr);
+  assert.match(result.stdout, /no translations accepted/);
+  const recorded = fs.readFileSync(state, 'utf8');
+  const lines = recorded.trim().split('\n');
+  assert.equal(lines.length, 3);
+  assert.ok(Number(lines[0]) >= started && Number(lines[0]) <= Math.floor(Date.now() / 1000));
+  for (const [i, dir] of ['work', 'remaining'].entries()) {
+    const folder = path.join(wt, '.translate', dir);
+    const content = fs.readdirSync(folder).filter(f => f.endsWith('.json')).sort().map(f => fs.readFileSync(path.join(folder, f), 'utf8')).join('');
+    assert.equal(lines[i + 1], createHash('sha256').update(content).digest('hex'));
+  }
+  assert.ok(result.calls.some(c => isCall(c, 'node', 'scripts/translation-worklist.js', '--out', '.translate/remaining', '--locale', 'aa')));
+  for (const translator of ['codex', 'claude']) {
+    result = run({ counts: [1] }, ['--translator', translator]);
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /same work as an unsuccessful run at .*Z; skipping the model until .*Z \(pass --retry to override\)/);
+    assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
+    assert.equal(fs.readFileSync(state, 'utf8'), recorded);
+  }
+  result = run({ counts: [1], remainingCounts: [1] }, ['--retry']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  result = run({ counts: [1], remainingCounts: [1], packetSource: 'changed' });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  const changed = fs.readFileSync(state, 'utf8').trim().split('\n');
+  assert.notEqual(changed[1], lines[1]);
+  changed[0] = String(Math.floor(Date.now() / 1000) - 86401);
+  fs.writeFileSync(state, changed.join('\n') + '\n');
+  result = run({ counts: [1], remainingCounts: [1], packetSource: 'changed' });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  result = run({ counts: [2, 1], remainingCounts: [1], invalid: true }, ['--no-review']);
+  assert.equal(result.status, 1, result.stderr);
+  assert.match(result.stdout, /validation failed/);
+  const partial = fs.readFileSync(state, 'utf8').trim().split('\n');
+  assert.equal(partial.length, 3);
+  assert.notEqual(partial[1], partial[2]);
+  result = run({ counts: [1] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /skipping the model/);
+  assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
+  result = run({ counts: [1], remainingCounts: [] }, ['--retry']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  assert.ok(!fs.existsSync(state));
   console.log('translate-local checks passed');
 } finally {
   fs.rmSync(root, { recursive: true, force: true });
