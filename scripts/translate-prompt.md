@@ -60,6 +60,8 @@ Write exactly one JSON file per packet, at the given results path, with this sha
 
 ## Rules
 
+**How to write files.** Create or edit each results file directly with your file-editing tool (for Codex, `apply_patch`). Do not write them through shell heredocs, `python -c` or other scripts: non-Latin text (Khmer, Thai, Arabic…) breaks shell encodings. If a write fails, retry another way. Never finish with a results file unwritten. This is a translation task, not a code change, so no STATUS report is needed.
+
 - Write only the results files. Do not edit any other file, do not run git, and do
   not run the repo's scripts. Validation happens after you finish.
 - If you cannot translate an item confidently, still give your best translation.
