@@ -3,32 +3,26 @@
 /**
  * End-to-end workflow test.
  *
- * Tests the complete translation pipeline:
+ * Tests extraction and validation:
  * 1. Extract strings from fixtures
- * 2. Translate to a test locale
- * 3. Run QA validation
- * 4. Verify output structure
+ * 2. Validate committed translations
  *
  * Usage:
- *   OPENAI_API_KEY=... node tests/test-workflow.js
- *   node tests/test-workflow.js --structural-only (no API calls)
+ *   node tests/test-workflow.js
  */
 
 const { execSync, spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const STRUCTURAL_ONLY = process.argv.includes('--structural-only');
 const TEST_LOCALE = 'de_DE';
 
 const FIXTURES_DIR = path.resolve(__dirname, 'fixtures');
 const SCRIPTS_DIR = path.resolve(__dirname, '../scripts');
 const SOURCE_JS_DIR = path.resolve(__dirname, '../source/js');
-const TRANSLATIONS_JS_DIR = path.resolve(__dirname, '../translations/js');
 
 let passed = 0;
 let failed = 0;
-let skipped = 0;
 
 function log(msg) {
   console.log(msg);
@@ -38,13 +32,7 @@ function step(name) {
   log(`\n▸ ${name}`);
 }
 
-function test(name, fn, requiresApi = false) {
-  if (requiresApi && STRUCTURAL_ONLY) {
-    console.log(`  ○ ${name} (skipped - structural only)`);
-    skipped++;
-    return;
-  }
-
+function test(name, fn) {
   try {
     fn();
     console.log(`  ✓ ${name}`);
@@ -110,11 +98,6 @@ async function main() {
   log('End-to-End Translation Workflow Test');
   log('='.repeat(50));
 
-  if (!STRUCTURAL_ONLY && !process.env.OPENAI_API_KEY) {
-    console.error('\nError: OPENAI_API_KEY required (or use --structural-only)');
-    process.exit(1);
-  }
-
   // Backup existing files that might be overwritten
   const existingCoreJson = path.join(SOURCE_JS_DIR, 'core.json');
   const existingElectronJson = path.join(SOURCE_JS_DIR, 'electron.json');
@@ -122,57 +105,31 @@ async function main() {
   backup(existingElectronJson);
 
   try {
-    step('Checking Aide forwarding workflow structure');
+    step('Checking workflows no longer call OpenClaw');
 
-    const forwardWorkflow = fs.readFileSync(path.resolve(__dirname, '../.github/workflows/forward-to-aide.yml'), 'utf8');
-
-    test('forward workflow generates translation context artifacts', () => {
-      if (!forwardWorkflow.includes('scripts/translation-context-packets.js')) {
-        throw new Error('forward-to-aide.yml should invoke scripts/translation-context-packets.js');
+    test('forward-to-aide.yml does not exist', () => {
+      if (fs.existsSync(path.resolve(__dirname, '../.github/workflows/forward-to-aide.yml'))) {
+        throw new Error('forward-to-aide.yml should be removed');
       }
     });
 
-    test('forward workflow includes context artifacts and type in payload', () => {
-      if (!forwardWorkflow.includes('context_artifacts')) {
-        throw new Error('payload should include context_artifacts');
+    for (const name of ['receive-js-strings.yml', 'receive-php-strings.yml', 'check-completeness.yml']) {
+      const workflow = fs.readFileSync(path.resolve(__dirname, '../.github/workflows', name), 'utf8');
+      test(`${name} has no OpenClaw forwarding or API keys`, () => {
+        if (/forward-to-aide|openclaw|OPENAI_API_KEY|ANTHROPIC_API_KEY/i.test(workflow)) {
+          throw new Error(`${name} should not reference OpenClaw forwarding or API keys`);
+        }
+      });
+      if (name.startsWith('receive-')) {
+        test(`${name} still commits and pushes source strings`, () => {
+          const commits = workflow.match(/      - name: Commit[^\n]*\n(?:(?!      - name:)[\s\S])*/g) || [];
+          const expected = name === 'receive-php-strings.yml' ? 2 : 1;
+          if (commits.length !== expected || commits.some(commit => !commit.includes('git commit ') || !commit.includes('git push'))) {
+            throw new Error(`${name} should keep its git commit and git push steps`);
+          }
+        });
       }
-      if (!forwardWorkflow.includes('--arg type')) {
-        throw new Error('payload should include type');
-      }
-    });
-
-    test('forward workflow fails when Aide completes without committing translations', () => {
-      if (!forwardWorkflow.includes('OPENCLAW_REQUIRE_TRANSLATION_COMMIT')) {
-        throw new Error('forward workflow should require Aide to commit translation changes');
-      }
-    });
-
-    test('forward workflow commits context artifacts before sending payload', () => {
-      if (!forwardWorkflow.includes('contents: write')) {
-        throw new Error('forward workflow needs contents: write to persist generated context artifacts');
-      }
-      if (!forwardWorkflow.includes('git add translation-context/php')) {
-        throw new Error('generated context artifacts should be staged');
-      }
-      if (!forwardWorkflow.includes('chore: update PHP translation context artifacts')) {
-        throw new Error('generated context artifacts should be committed before forwarding');
-      }
-      if (!forwardWorkflow.includes('source_ref')) {
-        throw new Error('payload should include source_ref/head_sha for the committed artifact revision');
-      }
-    });
-
-    test('forward workflow generates PHP context artifacts per locale', () => {
-      if (!forwardWorkflow.includes('find translations/php -mindepth 1 -maxdepth 1 -type d')) {
-        throw new Error('PHP context artifacts should be generated for each existing locale directory');
-      }
-      if (!forwardWorkflow.includes('--locale "$locale"')) {
-        throw new Error('translation-context-packets.js should receive the locale for PHP context artifacts');
-      }
-      if (!forwardWorkflow.includes('translation-context/php/${locale}')) {
-        throw new Error('locale-specific context artifacts should use distinct output directories');
-      }
-    });
+    }
 
     // Step 1: Extract strings
     step('Running extraction on test fixtures');
@@ -216,68 +173,7 @@ async function main() {
       }
     });
 
-    // Step 2: Translate (if API available)
-    step('Running translation');
-
-    test(
-      'translation script runs successfully',
-      () => {
-        const translateResult = runScript('translate-locale.js', [TEST_LOCALE, '--type', 'js']);
-        log(translateResult.output);
-
-        if (translateResult.status !== 0) {
-          throw new Error(`Translation failed: ${translateResult.output}`);
-        }
-      },
-      true
-    );
-
-    test(
-      'translation output is created',
-      () => {
-        const translationDir = path.join(TRANSLATIONS_JS_DIR, TEST_LOCALE);
-        if (!fs.existsSync(translationDir)) {
-          throw new Error(`Translation directory not created: ${translationDir}`);
-        }
-
-        const files = fs.readdirSync(translationDir);
-        if (files.length === 0) {
-          throw new Error('No translation files created');
-        }
-      },
-      true
-    );
-
-    test(
-      'translated JSON is valid',
-      () => {
-        const translationFile = path.join(TRANSLATIONS_JS_DIR, TEST_LOCALE, 'core.json');
-        if (fs.existsSync(translationFile)) {
-          const content = fs.readFileSync(translationFile, 'utf8');
-          JSON.parse(content);
-        }
-      },
-      true
-    );
-
-    // Step 3: QA validation
-    step('Running QA validation');
-
-    test(
-      'QA structural checks pass',
-      () => {
-        const qaResult = runScript('qa-translations.js', [TEST_LOCALE, '--type', 'js', '--structural-only']);
-        log(qaResult.output);
-
-        // QA returns 1 if issues found, but we want to know it ran
-        if (qaResult.output.includes('Fatal error')) {
-          throw new Error(`QA failed to run: ${qaResult.output}`);
-        }
-      },
-      true
-    );
-
-    // Step 4: Validate structure
+    // Step 2: Validate structure
     step('Validating output structure');
 
     test(
@@ -289,8 +185,7 @@ async function main() {
         if (validateResult.status !== 0) {
           throw new Error(`Validation failed: ${validateResult.output}`);
         }
-      },
-      true
+      }
     );
   } finally {
     // Cleanup
@@ -301,7 +196,7 @@ async function main() {
 
   // Summary
   log('\n' + '='.repeat(50));
-  log(`Results: ${passed} passed, ${failed} failed, ${skipped} skipped`);
+  log(`Results: ${passed} passed, ${failed} failed`);
   log('='.repeat(50));
 
   process.exit(failed > 0 ? 1 : 0);

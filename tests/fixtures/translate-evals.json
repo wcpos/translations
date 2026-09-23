@@ -1,0 +1,60 @@
+{
+  "_source": "Adapted from wcpos-openclaw/agents/aide/workspace/skills/translate-strings/evals.json; placeholder-dropped added locally.",
+  "scenarios": [
+    {
+      "id": "placeholder-strings",
+      "locale": "fr_FR",
+      "source": {
+        "cart.items": "{count} items in cart",
+        "cart.total": "Total: %s",
+        "cart.tax": "Tax (%1$s): %2$s"
+      },
+      "translation": {
+        "cart.items": "{count} articles dans le panier",
+        "cart.total": "Total : %s",
+        "cart.tax": "Taxe (%1$s) : %2$s"
+      },
+      "expect": { "errors": 0, "warnings": 0 }
+    },
+    {
+      "id": "glossary-violation",
+      "locale": "de_DE",
+      "source": {
+        "access.cashier_role": "Use cashier account",
+        "common.checkout": "Checkout"
+      },
+      "translation": {
+        "access.cashier_role": "Cashier-Konto verwenden",
+        "common.checkout": "Checkout"
+      },
+      "expect": { "errors": 0, "warnings": 2 }
+    },
+    {
+      "id": "decimal-separator",
+      "locale": "fr_FR",
+      "source": { "settings.decimal_tip": "e.g. 0.25 kg" },
+      "translation": { "settings.decimal_tip": "par ex. 0.25 kg" },
+      "expect": { "errors": 0, "warnings": 1 }
+    },
+    {
+      "id": "english-source-regression",
+      "locale": "en_US",
+      "source": {
+        "settings.label": "Customise your store",
+        "settings.save": "Save Changes"
+      },
+      "translation": {
+        "settings.label": "Customise your store",
+        "settings.save": "Save Changes"
+      },
+      "expect": { "errors": 0, "warnings": 1 }
+    },
+    {
+      "id": "placeholder-dropped",
+      "locale": "fr_FR",
+      "source": { "cart.tax": "Tax (%1$s): %2$s" },
+      "translation": { "cart.tax": "Taxe : %2$s" },
+      "expect": { "errors": 1, "warnings": 0 }
+    }
+  ]
+}

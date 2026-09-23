@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: extract-php
@@ -88,9 +87,9 @@ jobs:
             exit 0
           fi
 
-          # main moves underneath us (forward-to-aide pushes context artifacts
-          # ~1 min after every receive, so free/pro dispatches close together
-          # collide). Checkout is pinned to the dispatch SHA, so a bare push
+          # main can move underneath this job (Dependabot merges, the other
+          # receive job, translation PR merges). Checkout is pinned to the
+          # dispatch SHA, so a bare push
           # loses that race. Re-stage the POT on top of whatever main is now:
           # this job's only change is overwriting one file, so a hard reset
           # plus re-copy is conflict-free by construction.
@@ -119,13 +118,6 @@ jobs:
             exit 1
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Trigger translation
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh workflow run forward-to-aide.yml -f project=woocommerce-pos -f type=php
 
       # Only once the POT is on main. If the commit failed, keep the source
       # branch so re-running the failed job recovers the update instead of
@@ -211,9 +203,9 @@ jobs:
             exit 0
           fi
 
-          # main moves underneath us (forward-to-aide pushes context artifacts
-          # ~1 min after every receive, so free/pro dispatches close together
-          # collide). Checkout is pinned to the dispatch SHA, so a bare push
+          # main can move underneath this job (Dependabot merges, the other
+          # receive job, translation PR merges). Checkout is pinned to the
+          # dispatch SHA, so a bare push
           # loses that race. Re-stage the POT on top of whatever main is now:
           # this job's only change is overwriting one file, so a hard reset
           # plus re-copy is conflict-free by construction.
@@ -242,13 +234,6 @@ jobs:
             exit 1
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Trigger translation
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh workflow run forward-to-aide.yml -f project=woocommerce-pos-pro -f type=php
 
       # Only once the POT is on main. If the commit failed, keep the source
       # branch so re-running the failed job recovers the update instead of

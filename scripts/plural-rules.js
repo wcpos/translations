@@ -1,8 +1,8 @@
 /**
  * CLDR plural rules for i18next.
  *
- * Single source of truth — imported by translate-locale.js,
- * check-completeness.js, and cleanup-stale-keys.js.
+ * Single source of truth — imported by check-completeness.js,
+ * check-translation-quality.js, cleanup-stale-keys.js and translation-worklist.js.
  */
 
 /** i18next plural suffixes per locale based on CLDR plural rules. */

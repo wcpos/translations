@@ -12,13 +12,15 @@ AI-powered translation management for WCPOS apps and plugins.
 
 ## Automated Pipeline
 
-Source repos push strings to this repo via `repository_dispatch`. The pipeline then runs automatically:
+Source repos push strings to this repo via `repository_dispatch`. From there:
 
-1. **Receive** — Source strings committed to main
-2. **Translate** — Auto-triggered in `changed` mode (only new/modified strings)
-3. **PR** — Created automatically for human review
-4. **Release** — Auto-created on merge using CalVer (`YYYY.M.N`)
-5. **Update consumers** — This repo opens or updates version-bump PRs in consuming repos
+1. **Receive** (GitHub Actions): source strings are committed to main.
+2. **Translate** (local, scheduled): `scripts/translate-local.sh` runs on the Mac mini, fills every missing string, and opens or updates one PR labelled `auto-translate`. See [Translation pipeline](#translation-pipeline).
+3. **Review**: a human reviews and merges the PR.
+4. **Release**: a release is auto-created on merge using CalVer (`YYYY.M.N`).
+5. **Update consumers**: this repo opens or updates version-bump PRs in consuming repos.
+
+GitHub Actions hold no model API keys. They only run the deterministic steps: string intake, completeness reporting, quality smoke checks and releases.
 
 ## Versioning
 
@@ -34,10 +36,10 @@ Versions are decoupled from plugin/app versions. Each consumer pins the translat
 
 | Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| Receive JS Strings | `repository_dispatch` | Commit JS source strings, trigger translate |
-| Receive PHP Strings | `repository_dispatch` | Commit PHP POT files, trigger translate |
-| Translate | Auto or manual | AI translate to all locales (incremental) |
-| Translation QA | Manual | Back-translation quality checks |
+| Receive JS Strings | `repository_dispatch` | Commit JS source strings |
+| Receive PHP Strings | `repository_dispatch` | Commit PHP POT files |
+| Check Translation Completeness | Daily 08:00 UTC or manual | Open a `translation-gaps` issue when strings are missing |
+| Translation Quality Smoke Check | PRs touching translations | Heuristic quality warnings |
 | Release | Auto on merge or manual | CalVer tag + GitHub Release + update/reuse consumer PRs |
 
 ## JS Distribution (jsDelivr)
@@ -53,19 +55,41 @@ https://cdn.jsdelivr.net/gh/wcpos/translations@2026.2.0/translations/js/de_DE/mo
 
 ## PHP Distribution
 
-PHP translation files (.mo, .l10n.php) are attached to GitHub Releases and can be fetched by the plugin's translation updater.
+PHP translations ship as `.l10n.php` files (WordPress 6.5+ format). The plugins download them from jsDelivr at the pinned version, and they are also attached to GitHub Releases. The `.mo` files in `translations/php/` are no longer maintained or released, because the plugins never load them.
 
 ## Consumer Integration
 
 See [docs/CONSUMER-INTEGRATION.md](docs/CONSUMER-INTEGRATION.md) for instructions on receiving translation version updates in consuming repos.
 
-## Aide / OpenClaw Translation Workflow
+## Translation Pipeline
 
-Aide rules live in `.ai/rules/` and mirror the docs translation learnings for app/plugin translations:
+Translation runs locally on Paul's Mac mini with Claude or Codex models on his subscriptions. It replaced the OpenClaw/Aide webhook, which was retired in September 2026.
 
-- Use `WCPOS` and `WCPOS Pro` in customer-facing strings; do not use `WooCommerce POS` / `WooCommerce POS Pro` except in technical identifiers such as slugs, filenames, repo names, and URLs.
-- Preserve JSON keys, PO `msgid` / `msgctxt`, placeholders, plural suffixes, and technical terms exactly.
-- Work in small batches from the machine-readable completeness triage.
+```bash
+scripts/translate-local.sh             # what the schedule runs
+scripts/translate-local.sh --dry-run   # show per-locale work, no model call
+scripts/translate-local.sh --locale de_DE --translator claude   # Claude Sonnet instead of Codex
+```
+
+Each run:
+
+1. Syncs its own worktree (`.claude/worktrees/auto-translate`) with `origin/main`, or with the open `auto-translate` PR branch. The script updates itself from `origin/main`, and a lock prevents overlapping runs.
+2. Runs `scripts/translation-worklist.js`, which writes one packet per locale with missing JS keys or untranslated PO entries (the same gaps `check-completeness.js` reports). **With no gaps it exits 0 without calling a model.**
+3. Hands the packets to the translator CLI (default Codex `gpt-6-sol`) with `scripts/translate-prompt.md`. The model writes results JSON only.
+4. Runs `scripts/apply-translations.js`, which checks every translation with `scripts/translation-rules.js` and writes the accepted ones to JSON, `.po` and `.l10n.php` files. Placeholders, markup and product names are checked as errors; the glossary and locale formatting are checked as warnings. Rejected strings stay missing and are retried on the next run.
+5. Runs `validate-translations.js`, the quality smoke check and the completeness check, then commits, pushes and opens the PR (or comments on the open one).
+
+Translation knowledge lives in:
+
+- `scripts/translation-context.md`: the general quality contract
+- `scripts/translation-glossary.json`: required per-locale terms
+- `scripts/locale-context/<locale>.md`: per-locale register and pitfalls
+- `scripts/locale-rules.json`: decimal separators and forbidden patterns
+- `scripts/english-rules.json`: US-English checks on source strings
+- `scripts/translation-concepts.json`: disambiguation for Tender, Change, Void, Key and similar words
+- `.ai/rules/`: rules for humans and agents doing manual fixes
+
+Product naming: use `WCPOS` and `WCPOS Pro` in customer-facing strings, never `WooCommerce POS` / `WooCommerce POS Pro`. The exceptions are technical identifiers such as slugs, filenames, repo names and URLs.
 
 Useful commands:
 
@@ -73,25 +97,12 @@ Useful commands:
 # Human-readable release gate; exits 1 while release-blocking translation debt remains
 node scripts/check-completeness.js
 
-# Machine-readable triage for Aide/OpenClaw; exits 0 for task planning
+# Machine-readable triage; exits 0
 pnpm --silent run check:completeness:json
 
 # Heuristic quality smoke check for recent translation changes
 pnpm run qa:quality -- --changed-since origin/main
-
-# GitHub Actions annotations and markdown summary, used by the Translation Quality Smoke Check workflow
-pnpm --silent run qa:quality -- --changed-since origin/main --github-annotations
-pnpm --silent run qa:quality -- --changed-since origin/main --markdown
 ```
-
-The JSON report contains top grouped issues under:
-
-- `missing_js_keys` — release-blocking missing JSON translations
-- `php_untranslated` — release-blocking empty/missing PO translations
-- `stale_js_keys` — warning-only stale JSON entries
-- `naming_violation` — warning-only product naming debt
-
-Recommended order: fix `missing_js_keys` and `php_untranslated` first, run the quality smoke check and review every warning, then clean `naming_violation`, `stale_js_keys`, and PO header warnings. Translation batches should always be pushed to a branch and opened as a PR so Aide work is never left only in a local working tree.
 
 ## Local Development
 
@@ -102,14 +113,11 @@ pnpm install
 pnpm run extract:js
 pnpm run extract:php
 
-# Translate a single locale
-OPENAI_API_KEY=sk-... pnpm run translate -- de
+# Fill missing translations (see Translation Pipeline)
+scripts/translate-local.sh
 
 # Generate .mo and .l10n.php
 pnpm run generate:php
-
-# QA check
-OPENAI_API_KEY=sk-... pnpm run qa -- de --structural-only
 ```
 
 ## License

@@ -23,6 +23,24 @@ Before opening/updating a PR, run the quality smoke check and review every warni
 pnpm run qa:quality -- --changed-since origin/main
 ```
 
+## LOCALE GLOSSARY AND NOTES — THEY OVERRIDE THIS FILE
+
+Two per-locale sources refine this general context. Where they disagree with a rule below, the locale source wins for that locale:
+
+- `scripts/translation-glossary.json`: required target terms for key POS words (for example, de_DE Cashier → Kassierer, Receipt → Beleg, Gateway → Zahlungsschnittstelle). Lookup falls back from `de_DE` to `de`. The apply step warns when a glossary term is missing from a translation.
+- `scripts/locale-context/<locale>.md`: register (formal or informal), punctuation, decimal separator and known pitfalls for that locale.
+
+Locales without an entry follow this file as written.
+
+## MATCH WOOCOMMERCE CORE TERMINOLOGY
+
+Store owners see WCPOS screens next to WooCommerce admin, so any term WooCommerce core also uses must match WooCommerce's official translation for that locale on translate.wordpress.org (`wp-plugins/woocommerce`). Examples include payment gateway, payment method, coupon, tax, order, refund, product, variation, shipping and template. Where a source conflicts with WooCommerce (this file, the glossary, or the locale notes), WooCommerce wins. The glossary was reconciled this way on 2026-09-23.
+
+- Where WooCommerce core has no term for the concept (cashier, till, register, barcode, cash drawer), keep the POS terms in the glossary and locale notes. Loanwords the locale really uses (for example, German "Barcode") are fine.
+- **Checkout** has two senses. In WCPOS it usually means the till or checkout counter (glossary: Kasse, Caja, Caisse…). WooCommerce's "Checkout" means the online checkout page (Finalizar compra, Commander, Afrekenen…). Use WooCommerce's term only when the string refers to the online store checkout, such as checkout page settings or online orders.
+- **Receipt** in WCPOS is the till receipt (Beleg, Bon, レシート, Struk). Do not use WooCommerce's invoice-like term (Factuur, 領収書, Tanda terima) for it.
+- Do not rewrite strings that already ship just to align terminology. The rule applies to new and changed strings.
+
 ## YOUR TASK
 
 Translate the provided strings accurately and concisely for the **specific regional locale** you are given. These strings appear in the UI of a point of sale terminal — they must be short, clear, and use the correct retail/financial terminology for that region.
@@ -48,8 +66,8 @@ Always use the terminology, spelling, and conventions standard for the target re
 
 ## OUTPUT FORMAT
 
-For JSON input: Return ONLY valid JSON. No preamble, no explanation.
-For PO input: Return ONLY the translated PO entries. No preamble, no explanation.
+In the scheduled pipeline (`scripts/translate-local.sh`), write the results-file JSON described in `scripts/translate-prompt.md`. Do not edit translation files directly.
+For any other use: for JSON input, return ONLY valid JSON; for PO input, return ONLY the translated PO entries. No preamble, no explanation.
 
 ## POS-SPECIFIC TERMINOLOGY
 
@@ -135,9 +153,10 @@ These terms should be translated using the standard retail/POS terminology for t
 
 ### Technical Terms (keep in English in ALL languages)
 - POS, SKU, API, REST API, JSON, PHP, CSS, HTML, URL, ID, UUID
-- **Gateway, Gateways, Payment Gateway** (CRITICAL: keep in English - this is standard tech terminology worldwide)
+- **Gateway, Gateways, Payment Gateway**: use WooCommerce's translation for the locale (de_DE Zahlungsschnittstelle, es_ES Pasarela de pago, fr_FR Passerelle de paiement, it_IT Gateway di pagamento, ko_KR PG 서비스, ar بوابة الدفع, he_IL שיטת תשלום, pt_BR Sistema de pagamento). Keep "Gateway" in English only where WooCommerce does.
 - Webhook, Endpoint, Token, OAuth
-- Barcode, QR Code
+- QR Code
+- Barcode: keep in English unless the locale glossary gives a native term (fr_FR Code-barres, it_IT Codice a barre). German uses the loanword "Barcode".
 - Localhost, Server, Cache, Sync
 - Log, Logs (system/debug logs - keep in English)
 - Debug, Error, Warning
@@ -266,7 +285,10 @@ Many languages handle plurals differently than English:
 Before outputting, verify:
 - [ ] All placeholders (`{...}`, `%s`, `%d`) are preserved exactly
 - [ ] Product names (WCPOS, WooCommerce) are NOT translated
-- [ ] Technical terms (SKU, API, URL, Gateway, Key) are NOT translated
+- [ ] Technical terms (SKU, API, URL, Key) are NOT translated; Gateway/Barcode follow the locale glossary
+- [ ] Locale glossary terms and locale notes are followed where the source term appears
+- [ ] Phrasing is natural for the exact regional locale, not English word order
+- [ ] Country-specific tax/fiscal ID labels are preserved; general tax terms use the region's term
 - [ ] Tax terminology matches the target region
 - [ ] Translations are concise and appropriate for a POS interface
 - [ ] Abbreviations remain abbreviated (Qty, No., ID, etc.)
@@ -279,7 +301,7 @@ Before outputting, verify:
 ### German (de_DE)
 | Source | ✓ Correct | ✗ Wrong |
 |--------|-----------|---------|
-| Gateway | Gateway | Zugang |
+| Gateway | Zahlungsschnittstelle | Zugang |
 | Gateway ID | Gateway-ID | Zugangs-ID |
 | Qty | Anz. | Anzahl |
 | State | Staat/Region | Bundesland |
@@ -303,7 +325,7 @@ Before outputting, verify:
 ### Spanish (es_ES)
 | Source | ✓ Correct | ✗ Wrong |
 |--------|-----------|---------|
-| Gateway | Gateway | Pasarela, Acceso |
+| Gateway | Pasarela de pago | Acceso, Puerta |
 | State | Estado/Región | Provincia |
 | Qty | Ctd. | Cantidad |
 | Void | Anular | Anular transacción |
@@ -321,7 +343,7 @@ Before outputting, verify:
 ### French (fr_FR)
 | Source | ✓ Correct | ✗ Wrong |
 |--------|-----------|---------|
-| Gateway | Gateway | Passerelle |
+| Gateway | Passerelle de paiement | Porte, Passerelle |
 | Tax | TVA | Impôt |
 | State | État/Région | Département |
 | Teal | Bleu-vert/Sarcelle | Vert |

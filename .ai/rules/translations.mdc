@@ -1,5 +1,5 @@
 ---
-description: Aide/OpenClaw rules for wcpos/translations app translation work
+description: Rules for wcpos/translations app translation work (local pipeline and manual fixes)
 globs:
   - "source/**/*.json"
   - "source/**/*.pot"
@@ -14,9 +14,20 @@ alwaysApply: true
 
 This repository contains app/plugin translations, not documentation pages. Treat source files as canonical English strings and translation files as generated/localized artifacts.
 
-## Preferred workflow for Aide/OpenClaw
+## Pipeline
 
-1. Read `scripts/translation-context.md` before translating.
+Missing strings are filled by `scripts/translate-local.sh`, which runs on a schedule on Paul's Mac mini (or on demand via `/translate`). It replaced the OpenClaw/Aide webhook in September 2026. It works in four stages:
+
+1. `scripts/translation-worklist.js` deterministically writes one work packet per locale with gaps. With no gaps, it stops before calling any model.
+2. A local model CLI (Codex `gpt-6-sol` by default, or Claude Sonnet) follows `scripts/translate-prompt.md` and writes a results JSON per packet. The model never edits translation files.
+3. `scripts/apply-translations.js` validates each translation with `scripts/translation-rules.js` (placeholders, markup, product names, glossary, locale formatting) and writes the accepted ones.
+4. The script validates, then pushes a branch and opens or updates the PR labelled `auto-translate`.
+
+No API keys are used in GitHub Actions. Actions only receive source strings and report completeness gaps.
+
+## Manual fixes
+
+1. Read `scripts/translation-context.md`, `scripts/translation-glossary.json` and `scripts/locale-context/<locale>.md` before translating.
 2. Use `pnpm --silent run check:completeness:json` to identify the next bounded batch.
 3. Prefer small batches by triage category, project/file, and locale.
 4. Keep translation work protected: push a branch and open/update a PR for every coherent batch. Never leave translated files only in a local working tree.
@@ -49,14 +60,14 @@ This repository contains app/plugin translations, not documentation pages. Treat
 
 - Translation work must always be represented by a GitHub PR before the task is considered complete.
 - If a batch is large or long-running, push partial progress and open/update the PR rather than keeping changes local.
-- Use a stable branch such as `aide/rolling-translations` for rolling batches, or one batch-specific branch per locale/project.
+- Automated runs use `auto-translate/<timestamp>` branches with one open `auto-translate` PR at a time; manual batches use one branch per locale/project.
 - Include validation output and quality smoke-check warnings in the PR body so reviewers can focus native review.
 
 ## Product and terminology rules
 
 - Follow `.ai/rules/wcpos-naming.mdc`: use `WCPOS` / `WCPOS Pro`, not `WooCommerce POS` / `WooCommerce POS Pro` in customer-facing text.
 - Preserve brand/platform names: WooCommerce, WordPress, Stripe, PayPal, Square, Android, iOS, macOS, Windows, Linux.
-- Preserve technical terms where `scripts/translation-context.md` says they remain English: POS, SKU, API, REST API, JSON, PHP, CSS, HTML, URL, ID, UUID, Gateway, Webhook, Endpoint, Token, OAuth, Barcode, QR Code, Cache, Sync, Log, Debug, Admin, Plugin, Theme.
+- Preserve technical terms where `scripts/translation-context.md` says they remain English: POS, SKU, API, REST API, JSON, PHP, CSS, HTML, URL, ID, UUID, Webhook, Endpoint, Token, OAuth, QR Code, Cache, Sync, Log, Debug, Admin, Plugin, Theme. Terms that WooCommerce core also uses (payment gateway, coupon, tax, order, refund, template…) must match WooCommerce's official translation for the locale on translate.wordpress.org; see "Match WooCommerce core terminology" in `scripts/translation-context.md`.
 - Keep POS UI concise. Do not expand short labels such as `Qty`, `No.`, `Min`, `Max`, `Inc`, `Exc`, `N/A`.
 - Localize regional tax/retail terms for the target locale: VAT/IVA/TVA/GST/MwSt/BTW, receipt/ticket, till/register, etc.
 - Follow `.ai/rules/quality.mdc`: translations must be natural target-language UI copy, not literal English word order.
