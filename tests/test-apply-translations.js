@@ -163,12 +163,13 @@ try {
     assert.equal(run.status, 2);
     assert.equal(run.stdout, '');
   }
-  const many = Object.fromEntries(Array.from({ length: 52 }, (_, index) => [`key|${index}`, { source: 'WordPress' }]));
+  const many = Object.fromEntries(Array.from({ length: 52 }, (_, index) => [index === 0 ? String.raw`a\|b` : `key|${index}`, { source: 'WordPress' }]));
   write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/many.json': many }, php: {} });
   write('results/de_DE.json', { locale: 'de_DE', js: {}, php: {} });
   run = cli('--work', workDir, '--results', resultsDir, '--report-md', path.join(rootDir, 'report.md'));
   assert.equal(run.status, 0, run.stderr);
   assert.ok(read('report.md').includes('…and 2 more'));
+  assert.ok(read('report.md').includes(String.raw`| de_DE | monorepo/many.json | a\\\|b | no translation returned |`));
   assert.ok(read('report.md').includes('key\\|49'));
   assert.ok(!read('report.md').includes('key\\|50'));
   assert.ok(!read('report.md').includes('## Warnings'));

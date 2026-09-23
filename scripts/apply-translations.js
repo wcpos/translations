@@ -150,7 +150,7 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
 
 function markdownReport(report) {
   const lines = [`Applied: ${report.applied}; Rejected: ${report.rejected.length}; Warnings: ${report.warnings.length}; Files: ${report.files_written.length}`, ''];
-  const cell = value => String(value).replace(/\|/g, '\\|').replace(/[\r\n]+/g, ' ');
+  const cell = value => String(value).replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/[\r\n]+/g, ' ');
   for (const [title, entries, field] of [
     ['Rejected', report.rejected, 'reasons'], ['Warnings', report.warnings, 'warnings'],
     ['Source string warnings', report.source_warnings, 'warnings'],
