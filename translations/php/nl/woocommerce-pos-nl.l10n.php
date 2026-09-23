@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'nl',
+	'language' => 'nl_NL',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassasysteem voor WooCommerce',
@@ -123,7 +123,7 @@ return array(
 		'Order details manually sent to %s from WCPOS.' => 'Bestelgegevens handmatig verzonden naar %s vanuit WCPOS.',
 		'Unique identifier for the order status.' => 'Unieke identificatie voor de bestelstatus.',
 		'Display name of the order status.' => 'Weergavenaam van de bestelstatus.',
-		'Whether the order email was sent.' => 'Of de bestel-e-mail is verzonden.',
+		'Whether the order email was sent.' => 'Of de e-mail met de bestelling is verzonden.',
 		'Payment gateway ID.' => 'ID van de betaalgateway.',
 		'Payment gateway title shown at the POS.' => 'Titel van de betaalgateway die in de POS wordt getoond.',
 		'Payment gateway description.' => 'Beschrijving van de betaalgateway.',
