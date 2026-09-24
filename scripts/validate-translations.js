@@ -89,6 +89,12 @@ function validatePo(locale) {
 
       const headers = parsed.headers || {};
       const headerKeys = Object.keys(headers).map((k) => k.toLowerCase());
+      const language = headers[Object.keys(headers).find((k) => k.toLowerCase() === 'language')];
+      const expected = path.basename(path.dirname(file));
+      if (language !== expected) {
+        console.error(`[PO] Language mismatch: ${file} — found ${JSON.stringify(language) ?? 'missing'}, expected "${expected}"`);
+        errors++;
+      }
 
       for (const required of requiredHeaders) {
         if (!headerKeys.includes(required)) {
@@ -130,9 +136,8 @@ function validatePhp(locale) {
   const phpAvailable = hasPhp();
   if (!phpAvailable) {
     console.warn(
-      '[PHP] Warning: php not found in PATH — skipping PHP validation'
+      '[PHP] Warning: php not found in PATH — skipping PHP syntax and structure validation'
     );
-    return { total: 0, errors: 0 };
   }
 
   const pattern = locale
@@ -143,6 +148,15 @@ function validatePhp(locale) {
   let errors = 0;
 
   for (const file of files) {
+    const content = fs.readFileSync(file, 'utf8');
+    const language = content.match(/^\s*'language'\s*=>\s*'([^'\r\n]*)'/m)?.[1];
+    const expected = path.basename(path.dirname(file));
+    if (language !== expected) {
+      console.error(`[PHP] Language mismatch: ${file} — found ${JSON.stringify(language) ?? 'missing'}, expected "${expected}"`);
+      errors++;
+    }
+    if (!phpAvailable) continue;
+
     // Syntax check
     try {
       execSync(`php -l ${JSON.stringify(file)}`, { stdio: 'pipe' });
