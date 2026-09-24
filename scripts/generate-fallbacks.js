@@ -4,7 +4,7 @@
  * Generate base language fallback locales.
  *
  * For regional variants (e.g., de_DE, de_AT), we also need a base code (de)
- * which is a straight copy of the primary variant. This avoids requiring
+ * which copies the primary variant with its own Language header. This avoids requiring
  * separate translations for each regional variant when the base language
  * doesn't exist as its own locale.
  *
@@ -76,7 +76,15 @@ for (const [baseCode, sourceVariant] of Object.entries(FALLBACK_MAP)) {
     for (const file of files) {
       // Rename: woocommerce-pos-de_DE.po → woocommerce-pos-de.po
       const renamed = file.replace(sourceVariant, baseCode);
-      fs.copyFileSync(path.join(phpSource, file), path.join(phpDest, renamed));
+      if (file.endsWith('.po') || file.endsWith('.l10n.php')) {
+        const content = fs.readFileSync(path.join(phpSource, file), 'latin1');
+        const updated = file.endsWith('.po')
+          ? content.replace(/^"Language: [^"\r\n]*\\n"/m, `"Language: ${baseCode}\\n"`)
+          : content.replace(/^(\s*'language' => ')[^'\r\n]*(',)/m, `$1${baseCode}$2`);
+        fs.writeFileSync(path.join(phpDest, renamed), updated, 'latin1');
+      } else {
+        fs.copyFileSync(path.join(phpSource, file), path.join(phpDest, renamed));
+      }
     }
     console.log(`  ✓ PHP: ${baseCode} ← ${sourceVariant}`);
     generated++;
