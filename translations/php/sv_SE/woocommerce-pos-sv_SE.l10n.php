@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS kan inte köras tillsammans med wePOS-plugin på grund av kompatibilitetsproblem. WCPOS har inaktiverats.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Öppen',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Delbetalning',
+		'Order status set by %s; no payment was taken at the till.' => 'Orderstatusen angavs av %s; ingen betalning togs emot i kassan.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Öppen <span class="count">(%s)</span>' . "\x00" . 'POS - Öppna <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Delbetalning <span class="count">(%s)</span>' . "\x00" . 'POS - Delbetalningar <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Idempotency-nyckeln användes igen med en annan begäran.',

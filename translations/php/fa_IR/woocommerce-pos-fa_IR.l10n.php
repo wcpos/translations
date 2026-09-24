@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS به دلیل مشکلات سازگاری نمی‌تواند همراه با افزونه wePOS اجرا شود. WCPOS غیرفعال شده است.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - باز',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - پرداخت جزئی',
+		'Order status set by %s; no payment was taken at the till.' => 'وضعیت سفارش را %s تعیین کرد؛ هیچ پرداختی در صندوق فروش دریافت نشد.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - باز <span class="count">(%s)</span>' . "\x00" . 'POS - باز <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - پرداخت جزئی <span class="count">(%s)</span>' . "\x00" . 'POS - پرداخت جزئی <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'کلید یکتاسازی با یک درخواست متفاوت دوباره استفاده شد.',

@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS không thể chạy cùng với plugin wePOS do vấn đề tương thích. WCPOS đã bị vô hiệu hóa.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Mở',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Thanh toán một phần',
+		'Order status set by %s; no payment was taken at the till.' => 'Trạng thái đơn hàng do %s thiết lập; không nhận khoản thanh toán nào tại quầy thu ngân.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Mở <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Thanh toán một phần <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Khóa idempotency đã được dùng lại với một yêu cầu khác.',

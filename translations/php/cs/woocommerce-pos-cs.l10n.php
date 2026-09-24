@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS nemůže běžet současně s pluginem wePOS kvůli problémům s kompatibilitou. WCPOS byl deaktivován.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Otevřeno',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Částečná platba',
+		'Order status set by %s; no payment was taken at the till.' => 'Stav objednávky nastavil %s; na pokladně nebyla přijata žádná platba.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Otevřeno <span class="count">(%s)</span>' . "\x00" . 'POS - Otevřeno <span class="count">(%s)</span>' . "\x00" . 'POS - Otevřeno <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Částečná platba <span class="count">(%s)</span>' . "\x00" . 'POS - Částečná platba <span class="count">(%s)</span>' . "\x00" . 'POS - Částečná platba <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Klíč idempotence byl použit opakovaně s jiným požadavkem.',

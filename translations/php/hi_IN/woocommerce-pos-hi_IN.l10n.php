@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'संगतता समस्याओं के कारण WCPOS wePOS प्लगइन के साथ नहीं चल सकता। WCPOS को निष्क्रिय कर दिया गया है।',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - खुला',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - आंशिक भुगतान',
+		'Order status set by %s; no payment was taken at the till.' => 'ऑर्डर की स्थिति %s ने सेट की; काउंटर पर कोई भुगतान नहीं लिया गया।',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - खुला <span class="count">(%s)</span>' . "\x00" . 'POS - खुला <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - आंशिक भुगतान <span class="count">(%s)</span>' . "\x00" . 'POS - आंशिक भुगतान <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Idempotency key का उपयोग एक अलग अनुरोध के साथ फिर से किया गया।',

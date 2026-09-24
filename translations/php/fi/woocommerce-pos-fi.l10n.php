@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS ei voi toimia yhdessä wePOS-laajennuksen kanssa yhteensopivuusongelmien vuoksi. WCPOS on poistettu käytöstä.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Avoin',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Osittainen maksu',
+		'Order status set by %s; no payment was taken at the till.' => 'Tilaustilan asetti %s; kassalla ei vastaanotettu maksua.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Avoin <span class="count">(%s)</span>' . "\x00" . 'POS - Avoin <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Osittaismaksu <span class="count">(%s)</span>' . "\x00" . 'POS - Osittaismaksu <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Idempotenssiavain käytettiin uudelleen eri pyynnössä.',

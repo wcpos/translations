@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS getur ekki keyrt samhliða wePOS viðbótinni vegna ósamrýmanleika. WCPOS hefur verið óvirkjað.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Opið',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Hlutagreiðsla',
+		'Order status set by %s; no payment was taken at the till.' => '%s stillti stöðu pöntunarinnar; engin greiðsla var móttekin í afgreiðslunni.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Opið <span class="count">(%s)</span>' . "\x00" . 'POS - Opið <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Hluta greiðsla <span class="count">(%s)</span>' . "\x00" . 'POS - Hluta greiðsla <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Endurnýting á idempotency-lykli með annarri beiðni.',

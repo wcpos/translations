@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => '호환성 문제로 인해 WCPOS는 wePOS 플러그인과 함께 실행할 수 없습니다. WCPOS가 비활성화되었습니다.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - 열림',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - 부분 결제',
+		'Order status set by %s; no payment was taken at the till.' => '주문 상태는 %s에 의해 설정됐고, 계산대에서는 결제를 받지 않았어요.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - 열기 <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - 부분 결제 <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'idempotency key가 다른 요청에 재사용되었습니다.',
