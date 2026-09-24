@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS nu poate rula împreună cu pluginul wePOS din cauza problemelor de compatibilitate. WCPOS a fost dezactivat.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Deschis',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Plată Parțială',
+		'Order status set by %s; no payment was taken at the till.' => 'Starea comenzii a fost setată de %s; nu s-a încasat nicio plată la casă.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Deschis <span class="count">(%s)</span>' . "\x00" . 'POS - Deschis <span class="count">(%s)</span>' . "\x00" . 'POS - Deschis <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Plată parțială <span class="count">(%s)</span>' . "\x00" . 'POS - Plată parțială <span class="count">(%s)</span>' . "\x00" . 'POS - Plată parțială <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Cheia de idempotență a fost reutilizată cu o cerere diferită.',

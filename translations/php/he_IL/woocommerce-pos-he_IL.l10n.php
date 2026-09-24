@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS לא יכול לפעול לצד התוסף wePOS בשל בעיות תאימות. WCPOS הושבת.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - פתוח',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - תשלום חלקי',
+		'Order status set by %s; no payment was taken at the till.' => 'הסטטוס של ההזמנה נקבע על ידי %s; לא התקבל תשלום בקופה.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - פתוח <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'מפתח ה-idempotency שימש שוב עם בקשה אחרת.',

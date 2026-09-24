@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'A WCPOS nem futtatható a wePOS bővítménnyel együtt kompatibilitási problémák miatt. A WCPOS deaktiválva lett.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Nyitott',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Részleges fizetés',
+		'Order status set by %s; no payment was taken at the till.' => 'A rendelés állapotát %s állította be; a pénztárnál nem történt fizetés.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Nyitott <span class="count">(%s)</span>' . "\x00" . 'POS - Nyitott <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Részleges fizetés <span class="count">(%s)</span>' . "\x00" . 'POS - Részleges fizetés <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Az idempotencia kulcsot egy eltérő kéréshez használták újra.',

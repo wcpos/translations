@@ -11,7 +11,7 @@ return array(
 	'po-revision-date' => 'YEAR-MO-DA HO:MI+ZONE',
 	'x-generator' => 'WP-CLI 2.12.0',
 	'x-domain' => 'woocommerce-pos',
-	'language' => 'de_DE',
+	'language' => 'de',
 	'plural-forms' => 'nplurals=2; plural=n != 1;',
 	'messages' => array(
 		'WCPOS – Point of Sale for WooCommerce' => 'WCPOS – Kassensystem für WooCommerce',
@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS kann aufgrund von Kompatibilitätsproblemen nicht zusammen mit dem wePOS-Plugin ausgeführt werden. WCPOS wurde deaktiviert.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Offen',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Teilzahlung',
+		'Order status set by %s; no payment was taken at the till.' => 'Der Bestellstatus wurde von %s festgelegt; an der Kasse wurde keine Zahlung entgegengenommen.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Offen <span class="count">(%s)</span>' . "\x00" . 'POS - Offen <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Teilzahlung <span class="count">(%s)</span>' . "\x00" . 'POS - Teilzahlungen <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Der Idempotenzschlüssel wurde mit einer anderen Anfrage wiederverwendet.',

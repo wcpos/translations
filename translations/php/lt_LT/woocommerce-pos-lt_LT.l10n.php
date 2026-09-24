@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS negali veikti kartu su wePOS įskiepiu dėl suderinamumo problemų. WCPOS buvo išjungtas.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Atidarytas',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Dalinis Mokėjimas',
+		'Order status set by %s; no payment was taken at the till.' => 'Užsakymo būseną nustatė %s; kasoje mokėjimas nebuvo priimtas.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Atidaryta <span class="count">(%s)</span>' . "\x00" . 'POS - Atidaryta <span class="count">(%s)</span>' . "\x00" . 'POS - Atidaryta <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>' . "\x00" . 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>' . "\x00" . 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Idempotency raktas buvo panaudotas pakartotinai su kita užklausa.',

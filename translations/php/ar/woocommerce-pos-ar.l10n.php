@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'لا يمكن تشغيل WCPOS جنبًا إلى جنب مع إضافة wePOS بسبب مشاكل التوافق. تم تعطيل WCPOS.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - مفتوح',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - دفع جزئي',
+		'Order status set by %s; no payment was taken at the till.' => 'تم تعيين حالة الطلب بواسطة %s؛ ولم يتم تحصيل أي مبلغ في نقطة البيع.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'تمت إعادة استخدام مفتاح عدم التكرار مع طلب مختلف.',

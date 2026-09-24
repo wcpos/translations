@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'WCPOS nie może działać równocześnie z wtyczką wePOS z powodu problemów z kompatybilnością. WCPOS został dezaktywowany.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Otwarte',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Płatność częściowa',
+		'Order status set by %s; no payment was taken at the till.' => 'Status zamówienia został ustawiony przez %s; przy kasie nie przyjęto żadnej płatności.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Otwarty <span class="count">(%s)</span>' . "\x00" . 'POS - Otwarte <span class="count">(%s)</span>' . "\x00" . 'POS - Otwartych <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Płatność częściowa <span class="count">(%s)</span>' . "\x00" . 'POS - Płatności częściowe <span class="count">(%s)</span>' . "\x00" . 'POS - Płatności częściowych <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Klucz idempotencji został użyty ponownie z innym żądaniem.',

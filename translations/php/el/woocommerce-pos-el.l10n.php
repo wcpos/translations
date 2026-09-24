@@ -235,6 +235,7 @@ return array(
 		'WCPOS cannot run alongside the wePOS plugin due to compatibility issues. WCPOS has been deactivated.' => 'Το WCPOS δεν μπορεί να λειτουργήσει μαζί με το πρόσθετο wePOS λόγω προβλημάτων συμβατότητας. Το WCPOS έχει απενεργοποιηθεί.',
 		'Order status' . "\x04" . 'POS - Open' => 'POS - Ανοιχτό',
 		'Order status' . "\x04" . 'POS - Partial Payment' => 'POS - Μερική Πληρωμή',
+		'Order status set by %s; no payment was taken at the till.' => 'Η κατάσταση της παραγγελίας ορίστηκε από το %s· δεν εισπράχθηκε πληρωμή στο ταμείο.',
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Ανοιχτό <span class="count">(%s)</span>' . "\x00" . 'POS - Ανοιχτά <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Μερική Πληρωμή <span class="count">(%s)</span>' . "\x00" . 'POS - Μερικές Πληρωμές <span class="count">(%s)</span>',
 		'Idempotency key was reused with a different request.' => 'Το κλειδί ιδιοδυναμίας χρησιμοποιήθηκε ξανά με διαφορετικό αίτημα.',
