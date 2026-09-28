@@ -1,0 +1,48 @@
+name: Sync main into next
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translations-sync-next
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge main into next
+        run: |
+          if ! git ls-remote --exit-code --heads origin next; then
+            echo "::notice::next does not exist; skipping sync during release freeze"
+            exit 0
+          fi
+          git checkout next
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main next
+            for ref in origin/next origin/main; do
+              if ! git merge --no-edit "$ref"; then
+                conflicts=$(git diff --name-only --diff-filter=U)
+                git merge --abort
+                echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
+                exit 1
+              fi
+            done
+            if git push origin HEAD:next; then exit 0; fi
+            echo "Push rejected (attempt $attempt); fetching and re-merging"
+            sleep $((attempt * 5))
+          done
+          echo "::error::Failed to sync main into next after 3 attempts"
+          exit 1

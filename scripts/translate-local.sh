@@ -78,6 +78,7 @@ fi
 mkdir -p "$REPO_ROOT/.claude"
 LOCK="$REPO_ROOT/.claude/auto-translate.lock"
 STATE="$REPO_ROOT/.claude/auto-translate.state"
+if [ "$BASE" != main ]; then STATE="$REPO_ROOT/.claude/auto-translate.$BASE.state"; fi
 exec 9>"$LOCK"
 if ! /usr/bin/lockf -s -t 0 9; then log "already running"; exit 0; fi
 
@@ -102,6 +103,7 @@ if [ -n "$PR" ]; then
   fi
 else
   BRANCH="auto-translate/$(date -u +%Y%m%d-%H%M%S)"
+  if [ "$BASE" != main ]; then BRANCH="auto-translate/$BASE/${BRANCH#auto-translate/}"; fi
   git checkout -q -B "$BRANCH" "origin/$BASE"
 fi
 pnpm install --frozen-lockfile --prefer-offline --silent
@@ -200,7 +202,9 @@ if [ -n "$PR" ]; then
   gh pr comment "$PR_NUMBER" --body-file .translate/pr-body.md > /dev/null
 else
   gh label create auto-translate --color 1d76db --description "Automated local translation run" 2>/dev/null || true
-  PR_URL=$(gh pr create -R wcpos/translations --base "$BASE" --head "$BRANCH" --label auto-translate --title "chore(i18n): automated translations $(date -u +%Y-%m-%d)" --body-file .translate/pr-body.md)
+  TITLE="chore(i18n): automated translations $(date -u +%Y-%m-%d)"
+  if [ "$BASE" != main ]; then TITLE="$TITLE ($BASE)"; fi
+  PR_URL=$(gh pr create -R wcpos/translations --base "$BASE" --head "$BRANCH" --label auto-translate --title "$TITLE" --body-file .translate/pr-body.md)
 fi
 log "$PR_URL"
 exit 0

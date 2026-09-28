@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: receive-js-${{ github.event.client_payload.repo_name }}
+  group: receive-js-${{ github.event.client_payload.repo_name }}-${{ github.event.client_payload.lane || 'main' }}
   cancel-in-progress: true
 
 jobs:
@@ -17,9 +17,18 @@ jobs:
     if: github.event.client_payload.repo_name && github.event.client_payload.ref
     runs-on: ubuntu-latest
     steps:
+      - name: Validate lane
+        run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
+          if [ "$LANE" != main ] && [ "$LANE" != next ]; then
+            echo "::error::Invalid lane: $LANE (expected main or next)"
+            exit 1
+          fi
+
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.client_payload.lane || 'main' }}
           persist-credentials: false
 
       - name: Generate GitHub App token
@@ -98,6 +107,6 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: update JS source strings from wcpos/${{ github.event.client_payload.repo_name }}" --allow-empty
-            git push
+            git push origin HEAD:${{ github.event.client_payload.lane || 'main' }}
             echo "changed=true" >> $GITHUB_OUTPUT
           fi

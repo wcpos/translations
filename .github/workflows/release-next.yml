@@ -1,0 +1,73 @@
+name: Publish next lane
+
+on:
+  push:
+    branches: [next]
+    paths:
+      - 'translations/**'
+  workflow_dispatch:
+
+concurrency:
+  group: translations-release-next
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/next'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v4
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22.13.1'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Clean up stale keys
+        run: pnpm run cleanup:stale
+      - name: Generate fallback locales
+        run: pnpm run generate:fallbacks
+      - name: Commit cleanup changes (if any)
+        run: |
+          if [ -n "$(git status --porcelain --untracked-files=all -- translations)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add translations/
+            git commit -m "chore: auto-cleanup stale keys and regenerate fallbacks [skip ci]"
+          fi
+      - name: Validate translations (format)
+        run: node scripts/validate-translations.js
+      - name: Check completeness & placeholders (report only)
+        run: pnpm run check:completeness -- --warn-only
+      - name: Push housekeeping changes
+        run: |
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/next)" ]; then
+            pushed=0
+            for attempt in 1 2 3; do
+              if git push origin HEAD:next; then
+                pushed=1
+                break
+              fi
+              echo "Push rejected (attempt $attempt); rebasing onto latest next"
+              git pull --rebase origin next
+              sleep $((attempt * 5))
+            done
+            if [ "$pushed" -ne 1 ]; then
+              echo "::error::Failed to push next housekeeping commit after 3 attempts"
+              exit 1
+            fi
+          fi
+      - name: Summarize next lane
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'SUMMARY'
+          ## Next lane published
+          jsDelivr: `https://cdn.jsdelivr.net/gh/wcpos/translations@next/translations/js/{locale}/{project}/{namespace}.json`
+          jsDelivr refreshes branch refs within about 12 hours; there is no tag or GitHub Release for `next`.
+          SUMMARY
