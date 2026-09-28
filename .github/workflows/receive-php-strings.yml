@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: extract-php
+  group: extract-php-${{ github.event.client_payload.lane || 'main' }}
   cancel-in-progress: true
 
 jobs:
@@ -22,10 +22,16 @@ jobs:
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.client_payload.lane || 'main' }}
           persist-credentials: false
 
       - name: Validate payload
         run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
+          if [ "$LANE" != main ] && [ "$LANE" != next ]; then
+            echo "::error::Invalid lane: $LANE (expected main or next)"
+            exit 1
+          fi
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
           POT_FILE="${{ github.event.client_payload.pot_file }}"
@@ -77,6 +83,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
@@ -87,10 +94,8 @@ jobs:
             exit 0
           fi
 
-          # main can move underneath this job (Dependabot merges, the other
-          # receive job, translation PR merges). Checkout is pinned to the
-          # dispatch SHA, so a bare push
-          # loses that race. Re-stage the POT on top of whatever main is now:
+          # The lane can move underneath this job (merges or other intake).
+          # Re-stage the POT on top of the latest lane tip after a push race:
           # this job's only change is overwriting one file, so a hard reset
           # plus re-copy is conflict-free by construction.
           cp source/php/woocommerce-pos.pot "$RUNNER_TEMP/woocommerce-pos.pot"
@@ -101,13 +106,13 @@ jobs:
               pushed=1
               break
             fi
-            echo "Push rejected (attempt $attempt); resetting onto latest main"
-            git fetch origin main
-            git reset --hard origin/main
+            echo "Push rejected (attempt $attempt); resetting onto latest $LANE"
+            git fetch origin "$LANE"
+            git reset --hard "origin/$LANE"
             cp "$RUNNER_TEMP/woocommerce-pos.pot" source/php/woocommerce-pos.pot
             git add source/php/woocommerce-pos.pot
             if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
-              echo "POT already on main"
+              echo "POT already on $LANE"
               pushed=1
               break
             fi
@@ -119,7 +124,7 @@ jobs:
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      # Only once the POT is on main. If the commit failed, keep the source
+      # Only once the POT is on the lane. If the commit failed, keep the source
       # branch so re-running the failed job recovers the update instead of
       # losing it.
       - name: Delete source branch
@@ -138,10 +143,16 @@ jobs:
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.client_payload.lane || 'main' }}
           persist-credentials: false
 
       - name: Validate payload
         run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
+          if [ "$LANE" != main ] && [ "$LANE" != next ]; then
+            echo "::error::Invalid lane: $LANE (expected main or next)"
+            exit 1
+          fi
           REPO="${{ github.event.client_payload.repo_name }}"
           REF="${{ github.event.client_payload.ref }}"
           POT_FILE="${{ github.event.client_payload.pot_file }}"
@@ -193,6 +204,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
@@ -203,10 +215,8 @@ jobs:
             exit 0
           fi
 
-          # main can move underneath this job (Dependabot merges, the other
-          # receive job, translation PR merges). Checkout is pinned to the
-          # dispatch SHA, so a bare push
-          # loses that race. Re-stage the POT on top of whatever main is now:
+          # The lane can move underneath this job (merges or other intake).
+          # Re-stage the POT on top of the latest lane tip after a push race:
           # this job's only change is overwriting one file, so a hard reset
           # plus re-copy is conflict-free by construction.
           cp source/php/woocommerce-pos-pro.pot "$RUNNER_TEMP/woocommerce-pos-pro.pot"
@@ -217,13 +227,13 @@ jobs:
               pushed=1
               break
             fi
-            echo "Push rejected (attempt $attempt); resetting onto latest main"
-            git fetch origin main
-            git reset --hard origin/main
+            echo "Push rejected (attempt $attempt); resetting onto latest $LANE"
+            git fetch origin "$LANE"
+            git reset --hard "origin/$LANE"
             cp "$RUNNER_TEMP/woocommerce-pos-pro.pot" source/php/woocommerce-pos-pro.pot
             git add source/php/woocommerce-pos-pro.pot
             if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
-              echo "POT already on main"
+              echo "POT already on $LANE"
               pushed=1
               break
             fi
@@ -235,7 +245,7 @@ jobs:
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      # Only once the POT is on main. If the commit failed, keep the source
+      # Only once the POT is on the lane. If the commit failed, keep the source
       # branch so re-running the failed job recovers the update instead of
       # losing it.
       - name: Delete source branch

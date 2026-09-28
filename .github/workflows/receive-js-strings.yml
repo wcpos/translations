@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: receive-js-${{ github.event.client_payload.repo_name }}
+  group: receive-js-${{ github.event.client_payload.repo_name }}-${{ github.event.client_payload.lane || 'main' }}
   cancel-in-progress: true
 
 jobs:
@@ -17,9 +17,18 @@ jobs:
     if: github.event.client_payload.repo_name && github.event.client_payload.ref
     runs-on: ubuntu-latest
     steps:
+      - name: Validate lane
+        run: |
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
+          if [ "$LANE" != main ] && [ "$LANE" != next ]; then
+            echo "::error::Invalid lane: $LANE (expected main or next)"
+            exit 1
+          fi
+
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.client_payload.lane || 'main' }}
           persist-credentials: false
 
       - name: Generate GitHub App token
@@ -92,12 +101,43 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          LANE="${{ github.event.client_payload.lane || 'main' }}"
+          REPO="${{ github.event.client_payload.repo_name }}"
           git add source/js/
           if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
             echo "No changes"
             echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            git commit -m "chore: update JS source strings from wcpos/${{ github.event.client_payload.repo_name }}" --allow-empty
-            git push
-            echo "changed=true" >> $GITHUB_OUTPUT
+            exit 0
           fi
+
+          # The lane can move underneath this job (sync-next, release
+          # housekeeping, the PHP receiver). Re-stage the normalised source
+          # files on top of the latest lane tip after a push race: this job's
+          # only change is overwriting one repo's source directory, so a hard
+          # reset plus re-copy is conflict-free by construction.
+          mkdir -p "$RUNNER_TEMP/source-js"
+          cp source/js/"$REPO"/*.json "$RUNNER_TEMP/source-js/"
+          pushed=0
+          for attempt in 1 2 3 4 5; do
+            git commit -m "chore: update JS source strings from wcpos/$REPO" --allow-empty
+            if git push origin HEAD:"$LANE"; then
+              pushed=1
+              break
+            fi
+            echo "Push rejected (attempt $attempt); resetting onto latest $LANE"
+            git fetch origin "$LANE"
+            git reset --hard "origin/$LANE"
+            cp "$RUNNER_TEMP/source-js"/*.json source/js/"$REPO"/
+            git add source/js/
+            if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+              echo "Source strings already on $LANE"
+              pushed=1
+              break
+            fi
+            sleep $((attempt * 5))
+          done
+          if [ "$pushed" -ne 1 ]; then
+            echo "::error::Failed to push JS source strings after 5 attempts"
+            exit 1
+          fi
+          echo "changed=true" >> $GITHUB_OUTPUT

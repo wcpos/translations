@@ -12,7 +12,7 @@ AI-powered translation management for WCPOS apps and plugins.
 
 ## Automated Pipeline
 
-Source repos push strings to this repo via `repository_dispatch`. From there:
+Source repos push strings to this repo via `repository_dispatch`. For the default `main` lane:
 
 1. **Receive** (GitHub Actions): source strings are committed to main.
 2. **Translate** (local, scheduled): `scripts/translate-local.sh` runs on the Mac mini, fills every missing string, and opens or updates one PR labelled `auto-translate`. See [Translation pipeline](#translation-pipeline).
@@ -32,6 +32,16 @@ Releases use **CalVer** format: `YYYY.M.N` (e.g., `2026.2.0`, `2026.2.1`).
 
 Versions are decoupled from plugin/app versions. Each consumer pins the translation version it was built against.
 
+## Branch lanes
+
+- **`main`** → CalVer tags and consumer version-bump PRs, unchanged.
+- **`next`** → the `next` branch served from `https://cdn.jsdelivr.net/gh/wcpos/translations@next/...`, with no tags, GitHub Releases or consumer PRs. jsDelivr refreshes branch refs within about 12 hours.
+- Senders include `lane: main` or `lane: next` in the dispatch payload; old senders without `lane` default to `main`.
+- `sync-next.yml` merges `main` into `next` after every push to `main` and fails loudly on conflict. It skips syncing when `next` is absent during a release freeze.
+- The Mac mini runs `scripts/translate-local.sh --base next` as a second scheduled job, using `.claude/auto-translate.next.state` and PRs labelled `auto-translate` against `next`. Both jobs share the lock and worktree, so runs serialize; self-update reads from the selected base.
+
+**Release day:** open a PR from `next` into `main` before the consumers move their `next` to `main`, and merge it so already-translated strings ship instead of being re-translated. After the consumers re-cut `next`, re-create this repo's `next` from `main`: `git push origin main:next`.
+
 ## Workflows
 
 | Workflow | Trigger | Purpose |
@@ -40,7 +50,9 @@ Versions are decoupled from plugin/app versions. Each consumer pins the translat
 | Receive PHP Strings | `repository_dispatch` | Commit PHP POT files |
 | Check Translation Completeness | Daily 08:00 UTC or manual | Open a `translation-gaps` issue when strings are missing |
 | Translation Quality Smoke Check | PRs touching translations | Heuristic quality warnings |
-| Release | Auto on merge or manual | CalVer tag + GitHub Release + update/reuse consumer PRs |
+| Release | Auto on merge to `main` or manual | CalVer tag + GitHub Release + update/reuse consumer PRs |
+| Publish next lane (`release-next.yml`) | Push to `next` touching `translations/**` or manual | Cleanup, fallbacks and validation; publish via `@next` |
+| Sync main into next (`sync-next.yml`) | Every push to `main` or manual | Merge `main` into `next`, if it exists |
 
 ## JS Distribution (jsDelivr)
 
@@ -72,7 +84,7 @@ scripts/translate-local.sh --locale de_DE --translator claude   # Claude Sonnet 
 scripts/translate-local.sh --retry     # ignore the 24 h retry guard once
 ```
 
-Each run:
+Each default (`--base main`) run:
 
 1. Syncs its own worktree (`.claude/worktrees/auto-translate`) with `origin/main`, or with the open `auto-translate` PR branch. The script updates itself from `origin/main`, and a lock prevents overlapping runs.
 2. Runs `scripts/translation-worklist.js`, which writes one packet per locale with missing JS keys or untranslated PO entries (the same gaps `check-completeness.js` reports). **With no gaps it exits 0 without calling a model** (about 10 s), so the schedule can run every 5 minutes. If the same work was left untranslated by an earlier run less than 24 hours ago (for example, a string that keeps failing validation), it also exits without a model call. The state is kept in `.claude/auto-translate.state`, and new or changed source strings always run immediately.

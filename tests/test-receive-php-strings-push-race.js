@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-// The receive-php-strings Commit step runs from a checkout pinned to the
-// dispatch SHA. If another commit lands on main between checkout and push,
+// The receive-php-strings Commit step runs from a checkout of the
+// target lane. If another commit lands on that lane between checkout and push,
 // a bare `git push` is rejected and the POT update is lost. This runs the real
 // step script against a bare remote where a competitor has already pushed.
 
@@ -26,7 +26,7 @@ function pot(msgid) {
 
 // Extract the receive-free job's Commit step from the workflow so the test
 // exercises the shell that actually ships.
-function commitStepScript(force) {
+function commitStepScript(force, lane) {
   const lines = fs.readFileSync(WORKFLOW, 'utf8').split(/\r?\n/);
   const jobIndex = lines.indexOf('  receive-free:');
   const stepIndex = lines.indexOf('      - name: Commit', jobIndex);
@@ -48,11 +48,12 @@ function commitStepScript(force) {
   return script
     .join('\n')
     .replace(/\$\{\{ github\.event\.client_payload\.force \}\}/g, force ? 'true' : 'false')
+    .replace(/\$\{\{ github\.event\.client_payload\.lane \|\| 'main' \}\}/g, lane)
     // The step points origin at a tokenised GitHub URL; keep the test's bare remote.
     .replace(/^git remote set-url origin .*$/m, ':');
 }
 
-function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
+function scenario(name, { competitorPot = null, runnerPot, expectPush, lane = 'main' }) {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'receive-pot-race-'));
   try {
     const remote = path.join(tempRoot, 'remote.git');
@@ -63,8 +64,8 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
     const output = path.join(tempRoot, 'github-output');
     fs.mkdirSync(runnerTemp);
 
-    run('git', ['init', '--bare', '--initial-branch=main', remote], tempRoot);
-    run('git', ['init', '--initial-branch=main', runner], tempRoot);
+    run('git', ['init', '--bare', `--initial-branch=${lane}`, remote], tempRoot);
+    run('git', ['init', `--initial-branch=${lane}`, runner], tempRoot);
     fs.mkdirSync(path.join(runner, 'source/php'), { recursive: true });
     fs.writeFileSync(path.join(runner, POT), pot('Old source'));
     run('git', ['config', 'user.name', 'Test Runner'], runner);
@@ -72,9 +73,9 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
     run('git', ['remote', 'add', 'origin', remote], runner);
     run('git', ['add', 'source'], runner);
     run('git', ['commit', '-m', 'initial source'], runner);
-    run('git', ['push', '-u', 'origin', 'main'], runner);
+    run('git', ['push', '-u', 'origin', lane], runner);
 
-    // Something else lands on main after the runner's checkout.
+    // Something else lands on the lane after the runner's checkout.
     run('git', ['clone', remote, competitor], tempRoot);
     run('git', ['config', 'user.name', 'Competing Runner'], competitor);
     run('git', ['config', 'user.email', 'competitor@example.com'], competitor);
@@ -95,7 +96,7 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
     fs.writeFileSync(path.join(fakeBin, 'sleep'), '#!/bin/sh\nexit 0\n');
     fs.chmodSync(path.join(fakeBin, 'sleep'), 0o755);
 
-    const result = spawnSync('bash', ['--noprofile', '--norc', '-e', '-c', commitStepScript(false)], {
+    const result = spawnSync('bash', ['--noprofile', '--norc', '-e', '-c', commitStepScript(false, lane)], {
       cwd: runner,
       encoding: 'utf8',
       env: {
@@ -112,13 +113,13 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
       `${name}: Commit step failed:\n${result.stdout || ''}${result.stderr || ''}`
     );
 
-    run('git', ['fetch', 'origin', 'main'], runner);
-    const mainPot = run('git', ['show', `origin/main:${POT}`], runner);
-    assert.ok(mainPot.includes(`msgid "${runnerPot}"`), `${name}: POT on main is not the received one`);
+    run('git', ['fetch', 'origin', lane], runner);
+    const lanePot = run('git', ['show', `origin/${lane}:${POT}`], runner);
+    assert.ok(lanePot.includes(`msgid "${runnerPot}"`), `${name}: POT on ${lane} is not the received one`);
     assert.strictEqual(
-      run('git', ['cat-file', '-e', `origin/main:${CONTEXT}`], runner),
+      run('git', ['cat-file', '-e', `origin/${lane}:${CONTEXT}`], runner),
       '',
-      `${name}: competitor's files are missing from main`
+      `${name}: competitor's files are missing from ${lane}`
     );
     assert.ok(
       fs.readFileSync(output, 'utf8').includes('changed=true'),
@@ -127,20 +128,20 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush }) {
 
     if (expectPush) {
       assert.strictEqual(
-        run('git', ['log', '-1', '--format=%s', 'origin/main'], runner),
+        run('git', ['log', '-1', '--format=%s', `origin/${lane}`], runner),
         'chore: update free plugin source strings',
         `${name}: tip commit subject`
       );
       assert.strictEqual(
-        run('git', ['rev-parse', 'origin/main^'], runner),
+        run('git', ['rev-parse', `origin/${lane}^`], runner),
         competitorSha,
         `${name}: received POT should sit on top of the competitor's commit`
       );
     } else {
       assert.strictEqual(
-        run('git', ['rev-parse', 'origin/main'], runner),
+        run('git', ['rev-parse', `origin/${lane}`], runner),
         competitorSha,
-        `${name}: nothing should be pushed when the POT is already on main`
+        `${name}: nothing should be pushed when the POT is already on ${lane}`
       );
     }
     console.log(`✓ ${name}`);
@@ -158,4 +159,10 @@ scenario('skips the push when the retry finds the same POT already on main', {
   competitorPot: 'New source',
   runnerPot: 'New source',
   expectPush: false,
+});
+
+scenario('re-stages the POT on next after a competing push', {
+  lane: 'next',
+  runnerPot: 'Next source',
+  expectPush: true,
 });
