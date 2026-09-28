@@ -3,10 +3,17 @@ name: Sync main into next
 on:
   push:
     branches: [main]
+  # Pushes made with GITHUB_TOKEN (the receive workflows, release.yml's
+  # housekeeping commit) never raise a push event, so also run when those
+  # workflows finish.
+  workflow_run:
+    workflows: ['Release', 'Receive JS Strings', 'Receive PHP Strings']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: translations-sync-next
@@ -16,30 +23,47 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # The merge is pushed with the translations GitHub App token rather than
+      # GITHUB_TOKEN so that the push raises a push event on next and
+      # release-next.yml regenerates fallbacks there.
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: translations
+          permission-contents: write
+
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
+
       - name: Merge main into next
         run: |
-          if ! git ls-remote --exit-code --heads origin next; then
+          status=0
+          git ls-remote --exit-code --heads origin next >/dev/null || status=$?
+          if [ "$status" -eq 2 ]; then
             echo "::notice::next does not exist; skipping sync during release freeze"
             exit 0
+          elif [ "$status" -ne 0 ]; then
+            echo "::error::git ls-remote failed with status $status"
+            exit "$status"
           fi
-          git checkout next
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for attempt in 1 2 3; do
             git fetch origin main next
-            for ref in origin/next origin/main; do
-              if ! git merge --no-edit "$ref"; then
-                conflicts=$(git diff --name-only --diff-filter=U)
-                git merge --abort
-                echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
-                exit 1
-              fi
-            done
+            git checkout -B next origin/next
+            if ! git merge --no-edit origin/main; then
+              conflicts=$(git diff --name-only --diff-filter=U)
+              git merge --abort
+              echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
+              exit 1
+            fi
             if git push origin HEAD:next; then exit 0; fi
             echo "Push rejected (attempt $attempt); fetching and re-merging"
             sleep $((attempt * 5))

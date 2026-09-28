@@ -78,7 +78,7 @@ fi
 mkdir -p "$REPO_ROOT/.claude"
 LOCK="$REPO_ROOT/.claude/auto-translate.lock"
 STATE="$REPO_ROOT/.claude/auto-translate.state"
-if [ "$BASE" != main ]; then STATE="$REPO_ROOT/.claude/auto-translate.$BASE.state"; fi
+if [ "$BASE" != main ]; then STATE="$REPO_ROOT/.claude/auto-translate.${BASE//\//-}.state"; fi
 exec 9>"$LOCK"
 if ! /usr/bin/lockf -s -t 0 9; then log "already running"; exit 0; fi
 
