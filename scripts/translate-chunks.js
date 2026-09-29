@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { parsePluralKey } = require('./plural-rules');
 
 function planChunks({ workDir, partsDir, max }) {
   const chunks = [], packets = [];
@@ -18,20 +19,31 @@ function planChunks({ workDir, partsDir, max }) {
       ...Object.entries(packet.php).flatMap(([domain, data]) => data.entries
         .map(entry => ['php', domain, entry.id, entry])),
     ];
-    const count = Math.ceil(n / max);
+    // A unit is one PHP entry, one JS key, or all plural siblings of a JS key (kept in one part).
+    const units = new Map();
+    for (const item of items) {
+      const plural = item[0] === 'js' && item[3].plural_category ? parsePluralKey(item[2]) : null;
+      const id = plural ? `js\0${item[1]}\0${plural.base}` : `${item[0]}\0${item[1]}\0${item[2]}`;
+      if (!units.has(id)) units.set(id, []);
+      units.get(id).push(item);
+    }
+    const count = Math.ceil(n / max), goal = Math.ceil(n / count), slices = [[]];
+    for (const unit of units.values()) {
+      const current = slices[slices.length - 1];
+      if (current.length && (current.length >= goal || current.length + unit.length > max)) slices.push([]);
+      slices[slices.length - 1].push(...unit);
+    }
     fs.mkdirSync(partsDir, { recursive: true });
-    for (let i = 0, offset = 0; i < count; i++) {
-      const size = Math.floor(n / count) + (i < n % count ? 1 : 0);
+    for (const [i, slice] of slices.entries()) {
       const part = { ...packet, counts: { js: 0, php: 0 }, js: {}, php: {} };
-      for (const [kind, group, key, entry] of items.slice(offset, offset + size)) {
+      for (const [kind, group, key, entry] of slice) {
         if (kind === 'js') (part.js[group] ??= {})[key] = entry;
         else (part.php[group] ??= { ...packet.php[group], entries: [] }).entries.push(entry);
         part.counts[kind]++;
       }
       const target = path.join(partsDir, `${packet.locale}.part${i + 1}.json`);
       fs.writeFileSync(target, JSON.stringify(part, null, 2) + '\n');
-      packets.push([target, size]);
-      offset += size;
+      packets.push([target, slice.length]);
     }
   }
   let chunk = [], sum = 0;
@@ -43,28 +55,10 @@ function planChunks({ workDir, partsDir, max }) {
   return chunks;
 }
 
-function mergePartResults({ partsDir, resultsDir }) {
-  if (!fs.existsSync(partsDir)) return;
-  const merged = {};
-  for (const file of fs.readdirSync(partsDir).sort()) {
-    const match = file.match(/^(.*)\.part\d+\.json$/);
-    if (!match) continue;
-    const [, locale] = match;
-    let result;
-    try { result = JSON.parse(fs.readFileSync(path.join(resultsDir, file), 'utf8')); } catch { continue; }
-    if (!result || typeof result !== 'object' || Array.isArray(result) || result.locale !== locale) continue;
-    const target = merged[locale] ??= { locale, js: {}, php: {} };
-    for (const [file, entries] of Object.entries(result.js || {})) Object.assign(target.js[file] ??= {}, entries);
-    Object.assign(target.php, result.php);
-  }
-  for (const result of Object.values(merged)) fs.writeFileSync(path.join(resultsDir, `${result.locale}.json`), JSON.stringify(result, null, 2) + '\n');
-}
-
-module.exports = { planChunks, mergePartResults };
+module.exports = { planChunks };
 if (require.main === module) {
   const [command, first, second, max] = process.argv.slice(2);
   if (command === 'plan' && process.argv.length === 6 && Number.isInteger(Number(max)) && Number(max) > 0) {
     for (const chunk of planChunks({ workDir: first, partsDir: second, max: Number(max) })) console.log(chunk.join(' '));
-  } else if (command === 'merge' && process.argv.length === 5) mergePartResults({ partsDir: first, resultsDir: second });
-  else { console.error('Usage: translate-chunks.js plan <workDir> <partsDir> <max> | merge <partsDir> <resultsDir>'); process.exitCode = 2; }
+  } else { console.error('Usage: translate-chunks.js plan <workDir> <partsDir> <max>'); process.exitCode = 2; }
 }

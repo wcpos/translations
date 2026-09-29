@@ -21,7 +21,11 @@ is to produce excellent translations in the results files.
 ## Work packets
 
 Each line at the end of this prompt reads `- <work packet> -> <results file>`.
-A packet (`.translate/work/<locale>.json`) contains:
+A packet is `.translate/work/<locale>.json` or, for a large locale, one part
+`.translate/parts/<locale>.part<N>.json` that holds a slice of that locale's strings.
+When you are given a part, translate only the entries in that part and do not open the
+locale's other packets or parts. The results file's `locale` is the packet's `locale`
+field (for example `da`, not `da.part1`). A packet contains:
 
 - `locale`, `locale_name`: the exact regional locale. Translate for that region, so
   `es_MX` is not `es_ES` and `fr_CA` is not `fr_FR`.
