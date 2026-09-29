@@ -7,22 +7,9 @@ CLAUDE_MODEL=sonnet # Default model for Claude.
 CODEX_REVIEW_MODEL=gpt-6-sol # Default model for Codex review pass.
 CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
-MAX_PER_CALL=250 # Maximum summed packet items per call, except oversized packets.
+MAX_PER_CALL=250 # Maximum summed packet items per call; larger locale packets are split into parts.
 CALL_TIMEOUT=1800 # Seconds allowed for each translation or review call.
 RETRY_AFTER=86400 # Seconds before retrying work that an earlier run left untranslated.
-
-chunks() {
-  node -e 'const fs=require("fs"),path=require("path"),[dir,max]=process.argv.slice(1); let chunk=[],sum=0;
-    for(const file of fs.readdirSync(dir).filter(f=>f.endsWith(".json")).sort()){
-      const p=JSON.parse(fs.readFileSync(path.join(dir,file))),n=p.counts.js+p.counts.php;
-      if(chunk.length && sum+n>Number(max)){console.log(chunk.join(" "));chunk=[];sum=0;}
-      chunk.push(file.slice(0,-5));sum+=n;
-    } if(chunk.length)console.log(chunk.join(" "));' "$1" "$2"
-}
-if [ "${TRANSLATE_CHUNK_SELFTEST:-}" = 1 ]; then
-  chunks "$1" "$MAX_PER_CALL"
-  exit 0
-fi
 
 log() { printf '[translate-local] %s\n' "$*"; }
 TRANSLATOR=${TRANSLATE_TRANSLATOR:-$DEFAULT_TRANSLATOR}
@@ -141,33 +128,37 @@ else
   REVIEW_COMMAND=(claude -p --model "$REVIEW_MODEL" --permission-mode acceptEdits --allowedTools "Read,Write,Glob,Grep")
 fi
 mkdir -p .translate/results .translate/logs
-chunks .translate/work "$MAX_PER_CALL" > .translate/chunks
+node scripts/translate-chunks.js plan .translate/work .translate/parts "$MAX_PER_CALL" > .translate/chunks
 CHUNK=0
 REVIEW_USED=skipped
-while IFS= read -r LOCALES; do
+while IFS= read -r PACKETS; do
   CHUNK=$((CHUNK + 1))
   cat scripts/translate-prompt.md > .translate/prompt
-  for LOCALE in $LOCALES; do
-    printf '\n- .translate/work/%s.json -> .translate/results/%s.json\n' "$LOCALE" "$LOCALE" >> .translate/prompt
+  for PACKET in $PACKETS; do
+    NAME=$(basename "$PACKET" .json)
+    printf '\n- %s -> .translate/results/%s.json\n' "$PACKET" "$NAME" >> .translate/prompt
   done
   if ! run_with_timeout "${COMMAND[@]}" < .translate/prompt > ".translate/logs/chunk-$CHUNK.log" 2>&1; then
     log "chunk $CHUNK failed or timed out; continuing"
   fi
   HAS_RESULTS=0
-  for LOCALE in $LOCALES; do
-    if [ -f ".translate/results/$LOCALE.json" ]; then HAS_RESULTS=1; fi
+  for PACKET in $PACKETS; do
+    NAME=$(basename "$PACKET" .json)
+    if [ -f ".translate/results/$NAME.json" ]; then HAS_RESULTS=1; fi
   done
   if [ "$REVIEW" -eq 1 ] && [ "$HAS_RESULTS" -eq 1 ]; then
     REVIEW_USED=$REVIEW_MODEL
     cat scripts/review-prompt.md > .translate/prompt
-    for LOCALE in $LOCALES; do
-      printf '\n- .translate/work/%s.json -> .translate/results/%s.json\n' "$LOCALE" "$LOCALE" >> .translate/prompt
+    for PACKET in $PACKETS; do
+      NAME=$(basename "$PACKET" .json)
+      printf '\n- %s -> .translate/results/%s.json\n' "$PACKET" "$NAME" >> .translate/prompt
     done
     if ! run_with_timeout "${REVIEW_COMMAND[@]}" < .translate/prompt > ".translate/logs/review-$CHUNK.log" 2>&1; then
       log "review $CHUNK failed or timed out; continuing"
     fi
   fi
 done < .translate/chunks
+node scripts/translate-chunks.js merge .translate/parts .translate/results
 APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --report .translate/report.json --report-md .translate/report.md)
 log "$APPLY_SUMMARY"
 REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
