@@ -108,13 +108,13 @@ msgstr "Geen huidige gebruiker."
 msgid ""
 "WCPOS could not publish its receipt font map. Receipts will use a basic Latin-only font until the installation succeeds. WCPOS retries automatically every hour. Check that the uploads directory is writable."
 msgstr ""
-"WCPOS kon de lettertypekaart voor bonnen niet publiceren. Bonnen gebruiken een eenvoudig lettertype met alleen Latijnse tekens totdat de installatie is gelukt. WCPOS probeert dit elk uur opnieuw. Controleer of de uploadmap schrijfbaar is."
+"WCPOS kon de lettertypekaart voor bonnen niet publiceren. Bonnen gebruiken een basislettertype met alleen Latijnse tekens totdat de installatie is voltooid. WCPOS probeert dit elk uur automatisch opnieuw. Controleer of er naar de map uploads kan worden geschreven."
 
 #: includes/Admin/Font_Pack_Notice.php:28
 msgid ""
 "WCPOS could not download its receipt fonts from cdn.jsdelivr.net. Receipts will use a basic Latin-only font until the download succeeds. WCPOS retries automatically every hour. If your host blocks outgoing HTTP requests, ask them to allow cdn.jsdelivr.net."
 msgstr ""
-"WCPOS kon de lettertypen voor bonnen niet downloaden van cdn.jsdelivr.net. Bonnen gebruiken een eenvoudig lettertype met alleen Latijnse tekens totdat de download is gelukt. WCPOS probeert dit elk uur opnieuw. Als uw host uitgaande HTTP-verzoeken blokkeert, vraag dan om cdn.jsdelivr.net toe te staan."
+"WCPOS kon de lettertypen voor bonnen niet downloaden van cdn.jsdelivr.net. Bonnen gebruiken een basislettertype met alleen Latijnse tekens totdat de download is voltooid. WCPOS probeert dit elk uur automatisch opnieuw. Vraag je host om cdn.jsdelivr.net toe te staan als uitgaande HTTP-verzoeken worden geblokkeerd."
 
 #. translators: WordPress admin menu label for WCPOS.
 #. translators: Order channel filter value shown in WooCommerce admin for POS orders.
@@ -297,7 +297,7 @@ msgstr "Annuleren"
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:59
 msgid "POS Only products are never shown in the online catalog or search."
 msgstr ""
-"Producten die alleen voor POS zijn, worden nooit in de online catalogus of zoekresultaten getoond."
+"Producten met de instelling ‘Alleen POS’ worden nooit getoond in de online catalogus of zoekresultaten."
 
 #. translators: %s: a WooCommerce catalog visibility option, e.g. "Shop and search results".
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:63
@@ -305,7 +305,7 @@ msgstr ""
 msgid ""
 "Catalog visibility goes back to “%s” when you update. Change it afterwards if you want something else."
 msgstr ""
-"De cataloguszichtbaarheid wordt na bijwerken teruggezet op ‘%s’. Wijzig dit daarna als u iets anders wilt."
+"De cataloguszichtbaarheid wordt bij het bijwerken teruggezet op ‘%s’. Wijzig dit daarna als je iets anders wilt."
 
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Checkout/payment form error message title.
@@ -832,7 +832,7 @@ msgstr "Operator om producttag-termen te vergelijken."
 
 #: includes/API/V1/Receipts_Controller.php:186
 msgid "The closure print could not be recorded."
-msgstr "De afdruk van de afsluiting kon niet worden geregistreerd."
+msgstr "De afdruk van de kassasluiting kon niet worden geregistreerd."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Receipts_Controller.php:196
@@ -855,7 +855,7 @@ msgstr "Een template_id is vereist."
 
 #: includes/API/V1/Receipts_Controller.php:300
 msgid "A closure template is required."
-msgstr "Een sjabloon voor de afsluiting is vereist."
+msgstr "Een sjabloon voor de kassasluiting is vereist."
 
 #. translators: Error message displayed when a template cannot be found.
 #: includes/API/V1/Receipts_Controller.php:305
@@ -875,17 +875,17 @@ msgstr "De kassabon-PDF kon niet worden gegenereerd."
 #: includes/API/V1/Receipts_Controller.php:378
 msgid "Another print of this order is in progress; try again."
 msgstr ""
-"Er wordt al een andere afdruk van deze bestelling gemaakt; probeer het opnieuw."
+"Er wordt al een andere afdruk van deze bestelling gemaakt. Probeer het opnieuw."
 
 #: includes/API/V1/Receipts_Controller.php:396
 #: includes/API/V2/Closures_Controller.php:420
 #: includes/Templates/Receipt.php:522
 msgid "The closure request could not be completed."
-msgstr "Het verzoek voor de afsluiting kon niet worden voltooid."
+msgstr "Het verzoek voor de kassasluiting kon niet worden voltooid."
 
 #: includes/API/V1/Receipts_Controller.php:400
 msgid "Receipt document could not be read."
-msgstr "Bonbestand kon niet worden gelezen."
+msgstr "Het bonbestand kon niet worden gelezen."
 
 #: includes/API/V1/Receipts_Controller.php:415
 msgid "Sorry, you cannot view receipts."
@@ -893,7 +893,7 @@ msgstr "Sorry, u kunt bonnen niet bekijken."
 
 #: includes/API/V1/Settings.php:195
 msgid "This payment method does not list terminals."
-msgstr "Deze betaalmethode bevat geen terminals."
+msgstr "Deze betaalmethode heeft geen terminals."
 
 #: includes/API/V1/Settings.php:471
 msgid "Settings section not registered."
@@ -937,7 +937,7 @@ msgstr "Sjabloonstype voor ordenen."
 #: includes/API/V1/Templates_Controller.php:145
 msgid "Enabled template ID to activate: a post ID or a virtual template key."
 msgstr ""
-"ID van in te schakelen sjabloon: een bericht-ID of virtuele sjabloonkey."
+"ID van het te activeren ingeschakelde sjabloon: een bericht-ID of een virtuele sjabloonsleutel."
 
 #: includes/API/V1/Templates_Controller.php:151
 msgid "Array of templates to update."
@@ -1020,7 +1020,7 @@ msgstr "Sjabloon niet gevonden na bijwerken."
 
 #: includes/API/V1/Templates_Controller.php:633
 msgid "The active template must be enabled for this template type."
-msgstr "De actieve sjabloon moet voor dit sjabloontype zijn ingeschakeld."
+msgstr "De actieve sjabloon moet zijn ingeschakeld voor dit sjabloontype."
 
 #. translators: %d: batch item index.
 #: includes/API/V1/Templates_Controller.php:677
@@ -1125,11 +1125,11 @@ msgstr "Ongeldige waarde voor _woocommerce_pos_uuid in meta_data."
 #, php-format
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
-"Collectie ‘%1$s’ wordt niet via deze route aangeboden. Ondersteund: %2$s."
+"Collectie ‘%1$s’ wordt niet aangeboden via deze route. Ondersteund: %2$s."
 
 #: includes/API/V2/Payments_Controller.php:75
 msgid "Sorry, you cannot manage order payments."
-msgstr "U mag geen betalingen voor bestellingen beheren."
+msgstr "Je mag geen betalingen voor bestellingen beheren."
 
 #: includes/API/V2/Payments_Controller.php:94
 msgid "Payment must be an object."
@@ -1137,15 +1137,15 @@ msgstr "Betaling moet een object zijn."
 
 #: includes/API/V2/Payments_Controller.php:201
 msgid "Invalid payment operation parameters."
-msgstr "Ongeldige parameters voor betalingsbewerking."
+msgstr "Ongeldige parameters voor de betalingsbewerking."
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
-msgstr "U mag geen betaalmethoden bekijken."
+msgstr "Je mag geen betaalmethoden bekijken."
 
 #: includes/API/V2/Payment_Methods_Controller.php:97
 msgid "Sorry, you cannot bootstrap payment methods."
-msgstr "U mag betaalmethoden niet initialiseren."
+msgstr "Je mag betaalmethoden niet initialiseren."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Ledger.php:650
@@ -1163,7 +1163,7 @@ msgstr "Betalingscontext moet een object zijn."
 
 #: includes/API/V2/Records_Controller.php:66
 msgid "Sorry, you cannot access fiscal records."
-msgstr "U hebt geen toegang tot fiscale gegevens."
+msgstr "Je hebt geen toegang tot fiscale gegevens."
 
 #. translators: %s: fiscal record query field.
 #: includes/API/V2/Records_Controller.php:185
@@ -1177,7 +1177,7 @@ msgstr "Fiscaal gegeven niet gevonden."
 
 #: includes/API/V2/Registers_Controller.php:74
 msgid "Sorry, you cannot access registers."
-msgstr "U hebt geen toegang tot kassa's."
+msgstr "Je hebt geen toegang tot kassa's."
 
 #. translators: %s: register field name.
 #: includes/API/V2/Registers_Controller.php:413
@@ -1216,7 +1216,7 @@ msgstr "Dit rapport ondersteunt het gevraagde bereik niet."
 
 #: includes/API/V2/Reports_Controller.php:216
 msgid "Sorry, you cannot access this report."
-msgstr "U hebt geen toegang tot dit rapport."
+msgstr "Je hebt geen toegang tot dit rapport."
 
 #. translators: %s: report query field.
 #: includes/API/V2/Reports_Controller.php:278
@@ -1388,16 +1388,16 @@ msgstr "Deze inningsmodus ondersteunt die bewerking niet."
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
-"Deze betaalmethode kan niet worden geregistreerd; deze moet zijn eigen betaalstap uitvoeren."
+"Deze betaalmethode kan niet worden geregistreerd; de bijbehorende betaalstap moet zelf worden uitgevoerd."
 
 #: includes/Payments/Contract/Ledger.php:226
 msgid "Recorded payments must be captured or authorized."
-msgstr "Geregistreerde betalingen moeten zijn geïnd of geautoriseerd."
+msgstr "Geregistreerde betalingen moeten worden geïnd of geautoriseerd."
 
 #: includes/Payments/Contract/Ledger.php:231
 #: includes/Payments/Contract/Ledger.php:235
 msgid "Tendered amount is invalid for this payment method."
-msgstr "Het aangeboden bedrag is ongeldig voor deze betaalmethode."
+msgstr "Het ontvangen bedrag is ongeldig voor deze betaalmethode."
 
 #: includes/Payments/Contract/Ledger.php:334
 msgid "Payment method is disabled."
@@ -1411,7 +1411,8 @@ msgstr "De bestelling is al betaald."
 #: includes/Payments/Contract/Ledger.php:372
 #: includes/Payments/Contract/Ledger.php:715
 msgid "Payment amount exceeds the order balance."
-msgstr "Het betalingsbedrag is hoger dan het openstaande bestelbedrag."
+msgstr ""
+"Het betalingsbedrag is hoger dan het openstaande bedrag van de bestelling."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
 #: includes/Payments/Contract/Ledger.php:519
@@ -1430,7 +1431,8 @@ msgstr "Terugbetaling moet bij deze bestelling horen."
 
 #: includes/Payments/Contract/Ledger.php:593
 msgid "Refund amount cannot be allocated to this payment."
-msgstr "Terugbetalingsbedrag kan niet aan deze betaling worden toegewezen."
+msgstr ""
+"Het terugbetalingsbedrag kan niet aan deze betaling worden toegewezen."
 
 #: includes/Payments/Contract/Ledger.php:625
 #: includes/Payments/Contract/Settlement.php:51
@@ -1448,12 +1450,12 @@ msgstr "Valuta van de betaling moet overeenkomen met die van de bestelling."
 
 #: includes/Payments/Contract/Ledger.php:689
 msgid "Payment id conflicts with an existing payment."
-msgstr "Betalings-ID bestaat al bij een andere betaling."
+msgstr "Het betalings-ID botst met een bestaande betaling."
 
 #: includes/Payments/Contract/Ledger.php:715
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
-"Door de provider bevestigd bedrag of valuta komt niet overeen met de betaling."
+"Het door de betaaldienstverlener bevestigde bedrag of de valuta komt niet overeen met de betaling."
 
 #. translators: %s: payment row uuid.
 #: includes/Payments/Contract/Ledger.php:791
@@ -1490,12 +1492,11 @@ msgstr "Elke tien minuten"
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
 msgstr ""
-"WCPOS-betaling %1$s: de autorisatie voor %2$s is verlopen nadat de bestelling als betaald was gemarkeerd en nooit is geïnd — actie vereist."
+"WCPOS-betaling %1$s: de autorisatie voor %2$s is verlopen nadat de bestelling als betaald was gemarkeerd en is nooit geïnd. Dit vereist aandacht."
 
 #: includes/Payments/Contract/Settlement.php:161
 msgid "Could not save the pending payment confirmation."
-msgstr ""
-"De bevestiging van de openstaande betaling kon niet worden opgeslagen."
+msgstr "De wachtende betalingsbevestiging kon niet worden opgeslagen."
 
 #: includes/Payments/Contract/Webview_Handler.php:55
 msgid "This payment cannot be voided."
@@ -1542,7 +1543,7 @@ msgstr ""
 
 #: includes/Services/Cash_Movement_Store.php:122
 msgid "This movement was recorded after counting began."
-msgstr "Deze mutatie is geregistreerd nadat het tellen was begonnen."
+msgstr "Deze kasmutatie is geregistreerd nadat het tellen is begonnen."
 
 #: includes/Services/Cash_Movement_Store.php:172
 msgid "The movement has already been voided or is unavailable."
@@ -1556,7 +1557,7 @@ msgstr "De sessie kan niet worden afgesloten."
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
-"Deze sessie heeft al een afsluiting; de telling is als hertelling geregistreerd."
+"Deze sessie heeft al een kassasluiting; de telling is als hertelling geregistreerd."
 
 #: includes/Services/Closure_Store.php:462
 #: includes/Services/Register_Session_Store.php:264
@@ -1566,7 +1567,7 @@ msgstr "De sessiestatus is gewijzigd."
 
 #: includes/Services/Closure_Store.php:488
 msgid "The closure number precedes the register sequence."
-msgstr "Het afsluitnummer valt vóór de kassareeks."
+msgstr "Het sluitingsnummer valt vóór de kassareeks."
 
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
@@ -1590,7 +1591,7 @@ msgstr "POS-auditmetadata kan niet via deze REST-route worden gewijzigd."
 
 #: includes/Services/Fiscal_Record_Store.php:243
 msgid "Sorry, you are not allowed to read register documents."
-msgstr "U mag kassadocumenten niet lezen."
+msgstr "Je mag kassadocumenten niet lezen."
 
 #: includes/Services/Fiscal_Record_Store.php:248
 #: includes/Services/Fiscal_Record_Store.php:256
@@ -1605,7 +1606,7 @@ msgstr "Ongeldig bonbestand."
 #: includes/Services/Fiscal_Record_Writers.php:61
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
-msgstr "POS-fiscaal record %s kon niet worden geschreven; herstel is nodig."
+msgstr "Fiscaal POS-record %s kon niet worden geschreven; herstel is nodig."
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -1619,7 +1620,8 @@ msgstr "Gesloten"
 #: includes/Services/Order_Notes.php:26
 #, php-format
 msgid "POS provenance keys cannot be changed after the sale: %s"
-msgstr "Herkomstkeys van POS kunnen na de verkoop niet worden gewijzigd: %s"
+msgstr ""
+"Herkomstsleutels van de POS kunnen na de verkoop niet worden gewijzigd: %s"
 
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
@@ -1836,7 +1838,7 @@ msgstr "De afdruktaak is niet beschikbaar voor het aangevraagde mediatype."
 msgid ""
 "Quick discount requires a positive decimal amount and type percent (up to 100) or fixed_cart."
 msgstr ""
-"Snelle korting vereist een positief decimaal bedrag en type percent (maximaal 100) of fixed_cart."
+"Een snelle korting vereist een positief decimaal bedrag en type percent (maximaal 100) of fixed_cart."
 
 #. translators: %s: Coupon code.
 #: includes/Services/Quick_Discount.php:122
@@ -2860,7 +2862,7 @@ msgstr "Softwarenaam"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1224
 msgid "Plugin Version"
-msgstr "Pluginversie"
+msgstr "Plug-inversie"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1229
@@ -2928,7 +2930,7 @@ msgstr "Tijdzone verkoop"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1288
 msgid "Sale Counter"
-msgstr "Verkoopteller"
+msgstr "Verkoopnummer"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label preceding the identity of the sale corrected by a refund.
@@ -2956,12 +2958,12 @@ msgstr "Is annuleringsdocument"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1314
 msgid "Is Cancellation Document"
-msgstr "Is document voor annulering"
+msgstr "Is intrekkingsdocument"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1319
 msgid "Is Closure Document"
-msgstr "Is afsluitdocument"
+msgstr "Is sluitingsdocument"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1324
@@ -3038,19 +3040,19 @@ msgstr "Labels (i18n)"
 #: includes/Templates.php:598
 #: includes/Templates/Gallery_Registry.php:611
 msgid "Closure"
-msgstr "Afsluiting"
+msgstr "Kassasluiting"
 
 #: includes/Services/Receipt_Data_Schema.php:1423
 msgid "Closure ID"
-msgstr "Afsluitings-ID"
+msgstr "Sluitings-ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1424
 msgid "Closure Number"
-msgstr "Afsluitingsnummer"
+msgstr "Sluitingsnummer"
 
 #: includes/Services/Receipt_Data_Schema.php:1425
 msgid "Printed Number"
-msgstr "Afgedrukt nummer"
+msgstr "Afdruknummer"
 
 #: includes/Services/Receipt_Data_Schema.php:1427
 #: includes/Services/Receipt_Data_Schema.php:1974
@@ -3060,7 +3062,7 @@ msgstr "Sessie-ID"
 #: includes/Services/Receipt_Data_Schema.php:1428
 #: includes/Services/Receipt_Data_Schema.php:1970
 msgid "Business Day"
-msgstr "Kassadag"
+msgstr "Bedrijfsdag"
 
 #: includes/Services/Receipt_Data_Schema.php:1429
 msgid "Opened (UTC)"
@@ -3074,13 +3076,13 @@ msgstr "Gesloten (UTC)"
 msgid ""
 "Currency recorded at closure (older documents use current store currency)"
 msgstr ""
-"Valuta vastgelegd bij afsluiting (oudere documenten gebruiken de huidige winkelvaluta)"
+"Valuta bij sluiting (oudere documenten gebruiken de huidige winkelvaluta)"
 
 #: includes/Services/Receipt_Data_Schema.php:1432
 msgid ""
 "Timezone recorded at closure (older documents use current store timezone)"
 msgstr ""
-"Tijdzone vastgelegd bij afsluiting (oudere documenten gebruiken de huidige winkeltijdzone)"
+"Tijdzone bij sluiting (oudere documenten gebruiken de huidige tijdzone van de winkel)"
 
 #: includes/Services/Receipt_Data_Schema.php:1434
 msgid "Opened By"
@@ -3096,39 +3098,39 @@ msgstr "Goedgekeurd door"
 
 #: includes/Services/Receipt_Data_Schema.php:1437
 msgid "Counted Cash"
-msgstr "Geteld: contant"
+msgstr "Geteld contant"
 
 #: includes/Services/Receipt_Data_Schema.php:1438
 msgid "Counted Card"
-msgstr "Geteld: kaart"
+msgstr "Geteld per kaart"
 
 #: includes/Services/Receipt_Data_Schema.php:1439
 msgid "Expected Cash"
-msgstr "Verwacht: contant"
+msgstr "Verwacht contant"
 
 #: includes/Services/Receipt_Data_Schema.php:1440
 msgid "Expected Card"
-msgstr "Verwacht: kaart"
+msgstr "Verwacht per kaart"
 
 #: includes/Services/Receipt_Data_Schema.php:1441
 msgid "Cash Variance"
-msgstr "Kasverschil"
+msgstr "Verschil contant"
 
 #: includes/Services/Receipt_Data_Schema.php:1442
 msgid "Card Variance"
-msgstr "Kaartverschil"
+msgstr "Verschil per kaart"
 
 #: includes/Services/Receipt_Data_Schema.php:1443
 msgid "Expected Opening Float"
-msgstr "Verwacht openingssaldo"
+msgstr "Verwacht openingsbedrag"
 
 #: includes/Services/Receipt_Data_Schema.php:1444
 msgid "Counted Opening Float"
-msgstr "Geteld openingssaldo"
+msgstr "Geteld openingsbedrag"
 
 #: includes/Services/Receipt_Data_Schema.php:1445
 msgid "Opening Variance"
-msgstr "Verschil openingssaldo"
+msgstr "Openingsverschil"
 
 #: includes/Services/Receipt_Data_Schema.php:1446
 #: includes/Services/Receipt_I18n_Labels.php:62
@@ -3178,7 +3180,7 @@ msgstr "Laatst afgedrukt op (UTC)"
 
 #: includes/Services/Receipt_Data_Schema.php:1466
 msgid "Money format recorded at closure"
-msgstr "Geldnotatie vastgelegd bij afsluiting"
+msgstr "Geldnotatie bij sluiting"
 
 #: includes/Services/Receipt_Data_Schema.php:1470
 msgid "Currency Position"
@@ -3281,11 +3283,11 @@ msgstr "Gebruikers-ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1537
 msgid "Actor Name"
-msgstr "Gebruikersnaam"
+msgstr "Naam gebruiker"
 
 #: includes/Services/Receipt_Data_Schema.php:1541
 msgid "Approver ID"
-msgstr "ID goedkeurder"
+msgstr "Goedkeurder-ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1545
 msgid "Approver Name"
@@ -3310,19 +3312,19 @@ msgstr "Correctiecijfers"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
 msgid "Late Sale Expected Delta by Tender"
-msgstr "Verschil in verwachte bedragen per betaalwijze door latere verkoop"
+msgstr "Verwacht verschil late verkoop per betaalwijze"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
-msgstr "Verkoopverschil door latere verkoop"
+msgstr "Verkoopverschil late verkoop"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
 msgid "Late Sale Refunds Delta"
-msgstr "Terugbetalingsverschil door latere verkoop"
+msgstr "Terugbetalingsverschil late verkoop"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
-msgstr "Kasverschil door latere mutatie"
+msgstr "Kasverschil late mutatie"
 
 #: includes/Services/Receipt_Data_Schema.php:1577
 msgid "Recount Counted by Tender"
@@ -3340,7 +3342,7 @@ msgstr "Geopend"
 
 #: includes/Services/Receipt_Data_Schema.php:1599
 msgid "Variance Label (Over / Short / Exact)"
-msgstr "Verschillabel (te veel / te weinig / exact)"
+msgstr "Verschillabel (te veel / tekort / exact)"
 
 #: includes/Services/Receipt_Data_Schema.php:1603
 msgid "Tender Title"
@@ -3352,11 +3354,11 @@ msgstr "Niet-nulverschil"
 
 #: includes/Services/Receipt_Data_Schema.php:1611
 msgid "Absolute Variance (Formatted)"
-msgstr "Absoluut verschil (geformatteerd)"
+msgstr "Absoluut verschil (opgemaakt)"
 
 #: includes/Services/Receipt_Data_Schema.php:1615
 msgid "Tender Key"
-msgstr "Betaalwijze-key"
+msgstr "Sleutel betaalwijze"
 
 #: includes/Services/Receipt_Data_Schema.php:1617
 #: includes/Services/Receipt_I18n_Labels.php:59
@@ -3418,7 +3420,7 @@ msgstr "Status"
 
 #: includes/Services/Receipt_Data_Schema.php:1703
 msgid "Total (raw)"
-msgstr "Totaal (ruw)"
+msgstr "Totaal (ruwe waarde)"
 
 #. translators: Receipt payment-section heading for amounts already paid by the customer.
 #: includes/Services/Receipt_Data_Schema.php:1707
@@ -3429,7 +3431,7 @@ msgstr "Betaald"
 
 #: includes/Services/Receipt_Data_Schema.php:1711
 msgid "Paid (raw)"
-msgstr "Betaald (ruw)"
+msgstr "Betaald (ruwe waarde)"
 
 #: includes/Services/Receipt_Data_Schema.php:1715
 msgid "Due"
@@ -3437,12 +3439,12 @@ msgstr "Te betalen"
 
 #: includes/Services/Receipt_Data_Schema.php:1719
 msgid "Due (raw)"
-msgstr "Te betalen (ruw)"
+msgstr "Te betalen (ruwe waarde)"
 
 #: includes/Services/Receipt_Data_Schema.php:1727
 #: includes/Services/Receipt_Data_Schema.php:1773
 msgid "Change (raw)"
-msgstr "Wisselgeld (ruw)"
+msgstr "Wisselgeld (ruwe waarde)"
 
 #: includes/Services/Receipt_Data_Schema.php:1732
 msgid "Ledger payments"
@@ -3459,23 +3461,23 @@ msgstr "Methode"
 
 #: includes/Services/Receipt_Data_Schema.php:1745
 msgid "Kind"
-msgstr "Soort"
+msgstr "Type"
 
 #: includes/Services/Receipt_Data_Schema.php:1757
 msgid "Amount (raw)"
-msgstr "Bedrag (ruw)"
+msgstr "Bedrag (ruwe waarde)"
 
 #: includes/Services/Receipt_Data_Schema.php:1765
 msgid "Tendered (raw)"
-msgstr "Aangeboden (ruw)"
+msgstr "Ontvangen (ruwe waarde)"
 
 #: includes/Services/Receipt_Data_Schema.php:1778
 msgid "Assets"
-msgstr "Bestanden"
+msgstr "Middelen"
 
 #: includes/Services/Receipt_Data_Schema.php:1782
 msgid "Plugin image folder URL (example pictures)"
-msgstr "URL van afbeeldingsmap van plugin (voorbeeldafbeeldingen)"
+msgstr "URL van map met plug-inafbeeldingen (voorbeeldafbeeldingen)"
 
 #: includes/Services/Receipt_Data_Schema.php:1787
 msgid "Payment"
@@ -3591,7 +3593,7 @@ msgstr "Jaar"
 
 #: includes/Services/Receipt_Data_Schema.php:1919
 msgid "Key"
-msgstr "Key"
+msgstr "Sleutel"
 
 #: includes/Services/Receipt_Data_Schema.php:1929
 msgid "Cells"
@@ -3686,7 +3688,7 @@ msgstr "Is gedeeltelijk"
 
 #: includes/Services/Receipt_Data_Schema.php:2069
 msgid "Partial Reason"
-msgstr "Reden voor onvolledigheid"
+msgstr "Reden voor gedeeltelijke weergave"
 
 #: includes/Services/Receipt_Data_Schema.php:2075
 msgid "Is Report Document"
@@ -3705,7 +3707,7 @@ msgstr "Goedkeurder"
 #: includes/Services/Receipt_I18n_Labels.php:49
 #: templates/closure.php:75
 msgid "Opening float"
-msgstr "Openingssaldo"
+msgstr "Openingsbedrag"
 
 #: includes/Services/Receipt_I18n_Labels.php:55
 #: includes/Services/Reports_Registry.php:220
@@ -3741,7 +3743,7 @@ msgstr "Belastingtarief"
 
 #: includes/Services/Receipt_I18n_Labels.php:70
 msgid "Perpetual totals"
-msgstr "Cumulatieve totalen"
+msgstr "Totalen cumulatief"
 
 #: includes/Services/Receipt_I18n_Labels.php:71
 #: templates/closure.php:124
@@ -3763,7 +3765,7 @@ msgstr "Tekort"
 
 #: includes/Services/Receipt_I18n_Labels.php:75
 msgid "Over"
-msgstr "Overschot"
+msgstr "Te veel"
 
 #: includes/Services/Receipt_I18n_Labels.php:76
 msgid "Exact"
@@ -4416,22 +4418,22 @@ msgstr "Welkom"
 #. translators: Customer-facing display label used before the first name, as in "Hi {first name}!".
 #: includes/Services/Receipt_I18n_Labels.php:293
 msgid "Hi"
-msgstr "Hallo"
+msgstr "Hoi"
 
 #. translators: Customer-facing display label heading the item list.
 #: includes/Services/Receipt_I18n_Labels.php:297
 msgid "Your items"
-msgstr "Uw artikelen"
+msgstr "Je artikelen"
 
 #. translators: Customer-facing display label for an empty item list.
 #: includes/Services/Receipt_I18n_Labels.php:301
 msgid "Your items will appear here"
-msgstr "Uw artikelen verschijnen hier"
+msgstr "Je artikelen verschijnen hier"
 
 #. translators: Customer-facing display label before the savings amount, as in "You saved $15.00".
 #: includes/Services/Receipt_I18n_Labels.php:305
 msgid "You saved"
-msgstr "U hebt bespaard"
+msgstr "Je hebt bespaard"
 
 #. translators: Customer-facing display label for the amount already paid.
 #: includes/Services/Receipt_I18n_Labels.php:309
@@ -4441,7 +4443,7 @@ msgstr "Tot nu toe betaald"
 #. translators: Customer-facing display label prompting card presentation.
 #: includes/Services/Receipt_I18n_Labels.php:313
 msgid "Please present your card"
-msgstr "Bied uw kaart aan"
+msgstr "Houd je kaart voor de lezer"
 
 #. translators: Customer-facing display label for an approved payment.
 #: includes/Services/Receipt_I18n_Labels.php:317
@@ -4456,7 +4458,7 @@ msgstr "Geweigerd"
 #. translators: Customer-facing display label after a declined payment.
 #: includes/Services/Receipt_I18n_Labels.php:325
 msgid "Please try another card or ask staff"
-msgstr "Probeer een andere kaart of vraag een medewerker"
+msgstr "Probeer een andere kaart of vraag een medewerker om hulp"
 
 #. translators: Customer-facing display label confirming full payment.
 #: includes/Services/Receipt_I18n_Labels.php:329
@@ -4566,7 +4568,7 @@ msgstr ""
 
 #: includes/Services/Register_Session_Store.php:323
 msgid "Manager approval is required to close this session."
-msgstr "Goedkeuring van een manager is vereist om deze sessie te sluiten."
+msgstr "Goedkeuring door een manager is vereist om deze sessie af te sluiten."
 
 #: includes/Services/Reports_Registry.php:191
 #: includes/Services/Reports_Registry.php:253
@@ -4613,24 +4615,25 @@ msgstr "report.column_count moet gelijk zijn aan het aantal kolommen."
 #: includes/Services/Report_Document_Validator.php:48
 #, php-format
 msgid "%s must match the column keys in order."
-msgstr "%s moet overeenkomen met de kolomkeys in de juiste volgorde."
+msgstr "%s moet overeenkomen met de kolomsleutels, in de juiste volgorde."
 
 #: includes/Services/Report_Scope_Gate.php:30
 msgid "The end day must not precede the start day."
-msgstr "De einddag mag niet vóór de begindag liggen."
+msgstr "De einddag mag niet vóór de begindag vallen."
 
 #: includes/Services/Report_Scope_Gate.php:33
 msgid "This range is beyond the report history limit."
-msgstr "Dit bereik overschrijdt de rapportagegeschiedenislimiet."
+msgstr "Deze periode valt buiten de rapportgeschiedenislimiet."
 
 #: includes/Services/Report_Scope_Gate.php:38
 msgid "Reports across all registers require WCPOS Pro. Select this register."
-msgstr "Rapporten over alle kassa's vereisen WCPOS Pro. Selecteer deze kassa."
+msgstr ""
+"Voor rapporten over alle kassa's is WCPOS Pro vereist. Selecteer deze kassa."
 
 #: includes/Services/Report_Scope_Gate.php:42
 msgid "Reports for earlier days or days other than today require WCPOS Pro."
 msgstr ""
-"Rapporten over eerdere dagen of andere dagen dan vandaag vereisen WCPOS Pro."
+"Voor rapporten over eerdere dagen of andere dagen dan vandaag is WCPOS Pro vereist."
 
 #: includes/Services/Report_Scope_Resolver.php:39
 msgid "Session not found."
@@ -4642,11 +4645,11 @@ msgstr "Dit rapport wordt uitgevoerd voor een gesloten sessie."
 
 #: includes/Services/Report_Scope_Resolver.php:50
 msgid "The closed session must have a linked closure."
-msgstr "De gesloten sessie moet aan een afsluiting zijn gekoppeld."
+msgstr "Aan de gesloten sessie moet een kassasluiting zijn gekoppeld."
 
 #: includes/Services/Report_Scope_Resolver.php:233
 msgid "The session, register and store must describe the same scope."
-msgstr "Sessie, kassa en winkel moeten hetzelfde bereik beschrijven."
+msgstr "De sessie, kassa en winkel moeten hetzelfde bereik beschrijven."
 
 #. translators: 1. %s: Settings group id, 2. %s: Settings key.
 #: includes/Services/Settings.php:149
@@ -5028,7 +5031,7 @@ msgstr "Rapportsjabloon #%d"
 #: includes/Templates.php:435
 #, php-format
 msgid "Display Template #%d"
-msgstr "Schermsjabloon #%d"
+msgstr "Weergavesjabloon #%d"
 
 #. translators: 1: thermal paper width, 2: template post ID.
 #: includes/Templates.php:441
@@ -5062,7 +5065,7 @@ msgstr "Kassabon-sjabloon #%d"
 
 #: includes/Templates.php:570
 msgid "Theme Display"
-msgstr "Themascherm"
+msgstr "Themaweergave"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:570
@@ -5071,7 +5074,7 @@ msgstr "Thema bon template"
 
 #: includes/Templates.php:575
 msgid "Pro Display"
-msgstr "Pro-scherm"
+msgstr "Pro-weergave"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:575
@@ -5080,7 +5083,7 @@ msgstr "Pro bon template"
 
 #: includes/Templates.php:580
 msgid "Core Display"
-msgstr "Basisscherm"
+msgstr "Basisweergave"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:580
@@ -5135,7 +5138,7 @@ msgstr "Rapport templates voor analyses"
 
 #: includes/Templates.php:1504
 msgid "Customer-facing display templates"
-msgstr "Sjablonen voor klantenschermen"
+msgstr "Sjablonen voor klantenscherm"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:1521
@@ -5230,7 +5233,7 @@ msgstr "Zakformaat"
 msgid ""
 "Customer display for small screens: a docked running total, the newest item on top, full-screen payment states. For a phone on a stand."
 msgstr ""
-"Klantenscherm voor kleine schermen: een vastgezet doorlopend totaal, het nieuwste artikel bovenaan en betaalstatussen op volledig scherm. Voor een telefoon op een standaard."
+"Klantenscherm voor kleine schermen: vastgezet lopend totaal, nieuwste artikel bovenaan en betaalstatus op volledig scherm. Voor een telefoon op een standaard."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:70
@@ -5242,14 +5245,14 @@ msgstr "Marquee"
 msgid ""
 "Customer display for large screens: brand column with greeting and promo space, the just-added item as a hero, big totals. For a monitor or wide tablet."
 msgstr ""
-"Klantenscherm voor grote schermen: merkkolom met begroeting en ruimte voor promoties, het laatst toegevoegde artikel prominent en grote totalen. Voor een monitor of brede tablet."
+"Klantenscherm voor grote schermen: kolom met merk, begroeting en promotieruimte, het zojuist toegevoegde artikel prominent in beeld en grote totalen. Voor een monitor of brede tablet."
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:93
 msgid ""
 "The responsive default: itemised list with a totals panel on wide screens, a docked total on narrow ones. Install it to customise."
 msgstr ""
-"De responsieve standaard: artikelenlijst met een totalenpaneel op brede schermen en een vastgezet totaal op smalle schermen. Installeer dit om het aan te passen."
+"De responsieve standaardweergave: artikellijst met totalenpaneel op brede schermen en vastgezet totaal op smalle schermen. Installeer deze om aan te passen."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:106
@@ -5261,7 +5264,7 @@ msgstr "Carrousel"
 msgid ""
 "Rotate your own pictures between sales. Swap the three image links for yours and edit the captions; a small version keeps cycling under the totals."
 msgstr ""
-"Laat uw eigen afbeeldingen tussen verkopen rouleren. Vervang de drie afbeeldingslinks en pas de bijschriften aan; onder de totalen blijft een kleine versie rouleren."
+"Toon je eigen afbeeldingen afwisselend tussen verkopen. Vervang de drie afbeeldingslinks en bijschriften; onder de totalen blijft een kleine versie rouleren."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:122
@@ -5273,19 +5276,19 @@ msgstr "Aanbiedingenbord"
 msgid ""
 "A short list of featured items and prices for the idle screen, with an \"ask about today's specials\" line on the order screens. Edit the four lines."
 msgstr ""
-"Een korte lijst met uitgelichte artikelen en prijzen voor het inactieve scherm, met de regel ‘vraag naar de aanbiedingen van vandaag’ op bestelschermen. Bewerk de vier regels."
+"Een korte lijst met uitgelichte artikelen en prijzen voor het inactieve scherm, met de tekst ‘vraag naar de aanbiedingen van vandaag’ op de bestelpagina's. Bewerk de vier regels."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:138
 msgid "Follow & review"
-msgstr "Volgen en beoordelen"
+msgstr "Volg ons en schrijf een beoordeling"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:140
 msgid ""
 "Your social handle and a QR code between sales; paste in your own QR image. Adds your handle to the order screens."
 msgstr ""
-"Uw socialmedia-gebruikersnaam en een QR-code tussen verkopen; voeg uw eigen QR-afbeelding toe. Uw gebruikersnaam verschijnt ook op de bestelschermen."
+"Je accountnaam op sociale media en een QR-code tussen verkopen; voeg je eigen QR-afbeelding toe. Je accountnaam verschijnt ook op de bestelpagina's."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:154
@@ -5297,19 +5300,19 @@ msgstr "Fijne feestdagen"
 msgid ""
 "The Ledger with a festive idle screen for the December–January window; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
 msgstr ""
-"The Ledger met een feestelijk inactief scherm voor december en januari; het thema voegt een subtiel accent en begroeting toe aan de bestelschermen. Pas de begroeting aan."
+"The Ledger met een feestelijk inactief scherm voor december en januari; het thema voegt een subtiel accent en begroeting toe aan de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:170
 msgid "Lunar New Year"
-msgstr "Lunair nieuwjaar"
+msgstr "Nieuwjaar volgens de maankalender"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:172
 msgid ""
 "The Ledger with a red-and-gold idle screen wishing customers good fortune; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
 msgstr ""
-"The Ledger met een rood-gouden inactief scherm dat klanten voorspoed wenst; het thema voegt een subtiel accent en begroeting toe aan de bestelschermen. Pas de begroeting aan."
+"The Ledger met een rood-gouden inactief scherm dat klanten voorspoed wenst; het thema voegt een subtiel accent en begroeting toe aan de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:186
@@ -5321,19 +5324,19 @@ msgstr "Eid Mubarak"
 msgid ""
 "The Ledger with a night-blue-and-gold idle screen for Ramadan and Eid al-Fitr; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
 msgstr ""
-"The Ledger met een nachtblauw-gouden inactief scherm voor ramadan en Eid al-Fitr; het thema voegt een subtiel accent en begroeting toe aan de bestelschermen. Pas de begroeting aan."
+"The Ledger met een nachtblauw-gouden inactief scherm voor ramadan en Eid al-Fitr; het thema voegt een subtiel accent en begroeting toe aan de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:202
 msgid "Diwali"
-msgstr "Diwali"
+msgstr "Divali"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:204
 msgid ""
 "The Ledger with a warm idle screen of lights; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
 msgstr ""
-"The Ledger met een warm inactief scherm vol lichtjes; het thema voegt een subtiel accent en begroeting toe aan de bestelschermen. Pas de begroeting aan."
+"The Ledger met een warm inactief scherm vol lichtjes; het thema voegt een subtiel accent en begroeting toe aan de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:218
@@ -5345,7 +5348,7 @@ msgstr "Valentijnsdag"
 msgid ""
 "A love letter with a wax seal on a blush ground; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting."
 msgstr ""
-"Een liefdesbrief met lakzegel op een zachtroze achtergrond; het thema voegt een subtiel accent en begroeting toe aan de bestelschermen. Pas de begroeting aan."
+"Een liefdesbrief met lakzegel op een zachtroze achtergrond; het thema voegt een subtiel accent en begroeting toe aan de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:234
@@ -5357,7 +5360,7 @@ msgstr "Moederdag"
 msgid ""
 "A ring of petals around the greeting, with a soft accent on the order screens. Edit the greeting."
 msgstr ""
-"Een krans van bloemblaadjes rond de begroeting, met een subtiel accent op de bestelschermen. Pas de begroeting aan."
+"Een krans van bloemblaadjes rond de begroeting, met een subtiel accent op de bestelpagina's. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:250
@@ -5367,7 +5370,8 @@ msgstr "Vaderdag"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:252
 msgid "A workshop card between plaid bands. Edit the greeting."
-msgstr "Een werkplaatskaart tussen geruite stroken. Pas de begroeting aan."
+msgstr ""
+"Een kaart met werkplaatsmotief tussen geruite banen. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:266
@@ -5378,7 +5382,7 @@ msgstr "Pasen"
 #: includes/Templates/Gallery_Registry.php:268
 msgid "A row of patterned eggs on a spring gradient. Edit the greeting."
 msgstr ""
-"Een rij eieren met patronen tegen een lentekleurverloop. Pas de begroeting aan."
+"Een rij eieren met patronen op een lentekleurverloop. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:282
@@ -5389,7 +5393,7 @@ msgstr "Halloween"
 #: includes/Templates/Gallery_Registry.php:284
 msgid "An orange moon, bats and jagged grass. Edit the greeting."
 msgstr ""
-"Een oranje maan, vleermuizen en gekarteld gras. Pas de begroeting aan."
+"Een oranje maan, vleermuizen en grillige grassprieten. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:298
@@ -5399,7 +5403,7 @@ msgstr "Thanksgiving"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:300
 msgid "A harvest wreath of leaves. Edit the greeting."
-msgstr "Een oogstkrans van bladeren. Pas de begroeting aan."
+msgstr "Een krans van oogstbladeren. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:314
@@ -5419,7 +5423,7 @@ msgstr "Nieuwjaar"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:332
 msgid "Confetti and a gold burst. Edit the greeting."
-msgstr "Confetti en een gouden vuurwerkflits. Pas de begroeting aan."
+msgstr "Confetti en een gouden vuurwerkexplosie. Pas de begroeting aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:346
@@ -5441,7 +5445,7 @@ msgstr "Uitverkoop"
 msgid ""
 "The Ledger with a promotional idle screen: a headline and an offer line you edit for each promotion."
 msgstr ""
-"The Ledger met een promotiescherm: een kop en aanbiedingsregel die u voor elke actie aanpast."
+"The Ledger met een promotioneel inactief scherm: een kop en een aanbiedingsregel die je per promotie aanpast."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:378
@@ -5453,7 +5457,7 @@ msgstr "Black Friday"
 msgid ""
 "Blackout with a deals ticker, and the offer line repeated on the order screens. Edit the offer."
 msgstr ""
-"Blackout met een lopende aanbiedingenticker en dezelfde aanbiedingsregel op de bestelschermen. Pas de aanbieding aan."
+"Blackout met een lopende aanbiedingenbalk en dezelfde aanbieding op de bestelpagina's. Pas de aanbieding aan."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:394
@@ -5628,11 +5632,11 @@ msgstr "Thermisch rapport"
 #: includes/Templates/Gallery_Registry.php:623
 msgid "Closure and X-report with tender counts, cash movements and totals."
 msgstr ""
-"Afsluiting en X-rapport met aantallen per betaalwijze, kasmutaties en totalen."
+"Kassasluiting en X-rapport met aantallen per betaalwijze, kasmutaties en totalen."
 
 #: includes/Templates/Gallery_Registry.php:622
 msgid "Thermal Closure"
-msgstr "Thermische afsluiting"
+msgstr "Thermische kassasluiting"
 
 #: includes/Templates/Payment.php:176
 msgid ""
@@ -5822,13 +5826,13 @@ msgstr ""
 #: templates/closure.php:21
 #, php-format
 msgid "Closure %s"
-msgstr "Afsluiting %s"
+msgstr "Kassasluiting %s"
 
 #. translators: 1: unsynced sales count, 2: total.
 #: templates/closure.php:134
 #, php-format
 msgid "%1$s sales not yet on the server · %2$s"
-msgstr "%1$s verkopen nog niet op de server · %2$s"
+msgstr "%1$s verkopen staan nog niet op de server · %2$s"
 
 #. translators: Document title shown for the POS page.
 #: templates/pos.php:14
