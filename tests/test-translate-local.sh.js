@@ -40,7 +40,7 @@ try {
   fs.writeFileSync(path.join(wt, 'scripts/translate-prompt.md'), 'TRANSLATE\n');
   fs.writeFileSync(path.join(wt, 'scripts/review-prompt.md'), 'REVIEW\n');
   // Only redirect command lookup and shorten the timeout in this isolated copy.
-  fs.writeFileSync(copy, source.replace(/^PATH=.*$/m, 'PATH=' + JSON.stringify(bin) + ':$PATH').replace('CALL_TIMEOUT=1800', 'CALL_TIMEOUT=1'));
+  fs.writeFileSync(copy, source.replace(/^PATH=.*$/m, 'PATH=' + JSON.stringify(bin) + ':$PATH').replace('CALL_TIMEOUT=1800', 'CALL_TIMEOUT=10'));
   const stub = String.raw`#!@NODE@
 const fs = require('node:fs'), path = require('node:path'), cp = require('node:child_process');
 const root = path.dirname(__dirname), tool = path.basename(process.argv[1]), args = process.argv.slice(2);
