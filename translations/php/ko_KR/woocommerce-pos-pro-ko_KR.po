@@ -291,6 +291,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro를 사용하려면 최신 버전의 WCPOS 플러그인(버전 관리 REST API)이 필요합니다. 번들 종속성이 업데이트될 때까지 Pro REST 확장 기능이 비활성화됩니다."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "사용 가능한 디스플레이 템플릿이 없습니다."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "알 수 없는 디스플레이입니다."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "신호가 이 장치에 속하지 않습니다."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "유효하지 않은 신호 피어입니다."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "해당 역할의 신호를 읽을 수 없습니다."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "이 매장에 대한 권한이 없습니다."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "플러그인을 관리할 권한이 없습니다."
@@ -353,6 +378,15 @@ msgstr "상점을 찾을 수 없습니다."
 msgid "Failed to trash store."
 msgstr "상점을 휴지통으로 이동하지 못했습니다."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "유효하지 않은 웹훅 제공업체입니다."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "결제 수단을 찾을 수 없습니다."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -365,6 +399,17 @@ msgstr "이 멱등성 키를 사용하는 요청이 이미 처리 중입니다."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "멱등성 키가 다른 요청에 재사용되었습니다."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "이 결제 제공업체는 해당 작업을 지원하지 않습니다."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "제공업체가 이 결제를 확인하지 못했습니다."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -385,6 +430,48 @@ msgstr "원래 결제 게이트웨이는 환불에 사용할 수 없습니다."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "환불 처리기가 유효하지 않은 결과를 반환했습니다."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "리더를 선택하십시오."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "이 리더는 허용되지 않습니다."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "이 리더를 사용할 수 없습니다."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "제공업체가 이 결제를 매입하지 못했습니다: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "계산대"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "대상 매장은 게시된 매장이어야 합니다."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "다른 매장으로 이동하기 전에 계산대 세션을 종료하십시오."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "페어링 시도 횟수가 너무 많습니다."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "페어링 코드가 유효하지 않거나 만료되었습니다."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "디스플레이 인증 정보가 유효하지 않습니다."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -432,15 +519,76 @@ msgid ""
 msgstr ""
 "이 상품은 매장별 가격을 사용하므로 가격 또는 세금이 변경되면 어느 매장에 해당하는지 지정해야 합니다. POS가 매장을 전송하지 않았습니다. 금전 등록기를 해당 매장에 다시 연결한 후 다시 시도하세요."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "POS에 연결하는 중…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"이 디스플레이가 이 네트워크에서 POS에 연결할 수 없습니다. 두 장치가 같은 Wi-Fi에 연결되어야 합니다. 게스트 네트워크에서는 연결이 차단되는 경우가 많습니다."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "이 디스플레이가 제거되었습니다. 다시 페어링하십시오."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "고객용 디스플레이 템플릿이 설정되지 않았습니다."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "이 디스플레이 페어링"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "페어링 코드"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "디스플레이 이름"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "고객용 디스플레이"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "디스플레이 페어링"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "페어링 코드가 유효하지 않거나 만료되었습니다."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "시도 횟수가 너무 많습니다. 잠시 후 다시 시도하십시오."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "연결할 수 없습니다. 네트워크를 확인하고 다시 시도하십시오."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "다시 연결하는 중…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s을(를) 사용하려면 WCPOS Pro %2$s 이상이 필요합니다."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro 로드에 실패했습니다. composer install을 실행하세요."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

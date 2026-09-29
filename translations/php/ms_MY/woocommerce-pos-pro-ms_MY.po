@@ -293,6 +293,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro memerlukan versi pemalam WCPOS yang lebih baharu (REST API berversi). Sambungan REST Pro dilumpuhkan sehingga kebergantungan yang disertakan dikemas kini."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Templat paparan tidak tersedia."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Paparan tidak diketahui."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Isyarat bukan daripada peranti ini."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Rakan isyarat tidak sah."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Tidak dapat membaca isyarat untuk peranan itu."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Anda tidak dibenarkan mengakses kedai ini."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Anda tidak mempunyai kebenaran untuk menguruskan plugin."
@@ -355,6 +380,15 @@ msgstr "Kedai tidak ditemui."
 msgid "Failed to trash store."
 msgstr "Gagal membuang kedai."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Penyedia webhook tidak sah."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Kaedah pembayaran tidak ditemukan."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -368,6 +402,17 @@ msgstr "Permintaan dengan kunci idempotensi ini sedang diproses."
 msgid "Idempotency key was reused with a different request."
 msgstr ""
 "Kunci idempotensi telah digunakan semula dengan permintaan yang berbeza."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Penyedia pembayaran ini tidak menyokong operasi itu."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Penyedia tidak dapat mengesahkan pembayaran ini."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -389,6 +434,48 @@ msgstr "Gateway pembayaran asal tidak tersedia untuk bayaran balik."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Penyelesai bayaran balik mengembalikan hasil yang tidak sah."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Pilih pembaca."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Pembaca ini tidak dibenarkan."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Pembaca ini tidak tersedia."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Penyedia tidak dapat menerima pembayaran ini: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Daftar tunai"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Kedai sasaran mestilah kedai yang diterbitkan."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Tutup sesi daftar tunai sebelum memindahkannya ke kedai lain."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Terlalu banyak percubaan untuk dipasangkan."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Kod pasangan tidak sah atau telah tamat tempoh."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Kelayakan paparan tidak sah."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -436,15 +523,76 @@ msgid ""
 msgstr ""
 "Produk ini menggunakan harga khusus kedai, jadi perubahan harga atau cukai mesti menyatakan kedai yang berkenaan. POS tidak menghantar maklumat kedai — sambungkan semula terminal POS ke kedainya dan cuba lagi."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Menyambung ke tempat jualan…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Paparan ini tidak dapat mencapai POS melalui rangkaian ini. Kedua-dua peranti mesti menggunakan Wi-Fi yang sama; rangkaian tetamu sering menyekat sambungan ini."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Paparan ini telah dialih keluar. Pasangkannya semula."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Tiada templat paparan pelanggan dikonfigurasikan."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Pasangkan paparan ini"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Kod pasangan"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Nama paparan"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Paparan pelanggan"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Pasangkan paparan"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Kod pasangan itu tidak sah atau telah tamat tempoh."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Terlalu banyak percubaan. Cuba lagi sebentar lagi."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Tidak dapat menyambung. Semak rangkaian dan cuba lagi."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Menyambung semula…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s memerlukan WCPOS Pro %2$s atau lebih baharu."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro gagal dimuatkan. Sila jalankan pemasangan composer."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

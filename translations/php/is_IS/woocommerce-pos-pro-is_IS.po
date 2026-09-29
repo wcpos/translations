@@ -293,6 +293,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro krefst nýrri útgáfu af WCPOS-viðbótinni (útgáfustýrt REST API). REST-viðbætur Pro eru óvirkar þar til nauðsynleg viðbót hefur verið uppfærð."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Ekkert birtingarsniðmát er tiltækt."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Óþekktur skjár."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Merkið tilheyrir ekki þessu tæki."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Ógildur merkjasendandi."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Ekki er hægt að lesa merki fyrir þetta hlutverk."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Þú hefur ekki heimild fyrir þessari verslun."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Þú hefur ekki heimild til að stjórna viðbótum."
@@ -355,6 +380,15 @@ msgstr "Verslun fannst ekki."
 msgid "Failed to trash store."
 msgstr "Mistókst að eyða verslun."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Ógildur vefkrókaveitandi."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Greiðslumátinn fannst ekki."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -367,6 +401,17 @@ msgstr "Beiðni með þessum idempotency-lykli er þegar í vinnslu."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotency-lykill var endurnýttur með annarri beiðni."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Þessi greiðsluþjónusta styður ekki þá aðgerð."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Greiðsluþjónustan gat ekki staðfest þessa greiðslu."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -388,6 +433,48 @@ msgstr "Upprunalega greiðsluleiðin er ekki tiltæk fyrir endurgreiðslur."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Endurgreiðsluleysirinn skilaði ógildri niðurstöðu."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Veldu kortalesara."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Þessi kortalesari er ekki leyfður."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Þessi kortalesari er ekki tiltækur."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Greiðsluþjónustan gat ekki innheimt þessa greiðslu: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Kassi"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Markverslunin verður að vera birt."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Lokaðu kassalotunni áður en hún er færð í aðra verslun."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Of margar pörunartilraunir."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Pörunarkóðinn er ógildur eða útrunninn."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Ógild innskráningargögn skjás."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -435,15 +522,76 @@ msgid ""
 msgstr ""
 "Þessi vara notar verslunarsértækt verð, þannig að þegar verði eða skatti er breytt verður að tilgreina fyrir hvaða verslun breytingin er. POS-kerfið sendi ekki verslun — tengdu kassann aftur við sína verslun og reyndu svo aftur."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Tengist afgreiðslukassanum…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Þessi skjár nær ekki sambandi við POS á þessu neti. Bæði tæki verða að vera á sama Wi-Fi-neti; gestanet hindra þetta oft."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Þessi skjár var fjarlægður. Paraðu hann aftur."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Ekkert sniðmát fyrir viðskiptavinaskjá er stillt."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Paraðu þennan skjá"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Pörunarkóði"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Heiti skjás"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Viðskiptavinaskjár"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Para skjá"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Pörunarkóðinn er ógildur eða útrunninn."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Of margar tilraunir. Reyndu aftur eftir smástund."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Ekki tókst að tengjast. Athugaðu netið og reyndu aftur."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Tengist aftur…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s krefst WCPOS Pro %2$s eða nýrra."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "Ekki tókst að hlaða WCPOS Pro. Vinsamlegast keyrðu composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

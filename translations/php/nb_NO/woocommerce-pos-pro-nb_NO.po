@@ -293,6 +293,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro krever en nyere versjon av WCPOS-pluginet (versjonert REST API). Pro REST-utvidelser er deaktivert til den medfølgende avhengigheten er oppdatert."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Ingen visningsmal er tilgjengelig."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Ukjent visning."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Signalet tilhører ikke denne enheten."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Ugyldig signalmotpart."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Kan ikke lese signaler for denne rollen."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Du har ikke tilgang til denne butikken."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Du har ikke tillatelse til å administrere plugins."
@@ -355,6 +380,15 @@ msgstr "Butikk ikke funnet."
 msgid "Failed to trash store."
 msgstr "Kunne ikke slette butikken."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Ugyldig webhook-leverandør."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Betalingsmetode ikke funnet."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -368,6 +402,17 @@ msgstr ""
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotensnøkkelen ble gjenbrukt med en annen forespørsel."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Denne betalingsleverandøren støtter ikke denne operasjonen."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Leverandøren kunne ikke bekrefte denne betalingen."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -390,6 +435,48 @@ msgstr ""
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Refusjonsløseren returnerte et ugyldig resultat."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Velg en kortleser."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Denne kortleseren er ikke tillatt."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Denne kortleseren er utilgjengelig."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Leverandøren kunne ikke trekke beløpet for denne betalingen: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Kasse"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Målbutikken må være publisert."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Lukk kassesesjonen før du flytter den til en annen butikk."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "For mange forsøk på sammenkobling."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Ugyldig eller utløpt sammenkoblingskode."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Ugyldig påloggingsinformasjon for skjermen."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -437,15 +524,76 @@ msgid ""
 msgstr ""
 "Dette produktet bruker butikkspesifikk prissetting, så en pris- eller skatteendring må angi hvilken butikk den gjelder. POS-systemet sendte ikke med noen butikk – koble kassen til butikken på nytt, og prøv igjen."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Kobler til kassasystemet …"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Denne skjermen får ikke kontakt med kassen på dette nettverket. Begge enhetene må være på samme Wi-Fi-nettverk; gjestenettverk blokkerer ofte slik trafikk."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Denne skjermen ble fjernet. Koble den sammen på nytt."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Ingen kundeskjermmal er konfigurert."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Koble til denne skjermen"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Sammenkoblingskode"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Skjermnavn"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Kundeskjerm"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Koble til skjerm"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Sammenkoblingskoden er ugyldig eller utløpt."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "For mange forsøk. Prøv igjen om litt."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Kunne ikke koble til. Kontroller nettverket og prøv igjen."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Kobler til på nytt …"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s krever WCPOS Pro %2$s eller nyere."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro kunne ikke lastes. Vennligst kjør composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
