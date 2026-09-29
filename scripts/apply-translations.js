@@ -8,13 +8,28 @@ const {
   mergePoEntries, buildPoEntryKey, generateL10nPhp,
 } = require('./po-file');
 
-function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, resultsDir }) {
+function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, resultsDir, partsDir }) {
   const report = {
     applied: 0, rejected: [], warnings: [], source_warnings: [],
     missing_results: [], unexpected: 0, files_written: [],
   };
   const seenSources = new Set();
   const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+  // Parse a results file; null when it is not a valid results object for this locale.
+  const readResults = (file, locale) => {
+    let results;
+    try {
+      results = JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch (error) {
+      if (!(error instanceof SyntaxError)) throw error;
+    }
+    if (isObject(results)) {
+      if (!Object.hasOwn(results, 'js')) results.js = {};
+      if (!Object.hasOwn(results, 'php')) results.php = {};
+    }
+    return !isObject(results) || results.locale !== locale || !isObject(results.js)
+      || !isObject(results.php) || !Object.values(results.js).every(isObject) ? null : results;
+  };
   for (const packetFile of fs.readdirSync(workDir).filter(file => file.endsWith('.json')).sort()) {
     const packet = JSON.parse(fs.readFileSync(path.join(workDir, packetFile), 'utf8'));
     const { locale } = packet;
@@ -35,27 +50,60 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
         if (warnings.length) report.source_warnings.push({ file, key, warnings });
       }
     }
-    const resultsPath = path.join(resultsDir, `${locale}.json`);
-    if (!fs.existsSync(resultsPath)) {
-      report.missing_results.push(locale);
-      continue;
-    }
+    const partNames = partsDir && fs.existsSync(partsDir) ? fs.readdirSync(partsDir)
+      .filter(file => file.startsWith(`${locale}.part`) && file.endsWith('.json')
+        && /^\d+$/.test(file.slice(locale.length + 5, -5)))
+      .map(file => file.slice(0, -5)).sort((a, b) => Number(a.slice(locale.length + 5)) - Number(b.slice(locale.length + 5))) : [];
     let results;
-    try {
-      results = JSON.parse(fs.readFileSync(resultsPath, 'utf8'));
-    } catch (error) {
-      if (!(error instanceof SyntaxError)) throw error;
-    }
-    if (isObject(results)) {
-      if (!Object.hasOwn(results, 'js')) results.js = {};
-      if (!Object.hasOwn(results, 'php')) results.php = {};
-    }
-    if (!isObject(results) || results.locale !== locale || !isObject(results.js)
-        || !isObject(results.php) || !Object.values(results.js).every(isObject)) {
-      for (const { file, key } of items) {
-        report.rejected.push({ locale, file, key, reasons: ['invalid results file'] });
+    if (partNames.length) {
+      // Split locale: build the results from the part results, each part limited to its own keys and ids.
+      results = { locale, js: {}, php: {} };
+      let found = false;
+      for (const name of partNames) {
+        const partPath = path.join(resultsDir, `${name}.json`);
+        if (!fs.existsSync(partPath)) continue;
+        found = true;
+        const part = JSON.parse(fs.readFileSync(path.join(partsDir, `${name}.json`), 'utf8'));
+        const inPart = ({ js, file, key, entry }) => (js
+          ? Object.hasOwn(part.js, file) && Object.hasOwn(part.js[file], key)
+          : Object.hasOwn(part.php, file) && part.php[file].entries.some(({ id }) => id === entry.id));
+        const partResults = readResults(partPath, locale);
+        if (!partResults) {
+          for (const item of items.filter(inPart)) {
+            item.skip = true;
+            report.rejected.push({ locale, file: item.file, key: item.key, reasons: [`invalid results file (${name})`] });
+          }
+          continue;
+        }
+        const put = (target, key, value) => Object.defineProperty(target, key, { value, enumerable: true, writable: true, configurable: true });
+        for (const [file, entries] of Object.entries(partResults.js)) {
+          for (const [key, value] of Object.entries(entries)) {
+            if (inPart({ js: true, file, key })) put(results.js[file] ??= {}, key, value);
+            else report.unexpected++;
+          }
+        }
+        for (const [id, value] of Object.entries(partResults.php)) {
+          if (items.some(item => !item.js && item.entry.id === id && inPart(item))) put(results.php, id, value);
+          else report.unexpected++;
+        }
       }
-      continue;
+      if (!found) {
+        report.missing_results.push(locale);
+        continue;
+      }
+    } else {
+      const resultsPath = path.join(resultsDir, `${locale}.json`);
+      if (!fs.existsSync(resultsPath)) {
+        report.missing_results.push(locale);
+        continue;
+      }
+      results = readResults(resultsPath, locale);
+      if (!results) {
+        for (const { file, key } of items) {
+          report.rejected.push({ locale, file, key, reasons: ['invalid results file'] });
+        }
+        continue;
+      }
     }
     for (const [file, entries] of Object.entries(results.js)) {
       for (const key of Object.keys(entries)) {
@@ -65,6 +113,7 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
     const ids = new Set(items.filter(item => !item.js).map(item => item.entry.id));
     for (const id of Object.keys(results.php)) if (!ids.has(id)) report.unexpected++;
     for (const item of items) {
+      if (item.skip) continue;
       const { file, key, sources, forms, js, entry } = item;
       const values = js ? results.js[file] : results.php;
       const resultKey = js ? key : entry.id;
@@ -168,7 +217,7 @@ function markdownReport(report) {
 
 if (require.main === module) {
   const args = {};
-  const options = { '--work': 'workDir', '--results': 'resultsDir', '--root': 'rootDir', '--report': 'report', '--report-md': 'reportMd' };
+  const options = { '--work': 'workDir', '--results': 'resultsDir', '--parts': 'partsDir', '--root': 'rootDir', '--report': 'report', '--report-md': 'reportMd' };
   try {
     const argv = process.argv.slice(2);
     for (let i = 0; i < argv.length; i++) {

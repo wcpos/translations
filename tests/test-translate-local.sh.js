@@ -36,7 +36,7 @@ function run(config = {}, args = [], overrides = {}) {
 }
 try {
   for (const dir of [bin, path.join(wt, 'scripts')]) fs.mkdirSync(dir, { recursive: true });
-  fs.copyFileSync(path.resolve(__dirname, '../scripts/translate-chunks.js'), path.join(wt, 'scripts/translate-chunks.js'));
+  for (const script of ['translate-chunks.js', 'plural-rules.js']) fs.copyFileSync(path.resolve(__dirname, '../scripts', script), path.join(wt, 'scripts', script));
   fs.writeFileSync(path.join(wt, 'scripts/translate-prompt.md'), 'TRANSLATE\n');
   fs.writeFileSync(path.join(wt, 'scripts/review-prompt.md'), 'REVIEW\n');
   // Only redirect command lookup and shorten the timeout in this isolated copy.
@@ -75,7 +75,7 @@ if (tool === 'git') {
     });
     console.log(JSON.stringify({ total: counts.reduce((a, b) => a + b, 0), locales }));
   } else if (args[0].endsWith('apply-translations.js')) {
-    const locales = fs.readdirSync('.translate/results').filter(f => f.endsWith('.json') && !/\.part\d+\.json$/.test(f)).map(f => f.slice(0, -5));
+    const locales = [...new Set(fs.readdirSync('.translate/results').filter(f => f.endsWith('.json')).map(f => f.replace(/(\.part\d+)?\.json$/, '')))];
     const report = { applied: locales.length, files_written: locales.map(l => 'translations/js/' + l + '/app.json') };
     fs.writeFileSync('.translate/report.json', JSON.stringify(report));
     fs.writeFileSync('.translate/report.md', 'REPORT\n');
@@ -134,10 +134,19 @@ if (tool === 'git') {
   assert.ok(result.calls.filter(c => isCall(c, 'git', 'reset') || isCall(c, 'git', 'clean') || isCall(c, 'git', 'checkout')).every(c => c.cwd === wt));
   result = run({ counts: [2] }, ['--max-per-call', '1', '--no-review']);
   assert.equal(result.status, 0, result.stderr);
-  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(wt, '.translate/results/aa.json'), 'utf8')),
-    { locale: 'aa', js: { 'app/x.json': { k1: 'translated k1', k2: 'translated k2' } }, php: {} });
+  for (const n of [1, 2]) assert.ok(fs.existsSync(path.join(wt, `.translate/results/aa.part${n}.json`)));
+  assert.ok(!fs.existsSync(path.join(wt, '.translate/results/aa.json')));
+  const apply = result.calls.find(c => c.tool === 'node' && c.args[0].endsWith('apply-translations.js'));
+  assert.equal(apply.args[apply.args.indexOf('--parts') + 1], '.translate/parts');
   assert.equal(result.calls.filter(c => c.tool === 'prompt').length, 2);
   assert.ok(result.calls.filter(c => c.tool === 'prompt').every(c => [...c.prompt.matchAll(/^- \S+ ->/gm)].length === 1));
+  result = run({ counts: [2] }, ['--max-per-call', '1']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.deepEqual(result.calls.filter(c => c.tool === 'prompt' && c.prompt.startsWith('REVIEW')).map(c =>
+    [...c.prompt.matchAll(/^- (.+)$/gm)].map(m => m[1])), [
+    ['.translate/parts/aa.part1.json -> .translate/results/aa.part1.json'],
+    ['.translate/parts/aa.part2.json -> .translate/results/aa.part2.json'],
+  ]);
   const pr = { number: 42, headRefName: 'auto-translate/existing', url: 'https://example.test/pr/42' };
   result = run({ pr, failReview: true }, ['--translator', 'claude']);
   assert.equal(result.status, 0, result.stderr);
