@@ -5,8 +5,9 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
-const { planChunks, mergePartResults } = require('../scripts/translate-chunks');
+const { planChunks } = require('../scripts/translate-chunks');
 const { applyTranslations } = require('../scripts/apply-translations');
+const { parsePoFile } = require('../scripts/po-file');
 
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'translate-chunks-'));
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -84,37 +85,81 @@ try {
   assert.equal(cli.stdout, planned.map(chunk => chunk.join(' ')).join('\n') + '\n');
   assert.ok(planned.flat().every(file => !path.isAbsolute(file)));
 
-  mergePartResults({ partsDir: path.join(root, 'absent'), resultsDir: big.resultsDir });
-  const unsplit = '{ "locale": "a", "js": {} }\n';
-  write(path.join(big.resultsDir, 'a.json'), unsplit);
-  const results = parts.map(resultFor);
-  results.forEach((result, i) => write(path.join(big.resultsDir, `da.part${i + 1}.json`), result));
-  mergePartResults(big);
-  const mergedPath = path.join(big.resultsDir, 'da.json');
-  assert.deepEqual(read(mergedPath), resultFor(da));
-  assert.equal(fs.readFileSync(mergedPath, 'utf8'), JSON.stringify(resultFor(da), null, 2) + '\n');
-  for (const bad of ['{invalid', { ...results[1], locale: 'wrong' }, null, [], 7]) {
-    write(path.join(big.resultsDir, 'da.part2.json'), bad);
-    mergePartResults(big);
-    assert.deepEqual(read(mergedPath), results[0]);
-  }
-  fs.unlinkSync(path.join(big.resultsDir, 'da.part2.json'));
-  mergePartResults(big);
-  assert.deepEqual(read(mergedPath), results[0]);
-  write(path.join(big.resultsDir, 'da.part1.json'), null);
-  fs.unlinkSync(mergedPath);
-  mergePartResults(big);
-  assert.ok(!fs.existsSync(mergedPath));
-  assert.equal(fs.readFileSync(path.join(big.resultsDir, 'a.json'), 'utf8'), unsplit);
+  // Plural siblings stay together: the group at items 124-127 would straddle the 126 boundary.
+  const plurals = packet('pl', 251);
+  const plural = plurals.js['app/x.json'];
+  const sibling = {};
+  for (const [i, suffix] of ['one', 'few', 'many', 'other'].entries()) sibling['g_' + suffix] = plural['k' + (124 + i)];
+  plurals.js['app/x.json'] = Object.fromEntries(Object.entries(plural).flatMap(([key, entry]) =>
+    key === 'k124' ? Object.entries(sibling) : /^k12[567]$/.test(key) ? [] : [[key, entry]]));
+  const grouped = setup('plural', [plurals]);
+  planChunks(grouped);
+  const groupParts = [1, 2].map(n => read(path.join(grouped.partsDir, `pl.part${n}.json`)));
+  assert.ok(groupParts.every(p => p.counts.js <= 250));
+  assert.deepEqual(groupParts.flatMap(items), items(plurals));
+  const groupKeys = ['g_one', 'g_few', 'g_many', 'g_other'];
+  assert.equal(groupParts.filter(p => groupKeys.some(key => key in p.js['app/x.json'])).length, 1);
+  assert.ok(groupParts.some(p => groupKeys.every(key => key in p.js['app/x.json'])));
+  const plain = setup('plain', [packet('pn', 251)]);
+  planChunks(plain);
+  assert.deepEqual([1, 2].map(n => read(path.join(plain.partsDir, `pn.part${n}.json`)).counts.js), [126, 125]);
 
-  const end = setup('apply', [packet('de_DE', 3)]);
-  for (const file of planChunks({ ...end, max: 2 }).flat()) write(path.join(end.resultsDir, path.basename(file)), resultFor(read(file)));
-  mergePartResults(end);
-  const report = applyTranslations({ ...end, rootDir: path.join(root, 'apply') });
-  assert.equal(report.applied, 3);
-  assert.deepEqual(report.rejected, []);
-  assert.deepEqual(report.missing_results, []);
-  assert.deepEqual(read(path.join(root, 'apply/translations/js/de_DE/app/x.json')), resultFor(packet('de_DE', 3)).js['app/x.json']);
+  // Part-aware apply: a locale with two parts (2 JS keys and 6 PHP entries, max 5 gives 4 + 4).
+  const split = {
+    ...packet('da', 2), counts: { js: 2, php: 6 },
+    php: { shop: { nplurals: 2, plural_expression: '(n != 1)', entries: Array.from({ length: 6 }, (_, i) =>
+      ({ id: 'p' + (i + 1), msgid: 'Item ' + i, forms: 1, concepts: [] })) } },
+  };
+  const pot = split.php.shop.entries.map(entry => `msgid "${entry.msgid}"\nmsgstr ""\n`).join('\n');
+  const jsOut = 'translations/js/da/app/x.json', poOut = 'translations/php/da/shop-da.po';
+  function scenario(name, mutate) {
+    const dirs = setup(name, [split]);
+    const rootDir = path.join(root, name);
+    fs.mkdirSync(path.join(rootDir, 'source/php'), { recursive: true });
+    write(path.join(rootDir, 'source/php/shop.pot'), pot);
+    planChunks({ ...dirs, max: 5 });
+    const partResults = [1, 2].map(n => resultFor(read(path.join(dirs.partsDir, `da.part${n}.json`))));
+    partResults.forEach((result, i) => write(path.join(dirs.resultsDir, `da.part${i + 1}.json`), result));
+    mutate?.(dirs, partResults);
+    return { dirs, rootDir, partResults, report: applyTranslations({ ...dirs, rootDir }) };
+  }
+  const translated = rootDir => parsePoFile(fs.readFileSync(path.join(rootDir, poOut), 'utf8')).entries.map(entry => entry.msgstr);
+  let scene = scenario('apply-a');
+  assert.equal(scene.report.applied, 8);
+  assert.deepEqual(scene.report.rejected, []);
+  assert.deepEqual(scene.report.missing_results, []);
+  assert.equal(scene.report.unexpected, 0);
+  assert.deepEqual(read(path.join(scene.rootDir, jsOut)), { k0: 'Oversat k0', k1: 'Oversat k1' });
+  assert.deepEqual(translated(scene.rootDir), Array(6).fill('Oversat'));
+  const partFile = (dirs, n) => path.join(dirs.resultsDir, `da.part${n}.json`);
+  scene = scenario('apply-b', (dirs, [, second]) => write(partFile(dirs, 2), {
+    ...second, js: { 'app/x.json': { k0: 'Forkert' } }, php: { ...second.php, p1: ['Forkert'] },
+  }));
+  assert.equal(scene.report.unexpected, 2);
+  assert.deepEqual(read(path.join(scene.rootDir, jsOut)), { k0: 'Oversat k0', k1: 'Oversat k1' });
+  assert.deepEqual(translated(scene.rootDir), Array(6).fill('Oversat'));
+  const part2Items = ['Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  for (const [name, bad] of [['apply-c', '{invalid'], ['apply-d', { locale: 'wrong', js: {}, php: {} }]]) {
+    scene = scenario(name, dirs => write(partFile(dirs, 2), bad));
+    assert.deepEqual(scene.report.rejected.map(r => r.key), part2Items);
+    assert.ok(scene.report.rejected.every(r => r.reasons.length === 1 && r.reasons[0] === 'invalid results file (da.part2)'));
+    assert.equal(scene.report.applied, 4);
+    assert.deepEqual(read(path.join(scene.rootDir, jsOut)), { k0: 'Oversat k0', k1: 'Oversat k1' });
+  }
+  scene = scenario('apply-e', dirs => fs.unlinkSync(partFile(dirs, 2)));
+  assert.deepEqual(scene.report.rejected.map(r => [r.key, r.reasons]), part2Items.map(key => [key, ['no translation returned']]));
+  assert.equal(scene.report.applied, 4);
+  assert.deepEqual(scene.report.missing_results, []);
+  scene = scenario('apply-f', dirs => [1, 2].forEach(n => fs.unlinkSync(partFile(dirs, n))));
+  assert.deepEqual(scene.report.missing_results, ['da']);
+  assert.deepEqual(scene.report.rejected, []);
+  scene = scenario('apply-g');
+  fs.rmSync(path.join(scene.rootDir, 'translations'), { recursive: true });
+  const applyCli = spawnSync(process.execPath, [path.resolve(__dirname, '../scripts/apply-translations.js'),
+    '--work', scene.dirs.workDir, '--results', scene.dirs.resultsDir, '--parts', scene.dirs.partsDir,
+    '--root', scene.rootDir], { encoding: 'utf8' });
+  assert.equal(applyCli.status, 0, applyCli.stderr);
+  assert.equal(JSON.parse(applyCli.stdout).applied, 8);
   console.log('translate-chunks checks passed');
 } finally {
   fs.rmSync(root, { recursive: true, force: true });

@@ -158,8 +158,7 @@ while IFS= read -r PACKETS; do
     fi
   fi
 done < .translate/chunks
-node scripts/translate-chunks.js merge .translate/parts .translate/results
-APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --report .translate/report.json --report-md .translate/report.md)
+APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --parts .translate/parts --report .translate/report.json --report-md .translate/report.md)
 log "$APPLY_SUMMARY"
 REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
 if [ "$(printf '%s' "$REMAINING_SUMMARY" | jq -r .total)" -gt 0 ]; then
