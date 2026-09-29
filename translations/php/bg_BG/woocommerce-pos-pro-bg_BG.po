@@ -295,6 +295,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro изисква по-нова версия на приставката WCPOS (REST API с версии). Разширенията на Pro REST API са деактивирани, докато вградената зависимост не бъде актуализирана."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Няма наличен шаблон за дисплея."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Неизвестен дисплей."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Сигналът не принадлежи на това устройство."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Невалиден партньор за сигнализация."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Сигналите за тази роля не могат да бъдат прочетени."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Нямате права за този магазин."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Нямате разрешение да управлявате плъгини."
@@ -357,6 +382,15 @@ msgstr "Магазинът не е намерен."
 msgid "Failed to trash store."
 msgstr "Неуспешно изтриване на магазина."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Невалиден доставчик на уебкуки."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Методът на плащане не е намерен."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -369,6 +403,17 @@ msgstr "Заявка с този ключ за идемпотентност ве
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Ключът за идемпотентност е използван повторно с различна заявка."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Този доставчик на плащания не поддържа тази операция."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Доставчикът не успя да потвърди това плащане."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -391,6 +436,48 @@ msgstr ""
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Обработчикът за възстановяване на сума върна невалиден резултат."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Изберете четец."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Този четец не е разрешен."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Този четец не е наличен."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Доставчикът не успя да осчетоводи плащането: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Каса"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Целевият магазин трябва да е публикуван."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Затворете касовата сесия, преди да я преместите в друг магазин."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Твърде много опити за сдвояване."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Невалиден или изтекъл код за сдвояване."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Невалидни данни за вход на дисплея."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -438,15 +525,76 @@ msgid ""
 msgstr ""
 "Този продукт използва ценообразуване, специфично за магазина, затова при промяна на цена или данък трябва да се посочи за кой магазин се отнася. POS не изпрати магазин — свържете касовия терминал с неговия магазин и опитайте отново."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Свързване с касата…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Този дисплей не може да достигне POS системата през тази мрежа. Двете устройства трябва да са в една и съща Wi-Fi мрежа; гост мрежите често блокират връзката."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Този дисплей беше премахнат. Сдвоете го отново."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Не е конфигуриран шаблон за клиентския дисплей."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Сдвоете този дисплей"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Код за сдвояване"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Име на дисплея"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Клиентски дисплей"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Сдвояване на дисплей"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Този код за сдвояване е невалиден или изтекъл."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Твърде много опити. Опитайте отново след малко."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Неуспешно свързване. Проверете мрежата и опитайте отново."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Повторно свързване…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s изисква WCPOS Pro %2$s или по-нова версия."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro не успя да се зареди. Моля, изпълнете composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

@@ -295,6 +295,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro, WCPOS eklentisinin daha yeni bir sürümünü (sürümlü REST API) gerektirir. Paketle birlikte gelen bağımlılık güncellenene kadar Pro REST uzantıları devre dışı bırakılır."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Kullanılabilir ekran şablonu yok."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Bilinmeyen ekran."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Sinyal bu cihaza ait değil."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Geçersiz sinyalleşme karşı tarafı."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Bu rol için sinyaller okunamıyor."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Bu mağaza için yetkiniz yok."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Eklentileri yönetme izniniz yok."
@@ -357,6 +382,15 @@ msgstr "Mağaza bulunamadı."
 msgid "Failed to trash store."
 msgstr "Mağaza çöp kutusuna taşınamadı."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Geçersiz webhook sağlayıcısı."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Ödeme yöntemi bulunamadı."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -369,6 +403,17 @@ msgstr "Bu idempotency anahtarına sahip bir istek zaten işleniyor."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "İdempotency anahtarı farklı bir istekle yeniden kullanıldı."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Bu ödeme sağlayıcısı bu işlemi desteklemiyor."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Sağlayıcı bu ödemeyi onaylayamadı."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -390,6 +435,48 @@ msgstr "Orijinal ödeme yöntemi iadeler için kullanılamıyor."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Geri ödeme çözümleyicisi geçersiz bir sonuç döndürdü."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Bir okuyucu seçin."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Bu okuyucuya izin verilmiyor."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Bu okuyucu kullanılamıyor."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Sağlayıcı bu ödemeyi tahsil edemedi: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Kasa"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Hedef mağaza yayımlanmış olmalıdır."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Başka bir mağazaya taşımadan önce kasa oturumunu kapatın."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Çok fazla eşleştirme denemesi."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Eşleştirme kodu geçersiz veya süresi dolmuş."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Ekran kimlik bilgileri geçersiz."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -437,15 +524,76 @@ msgid ""
 msgstr ""
 "Bu ürün mağazaya özel fiyatlandırma kullanıyor; bu nedenle fiyat veya vergi değişikliği hangi mağaza için olduğunu belirtmelidir. POS bir mağaza göndermedi — POS terminalini mağazasına yeniden bağlayıp tekrar deneyin."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Satış noktasına bağlanılıyor…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Bu ekran bu ağda POS'a ulaşamıyor. İki cihaz da aynı Wi-Fi ağına bağlı olmalı; misafir ağları genellikle bunu engeller."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Bu ekran kaldırıldı. Yeniden eşleştirin."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Müşteri ekranı için şablon yapılandırılmamış."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Bu ekranı eşleştirin"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Eşleştirme kodu"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Ekran adı"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Müşteri ekranı"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Ekranı eşleştir"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Bu eşleştirme kodu geçersiz veya süresi dolmuş."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Çok fazla deneme. Biraz sonra tekrar deneyin."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Bağlanılamadı. Ağı kontrol edip tekrar deneyin."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Yeniden bağlanılıyor…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s için WCPOS Pro %2$s veya daha yenisi gerekir."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro yüklenemedi. Lütfen composer install çalıştırın."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

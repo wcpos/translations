@@ -293,6 +293,31 @@ msgid ""
 msgstr ""
 "يتطلب WCPOS Pro إصدارًا أحدث من إضافة WCPOS (واجهة REST API ذات إصدار). تم تعطيل إضافات REST الخاصة بـ Pro حتى يتم تحديث التبعية المضمّنة."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "لا يتوفر نموذج لواجهة العرض."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "واجهة عرض غير معروفة."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "الإشارة لا تخص هذا الجهاز."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "طرف الإشارة غير صالح."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "تعذرت قراءة الإشارات لهذا الدور."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "ليس لديك صلاحية لهذا المتجر."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "ليس لديك إذن لإدارة الإضافات."
@@ -355,6 +380,15 @@ msgstr "لم يتم العثور على المتجر."
 msgid "Failed to trash store."
 msgstr "فشل في حذف المتجر."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "موفر webhook غير صالح."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "طريقة الدفع غير موجودة."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -367,6 +401,17 @@ msgstr "تتم معالجة طلب بمفتاح عدم التكرار هذا ب�
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "تم إعادة استخدام مفتاح عدم التكرار مع طلب مختلف."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "موفر الدفع هذا لا يدعم هذه العملية."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "تعذر على موفر الدفع تأكيد هذه الدفعة."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -388,6 +433,48 @@ msgstr "بوابة الدفع الأصلية غير متاحة لعمليات ا
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "أعاد مُعالج استرداد المبلغ نتيجة غير صالحة."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "اختر قارئًا."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "هذا القارئ غير مسموح به."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "هذا القارئ غير متاح."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "تعذر على موفر الدفع تحصيل هذه الدفعة: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "سجل الدفع"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "يجب أن يكون المتجر المستهدف منشورًا."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "أغلق جلسة سجل الدفع قبل نقله إلى متجر آخر."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "عدد محاولات الاقتران كبير جدًا."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "رمز الاقتران غير صالح أو منتهي الصلاحية."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "بيانات اعتماد واجهة العرض غير صالحة."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -435,15 +522,76 @@ msgid ""
 msgstr ""
 "يستخدم هذا المنتج أسعارًا خاصة بكل متجر، لذا يجب أن يحدد أي تغيير في السعر أو الضريبة المتجر المعني. لم يرسل POS متجرًا — أعد ربط جهاز نقطة البيع بمتجره ثم حاول مرة أخرى."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "جارٍ الاتصال بنقطة البيع…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"لا يمكن لهذه الشاشة الوصول إلى POS عبر هذه الشبكة. يجب أن يكون الجهازان على شبكة Wi-Fi نفسها؛ فكثيرًا ما تمنع شبكات الضيوف ذلك."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "أزيلت واجهة العرض هذه. أعد إقرانها."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "لم يتم إعداد نموذج لواجهة عرض العميل."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "إقران واجهة العرض هذه"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "رمز الاقتران"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "اسم واجهة العرض"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "واجهة عرض العميل"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "إقران واجهة العرض"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "رمز الاقتران هذا غير صالح أو منتهي الصلاحية."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "عدد المحاولات كبير جدًا. أعد المحاولة بعد قليل."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "تعذر الاتصال. تحقق من الشبكة وأعد المحاولة."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "جارٍ إعادة الاتصال…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "يتطلب %1$s الإصدار %2$s من WCPOS Pro أو إصدارًا أحدث."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "فشل تحميل WCPOS Pro. يرجى تشغيل composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
