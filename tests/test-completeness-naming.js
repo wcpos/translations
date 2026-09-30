@@ -187,6 +187,20 @@ test('generated plural forms use a non-singular source fallback', () => {
   }, 'items_other'), '{count} items');
 });
 
+function pluralShapeMismatches(pluralBases, translations, expectedSuffixes, allSuffixes) {
+  const mismatches = [];
+  for (const base of pluralBases) {
+    const actual = allSuffixes.filter(suffix => `${base}_${suffix}` in translations);
+    if (actual.length > 0 && (
+      actual.length !== expectedSuffixes.length ||
+      actual.some((suffix, index) => suffix !== expectedSuffixes[index])
+    )) {
+      mismatches.push({ base, actual });
+    }
+  }
+  return mismatches;
+}
+
 test('rolling monorepo translations retain locale-specific plural forms', () => {
   const locales = [
     'bg_BG', 'ca_ES', 'da', 'de_DE', 'el', 'es', 'es_AR', 'es_ES', 'es_MX',
@@ -210,11 +224,29 @@ test('rolling monorepo translations retain locale-specific plural forms', () => 
     const translations = require(`../translations/js/${locale}/monorepo/core.json`);
     const expectedSuffixes = getPluralSuffixes(locale);
 
-    for (const base of pluralBases) {
-      const actualSuffixes = ALL_SUFFIXES.filter(suffix => `${base}_${suffix}` in translations);
-      assert.deepEqual(actualSuffixes, expectedSuffixes, `${locale}: ${base}`);
-    }
+    // Untranslated bases are left to the completeness check.
+    assert.deepEqual(pluralShapeMismatches(pluralBases, translations, expectedSuffixes, ALL_SUFFIXES), [], `${locale}: plural shape`);
   }
+});
+
+test('plural shape check skips untranslated bases but flags wrong shapes', () => {
+  const base = 'items';
+  const expectedSuffixes = ['one', 'other'];
+  const allSuffixes = ['zero', 'one', 'two', 'few', 'many', 'other'];
+
+  assert.deepEqual(pluralShapeMismatches([base], {}, expectedSuffixes, allSuffixes), []);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_one: '1 item',
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), []);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), [{ base, actual: ['other'] }]);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_one: '1 item',
+    items_many: '{count} items',
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), [{ base, actual: ['one', 'many', 'other'] }]);
 });
 
 test('checks matching PHP PO file when l10n artifact changes', () => {
