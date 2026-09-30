@@ -640,7 +640,7 @@ return array(
 		'Reason' => 'Motivo',
 		'Created (UTC)' => 'Creado (UTC)',
 		'Correction Figures' => 'Importes de la corrección',
-		'Expected Delta by Tender' => 'Variación del importe esperado por método de pago',
+		'Expected Delta by Tender' => 'Diferencia esperada por método de pago',
 		'Late Sale Sales Delta' => 'Diferencia de ventas tardías',
 		'Refunds Delta' => 'Diferencia de reembolsos',
 		'Late Movement Cash Delta' => 'Diferencia de efectivo por movimiento tardío',

@@ -107,13 +107,13 @@ msgstr "没有当前用户。"
 msgid ""
 "WCPOS could not publish its receipt font map. Receipts will use a basic Latin-only font until the installation succeeds. WCPOS retries automatically every hour. Check that the uploads directory is writable."
 msgstr ""
-"WCPOS 无法发布收据字体映射。安装成功前，收据将使用仅支持基本拉丁字符的字体。WCPOS 每小时自动重试。请确认 uploads 目录可写。"
+"WCPOS 无法发布收据字体映射。收据将暂时使用仅支持基本拉丁字符的字体，直到安装成功。WCPOS 每小时自动重试。请检查 uploads 目录是否可写。"
 
 #: includes/Admin/Font_Pack_Notice.php:28
 msgid ""
 "WCPOS could not download its receipt fonts from cdn.jsdelivr.net. Receipts will use a basic Latin-only font until the download succeeds. WCPOS retries automatically every hour. If your host blocks outgoing HTTP requests, ask them to allow cdn.jsdelivr.net."
 msgstr ""
-"WCPOS 无法从 cdn.jsdelivr.net 下载收据字体。下载成功前，收据将使用仅支持基本拉丁字符的字体。WCPOS 每小时自动重试。如果您的主机阻止外发 HTTP 请求，请联系主机服务商允许访问 cdn.jsdelivr.net。"
+"WCPOS 无法从 cdn.jsdelivr.net 下载收据字体。下载成功前，收据将使用仅支持基本拉丁字符的字体。WCPOS 每小时自动重试。如果您的主机屏蔽了外发 HTTP 请求，请联系主机服务商允许访问 cdn.jsdelivr.net。"
 
 #. translators: WordPress admin menu label for WCPOS.
 #. translators: Order channel filter value shown in WooCommerce admin for POS orders.
@@ -293,7 +293,7 @@ msgstr "取消"
 
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:59
 msgid "POS Only products are never shown in the online catalog or search."
-msgstr "仅限 POS 的商品不会显示在网上目录或搜索结果中。"
+msgstr "仅限 POS 的商品不会显示在在线目录或搜索结果中。"
 
 #. translators: %s: a WooCommerce catalog visibility option, e.g. "Shop and search results".
 #: includes/Admin/Products/templates/post-metabox-visibility-select.php:63
@@ -835,7 +835,7 @@ msgstr "需要 template_id。"
 
 #: includes/API/V1/Receipts_Controller.php:300
 msgid "A closure template is required."
-msgstr "必须提供结账模板。"
+msgstr "必须设置结账模板。"
 
 #. translators: Error message displayed when a template cannot be found.
 #: includes/API/V1/Receipts_Controller.php:305
@@ -854,7 +854,7 @@ msgstr "无法生成收据 PDF。"
 
 #: includes/API/V1/Receipts_Controller.php:378
 msgid "Another print of this order is in progress; try again."
-msgstr "此订单的另一项打印任务正在进行，请重试。"
+msgstr "此订单的另一次打印正在进行，请重试。"
 
 #: includes/API/V1/Receipts_Controller.php:396
 #: includes/API/V2/Closures_Controller.php:420
@@ -872,7 +872,7 @@ msgstr "对不起，您无法查看小票。"
 
 #: includes/API/V1/Settings.php:195
 msgid "This payment method does not list terminals."
-msgstr "此付款方式未列出任何终端。"
+msgstr "此支付方式未列出任何终端。"
 
 #: includes/API/V1/Settings.php:471
 msgid "Settings section not registered."
@@ -994,7 +994,7 @@ msgstr "更新后未找到模板。"
 
 #: includes/API/V1/Templates_Controller.php:633
 msgid "The active template must be enabled for this template type."
-msgstr "必须为此模板类型启用活动模板。"
+msgstr "必须为此模板类型启用当前模板。"
 
 #. translators: %d: batch item index.
 #: includes/API/V1/Templates_Controller.php:677
@@ -1097,7 +1097,7 @@ msgstr "无效的 _woocommerce_pos_uuid meta_data 值。"
 #: includes/API/V2/Changes_Controller.php:775
 #, php-format
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
-msgstr "此路由不提供集合“%1$s”。支持的集合：%2$s。"
+msgstr "此路由不提供集合“%1$s”。支持：%2$s。"
 
 #: includes/API/V2/Payments_Controller.php:75
 msgid "Sorry, you cannot manage order payments."
@@ -1113,21 +1113,21 @@ msgstr "付款操作参数无效。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
-msgstr "抱歉，您无权查看付款方式。"
+msgstr "抱歉，您无权查看支付方式。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:97
 msgid "Sorry, you cannot bootstrap payment methods."
-msgstr "抱歉，您无权初始化付款方式。"
+msgstr "抱歉，您无权初始化支付方式。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
-msgstr "未找到付款方式。"
+msgstr "未找到支付方式。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
-msgstr "不支持此付款收取模式。"
+msgstr "不支持此付款捕获模式。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:120
 msgid "Payment context must be an object."
@@ -1135,17 +1135,17 @@ msgstr "付款上下文必须是对象。"
 
 #: includes/API/V2/Records_Controller.php:66
 msgid "Sorry, you cannot access fiscal records."
-msgstr "抱歉，您无权访问财税记录。"
+msgstr "抱歉，您无权访问税务记录。"
 
 #. translators: %s: fiscal record query field.
 #: includes/API/V2/Records_Controller.php:185
 #, php-format
 msgid "Invalid fiscal record field: %s."
-msgstr "财税记录字段无效：%s。"
+msgstr "税务记录字段无效：%s。"
 
 #: includes/API/V2/Records_Controller.php:190
 msgid "Fiscal record not found."
-msgstr "未找到财税记录。"
+msgstr "未找到税务记录。"
 
 #: includes/API/V2/Registers_Controller.php:74
 msgid "Sorry, you cannot access registers."
@@ -1171,35 +1171,35 @@ msgstr "无法保存收银台。"
 #: includes/Services/Report_Scope_Resolver.php:32
 #: includes/Services/Report_Scope_Resolver.php:78
 msgid "Report not found."
-msgstr "未找到报告。"
+msgstr "未找到报表。"
 
 #: includes/API/V2/Reports_Controller.php:123
 msgid "The device builds this report locally; there is no server document."
-msgstr "此报告由设备在本地生成；服务器上没有对应文档。"
+msgstr "此报表由设备本地生成；服务器上没有对应文档。"
 
 #: includes/API/V2/Reports_Controller.php:141
 msgid "The report callback must return an array."
-msgstr "报告回调必须返回数组。"
+msgstr "报表回调必须返回数组。"
 
 #: includes/API/V2/Reports_Controller.php:170
 msgid "This report does not support the requested scope."
-msgstr "此报告不支持请求的范围。"
+msgstr "此报表不支持请求的范围。"
 
 #: includes/API/V2/Reports_Controller.php:216
 msgid "Sorry, you cannot access this report."
-msgstr "抱歉，您无权访问此报告。"
+msgstr "抱歉，您无权访问此报表。"
 
 #. translators: %s: report query field.
 #: includes/API/V2/Reports_Controller.php:278
 #, php-format
 msgid "Invalid report field: %s."
-msgstr "报告字段无效：%s。"
+msgstr "报表字段无效：%s。"
 
 #. translators: 1: report key, 2: the failure message from the report's plugin.
 #: includes/API/V2/Reports_Controller.php:291
 #, php-format
 msgid "Report \"%1$s\" failed: %2$s"
-msgstr "报告“%1$s”失败：%2$s"
+msgstr "报表“%1$s”失败：%2$s"
 
 #. translators: %s: name of the request field that was rejected.
 #: includes/API/V2/Sessions_Controller.php:366
@@ -1348,25 +1348,25 @@ msgstr[0] "POS - 部分付款 <span class=\"count\">(%s)</span>"
 
 #: includes/Payments/Contract/Abstract_Capture_Mode_Handler.php:91
 msgid "This payment capture mode does not support that operation."
-msgstr "此付款收取模式不支持该操作。"
+msgstr "此付款捕获模式不支持该操作。"
 
 #: includes/Payments/Contract/Ledger.php:220
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
-msgstr "无法记录此付款方式；它必须自行完成付款流程。"
+msgstr "无法记录此支付方式的付款；必须由该支付方式自行完成付款流程。"
 
 #: includes/Payments/Contract/Ledger.php:226
 msgid "Recorded payments must be captured or authorized."
-msgstr "已记录的付款必须已收取或已授权。"
+msgstr "已记录的付款必须已捕获或已授权。"
 
 #: includes/Payments/Contract/Ledger.php:231
 #: includes/Payments/Contract/Ledger.php:235
 msgid "Tendered amount is invalid for this payment method."
-msgstr "此付款方式的实收金额无效。"
+msgstr "此支付方式的实收金额无效。"
 
 #: includes/Payments/Contract/Ledger.php:334
 msgid "Payment method is disabled."
-msgstr "付款方式已停用。"
+msgstr "支付方式已停用。"
 
 #: includes/Payments/Contract/Ledger.php:372
 #: includes/Payments/Contract/Ledger.php:744
@@ -1382,7 +1382,7 @@ msgstr "付款金额超过订单余额。"
 #: includes/Payments/Contract/Ledger.php:519
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
-msgstr "WCPOS 付款 %1$s 金额不符：预期 %2$s，已确认 %3$s。"
+msgstr "WCPOS 付款 %1$s 金额不匹配：预期 %2$s，确认金额为 %3$s。"
 
 #: includes/Payments/Contract/Ledger.php:524
 msgid "Tip"
@@ -1418,7 +1418,7 @@ msgstr "付款 ID 与现有付款冲突。"
 
 #: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
-msgstr "提供程序确认的金额或货币与付款信息不符。"
+msgstr "支付服务提供商确认的金额或货币与付款信息不匹配。"
 
 #. translators: %s: payment row uuid.
 #: includes/Payments/Contract/Ledger.php:820
@@ -1453,7 +1453,7 @@ msgstr "每十分钟"
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
-msgstr "WCPOS 付款 %1$s：订单标记为已付款后，%2$s 的授权已过期且从未收取——需要处理。"
+msgstr "WCPOS 付款 %1$s：订单标记为已付款后，%2$s 的授权已过期且从未捕获 — 需要处理。"
 
 #: includes/Payments/Contract/Settlement.php:161
 msgid "Could not save the pending payment confirmation."
@@ -1461,7 +1461,7 @@ msgstr "无法保存待处理的付款确认。"
 
 #: includes/Payments/Contract/Webview_Handler.php:55
 msgid "This payment cannot be voided."
-msgstr "此笔付款无法作废。"
+msgstr "此付款无法作废。"
 
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Idempotency_Repository.php:84
@@ -1503,7 +1503,7 @@ msgstr "请在 WCPOS 设置的“访问权限”中授予这些权限，或分�
 
 #: includes/Services/Cash_Movement_Store.php:122
 msgid "This movement was recorded after counting began."
-msgstr "此笔资金变动是在开始盘点后记录的。"
+msgstr "此笔资金变动记录于开始清点后。"
 
 #: includes/Services/Cash_Movement_Store.php:172
 msgid "The movement has already been voided or is unavailable."
@@ -1516,7 +1516,7 @@ msgstr "无法关闭此会话。"
 #: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
-msgstr "此会话已有结账记录；本次盘点已记录为重新盘点。"
+msgstr "此会话已有结账记录；本次清点已记录为重新清点。"
 
 #: includes/Services/Closure_Store.php:484
 #: includes/Services/Register_Session_Store.php:265
@@ -1526,7 +1526,7 @@ msgstr "会话状态已更改。"
 
 #: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
-msgstr "结账编号早于收银台序列号。"
+msgstr "结账编号早于收银台流水序号。"
 
 #: includes/Services/Cloud_Print_Relay_Service.php:84
 msgid "WCPOS Cloud Print is disabled on this site."
@@ -1565,7 +1565,7 @@ msgstr "收据文档无效。"
 #: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
-msgstr "无法写入 POS 财税记录 %s；需要恢复处理。"
+msgstr "无法写入 POS 税务记录 %s；需要恢复。"
 
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Opening_Hours_Formatter.php:200
@@ -1579,7 +1579,7 @@ msgstr "已关闭"
 #: includes/Services/Order_Notes.php:26
 #, php-format
 msgid "POS provenance keys cannot be changed after the sale: %s"
-msgstr "销售完成后无法更改 POS 来源记录键：%s"
+msgstr "销售完成后，无法更改 POS 来源记录键：%s"
 
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
@@ -1794,7 +1794,7 @@ msgstr "所请求的介质类型不支持此打印任务。"
 #: includes/Services/Quick_Discount.php:54
 msgid ""
 "Quick discount requires a positive decimal amount and type percent (up to 100) or fixed_cart."
-msgstr "快速折扣金额必须为正十进制数，类型须为 percent（不超过 100）或 fixed_cart。"
+msgstr "快速折扣需要正数小数金额，类型须为 percent（最高 100）或 fixed_cart。"
 
 #. translators: %s: Coupon code.
 #: includes/Services/Quick_Discount.php:122
@@ -2827,7 +2827,7 @@ msgstr "应用版本"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1234
 msgid "App Build"
-msgstr "应用构建号"
+msgstr "应用构建版本"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1239
@@ -2893,37 +2893,37 @@ msgstr "销售计数器"
 #: includes/Services/Receipt_I18n_Labels.php:276
 #: templates/receipt.php:190
 msgid "Corrects"
-msgstr "更正"
+msgstr "更正了"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1299
 msgid "Is Sale Document"
-msgstr "是否为销售文档"
+msgstr "是否为销售单据"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1304
 msgid "Is Refund Document"
-msgstr "是否为退款文档"
+msgstr "是否为退款单据"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1309
 msgid "Is Void Document"
-msgstr "是否为作废文档"
+msgstr "是否为作废单据"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1314
 msgid "Is Cancellation Document"
-msgstr "是否为取消文档"
+msgstr "是否为取消单据"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1319
 msgid "Is Closure Document"
-msgstr "是否为结账文档"
+msgstr "是否为结账单据"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1324
 msgid "Is X Report"
-msgstr "是否为 X 报告"
+msgstr "是否为 X 报表"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:1329
@@ -3075,15 +3075,15 @@ msgstr "银行卡差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1443
 msgid "Expected Opening Float"
-msgstr "期初备用金（应有）"
+msgstr "预期备用金"
 
 #: includes/Services/Receipt_Data_Schema.php:1444
 msgid "Counted Opening Float"
-msgstr "期初备用金（实点）"
+msgstr "实点备用金"
 
 #: includes/Services/Receipt_Data_Schema.php:1445
 msgid "Opening Variance"
-msgstr "期初差额"
+msgstr "备用金差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1446
 #: includes/Services/Receipt_I18n_Labels.php:62
@@ -3105,7 +3105,7 @@ msgstr "期间销售额"
 
 #: includes/Services/Receipt_Data_Schema.php:1451
 msgid "Period Refunds"
-msgstr "期间退款"
+msgstr "期间退款额"
 
 #: includes/Services/Receipt_Data_Schema.php:1452
 msgid "Perpetual Sales"
@@ -3113,7 +3113,7 @@ msgstr "累计销售额"
 
 #: includes/Services/Receipt_Data_Schema.php:1453
 msgid "Perpetual Refunds"
-msgstr "累计退款"
+msgstr "累计退款额"
 
 #: includes/Services/Receipt_Data_Schema.php:1454
 msgid "Software Version"
@@ -3121,7 +3121,7 @@ msgstr "软件版本"
 
 #: includes/Services/Receipt_Data_Schema.php:1455
 msgid "Printed At (UTC)"
-msgstr "打印时间（UTC）"
+msgstr "打印时间 (UTC)"
 
 #: includes/Services/Receipt_Data_Schema.php:1456
 msgid "Print Count"
@@ -3129,11 +3129,11 @@ msgstr "打印次数"
 
 #: includes/Services/Receipt_Data_Schema.php:1457
 msgid "Last Printed At (UTC)"
-msgstr "上次打印时间（UTC）"
+msgstr "上次打印时间 (UTC)"
 
 #: includes/Services/Receipt_Data_Schema.php:1466
 msgid "Money format recorded at closure"
-msgstr "班次结算时记录的货币格式"
+msgstr "关账时记录的货币格式"
 
 #: includes/Services/Receipt_Data_Schema.php:1470
 msgid "Currency Position"
@@ -3158,27 +3158,27 @@ msgstr "小数位数"
 #: includes/Services/Receipt_Data_Schema.php:1482
 #: includes/Services/Receipt_I18n_Labels.php:53
 msgid "Tenders"
-msgstr "付款方式"
+msgstr "支付方式"
 
 #: includes/Services/Receipt_Data_Schema.php:1487
 #: includes/Services/Receipt_I18n_Labels.php:54
 #: templates/closure.php:68
 msgid "Tender"
-msgstr "付款方式"
+msgstr "支付方式"
 
 #: includes/Services/Receipt_Data_Schema.php:1491
 #: includes/Services/Receipt_I18n_Labels.php:50
 #: templates/closure.php:68
 #: templates/closure.php:79
 msgid "Expected"
-msgstr "应有金额"
+msgstr "预期"
 
 #: includes/Services/Receipt_Data_Schema.php:1495
 #: includes/Services/Receipt_I18n_Labels.php:51
 #: templates/closure.php:68
 #: templates/closure.php:78
 msgid "Counted"
-msgstr "实点金额"
+msgstr "实点"
 
 #: includes/Services/Receipt_Data_Schema.php:1499
 #: includes/Services/Receipt_I18n_Labels.php:52
@@ -3189,19 +3189,19 @@ msgstr "差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1504
 msgid "Counted by Tender"
-msgstr "按付款方式统计的实点金额"
+msgstr "按支付方式实点"
 
 #: includes/Services/Receipt_Data_Schema.php:1505
 msgid "Expected by Tender"
-msgstr "按付款方式统计的应有金额"
+msgstr "按支付方式预期"
 
 #: includes/Services/Receipt_Data_Schema.php:1506
 msgid "Variance by Tender"
-msgstr "按付款方式统计的差额"
+msgstr "按支付方式的差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1507
 msgid "Payment Methods"
-msgstr "付款方式"
+msgstr "支付方式"
 
 #: includes/Services/Receipt_Data_Schema.php:1508
 msgid "Tax Rates"
@@ -3220,7 +3220,7 @@ msgstr "收银员"
 
 #: includes/Services/Receipt_Data_Schema.php:1521
 msgid "Corrections"
-msgstr "更正记录"
+msgstr "更正"
 
 #: includes/Services/Receipt_Data_Schema.php:1525
 msgid "Record ID"
@@ -3236,7 +3236,7 @@ msgstr "操作人 ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1537
 msgid "Actor Name"
-msgstr "操作人"
+msgstr "操作人姓名"
 
 #: includes/Services/Receipt_Data_Schema.php:1541
 msgid "Approver ID"
@@ -3244,7 +3244,7 @@ msgstr "审批人 ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1545
 msgid "Approver Name"
-msgstr "审批人"
+msgstr "审批人姓名"
 
 #: includes/Services/Receipt_Data_Schema.php:1549
 #: includes/Services/Receipt_Data_Schema.php:1660
@@ -3257,35 +3257,35 @@ msgstr "原因"
 #: includes/Services/Receipt_Data_Schema.php:1553
 #: includes/Services/Receipt_Data_Schema.php:1661
 msgid "Created (UTC)"
-msgstr "创建时间（UTC）"
+msgstr "创建时间 (UTC)"
 
 #: includes/Services/Receipt_Data_Schema.php:1557
 msgid "Correction Figures"
-msgstr "更正数据"
+msgstr "更正数值"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
 msgid "Expected Delta by Tender"
-msgstr "按付款方式统计的应有金额变动"
+msgstr "按支付方式的预期变动"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
-msgstr "延迟销售额变动"
+msgstr "补录销售额差值"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
 msgid "Refunds Delta"
-msgstr "退款变动"
+msgstr "退款差值"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
-msgstr "延迟现金变动"
+msgstr "补录现金变动差值"
 
 #: includes/Services/Receipt_Data_Schema.php:1577
 msgid "Recount Counted by Tender"
-msgstr "重新清点的各付款方式金额"
+msgstr "按支付方式重新清点"
 
 #: includes/Services/Receipt_Data_Schema.php:1581
 msgid "Recount Variance by Tender"
-msgstr "重新清点的各付款方式差额"
+msgstr "按支付方式重新清点的差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1589
 #: includes/Services/Receipt_I18n_Labels.php:46
@@ -3295,11 +3295,11 @@ msgstr "已开启"
 
 #: includes/Services/Receipt_Data_Schema.php:1599
 msgid "Variance Label (Over / Short / Exact)"
-msgstr "差额说明（长款/短款/相符）"
+msgstr "差额标签（多款 / 短款 / 相符）"
 
 #: includes/Services/Receipt_Data_Schema.php:1603
 msgid "Tender Title"
-msgstr "付款方式名称"
+msgstr "支付方式标题"
 
 #: includes/Services/Receipt_Data_Schema.php:1607
 msgid "Non-zero Variance"
@@ -3307,11 +3307,11 @@ msgstr "非零差额"
 
 #: includes/Services/Receipt_Data_Schema.php:1611
 msgid "Absolute Variance (Formatted)"
-msgstr "差额绝对值（格式化）"
+msgstr "绝对差额（格式化）"
 
 #: includes/Services/Receipt_Data_Schema.php:1615
 msgid "Tender Key"
-msgstr "付款方式键"
+msgstr "支付方式键"
 
 #: includes/Services/Receipt_Data_Schema.php:1617
 #: includes/Services/Receipt_I18n_Labels.php:59
@@ -3351,7 +3351,7 @@ msgstr "已作废"
 
 #: includes/Services/Receipt_Data_Schema.php:1674
 msgid "Created"
-msgstr "创建时间"
+msgstr "已创建"
 
 #: includes/Services/Receipt_Data_Schema.php:1683
 #: includes/Services/Receipt_Data_Schema.php:1938
@@ -3362,7 +3362,7 @@ msgstr "格式化值"
 #: includes/Services/Receipt_Data_Schema.php:1691
 #: includes/Templates/Gallery_Registry.php:91
 msgid "Ledger"
-msgstr "账目"
+msgstr "账本"
 
 #. translators: Receipt label for order/document status.
 #: includes/Services/Receipt_Data_Schema.php:1695
@@ -3401,7 +3401,7 @@ msgstr "找零（原始值）"
 
 #: includes/Services/Receipt_Data_Schema.php:1732
 msgid "Ledger payments"
-msgstr "账目付款"
+msgstr "账本付款"
 
 #: includes/Services/Receipt_Data_Schema.php:1737
 msgid "ID"
@@ -3422,7 +3422,7 @@ msgstr "金额（原始值）"
 
 #: includes/Services/Receipt_Data_Schema.php:1765
 msgid "Tendered (raw)"
-msgstr "已收金额（原始值）"
+msgstr "已收（原始值）"
 
 #: includes/Services/Receipt_Data_Schema.php:1778
 msgid "Assets"
@@ -3438,7 +3438,7 @@ msgstr "付款"
 
 #: includes/Services/Receipt_Data_Schema.php:1791
 msgid "State"
-msgstr "状态"
+msgstr "州 / 地区"
 
 #: includes/Services/Receipt_Data_Schema.php:1795
 msgid "Message"
@@ -3629,7 +3629,7 @@ msgstr "有分组"
 
 #: includes/Services/Receipt_Data_Schema.php:2056
 msgid "Has Rows"
-msgstr "有数据行"
+msgstr "有行"
 
 #: includes/Services/Receipt_Data_Schema.php:2060
 msgid "Generated At"
@@ -3637,15 +3637,15 @@ msgstr "生成时间"
 
 #: includes/Services/Receipt_Data_Schema.php:2065
 msgid "Is Partial"
-msgstr "部分数据"
+msgstr "是否为部分报告"
 
 #: includes/Services/Receipt_Data_Schema.php:2069
 msgid "Partial Reason"
-msgstr "部分数据原因"
+msgstr "部分报告原因"
 
 #: includes/Services/Receipt_Data_Schema.php:2075
 msgid "Is Report Document"
-msgstr "报告文档"
+msgstr "是否为报告文档"
 
 #: includes/Services/Receipt_I18n_Labels.php:44
 #: templates/closure.php:21
@@ -3676,13 +3676,13 @@ msgstr "期间销售额"
 #: includes/Services/Receipt_I18n_Labels.php:61
 #: templates/closure.php:123
 msgid "Period refunds"
-msgstr "期间退款"
+msgstr "期间退款额"
 
 #: includes/Services/Receipt_I18n_Labels.php:64
 #: includes/Services/Reports_Registry.php:186
 #: templates/closure.php:38
 msgid "Payment method"
-msgstr "付款方式"
+msgstr "支付方式"
 
 #: includes/Services/Receipt_I18n_Labels.php:66
 msgid "Tax rates"
@@ -3706,11 +3706,11 @@ msgstr "累计销售额"
 #: includes/Services/Receipt_I18n_Labels.php:72
 #: templates/closure.php:125
 msgid "Perpetual refunds"
-msgstr "累计退款"
+msgstr "累计退款额"
 
 #: includes/Services/Receipt_I18n_Labels.php:73
 msgid "sales not yet on the server"
-msgstr "尚未同步到服务器的销售"
+msgstr "尚未同步到服务器的销售记录"
 
 #: includes/Services/Receipt_I18n_Labels.php:74
 msgid "Short"
@@ -3718,7 +3718,7 @@ msgstr "短款"
 
 #: includes/Services/Receipt_I18n_Labels.php:75
 msgid "Over"
-msgstr "长款"
+msgstr "多款"
 
 #: includes/Services/Receipt_I18n_Labels.php:76
 msgid "Exact"
@@ -3726,11 +3726,11 @@ msgstr "相符"
 
 #: includes/Services/Receipt_I18n_Labels.php:78
 msgid "Paid in"
-msgstr "现金收入"
+msgstr "收入"
 
 #: includes/Services/Receipt_I18n_Labels.php:79
 msgid "Paid out"
-msgstr "现金支出"
+msgstr "支出"
 
 #: includes/Services/Receipt_I18n_Labels.php:80
 msgid "No sale"
@@ -4379,7 +4379,7 @@ msgstr "您的商品"
 #. translators: Customer-facing display label for an empty item list.
 #: includes/Services/Receipt_I18n_Labels.php:301
 msgid "Your items will appear here"
-msgstr "商品将在此处显示"
+msgstr "您的商品将在此处显示"
 
 #. translators: Customer-facing display label before the savings amount, as in "You saved $15.00".
 #: includes/Services/Receipt_I18n_Labels.php:305
@@ -4389,7 +4389,7 @@ msgstr "您节省了"
 #. translators: Customer-facing display label for the amount already paid.
 #: includes/Services/Receipt_I18n_Labels.php:309
 msgid "Paid so far"
-msgstr "目前已支付"
+msgstr "已支付"
 
 #. translators: Customer-facing display label prompting card presentation.
 #: includes/Services/Receipt_I18n_Labels.php:313
@@ -4409,12 +4409,12 @@ msgstr "已拒绝"
 #. translators: Customer-facing display label after a declined payment.
 #: includes/Services/Receipt_I18n_Labels.php:325
 msgid "Please try another card or ask staff"
-msgstr "请尝试使用其他银行卡或咨询店员"
+msgstr "请尝试使用其他银行卡，或联系工作人员"
 
 #. translators: Customer-facing display label confirming full payment.
 #: includes/Services/Receipt_I18n_Labels.php:329
 msgid "Paid in full"
-msgstr "已付清"
+msgstr "已全额支付"
 
 #. translators: %s: store tax identification number
 #: includes/Services/Receipt_I18n_Labels.php:355
@@ -4510,11 +4510,11 @@ msgstr "POS 财政收据快照已生成（收据编号 #%d）。"
 
 #: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
-msgstr "此收银台已有开启的班次。"
+msgstr "此收银台已有一个未关闭的班次。"
 
 #: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
-msgstr "开启此班次的收银员不能审批。"
+msgstr "开启此班次的收银员不能审批该班次。"
 
 #: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
@@ -4523,7 +4523,7 @@ msgstr "关闭此班次需要经理审批。"
 #: includes/Services/Reports_Registry.php:191
 #: includes/Services/Reports_Registry.php:253
 msgid "Category"
-msgstr "类别"
+msgstr "分类"
 
 #: includes/Services/Reports_Registry.php:216
 msgid "Net sales"
@@ -4531,7 +4531,7 @@ msgstr "净销售额"
 
 #: includes/Services/Reports_Registry.php:226
 msgid "Net cash movements"
-msgstr "现金变动净额"
+msgstr "现金净变动"
 
 #: includes/Services/Reports_Registry.php:245
 msgid "Taken"
@@ -4559,17 +4559,17 @@ msgstr "操作人"
 
 #: includes/Services/Report_Document_Validator.php:31
 msgid "report.column_count must equal the number of columns."
-msgstr "report.column_count 必须与列数相同。"
+msgstr "report.column_count 必须等于列数。"
 
 #. translators: %s: path of the invalid cells array.
 #: includes/Services/Report_Document_Validator.php:48
 #, php-format
 msgid "%s must match the column keys in order."
-msgstr "%s 必须按顺序与列键匹配。"
+msgstr "%s 必须与列键及其顺序一致。"
 
 #: includes/Services/Report_Scope_Gate.php:30
 msgid "The end day must not precede the start day."
-msgstr "结束日期不能早于开始日期。"
+msgstr "结束日期不得早于开始日期。"
 
 #: includes/Services/Report_Scope_Gate.php:33
 msgid "This range is beyond the report history limit."
@@ -4581,7 +4581,7 @@ msgstr "查看所有收银台的报告需要 WCPOS Pro。请选择此收银台�
 
 #: includes/Services/Report_Scope_Gate.php:42
 msgid "Reports for earlier days or days other than today require WCPOS Pro."
-msgstr "查看较早日期或今天以外日期的报告需要 WCPOS Pro。"
+msgstr "查看更早日期或非今天日期的报告需要 WCPOS Pro。"
 
 #: includes/Services/Report_Scope_Resolver.php:39
 msgid "Session not found."
@@ -4589,11 +4589,11 @@ msgstr "未找到班次。"
 
 #: includes/Services/Report_Scope_Resolver.php:42
 msgid "This report runs on a closed session."
-msgstr "此报告基于已关闭的班次生成。"
+msgstr "此报告适用于已关闭的班次。"
 
 #: includes/Services/Report_Scope_Resolver.php:50
 msgid "The closed session must have a linked closure."
-msgstr "已关闭的班次必须关联一条结班记录。"
+msgstr "已关闭的班次必须关联一个关账记录。"
 
 #: includes/Services/Report_Scope_Resolver.php:233
 msgid "The session, register and store must describe the same scope."
@@ -5008,7 +5008,7 @@ msgstr "小票模板 #%d"
 
 #: includes/Templates.php:570
 msgid "Theme Display"
-msgstr "主题显示"
+msgstr "主题显示屏"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:570
@@ -5017,7 +5017,7 @@ msgstr "主题收据模板"
 
 #: includes/Templates.php:575
 msgid "Pro Display"
-msgstr "Pro 显示"
+msgstr "Pro 显示屏"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:575
@@ -5026,7 +5026,7 @@ msgstr "专业收据模板"
 
 #: includes/Templates.php:580
 msgid "Core Display"
-msgstr "核心显示"
+msgstr "核心显示屏"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:580
@@ -5079,7 +5079,7 @@ msgstr "用于分析的报告模板"
 
 #: includes/Templates.php:1504
 msgid "Customer-facing display templates"
-msgstr "顾客显示屏模板"
+msgstr "面向顾客的显示模板"
 
 #. translators: Receipt template post type or template option label.
 #: includes/Templates.php:1521
@@ -5106,7 +5106,7 @@ msgstr "常规"
 #. translators: Display template category label.
 #: includes/Templates.php:1525
 msgid "Seasonal"
-msgstr "季节性"
+msgstr "季节"
 
 #. translators: Display template category label.
 #: includes/Templates.php:1526
@@ -5164,13 +5164,13 @@ msgstr "用户名或密码无效。"
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:49
 msgid "Pocket"
-msgstr "掌上"
+msgstr "迷你"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:54
 msgid ""
 "Customer display for small screens: a docked running total, the newest item on top, full-screen payment states. For a phone on a stand."
-msgstr "适用于小屏幕的顾客显示屏：固定显示累计金额，最新商品置顶，并全屏显示付款状态。适合放在支架上的手机。"
+msgstr "适用于小屏幕的顾客显示：底部固定显示累计金额，最新商品置顶，并全屏显示付款状态。适合放在支架上的手机。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:70
@@ -5181,13 +5181,13 @@ msgstr "跑马灯"
 #: includes/Templates/Gallery_Registry.php:75
 msgid ""
 "Customer display for large screens: brand column with greeting and promo space, the just-added item as a hero, big totals. For a monitor or wide tablet."
-msgstr "适用于大屏幕的顾客显示屏：品牌栏含问候语和促销区域，刚添加的商品突出显示，金额醒目。适合显示器或宽屏平板。"
+msgstr "适用于大屏幕的顾客显示：品牌栏包含问候语和促销区域，最新添加的商品醒目展示，并显示大号总额。适合显示器或宽屏平板电脑。"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:93
 msgid ""
 "The responsive default: itemised list with a totals panel on wide screens, a docked total on narrow ones. Install it to customise."
-msgstr "自适应默认布局：宽屏显示逐项清单和金额面板，窄屏固定显示总额。安装后即可自定义。"
+msgstr "响应式默认模板：宽屏上显示商品明细和总额面板，窄屏上固定显示总额。安装后即可自定义。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:106
@@ -5198,18 +5198,18 @@ msgstr "轮播"
 #: includes/Templates/Gallery_Registry.php:108
 msgid ""
 "Rotate your own pictures between sales. Swap the three image links for yours and edit the captions; a small version keeps cycling under the totals."
-msgstr "在销售间隙轮播您自己的图片。替换三张图片链接并编辑说明文字；小尺寸图片会在总额下方持续轮播。"
+msgstr "在销售间隙轮播您自己的图片。替换三个图片链接并编辑说明文字；小尺寸版本会在总额下方持续轮播。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:122
 msgid "Specials board"
-msgstr "特惠看板"
+msgstr "特惠商品栏"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:124
 msgid ""
 "A short list of featured items and prices for the idle screen, with an \"ask about today's specials\" line on the order screens. Edit the four lines."
-msgstr "在待机屏幕上简短展示精选商品和价格，并在订单屏幕上显示“询问今日特惠”提示。编辑这四行文字。"
+msgstr "在待机屏幕上简短展示精选商品和价格，并在订单屏幕上显示“咨询今日特惠”提示。编辑这四行内容。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:138
@@ -5220,18 +5220,18 @@ msgstr "关注并评价"
 #: includes/Templates/Gallery_Registry.php:140
 msgid ""
 "Your social handle and a QR code between sales; paste in your own QR image. Adds your handle to the order screens."
-msgstr "在销售间隙显示您的社交账号和二维码；粘贴您自己的二维码图片。您的账号也会显示在订单屏幕上。"
+msgstr "在销售间隙展示您的社交媒体账号和二维码；粘贴您自己的二维码图片。您的账号也会显示在订单屏幕上。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:154
 msgid "Season's Greetings"
-msgstr "节日快乐"
+msgstr "节日问候"
 
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:156
 msgid ""
 "The Ledger with a festive idle screen for the December–January window; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
-msgstr "账目主题，搭配适用于 12 月至 1 月的节日待机屏幕；主题会以柔和点缀和问候语呈现在订单屏幕上。编辑问候语，打造专属风格。"
+msgstr "Ledger 节日待机屏幕模板，适用于 12 月至 1 月期间；主题会将柔和的点缀色和问候语带到订单屏幕。编辑问候语，打造专属风格。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:170
@@ -5242,7 +5242,7 @@ msgstr "农历新年"
 #: includes/Templates/Gallery_Registry.php:172
 msgid ""
 "The Ledger with a red-and-gold idle screen wishing customers good fortune; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
-msgstr "账目主题，搭配红金配色的待机屏幕，祝顾客好运；主题会以柔和点缀和问候语呈现在订单屏幕上。编辑问候语，打造专属风格。"
+msgstr "Ledger 红金配色待机屏幕模板，向顾客送上吉祥祝福；主题会将柔和的点缀色和问候语带到订单屏幕。编辑问候语，打造专属风格。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:186
@@ -5253,7 +5253,7 @@ msgstr "开斋节快乐"
 #: includes/Templates/Gallery_Registry.php:188
 msgid ""
 "The Ledger with a night-blue-and-gold idle screen for Ramadan and Eid al-Fitr; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
-msgstr "账目主题，搭配适用于斋月和开斋节的深蓝金色待机屏幕；主题会以柔和点缀和问候语呈现在订单屏幕上。编辑问候语，打造专属风格。"
+msgstr "Ledger 深蓝金色待机屏幕模板，适用于斋月和开斋节；主题会将柔和的点缀色和问候语带到订单屏幕。编辑问候语，打造专属风格。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:202
@@ -5264,7 +5264,7 @@ msgstr "排灯节"
 #: includes/Templates/Gallery_Registry.php:204
 msgid ""
 "The Ledger with a warm idle screen of lights; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting to make it yours."
-msgstr "账目主题，搭配温暖灯光的待机屏幕；主题会以柔和点缀和问候语呈现在订单屏幕上。编辑问候语，打造专属风格。"
+msgstr "Ledger 温馨灯饰待机屏幕模板；主题会将柔和的点缀色和问候语带到订单屏幕。编辑问候语，打造专属风格。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:218
@@ -5275,7 +5275,7 @@ msgstr "情人节"
 #: includes/Templates/Gallery_Registry.php:220
 msgid ""
 "A love letter with a wax seal on a blush ground; the theme carries a soft accent and a greeting line into the order screens. Edit the greeting."
-msgstr "粉色底色上饰有火漆封印的情书；主题会以柔和点缀和问候语呈现在订单屏幕上。编辑问候语。"
+msgstr "粉色底色上饰有火漆封印的情书；主题会将柔和的点缀色和问候语带到订单屏幕。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:234
@@ -5286,7 +5286,7 @@ msgstr "母亲节"
 #: includes/Templates/Gallery_Registry.php:236
 msgid ""
 "A ring of petals around the greeting, with a soft accent on the order screens. Edit the greeting."
-msgstr "花瓣环绕问候语，订单屏幕上带有柔和点缀。编辑问候语。"
+msgstr "问候语周围环绕着花瓣，订单屏幕上配有柔和的点缀色。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:250
@@ -5296,7 +5296,7 @@ msgstr "父亲节"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:252
 msgid "A workshop card between plaid bands. Edit the greeting."
-msgstr "格纹饰带之间的工坊卡片。编辑问候语。"
+msgstr "格纹条带之间的工坊风卡片。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:266
@@ -5316,7 +5316,7 @@ msgstr "万圣节"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:284
 msgid "An orange moon, bats and jagged grass. Edit the greeting."
-msgstr "橙色月亮、蝙蝠和锯齿状草地。编辑问候语。"
+msgstr "橙色月亮、蝙蝠和锯齿状草丛。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:298
@@ -5326,7 +5326,7 @@ msgstr "感恩节"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:300
 msgid "A harvest wreath of leaves. Edit the greeting."
-msgstr "树叶编成的丰收花环。编辑问候语。"
+msgstr "用树叶编成的丰收花环。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:314
@@ -5336,7 +5336,7 @@ msgstr "光明节"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:316
 msgid "A menorah of nine candles. Edit the greeting."
-msgstr "九枝烛台。编辑问候语。"
+msgstr "由九支蜡烛组成的烛台。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:330
@@ -5346,7 +5346,7 @@ msgstr "新年"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:332
 msgid "Confetti and a gold burst. Edit the greeting."
-msgstr "彩纸与金色绽放图案。编辑问候语。"
+msgstr "彩纸和金色绽放效果。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:346
@@ -5356,7 +5356,7 @@ msgstr "诺鲁孜节"
 #. translators: Gallery template description shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:348
 msgid "Tulips for the spring equinox. Edit the greeting."
-msgstr "春分时节的郁金香。编辑问候语。"
+msgstr "象征春分的郁金香。编辑问候语。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:362
@@ -5367,7 +5367,7 @@ msgstr "促销"
 #: includes/Templates/Gallery_Registry.php:364
 msgid ""
 "The Ledger with a promotional idle screen: a headline and an offer line you edit for each promotion."
-msgstr "账目主题，搭配促销待机屏幕：可为每次促销编辑标题和优惠内容。"
+msgstr "Ledger 促销待机屏幕模板：包含标题和优惠文案，可针对每次促销进行编辑。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:378
@@ -5378,7 +5378,7 @@ msgstr "黑色星期五"
 #: includes/Templates/Gallery_Registry.php:380
 msgid ""
 "Blackout with a deals ticker, and the offer line repeated on the order screens. Edit the offer."
-msgstr "黑屏滚动显示优惠信息，订单屏幕上也会重复显示优惠内容。编辑优惠信息。"
+msgstr "Blackout 模板带有促销滚动条，优惠文案也会重复显示在订单屏幕上。编辑优惠内容。"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:394
@@ -5530,7 +5530,7 @@ msgstr ""
 #: includes/Templates/Gallery_Registry.php:590
 #: includes/Templates/Gallery_Registry.php:601
 msgid "A tabular report with groups, subtotals and totals."
-msgstr "按组显示并包含小计和总计的表格报告。"
+msgstr "包含分组、小计和总计的表格报告。"
 
 #: includes/Templates/Gallery_Registry.php:600
 msgid "Thermal Report"
@@ -5539,11 +5539,11 @@ msgstr "热敏打印报告"
 #: includes/Templates/Gallery_Registry.php:612
 #: includes/Templates/Gallery_Registry.php:623
 msgid "Closure and X-report with tender counts, cash movements and totals."
-msgstr "包含各付款方式清点金额、现金变动和总额的结班单与 X 报告。"
+msgstr "包含各支付方式笔数、现金变动和总额的关账报告及 X 报告。"
 
 #: includes/Templates/Gallery_Registry.php:622
 msgid "Thermal Closure"
-msgstr "热敏打印结班单"
+msgstr "热敏打印关账单"
 
 #: includes/Templates/Payment.php:176
 msgid ""
@@ -5725,7 +5725,7 @@ msgstr "模板包含危险函数：%s()。出于安全原因，不允许使用�
 #: templates/closure.php:21
 #, php-format
 msgid "Closure %s"
-msgstr "结班 %s"
+msgstr "关账单 %s"
 
 #. translators: 1: unsynced sales count, 2: total.
 #: templates/closure.php:134
