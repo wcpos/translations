@@ -1145,12 +1145,12 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Нямате права да инициализирате методите на плащане."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
-#: includes/Payments/Contract/Ledger.php:650
+#: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
 msgstr "Методът на плащане не е намерен."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Ledger.php:1168
+#: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
 msgstr "Режимът на осчетоводяване на плащане не се поддържа."
 
@@ -1399,12 +1399,12 @@ msgid "Payment method is disabled."
 msgstr "Методът на плащане е деактивиран."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "The order is already paid."
 msgstr "Поръчката вече е платена."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Payment amount exceeds the order balance."
 msgstr "Сумата на плащането надвишава остатъка по поръчката."
 
@@ -1424,49 +1424,51 @@ msgid "Refund must belong to this order."
 msgstr "Възстановяването трябва да принадлежи на тази поръчка."
 
 #: includes/Payments/Contract/Ledger.php:593
+#: includes/Payments/Contract/Ledger.php:608
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Refund amount cannot be allocated to this payment."
 msgstr ""
 "Сумата за възстановяване не може да бъде разпределена към това плащане."
 
-#: includes/Payments/Contract/Ledger.php:625
+#: includes/Payments/Contract/Ledger.php:654
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID на плащането трябва да е UUID."
 
-#: includes/Payments/Contract/Ledger.php:628
-#: includes/Payments/Contract/Ledger.php:632
+#: includes/Payments/Contract/Ledger.php:657
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Payment amount must be positive."
 msgstr "Сумата на плащането трябва да е положителна."
 
-#: includes/Payments/Contract/Ledger.php:637
+#: includes/Payments/Contract/Ledger.php:666
 msgid "Payment currency must match the order."
 msgstr "Валутата на плащането трябва да съвпада с валутата на поръчката."
 
-#: includes/Payments/Contract/Ledger.php:689
+#: includes/Payments/Contract/Ledger.php:718
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID на плащането влиза в конфликт със съществуващо плащане."
 
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "Потвърдената от доставчика сума или валута не съвпада с плащането."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:791
+#: includes/Payments/Contract/Ledger.php:820
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Плащане %s в WCPOS е анулирано."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:822
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Плащане %1$s в WCPOS е анулирано: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1192
 msgid "Payment not found."
 msgstr "Плащането не е намерено."
 
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:1202
 msgid "Payment transition is invalid."
 msgstr "Невалиден преход на плащането."
 
@@ -1541,23 +1543,23 @@ msgstr "Това движение е записано след началото 
 msgid "The movement has already been voided or is unavailable."
 msgstr "Движението вече е анулирано или не е налично."
 
-#: includes/Services/Closure_Store.php:383
+#: includes/Services/Closure_Store.php:405
 msgid "The session cannot be closed."
 msgstr "Сесията не може да бъде затворена."
 
-#: includes/Services/Closure_Store.php:445
+#: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
 "Тази сесия вече има приключване; преброяването е записано като повторно."
 
-#: includes/Services/Closure_Store.php:462
-#: includes/Services/Register_Session_Store.php:264
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Closure_Store.php:484
+#: includes/Services/Register_Session_Store.php:265
+#: includes/Services/Register_Session_Store.php:371
 msgid "The session state has changed."
 msgstr "Състоянието на сесията е променено."
 
-#: includes/Services/Closure_Store.php:488
+#: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
 msgstr "Номерът на приключването предхожда поредността на касата."
 
@@ -1582,21 +1584,21 @@ msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "Метаданните за POS одит не могат да бъдат променяни чрез този REST маршрут."
 
-#: includes/Services/Fiscal_Record_Store.php:243
+#: includes/Services/Fiscal_Record_Store.php:259
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Нямате права да четете документи на касата."
 
-#: includes/Services/Fiscal_Record_Store.php:248
-#: includes/Services/Fiscal_Record_Store.php:256
+#: includes/Services/Fiscal_Record_Store.php:264
+#: includes/Services/Fiscal_Record_Store.php:272
 msgid "Receipt document not found."
 msgstr "Документът на касовата бележка не е намерен."
 
-#: includes/Services/Fiscal_Record_Store.php:253
+#: includes/Services/Fiscal_Record_Store.php:269
 msgid "Invalid receipt document."
 msgstr "Невалиден документ на касова бележка."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:61
+#: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
@@ -1620,7 +1622,7 @@ msgstr ""
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:503
+#: includes/Services/Receipt_Data_Builder.php:515
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1628,8 +1630,10 @@ msgstr "Гост"
 
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
+#. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:483
+#: includes/Services/Receipt_Data_Builder.php:495
+#: includes/Services/Receipt_Data_Builder.php:901
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1558
 #, php-format
 msgid "Store #%d"
@@ -1842,19 +1846,19 @@ msgstr ""
 "Кодът за бърза отстъпка „%s“ принадлежи на купон на магазина. Използвайте друг код."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:226
+#: includes/Services/Receipt_Data_Builder.php:238
 #, php-format
 msgid "Session %s"
 msgstr "Сесия %s"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:644
+#: includes/Services/Receipt_Data_Builder.php:656
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "Отстъпка"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:646
+#: includes/Services/Receipt_Data_Builder.php:658
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "Отстъпка (%s%%)"
@@ -3306,16 +3310,16 @@ msgid "Correction Figures"
 msgstr "Суми на корекцията"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
-msgid "Late Sale Expected Delta by Tender"
-msgstr "Промяна в очакваното при късна продажба по начин на плащане"
+msgid "Expected Delta by Tender"
+msgstr "Очаквана разлика по начин на плащане"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
 msgstr "Промяна в продажбите от късна продажба"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
-msgid "Late Sale Refunds Delta"
-msgstr "Промяна във възстановяванията от късна продажба"
+msgid "Refunds Delta"
+msgstr "Разлика при възстановяванията"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
@@ -4552,15 +4556,15 @@ msgstr "Облагаемо: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Създаден е моментен снимък на ППС фискален бон (бон №%d)."
 
-#: includes/Services/Register_Session_Store.php:153
+#: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
 msgstr "Тази каса вече има отворена сесия."
 
-#: includes/Services/Register_Session_Store.php:219
+#: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Касиерът, отворил тази сесия, не може да я одобри."
 
-#: includes/Services/Register_Session_Store.php:323
+#: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
 msgstr "За затваряне на тази сесия е необходимо одобрение от управител."
 

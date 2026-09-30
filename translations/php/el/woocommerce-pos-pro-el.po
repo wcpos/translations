@@ -295,6 +295,31 @@ msgid ""
 msgstr ""
 "Το WCPOS Pro απαιτεί νεότερη έκδοση του πρόσθετου WCPOS (REST API με έκδοση). Οι επεκτάσεις REST του Pro είναι απενεργοποιημένες μέχρι να ενημερωθεί η ενσωματωμένη εξάρτηση."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Δεν υπάρχει διαθέσιμο πρότυπο οθόνης."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Άγνωστη οθόνη."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Το σήμα δεν αφορά αυτήν τη συσκευή."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Μη έγκυρος ομότιμος κόμβος σηματοδότησης."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Δεν είναι δυνατή η ανάγνωση σημάτων για αυτόν τον ρόλο."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Δεν έχετε εξουσιοδότηση για αυτό το κατάστημα."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Δεν έχετε άδεια να διαχειριστείτε τα πρόσθετα."
@@ -357,6 +382,15 @@ msgstr "Το κατάστημα δεν βρέθηκε."
 msgid "Failed to trash store."
 msgstr "Αποτυχία μετακίνησης του καταστήματος στον κάδο."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Μη έγκυρος πάροχος webhook."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Δεν βρέθηκε μέθοδος πληρωμής."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -370,6 +404,17 @@ msgstr ""
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Το κλειδί idempotency χρησιμοποιήθηκε ξανά με διαφορετικό αίτημα."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Αυτός ο πάροχος πληρωμών δεν υποστηρίζει αυτήν την ενέργεια."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Ο πάροχος δεν μπόρεσε να επιβεβαιώσει αυτήν την πληρωμή."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -392,6 +437,48 @@ msgstr "Η αρχική πύλη πληρωμής δεν είναι διαθέσ
 msgid "The refund resolver returned an invalid result."
 msgstr ""
 "Ο μηχανισμός επίλυσης επιστροφής χρημάτων επέστρεψε μη έγκυρο αποτέλεσμα."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Επιλέξτε συσκευή ανάγνωσης."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Αυτή η συσκευή ανάγνωσης δεν επιτρέπεται."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Αυτή η συσκευή ανάγνωσης δεν είναι διαθέσιμη."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Ο πάροχος δεν μπόρεσε να εισπράξει αυτήν την πληρωμή: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Ταμείο"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Το κατάστημα προορισμού πρέπει να είναι δημοσιευμένο."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Κλείστε τη συνεδρία ταμείου πριν τη μεταφέρετε σε άλλο κατάστημα."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Έγιναν πάρα πολλές προσπάθειες σύζευξης."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Μη έγκυρος ή ληγμένος κωδικός σύζευξης."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Μη έγκυρα διαπιστευτήρια οθόνης."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -439,16 +526,77 @@ msgid ""
 msgstr ""
 "Αυτό το προϊόν χρησιμοποιεί τιμολόγηση ανά κατάστημα, επομένως κάθε αλλαγή τιμής ή φόρου πρέπει να αναφέρει για ποιο κατάστημα ισχύει. Το POS δεν έστειλε κατάστημα — επανασυνδέστε το ταμείο με το κατάστημά του και δοκιμάστε ξανά."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Σύνδεση στο POS…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Αυτή η οθόνη δεν μπορεί να συνδεθεί με το POS μέσω αυτού του δικτύου. Και οι δύο συσκευές πρέπει να είναι στο ίδιο Wi-Fi· τα δίκτυα επισκεπτών συχνά αποκλείουν αυτήν τη σύνδεση."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Αυτή η οθόνη αφαιρέθηκε. Κάντε ξανά σύζευξη."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Δεν έχει ρυθμιστεί πρότυπο οθόνης πελάτη."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Κάντε σύζευξη αυτής της οθόνης"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Κωδικός σύζευξης"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Όνομα οθόνης"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Οθόνη πελάτη"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Σύζευξη οθόνης"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Αυτός ο κωδικός σύζευξης δεν είναι έγκυρος ή έχει λήξει."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Πάρα πολλές προσπάθειες. Δοκιμάστε ξανά σε λίγο."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Δεν ήταν δυνατή η σύνδεση. Ελέγξτε το δίκτυο και δοκιμάστε ξανά."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Επανασύνδεση…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "Το %1$s απαιτεί WCPOS Pro %2$s ή νεότερη έκδοση."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr ""
 "Η φόρτωση του WCPOS Pro απέτυχε. Παρακαλώ εκτελέστε το composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

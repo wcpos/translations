@@ -294,6 +294,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro reikia naujesnės WCPOS papildinio versijos (REST API su versijomis). Pro REST plėtiniai išjungti, kol bus atnaujinta kartu pateikta priklausomybė."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Ekrano šablono nėra."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Nežinomas ekranas."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Signalas nepriklauso šiam įrenginiui."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Netinkamas signalizavimo mazgas."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Negalima skaityti šio vaidmens signalų."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Neturite teisės naudotis šia parduotuve."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Neturite leidimo valdyti įskiepius."
@@ -356,6 +381,15 @@ msgstr "Parduotuvė nerasta."
 msgid "Failed to trash store."
 msgstr "Nepavyko ištrinti parduotuvės."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Netinkamas saityno kablio teikėjas."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Mokėjimo būdas nerastas."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -368,6 +402,17 @@ msgstr "Užklausa su šiuo idempotencijos raktu jau yra apdorojama."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotencijos raktas buvo panaudotas su kitokia užklausa."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Šis mokėjimo teikėjas nepalaiko šios operacijos."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Teikėjui nepavyko patvirtinti šio mokėjimo."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -389,6 +434,48 @@ msgstr "Pirminis mokėjimo šliuzas nepasiekiamas grąžinimams."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Grąžinimo sprendiklis grąžino netinkamą rezultatą."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Pasirinkite skaitytuvą."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Šis skaitytuvas neleidžiamas."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Šis skaitytuvas nepasiekiamas."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Teikėjui nepavyko nurašyti mokėjimo: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Kasa"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Tikslinė parduotuvė turi būti paskelbta."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Prieš perkeldami į kitą parduotuvę, uždarykite kasos seansą."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Per daug bandymų susieti."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Netinkamas arba nebegaliojantis susiejimo kodas."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Netinkami ekrano prisijungimo duomenys."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -436,15 +523,76 @@ msgid ""
 msgstr ""
 "Šiam produktui taikomos konkrečiai parduotuvei nustatytos kainos, todėl keičiant kainą ar mokestį būtina nurodyti, kuriai parduotuvei tai taikoma. POS nenurodė parduotuvės — iš naujo susiekite kasos terminalą su jo parduotuve ir bandykite dar kartą."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Jungiamasi prie pardavimo vietos…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Šis ekranas negali pasiekti POS per šį tinklą. Abu įrenginiai turi būti tame pačiame „Wi-Fi“ tinkle; svečių tinklai dažnai blokuoja ryšį."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Šis ekranas buvo pašalintas. Susiekite jį iš naujo."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Nenustatytas klientų ekrano šablonas."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Susieti šį ekraną"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Susiejimo kodas"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Ekrano pavadinimas"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Kliento ekranas"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Susieti ekraną"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Šis susiejimo kodas netinkamas arba nebegalioja."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Per daug bandymų. Bandykite netrukus."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Nepavyko prisijungti. Patikrinkite tinklą ir bandykite dar kartą."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Jungiamasi iš naujo…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s reikalinga WCPOS Pro %2$s arba naujesnė versija."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro nepavyko įkelti. Paleiskite composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
