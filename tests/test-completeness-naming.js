@@ -2,6 +2,7 @@
 
 const assert = require('node:assert/strict');
 const path = require('node:path');
+const { pluralBasesOf, expectedKeysForLocale } = require('../scripts/plural-rules.js');
 
 const {
   findWcposNamingIssues,
@@ -213,11 +214,7 @@ test('rolling monorepo translations retain locale-specific plural forms', () => 
   // 2026-08-23 when `health.database.other_stores` left the source, and the
   // test then failed for a key no locale is supposed to have.
   const source = require('../source/js/monorepo/core.json');
-  const pluralBases = [...new Set(
-    Object.keys(source)
-      .filter(key => key.endsWith('_one') || key.endsWith('_other'))
-      .map(key => key.replace(/_(one|other)$/, '')),
-  )].sort();
+  const pluralBases = [...pluralBasesOf(Object.keys(source))].sort();
   assert.ok(pluralBases.length > 0, 'expected at least one plural base in the source');
 
   for (const locale of locales) {
@@ -227,6 +224,20 @@ test('rolling monorepo translations retain locale-specific plural forms', () => 
     // Untranslated bases are left to the completeness check.
     assert.deepEqual(pluralShapeMismatches(pluralBases, translations, expectedSuffixes, ALL_SUFFIXES), [], `${locale}: plural shape`);
   }
+});
+
+test('a lone _other key is a plain key, not a plural base', () => {
+  const sourceKeys = ['items_one', 'items_other', 'kind_cash', 'kind_other'];
+  assert.deepEqual(pluralBasesOf(sourceKeys), new Set(['items']));
+  assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'bg_BG')].sort(), [
+    'items_one', 'items_other', 'kind_cash', 'kind_other',
+  ]);
+  assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'ja')].sort(), [
+    'items_other', 'kind_cash', 'kind_other',
+  ]);
+  const arabicKeys = expectedKeysForLocale(sourceKeys, 'ar');
+  for (const key of ['items_zero', 'items_few', 'items_many']) assert.ok(arabicKeys.has(key));
+  for (const key of ['kind_zero', 'kind_one', 'kind_two', 'kind_few', 'kind_many']) assert.ok(!arabicKeys.has(key));
 });
 
 test('plural shape check skips untranslated bases but flags wrong shapes', () => {
