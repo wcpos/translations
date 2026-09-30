@@ -1143,12 +1143,12 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Því miður hefurðu ekki heimild til að frumstilla greiðslumáta."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
-#: includes/Payments/Contract/Ledger.php:650
+#: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
 msgstr "Greiðslumátinn fannst ekki."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Ledger.php:1168
+#: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
 msgstr "Þessi innheimtuaðferð greiðslu er ekki studd."
 
@@ -1398,12 +1398,12 @@ msgid "Payment method is disabled."
 msgstr "Greiðslumátinn er óvirkur."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "The order is already paid."
 msgstr "Pöntunin er þegar greidd."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Payment amount exceeds the order balance."
 msgstr "Greiðsluupphæðin er hærri en eftirstöðvar pöntunarinnar."
 
@@ -1422,49 +1422,51 @@ msgid "Refund must belong to this order."
 msgstr "Endurgreiðslan verður að tilheyra þessari pöntun."
 
 #: includes/Payments/Contract/Ledger.php:593
+#: includes/Payments/Contract/Ledger.php:608
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Ekki er hægt að færa endurgreiðsluupphæðina á þessa greiðslu."
 
-#: includes/Payments/Contract/Ledger.php:625
+#: includes/Payments/Contract/Ledger.php:654
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Auðkenni greiðslu verður að vera UUID."
 
-#: includes/Payments/Contract/Ledger.php:628
-#: includes/Payments/Contract/Ledger.php:632
+#: includes/Payments/Contract/Ledger.php:657
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Payment amount must be positive."
 msgstr "Greiðsluupphæð verður að vera jákvæð."
 
-#: includes/Payments/Contract/Ledger.php:637
+#: includes/Payments/Contract/Ledger.php:666
 msgid "Payment currency must match the order."
 msgstr "Gjaldmiðill greiðslunnar verður að vera sá sami og í pöntuninni."
 
-#: includes/Payments/Contract/Ledger.php:689
+#: includes/Payments/Contract/Ledger.php:718
 msgid "Payment id conflicts with an existing payment."
 msgstr "Auðkenni greiðslu stangast á við greiðslu sem þegar er til."
 
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Upphæð eða gjaldmiðill sem greiðsluþjónustan staðfesti passar ekki við greiðsluna."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:791
+#: includes/Payments/Contract/Ledger.php:820
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-greiðsla %s afturkölluð."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:822
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-greiðsla %1$s afturkölluð: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1192
 msgid "Payment not found."
 msgstr "Greiðslan fannst ekki."
 
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:1202
 msgid "Payment transition is invalid."
 msgstr "Ógild breyting á stöðu greiðslu."
 
@@ -1539,22 +1541,22 @@ msgstr "Þessi færsla var skráð eftir að talning hófst."
 msgid "The movement has already been voided or is unavailable."
 msgstr "Færslan hefur þegar verið afturkölluð eða er ekki tiltæk."
 
-#: includes/Services/Closure_Store.php:383
+#: includes/Services/Closure_Store.php:405
 msgid "The session cannot be closed."
 msgstr "Ekki er hægt að loka lotunni."
 
-#: includes/Services/Closure_Store.php:445
+#: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "Þessi lota hefur þegar lokun; talningin var skráð sem endurtalning."
 
-#: includes/Services/Closure_Store.php:462
-#: includes/Services/Register_Session_Store.php:264
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Closure_Store.php:484
+#: includes/Services/Register_Session_Store.php:265
+#: includes/Services/Register_Session_Store.php:371
 msgid "The session state has changed."
 msgstr "Staða lotunnar hefur breyst."
 
-#: includes/Services/Closure_Store.php:488
+#: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
 msgstr "Lokunarnúmerið er á undan númeraröð kassans."
 
@@ -1579,21 +1581,21 @@ msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "Ekki er hægt að breyta lýsigögnum POS-úttektar í gegnum þessa REST-leið."
 
-#: includes/Services/Fiscal_Record_Store.php:243
+#: includes/Services/Fiscal_Record_Store.php:259
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Því miður hefurðu ekki heimild til að lesa kassaskjöl."
 
-#: includes/Services/Fiscal_Record_Store.php:248
-#: includes/Services/Fiscal_Record_Store.php:256
+#: includes/Services/Fiscal_Record_Store.php:264
+#: includes/Services/Fiscal_Record_Store.php:272
 msgid "Receipt document not found."
 msgstr "Kvittunarskjalið fannst ekki."
 
-#: includes/Services/Fiscal_Record_Store.php:253
+#: includes/Services/Fiscal_Record_Store.php:269
 msgid "Invalid receipt document."
 msgstr "Ógilt kvittunarskjal."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:61
+#: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
@@ -1616,7 +1618,7 @@ msgstr "Ekki er hægt að breyta upprunalyklum POS eftir sölu: %s"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:503
+#: includes/Services/Receipt_Data_Builder.php:515
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1624,8 +1626,10 @@ msgstr "Gestur"
 
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
+#. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:483
+#: includes/Services/Receipt_Data_Builder.php:495
+#: includes/Services/Receipt_Data_Builder.php:901
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1558
 #, php-format
 msgid "Store #%d"
@@ -1838,19 +1842,19 @@ msgstr ""
 "Afsláttarkóðinn „%s“ tilheyrir afsláttarmiða verslunarinnar. Notaðu annan kóða."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:226
+#: includes/Services/Receipt_Data_Builder.php:238
 #, php-format
 msgid "Session %s"
 msgstr "Lota %s"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:644
+#: includes/Services/Receipt_Data_Builder.php:656
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "Afsláttur"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:646
+#: includes/Services/Receipt_Data_Builder.php:658
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "Afsláttur (%s%%)"
@@ -3300,16 +3304,16 @@ msgid "Correction Figures"
 msgstr "Leiðréttingartölur"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
-msgid "Late Sale Expected Delta by Tender"
-msgstr "Mismunur væntra greiðslna vegna síðbúinnar sölu"
+msgid "Expected Delta by Tender"
+msgstr "Mismunur væntra greiðslna eftir greiðslumáta"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
 msgstr "Sölumismunur vegna síðbúinnar sölu"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
-msgid "Late Sale Refunds Delta"
-msgstr "Endurgreiðslumismunur vegna síðbúinnar sölu"
+msgid "Refunds Delta"
+msgstr "Endurgreiðslumismunur"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
@@ -4545,15 +4549,15 @@ msgstr "Skattstofn: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "POS karliði búin til (skipti #%d)."
 
-#: includes/Services/Register_Session_Store.php:153
+#: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
 msgstr "Þessi kassi er þegar með opna lotu."
 
-#: includes/Services/Register_Session_Store.php:219
+#: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Kassastarfsmaðurinn sem opnaði þessa lotu getur ekki samþykkt hana."
 
-#: includes/Services/Register_Session_Store.php:323
+#: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
 msgstr "Samþykki stjórnanda þarf til að loka þessari lotu."
 
