@@ -1147,12 +1147,12 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Sajnáljuk, nem inicializálhatja a fizetési módokat."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
-#: includes/Payments/Contract/Ledger.php:650
+#: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
 msgstr "A fizetési mód nem található."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Ledger.php:1168
+#: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
 msgstr "A fizetésbeszedési mód nem támogatott."
 
@@ -1403,12 +1403,12 @@ msgid "Payment method is disabled."
 msgstr "A fizetési mód le van tiltva."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "The order is already paid."
 msgstr "A rendelés már ki van fizetve."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Payment amount exceeds the order balance."
 msgstr "A fizetés összege meghaladja a rendelés fennmaradó összegét."
 
@@ -1427,49 +1427,51 @@ msgid "Refund must belong to this order."
 msgstr "A visszatérítésnek ehhez a rendeléshez kell tartoznia."
 
 #: includes/Payments/Contract/Ledger.php:593
+#: includes/Payments/Contract/Ledger.php:608
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "A visszatérítés összege nem rendelhető ehhez a fizetéshez."
 
-#: includes/Payments/Contract/Ledger.php:625
+#: includes/Payments/Contract/Ledger.php:654
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "A fizetésazonosítónak UUID-nek kell lennie."
 
-#: includes/Payments/Contract/Ledger.php:628
-#: includes/Payments/Contract/Ledger.php:632
+#: includes/Payments/Contract/Ledger.php:657
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Payment amount must be positive."
 msgstr "A fizetés összegének pozitívnak kell lennie."
 
-#: includes/Payments/Contract/Ledger.php:637
+#: includes/Payments/Contract/Ledger.php:666
 msgid "Payment currency must match the order."
 msgstr "A fizetés pénznemének meg kell egyeznie a rendelés pénznemével."
 
-#: includes/Payments/Contract/Ledger.php:689
+#: includes/Payments/Contract/Ledger.php:718
 msgid "Payment id conflicts with an existing payment."
 msgstr "A fizetésazonosító ütközik egy meglévő fizetéssel."
 
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "A szolgáltató által megerősített összeg vagy pénznem nem egyezik a fizetés adataival."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:791
+#: includes/Payments/Contract/Ledger.php:820
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "A WCPOS %s fizetés érvénytelenítve."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:822
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "A WCPOS %1$s fizetés érvénytelenítve: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1192
 msgid "Payment not found."
 msgstr "A fizetés nem található."
 
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:1202
 msgid "Payment transition is invalid."
 msgstr "Érvénytelen fizetési állapotváltás."
 
@@ -1545,23 +1547,23 @@ msgstr "Ezt a pénzmozgást a számlálás megkezdése után rögzítették."
 msgid "The movement has already been voided or is unavailable."
 msgstr "A pénzmozgást már érvénytelenítették, vagy nem érhető el."
 
-#: includes/Services/Closure_Store.php:383
+#: includes/Services/Closure_Store.php:405
 msgid "The session cannot be closed."
 msgstr "A munkamenet nem zárható le."
 
-#: includes/Services/Closure_Store.php:445
+#: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
 "Ehhez a munkamenethez már tartozik pénztárzárás; a számlálást újraszámlálásként rögzítettük."
 
-#: includes/Services/Closure_Store.php:462
-#: includes/Services/Register_Session_Store.php:264
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Closure_Store.php:484
+#: includes/Services/Register_Session_Store.php:265
+#: includes/Services/Register_Session_Store.php:371
 msgid "The session state has changed."
 msgstr "A munkamenet állapota megváltozott."
 
-#: includes/Services/Closure_Store.php:488
+#: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
 msgstr "A pénztárzárás sorszáma megelőzi a pénztárgép sorszámát."
 
@@ -1587,21 +1589,21 @@ msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "A POS-audit metaadatai ezen a REST-útvonalon keresztül nem módosíthatók."
 
-#: includes/Services/Fiscal_Record_Store.php:243
+#: includes/Services/Fiscal_Record_Store.php:259
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Sajnáljuk, nem jogosult pénztárgép-dokumentumok olvasására."
 
-#: includes/Services/Fiscal_Record_Store.php:248
-#: includes/Services/Fiscal_Record_Store.php:256
+#: includes/Services/Fiscal_Record_Store.php:264
+#: includes/Services/Fiscal_Record_Store.php:272
 msgid "Receipt document not found."
 msgstr "A nyugta dokumentuma nem található."
 
-#: includes/Services/Fiscal_Record_Store.php:253
+#: includes/Services/Fiscal_Record_Store.php:269
 msgid "Invalid receipt document."
 msgstr "Érvénytelen nyugta-dokumentum."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:61
+#: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
@@ -1624,7 +1626,7 @@ msgstr "Az értékesítés után a POS eredetkulcsai nem módosíthatók: %s"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:503
+#: includes/Services/Receipt_Data_Builder.php:515
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1632,8 +1634,10 @@ msgstr "Vendég"
 
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
+#. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:483
+#: includes/Services/Receipt_Data_Builder.php:495
+#: includes/Services/Receipt_Data_Builder.php:901
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1558
 #, php-format
 msgid "Store #%d"
@@ -1848,19 +1852,19 @@ msgstr ""
 "A(z) „%s” gyors kedvezménykód egy üzleti kuponhoz tartozik. Használjon másik kódot."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:226
+#: includes/Services/Receipt_Data_Builder.php:238
 #, php-format
 msgid "Session %s"
 msgstr "%s munkamenet"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:644
+#: includes/Services/Receipt_Data_Builder.php:656
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "Kedvezmény"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:646
+#: includes/Services/Receipt_Data_Builder.php:658
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "Kedvezmény (%s%%)"
@@ -3311,16 +3315,16 @@ msgid "Correction Figures"
 msgstr "Helyesbítési adatok"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
-msgid "Late Sale Expected Delta by Tender"
-msgstr "Késői értékesítés várt változása fizetési módonként"
+msgid "Expected Delta by Tender"
+msgstr "Várt változás fizetési módonként"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
 msgstr "Késői értékesítések változása"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
-msgid "Late Sale Refunds Delta"
-msgstr "Késői visszatérítések változása"
+msgid "Refunds Delta"
+msgstr "Visszatérítések változása"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
@@ -4558,15 +4562,15 @@ msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr ""
 "POS adóközi fizetési bizonylat pillanatképe létrehozva (bizonylat #%d)."
 
-#: includes/Services/Register_Session_Store.php:153
+#: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
 msgstr "Ehhez a pénztárgéphez már tartozik nyitott munkamenet."
 
-#: includes/Services/Register_Session_Store.php:219
+#: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
 msgstr "A munkamenetet megnyitó pénztáros nem hagyhatja jóvá azt."
 
-#: includes/Services/Register_Session_Store.php:323
+#: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
 msgstr "A munkamenet lezárásához vezetői jóváhagyás szükséges."
 

@@ -1121,12 +1121,12 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "결제 수단을 초기화할 권한이 없습니다."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
-#: includes/Payments/Contract/Ledger.php:650
+#: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
 msgstr "결제 수단을 찾을 수 없습니다."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Ledger.php:1168
+#: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
 msgstr "지원되지 않는 결제 매입 방식입니다."
 
@@ -1370,12 +1370,12 @@ msgid "Payment method is disabled."
 msgstr "결제 수단이 비활성화되었습니다."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "The order is already paid."
 msgstr "주문이 이미 결제되었습니다."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Payment amount exceeds the order balance."
 msgstr "결제 금액이 주문 잔액을 초과합니다."
 
@@ -1394,48 +1394,50 @@ msgid "Refund must belong to this order."
 msgstr "환불은 이 주문에 속해야 합니다."
 
 #: includes/Payments/Contract/Ledger.php:593
+#: includes/Payments/Contract/Ledger.php:608
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "환불 금액을 이 결제에 배정할 수 없습니다."
 
-#: includes/Payments/Contract/Ledger.php:625
+#: includes/Payments/Contract/Ledger.php:654
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "결제 ID는 UUID여야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:628
-#: includes/Payments/Contract/Ledger.php:632
+#: includes/Payments/Contract/Ledger.php:657
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Payment amount must be positive."
 msgstr "결제 금액은 양수여야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:637
+#: includes/Payments/Contract/Ledger.php:666
 msgid "Payment currency must match the order."
 msgstr "결제 통화는 주문 통화와 일치해야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:689
+#: includes/Payments/Contract/Ledger.php:718
 msgid "Payment id conflicts with an existing payment."
 msgstr "결제 ID가 기존 결제와 충돌합니다."
 
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "제공업체가 확인한 금액 또는 통화가 결제 정보와 일치하지 않습니다."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:791
+#: includes/Payments/Contract/Ledger.php:820
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS 결제 %s이(가) 무효 처리되었습니다."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:822
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS 결제 %1$s이(가) 무효 처리되었습니다: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1192
 msgid "Payment not found."
 msgstr "결제를 찾을 수 없습니다."
 
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:1202
 msgid "Payment transition is invalid."
 msgstr "유효하지 않은 결제 상태 변경입니다."
 
@@ -1509,22 +1511,22 @@ msgstr "집계를 시작한 후 이 현금 이동이 기록되었습니다."
 msgid "The movement has already been voided or is unavailable."
 msgstr "이 현금 이동은 이미 무효 처리되었거나 사용할 수 없습니다."
 
-#: includes/Services/Closure_Store.php:383
+#: includes/Services/Closure_Store.php:405
 msgid "The session cannot be closed."
 msgstr "세션을 종료할 수 없습니다."
 
-#: includes/Services/Closure_Store.php:445
+#: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "이 세션에는 이미 마감 기록이 있어 재집계로 기록되었습니다."
 
-#: includes/Services/Closure_Store.php:462
-#: includes/Services/Register_Session_Store.php:264
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Closure_Store.php:484
+#: includes/Services/Register_Session_Store.php:265
+#: includes/Services/Register_Session_Store.php:371
 msgid "The session state has changed."
 msgstr "세션 상태가 변경되었습니다."
 
-#: includes/Services/Closure_Store.php:488
+#: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
 msgstr "마감 번호가 계산대 순서보다 앞섭니다."
 
@@ -1548,21 +1550,21 @@ msgstr "릴레이 등록에서 잘못된 자격 증명을 반환했습니다."
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "POS 감사 메타데이터는 이 REST 경로를 통해 수정할 수 없습니다."
 
-#: includes/Services/Fiscal_Record_Store.php:243
+#: includes/Services/Fiscal_Record_Store.php:259
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "계산대 문서를 읽을 권한이 없습니다."
 
-#: includes/Services/Fiscal_Record_Store.php:248
-#: includes/Services/Fiscal_Record_Store.php:256
+#: includes/Services/Fiscal_Record_Store.php:264
+#: includes/Services/Fiscal_Record_Store.php:272
 msgid "Receipt document not found."
 msgstr "영수증 문서를 찾을 수 없습니다."
 
-#: includes/Services/Fiscal_Record_Store.php:253
+#: includes/Services/Fiscal_Record_Store.php:269
 msgid "Invalid receipt document."
 msgstr "영수증 문서가 유효하지 않습니다."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:61
+#: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "POS 세무 기록 %s을(를) 작성하지 못했습니다. 복구가 필요합니다."
@@ -1584,7 +1586,7 @@ msgstr "판매 후에는 POS 출처 키를 변경할 수 없습니다: %s"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:503
+#: includes/Services/Receipt_Data_Builder.php:515
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1592,8 +1594,10 @@ msgstr "손님"
 
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
+#. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:483
+#: includes/Services/Receipt_Data_Builder.php:495
+#: includes/Services/Receipt_Data_Builder.php:901
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1558
 #, php-format
 msgid "Store #%d"
@@ -1802,19 +1806,19 @@ msgid ""
 msgstr "빠른 할인 코드 “%s”은(는) 매장 쿠폰에 사용 중입니다. 다른 코드를 사용하십시오."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:226
+#: includes/Services/Receipt_Data_Builder.php:238
 #, php-format
 msgid "Session %s"
 msgstr "세션 %s"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:644
+#: includes/Services/Receipt_Data_Builder.php:656
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "할인"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:646
+#: includes/Services/Receipt_Data_Builder.php:658
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "할인(%s%%)"
@@ -3262,16 +3266,16 @@ msgid "Correction Figures"
 msgstr "수정 금액"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
-msgid "Late Sale Expected Delta by Tender"
-msgstr "지연 판매 결제 수단별 예상 차액"
+msgid "Expected Delta by Tender"
+msgstr "결제 수단별 예상 차액"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
 msgstr "지연 판매 금액 차이"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
-msgid "Late Sale Refunds Delta"
-msgstr "지연 환불 금액 차이"
+msgid "Refunds Delta"
+msgstr "환불 차액"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
@@ -4507,15 +4511,15 @@ msgstr "과세 금액: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "POS 세금 영수증 스냅샷이 생성되었습니다 (영수증 #%d)."
 
-#: includes/Services/Register_Session_Store.php:153
+#: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
 msgstr "이 계산대에 이미 열린 세션이 있습니다."
 
-#: includes/Services/Register_Session_Store.php:219
+#: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
 msgstr "이 세션을 연 캐셔는 승인할 수 없습니다."
 
-#: includes/Services/Register_Session_Store.php:323
+#: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
 msgstr "이 세션을 종료하려면 관리자 승인이 필요합니다."
 

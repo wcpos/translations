@@ -290,6 +290,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro 需要较新版本的 WCPOS 插件（带版本号的 REST API）。在更新随附的依赖项之前，Pro REST 扩展已被禁用。"
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "没有可用的显示模板。"
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "未知显示屏。"
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "信号不属于此设备。"
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "信号对端无效。"
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "无法读取该角色的信号。"
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "您无权访问此商店。"
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "您没有权限管理插件。"
@@ -352,6 +377,15 @@ msgstr "未找到商店。"
 msgid "Failed to trash store."
 msgstr "删除商店失败。"
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Webhook 提供程序无效。"
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "未找到付款方式。"
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -364,6 +398,17 @@ msgstr "使用此幂等键的请求正在处理中。"
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "幂等键已用于不同的请求。"
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "此付款提供程序不支持该操作。"
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "提供程序无法确认此笔付款。"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -384,6 +429,48 @@ msgstr "原支付网关不可用于退款。"
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "退款解析器返回了无效结果。"
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "请选择读卡器。"
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "不允许使用此读卡器。"
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "此读卡器不可用。"
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "提供程序无法收取此笔付款：%s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "收银台"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "目标商店必须是已发布的商店。"
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "将收银台移至其他商店前，请先关闭收银台会话。"
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "配对尝试次数过多。"
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "配对码无效或已过期。"
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "显示屏凭据无效。"
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -430,15 +517,75 @@ msgid ""
 "This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again."
 msgstr "该商品使用门店专属定价，因此价格或税费变更必须注明对应门店。POS 未发送门店信息——请将收银终端重新连接到所属门店，然后重试。"
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "正在连接到 POS…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr "此显示屏无法通过当前网络连接 POS。两台设备必须连接同一 Wi-Fi；访客网络通常会阻止此连接。"
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "此显示屏已被移除。请重新配对。"
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "未配置顾客显示屏模板。"
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "配对此显示屏"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "配对码"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "显示屏名称"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "顾客显示屏"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "配对显示屏"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "配对码无效或已过期。"
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "尝试次数过多。请稍后重试。"
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "无法连接。请检查网络后重试。"
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "正在重新连接…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s 需要 WCPOS Pro %2$s 或更高版本。"
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro加载失败。请运行composer install。"
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr "现在包括免费插件的所有功能。独立的免费插件已自动停用。您可以安全地从插件中删除它。"

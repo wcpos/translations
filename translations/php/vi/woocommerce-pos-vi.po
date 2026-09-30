@@ -1139,12 +1139,12 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Rất tiếc, bạn không thể khởi tạo phương thức thanh toán."
 
 #: includes/API/V2/Payment_Methods_Controller.php:110
-#: includes/Payments/Contract/Ledger.php:650
+#: includes/Payments/Contract/Ledger.php:679
 msgid "Payment method not found."
 msgstr "Không tìm thấy phương thức thanh toán."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Ledger.php:1168
+#: includes/Payments/Contract/Ledger.php:1197
 msgid "Payment capture mode is unsupported."
 msgstr "Chế độ thu tiền không được hỗ trợ."
 
@@ -1391,12 +1391,12 @@ msgid "Payment method is disabled."
 msgstr "Phương thức thanh toán đã bị tắt."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "The order is already paid."
 msgstr "Đơn hàng đã được thanh toán."
 
 #: includes/Payments/Contract/Ledger.php:372
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Payment amount exceeds the order balance."
 msgstr "Số tiền thanh toán vượt quá số dư đơn hàng."
 
@@ -1416,49 +1416,51 @@ msgid "Refund must belong to this order."
 msgstr "Khoản hoàn tiền phải thuộc đơn hàng này."
 
 #: includes/Payments/Contract/Ledger.php:593
+#: includes/Payments/Contract/Ledger.php:608
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Không thể phân bổ số tiền hoàn này cho khoản thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:625
+#: includes/Payments/Contract/Ledger.php:654
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID thanh toán phải là UUID."
 
-#: includes/Payments/Contract/Ledger.php:628
-#: includes/Payments/Contract/Ledger.php:632
+#: includes/Payments/Contract/Ledger.php:657
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Payment amount must be positive."
 msgstr "Số tiền thanh toán phải lớn hơn 0."
 
-#: includes/Payments/Contract/Ledger.php:637
+#: includes/Payments/Contract/Ledger.php:666
 msgid "Payment currency must match the order."
 msgstr "Đơn vị tiền tệ thanh toán phải khớp với đơn hàng."
 
-#: includes/Payments/Contract/Ledger.php:689
+#: includes/Payments/Contract/Ledger.php:718
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID thanh toán trùng với khoản thanh toán hiện có."
 
-#: includes/Payments/Contract/Ledger.php:715
+#: includes/Payments/Contract/Ledger.php:744
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Số tiền hoặc đơn vị tiền tệ do nhà cung cấp xác nhận không khớp với khoản thanh toán."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:791
+#: includes/Payments/Contract/Ledger.php:820
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Đã hủy thanh toán WCPOS %s."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:822
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Đã hủy thanh toán WCPOS %1$s: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1192
 msgid "Payment not found."
 msgstr "Không tìm thấy khoản thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:1202
 msgid "Payment transition is invalid."
 msgstr "Chuyển trạng thái thanh toán không hợp lệ."
 
@@ -1533,22 +1535,22 @@ msgstr "Khoản điều chỉnh này được ghi nhận sau khi bắt đầu ki
 msgid "The movement has already been voided or is unavailable."
 msgstr "Khoản điều chỉnh đã bị hủy hoặc không khả dụng."
 
-#: includes/Services/Closure_Store.php:383
+#: includes/Services/Closure_Store.php:405
 msgid "The session cannot be closed."
 msgstr "Không thể đóng phiên này."
 
-#: includes/Services/Closure_Store.php:445
+#: includes/Services/Closure_Store.php:467
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "Phiên này đã có bản chốt; lần kiểm đếm được ghi nhận là kiểm đếm lại."
 
-#: includes/Services/Closure_Store.php:462
-#: includes/Services/Register_Session_Store.php:264
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Closure_Store.php:484
+#: includes/Services/Register_Session_Store.php:265
+#: includes/Services/Register_Session_Store.php:371
 msgid "The session state has changed."
 msgstr "Trạng thái phiên đã thay đổi."
 
-#: includes/Services/Closure_Store.php:488
+#: includes/Services/Closure_Store.php:510
 msgid "The closure number precedes the register sequence."
 msgstr "Số phiên chốt đứng trước số thứ tự của máy tính tiền."
 
@@ -1572,21 +1574,21 @@ msgstr "Đăng ký chuyển tiếp trả lại thông tin đăng nhập không h
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "Không thể sửa đổi siêu dữ liệu kiểm tra POS thông qua route REST này."
 
-#: includes/Services/Fiscal_Record_Store.php:243
+#: includes/Services/Fiscal_Record_Store.php:259
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Rất tiếc, bạn không được phép đọc tài liệu máy tính tiền."
 
-#: includes/Services/Fiscal_Record_Store.php:248
-#: includes/Services/Fiscal_Record_Store.php:256
+#: includes/Services/Fiscal_Record_Store.php:264
+#: includes/Services/Fiscal_Record_Store.php:272
 msgid "Receipt document not found."
 msgstr "Không tìm thấy tài liệu biên lai."
 
-#: includes/Services/Fiscal_Record_Store.php:253
+#: includes/Services/Fiscal_Record_Store.php:269
 msgid "Invalid receipt document."
 msgstr "Tài liệu biên lai không hợp lệ."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:61
+#: includes/Services/Fiscal_Record_Writers.php:64
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "Không thể ghi hồ sơ thuế POS %s; cần khôi phục."
@@ -1608,7 +1610,7 @@ msgstr "Không thể thay đổi khóa nguồn gốc POS sau khi bán: %s"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:503
+#: includes/Services/Receipt_Data_Builder.php:515
 #: includes/Templates/Payment.php:334
 #: tests/includes/Templates/Test_Receipt_Renderers.php:299
 msgid "Guest"
@@ -1616,8 +1618,10 @@ msgstr "Khách"
 
 #. translators: %d: POS store post ID.
 #. translators: %d: Historical POS store ID that no longer exists.
+#. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:483
+#: includes/Services/Receipt_Data_Builder.php:495
+#: includes/Services/Receipt_Data_Builder.php:901
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:1558
 #, php-format
 msgid "Store #%d"
@@ -1832,19 +1836,19 @@ msgstr ""
 "Mã chiết khấu nhanh “%s” thuộc về phiếu giảm giá cửa hàng. Hãy dùng mã khác."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:226
+#: includes/Services/Receipt_Data_Builder.php:238
 #, php-format
 msgid "Session %s"
 msgstr "Phiên %s"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:644
+#: includes/Services/Receipt_Data_Builder.php:656
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "Giảm giá"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:646
+#: includes/Services/Receipt_Data_Builder.php:658
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "Giảm giá (%s%%)"
@@ -3296,16 +3300,16 @@ msgid "Correction Figures"
 msgstr "Số liệu điều chỉnh"
 
 #: includes/Services/Receipt_Data_Schema.php:1561
-msgid "Late Sale Expected Delta by Tender"
-msgstr "Chênh lệch thanh toán dự kiến do bán muộn"
+msgid "Expected Delta by Tender"
+msgstr "Chênh lệch dự kiến theo phương thức thanh toán"
 
 #: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Late Sale Sales Delta"
 msgstr "Chênh lệch doanh số do bán muộn"
 
 #: includes/Services/Receipt_Data_Schema.php:1569
-msgid "Late Sale Refunds Delta"
-msgstr "Chênh lệch hoàn tiền do bán muộn"
+msgid "Refunds Delta"
+msgstr "Chênh lệch tiền hoàn"
 
 #: includes/Services/Receipt_Data_Schema.php:1573
 msgid "Late Movement Cash Delta"
@@ -4541,15 +4545,15 @@ msgstr "Chịu thuế: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Đã tạo biên lai phiếu thu POS (số biên lai #%d)."
 
-#: includes/Services/Register_Session_Store.php:153
+#: includes/Services/Register_Session_Store.php:154
 msgid "This register already has an open session."
 msgstr "Máy tính tiền này đã có phiên đang mở."
 
-#: includes/Services/Register_Session_Store.php:219
+#: includes/Services/Register_Session_Store.php:220
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Thu ngân mở phiên này không thể duyệt phiên."
 
-#: includes/Services/Register_Session_Store.php:323
+#: includes/Services/Register_Session_Store.php:324
 msgid "Manager approval is required to close this session."
 msgstr "Cần quản lý duyệt để đóng phiên này."
 

@@ -293,6 +293,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro kräver en nyare version av WCPOS-pluginet (versionshanterat REST API). REST-tillägg för Pro är inaktiverade tills det medföljande beroendet har uppdaterats."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "Ingen displaymall är tillgänglig."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Okänd display."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "Signalen tillhör inte den här enheten."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "Ogiltig signaleringspart."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "Kan inte läsa signaler för den rollen."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "Du har inte behörighet för den här butiken."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "Du har inte behörighet att hantera plugins."
@@ -355,6 +380,15 @@ msgstr "Butik hittades inte."
 msgid "Failed to trash store."
 msgstr "Misslyckades med att slänga butik."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "Ogiltig webhook-leverantör."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "Betalningsmetoden hittades inte."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -367,6 +401,17 @@ msgstr "En begäran med denna idempotensnyckel behandlas redan."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotensnyckeln återanvändes med en annan begäran."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Den här betalningsleverantören stöder inte åtgärden."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "Leverantören kunde inte bekräfta betalningen."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -389,6 +434,48 @@ msgstr ""
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "Återbetalningsresolvern returnerade ett ogiltigt resultat."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Välj en kortterminal."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "Den här kortterminalen är inte tillåten."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Den här kortterminalen är inte tillgänglig."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "Leverantören kunde inte slutföra debiteringen: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Kassa"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "Målbutiken måste vara publicerad."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Stäng kassapasset innan du flyttar det till en annan butik."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "För många parkopplingsförsök."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "Ogiltig eller utgången parkopplingskod."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Ogiltiga displayuppgifter."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -436,15 +523,76 @@ msgid ""
 msgstr ""
 "Den här produkten använder butiksspecifika priser, så en pris- eller skatteändring måste ange vilken butik den gäller. POS skickade ingen butik – återanslut kassan till butiken och försök igen."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Ansluter till kassan…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Den här displayen kan inte nå kassan via nätverket. Båda enheterna måste vara anslutna till samma Wi-Fi. Gästnätverk blockerar ofta anslutningen."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Den här displayen har tagits bort. Parkoppla den igen."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "Ingen kunddisplaymall har konfigurerats."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Parkoppla den här displayen"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Parkopplingskod"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Displaynamn"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Kunddisplay"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Parkoppla display"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "Parkopplingskoden är ogiltig eller har gått ut."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "För många försök. Försök igen om en stund."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "Det gick inte att ansluta. Kontrollera nätverket och försök igen."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Återansluter…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s kräver WCPOS Pro %2$s eller senare."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro kunde inte laddas. Kör composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

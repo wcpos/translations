@@ -294,6 +294,31 @@ msgid ""
 msgstr ""
 "WCPOS Pro requiere una versión más nueva del plugin WCPOS (API REST versionada). Las extensiones REST de Pro están deshabilitadas hasta que se actualice la dependencia incluida."
 
+#: includes/API/V1/Display_Controller.php:271
+msgid "No display template is available."
+msgstr "No hay ninguna plantilla de pantalla disponible."
+
+#: includes/API/V1/Display_Controller.php:286
+#: includes/API/V1/Display_Controller.php:314
+msgid "Unknown display."
+msgstr "Pantalla desconocida."
+
+#: includes/API/V1/Display_Controller.php:293
+msgid "Signal does not belong to this device."
+msgstr "La señal no pertenece a este dispositivo."
+
+#: includes/API/V1/Display_Controller.php:296
+msgid "Invalid signaling peer."
+msgstr "El dispositivo remoto de señalización no es válido."
+
+#: includes/API/V1/Display_Controller.php:310
+msgid "Cannot read signals for that role."
+msgstr "No se pueden leer señales para ese rol."
+
+#: includes/API/V1/Display_Controller.php:336
+msgid "You are not authorized for this store."
+msgstr "No tenés autorización para esta tienda."
+
 #: includes/API/V1/Extensions_Action.php:94
 msgid "You do not have permission to manage plugins."
 msgstr "No tienes permiso para gestionar plugins."
@@ -356,6 +381,15 @@ msgstr "Tienda no encontrada."
 msgid "Failed to trash store."
 msgstr "Error al eliminar la tienda."
 
+#: includes/API/V2/Payments_Webhook_Controller.php:64
+msgid "Invalid webhook provider."
+msgstr "El proveedor de webhooks no es válido."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/Payments/Server/Reader_Curation.php:47
+msgid "Payment method not found."
+msgstr "No se encontró el método de pago."
+
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
 #: includes/Payments/Idempotency_Repository.php:139
@@ -368,6 +402,17 @@ msgstr "Ya se está procesando una solicitud con esta clave de idempotencia."
 #: includes/Payments/Idempotency_Repository.php:178
 msgid "Idempotency key was reused with a different request."
 msgstr "La clave de idempotencia se reutilizó con una solicitud diferente."
+
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
+#: includes/Payments/Server/Server_Handler.php:224
+msgid "This payment provider does not support that operation."
+msgstr "Este proveedor de pagos no admite esa operación."
+
+#: includes/Payments/Device/Device_Handler.php:243
+msgid "The provider could not confirm this payment."
+msgstr "El proveedor no pudo confirmar este pago."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -389,6 +434,48 @@ msgstr "La pasarela de pago original no está disponible para reembolsos."
 #: includes/Payments/Refund_Processor.php:248
 msgid "The refund resolver returned an invalid result."
 msgstr "El resolutor de reembolsos devolvió un resultado no válido."
+
+#: includes/Payments/Server/Reader_Curation.php:108
+msgid "Choose a reader."
+msgstr "Elegí un lector."
+
+#: includes/Payments/Server/Reader_Curation.php:111
+msgid "This reader is not allowed."
+msgstr "No se permite usar este lector."
+
+#: includes/Payments/Server/Reader_Curation.php:122
+msgid "This reader is unavailable."
+msgstr "Este lector no está disponible."
+
+#. translators: %s: the provider's failure reason.
+#: includes/Payments/Server/Server_Handler.php:183
+#, php-format
+msgid "The provider could not capture this payment: %s"
+msgstr "El proveedor no pudo capturar este pago: %s"
+
+#: includes/Registers.php:73
+msgid "Register"
+msgstr "Caja"
+
+#: includes/Registers.php:224
+msgid "The target store must be a published store."
+msgstr "La tienda de destino debe estar publicada."
+
+#: includes/Registers.php:227
+msgid "Close the register session before moving it to another store."
+msgstr "Cerrá la sesión de caja antes de trasladarla a otra tienda."
+
+#: includes/Services/Customer_Display.php:75
+msgid "Too many pairing attempts."
+msgstr "Demasiados intentos de vinculación."
+
+#: includes/Services/Customer_Display.php:83
+msgid "Invalid or expired pairing code."
+msgstr "El código de vinculación no es válido o venció."
+
+#: includes/Services/Customer_Display.php:154
+msgid "Invalid display credentials."
+msgstr "Las credenciales de la pantalla no son válidas."
 
 #: includes/Services/Settings.php:157
 msgid "Failed to save settings."
@@ -436,15 +523,76 @@ msgid ""
 msgstr ""
 "Este producto usa precios específicos para cada tienda, por lo que un cambio de precio o de impuesto debe indicar para qué tienda es. El POS no envió ninguna tienda; volvé a conectar la caja con su tienda e intentá nuevamente."
 
-#: woocommerce-pos-pro.php:207
+#: includes/Templates/Display.php:113
+msgid "Connecting to the point of sale…"
+msgstr "Conectando al punto de venta…"
+
+#: includes/Templates/Display.php:114
+msgid ""
+"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
+msgstr ""
+"Esta pantalla no puede conectarse al punto de venta en esta red. Ambos dispositivos deben estar en la misma red Wi-Fi; las redes para invitados suelen bloquear esta conexión."
+
+#: includes/Templates/Display.php:115
+msgid "This display was removed. Pair it again."
+msgstr "Se quitó esta pantalla. Volvé a vincularla."
+
+#: includes/Templates/Display.php:116
+msgid "No customer display template is configured."
+msgstr "No hay ninguna plantilla de pantalla para clientes configurada."
+
+#: includes/Templates/Display.php:117
+msgid "Pair this display"
+msgstr "Vincular esta pantalla"
+
+#: includes/Templates/Display.php:118
+msgid "Pairing code"
+msgstr "Código de vinculación"
+
+#: includes/Templates/Display.php:119
+msgid "Display name"
+msgstr "Nombre de la pantalla"
+
+#: includes/Templates/Display.php:120
+#: templates/display-host.php:6
+msgid "Customer display"
+msgstr "Pantalla para clientes"
+
+#: includes/Templates/Display.php:121
+msgid "Pair display"
+msgstr "Vincular pantalla"
+
+#: includes/Templates/Display.php:122
+msgid "That pairing code is invalid or expired."
+msgstr "El código de vinculación no es válido o venció."
+
+#: includes/Templates/Display.php:123
+msgid "Too many attempts. Try again shortly."
+msgstr "Demasiados intentos. Volvé a intentarlo en unos minutos."
+
+#: includes/Templates/Display.php:124
+msgid "Could not connect. Check the network and try again."
+msgstr "No se pudo conectar. Revisá la red y volvé a intentarlo."
+
+#: includes/Templates/Display.php:125
+msgid "Reconnecting…"
+msgstr "Reconectando…"
+
+#. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
+#: includes/wcpos-pro-functions.php:89
+#, php-format
+msgid "%1$s requires WCPOS Pro %2$s or newer."
+msgstr "%1$s requiere WCPOS Pro %2$s o una versión posterior."
+
+#: woocommerce-pos-pro.php:209
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro no se pudo cargar. Por favor, ejecutá composer install."
 
-#: woocommerce-pos-pro.php:292
+#: woocommerce-pos-pro.php:294
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:293
+#: woocommerce-pos-pro.php:295
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
