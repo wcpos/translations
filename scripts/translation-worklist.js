@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { expectedKeysForLocale, parsePluralKey } = require('./plural-rules');
+const { expectedKeysForLocale, parsePluralKey, pluralBasesOf } = require('./plural-rules');
 const {
   parsePoFile, mergePoEntries, parsePluralSlotCount, getPhpPluralForms, ensurePoHeader,
 } = require('./po-file');
@@ -44,6 +44,7 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
 
     for (const file of jsFiles) {
       const sourceStrings = JSON.parse(fs.readFileSync(path.join(jsDir, file), 'utf8'));
+      const pluralBases = pluralBasesOf(Object.keys(sourceStrings));
       const translationPath = path.join(rootDir, 'translations/js', locale, file);
       const translations = fs.existsSync(translationPath)
         ? JSON.parse(fs.readFileSync(translationPath, 'utf8')) : {};
@@ -54,7 +55,7 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
         const plural = parsePluralKey(key);
         missing[key] = {
           source,
-          ...(plural ? { plural_category: plural.suffix } : {}),
+          ...(plural && pluralBases.has(plural.base) ? { plural_category: plural.suffix } : {}),
           concepts: matchConcepts(source),
         };
         packet.counts.js++;

@@ -2,6 +2,7 @@
 
 const assert = require('node:assert/strict');
 const path = require('node:path');
+const { pluralBasesOf, expectedKeysForLocale } = require('../scripts/plural-rules.js');
 
 const {
   findWcposNamingIssues,
@@ -187,6 +188,20 @@ test('generated plural forms use a non-singular source fallback', () => {
   }, 'items_other'), '{count} items');
 });
 
+function pluralShapeMismatches(pluralBases, translations, expectedSuffixes, allSuffixes) {
+  const mismatches = [];
+  for (const base of pluralBases) {
+    const actual = allSuffixes.filter(suffix => `${base}_${suffix}` in translations);
+    if (actual.length > 0 && (
+      actual.length !== expectedSuffixes.length ||
+      actual.some((suffix, index) => suffix !== expectedSuffixes[index])
+    )) {
+      mismatches.push({ base, actual });
+    }
+  }
+  return mismatches;
+}
+
 test('rolling monorepo translations retain locale-specific plural forms', () => {
   const locales = [
     'bg_BG', 'ca_ES', 'da', 'de_DE', 'el', 'es', 'es_AR', 'es_ES', 'es_MX',
@@ -199,22 +214,50 @@ test('rolling monorepo translations retain locale-specific plural forms', () => 
   // 2026-08-23 when `health.database.other_stores` left the source, and the
   // test then failed for a key no locale is supposed to have.
   const source = require('../source/js/monorepo/core.json');
-  const pluralBases = [...new Set(
-    Object.keys(source)
-      .filter(key => key.endsWith('_one') || key.endsWith('_other'))
-      .map(key => key.replace(/_(one|other)$/, '')),
-  )].sort();
+  const pluralBases = [...pluralBasesOf(Object.keys(source))].sort();
   assert.ok(pluralBases.length > 0, 'expected at least one plural base in the source');
 
   for (const locale of locales) {
     const translations = require(`../translations/js/${locale}/monorepo/core.json`);
     const expectedSuffixes = getPluralSuffixes(locale);
 
-    for (const base of pluralBases) {
-      const actualSuffixes = ALL_SUFFIXES.filter(suffix => `${base}_${suffix}` in translations);
-      assert.deepEqual(actualSuffixes, expectedSuffixes, `${locale}: ${base}`);
-    }
+    // Untranslated bases are left to the completeness check.
+    assert.deepEqual(pluralShapeMismatches(pluralBases, translations, expectedSuffixes, ALL_SUFFIXES), [], `${locale}: plural shape`);
   }
+});
+
+test('a lone _other key is a plain key, not a plural base', () => {
+  const sourceKeys = ['items_one', 'items_other', 'kind_cash', 'kind_other'];
+  assert.deepEqual(pluralBasesOf(sourceKeys), new Set(['items']));
+  assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'bg_BG')].sort(), [
+    'items_one', 'items_other', 'kind_cash', 'kind_other',
+  ]);
+  assert.deepEqual([...expectedKeysForLocale(sourceKeys, 'ja')].sort(), [
+    'items_other', 'kind_cash', 'kind_other',
+  ]);
+  const arabicKeys = expectedKeysForLocale(sourceKeys, 'ar');
+  for (const key of ['items_zero', 'items_few', 'items_many']) assert.ok(arabicKeys.has(key));
+  for (const key of ['kind_zero', 'kind_one', 'kind_two', 'kind_few', 'kind_many']) assert.ok(!arabicKeys.has(key));
+});
+
+test('plural shape check skips untranslated bases but flags wrong shapes', () => {
+  const base = 'items';
+  const expectedSuffixes = ['one', 'other'];
+  const allSuffixes = ['zero', 'one', 'two', 'few', 'many', 'other'];
+
+  assert.deepEqual(pluralShapeMismatches([base], {}, expectedSuffixes, allSuffixes), []);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_one: '1 item',
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), []);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), [{ base, actual: ['other'] }]);
+  assert.deepEqual(pluralShapeMismatches([base], {
+    items_one: '1 item',
+    items_many: '{count} items',
+    items_other: '{count} items',
+  }, expectedSuffixes, allSuffixes), [{ base, actual: ['one', 'many', 'other'] }]);
 });
 
 test('checks matching PHP PO file when l10n artifact changes', () => {
