@@ -46,7 +46,8 @@ case "$MAX_PER_CALL" in
   ''|*[!0-9]*) log "max-per-call must be a positive integer"; exit 1 ;;
 esac
 if [ "$MAX_PER_CALL" -eq 0 ]; then log "max-per-call must be positive"; exit 1; fi
-PATH=/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+# Append, not prepend: wrappers earlier on the caller's PATH (the machine's gh App wrapper) must win over Homebrew.
+PATH=$PATH:/opt/homebrew/bin:$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 REPO_ROOT=${TRANSLATE_REPO_ROOT:-}

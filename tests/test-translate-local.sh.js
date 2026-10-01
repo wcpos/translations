@@ -23,7 +23,7 @@ const bin = path.join(root, 'bin');
 const wt = path.join(root, '.claude/worktrees/auto-translate');
 const copy = path.join(root, 'translate-local.sh');
 const callsFile = path.join(root, 'calls.jsonl');
-const env = { ...process.env, TMPDIR: root, TRANSLATE_REPO_ROOT: root };
+const env = { ...process.env, PATH: bin + ':' + process.env.PATH, TMPDIR: root, TRANSLATE_REPO_ROOT: root };
 for (const key of ['TRANSLATE_LOCAL_REEXEC', 'TRANSLATE_TRANSLATOR', 'TRANSLATE_MODEL', 'TRANSLATE_REVIEW_MODEL', 'TRANSLATE_EFFORT']) delete env[key];
 const readCalls = () => fs.readFileSync(callsFile, 'utf8').trim().split('\n').filter(Boolean).map(JSON.parse);
 const isCall = (call, tool, ...args) => call.tool === tool && args.every(arg => call.args.includes(arg));
@@ -39,8 +39,8 @@ try {
   for (const script of ['translate-chunks.js', 'plural-rules.js']) fs.copyFileSync(path.resolve(__dirname, '../scripts', script), path.join(wt, 'scripts', script));
   fs.writeFileSync(path.join(wt, 'scripts/translate-prompt.md'), 'TRANSLATE\n');
   fs.writeFileSync(path.join(wt, 'scripts/review-prompt.md'), 'REVIEW\n');
-  // Only redirect command lookup and shorten the timeout in this isolated copy.
-  fs.writeFileSync(copy, source.replace(/^PATH=.*$/m, 'PATH=' + JSON.stringify(bin) + ':$PATH').replace('CALL_TIMEOUT=1800', 'CALL_TIMEOUT=10'));
+  // Only shorten the timeout in this isolated copy.
+  fs.writeFileSync(copy, source.replace('CALL_TIMEOUT=1800', 'CALL_TIMEOUT=10'));
   const stub = String.raw`#!@NODE@
 const fs = require('node:fs'), path = require('node:path'), cp = require('node:child_process');
 const root = path.dirname(__dirname), tool = path.basename(process.argv[1]), args = process.argv.slice(2);
@@ -106,6 +106,7 @@ if (tool === 'git') {
 `.replace('@NODE@', process.execPath);
   for (const tool of ['git', 'gh', 'pnpm', 'node', 'codex', 'claude']) fs.writeFileSync(path.join(bin, tool), stub, { mode: 0o755 });
   let result = run({ counts: [] });
+  assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'list')), 'caller PATH gh wins over Homebrew');
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /nothing to translate/);
   assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
