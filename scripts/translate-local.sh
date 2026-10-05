@@ -94,6 +94,14 @@ else
   if [ "$BASE" != main ]; then BRANCH="auto-translate/$BASE/${BRANCH#auto-translate/}"; fi
   git checkout -q -B "$BRANCH" "origin/$BASE"
 fi
+if [ "$DRY_RUN" -eq 0 ]; then
+  # Each run cuts a local branch; drop the ones already on the base and not checked out (both lanes share this checkout and its lock).
+  PRUNED=0
+  while IFS=$'\t' read -r NAME WORKTREE; do
+    if [ -n "$NAME" ] && [ -z "$WORKTREE" ]; then git branch -D -q "$NAME"; PRUNED=$((PRUNED + 1)); fi
+  done < <(git for-each-ref --merged "origin/$BASE" --format='%(refname:short)%09%(worktreepath)' refs/heads/auto-translate/)
+  if [ "$PRUNED" -gt 0 ]; then log "pruned $PRUNED merged local branches"; fi
+fi
 pnpm install --frozen-lockfile --prefer-offline --silent
 SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}")
 TOTAL=$(printf '%s' "$SUMMARY" | jq -r .total)
