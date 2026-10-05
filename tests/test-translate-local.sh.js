@@ -55,6 +55,7 @@ if (tool === 'git') {
   if (args.includes('list')) console.log('worktree ' + wt);
   if (args.includes('status') && fs.existsSync('.translate/accepted')) console.log(' M translations/js/bb/app.json');
   if (args.includes('merge') && !args.includes('--abort') && config.conflict) process.exit(1);
+  if (args.includes('for-each-ref') && config.stale) process.stdout.write(config.stale.map(([name, tree]) => name + '\t' + (tree || '') + '\n').join(''));
 } else if (tool === 'gh') {
   if (args[1] === 'list' && config.pr) console.log(JSON.stringify(config.pr));
   if (args[1] === 'create' && args[0] === 'pr') console.log('https://example.test/pr/1');
@@ -110,6 +111,27 @@ if (tool === 'git') {
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /nothing to translate/);
   assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
+  result = run({ counts: [], stale: [['auto-translate/20260924-074243', ''], ['auto-translate/next/20261005-162857', ''], ['auto-translate/next/20261005-165429', wt]] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.calls.filter(c => isCall(c, 'git', 'for-each-ref')).length, 1);
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'for-each-ref', '--merged', 'origin/main', 'refs/heads/auto-translate/')));
+  const pruned = result.calls.filter(c => isCall(c, 'git', 'branch', '-D'));
+  assert.deepEqual(pruned.map(c => c.args[c.args.length - 1]), ['auto-translate/20260924-074243', 'auto-translate/next/20261005-162857']);
+  assert.ok(pruned.every(c => c.cwd === wt));
+  assert.ok(result.calls.findIndex(c => isCall(c, 'git', 'checkout')) < result.calls.indexOf(pruned[0]));
+  assert.ok(result.calls.indexOf(pruned[0]) < result.calls.findIndex(c => c.tool === 'pnpm'));
+  assert.match(result.stdout, /pruned 2 merged local branches/);
+  result = run({ counts: [], stale: [['auto-translate/next/20261005-162857', '']] }, ['--base', 'next']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'for-each-ref', 'origin/next')));
+  assert.equal(result.calls.filter(c => isCall(c, 'git', 'branch', '-D')).length, 1);
+  result = run({ stale: [['auto-translate/20260924-074243', '']] }, ['--dry-run']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'for-each-ref') || isCall(c, 'git', 'branch')));
+  assert.doesNotMatch(result.stdout, /pruned/);
+  result = run({ counts: [] });
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'branch')));
+  assert.doesNotMatch(result.stdout, /pruned/);
   result = run({ reexec: true }, ['--dry-run', '--base', 'stack', '--locale', 'bb']);
   assert.equal(result.status, 0, result.stderr);
   assert.equal(JSON.parse(result.stdout).total, 3);
@@ -188,6 +210,7 @@ if (tool === 'git') {
   assert.equal(locked.status, 0, locked.stderr);
   assert.match(locked.stdout, /already running/);
   assert.ok(!readCalls().some(c => isCall(c, 'git', 'reset')));
+  assert.ok(!readCalls().some(c => isCall(c, 'git', 'for-each-ref')));
   assert.ok(fs.existsSync(path.join(root, '.claude/auto-translate.lock')));
   const state = path.join(root, '.claude/auto-translate.state');
   const started = Math.floor(Date.now() / 1000);
