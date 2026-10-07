@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => '無效的退款目的地。允許的值：original_method、cash、manual。',
 		'The original payment gateway is not available for refunds.' => '原始付款閘道無法用於退款。',
 		'The refund resolver returned an invalid result.' => '退款解析器傳回了無效的結果。',
+		'The recorded payments cannot return this amount through the original method.' => '已記錄的付款無法透過原付款方式退還此金額。',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS 退款 #%1$d：無法透過 %3$s 退還 %2$s — %4$s。請改用其他方式退款。',
 		'Choose a reader.' => '選擇讀卡機。',
 		'This reader is not allowed.' => '不允許使用此讀卡機。',
 		'This reader is unavailable.' => '此讀卡機目前無法使用。',

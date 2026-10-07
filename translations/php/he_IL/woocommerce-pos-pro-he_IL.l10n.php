@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'יעד החזר כספי לא תקין. ערכים מותרים: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'שער התשלום המקורי אינו זמין להחזרים כספיים.',
 		'The refund resolver returned an invalid result.' => 'מנגנון פתרון ההחזר החזיר תוצאה לא חוקית.',
+		'The recorded payments cannot return this amount through the original method.' => 'התשלומים שתועדו אינם מאפשרים להחזיר את הסכום הזה בשיטת התשלום המקורית.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'החזר POS #%1$d: לא ניתן להחזיר את %2$s דרך %3$s — %4$s. החזירו את הסכום בדרך אחרת.',
 		'Choose a reader.' => 'יש לבחור קורא.',
 		'This reader is not allowed.' => 'השימוש בקורא הזה אינו מותר.',
 		'This reader is unavailable.' => 'הקורא הזה אינו זמין.',

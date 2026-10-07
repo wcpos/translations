@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Destinasi bayaran balik tidak sah. Nilai yang dibenarkan: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Gateway pembayaran asal tidak tersedia untuk bayaran balik.',
 		'The refund resolver returned an invalid result.' => 'Penyelesai bayaran balik mengembalikan hasil yang tidak sah.',
+		'The recorded payments cannot return this amount through the original method.' => 'Pembayaran yang direkodkan tidak dapat membayar balik jumlah ini melalui kaedah asal.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Pembayaran balik POS #%1$d: %2$s tidak dapat dibuat melalui %3$s — %4$s. Bayar balik dengan cara lain.',
 		'Choose a reader.' => 'Pilih pembaca.',
 		'This reader is not allowed.' => 'Pembaca ini tidak dibenarkan.',
 		'This reader is unavailable.' => 'Pembaca ini tidak tersedia.',

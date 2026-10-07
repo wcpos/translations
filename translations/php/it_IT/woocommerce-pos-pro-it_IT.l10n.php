@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Destinazione del rimborso non valida. Valori consentiti: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Il gateway di pagamento originale non è disponibile per i rimborsi.',
 		'The refund resolver returned an invalid result.' => 'Il resolver del rimborso ha restituito un risultato non valido.',
+		'The recorded payments cannot return this amount through the original method.' => 'I pagamenti registrati non consentono di rimborsare questo importo con il metodo originale.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Rimborso POS #%1$d: impossibile rimborsare %2$s tramite %3$s — %4$s. Effettua il rimborso in un altro modo.',
 		'Choose a reader.' => 'Scegli un lettore.',
 		'This reader is not allowed.' => 'Questo lettore non è consentito.',
 		'This reader is unavailable.' => 'Questo lettore non è disponibile.',

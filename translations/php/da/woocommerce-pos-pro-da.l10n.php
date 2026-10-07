@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Ugyldig destination for refundering. Tilladte værdier: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Den oprindelige betalings-gateway er ikke tilgængelig for refunderinger.',
 		'The refund resolver returned an invalid result.' => 'Refusionsresolveren returnerede et ugyldigt resultat.',
+		'The recorded payments cannot return this amount through the original method.' => 'De registrerede betalinger kan ikke bruges til at refundere dette beløb via den oprindelige betalingsmetode.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-refusion #%1$d: %2$s kunne ikke refunderes via %3$s — %4$s. Refunder beløbet på en anden måde.',
 		'Choose a reader.' => 'Vælg en kortterminal.',
 		'This reader is not allowed.' => 'Denne kortterminal er ikke tilladt.',
 		'This reader is unavailable.' => 'Denne kortterminal er ikke tilgængelig.',

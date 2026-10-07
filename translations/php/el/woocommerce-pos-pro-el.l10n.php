@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Μη έγκυρος προορισμός επιστροφής χρημάτων. Επιτρεπόμενες τιμές: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Η αρχική πύλη πληρωμής δεν είναι διαθέσιμη για επιστροφές χρημάτων.',
 		'The refund resolver returned an invalid result.' => 'Ο μηχανισμός επίλυσης επιστροφής χρημάτων επέστρεψε μη έγκυρο αποτέλεσμα.',
+		'The recorded payments cannot return this amount through the original method.' => 'Οι καταγεγραμμένες πληρωμές δεν επιτρέπουν την επιστροφή αυτού του ποσού μέσω της αρχικής μεθόδου πληρωμής.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Επιστροφή χρημάτων POS #%1$d: Δεν ήταν δυνατή η επιστροφή του ποσού %2$s μέσω %3$s — %4$s. Επιστρέψτε το με άλλο τρόπο.',
 		'Choose a reader.' => 'Επιλέξτε συσκευή ανάγνωσης.',
 		'This reader is not allowed.' => 'Αυτή η συσκευή ανάγνωσης δεν επιτρέπεται.',
 		'This reader is unavailable.' => 'Αυτή η συσκευή ανάγνωσης δεν είναι διαθέσιμη.',

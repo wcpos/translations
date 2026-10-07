@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'مقصد بازپرداخت نامعتبر است. مقادیر مجاز: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'درگاه پرداخت اصلی برای بازپرداخت در دسترس نیست.',
 		'The refund resolver returned an invalid result.' => 'حل‌کننده بازپرداخت نتیجه نامعتبری برگرداند.',
+		'The recorded payments cannot return this amount through the original method.' => 'پرداخت‌های ثبت‌شده امکان بازپرداخت این مبلغ از روش اصلی را ندارند.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'بازپرداخت POS شمارهٔ %1$d: بازگرداندن %2$s از طریق %3$s ممکن نشد — %4$s. آن را به روش دیگری بازگردانید.',
 		'Choose a reader.' => 'یک کارت‌خوان انتخاب کنید.',
 		'This reader is not allowed.' => 'استفاده از این کارت‌خوان مجاز نیست.',
 		'This reader is unavailable.' => 'این کارت‌خوان در دسترس نیست.',

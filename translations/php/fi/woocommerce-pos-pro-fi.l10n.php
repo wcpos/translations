@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Virheellinen palautuskohde. Sallitut arvot: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Alkuperäinen maksutapa ei ole käytettävissä palautuksiin.',
 		'The refund resolver returned an invalid result.' => 'Palautuksen käsittelijä palautti virheellisen tuloksen.',
+		'The recorded payments cannot return this amount through the original method.' => 'Tallennetuilla maksuilla tätä summaa ei voi palauttaa alkuperäisellä maksutavalla.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-palautus #%1$d: Summaa %2$s ei voitu palauttaa maksutavalla %3$s — %4$s. Palauta summa toisella tavalla.',
 		'Choose a reader.' => 'Valitse maksupääte.',
 		'This reader is not allowed.' => 'Tätä maksupäätettä ei sallita.',
 		'This reader is unavailable.' => 'Tämä maksupääte ei ole käytettävissä.',

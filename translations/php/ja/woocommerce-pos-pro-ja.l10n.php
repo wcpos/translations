@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => '無効な返金先です。許可される値: original_method、cash、manual。',
 		'The original payment gateway is not available for refunds.' => '元の支払いゲートウェイは返金に利用できません。',
 		'The refund resolver returned an invalid result.' => '返金リゾルバーが無効な結果を返しました。',
+		'The recorded payments cannot return this amount through the original method.' => '記録された支払いでは、この金額を元の支払い方法で返金できません。',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS返金 #%1$d: %2$sを%3$sで返金できませんでした — %4$s。別の方法で返金してください。',
 		'Choose a reader.' => 'リーダーを選択してください。',
 		'This reader is not allowed.' => 'このリーダーは使用できません。',
 		'This reader is unavailable.' => 'このリーダーは利用できません。',

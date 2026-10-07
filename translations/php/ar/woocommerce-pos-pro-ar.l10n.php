@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'وجهة استرداد غير صالحة. القيم المسموح بها: original_method، cash، manual.',
 		'The original payment gateway is not available for refunds.' => 'بوابة الدفع الأصلية غير متاحة لعمليات الاسترداد.',
 		'The refund resolver returned an invalid result.' => 'أعاد مُعالج استرداد المبلغ نتيجة غير صالحة.',
+		'The recorded payments cannot return this amount through the original method.' => 'لا يمكن رد هذا المبلغ من المدفوعات المسجلة عبر طريقة الدفع الأصلية.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'استرداد POS #%1$d: تعذّر رد %2$s عبر %3$s — %4$s. أعده بطريقة أخرى.',
 		'Choose a reader.' => 'اختر قارئًا.',
 		'This reader is not allowed.' => 'هذا القارئ غير مسموح به.',
 		'This reader is unavailable.' => 'هذا القارئ غير متاح.',

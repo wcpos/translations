@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Vigane tagasimakse sihtkoht. Lubatud väärtused: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Algne makseviis ei ole tagasimakseteks saadaval.',
 		'The refund resolver returned an invalid result.' => 'Tagasimakse lahendaja tagastas sobimatu tulemuse.',
+		'The recorded payments cannot return this amount through the original method.' => 'Salvestatud maksete kaudu ei saa seda summat algse makseviisiga tagastada.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-i tagasimakse #%1$d: summat %2$s ei saanud makseviisiga %3$s tagastada — %4$s. Tagasta see muul viisil.',
 		'Choose a reader.' => 'Valige kaardilugeja.',
 		'This reader is not allowed.' => 'See kaardilugeja pole lubatud.',
 		'This reader is unavailable.' => 'See kaardilugeja pole saadaval.',

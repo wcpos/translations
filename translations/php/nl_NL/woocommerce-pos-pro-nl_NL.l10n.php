@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Ongeldige terugbetalingsbestemming. Toegestane waarden: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'De oorspronkelijke betaalgateway is niet beschikbaar voor terugbetalingen.',
 		'The refund resolver returned an invalid result.' => 'De restitutie-oplosser heeft een ongeldig resultaat geretourneerd.',
+		'The recorded payments cannot return this amount through the original method.' => 'Met de geregistreerde betalingen kan dit bedrag niet via de oorspronkelijke betaalmethode worden terugbetaald.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-terugbetaling #%1$d: %2$s kon niet via %3$s worden verwerkt — %4$s. Betaal het bedrag op een andere manier terug.',
 		'Choose a reader.' => 'Kies een betaalterminal.',
 		'This reader is not allowed.' => 'Deze betaalterminal is niet toegestaan.',
 		'This reader is unavailable.' => 'Deze betaalterminal is niet beschikbaar.',

@@ -413,23 +413,36 @@ msgstr "제공업체가 이 결제를 확인하지 못했습니다."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:185
-#: includes/Payments/Refund_Processor.php:240
+#: includes/Payments/Refund_Processor.php:200
+#: includes/Payments/Refund_Processor.php:270
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr "잘못된 환불 대상입니다. 허용되는 값: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
 #: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:199
+#: includes/Payments/Refund_Processor.php:229
 msgid "The original payment gateway is not available for refunds."
 msgstr "원래 결제 게이트웨이는 환불에 사용할 수 없습니다."
 
 #. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:226
-#: includes/Payments/Refund_Processor.php:248
+#: includes/Payments/Refund_Processor.php:256
+#: includes/Payments/Refund_Processor.php:278
 msgid "The refund resolver returned an invalid result."
 msgstr "환불 처리기가 유효하지 않은 결과를 반환했습니다."
+
+#. translators: Refund API error when the recorded payments cannot return the requested amount.
+#: includes/Payments/Refund_Processor.php:400
+msgid ""
+"The recorded payments cannot return this amount through the original method."
+msgstr "기록된 결제로는 원래 결제 수단을 통해 이 금액을 환불할 수 없습니다."
+
+#. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
+#: includes/Payments/Refund_Processor.php:439
+#, php-format
+msgid ""
+"POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
+msgstr "POS 환불 #%1$d: %3$s에서 %2$s 환불에 실패했습니다 — %4$s. 다른 방법으로 환불하십시오."
 
 #: includes/Payments/Server/Reader_Curation.php:108
 msgid "Choose a reader."

@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Невалидна дестинација за поврат. Дозволени вредности: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Оригиналниот начин на плаќање не е достапен за поврат на средства.',
 		'The refund resolver returned an invalid result.' => 'Решавачот за поврат на средства врати невалиден резултат.',
+		'The recorded payments cannot return this amount through the original method.' => 'Со евидентираните плаќања не може да се врати овој износ преку првичниот начин на плаќање.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS поврат #%1$d: %2$s не може да се врати преку %3$s — %4$s. Вратете ја сумата на друг начин.',
 		'Choose a reader.' => 'Изберете читач.',
 		'This reader is not allowed.' => 'Овој читач не е дозволен.',
 		'This reader is unavailable.' => 'Овој читач не е достапен.',

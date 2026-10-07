@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Недійсне призначення повернення коштів. Дозволені значення: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Початковий платіжний шлюз недоступний для повернення коштів.',
 		'The refund resolver returned an invalid result.' => 'Розв’язувач повернення повернув недійсний результат.',
+		'The recorded payments cannot return this amount through the original method.' => 'Зареєстровані платежі не дають змоги повернути цю суму початковим способом.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Повернення POS №%1$d: не вдалося повернути %2$s через %3$s — %4$s. Поверніть кошти іншим способом.',
 		'Choose a reader.' => 'Виберіть термінал.',
 		'This reader is not allowed.' => 'Цей термінал недоступний для використання.',
 		'This reader is unavailable.' => 'Цей термінал недоступний.',

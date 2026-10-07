@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Ógildur endurgreiðsluáfangastaður. Leyfð gildi: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Upprunalega greiðsluleiðin er ekki tiltæk fyrir endurgreiðslur.',
 		'The refund resolver returned an invalid result.' => 'Endurgreiðsluleysirinn skilaði ógildri niðurstöðu.',
+		'The recorded payments cannot return this amount through the original method.' => 'Skráðar greiðslur gera ekki kleift að endurgreiða þessa upphæð með upprunalega greiðslumátanum.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-endurgreiðsla #%1$d: Ekki tókst að endurgreiða %2$s með %3$s — %4$s. Endurgreiddu með öðrum hætti.',
 		'Choose a reader.' => 'Veldu kortalesara.',
 		'This reader is not allowed.' => 'Þessi kortalesari er ekki leyfður.',
 		'This reader is unavailable.' => 'Þessi kortalesari er ekki tiltækur.',
