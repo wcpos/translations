@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'គោលដៅសងប្រាក់មិនត្រឹមត្រូវ។ តម្លៃដែលអនុញ្ញាត៖ original_method, cash, manual។',
 		'The original payment gateway is not available for refunds.' => 'ច្រកទូទាត់ដើមមិនអាចប្រើសម្រាប់ការសងប្រាក់បានទេ។',
 		'The refund resolver returned an invalid result.' => 'កម្មវិធីដោះស្រាយការបង្វិលប្រាក់បានបញ្ជូនលទ្ធផលមិនត្រឹមត្រូវ។',
+		'The recorded payments cannot return this amount through the original method.' => 'ការទូទាត់ដែលបានកត់ត្រាមិនអាចសងទឹកប្រាក់ចំនួននេះតាមវិធីដើមបានទេ។',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'ការសងប្រាក់វិញ POS #%1$d៖ មិនអាចសង %2$s តាមរយៈ %3$s បានទេ — %4$s។ សងតាមវិធីផ្សេង។',
 		'Choose a reader.' => 'ជ្រើសរើសឧបករណ៍អានមួយ។',
 		'This reader is not allowed.' => 'មិនអនុញ្ញាតឱ្យប្រើឧបករណ៍អាននេះទេ។',
 		'This reader is unavailable.' => 'ឧបករណ៍អាននេះមិនអាចប្រើបានទេ។',

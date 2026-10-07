@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Destino de reembolso no válido. Valores permitidos: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'La pasarela de pago original no está disponible para reembolsos.',
 		'The refund resolver returned an invalid result.' => 'El resolutor de reembolsos devolvió un resultado no válido.',
+		'The recorded payments cannot return this amount through the original method.' => 'Los pagos registrados no permiten devolver este importe mediante el método original.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Reembolso POS #%1$d: no se pudo devolver %2$s mediante %3$s — %4$s. Devuélvalo de otra manera.',
 		'Choose a reader.' => 'Seleccione un lector.',
 		'This reader is not allowed.' => 'Este lector no está permitido.',
 		'This reader is unavailable.' => 'Este lector no está disponible.',

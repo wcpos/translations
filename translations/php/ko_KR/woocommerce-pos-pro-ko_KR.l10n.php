@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => '잘못된 환불 대상입니다. 허용되는 값: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => '원래 결제 게이트웨이는 환불에 사용할 수 없습니다.',
 		'The refund resolver returned an invalid result.' => '환불 처리기가 유효하지 않은 결과를 반환했습니다.',
+		'The recorded payments cannot return this amount through the original method.' => '기록된 결제로는 원래 결제 수단을 통해 이 금액을 환불할 수 없습니다.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS 환불 #%1$d: %3$s에서 %2$s 환불에 실패했습니다 — %4$s. 다른 방법으로 환불하십시오.',
 		'Choose a reader.' => '리더를 선택하십시오.',
 		'This reader is not allowed.' => '이 리더는 허용되지 않습니다.',
 		'This reader is unavailable.' => '이 리더를 사용할 수 없습니다.',

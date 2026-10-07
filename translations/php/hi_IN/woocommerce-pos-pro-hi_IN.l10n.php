@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'अमान्य रिफंड गंतव्य। अनुमत मान: original_method, cash, manual।',
 		'The original payment gateway is not available for refunds.' => 'मूल भुगतान गेटवे रिफंड के लिए उपलब्ध नहीं है।',
 		'The refund resolver returned an invalid result.' => 'रिफंड रिज़ॉल्वर ने अमान्य परिणाम लौटाया।',
+		'The recorded payments cannot return this amount through the original method.' => 'दर्ज भुगतानों के ज़रिए मूल भुगतान विधि से यह राशि वापस नहीं की जा सकती।',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS रिफ़ंड #%1$d: %2$s को %3$s के ज़रिए वापस नहीं किया जा सका — %4$s। किसी और तरीके से रिफ़ंड करें।',
 		'Choose a reader.' => 'रीडर चुनें।',
 		'This reader is not allowed.' => 'इस रीडर की अनुमति नहीं है।',
 		'This reader is unavailable.' => 'यह रीडर उपलब्ध नहीं है।',

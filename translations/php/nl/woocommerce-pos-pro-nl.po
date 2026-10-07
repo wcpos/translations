@@ -416,8 +416,8 @@ msgstr "De betaaldienstverlener kon deze betaling niet bevestigen."
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:185
-#: includes/Payments/Refund_Processor.php:240
+#: includes/Payments/Refund_Processor.php:200
+#: includes/Payments/Refund_Processor.php:270
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
@@ -425,16 +425,31 @@ msgstr ""
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
 #: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:199
+#: includes/Payments/Refund_Processor.php:229
 msgid "The original payment gateway is not available for refunds."
 msgstr ""
 "De oorspronkelijke betaalgateway is niet beschikbaar voor terugbetalingen."
 
 #. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:226
-#: includes/Payments/Refund_Processor.php:248
+#: includes/Payments/Refund_Processor.php:256
+#: includes/Payments/Refund_Processor.php:278
 msgid "The refund resolver returned an invalid result."
 msgstr "De restitutie-oplosser heeft een ongeldig resultaat geretourneerd."
+
+#. translators: Refund API error when the recorded payments cannot return the requested amount.
+#: includes/Payments/Refund_Processor.php:400
+msgid ""
+"The recorded payments cannot return this amount through the original method."
+msgstr ""
+"Met de geregistreerde betalingen kan dit bedrag niet via de oorspronkelijke betaalmethode worden terugbetaald."
+
+#. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
+#: includes/Payments/Refund_Processor.php:439
+#, php-format
+msgid ""
+"POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
+msgstr ""
+"POS-terugbetaling #%1$d: %2$s kon niet via %3$s worden verwerkt — %4$s. Betaal het bedrag op een andere manier terug."
 
 #: includes/Payments/Server/Reader_Curation.php:108
 msgid "Choose a reader."

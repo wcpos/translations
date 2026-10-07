@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Destinație de rambursare invalidă. Valori permise: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Metoda de plată originală nu este disponibilă pentru rambursări.',
 		'The refund resolver returned an invalid result.' => 'Resolverul rambursării a returnat un rezultat nevalid.',
+		'The recorded payments cannot return this amount through the original method.' => 'Plățile înregistrate nu permit rambursarea acestei sume prin metoda inițială.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Rambursare POS #%1$d: suma %2$s nu a putut fi rambursată prin %3$s — %4$s. Ramburseaz-o prin altă metodă.',
 		'Choose a reader.' => 'Alege un cititor.',
 		'This reader is not allowed.' => 'Acest cititor nu este permis.',
 		'This reader is unavailable.' => 'Acest cititor nu este disponibil.',

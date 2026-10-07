@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Ungültiges Rückerstattungsziel. Erlaubte Werte: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Das ursprüngliche Zahlungs-Gateway ist für Rückerstattungen nicht verfügbar.',
 		'The refund resolver returned an invalid result.' => 'Der Refund-Resolver hat ein ungültiges Ergebnis zurückgegeben.',
+		'The recorded payments cannot return this amount through the original method.' => 'Die erfassten Zahlungen können diesen Betrag nicht über die ursprüngliche Zahlungsmethode erstatten.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-Erstattung #%1$d: %2$s konnte nicht über %3$s zurückerstattet werden — %4$s. Erstatten Sie den Betrag auf anderem Weg.',
 		'Choose a reader.' => 'Lesegerät auswählen.',
 		'This reader is not allowed.' => 'Dieses Lesegerät ist nicht zugelassen.',
 		'This reader is unavailable.' => 'Dieses Lesegerät ist nicht verfügbar.',

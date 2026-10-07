@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Ogiltig återbetalningsdestination. Tillåtna värden: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Den ursprungliga betalningsmetoden är inte tillgänglig för återbetalningar.',
 		'The refund resolver returned an invalid result.' => 'Återbetalningsresolvern returnerade ett ogiltigt resultat.',
+		'The recorded payments cannot return this amount through the original method.' => 'Det här beloppet kan inte återbetalas via den ursprungliga betalningsmetoden för de registrerade betalningarna.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-återbetalning nr %1$d: %2$s kunde inte återbetalas via %3$s — %4$s. Återbetala på ett annat sätt.',
 		'Choose a reader.' => 'Välj en kortterminal.',
 		'This reader is not allowed.' => 'Den här kortterminalen är inte tillåten.',
 		'This reader is unavailable.' => 'Den här kortterminalen är inte tillgänglig.',

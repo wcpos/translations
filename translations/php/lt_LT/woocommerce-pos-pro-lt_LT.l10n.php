@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Neteisinga grąžinimo paskirtis. Leistinos reikšmės: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Pirminis mokėjimo šliuzas nepasiekiamas grąžinimams.',
 		'The refund resolver returned an invalid result.' => 'Grąžinimo sprendiklis grąžino netinkamą rezultatą.',
+		'The recorded payments cannot return this amount through the original method.' => 'Pagal užregistruotus mokėjimus šios sumos negalima grąžinti pradiniu būdu.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS grąžinimas #%1$d: per %3$s nepavyko grąžinti %2$s — %4$s. Grąžinkite kitu būdu.',
 		'Choose a reader.' => 'Pasirinkite skaitytuvą.',
 		'This reader is not allowed.' => 'Šis skaitytuvas neleidžiamas.',
 		'This reader is unavailable.' => 'Šis skaitytuvas nepasiekiamas.',

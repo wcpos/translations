@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Недопустимое назначение возврата. Допустимые значения: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Исходный платёжный шлюз недоступен для возвратов.',
 		'The refund resolver returned an invalid result.' => 'Обработчик возврата вернул недопустимый результат.',
+		'The recorded payments cannot return this amount through the original method.' => 'Записанные платежи не позволяют вернуть эту сумму исходным способом.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Возврат POS №%1$d: сумму %2$s не удалось вернуть через %3$s — %4$s. Верните её другим способом.',
 		'Choose a reader.' => 'Выберите терминал.',
 		'This reader is not allowed.' => 'Этот терминал использовать нельзя.',
 		'This reader is unavailable.' => 'Этот терминал недоступен.',

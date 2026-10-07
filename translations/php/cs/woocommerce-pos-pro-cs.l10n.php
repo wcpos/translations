@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Neplatné místo vrácení platby. Povolené hodnoty: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Původní platební brána není pro vrácení plateb dostupná.',
 		'The refund resolver returned an invalid result.' => 'Řešitel refundace vrátil neplatný výsledek.',
+		'The recorded payments cannot return this amount through the original method.' => 'Zaznamenané platby neumožňují vrátit tuto částku původním způsobem.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Vrácení platby POS #%1$d: částku %2$s nebylo možné vrátit přes %3$s — %4$s. Vraťte ji jiným způsobem.',
 		'Choose a reader.' => 'Vyberte čtečku.',
 		'This reader is not allowed.' => 'Tato čtečka není povolena.',
 		'This reader is unavailable.' => 'Tato čtečka není dostupná.',

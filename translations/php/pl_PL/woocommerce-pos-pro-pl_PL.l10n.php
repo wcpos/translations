@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Nieprawidłowe miejsce zwrotu. Dozwolone wartości: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Pierwotna bramka płatności jest niedostępna do zwrotów.',
 		'The refund resolver returned an invalid result.' => 'Moduł rozstrzygający zwrotu zwrócił nieprawidłowy wynik.',
+		'The recorded payments cannot return this amount through the original method.' => 'Zarejestrowane płatności nie pozwalają zwrócić tej kwoty pierwotną metodą.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Zwrot POS #%1$d: kwoty %2$s nie można zwrócić za pomocą %3$s — %4$s. Zwróć ją w inny sposób.',
 		'Choose a reader.' => 'Wybierz czytnik.',
 		'This reader is not allowed.' => 'Ten czytnik jest niedozwolony.',
 		'This reader is unavailable.' => 'Ten czytnik jest niedostępny.',

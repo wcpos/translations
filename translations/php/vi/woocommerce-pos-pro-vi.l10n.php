@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Đích hoàn tiền không hợp lệ. Giá trị cho phép: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Cổng thanh toán gốc không khả dụng để hoàn tiền.',
 		'The refund resolver returned an invalid result.' => 'Trình xử lý hoàn tiền đã trả về kết quả không hợp lệ.',
+		'The recorded payments cannot return this amount through the original method.' => 'Các khoản thanh toán đã ghi nhận không thể hoàn lại số tiền này qua phương thức ban đầu.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Hoàn tiền POS #%1$d: Không thể hoàn lại %2$s qua %3$s — %4$s. Hãy hoàn tiền bằng cách khác.',
 		'Choose a reader.' => 'Chọn đầu đọc.',
 		'This reader is not allowed.' => 'Không được phép dùng đầu đọc này.',
 		'This reader is unavailable.' => 'Đầu đọc này hiện không khả dụng.',

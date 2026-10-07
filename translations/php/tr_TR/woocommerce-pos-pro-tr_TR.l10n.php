@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Geçersiz iade hedefi. İzin verilen değerler: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Orijinal ödeme yöntemi iadeler için kullanılamıyor.',
 		'The refund resolver returned an invalid result.' => 'Geri ödeme çözümleyicisi geçersiz bir sonuç döndürdü.',
+		'The recorded payments cannot return this amount through the original method.' => 'Kaydedilen ödemeler bu tutarın orijinal yöntemle iade edilmesine izin vermiyor.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS iadesi #%1$d: %2$s, %3$s üzerinden iade edilemedi — %4$s. Başka bir yolla iade edin.',
 		'Choose a reader.' => 'Bir okuyucu seçin.',
 		'This reader is not allowed.' => 'Bu okuyucuya izin verilmiyor.',
 		'This reader is unavailable.' => 'Bu okuyucu kullanılamıyor.',

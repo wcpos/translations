@@ -97,6 +97,8 @@ return array(
 		'Invalid refund destination. Allowed values: original_method, cash, manual.' => 'Érvénytelen visszatérítési cél. Engedélyezett értékek: original_method, cash, manual.',
 		'The original payment gateway is not available for refunds.' => 'Az eredeti fizetési átjáró nem érhető el visszatérítésekhez.',
 		'The refund resolver returned an invalid result.' => 'A visszatérítési feloldó érvénytelen eredményt adott vissza.',
+		'The recorded payments cannot return this amount through the original method.' => 'A rögzített fizetések nem teszik lehetővé ennek az összegnek az eredeti fizetési módon történő visszatérítését.',
+		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'POS-visszatérítés #%1$d: a(z) %2$s nem téríthető vissza a(z) %3$s használatával — %4$s. Térítse vissza más módon.',
 		'Choose a reader.' => 'Válasszon olvasót.',
 		'This reader is not allowed.' => 'Ez az olvasó nem engedélyezett.',
 		'This reader is unavailable.' => 'Ez az olvasó nem érhető el.',
