@@ -380,12 +380,32 @@ msgstr "فروشگاه پیدا نشد."
 msgid "Failed to trash store."
 msgstr "حذف فروشگاه ناموفق بود."
 
+#: includes/API/V2/Payments_Answer_Controller.php:59
+msgid "Order not found."
+msgstr "سفارشی پیدا نشد."
+
+#: includes/API/V2/Payments_Answer_Controller.php:64
+msgid "Payment not found."
+msgstr "پرداختی پیدا نشد."
+
+#: includes/API/V2/Payments_Answer_Controller.php:67
+msgid "This payment is no longer waiting for an answer."
+msgstr "این پرداخت دیگر منتظر پاسخ نیست."
+
+#: includes/API/V2/Payments_Answer_Controller.php:71
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:106
+#: includes/Payments/Server/Server_Handler.php:331
+msgid "This payment provider does not support that operation."
+msgstr "این ارائه‌دهنده پرداخت از این عملیات پشتیبانی نمی‌کند."
+
 #: includes/API/V2/Payments_Webhook_Controller.php:64
 msgid "Invalid webhook provider."
 msgstr "ارائه‌دهنده وب‌هوک نامعتبر است."
 
 #: includes/API/V2/Payments_Webhook_Controller.php:67
-#: includes/Payments/Server/Reader_Curation.php:47
+#: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "روش پرداخت پیدا نشد."
 
@@ -402,16 +422,167 @@ msgstr "درخواستی با این کلید idempotency در حال پرداز
 msgid "Idempotency key was reused with a different request."
 msgstr "کلید idempotency با درخواستی متفاوت دوباره استفاده شده است."
 
-#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
-#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
-#: includes/Payments/Server/Server_Handler.php:224
-msgid "This payment provider does not support that operation."
-msgstr "این ارائه‌دهنده پرداخت از این عملیات پشتیبانی نمی‌کند."
-
 #: includes/Payments/Device/Device_Handler.php:243
 msgid "The provider could not confirm this payment."
 msgstr "ارائه‌دهنده نتوانست این پرداخت را تأیید کند."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:55
+msgid ""
+"The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
+msgstr ""
+"پرداخت پایانه هنوز تکمیل نشده است. آن را در پایانه تکمیل کنید یا روش پرداخت دیگری انتخاب کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:71
+msgid "The refund could not be matched to a WooCommerce refund."
+msgstr "بازپرداخت با هیچ‌یک از بازپرداخت‌های WooCommerce مطابقت نداشت."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:95
+msgid "Refund amount cannot be allocated to this payment."
+msgstr "مبلغ بازپرداخت را نمی‌توان به این پرداخت اختصاص داد."
+
+#. translators: 1: amount not refunded, 2: the provider's message.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:112
+#, php-format
+msgid ""
+"%1$s of this refund could not be returned to the card (%2$s). Return it another way."
+msgstr ""
+"مبلغ %1$s از این بازپرداخت به کارت (%2$s) بازگردانده نشد. آن را به روش دیگری برگردانید."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:125
+msgid "This sale has no provider reference to refund against."
+msgstr "این فروش مرجع ارائه‌دهنده‌ای برای بازپرداخت ندارد."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:140
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:84
+msgid "The terminal provider reported an error."
+msgstr "ارائه‌دهنده پایانه خطایی گزارش کرد."
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:148
+#, php-format
+msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
+msgstr ""
+"درخواست بازپرداخت %1$s از طریق %2$s؛ مرجع ارائه‌دهنده %3$s (در انتظار)"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:150
+#, php-format
+msgid "Refunded %1$s via %2$s; provider reference %3$s"
+msgstr "بازپرداخت %1$s از طریق %2$s انجام شد؛ مرجع ارائه‌دهنده %3$s"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:66
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:134
+msgid "Send to terminal"
+msgstr "ارسال به پایانه"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:67
+msgid "Cancel the terminal payment before choosing another payment method."
+msgstr "پیش از انتخاب روش پرداخت دیگر، پرداخت پایانه را لغو کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:68
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:135
+msgid "Cancel"
+msgstr "لغو"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:69
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:136
+msgid "Try again"
+msgstr "تلاش دوباره"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:70
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:130
+msgid "Terminal"
+msgstr "پایانه"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:71
+msgid "No terminal is available. Check the terminal settings."
+msgstr "هیچ پایانه‌ای در دسترس نیست. تنظیمات پایانه را بررسی کنید."
+
+#. translators: %s: amount and currency.
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:73
+#, php-format
+msgid "Ready to send %s to the terminal."
+msgstr "آمادهٔ ارسال %s به پایانه."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:74
+msgid "Sending to the terminal…"
+msgstr "در حال ارسال به پایانه…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:75
+msgid "Waiting for the customer at the terminal…"
+msgstr "در انتظار مشتری در پایانه…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:76
+msgid "Approved — finishing…"
+msgstr "تأیید شد — در حال تکمیل…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:77
+msgid "Paid. Finishing the order…"
+msgstr "پرداخت شد. در حال تکمیل سفارش…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:78
+msgid "Cancelling — waiting for the terminal to confirm…"
+msgstr "در حال لغو — منتظر تأیید پایانه…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:79
+msgid "Cancelled on the terminal. Nothing was charged."
+msgstr "در پایانه لغو شد. مبلغی دریافت نشد."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:80
+msgid "The terminal declined or cancelled the payment."
+msgstr "پایانه پرداخت را رد یا لغو کرد."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:81
+msgid "Card declined."
+msgstr "کارت رد شد."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:82
+msgid "No card was presented in time."
+msgstr "کارت به‌موقع ارائه نشد."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:83
+msgid ""
+"The amount confirmed by the terminal did not match. Check the terminal and the order."
+msgstr "مبلغ تأییدشده در پایانه مطابقت ندارد. پایانه و سفارش را بررسی کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:85
+msgid ""
+"A payment with another method is already in progress on this order. Finish or cancel it first."
+msgstr ""
+"پرداخت دیگری با روش متفاوت برای این سفارش در حال انجام است. ابتدا آن را تکمیل یا لغو کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:86
+msgid "Resuming a payment already in progress…"
+msgstr "در حال ادامهٔ پرداختی که از قبل در جریان است…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:87
+msgid ""
+"Your register session is about to expire. Reopen this payment from the register."
+msgstr ""
+"نشست صندوق شما به‌زودی منقضی می‌شود. این پرداخت را از صندوق دوباره باز کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:88
+msgid ""
+"Lost the connection to your register session. The payment continues on the terminal and will be recorded; reopen this payment from the register to see the result."
+msgstr ""
+"اتصال به نشست صندوق قطع شد. پرداخت در پایانه ادامه می‌یابد و ثبت خواهد شد؛ برای دیدن نتیجه، این پرداخت را از صندوق دوباره باز کنید."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:89
+msgid "No answer from the terminal in five minutes — cancelling."
+msgstr "پایانه پس از پنج دقیقه پاسخی نداد — در حال لغو…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:90
+msgid "Can't reach the store — retrying…"
+msgstr "دسترسی به فروشگاه ممکن نیست — تلاش دوباره…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:91
+msgid "The terminal moved on. Showing its current state."
+msgstr "پایانه به مرحلهٔ بعد رفته است. وضعیت فعلی آن نمایش داده می‌شود."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:92
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:138
+msgid "Details"
+msgstr "جزئیات"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -448,23 +619,55 @@ msgid ""
 msgstr ""
 "بازپرداخت POS شمارهٔ %1$d: بازگرداندن %2$s از طریق %3$s ممکن نشد — %4$s. آن را به روش دیگری بازگردانید."
 
-#: includes/Payments/Server/Reader_Curation.php:108
+#: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
 msgstr "یک کارت‌خوان انتخاب کنید."
 
-#: includes/Payments/Server/Reader_Curation.php:111
+#: includes/Payments/Server/Reader_Curation.php:122
 msgid "This reader is not allowed."
 msgstr "استفاده از این کارت‌خوان مجاز نیست."
 
-#: includes/Payments/Server/Reader_Curation.php:122
+#: includes/Payments/Server/Reader_Curation.php:133
+#: includes/Payments/Server/Server_Handler.php:95
 msgid "This reader is unavailable."
 msgstr "این کارت‌خوان در دسترس نیست."
 
+#: includes/Payments/Server/Server_Handler.php:168
+msgid "No terminal action is available."
+msgstr "هیچ اقدامی در پایانه در دسترس نیست."
+
+#: includes/Payments/Server/Server_Handler.php:177
+msgid "The terminal has moved on from that question."
+msgstr "پایانه از آن پرسش عبور کرده است."
+
+#: includes/Payments/Server/Server_Handler.php:185
+msgid "That button is not available on the terminal."
+msgstr "این دکمه در پایانه در دسترس نیست."
+
 #. translators: %s: the provider's failure reason.
-#: includes/Payments/Server/Server_Handler.php:183
+#: includes/Payments/Server/Server_Handler.php:290
 #, php-format
 msgid "The provider could not capture this payment: %s"
 msgstr "ارائه‌دهنده نتوانست مبلغ این پرداخت را دریافت کند: %s"
+
+#: includes/Payments/Support_Bundle.php:36
+#: includes/Payments/Support_Bundle.php:51
+msgid "Payment support"
+msgstr "پشتیبانی پرداخت"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid "Download support bundle"
+msgstr "بارگیری بستهٔ پشتیبانی"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid ""
+"Share this file with WCPOS support. Secrets and card numbers are removed."
+msgstr ""
+"این پرونده را با پشتیبانی WCPOS به‌اشتراک بگذارید. اطلاعات محرمانه و شماره‌های کارت حذف شده‌اند."
+
+#: includes/Payments/Support_Bundle.php:240
+msgid "You are not allowed to download this support bundle."
+msgstr "اجازهٔ بارگیری این بستهٔ پشتیبانی را ندارید."
 
 #: includes/Registers.php:73
 msgid "Register"

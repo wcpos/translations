@@ -381,12 +381,32 @@ msgstr "स्टोर नहीं मिला।"
 msgid "Failed to trash store."
 msgstr "स्टोर को हटाने में विफल।"
 
+#: includes/API/V2/Payments_Answer_Controller.php:59
+msgid "Order not found."
+msgstr "ऑर्डर नहीं मिला।"
+
+#: includes/API/V2/Payments_Answer_Controller.php:64
+msgid "Payment not found."
+msgstr "भुगतान नहीं मिला।"
+
+#: includes/API/V2/Payments_Answer_Controller.php:67
+msgid "This payment is no longer waiting for an answer."
+msgstr "इस भुगतान के जवाब का इंतज़ार अब नहीं हो रहा है।"
+
+#: includes/API/V2/Payments_Answer_Controller.php:71
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:106
+#: includes/Payments/Server/Server_Handler.php:331
+msgid "This payment provider does not support that operation."
+msgstr "यह भुगतान प्रदाता उस कार्रवाई को समर्थित नहीं करता।"
+
 #: includes/API/V2/Payments_Webhook_Controller.php:64
 msgid "Invalid webhook provider."
 msgstr "अमान्य वेबहुक प्रदाता।"
 
 #: includes/API/V2/Payments_Webhook_Controller.php:67
-#: includes/Payments/Server/Reader_Curation.php:47
+#: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "भुगतान विधि नहीं मिली।"
 
@@ -403,16 +423,167 @@ msgstr "इस आइडेम्पोटेंसी कुंजी वाल
 msgid "Idempotency key was reused with a different request."
 msgstr "आइडेम्पोटेंसी कुंजी का पुन: उपयोग किसी भिन्न अनुरोध के साथ किया गया।"
 
-#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
-#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
-#: includes/Payments/Server/Server_Handler.php:224
-msgid "This payment provider does not support that operation."
-msgstr "यह भुगतान प्रदाता उस कार्रवाई को समर्थित नहीं करता।"
-
 #: includes/Payments/Device/Device_Handler.php:243
 msgid "The provider could not confirm this payment."
 msgstr "प्रदाता इस भुगतान की पुष्टि नहीं कर सका।"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:55
+msgid ""
+"The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
+msgstr ""
+"टर्मिनल पर भुगतान अभी पूरा नहीं हुआ है। इसे टर्मिनल पर पूरा करें या कोई दूसरा भुगतान तरीका चुनें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:71
+msgid "The refund could not be matched to a WooCommerce refund."
+msgstr "रिफ़ंड का WooCommerce रिफ़ंड से मिलान नहीं हो सका।"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:95
+msgid "Refund amount cannot be allocated to this payment."
+msgstr "रिफ़ंड राशि इस भुगतान को आवंटित नहीं की जा सकती।"
+
+#. translators: 1: amount not refunded, 2: the provider's message.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:112
+#, php-format
+msgid ""
+"%1$s of this refund could not be returned to the card (%2$s). Return it another way."
+msgstr ""
+"इस रिफ़ंड में से %1$s कार्ड (%2$s) पर वापस नहीं किया जा सका। इसे किसी दूसरे तरीके से लौटाएँ।"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:125
+msgid "This sale has no provider reference to refund against."
+msgstr "इस बिक्री के लिए रिफ़ंड हेतु प्रदाता का कोई संदर्भ उपलब्ध नहीं है।"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:140
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:84
+msgid "The terminal provider reported an error."
+msgstr "टर्मिनल प्रदाता ने एक त्रुटि बताई।"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:148
+#, php-format
+msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
+msgstr "%2$s के ज़रिए %1$s का रिफ़ंड अनुरोधित; प्रदाता संदर्भ %3$s (लंबित)"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:150
+#, php-format
+msgid "Refunded %1$s via %2$s; provider reference %3$s"
+msgstr "%2$s के ज़रिए %1$s का रिफ़ंड किया गया; प्रदाता संदर्भ %3$s"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:66
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:134
+msgid "Send to terminal"
+msgstr "टर्मिनल पर भेजें"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:67
+msgid "Cancel the terminal payment before choosing another payment method."
+msgstr "भुगतान का दूसरा तरीका चुनने से पहले टर्मिनल भुगतान रद्द करें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:68
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:135
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:69
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:136
+msgid "Try again"
+msgstr "फिर कोशिश करें"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:70
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:130
+msgid "Terminal"
+msgstr "टर्मिनल"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:71
+msgid "No terminal is available. Check the terminal settings."
+msgstr "कोई टर्मिनल उपलब्ध नहीं है। टर्मिनल की सेटिंग जाँचें।"
+
+#. translators: %s: amount and currency.
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:73
+#, php-format
+msgid "Ready to send %s to the terminal."
+msgstr "%s को टर्मिनल पर भेजने के लिए तैयार।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:74
+msgid "Sending to the terminal…"
+msgstr "टर्मिनल पर भेजा जा रहा है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:75
+msgid "Waiting for the customer at the terminal…"
+msgstr "टर्मिनल पर ग्राहक का इंतज़ार हो रहा है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:76
+msgid "Approved — finishing…"
+msgstr "स्वीकृत — पूरा हो रहा है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:77
+msgid "Paid. Finishing the order…"
+msgstr "भुगतान हो गया। ऑर्डर पूरा हो रहा है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:78
+msgid "Cancelling — waiting for the terminal to confirm…"
+msgstr "रद्द किया जा रहा है — टर्मिनल की पुष्टि का इंतज़ार…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:79
+msgid "Cancelled on the terminal. Nothing was charged."
+msgstr "टर्मिनल पर रद्द किया गया। कोई शुल्क नहीं लिया गया।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:80
+msgid "The terminal declined or cancelled the payment."
+msgstr "टर्मिनल ने भुगतान अस्वीकार या रद्द कर दिया।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:81
+msgid "Card declined."
+msgstr "कार्ड अस्वीकार किया गया।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:82
+msgid "No card was presented in time."
+msgstr "समय पर कोई कार्ड प्रस्तुत नहीं किया गया।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:83
+msgid ""
+"The amount confirmed by the terminal did not match. Check the terminal and the order."
+msgstr ""
+"टर्मिनल द्वारा पुष्टि की गई राशि मेल नहीं खाती। टर्मिनल और ऑर्डर जाँचें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:85
+msgid ""
+"A payment with another method is already in progress on this order. Finish or cancel it first."
+msgstr ""
+"इस ऑर्डर पर दूसरे तरीके से भुगतान पहले से जारी है। पहले उसे पूरा करें या रद्द करें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:86
+msgid "Resuming a payment already in progress…"
+msgstr "पहले से जारी भुगतान फिर शुरू हो रहा है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:87
+msgid ""
+"Your register session is about to expire. Reopen this payment from the register."
+msgstr ""
+"आपका रजिस्टर सत्र जल्द समाप्त होने वाला है। इस भुगतान को रजिस्टर से फिर खोलें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:88
+msgid ""
+"Lost the connection to your register session. The payment continues on the terminal and will be recorded; reopen this payment from the register to see the result."
+msgstr ""
+"आपके रजिस्टर सत्र से कनेक्शन टूट गया। टर्मिनल पर भुगतान जारी रहेगा और दर्ज होगा; नतीजा देखने के लिए इस भुगतान को रजिस्टर से फिर खोलें।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:89
+msgid "No answer from the terminal in five minutes — cancelling."
+msgstr "पाँच मिनट में टर्मिनल से जवाब नहीं मिला — रद्द किया जा रहा है।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:90
+msgid "Can't reach the store — retrying…"
+msgstr "स्टोर से संपर्क नहीं हो पा रहा — फिर कोशिश हो रही है…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:91
+msgid "The terminal moved on. Showing its current state."
+msgstr "टर्मिनल आगे बढ़ गया। इसकी मौजूदा स्थिति दिखाई जा रही है।"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:92
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:138
+msgid "Details"
+msgstr "विवरण"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -449,23 +620,55 @@ msgid ""
 msgstr ""
 "POS रिफ़ंड #%1$d: %2$s को %3$s के ज़रिए वापस नहीं किया जा सका — %4$s। किसी और तरीके से रिफ़ंड करें।"
 
-#: includes/Payments/Server/Reader_Curation.php:108
+#: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
 msgstr "रीडर चुनें।"
 
-#: includes/Payments/Server/Reader_Curation.php:111
+#: includes/Payments/Server/Reader_Curation.php:122
 msgid "This reader is not allowed."
 msgstr "इस रीडर की अनुमति नहीं है।"
 
-#: includes/Payments/Server/Reader_Curation.php:122
+#: includes/Payments/Server/Reader_Curation.php:133
+#: includes/Payments/Server/Server_Handler.php:95
 msgid "This reader is unavailable."
 msgstr "यह रीडर उपलब्ध नहीं है।"
 
+#: includes/Payments/Server/Server_Handler.php:168
+msgid "No terminal action is available."
+msgstr "टर्मिनल पर कोई कार्रवाई उपलब्ध नहीं है।"
+
+#: includes/Payments/Server/Server_Handler.php:177
+msgid "The terminal has moved on from that question."
+msgstr "टर्मिनल उस सवाल से आगे बढ़ गया है।"
+
+#: includes/Payments/Server/Server_Handler.php:185
+msgid "That button is not available on the terminal."
+msgstr "यह बटन टर्मिनल पर उपलब्ध नहीं है।"
+
 #. translators: %s: the provider's failure reason.
-#: includes/Payments/Server/Server_Handler.php:183
+#: includes/Payments/Server/Server_Handler.php:290
 #, php-format
 msgid "The provider could not capture this payment: %s"
 msgstr "प्रदाता यह भुगतान कैप्चर नहीं कर सका: %s"
+
+#: includes/Payments/Support_Bundle.php:36
+#: includes/Payments/Support_Bundle.php:51
+msgid "Payment support"
+msgstr "भुगतान सहायता"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid "Download support bundle"
+msgstr "सहायता बंडल डाउनलोड करें"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid ""
+"Share this file with WCPOS support. Secrets and card numbers are removed."
+msgstr ""
+"यह फ़ाइल WCPOS सहायता टीम के साथ साझा करें। गोपनीय जानकारी और कार्ड नंबर हटा दिए जाते हैं।"
+
+#: includes/Payments/Support_Bundle.php:240
+msgid "You are not allowed to download this support bundle."
+msgstr "आपको यह सहायता बंडल डाउनलोड करने की अनुमति नहीं है।"
 
 #: includes/Registers.php:73
 msgid "Register"

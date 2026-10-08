@@ -380,12 +380,32 @@ msgstr "Không tìm thấy cửa hàng."
 msgid "Failed to trash store."
 msgstr "Không thể xóa cửa hàng."
 
+#: includes/API/V2/Payments_Answer_Controller.php:59
+msgid "Order not found."
+msgstr "Không tìm thấy đơn hàng."
+
+#: includes/API/V2/Payments_Answer_Controller.php:64
+msgid "Payment not found."
+msgstr "Không tìm thấy khoản thanh toán."
+
+#: includes/API/V2/Payments_Answer_Controller.php:67
+msgid "This payment is no longer waiting for an answer."
+msgstr "Khoản thanh toán này không còn chờ phản hồi nữa."
+
+#: includes/API/V2/Payments_Answer_Controller.php:71
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:106
+#: includes/Payments/Server/Server_Handler.php:331
+msgid "This payment provider does not support that operation."
+msgstr "Nhà cung cấp thanh toán này không hỗ trợ thao tác đó."
+
 #: includes/API/V2/Payments_Webhook_Controller.php:64
 msgid "Invalid webhook provider."
 msgstr "Nhà cung cấp webhook không hợp lệ."
 
 #: includes/API/V2/Payments_Webhook_Controller.php:67
-#: includes/Payments/Server/Reader_Curation.php:47
+#: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "Không tìm thấy phương thức thanh toán."
 
@@ -402,16 +422,174 @@ msgstr "Một yêu cầu với khóa idempotency này đang được xử lý."
 msgid "Idempotency key was reused with a different request."
 msgstr "Khóa idempotency đã được sử dụng lại với một yêu cầu khác."
 
-#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
-#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
-#: includes/Payments/Server/Server_Handler.php:224
-msgid "This payment provider does not support that operation."
-msgstr "Nhà cung cấp thanh toán này không hỗ trợ thao tác đó."
-
 #: includes/Payments/Device/Device_Handler.php:243
 msgid "The provider could not confirm this payment."
 msgstr "Nhà cung cấp không thể xác nhận khoản thanh toán này."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:55
+msgid ""
+"The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
+msgstr ""
+"Khoản thanh toán trên thiết bị đầu cuối chưa hoàn tất. Hãy hoàn tất trên thiết bị hoặc chọn phương thức thanh toán khác."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:71
+msgid "The refund could not be matched to a WooCommerce refund."
+msgstr ""
+"Không thể đối chiếu khoản hoàn tiền với khoản hoàn tiền trong WooCommerce."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:95
+msgid "Refund amount cannot be allocated to this payment."
+msgstr "Không thể phân bổ số tiền hoàn vào khoản thanh toán này."
+
+#. translators: 1: amount not refunded, 2: the provider's message.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:112
+#, php-format
+msgid ""
+"%1$s of this refund could not be returned to the card (%2$s). Return it another way."
+msgstr ""
+"Không thể hoàn %1$s của khoản hoàn tiền này về thẻ (%2$s). Hãy hoàn bằng cách khác."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:125
+msgid "This sale has no provider reference to refund against."
+msgstr ""
+"Giao dịch bán hàng này không có mã tham chiếu của nhà cung cấp để xử lý hoàn tiền."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:140
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:84
+msgid "The terminal provider reported an error."
+msgstr "Nhà cung cấp thiết bị đầu cuối báo lỗi."
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:148
+#, php-format
+msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
+msgstr ""
+"Đã yêu cầu hoàn %1$s qua %2$s; mã tham chiếu nhà cung cấp %3$s (đang chờ)"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:150
+#, php-format
+msgid "Refunded %1$s via %2$s; provider reference %3$s"
+msgstr "Đã hoàn %1$s qua %2$s; mã tham chiếu nhà cung cấp %3$s"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:66
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:134
+msgid "Send to terminal"
+msgstr "Gửi đến thiết bị đầu cuối"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:67
+msgid "Cancel the terminal payment before choosing another payment method."
+msgstr ""
+"Hãy hủy thanh toán trên thiết bị đầu cuối trước khi chọn phương thức thanh toán khác."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:68
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:135
+msgid "Cancel"
+msgstr "Hủy"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:69
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:136
+msgid "Try again"
+msgstr "Thử lại"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:70
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:130
+msgid "Terminal"
+msgstr "Thiết bị đầu cuối"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:71
+msgid "No terminal is available. Check the terminal settings."
+msgstr ""
+"Không có thiết bị đầu cuối nào khả dụng. Hãy kiểm tra cài đặt thiết bị."
+
+#. translators: %s: amount and currency.
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:73
+#, php-format
+msgid "Ready to send %s to the terminal."
+msgstr "Sẵn sàng gửi %s đến thiết bị đầu cuối."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:74
+msgid "Sending to the terminal…"
+msgstr "Đang gửi đến thiết bị đầu cuối…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:75
+msgid "Waiting for the customer at the terminal…"
+msgstr "Đang chờ khách hàng tại thiết bị đầu cuối…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:76
+msgid "Approved — finishing…"
+msgstr "Đã chấp thuận — đang hoàn tất…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:77
+msgid "Paid. Finishing the order…"
+msgstr "Đã thanh toán. Đang hoàn tất đơn hàng…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:78
+msgid "Cancelling — waiting for the terminal to confirm…"
+msgstr "Đang hủy — chờ thiết bị đầu cuối xác nhận…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:79
+msgid "Cancelled on the terminal. Nothing was charged."
+msgstr "Đã hủy trên thiết bị đầu cuối. Không có khoản nào bị tính phí."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:80
+msgid "The terminal declined or cancelled the payment."
+msgstr "Thiết bị đầu cuối đã từ chối hoặc hủy thanh toán."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:81
+msgid "Card declined."
+msgstr "Thẻ bị từ chối."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:82
+msgid "No card was presented in time."
+msgstr "Không có thẻ nào được xuất trình kịp thời."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:83
+msgid ""
+"The amount confirmed by the terminal did not match. Check the terminal and the order."
+msgstr ""
+"Số tiền thiết bị đầu cuối xác nhận không khớp. Hãy kiểm tra thiết bị và đơn hàng."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:85
+msgid ""
+"A payment with another method is already in progress on this order. Finish or cancel it first."
+msgstr ""
+"Đơn hàng này đang có khoản thanh toán bằng phương thức khác. Hãy hoàn tất hoặc hủy khoản đó trước."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:86
+msgid "Resuming a payment already in progress…"
+msgstr "Đang tiếp tục khoản thanh toán đã bắt đầu…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:87
+msgid ""
+"Your register session is about to expire. Reopen this payment from the register."
+msgstr ""
+"Phiên làm việc tại máy tính tiền của bạn sắp hết hạn. Hãy mở lại khoản thanh toán này từ máy tính tiền."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:88
+msgid ""
+"Lost the connection to your register session. The payment continues on the terminal and will be recorded; reopen this payment from the register to see the result."
+msgstr ""
+"Mất kết nối với phiên làm việc tại máy tính tiền. Khoản thanh toán vẫn tiếp tục trên thiết bị đầu cuối và sẽ được ghi nhận; hãy mở lại khoản thanh toán từ máy tính tiền để xem kết quả."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:89
+msgid "No answer from the terminal in five minutes — cancelling."
+msgstr ""
+"Không nhận được phản hồi từ thiết bị đầu cuối trong năm phút — đang hủy."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:90
+msgid "Can't reach the store — retrying…"
+msgstr "Không thể kết nối với cửa hàng — đang thử lại…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:91
+msgid "The terminal moved on. Showing its current state."
+msgstr ""
+"Thiết bị đầu cuối đã chuyển trạng thái. Đang hiển thị trạng thái hiện tại."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:92
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:138
+msgid "Details"
+msgstr "Chi tiết"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -449,23 +627,55 @@ msgid ""
 msgstr ""
 "Hoàn tiền POS #%1$d: Không thể hoàn lại %2$s qua %3$s — %4$s. Hãy hoàn tiền bằng cách khác."
 
-#: includes/Payments/Server/Reader_Curation.php:108
+#: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
 msgstr "Chọn đầu đọc."
 
-#: includes/Payments/Server/Reader_Curation.php:111
+#: includes/Payments/Server/Reader_Curation.php:122
 msgid "This reader is not allowed."
 msgstr "Không được phép dùng đầu đọc này."
 
-#: includes/Payments/Server/Reader_Curation.php:122
+#: includes/Payments/Server/Reader_Curation.php:133
+#: includes/Payments/Server/Server_Handler.php:95
 msgid "This reader is unavailable."
 msgstr "Đầu đọc này hiện không khả dụng."
 
+#: includes/Payments/Server/Server_Handler.php:168
+msgid "No terminal action is available."
+msgstr "Không có thao tác nào khả dụng trên thiết bị đầu cuối."
+
+#: includes/Payments/Server/Server_Handler.php:177
+msgid "The terminal has moved on from that question."
+msgstr "Thiết bị đầu cuối đã chuyển sang bước khác."
+
+#: includes/Payments/Server/Server_Handler.php:185
+msgid "That button is not available on the terminal."
+msgstr "Nút đó không khả dụng trên thiết bị đầu cuối."
+
 #. translators: %s: the provider's failure reason.
-#: includes/Payments/Server/Server_Handler.php:183
+#: includes/Payments/Server/Server_Handler.php:290
 #, php-format
 msgid "The provider could not capture this payment: %s"
 msgstr "Nhà cung cấp không thể thu khoản thanh toán này: %s"
+
+#: includes/Payments/Support_Bundle.php:36
+#: includes/Payments/Support_Bundle.php:51
+msgid "Payment support"
+msgstr "Hỗ trợ thanh toán"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid "Download support bundle"
+msgstr "Tải gói hỗ trợ xuống"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid ""
+"Share this file with WCPOS support. Secrets and card numbers are removed."
+msgstr ""
+"Chia sẻ tệp này với bộ phận hỗ trợ WCPOS. Thông tin bí mật và số thẻ đã được loại bỏ."
+
+#: includes/Payments/Support_Bundle.php:240
+msgid "You are not allowed to download this support bundle."
+msgstr "Bạn không được phép tải gói hỗ trợ này xuống."
 
 #: includes/Registers.php:73
 msgid "Register"
