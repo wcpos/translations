@@ -400,14 +400,18 @@ msgstr "Ekki er lengur beðið eftir svari vegna þessarar greiðslu."
 msgid "This payment provider does not support that operation."
 msgstr "Þessi greiðsluþjónusta styður ekki þá aðgerð."
 
-#: includes/API/V2/Payments_Webhook_Controller.php:64
+#: includes/API/V2/Payments_Webhook_Controller.php:68
 msgid "Invalid webhook provider."
 msgstr "Ógildur vefkrókaveitandi."
 
-#: includes/API/V2/Payments_Webhook_Controller.php:67
+#: includes/API/V2/Payments_Webhook_Controller.php:71
 #: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "Greiðslumátinn fannst ekki."
+
+#: includes/API/V2/Payments_Webhook_Controller.php:88
+msgid "The payment provider adapter returned an unusable verification."
+msgstr "Millistykki greiðsluþjónustunnar skilaði ónothæfri staðfestingu."
 
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:85
@@ -653,22 +657,21 @@ msgstr "Þessi hnappur er ekki tiltækur í posanum."
 msgid "The provider could not capture this payment: %s"
 msgstr "Greiðsluþjónustan gat ekki innheimt þessa greiðslu: %s"
 
-#: includes/Payments/Support_Bundle.php:36
-#: includes/Payments/Support_Bundle.php:51
-msgid "Payment support"
-msgstr "Aðstoð vegna greiðslna"
+#: includes/Payments/Support_Bundle.php:62
+msgid "Support bundle"
+msgstr "Stuðningspakki"
 
-#: includes/Payments/Support_Bundle.php:51
+#: includes/Payments/Support_Bundle.php:78
 msgid "Download support bundle"
 msgstr "Sækja stuðningspakka"
 
-#: includes/Payments/Support_Bundle.php:51
+#: includes/Payments/Support_Bundle.php:78
 msgid ""
-"Share this file with WCPOS support. Secrets and card numbers are removed."
+"Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed."
 msgstr ""
-"Deildu þessari skrá með WCPOS-aðstoð. Leynigögn og kortanúmer eru fjarlægð."
+"Deildu þessari skrá með WCPOS-aðstoð. Hún nær yfir allar POS-greiðsluþjónustur á þessari síðu; leyndarmál og kortanúmer hafa verið fjarlægð."
 
-#: includes/Payments/Support_Bundle.php:240
+#: includes/Payments/Support_Bundle.php:267
 msgid "You are not allowed to download this support bundle."
 msgstr "Þú hefur ekki heimild til að sækja þennan stuðningspakka."
 
@@ -798,7 +801,7 @@ msgid "Reconnecting…"
 msgstr "Tengist aftur…"
 
 #. translators: 1: extension plugin name, 2: minimum WCPOS Pro version.
-#: includes/wcpos-pro-functions.php:89
+#: includes/wcpos-pro-functions.php:92
 #, php-format
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "%1$s krefst WCPOS Pro %2$s eða nýrra."
