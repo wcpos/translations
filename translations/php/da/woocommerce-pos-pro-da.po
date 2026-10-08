@@ -380,12 +380,32 @@ msgstr "Butik ikke fundet."
 msgid "Failed to trash store."
 msgstr "Kunne ikke slette butik."
 
+#: includes/API/V2/Payments_Answer_Controller.php:59
+msgid "Order not found."
+msgstr "Ordren blev ikke fundet."
+
+#: includes/API/V2/Payments_Answer_Controller.php:64
+msgid "Payment not found."
+msgstr "Betalingen blev ikke fundet."
+
+#: includes/API/V2/Payments_Answer_Controller.php:67
+msgid "This payment is no longer waiting for an answer."
+msgstr "Denne betaling afventer ikke længere et svar."
+
+#: includes/API/V2/Payments_Answer_Controller.php:71
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:106
+#: includes/Payments/Server/Server_Handler.php:331
+msgid "This payment provider does not support that operation."
+msgstr "Denne betalingsudbyder understøtter ikke handlingen."
+
 #: includes/API/V2/Payments_Webhook_Controller.php:64
 msgid "Invalid webhook provider."
 msgstr "Ugyldig webhook-udbyder."
 
 #: includes/API/V2/Payments_Webhook_Controller.php:67
-#: includes/Payments/Server/Reader_Curation.php:47
+#: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "Betalingsmetoden blev ikke fundet."
 
@@ -402,16 +422,170 @@ msgstr "En anmodning med denne idempotensnøgle behandles allerede."
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotensnøglen blev genbrugt med en anden anmodning."
 
-#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
-#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
-#: includes/Payments/Server/Server_Handler.php:224
-msgid "This payment provider does not support that operation."
-msgstr "Denne betalingsudbyder understøtter ikke handlingen."
-
 #: includes/Payments/Device/Device_Handler.php:243
 msgid "The provider could not confirm this payment."
 msgstr "Udbyderen kunne ikke bekræfte betalingen."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:55
+msgid ""
+"The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
+msgstr ""
+"Betalingen på terminalen er ikke gennemført endnu. Gennemfør den på terminalen, eller vælg en anden betalingsmetode."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:71
+msgid "The refund could not be matched to a WooCommerce refund."
+msgstr "Refunderingen kunne ikke matches med en WooCommerce-refundering."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:95
+msgid "Refund amount cannot be allocated to this payment."
+msgstr "Refunderingsbeløbet kan ikke knyttes til denne betaling."
+
+#. translators: 1: amount not refunded, 2: the provider's message.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:112
+#, php-format
+msgid ""
+"%1$s of this refund could not be returned to the card (%2$s). Return it another way."
+msgstr ""
+"%1$s af denne refundering kunne ikke tilbageføres til kortet (%2$s). Refundér beløbet på en anden måde."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:125
+msgid "This sale has no provider reference to refund against."
+msgstr ""
+"Dette salg har ingen reference fra udbyderen, som refunderingen kan knyttes til."
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:140
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:84
+msgid "The terminal provider reported an error."
+msgstr "Terminaludbyderen rapporterede en fejl."
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:148
+#, php-format
+msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
+msgstr ""
+"Refundering af %1$s anmodet via %2$s; udbyderreference %3$s (afventer)"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:150
+#, php-format
+msgid "Refunded %1$s via %2$s; provider reference %3$s"
+msgstr "%1$s refunderet via %2$s; udbyderreference %3$s"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:66
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:134
+msgid "Send to terminal"
+msgstr "Send til terminal"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:67
+msgid "Cancel the terminal payment before choosing another payment method."
+msgstr ""
+"Annullér betalingen på terminalen, før du vælger en anden betalingsmetode."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:68
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:135
+msgid "Cancel"
+msgstr "Annuller"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:69
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:136
+msgid "Try again"
+msgstr "Prøv igen"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:70
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:130
+msgid "Terminal"
+msgstr "Terminal"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:71
+msgid "No terminal is available. Check the terminal settings."
+msgstr ""
+"Der er ingen terminal tilgængelig. Kontrollér terminalindstillingerne."
+
+#. translators: %s: amount and currency.
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:73
+#, php-format
+msgid "Ready to send %s to the terminal."
+msgstr "Klar til at sende %s til terminalen."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:74
+msgid "Sending to the terminal…"
+msgstr "Sender til terminalen…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:75
+msgid "Waiting for the customer at the terminal…"
+msgstr "Venter på kunden ved terminalen…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:76
+msgid "Approved — finishing…"
+msgstr "Godkendt — afslutter…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:77
+msgid "Paid. Finishing the order…"
+msgstr "Betalt. Afslutter ordren…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:78
+msgid "Cancelling — waiting for the terminal to confirm…"
+msgstr "Annullerer — venter på bekræftelse fra terminalen…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:79
+msgid "Cancelled on the terminal. Nothing was charged."
+msgstr "Annulleret på terminalen. Der er ikke trukket noget beløb."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:80
+msgid "The terminal declined or cancelled the payment."
+msgstr "Terminalen afviste eller annullerede betalingen."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:81
+msgid "Card declined."
+msgstr "Kortet blev afvist."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:82
+msgid "No card was presented in time."
+msgstr "Der blev ikke fremvist et kort i tide."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:83
+msgid ""
+"The amount confirmed by the terminal did not match. Check the terminal and the order."
+msgstr ""
+"Beløbet, som terminalen bekræftede, stemmer ikke. Kontrollér terminalen og ordren."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:85
+msgid ""
+"A payment with another method is already in progress on this order. Finish or cancel it first."
+msgstr ""
+"En betaling med en anden metode er allerede i gang for denne ordre. Færdiggør eller annullér den først."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:86
+msgid "Resuming a payment already in progress…"
+msgstr "Genoptager en betaling, der allerede er i gang…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:87
+msgid ""
+"Your register session is about to expire. Reopen this payment from the register."
+msgstr "Din kassesession udløber snart. Åbn betalingen igen fra kassen."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:88
+msgid ""
+"Lost the connection to your register session. The payment continues on the terminal and will be recorded; reopen this payment from the register to see the result."
+msgstr ""
+"Forbindelsen til din kassesession blev afbrudt. Betalingen fortsætter på terminalen og bliver registreret; åbn betalingen igen fra kassen for at se resultatet."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:89
+msgid "No answer from the terminal in five minutes — cancelling."
+msgstr "Intet svar fra terminalen i fem minutter — annullerer."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:90
+msgid "Can't reach the store — retrying…"
+msgstr "Kan ikke få forbindelse til butikken — prøver igen…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:91
+msgid "The terminal moved on. Showing its current state."
+msgstr "Terminalen er gået videre. Viser dens aktuelle tilstand."
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:92
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:138
+msgid "Details"
+msgstr "Detaljer"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -450,23 +624,55 @@ msgid ""
 msgstr ""
 "POS-refusion #%1$d: %2$s kunne ikke refunderes via %3$s — %4$s. Refunder beløbet på en anden måde."
 
-#: includes/Payments/Server/Reader_Curation.php:108
+#: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
 msgstr "Vælg en kortterminal."
 
-#: includes/Payments/Server/Reader_Curation.php:111
+#: includes/Payments/Server/Reader_Curation.php:122
 msgid "This reader is not allowed."
 msgstr "Denne kortterminal er ikke tilladt."
 
-#: includes/Payments/Server/Reader_Curation.php:122
+#: includes/Payments/Server/Reader_Curation.php:133
+#: includes/Payments/Server/Server_Handler.php:95
 msgid "This reader is unavailable."
 msgstr "Denne kortterminal er ikke tilgængelig."
 
+#: includes/Payments/Server/Server_Handler.php:168
+msgid "No terminal action is available."
+msgstr "Der er ingen tilgængelige handlinger på terminalen."
+
+#: includes/Payments/Server/Server_Handler.php:177
+msgid "The terminal has moved on from that question."
+msgstr "Terminalen er gået videre fra det spørgsmål."
+
+#: includes/Payments/Server/Server_Handler.php:185
+msgid "That button is not available on the terminal."
+msgstr "Den knap er ikke tilgængelig på terminalen."
+
 #. translators: %s: the provider's failure reason.
-#: includes/Payments/Server/Server_Handler.php:183
+#: includes/Payments/Server/Server_Handler.php:290
 #, php-format
 msgid "The provider could not capture this payment: %s"
 msgstr "Udbyderen kunne ikke indløse betalingen: %s"
+
+#: includes/Payments/Support_Bundle.php:36
+#: includes/Payments/Support_Bundle.php:51
+msgid "Payment support"
+msgstr "Betalingssupport"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid "Download support bundle"
+msgstr "Download supportpakke"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid ""
+"Share this file with WCPOS support. Secrets and card numbers are removed."
+msgstr ""
+"Del denne fil med WCPOS-support. Hemmeligheder og kortnumre er fjernet."
+
+#: includes/Payments/Support_Bundle.php:240
+msgid "You are not allowed to download this support bundle."
+msgstr "Du har ikke tilladelse til at downloade denne supportpakke."
 
 #: includes/Registers.php:73
 msgid "Register"

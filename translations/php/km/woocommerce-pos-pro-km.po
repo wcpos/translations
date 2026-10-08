@@ -381,12 +381,32 @@ msgstr "រកមិនឃើញហាងទេ។"
 msgid "Failed to trash store."
 msgstr "មិនអាចលុបហាងបានទេ។"
 
+#: includes/API/V2/Payments_Answer_Controller.php:59
+msgid "Order not found."
+msgstr "រកមិនឃើញការបញ្ជាទិញទេ។"
+
+#: includes/API/V2/Payments_Answer_Controller.php:64
+msgid "Payment not found."
+msgstr "រកមិនឃើញការទូទាត់ទេ។"
+
+#: includes/API/V2/Payments_Answer_Controller.php:67
+msgid "This payment is no longer waiting for an answer."
+msgstr "ការទូទាត់នេះលែងរង់ចាំការឆ្លើយតបទៀតហើយ។"
+
+#: includes/API/V2/Payments_Answer_Controller.php:71
+#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
+#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Server/Abstract_Provider_Adapter.php:106
+#: includes/Payments/Server/Server_Handler.php:331
+msgid "This payment provider does not support that operation."
+msgstr "អ្នកផ្តល់សេវាបង់ប្រាក់នេះមិនគាំទ្រប្រតិបត្តិការនោះទេ។"
+
 #: includes/API/V2/Payments_Webhook_Controller.php:64
 msgid "Invalid webhook provider."
 msgstr "អ្នកផ្តល់សេវា webhook មិនត្រឹមត្រូវទេ។"
 
 #: includes/API/V2/Payments_Webhook_Controller.php:67
-#: includes/Payments/Server/Reader_Curation.php:47
+#: includes/Payments/Server/Reader_Curation.php:58
 msgid "Payment method not found."
 msgstr "រកមិនឃើញវិធីបង់ប្រាក់ទេ។"
 
@@ -403,16 +423,168 @@ msgstr "សំណើដែលមានកូនសោ idempotency នេះក�
 msgid "Idempotency key was reused with a different request."
 msgstr "កូនសោ idempotency ត្រូវបានប្រើឡើងវិញជាមួយសំណើផ្សេង។"
 
-#: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
-#: includes/Payments/Server/Abstract_Provider_Adapter.php:68
-#: includes/Payments/Server/Server_Handler.php:224
-msgid "This payment provider does not support that operation."
-msgstr "អ្នកផ្តល់សេវាបង់ប្រាក់នេះមិនគាំទ្រប្រតិបត្តិការនោះទេ។"
-
 #: includes/Payments/Device/Device_Handler.php:243
 msgid "The provider could not confirm this payment."
 msgstr "អ្នកផ្តល់សេវាមិនអាចបញ្ជាក់ការបង់ប្រាក់នេះបានទេ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:55
+msgid ""
+"The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
+msgstr ""
+"ការទូទាត់តាមស្ថានីយមិនទាន់បញ្ចប់ទេ។ សូមបញ្ចប់នៅលើស្ថានីយ ឬជ្រើសរើសវិធីទូទាត់ផ្សេង។"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:71
+msgid "The refund could not be matched to a WooCommerce refund."
+msgstr "មិនអាចផ្គូផ្គងការសងប្រាក់ទៅនឹងការសងប្រាក់របស់ WooCommerce បានទេ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:95
+msgid "Refund amount cannot be allocated to this payment."
+msgstr "មិនអាចបែងចែកចំនួនប្រាក់សងទៅការទូទាត់នេះបានទេ។"
+
+#. translators: 1: amount not refunded, 2: the provider's message.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:112
+#, php-format
+msgid ""
+"%1$s of this refund could not be returned to the card (%2$s). Return it another way."
+msgstr ""
+"មិនអាចសង %1$s នៃប្រាក់សងនេះត្រឡប់ទៅកាត (%2$s) បានទេ។ សូមសងតាមវិធីផ្សេង។"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:125
+msgid "This sale has no provider reference to refund against."
+msgstr "ការលក់នេះមិនមានលេខយោងអ្នកផ្តល់សេវាសម្រាប់ធ្វើការសងប្រាក់ទេ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:140
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:84
+msgid "The terminal provider reported an error."
+msgstr "អ្នកផ្តល់សេវាស្ថានីយបានរាយការណ៍កំហុស។"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:148
+#, php-format
+msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
+msgstr ""
+"បានស្នើសុំសងប្រាក់ %1$s តាមរយៈ %2$s; លេខយោងអ្នកផ្តល់សេវា %3$s (កំពុងរង់ចាំ)"
+
+#. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:150
+#, php-format
+msgid "Refunded %1$s via %2$s; provider reference %3$s"
+msgstr "បានសងប្រាក់ %1$s តាមរយៈ %2$s; លេខយោងអ្នកផ្តល់សេវា %3$s"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:66
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:134
+msgid "Send to terminal"
+msgstr "ផ្ញើទៅស្ថានីយ"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:67
+msgid "Cancel the terminal payment before choosing another payment method."
+msgstr "សូមបោះបង់ការទូទាត់តាមស្ថានីយ មុនជ្រើសរើសវិធីទូទាត់ផ្សេង។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:68
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:135
+msgid "Cancel"
+msgstr "បោះបង់"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:69
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:136
+msgid "Try again"
+msgstr "ព្យាយាមម្តងទៀត"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:70
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:130
+msgid "Terminal"
+msgstr "ស្ថានីយ"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:71
+msgid "No terminal is available. Check the terminal settings."
+msgstr "មិនមានស្ថានីយទេ។ សូមពិនិត្យការកំណត់ស្ថានីយ។"
+
+#. translators: %s: amount and currency.
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:73
+#, php-format
+msgid "Ready to send %s to the terminal."
+msgstr "រួចរាល់ដើម្បីផ្ញើ %s ទៅស្ថានីយ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:74
+msgid "Sending to the terminal…"
+msgstr "កំពុងផ្ញើទៅស្ថានីយ…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:75
+msgid "Waiting for the customer at the terminal…"
+msgstr "កំពុងរង់ចាំអតិថិជននៅស្ថានីយ…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:76
+msgid "Approved — finishing…"
+msgstr "បានអនុម័ត — កំពុងបញ្ចប់…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:77
+msgid "Paid. Finishing the order…"
+msgstr "បានបង់ប្រាក់។ កំពុងបញ្ចប់ការបញ្ជាទិញ…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:78
+msgid "Cancelling — waiting for the terminal to confirm…"
+msgstr "កំពុងបោះបង់ — រង់ចាំការបញ្ជាក់ពីស្ថានីយ…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:79
+msgid "Cancelled on the terminal. Nothing was charged."
+msgstr "បានបោះបង់នៅស្ថានីយ។ មិនមានការគិតប្រាក់ទេ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:80
+msgid "The terminal declined or cancelled the payment."
+msgstr "ស្ថានីយបានបដិសេធ ឬបោះបង់ការទូទាត់។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:81
+msgid "Card declined."
+msgstr "កាតត្រូវបានបដិសេធ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:82
+msgid "No card was presented in time."
+msgstr "មិនបានបង្ហាញកាតទាន់ពេលទេ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:83
+msgid ""
+"The amount confirmed by the terminal did not match. Check the terminal and the order."
+msgstr ""
+"ចំនួនទឹកប្រាក់ដែលស្ថានីយបានបញ្ជាក់មិនត្រូវគ្នាទេ។ សូមពិនិត្យស្ថានីយ និងការបញ្ជាទិញ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:85
+msgid ""
+"A payment with another method is already in progress on this order. Finish or cancel it first."
+msgstr ""
+"ការទូទាត់តាមវិធីផ្សេងកំពុងដំណើរការលើការបញ្ជាទិញនេះរួចហើយ។ សូមបញ្ចប់ ឬបោះបង់វាជាមុន។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:86
+msgid "Resuming a payment already in progress…"
+msgstr "កំពុងបន្តការទូទាត់ដែលកំពុងដំណើរការឡើងវិញ…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:87
+msgid ""
+"Your register session is about to expire. Reopen this payment from the register."
+msgstr ""
+"សម័យប្រើប្រាស់ម៉ាស៊ីនគិតលុយរបស់អ្នកជិតផុតកំណត់ហើយ។ សូមបើកការទូទាត់នេះឡើងវិញពីម៉ាស៊ីនគិតលុយ។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:88
+msgid ""
+"Lost the connection to your register session. The payment continues on the terminal and will be recorded; reopen this payment from the register to see the result."
+msgstr ""
+"បានបាត់បង់ការតភ្ជាប់ទៅសម័យប្រើប្រាស់ម៉ាស៊ីនគិតលុយ។ ការទូទាត់នឹងបន្តនៅស្ថានីយ ហើយត្រូវបានកត់ត្រា។ សូមបើកការទូទាត់នេះឡើងវិញពីម៉ាស៊ីនគិតលុយ ដើម្បីមើលលទ្ធផល។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:89
+msgid "No answer from the terminal in five minutes — cancelling."
+msgstr "គ្មានការឆ្លើយតបពីស្ថានីយក្នុងរយៈពេលប្រាំនាទី — កំពុងបោះបង់។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:90
+msgid "Can't reach the store — retrying…"
+msgstr "មិនអាចភ្ជាប់ទៅហាងបានទេ — កំពុងព្យាយាមម្តងទៀត…"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:91
+msgid "The terminal moved on. Showing its current state."
+msgstr "ស្ថានីយបានបន្តទៅមុខ។ កំពុងបង្ហាញស្ថានភាពបច្ចុប្បន្ន។"
+
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:92
+#: includes/Payments/OrderPay/Order_Pay_Panel.php:138
+msgid "Details"
+msgstr "ព័ត៌មានលម្អិត"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
 #: includes/Payments/Refund_Orchestrator.php:35
@@ -449,23 +621,55 @@ msgid ""
 msgstr ""
 "ការសងប្រាក់វិញ POS #%1$d៖ មិនអាចសង %2$s តាមរយៈ %3$s បានទេ — %4$s។ សងតាមវិធីផ្សេង។"
 
-#: includes/Payments/Server/Reader_Curation.php:108
+#: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
 msgstr "ជ្រើសរើសឧបករណ៍អានមួយ។"
 
-#: includes/Payments/Server/Reader_Curation.php:111
+#: includes/Payments/Server/Reader_Curation.php:122
 msgid "This reader is not allowed."
 msgstr "មិនអនុញ្ញាតឱ្យប្រើឧបករណ៍អាននេះទេ។"
 
-#: includes/Payments/Server/Reader_Curation.php:122
+#: includes/Payments/Server/Reader_Curation.php:133
+#: includes/Payments/Server/Server_Handler.php:95
 msgid "This reader is unavailable."
 msgstr "ឧបករណ៍អាននេះមិនអាចប្រើបានទេ។"
 
+#: includes/Payments/Server/Server_Handler.php:168
+msgid "No terminal action is available."
+msgstr "មិនមានសកម្មភាពស្ថានីយទេ។"
+
+#: includes/Payments/Server/Server_Handler.php:177
+msgid "The terminal has moved on from that question."
+msgstr "ស្ថានីយបានបន្តទៅមុខពីសំណើនោះហើយ។"
+
+#: includes/Payments/Server/Server_Handler.php:185
+msgid "That button is not available on the terminal."
+msgstr "ប៊ូតុងនោះមិនអាចប្រើបាននៅលើស្ថានីយទេ។"
+
 #. translators: %s: the provider's failure reason.
-#: includes/Payments/Server/Server_Handler.php:183
+#: includes/Payments/Server/Server_Handler.php:290
 #, php-format
 msgid "The provider could not capture this payment: %s"
 msgstr "អ្នកផ្តល់សេវាមិនអាចទទួលប្រាក់ពីការបង់ប្រាក់នេះបានទេ៖ %s"
+
+#: includes/Payments/Support_Bundle.php:36
+#: includes/Payments/Support_Bundle.php:51
+msgid "Payment support"
+msgstr "ជំនួយការទូទាត់"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid "Download support bundle"
+msgstr "ទាញយកកញ្ចប់ជំនួយ"
+
+#: includes/Payments/Support_Bundle.php:51
+msgid ""
+"Share this file with WCPOS support. Secrets and card numbers are removed."
+msgstr ""
+"ចែករំលែកឯកសារនេះជាមួយជំនួយ WCPOS។ ព័ត៌មានសម្ងាត់ និងលេខកាតត្រូវបានដកចេញ។"
+
+#: includes/Payments/Support_Bundle.php:240
+msgid "You are not allowed to download this support bundle."
+msgstr "អ្នកមិនមានសិទ្ធិទាញយកកញ្ចប់ជំនួយនេះទេ។"
 
 #: includes/Registers.php:73
 msgid "Register"
