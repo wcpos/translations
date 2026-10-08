@@ -145,7 +145,7 @@ return array(
 		'The provider could not capture this payment: %s' => 'Der Anbieter konnte diese Zahlung nicht einziehen: %s',
 		'Support bundle' => 'Supportpaket',
 		'Download support bundle' => 'Supportpaket herunterladen',
-		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Teilen Sie diese Datei mit dem WCPOS-Support. Sie enthält alle POS-Zahlungsanbieter dieser Website; Geheimnisse und Kartennummern wurden entfernt.',
+		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Teilen Sie diese Datei mit dem WCPOS-Support. Sie enthält Angaben zu allen POS-Zahlungsanbietern dieser Website; geheime Daten und Kartennummern wurden entfernt.',
 		'You are not allowed to download this support bundle.' => 'Sie dürfen dieses Supportpaket nicht herunterladen.',
 		'Register' => 'Kasse',
 		'The target store must be a published store.' => 'Der Zielshop muss veröffentlicht sein.',
