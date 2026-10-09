@@ -85,6 +85,7 @@ if (tool === 'git') {
   } else if (args[0].endsWith('validate-translations.js')) process.exit(config.invalid ? 1 : 0);
   else if (args[0].endsWith('check-translation-quality.js')) console.log('QUALITY');
   else if (args[0].endsWith('check-completeness.js')) console.log('Details\nErrors:   0\nWarnings: 2');
+  else if (args[0].endsWith('cleanup-stale-keys.js')) console.log('Removed 0 stale keys from 0 files.');
   else process.exit(99);
 } else if (tool === 'codex' || tool === 'claude') {
   const prompt = fs.readFileSync(0, 'utf8');
@@ -107,6 +108,7 @@ if (tool === 'git') {
 `.replace('@NODE@', process.execPath);
   for (const tool of ['git', 'gh', 'pnpm', 'node', 'codex', 'claude']) fs.writeFileSync(path.join(bin, tool), stub, { mode: 0o755 });
   let result = run({ counts: [] });
+  assert.ok(!result.calls.some(c => c.args[0]?.endsWith('cleanup-stale-keys.js')));
   assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'list')), 'caller PATH gh wins over Homebrew');
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /nothing to translate/);
@@ -179,6 +181,11 @@ if (tool === 'git') {
   assert.match(result.stdout, /review 1 failed/);
   result = run();
   assert.equal(result.status, 0, result.stderr);
+  const cleanupIndex = result.calls.findIndex(c => c.tool === 'node' && c.args[0] === 'scripts/cleanup-stale-keys.js');
+  assert.ok(cleanupIndex !== -1);
+  assert.ok(cleanupIndex > result.calls.findIndex(c => isCall(c, 'node', 'scripts/apply-translations.js')));
+  assert.ok(cleanupIndex < result.calls.findIndex(c => isCall(c, 'git', 'commit')));
+  assert.match(result.stdout, /Removed 0 stale keys from 0 files\./);
   assert.deepEqual(result.calls.filter(c => c.tool === 'codex').map(c => c.args[c.args.indexOf('-m') + 1]), ['gpt-6-luna', 'gpt-6-sol']);
   assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: codex \(gpt-6-luna\); review: gpt-6-sol\./);
   for (const translator of ['codex', 'claude']) {
