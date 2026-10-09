@@ -177,6 +177,8 @@ else
   rm -f "$STATE"
 fi
 if [ -z "$(git status --porcelain -- translations)" ]; then log "no translations accepted"; exit 1; fi
+node scripts/cleanup-stale-keys.js > .translate/cleanup.log
+log "$(tail -n 1 .translate/cleanup.log)"
 if ! node scripts/validate-translations.js; then
   log "validation failed; worktree left at $WT"
   exit 1
