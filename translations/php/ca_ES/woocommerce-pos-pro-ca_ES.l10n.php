@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Compartiu aquest fitxer amb el suport de WCPOS. Inclou tots els proveïdors de pagament del POS d\'aquest lloc; s\'han eliminat els secrets i els números de targeta.',
 		'You are not allowed to download this support bundle.' => 'No tens permís per baixar aquest paquet d’assistència.',
 		'Register' => 'Caixa',
-		'The target store must be a published store.' => 'La botiga de destinació ha d\'estar publicada.',
+		'The target store must be a published store you are authorized for.' => 'La botiga de destinació ha d\'estar publicada i has de tenir-hi autorització.',
 		'Close the register session before moving it to another store.' => 'Tanca la sessió de caixa abans de moure-la a una altra botiga.',
 		'Too many pairing attempts.' => 'Hi ha hagut massa intents d\'aparellament.',
 		'Invalid or expired pairing code.' => 'Codi d\'aparellament no vàlid o caducat.',

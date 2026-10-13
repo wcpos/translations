@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'このファイルをWCPOSサポートと共有してください。このサイトのすべてのPOS決済プロバイダーに関する情報が含まれます。シークレットとカード番号は削除されています。',
 		'You are not allowed to download this support bundle.' => 'このサポート用データ一式をダウンロードする権限がありません。',
 		'Register' => 'レジ',
-		'The target store must be a published store.' => '移動先のストアは公開済みである必要があります。',
+		'The target store must be a published store you are authorized for.' => '対象のストアは公開済みで、アクセス権限が必要です。',
 		'Close the register session before moving it to another store.' => '別のストアに移動する前に、レジセッションを終了してください。',
 		'Too many pairing attempts.' => 'ペアリングの試行回数が多すぎます。',
 		'Invalid or expired pairing code.' => 'ペアリングコードが無効か、有効期限が切れています。',

@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Deel dit bestand met de WCPOS-ondersteuning. Het bevat gegevens over alle POS-betalingsproviders op deze site; geheime gegevens en kaartnummers zijn verwijderd.',
 		'You are not allowed to download this support bundle.' => 'Je mag dit ondersteuningspakket niet downloaden.',
 		'Register' => 'Kassa',
-		'The target store must be a published store.' => 'De doelwinkel moet gepubliceerd zijn.',
+		'The target store must be a published store you are authorized for.' => 'De doelwinkel moet gepubliceerd zijn en je moet toegang hebben tot de winkel.',
 		'Close the register session before moving it to another store.' => 'Sluit de kassasessie voordat je de kassa naar een andere winkel verplaatst.',
 		'Too many pairing attempts.' => 'Te veel koppelingspogingen.',
 		'Invalid or expired pairing code.' => 'Ongeldige of verlopen koppelingscode.',

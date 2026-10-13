@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Jaa tämä tiedosto WCPOS-tuen kanssa. Se kattaa kaikki tämän sivuston POS-maksupalveluntarjoajat; salaiset tiedot ja korttinumerot on poistettu.',
 		'You are not allowed to download this support bundle.' => 'Sinulla ei ole oikeutta ladata tätä tukipakettia.',
 		'Register' => 'Kassa',
-		'The target store must be a published store.' => 'Kohdekaupan on oltava julkaistu kauppa.',
+		'The target store must be a published store you are authorized for.' => 'Kohdekaupan on oltava julkaistu, ja sinulla on oltava siihen käyttöoikeus.',
 		'Close the register session before moving it to another store.' => 'Sulje kassaistunto ennen sen siirtämistä toiseen kauppaan.',
 		'Too many pairing attempts.' => 'Liian monta pariliitosyritystä.',
 		'Invalid or expired pairing code.' => 'Virheellinen tai vanhentunut pariliitoskoodi.',

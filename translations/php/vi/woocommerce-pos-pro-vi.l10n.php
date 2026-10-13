@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Chia sẻ tệp này với bộ phận hỗ trợ WCPOS. Tệp chứa thông tin về tất cả nhà cung cấp thanh toán POS trên trang web này; thông tin bí mật và số thẻ đã được xóa.',
 		'You are not allowed to download this support bundle.' => 'Bạn không được phép tải gói hỗ trợ này xuống.',
 		'Register' => 'Máy tính tiền',
-		'The target store must be a published store.' => 'Cửa hàng đích phải được xuất bản.',
+		'The target store must be a published store you are authorized for.' => 'Cửa hàng đích phải được xuất bản và bạn phải được cấp quyền truy cập vào cửa hàng đó.',
 		'Close the register session before moving it to another store.' => 'Hãy đóng phiên máy tính tiền trước khi chuyển sang cửa hàng khác.',
 		'Too many pairing attempts.' => 'Bạn đã thử ghép nối quá nhiều lần.',
 		'Invalid or expired pairing code.' => 'Mã ghép nối không hợp lệ hoặc đã hết hạn.',

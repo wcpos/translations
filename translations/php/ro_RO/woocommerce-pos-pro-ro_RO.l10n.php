@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Partajați acest fișier cu echipa de asistență WCPOS. Acesta include toți furnizorii de plăți POS de pe acest site; secretele și numerele cardurilor au fost eliminate.',
 		'You are not allowed to download this support bundle.' => 'Nu aveți permisiunea de a descărca acest pachet de asistență.',
 		'Register' => 'Casă de marcat',
-		'The target store must be a published store.' => 'Magazinul țintă trebuie să fie publicat.',
+		'The target store must be a published store you are authorized for.' => 'Magazinul țintă trebuie să fie publicat, iar tu trebuie să ai autorizație pentru a-l accesa.',
 		'Close the register session before moving it to another store.' => 'Închide sesiunea casei înainte de a o muta în alt magazin.',
 		'Too many pairing attempts.' => 'Prea multe încercări de asociere.',
 		'Invalid or expired pairing code.' => 'Cod de asociere nevalid sau expirat.',

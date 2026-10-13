@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Ossza meg ezt a fájlt a WCPOS ügyfélszolgálatával. A webhely összes POS-fizetési szolgáltatóját tartalmazza; a titkos adatok és a kártyaszámok eltávolításra kerültek.',
 		'You are not allowed to download this support bundle.' => 'Nincs jogosultsága a támogatási csomag letöltéséhez.',
 		'Register' => 'Pénztárgép',
-		'The target store must be a published store.' => 'A célüzletnek közzétett üzletnek kell lennie.',
+		'The target store must be a published store you are authorized for.' => 'A célüzletnek közzétettnek kell lennie, és Önnek jogosultsággal kell rendelkeznie a hozzáféréshez.',
 		'Close the register session before moving it to another store.' => 'Mielőtt másik üzletbe helyezi át, zárja le a pénztárgép munkamenetét.',
 		'Too many pairing attempts.' => 'Túl sok párosítási kísérlet.',
 		'Invalid or expired pairing code.' => 'Érvénytelen vagy lejárt párosítási kód.',

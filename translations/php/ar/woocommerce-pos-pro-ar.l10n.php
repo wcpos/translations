@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'شارك هذا الملف مع دعم WCPOS. يشمل جميع موفّري الدفع عبر POS على هذا الموقع؛ وقد أزيلت المعلومات السرية وأرقام البطاقات.',
 		'You are not allowed to download this support bundle.' => 'ليس لديك إذن لتنزيل حزمة الدعم هذه.',
 		'Register' => 'سجل الدفع',
-		'The target store must be a published store.' => 'يجب أن يكون المتجر المستهدف منشورًا.',
+		'The target store must be a published store you are authorized for.' => 'يجب أن يكون المتجر المستهدف منشورًا وأن تكون مخولًا بالوصول إليه.',
 		'Close the register session before moving it to another store.' => 'أغلق جلسة سجل الدفع قبل نقله إلى متجر آخر.',
 		'Too many pairing attempts.' => 'عدد محاولات الاقتران كبير جدًا.',
 		'Invalid or expired pairing code.' => 'رمز الاقتران غير صالح أو منتهي الصلاحية.',

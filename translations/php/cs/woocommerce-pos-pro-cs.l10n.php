@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Sdílejte tento soubor s podporou WCPOS. Obsahuje všechny poskytovatele plateb POS na tomto webu; tajné údaje a čísla karet jsou odstraněny.',
 		'You are not allowed to download this support bundle.' => 'Nemáte oprávnění stáhnout tento balíček podpory.',
 		'Register' => 'Pokladna',
-		'The target store must be a published store.' => 'Cílový obchod musí být zveřejněný.',
+		'The target store must be a published store you are authorized for.' => 'Cílový obchod musí být zveřejněný a musíte k němu mít oprávnění.',
 		'Close the register session before moving it to another store.' => 'Před přesunutím pokladny do jiného obchodu zavřete její relaci.',
 		'Too many pairing attempts.' => 'Příliš mnoho pokusů o spárování.',
 		'Invalid or expired pairing code.' => 'Neplatný nebo prošlý párovací kód.',

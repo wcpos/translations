@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Teilen Sie diese Datei mit dem WCPOS-Support. Sie enthält alle POS-Zahlungsanbieter dieser Website; Geheimnisse und Kartennummern wurden entfernt.',
 		'You are not allowed to download this support bundle.' => 'Sie dürfen dieses Supportpaket nicht herunterladen.',
 		'Register' => 'Kasse',
-		'The target store must be a published store.' => 'Der Zielshop muss veröffentlicht sein.',
+		'The target store must be a published store you are authorized for.' => 'Der Zielshop muss veröffentlicht sein und Sie müssen dafür berechtigt sein.',
 		'Close the register session before moving it to another store.' => 'Schließen Sie die Kassensitzung, bevor Sie sie in einen anderen Shop verschieben.',
 		'Too many pairing attempts.' => 'Zu viele Kopplungsversuche.',
 		'Invalid or expired pairing code.' => 'Ungültiger oder abgelaufener Kopplungscode.',

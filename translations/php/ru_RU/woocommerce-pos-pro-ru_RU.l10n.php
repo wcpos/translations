@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Передайте этот файл в службу поддержки WCPOS. В нём собраны данные обо всех POS-провайдерах платежей на этом сайте; секреты и номера карт удалены.',
 		'You are not allowed to download this support bundle.' => 'У вас нет разрешения скачать этот пакет поддержки.',
 		'Register' => 'Касса',
-		'The target store must be a published store.' => 'Целевой магазин должен быть опубликован.',
+		'The target store must be a published store you are authorized for.' => 'Целевой магазин должен быть опубликован, и у вас должно быть разрешение на доступ к нему.',
 		'Close the register session before moving it to another store.' => 'Закройте кассовую сессию, прежде чем перемещать её в другой магазин.',
 		'Too many pairing attempts.' => 'Слишком много попыток подключения.',
 		'Invalid or expired pairing code.' => 'Недействительный или просроченный код подключения.',

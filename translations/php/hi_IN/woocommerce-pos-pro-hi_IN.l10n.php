@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'इस फ़ाइल को WCPOS सहायता के साथ साझा करें। इसमें इस साइट के सभी POS भुगतान प्रदाताओं की जानकारी शामिल है; गोपनीय जानकारी और कार्ड नंबर हटा दिए गए हैं।',
 		'You are not allowed to download this support bundle.' => 'आपको यह सहायता बंडल डाउनलोड करने की अनुमति नहीं है।',
 		'Register' => 'रजिस्टर',
-		'The target store must be a published store.' => 'लक्षित स्टोर प्रकाशित होना चाहिए।',
+		'The target store must be a published store you are authorized for.' => 'लक्ष्य स्टोर प्रकाशित होना चाहिए और आपको उस तक पहुँचने की अनुमति होनी चाहिए।',
 		'Close the register session before moving it to another store.' => 'रजिस्टर को दूसरे स्टोर में ले जाने से पहले उसका सत्र बंद करें।',
 		'Too many pairing attempts.' => 'पेयर करने के बहुत अधिक प्रयास हुए।',
 		'Invalid or expired pairing code.' => 'अमान्य या समाप्त हो चुका पेयरिंग कोड।',

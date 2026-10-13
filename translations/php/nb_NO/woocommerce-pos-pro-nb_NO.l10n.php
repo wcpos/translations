@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Del denne filen med WCPOS-kundestøtte. Den omfatter alle POS-betalingsleverandører på dette nettstedet; hemmeligheter og kortnumre er fjernet.',
 		'You are not allowed to download this support bundle.' => 'Du har ikke tillatelse til å laste ned denne støttepakken.',
 		'Register' => 'Kasse',
-		'The target store must be a published store.' => 'Målbutikken må være publisert.',
+		'The target store must be a published store you are authorized for.' => 'Målbutikken må være publisert, og du må ha tilgang til den.',
 		'Close the register session before moving it to another store.' => 'Lukk kassesesjonen før du flytter den til en annen butikk.',
 		'Too many pairing attempts.' => 'For mange forsøk på sammenkobling.',
 		'Invalid or expired pairing code.' => 'Ugyldig eller utløpt sammenkoblingskode.',

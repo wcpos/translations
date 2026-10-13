@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Μοιραστείτε αυτό το αρχείο με την υποστήριξη του WCPOS. Περιλαμβάνει όλους τους παρόχους πληρωμών POS σε αυτόν τον ιστότοπο· τα μυστικά στοιχεία και οι αριθμοί καρτών έχουν αφαιρεθεί.',
 		'You are not allowed to download this support bundle.' => 'Δεν επιτρέπεται να κατεβάσετε αυτό το πακέτο υποστήριξης.',
 		'Register' => 'Ταμείο',
-		'The target store must be a published store.' => 'Το κατάστημα προορισμού πρέπει να είναι δημοσιευμένο.',
+		'The target store must be a published store you are authorized for.' => 'Το κατάστημα προορισμού πρέπει να είναι δημοσιευμένο και να έχετε εξουσιοδότηση πρόσβασης σε αυτό.',
 		'Close the register session before moving it to another store.' => 'Κλείστε τη συνεδρία ταμείου πριν τη μεταφέρετε σε άλλο κατάστημα.',
 		'Too many pairing attempts.' => 'Έγιναν πάρα πολλές προσπάθειες σύζευξης.',
 		'Invalid or expired pairing code.' => 'Μη έγκυρος ή ληγμένος κωδικός σύζευξης.',

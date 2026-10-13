@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Bendrinkite šį failą su WCPOS pagalbos komanda. Jame pateikiama informacija apie visus šios svetainės POS mokėjimo teikėjus; slapti duomenys ir kortelių numeriai pašalinti.',
 		'You are not allowed to download this support bundle.' => 'Neturite teisės atsisiųsti šio pagalbos paketo.',
 		'Register' => 'Kasa',
-		'The target store must be a published store.' => 'Tikslinė parduotuvė turi būti paskelbta.',
+		'The target store must be a published store you are authorized for.' => 'Tikslinė parduotuvė turi būti paskelbta, o jūs turite turėti teisę ją pasiekti.',
 		'Close the register session before moving it to another store.' => 'Prieš perkeldami į kitą parduotuvę, uždarykite kasos seansą.',
 		'Too many pairing attempts.' => 'Per daug bandymų susieti.',
 		'Invalid or expired pairing code.' => 'Netinkamas arba nebegaliojantis susiejimo kodas.',

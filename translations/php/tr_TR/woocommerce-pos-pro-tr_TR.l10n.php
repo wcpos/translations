@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Bu dosyayı WCPOS desteğiyle paylaşın. Bu sitedeki tüm POS ödeme sağlayıcılarını kapsar; gizli bilgiler ve kart numaraları kaldırılmıştır.',
 		'You are not allowed to download this support bundle.' => 'Bu destek paketini indirme izniniz yok.',
 		'Register' => 'Kasa',
-		'The target store must be a published store.' => 'Hedef mağaza yayımlanmış olmalıdır.',
+		'The target store must be a published store you are authorized for.' => 'Hedef mağaza yayımlanmış olmalı ve mağazaya erişim yetkiniz bulunmalıdır.',
 		'Close the register session before moving it to another store.' => 'Başka bir mağazaya taşımadan önce kasa oturumunu kapatın.',
 		'Too many pairing attempts.' => 'Çok fazla eşleştirme denemesi.',
 		'Invalid or expired pairing code.' => 'Eşleştirme kodu geçersiz veya süresi dolmuş.',
