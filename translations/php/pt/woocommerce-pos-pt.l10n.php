@@ -60,7 +60,7 @@ return array(
 		'OK' => 'OK',
 		'Cancel' => 'Cancelar',
 		'POS Only products are never shown in the online catalog or search.' => 'Os produtos apenas para POS nunca são apresentados no catálogo nem na pesquisa online.',
-		'Catalog visibility is kept at “%s” while this product is POS Only.' => 'A visibilidade no catálogo permanece como «%s» enquanto este produto se destinar apenas ao POS.',
+		'Catalog visibility is kept at “%s” while this product is POS Only.' => 'A visibilidade no catálogo mantém-se como «%s» enquanto este produto se destinar apenas ao POS.',
 		'Catalog visibility goes back to “%s” when you update. Change it afterwards if you want something else.' => 'A visibilidade do catálogo volta a «%s» quando atualizar. Altere-a depois se pretender outra opção.',
 		'Error' => 'Erro',
 		'Settings failed to load, please contact support' => 'Falha ao carregar as configurações, por favor contacte o suporte',
