@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Maaf, pesanan ini sudah dibayar.',
 		'You do not have permission to modify checkout settings.' => 'Anda tidak memiliki izin untuk mengubah pengaturan checkout.',
 		'You do not have permission to view this receipt.' => 'Anda tidak memiliki izin untuk melihat struk ini.',
+		'No closure template is enabled.' => 'Tidak ada templat penutupan yang diaktifkan.',
 		'No receipt template is configured.' => 'Template struk belum dikonfigurasi.',
 		'Receipt Error' => 'Kesalahan Struk',
 		'Receipt Template Error' => 'Kesalahan Template Struk',

@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'ขออภัย คำสั่งซื้อนี้ได้ชำระเงินแล้ว',
 		'You do not have permission to modify checkout settings.' => 'คุณไม่มีสิทธิ์ในการเปลี่ยนแปลงการตั้งค่าแคชเชียร์',
 		'You do not have permission to view this receipt.' => 'คุณไม่มีสิทธิ์ในการดูใบเสร็จนี้',
+		'No closure template is enabled.' => 'ไม่มีเทมเพลตการปิดรอบที่เปิดใช้งานอยู่',
 		'No receipt template is configured.' => 'ยังไม่ได้กำหนดค่าเทมเพลตใบเสร็จ',
 		'Receipt Error' => 'ข้อผิดพลาดของใบเสร็จ',
 		'Receipt Template Error' => 'ข้อผิดพลาดของเทมเพลตใบเสร็จ',

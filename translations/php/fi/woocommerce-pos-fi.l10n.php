@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Valitettavasti tämä tilaus on jo maksettu.',
 		'You do not have permission to modify checkout settings.' => 'Sinulla ei ole lupaa muokata maksualueen asetuksia.',
 		'You do not have permission to view this receipt.' => 'Sinulla ei ole oikeutta tarkastella tätä kuittia.',
+		'No closure template is enabled.' => 'Yhtään sulkemispohjaa ei ole otettu käyttöön.',
 		'No receipt template is configured.' => 'Kuittipohjaa ei ole määritetty.',
 		'Receipt Error' => 'Kuittivirhe',
 		'Receipt Template Error' => 'Kuittipohjan virhe',

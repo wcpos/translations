@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Beklager, denne bestillingen er allerede betalt.',
 		'You do not have permission to modify checkout settings.' => 'Du har ikke tillatelse til å endre sjekkaus-innstillinger.',
 		'You do not have permission to view this receipt.' => 'Du har ikke tillatelse til å se denne kvitteringen.',
+		'No closure template is enabled.' => 'Ingen mal for dagsoppgjør er aktivert.',
 		'No receipt template is configured.' => 'Ingen kvitteringsmal er konfigurert.',
 		'Receipt Error' => 'Kvitteringsfeil',
 		'Receipt Template Error' => 'Feil i kvitteringsmal',

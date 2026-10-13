@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Λυπούμαστε, αυτή η παραγγελία έχει ήδη πληρωθεί.',
 		'You do not have permission to modify checkout settings.' => 'Δεν έχετε δικαίωμα να τροποποιήσετε τις ρυθμίσεις του POS.',
 		'You do not have permission to view this receipt.' => 'Δεν έχετε άδεια να δείτε αυτή την απόδειξη.',
+		'No closure template is enabled.' => 'Δεν έχει ενεργοποιηθεί κανένα πρότυπο κλεισίματος.',
 		'No receipt template is configured.' => 'Δεν έχει ρυθμιστεί πρότυπο απόδειξης.',
 		'Receipt Error' => 'Σφάλμα απόδειξης',
 		'Receipt Template Error' => 'Σφάλμα προτύπου απόδειξης',

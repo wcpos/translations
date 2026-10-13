@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => '抱歉，此訂單已付款。',
 		'You do not have permission to modify checkout settings.' => '您無權限修改結帳設定。',
 		'You do not have permission to view this receipt.' => '您沒有權限查看此收據。',
+		'No closure template is enabled.' => '未啟用任何交班範本。',
 		'No receipt template is configured.' => '尚未設定收據範本。',
 		'Receipt Error' => '收據錯誤',
 		'Receipt Template Error' => '收據模板錯誤',

@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'متأسفیم، این سفارش قبلاً پرداخت شده است.',
 		'You do not have permission to modify checkout settings.' => 'هیچ اجازه‌ای برای تغییر پیکربندی هنگ‌هت ندارید.',
 		'You do not have permission to view this receipt.' => 'شما اجازه مشاهده این رسید را ندارید.',
+		'No closure template is enabled.' => 'هیچ قالب بستن صندوقی فعال نیست.',
 		'No receipt template is configured.' => 'هیچ قالبی برای رسید تنظیم نشده است.',
 		'Receipt Error' => 'خطای رسید',
 		'Receipt Template Error' => 'خطای قالب رسید',

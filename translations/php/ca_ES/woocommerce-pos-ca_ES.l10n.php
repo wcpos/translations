@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Ho sentim, aquesta comanda ja ha estat pagada.',
 		'You do not have permission to modify checkout settings.' => 'No té permís per modificar la configuració de la caixa.',
 		'You do not have permission to view this receipt.' => 'No teniu permís per veure aquest rebut.',
+		'No closure template is enabled.' => 'No hi ha cap plantilla de tancament activada.',
 		'No receipt template is configured.' => 'No s\'ha configurat cap plantilla de rebut.',
 		'Receipt Error' => 'Error de rebut',
 		'Receipt Template Error' => 'Error de plantilla de rebut',

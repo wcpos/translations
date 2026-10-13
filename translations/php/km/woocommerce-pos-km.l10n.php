@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'សូមទោស, ការបញ្ជាទិញនេះត្រូវបានបង់ប្រាក់រួចហើយ។',
 		'You do not have permission to modify checkout settings.' => 'អ្នក​មិន​មានសិទ្ធិ សម្រាប់កែប្រែពត័មានរបស់ប្លែងចំណាយ។',
 		'You do not have permission to view this receipt.' => 'អ្នកមិនមានសិទ្ធិមើលបង្កាន់ដៃនេះទេ។',
+		'No closure template is enabled.' => 'មិនមានពុម្ពសម្រាប់បិទវគ្គណាមួយត្រូវបានបើកប្រើទេ។',
 		'No receipt template is configured.' => 'មិនទាន់បានកំណត់គំរូបង្កាន់ដៃទេ។',
 		'Receipt Error' => 'កំហុសបង្កាន់ដៃ',
 		'Receipt Template Error' => 'កំហុសពុម្ពបង្កាន់ដៃ',

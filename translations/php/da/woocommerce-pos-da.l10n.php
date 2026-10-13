@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Beklager, denne ordre er allerede betalt.',
 		'You do not have permission to modify checkout settings.' => 'Du har ikke tilladelse til at ændre registerindstillinger.',
 		'You do not have permission to view this receipt.' => 'Du har ikke tilladelse til at se denne kvittering.',
+		'No closure template is enabled.' => 'Ingen lukningsskabelon er aktiveret.',
 		'No receipt template is configured.' => 'Der er ikke konfigureret nogen kvitteringsskabelon.',
 		'Receipt Error' => 'Kvitteringsfejl',
 		'Receipt Template Error' => 'Fejl i kvitteringsskabelon',

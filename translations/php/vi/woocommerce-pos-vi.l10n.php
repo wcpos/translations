@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Xin lỗi, đơn hàng này đã được thanh toán.',
 		'You do not have permission to modify checkout settings.' => 'Bạn không có quyền chỉnh sửa cài đặt thanh toán.',
 		'You do not have permission to view this receipt.' => 'Bạn không có quyền xem hóa đơn này.',
+		'No closure template is enabled.' => 'Chưa bật mẫu phiên chốt nào.',
 		'No receipt template is configured.' => 'Chưa cấu hình mẫu biên lai.',
 		'Receipt Error' => 'Lỗi hóa đơn',
 		'Receipt Template Error' => 'Lỗi mẫu hóa đơn',

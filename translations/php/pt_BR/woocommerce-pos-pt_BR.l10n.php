@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Desculpe, este pedido já foi pago.',
 		'You do not have permission to modify checkout settings.' => 'Você não tem permissão para modificar as configurações de checkout.',
 		'You do not have permission to view this receipt.' => 'Você não tem permissão para visualizar este recibo.',
+		'No closure template is enabled.' => 'Nenhum modelo de fechamento está ativado.',
 		'No receipt template is configured.' => 'Nenhum modelo de recibo está configurado.',
 		'Receipt Error' => 'Erro de Recibo',
 		'Receipt Template Error' => 'Erro no Modelo de Recibo',

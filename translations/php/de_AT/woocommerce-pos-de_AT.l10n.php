@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Entschuldigung, diese Bestellung wurde bereits bezahlt.',
 		'You do not have permission to modify checkout settings.' => 'Sie haben keine Berechtigung, die Checkout-Einstellungen zu ändern.',
 		'You do not have permission to view this receipt.' => 'Sie haben keine Berechtigung, um diese Quittung anzusehen.',
+		'No closure template is enabled.' => 'Es ist keine Vorlage für den Kassenabschluss aktiviert.',
 		'No receipt template is configured.' => 'Keine Belegvorlage konfiguriert.',
 		'Receipt Error' => 'Quittungsfehler',
 		'Receipt Template Error' => 'Quittungsvorlagenfehler',

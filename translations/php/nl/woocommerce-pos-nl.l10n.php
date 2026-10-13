@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Sorry, deze bestelling is al betaald.',
 		'You do not have permission to modify checkout settings.' => 'U heeft geen toestemming om de afrekeninstellingen te wijzigen.',
 		'You do not have permission to view this receipt.' => 'U heeft geen toestemming om deze bon te bekijken.',
+		'No closure template is enabled.' => 'Er is geen sjabloon voor de kassasluiting ingeschakeld.',
 		'No receipt template is configured.' => 'Er is geen kassabonsjabloon ingesteld.',
 		'Receipt Error' => 'Bonfout',
 		'Receipt Template Error' => 'Bon sjabloonfout',

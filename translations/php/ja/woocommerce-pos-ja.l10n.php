@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => '申し訳ありませんが、この注文はすでに支払われています。',
 		'You do not have permission to modify checkout settings.' => 'チェックアウト設定を変更する権限がありません。',
 		'You do not have permission to view this receipt.' => 'この領収書を表示する権限がありません。',
+		'No closure template is enabled.' => '締めテンプレートが有効になっていません。',
 		'No receipt template is configured.' => '領収書テンプレートが設定されていません。',
 		'Receipt Error' => '領収書エラー',
 		'Receipt Template Error' => '領収書テンプレートエラー',

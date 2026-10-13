@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Fyrirgefðu, þessi pöntun hefur þegar verið greidd.',
 		'You do not have permission to modify checkout settings.' => 'Þú hefur ekki heimild til að breyta útvarpsstillingum.',
 		'You do not have permission to view this receipt.' => 'Þú hefur ekki heimild til að skoða þennan kvittun.',
+		'No closure template is enabled.' => 'Ekkert lokunarsniðmát er virkt.',
 		'No receipt template is configured.' => 'Ekkert kvittunarsniðmát hefur verið stillt.',
 		'Receipt Error' => 'Villa í kvittun',
 		'Receipt Template Error' => 'Villa í kvittunarsniðmáti',

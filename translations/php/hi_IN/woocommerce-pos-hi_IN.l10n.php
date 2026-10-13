@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'क्षमा करें, इस आदेश का पहले ही भुगतान किया जा चुका है।',
 		'You do not have permission to modify checkout settings.' => 'आपके पास चेकआउट सेटिंग्स में परिवर्तन करने की अनुमति नहीं है।',
 		'You do not have permission to view this receipt.' => 'आपके पास इस रसीद को देखने की अनुमति नहीं है।',
+		'No closure template is enabled.' => 'कोई क्लोज़र टेम्पलेट सक्षम नहीं है।',
 		'No receipt template is configured.' => 'रसीद का कोई टेम्पलेट कॉन्फ़िगर नहीं है।',
 		'Receipt Error' => 'रसीद त्रुटि',
 		'Receipt Template Error' => 'रसीद टेम्पलेट त्रुटि',

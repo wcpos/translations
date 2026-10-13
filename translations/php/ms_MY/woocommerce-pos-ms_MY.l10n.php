@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Maaf, pesanan ini telah dibayar.',
 		'You do not have permission to modify checkout settings.' => 'Anda tidak mempunyai keizinan untuk memodifikasi tetapan kaunter pembayaran.',
 		'You do not have permission to view this receipt.' => 'Anda tidak mempunyai kebenaran untuk melihat resit ini.',
+		'No closure template is enabled.' => 'Tiada templat penutupan yang didayakan.',
 		'No receipt template is configured.' => 'Tiada templat resit dikonfigurasikan.',
 		'Receipt Error' => 'Ralat Resit',
 		'Receipt Template Error' => 'Ralat Templat Resit',
