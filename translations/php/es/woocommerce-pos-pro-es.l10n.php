@@ -139,7 +139,7 @@ return array(
 		'Choose a reader.' => 'Seleccione un lector.',
 		'This reader is not allowed.' => 'Este lector no está permitido.',
 		'This reader is unavailable.' => 'Este lector no está disponible.',
-		'%1$s of refund #%2$d is still unconfirmed by the provider after %3$d days. The refund record stands; check the provider dashboard before returning the money another way.' => 'El proveedor aún no ha confirmado el importe de %1$s del reembolso n.º %2$d después de %3$d días. El registro del reembolso se mantiene; consulte el panel del proveedor antes de devolver el dinero por otro medio.',
+		'%1$s of refund #%2$d is still unconfirmed by the provider after %3$d days. The refund record stands; check the provider dashboard before returning the money another way.' => 'El proveedor aún no ha confirmado el importe de %1$s del reembolso n.º %2$d después de %3$d días. El registro del reembolso se mantiene; compruebe el panel del proveedor antes de devolver el dinero por otro medio.',
 		'Refund of %1$s via %2$s confirmed by the provider (reference %3$s).' => 'El proveedor ha confirmado el reembolso de %1$s mediante %2$s (referencia %3$s).',
 		'Refund of %1$s via %2$s was rejected by the provider (reference %3$s). The refund record stands: return the money another way, not with a second refund.' => 'El proveedor ha rechazado el reembolso de %1$s mediante %2$s (referencia %3$s). El registro del reembolso se mantiene: devuelva el dinero por otro medio, no con un segundo reembolso.',
 		'No terminal action is available.' => 'No hay ninguna acción disponible en el terminal.',
