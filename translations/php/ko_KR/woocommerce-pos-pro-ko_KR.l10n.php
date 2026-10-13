@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => '이 파일을 WCPOS 지원팀과 공유하십시오. 이 사이트의 모든 POS 결제 제공업체에 관한 정보가 포함되어 있으며 비밀 정보와 카드 번호는 제거되었습니다.',
 		'You are not allowed to download this support bundle.' => '이 지원 자료 묶음을 다운로드할 권한이 없습니다.',
 		'Register' => '계산대',
-		'The target store must be a published store.' => '대상 매장은 게시된 매장이어야 합니다.',
+		'The target store must be a published store you are authorized for.' => '대상 매장은 게시된 상태여야 하며, 해당 매장에 접근할 권한이 있어야 합니다.',
 		'Close the register session before moving it to another store.' => '다른 매장으로 이동하기 전에 계산대 세션을 종료하십시오.',
 		'Too many pairing attempts.' => '페어링 시도 횟수가 너무 많습니다.',
 		'Invalid or expired pairing code.' => '페어링 코드가 유효하지 않거나 만료되었습니다.',

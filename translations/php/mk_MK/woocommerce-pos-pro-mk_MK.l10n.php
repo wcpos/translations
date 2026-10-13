@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Споделете ја оваа датотека со поддршката на WCPOS. Ги опфаќа сите POS даватели на плаќања на оваа страница; тајните податоци и броевите на картички се отстранети.',
 		'You are not allowed to download this support bundle.' => 'Немате дозвола да го преземете овој пакет за поддршка.',
 		'Register' => 'Каса',
-		'The target store must be a published store.' => 'Целната продавница мора да биде објавена.',
+		'The target store must be a published store you are authorized for.' => 'Целната продавница мора да биде објавена и мора да имате овластување за пристап до неа.',
 		'Close the register session before moving it to another store.' => 'Затворете ја сесијата на касата пред да ја преместите во друга продавница.',
 		'Too many pairing attempts.' => 'Премногу обиди за спарување.',
 		'Invalid or expired pairing code.' => 'Неважечки или истечен код за спарување.',

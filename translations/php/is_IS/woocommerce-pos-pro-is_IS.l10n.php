@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Deildu þessari skrá með WCPOS-aðstoð. Hún nær yfir allar POS-greiðsluþjónustur á þessari síðu; leyndarmál og kortanúmer hafa verið fjarlægð.',
 		'You are not allowed to download this support bundle.' => 'Þú hefur ekki heimild til að sækja þennan stuðningspakka.',
 		'Register' => 'Kassi',
-		'The target store must be a published store.' => 'Markverslunin verður að vera birt.',
+		'The target store must be a published store you are authorized for.' => 'Markverslunin verður að vera birt og þú verður að hafa heimild til að fá aðgang að henni.',
 		'Close the register session before moving it to another store.' => 'Lokaðu kassalotunni áður en hún er færð í aðra verslun.',
 		'Too many pairing attempts.' => 'Of margar pörunartilraunir.',
 		'Invalid or expired pairing code.' => 'Pörunarkóðinn er ógildur eða útrunninn.',

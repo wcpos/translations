@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'ចែករំលែកឯកសារនេះជាមួយផ្នែកជំនួយ WCPOS។ វាគ្របដណ្តប់អ្នកផ្តល់សេវាទូទាត់ POS ទាំងអស់នៅលើគេហទំព័រនេះ។ ព័ត៌មានសម្ងាត់ និងលេខកាតត្រូវបានដកចេញ។',
 		'You are not allowed to download this support bundle.' => 'អ្នកមិនមានសិទ្ធិទាញយកកញ្ចប់ជំនួយនេះទេ។',
 		'Register' => 'ម៉ាស៊ីនគិតលុយ',
-		'The target store must be a published store.' => 'ហាងគោលដៅត្រូវតែជាហាងដែលបានចេញផ្សាយ។',
+		'The target store must be a published store you are authorized for.' => 'ហាងគោលដៅត្រូវតែបានបោះពុម្ពផ្សាយ ហើយអ្នកត្រូវមានសិទ្ធិចូលប្រើវា។',
 		'Close the register session before moving it to another store.' => 'បិទវគ្គម៉ាស៊ីនគិតលុយសិន មុនផ្ទេរវាទៅហាងមួយទៀត។',
 		'Too many pairing attempts.' => 'បានព្យាយាមផ្គូផ្គងច្រើនដងពេក។',
 		'Invalid or expired pairing code.' => 'លេខកូដផ្គូផ្គងមិនត្រឹមត្រូវ ឬផុតកំណត់ហើយ។',

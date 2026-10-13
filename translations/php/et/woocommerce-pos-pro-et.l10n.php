@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Jagage seda faili WCPOS-i toega. See hõlmab kõiki selle saidi POS-makseteenuse pakkujaid; salajased andmed ja kaardinumbrid on eemaldatud.',
 		'You are not allowed to download this support bundle.' => 'Teil pole õigust seda tugiteabe paketti alla laadida.',
 		'Register' => 'Kassa',
-		'The target store must be a published store.' => 'Sihtpood peab olema avaldatud.',
+		'The target store must be a published store you are authorized for.' => 'Sihtpood peab olema avaldatud ja teil peab olema sellele juurdepääsuõigus.',
 		'Close the register session before moving it to another store.' => 'Enne teise poodi viimist sulgege kassavahetus.',
 		'Too many pairing attempts.' => 'Liiga palju sidumiskatseid.',
 		'Invalid or expired pairing code.' => 'Sidumiskood on vigane või aegunud.',

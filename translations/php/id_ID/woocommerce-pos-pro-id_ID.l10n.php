@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Bagikan file ini dengan dukungan WCPOS. File ini mencakup semua penyedia pembayaran POS di situs ini; informasi rahasia dan nomor kartu telah dihapus.',
 		'You are not allowed to download this support bundle.' => 'Anda tidak diizinkan mengunduh paket dukungan ini.',
 		'Register' => 'Mesin kasir',
-		'The target store must be a published store.' => 'Toko tujuan harus berstatus dipublikasikan.',
+		'The target store must be a published store you are authorized for.' => 'Toko tujuan harus sudah dipublikasikan dan Anda harus memiliki izin untuk mengaksesnya.',
 		'Close the register session before moving it to another store.' => 'Tutup sesi mesin kasir sebelum memindahkannya ke toko lain.',
 		'Too many pairing attempts.' => 'Terlalu banyak upaya pemasangan.',
 		'Invalid or expired pairing code.' => 'Kode pemasangan tidak valid atau sudah kedaluwarsa.',

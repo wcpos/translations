@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'แชร์ไฟล์นี้กับฝ่ายสนับสนุนของ WCPOS ไฟล์นี้ครอบคลุมผู้ให้บริการชำระเงิน POS ทั้งหมดบนเว็บไซต์นี้ โดยลบข้อมูลลับและหมายเลขบัตรออกแล้ว',
 		'You are not allowed to download this support bundle.' => 'คุณไม่ได้รับอนุญาตให้ดาวน์โหลดชุดข้อมูลสนับสนุนนี้',
 		'Register' => 'เครื่องคิดเงิน',
-		'The target store must be a published store.' => 'ร้านค้าเป้าหมายต้องเผยแพร่แล้ว',
+		'The target store must be a published store you are authorized for.' => 'ร้านค้าเป้าหมายต้องเผยแพร่แล้ว และคุณต้องได้รับอนุญาตให้เข้าถึงร้านค้านั้น',
 		'Close the register session before moving it to another store.' => 'ปิดเซสชันเครื่องคิดเงินก่อนย้ายไปยังร้านค้าอื่น',
 		'Too many pairing attempts.' => 'จับคู่หลายครั้งเกินไป',
 		'Invalid or expired pairing code.' => 'รหัสจับคู่ไม่ถูกต้องหรือหมดอายุแล้ว',

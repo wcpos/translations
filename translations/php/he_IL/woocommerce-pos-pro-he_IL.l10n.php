@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'שתפו את הקובץ הזה עם התמיכה של WCPOS. הוא כולל את כל ספקי התשלום של POS באתר הזה; סודות ומספרי כרטיסים הוסרו.',
 		'You are not allowed to download this support bundle.' => 'אין לך הרשאה להוריד את חבילת התמיכה הזו.',
 		'Register' => 'קופה',
-		'The target store must be a published store.' => 'החנות היעד חייבת להיות חנות שפורסמה.',
+		'The target store must be a published store you are authorized for.' => 'חנות היעד חייבת להיות חנות שפורסמה, ועליך להיות מורשה לגשת אליה.',
 		'Close the register session before moving it to another store.' => 'יש לסגור את משמרת הקופה לפני העברתה לחנות אחרת.',
 		'Too many pairing attempts.' => 'בוצעו יותר מדי ניסיונות צימוד.',
 		'Invalid or expired pairing code.' => 'קוד הצימוד לא תקין או שפג תוקפו.',

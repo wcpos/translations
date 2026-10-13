@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'Kongsi fail ini dengan sokongan WCPOS. Fail ini merangkumi semua penyedia pembayaran POS di laman ini; maklumat rahsia dan nombor kad telah dibuang.',
 		'You are not allowed to download this support bundle.' => 'Anda tidak dibenarkan memuat turun pakej sokongan ini.',
 		'Register' => 'Daftar tunai',
-		'The target store must be a published store.' => 'Kedai sasaran mestilah kedai yang diterbitkan.',
+		'The target store must be a published store you are authorized for.' => 'Kedai sasaran mestilah diterbitkan dan anda mesti mempunyai kebenaran untuk mengaksesnya.',
 		'Close the register session before moving it to another store.' => 'Tutup sesi daftar tunai sebelum memindahkannya ke kedai lain.',
 		'Too many pairing attempts.' => 'Terlalu banyak percubaan untuk dipasangkan.',
 		'Invalid or expired pairing code.' => 'Kod pasangan tidak sah atau telah tamat tempoh.',

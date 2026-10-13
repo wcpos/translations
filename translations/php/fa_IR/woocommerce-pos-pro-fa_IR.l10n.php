@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => 'این فایل را با پشتیبانی WCPOS به‌اشتراک بگذارید. این فایل همهٔ ارائه‌دهندگان پرداخت POS در این سایت را پوشش می‌دهد؛ اطلاعات محرمانه و شماره‌های کارت حذف شده‌اند.',
 		'You are not allowed to download this support bundle.' => 'اجازهٔ بارگیری این بستهٔ پشتیبانی را ندارید.',
 		'Register' => 'صندوق',
-		'The target store must be a published store.' => 'فروشگاه مقصد باید منتشر شده باشد.',
+		'The target store must be a published store you are authorized for.' => 'فروشگاه مقصد باید منتشر شده باشد و شما مجوز دسترسی به آن را داشته باشید.',
 		'Close the register session before moving it to another store.' => 'پیش از انتقال صندوق به فروشگاه دیگر، نشست آن را ببندید.',
 		'Too many pairing attempts.' => 'تعداد تلاش‌های جفت‌سازی بیش از حد است.',
 		'Invalid or expired pairing code.' => 'کد جفت‌سازی نامعتبر است یا منقضی شده است.',

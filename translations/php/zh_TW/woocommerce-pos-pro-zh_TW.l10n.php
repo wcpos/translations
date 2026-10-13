@@ -151,7 +151,7 @@ return array(
 		'Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed.' => '請將此檔案分享給 WCPOS 支援團隊。檔案涵蓋此網站上的所有 POS 付款提供者；機密資料和卡號已移除。',
 		'You are not allowed to download this support bundle.' => '您沒有權限下載此支援套件。',
 		'Register' => '收銀機',
-		'The target store must be a published store.' => '目標商店必須是已發布的商店。',
+		'The target store must be a published store you are authorized for.' => '目標商店必須已發佈，且您必須有權限存取該商店。',
 		'Close the register session before moving it to another store.' => '請先關閉收銀機工作階段，再將其移至其他商店。',
 		'Too many pairing attempts.' => '配對嘗試次數過多。',
 		'Invalid or expired pairing code.' => '配對碼無效或已過期。',
