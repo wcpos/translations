@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Извините, этот заказ уже оплачен.',
 		'You do not have permission to modify checkout settings.' => 'У вас нет разрешения на изменение настроек оформления заказа.',
 		'You do not have permission to view this receipt.' => 'У вас нет разрешения на просмотр этого чека.',
+		'No closure template is enabled.' => 'Не включён ни один шаблон закрытия.',
 		'No receipt template is configured.' => 'Шаблон чека не настроен.',
 		'Receipt Error' => 'Ошибка чека',
 		'Receipt Template Error' => 'Ошибка шаблона чека',

@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Vabandame, see tellimus on juba tasutud.',
 		'You do not have permission to modify checkout settings.' => 'Teil on vajalikud õigused checkout seadeid muuta.',
 		'You do not have permission to view this receipt.' => 'Teil pole õigust seda kviitungit vaadata.',
+		'No closure template is enabled.' => 'Ükski kassa sulgemise mall pole aktiveeritud.',
 		'No receipt template is configured.' => 'Kviitungi malli pole seadistatud.',
 		'Receipt Error' => 'Kviitungi viga',
 		'Receipt Template Error' => 'Kviitungimalli viga',

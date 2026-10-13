@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Atsiprašome, šis užsakymas jau buvo apmokėtas.',
 		'You do not have permission to modify checkout settings.' => 'Jūs neturite leidimo keisti parduotuvės nustatymus.',
 		'You do not have permission to view this receipt.' => 'Neturite teisės peržiūrėti šio kvito.',
+		'No closure template is enabled.' => 'Neįjungtas joks uždarymo šablonas.',
 		'No receipt template is configured.' => 'Nenustatytas kvito šablonas.',
 		'Receipt Error' => 'Kvito klaida',
 		'Receipt Template Error' => 'Kvito šablono klaida',

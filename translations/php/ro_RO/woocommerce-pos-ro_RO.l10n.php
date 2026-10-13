@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Ne pare rău, această comandă a fost deja plătită.',
 		'You do not have permission to modify checkout settings.' => 'Nu aveți permisiunea de a modifica setările de la casă.',
 		'You do not have permission to view this receipt.' => 'Nu aveți permisiunea de a vizualiza această chitanță.',
+		'No closure template is enabled.' => 'Nu este activat niciun șablon de închidere.',
 		'No receipt template is configured.' => 'Nu este configurat niciun șablon de bon.',
 		'Receipt Error' => 'Eroare de chitanță',
 		'Receipt Template Error' => 'Eroare de șablon de chitanță',

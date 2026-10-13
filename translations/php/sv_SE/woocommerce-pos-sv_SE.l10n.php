@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Tyvärr, denna beställning har redan betalats.',
 		'You do not have permission to modify checkout settings.' => 'Du har inte behörighet att modifiera justeringsinställningarna.',
 		'You do not have permission to view this receipt.' => 'Du har inte behörighet att se detta kvitto.',
+		'No closure template is enabled.' => 'Ingen stängningsmall är aktiverad.',
 		'No receipt template is configured.' => 'Ingen kvittomall har konfigurerats.',
 		'Receipt Error' => 'Kvittofel',
 		'Receipt Template Error' => 'Kvitto mallfel',

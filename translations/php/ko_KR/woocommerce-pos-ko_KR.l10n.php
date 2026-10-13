@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => '죄송합니다, 이 주문은 이미 결제되었습니다.',
 		'You do not have permission to modify checkout settings.' => '체크아웃 설정을 수정할 권한이 없습니다.',
 		'You do not have permission to view this receipt.' => '이 영수증을 볼 권한이 없습니다.',
+		'No closure template is enabled.' => '활성화된 마감 템플릿이 없습니다.',
 		'No receipt template is configured.' => '영수증 템플릿이 설정되지 않았습니다.',
 		'Receipt Error' => '영수증 오류',
 		'Receipt Template Error' => '영수증 템플릿 오류',

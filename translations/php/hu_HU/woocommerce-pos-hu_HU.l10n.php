@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Sajnáljuk, ezt a rendelést már kifizették.',
 		'You do not have permission to modify checkout settings.' => 'Nincs engedélye a kassza beállításainak módosítására.',
 		'You do not have permission to view this receipt.' => 'Nincs jogosultsága a nyugta megtekintéséhez.',
+		'No closure template is enabled.' => 'Nincs engedélyezve pénztárzárási sablon.',
 		'No receipt template is configured.' => 'Nincs beállítva nyugtasablon.',
 		'Receipt Error' => 'Nyugta hiba',
 		'Receipt Template Error' => 'Nyugta sablon hiba',

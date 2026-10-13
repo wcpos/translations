@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'מצטערים, הזמנה זו כבר שולמה.',
 		'You do not have permission to modify checkout settings.' => 'אין לך הרשאות לשנות את הגדרות ה焯:焯ឃ.',
 		'You do not have permission to view this receipt.' => 'אין לך הרשאה לצפות בקבלה זו.',
+		'No closure template is enabled.' => 'לא מופעלת אף תבנית סגירה.',
 		'No receipt template is configured.' => 'לא הוגדרה תבנית קבלה.',
 		'Receipt Error' => 'שגיאת קבלה',
 		'Receipt Template Error' => 'שגיאת תבנית קבלה',

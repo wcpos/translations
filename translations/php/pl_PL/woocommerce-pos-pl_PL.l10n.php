@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Przepraszamy, to zamówienie zostało już opłacone.',
 		'You do not have permission to modify checkout settings.' => 'Nie masz uprawnień do modyfikowania ustawień kasy.',
 		'You do not have permission to view this receipt.' => 'Nie masz uprawnień do przeglądania tego paragonu.',
+		'No closure template is enabled.' => 'Nie włączono żadnego szablonu zamknięcia.',
 		'No receipt template is configured.' => 'Nie skonfigurowano szablonu paragonu.',
 		'Receipt Error' => 'Błąd paragonu',
 		'Receipt Template Error' => 'Błąd szablonu paragonu',

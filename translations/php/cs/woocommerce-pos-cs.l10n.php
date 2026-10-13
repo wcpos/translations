@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Omlouváme se, tato objednávka již byla zaplacena.',
 		'You do not have permission to modify checkout settings.' => 'Nemáte oprávnění měnit nastavení pokladny.',
 		'You do not have permission to view this receipt.' => 'Nemáte oprávnění k zobrazení tohoto účtenky.',
+		'No closure template is enabled.' => 'Není povolena žádná šablona uzávěrky.',
 		'No receipt template is configured.' => 'Šablona účtenky není nastavena.',
 		'Receipt Error' => 'Chyba účtenky',
 		'Receipt Template Error' => 'Chyba šablony účtenky',

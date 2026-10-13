@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Извинете, оваа нарачка веќе е платена.',
 		'You do not have permission to modify checkout settings.' => 'Не смее да модифицирате подесувањата за касирање.',
 		'You do not have permission to view this receipt.' => 'Немате дозвола да го видите овој фискален сметка.',
+		'No closure template is enabled.' => 'Не е овозможен шаблон за затворање.',
 		'No receipt template is configured.' => 'Не е конфигуриран шаблон за сметка.',
 		'Receipt Error' => 'Грешка во фискалната сметка',
 		'Receipt Template Error' => 'Грешка во шаблонот на фискалната сметка',

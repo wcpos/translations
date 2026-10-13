@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'عذرًا، تم دفع هذا الطلب بالفعل.',
 		'You do not have permission to modify checkout settings.' => 'لا تمتلك الصلاحية لتعديل إعدادات نقاط البيع',
 		'You do not have permission to view this receipt.' => 'ليس لديك إذن لعرض هذه الإيصال.',
+		'No closure template is enabled.' => 'لا يوجد نموذج إغلاق مفعّل.',
 		'No receipt template is configured.' => 'لم يتم إعداد قالب للإيصال.',
 		'Receipt Error' => 'خطأ في الإيصال',
 		'Receipt Template Error' => 'خطأ في قالب الإيصال',

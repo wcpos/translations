@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Вибачте, це замовлення вже оплачено.',
 		'You do not have permission to modify checkout settings.' => 'У вас немає дозволу змінювати налаштування каси.',
 		'You do not have permission to view this receipt.' => 'У вас немає дозволу на перегляд цього чека.',
+		'No closure template is enabled.' => 'Не ввімкнено жодного шаблону закриття.',
 		'No receipt template is configured.' => 'Шаблон чека не налаштовано.',
 		'Receipt Error' => 'Помилка чека',
 		'Receipt Template Error' => 'Помилка шаблону чека',

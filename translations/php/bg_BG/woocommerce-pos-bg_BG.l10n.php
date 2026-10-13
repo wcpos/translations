@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Съжаляваме, тази поръчка вече е платена.',
 		'You do not have permission to modify checkout settings.' => 'Нямате разрешение да измените настройките на пункта за плащане.',
 		'You do not have permission to view this receipt.' => 'Нямате разрешение да видите тази разписка.',
+		'No closure template is enabled.' => 'Няма активиран шаблон за приключване.',
 		'No receipt template is configured.' => 'Няма настроен шаблон за касова бележка.',
 		'Receipt Error' => 'Грешка в разписката',
 		'Receipt Template Error' => 'Грешка в шаблона на разписката',

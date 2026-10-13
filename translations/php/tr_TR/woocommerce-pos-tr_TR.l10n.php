@@ -1112,6 +1112,7 @@ return array(
 		'Sorry, this order has already been paid for.' => 'Üzgünüz, bu sipariş zaten ödendi.',
 		'You do not have permission to modify checkout settings.' => 'Kayıt cihazı ayarlarını değiştirme izniniz yok.',
 		'You do not have permission to view this receipt.' => 'Bu makbuzu görüntüleme izniniz yok.',
+		'No closure template is enabled.' => 'Etkinleştirilmiş kapanış şablonu yok.',
 		'No receipt template is configured.' => 'Fiş şablonu ayarlanmamış.',
 		'Receipt Error' => 'Makbuz Hatası',
 		'Receipt Template Error' => 'Makbuz Şablon Hatası',
