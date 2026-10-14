@@ -1146,8 +1146,8 @@ msgstr "Ödeme bir nesne olmalıdır."
 #: includes/API/V2/Payments_Controller.php:151
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:98
-#: includes/Payments/Contract/Ledger.php:840
+#: includes/Payments/Contract/Gateway_Submission.php:99
+#: includes/Payments/Contract/Ledger.php:1085
 msgid "Payment method not found."
 msgstr "Ödeme yöntemi bulunamadı."
 
@@ -1172,8 +1172,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Üzgünüz, ödeme yöntemlerini başlatamazsınız."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:1503
+#: includes/Payments/Contract/Gateway_Submission.php:52
+#: includes/Payments/Contract/Ledger.php:1748
 msgid "Payment capture mode is unsupported."
 msgstr "Ödeme alma modu desteklenmiyor."
 
@@ -1294,7 +1294,6 @@ msgstr "Kart"
 #: includes/Gateways/Card.php:70
 #: includes/Gateways/Card.php:148
 #: includes/Gateways/Card.php:230
-#: tests/includes/Gateways/Test_Card_Gateway.php:234
 msgid "Cashback"
 msgstr "Nakit İade"
 
@@ -1365,28 +1364,33 @@ msgid ""
 msgstr ""
 "WCPOS, uyumluluk sorunları nedeniyle wePOS eklentisi ile birlikte çalışamaz. WCPOS devre dışı bırakıldı."
 
+#: includes/Load_Integrity.php:357
+msgid ""
+"WCPOS is being updated on this site. Please try again in a few seconds."
+msgstr "Bu sitede WCPOS güncelleniyor. Birkaç saniye sonra tekrar deneyin."
+
 #. translators: POS order status label.
-#: includes/Orders.php:106
-#: includes/Orders.php:1245
+#: includes/Orders.php:107
+#: includes/Orders.php:1204
 msgctxt "Order status"
 msgid "POS - Open"
 msgstr "POS - Açık"
 
 #. translators: POS order status label.
-#: includes/Orders.php:107
-#: includes/Orders.php:1263
+#: includes/Orders.php:108
+#: includes/Orders.php:1222
 msgctxt "Order status"
 msgid "POS - Partial Payment"
 msgstr "POS - Kısmi Ödeme"
 
 #. translators: %s: payment gateway title.
-#: includes/Orders.php:568
+#: includes/Orders.php:527
 #, php-format
 msgid "Order status set by %s; no payment was taken at the till."
 msgstr "Sipariş durumu %s tarafından ayarlandı; kasada ödeme alınmadı."
 
 #. translators: %s is the number of orders with POS - Open status.
-#: includes/Orders.php:1251
+#: includes/Orders.php:1210
 #, php-format
 msgid "POS - Open <span class=\"count\">(%s)</span>"
 msgid_plural "POS - Open <span class=\"count\">(%s)</span>"
@@ -1394,7 +1398,7 @@ msgstr[0] "POS - Açık <span class=\"count\">(%s)</span>"
 msgstr[1] "POS - Açık <span class=\"count\">(%s)</span>"
 
 #. translators: %s is the number of orders with POS - Partial Payment status.
-#: includes/Orders.php:1269
+#: includes/Orders.php:1228
 #, php-format
 msgid "POS - Partial Payment <span class=\"count\">(%s)</span>"
 msgid_plural "POS - Partial Payment <span class=\"count\">(%s)</span>"
@@ -1413,41 +1417,41 @@ msgstr "Ödeme sağlayıcısı bu ödeme için para iadesi yapmadı."
 msgid "This payment cannot be voided."
 msgstr "Bu ödeme iptal edilemez."
 
-#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Gateway_Submission.php:55
 msgid "Attempt ID must be a UUID."
 msgstr "Deneme kimliği UUID olmalıdır."
 
-#: includes/Payments/Contract/Gateway_Submission.php:57
+#: includes/Payments/Contract/Gateway_Submission.php:58
 msgid "Only POS orders take a gateway submission."
 msgstr "Ödeme ağ geçidi gönderimi yalnızca POS siparişleri için yapılabilir."
 
-#: includes/Payments/Contract/Gateway_Submission.php:81
+#: includes/Payments/Contract/Gateway_Submission.php:82
 msgid "This attempt was cancelled at the till."
 msgstr "Bu deneme kasada iptal edildi."
 
-#: includes/Payments/Contract/Gateway_Submission.php:86
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "Payment method is not enabled for the POS."
 msgstr "Ödeme yöntemi POS için etkinleştirilmemiş."
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:90
 msgid "Order is already paid."
 msgstr "Sipariş zaten ödenmiş."
 
-#: includes/Payments/Contract/Gateway_Submission.php:93
+#: includes/Payments/Contract/Gateway_Submission.php:94
 msgid "Order already has a live payment."
 msgstr "Siparişte zaten etkin bir ödeme var."
 
-#: includes/Payments/Contract/Gateway_Submission.php:184
+#: includes/Payments/Contract/Gateway_Submission.php:174
 msgid "The payment method rejected the details entered."
 msgstr "Ödeme yöntemi girilen bilgileri reddetti."
 
-#: includes/Payments/Contract/Gateway_Submission.php:239
-#: includes/Payments/Contract/Gateway_Submission.php:254
+#: includes/Payments/Contract/Gateway_Submission.php:229
+#: includes/Payments/Contract/Gateway_Submission.php:244
 msgid "The payment provider failed."
 msgstr "Ödeme sağlayıcısında hata oluştu."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:258
+#: includes/Payments/Contract/Gateway_Submission.php:248
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1455,155 +1459,155 @@ msgstr ""
 "Bu ödeme yöntemi %s adresini bir tarayıcıda açmak istiyor; POS bunu sürdüremez."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:297
+#: includes/Payments/Contract/Gateway_Submission.php:287
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "POS üzerinden tamamlandı: %1$s, %2$s tarihinde"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:313
+#: includes/Payments/Contract/Gateway_Submission.php:303
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "POS üzerinden gönderildi: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:338
+#: includes/Payments/Contract/Gateway_Submission.php:328
 msgid "This invoice cannot be cancelled."
 msgstr "Bu fatura iptal edilemez."
 
-#: includes/Payments/Contract/Gateway_Submission.php:341
+#: includes/Payments/Contract/Gateway_Submission.php:331
 msgid "The invoice was sent by a different payment method."
 msgstr "Fatura farklı bir ödeme yöntemiyle gönderildi."
 
-#: includes/Payments/Contract/Gateway_Submission.php:345
+#: includes/Payments/Contract/Gateway_Submission.php:335
 msgid "A newer invoice has been sent for this order."
 msgstr "Bu sipariş için daha yeni bir fatura gönderildi."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:351
+#: includes/Payments/Contract/Gateway_Submission.php:341
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "POS üzerinden iptal edildi: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:497
+#: includes/Payments/Contract/Gateway_Submission.php:487
 msgid "This field must be true or false."
 msgstr "Bu alan true veya false olmalıdır."
 
-#: includes/Payments/Contract/Gateway_Submission.php:502
+#: includes/Payments/Contract/Gateway_Submission.php:492
 msgid "This field must be text."
 msgstr "Bu alan metin olmalıdır."
 
-#: includes/Payments/Contract/Gateway_Submission.php:506
+#: includes/Payments/Contract/Gateway_Submission.php:496
 msgid "This field is required."
 msgstr "Bu alan zorunludur."
 
-#: includes/Payments/Contract/Gateway_Submission.php:510
+#: includes/Payments/Contract/Gateway_Submission.php:500
 msgid "Choose one of the listed options."
 msgstr "Listelenen seçeneklerden birini seçin."
 
-#: includes/Payments/Contract/Gateway_Submission.php:524
+#: includes/Payments/Contract/Gateway_Submission.php:514
 msgid "Check the payment fields."
 msgstr "Ödeme alanlarını kontrol edin."
 
-#: includes/Payments/Contract/Ledger.php:220
+#: includes/Payments/Contract/Ledger.php:465
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Bu ödeme yöntemi kaydedilemiyor; kendi ödeme adımını yürütmesi gerekir."
 
-#: includes/Payments/Contract/Ledger.php:226
+#: includes/Payments/Contract/Ledger.php:471
 msgid "Recorded payments must be captured or authorized."
 msgstr "Kaydedilen ödemeler tahsil edilmeli veya provizyona alınmalıdır."
 
-#: includes/Payments/Contract/Ledger.php:231
-#: includes/Payments/Contract/Ledger.php:235
+#: includes/Payments/Contract/Ledger.php:476
+#: includes/Payments/Contract/Ledger.php:480
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Bu ödeme yöntemi için verilen tutar geçersiz."
 
-#: includes/Payments/Contract/Ledger.php:339
+#: includes/Payments/Contract/Ledger.php:584
 msgid "Payment method is disabled."
 msgstr "Ödeme yöntemi devre dışı."
 
-#: includes/Payments/Contract/Ledger.php:390
-#: includes/Payments/Contract/Ledger.php:900
+#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:1145
 msgid "The order is already paid."
 msgstr "Sipariş zaten ödendi."
 
-#: includes/Payments/Contract/Ledger.php:390
-#: includes/Payments/Contract/Ledger.php:901
+#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:1146
 msgid "Payment amount exceeds the order balance."
 msgstr "Ödeme tutarı sipariş bakiyesini aşıyor."
 
-#: includes/Payments/Contract/Ledger.php:402
-#: includes/Payments/Contract/Ledger.php:903
+#: includes/Payments/Contract/Ledger.php:647
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Another payment is already in progress on this order."
 msgstr "Bu sipariş için başka bir ödeme zaten devam ediyor."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:556
+#: includes/Payments/Contract/Ledger.php:801
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS %1$s ödemesinin tutarı uyuşmuyor: beklenen %2$s, onaylanan %3$s."
 
-#: includes/Payments/Contract/Ledger.php:561
+#: includes/Payments/Contract/Ledger.php:806
 msgid "Tip"
 msgstr "Bahşiş"
 
-#: includes/Payments/Contract/Ledger.php:624
+#: includes/Payments/Contract/Ledger.php:869
 msgid "Refund must belong to this order."
 msgstr "İade bu siparişe ait olmalıdır."
 
-#: includes/Payments/Contract/Ledger.php:627
-#: includes/Payments/Contract/Ledger.php:642
-#: includes/Payments/Contract/Ledger.php:663
+#: includes/Payments/Contract/Ledger.php:872
+#: includes/Payments/Contract/Ledger.php:887
+#: includes/Payments/Contract/Ledger.php:908
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "İade tutarı bu ödemeye atanamaz."
 
-#: includes/Payments/Contract/Ledger.php:699
-#: includes/Payments/Contract/Ledger.php:815
+#: includes/Payments/Contract/Ledger.php:944
+#: includes/Payments/Contract/Ledger.php:1060
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Ödeme kimliği UUID olmalıdır."
 
-#: includes/Payments/Contract/Ledger.php:706
-#: includes/Payments/Contract/Ledger.php:879
+#: includes/Payments/Contract/Ledger.php:951
+#: includes/Payments/Contract/Ledger.php:1124
 msgid "Payment id conflicts with an existing payment."
 msgstr "Ödeme kimliği mevcut bir ödemeyle çakışıyor."
 
-#: includes/Payments/Contract/Ledger.php:737
+#: includes/Payments/Contract/Ledger.php:982
 msgid "Refund status is invalid."
 msgstr "İade durumu geçersiz."
 
-#: includes/Payments/Contract/Ledger.php:818
-#: includes/Payments/Contract/Ledger.php:822
+#: includes/Payments/Contract/Ledger.php:1063
+#: includes/Payments/Contract/Ledger.php:1067
 msgid "Payment amount must be positive."
 msgstr "Ödeme tutarı pozitif olmalıdır."
 
-#: includes/Payments/Contract/Ledger.php:827
+#: includes/Payments/Contract/Ledger.php:1072
 msgid "Payment currency must match the order."
 msgstr "Ödeme para birimi siparişinkiyle aynı olmalıdır."
 
-#: includes/Payments/Contract/Ledger.php:902
+#: includes/Payments/Contract/Ledger.php:1147
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "Sağlayıcının onayladığı tutar veya para birimi ödemeyle eşleşmiyor."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1007
+#: includes/Payments/Contract/Ledger.php:1252
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS %s ödemesini iptal etti."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1009
+#: includes/Payments/Contract/Ledger.php:1254
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS %1$s ödemesini iptal etti: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1498
+#: includes/Payments/Contract/Ledger.php:1743
 msgid "Payment not found."
 msgstr "Ödeme bulunamadı."
 
-#: includes/Payments/Contract/Ledger.php:1508
+#: includes/Payments/Contract/Ledger.php:1753
 msgid "Payment transition is invalid."
 msgstr "Ödeme geçişi geçersiz."
 
@@ -1640,8 +1644,8 @@ msgstr "Idempotency anahtarı farklı bir istekle yeniden kullanıldı."
 msgid "An identical request is already being processed."
 msgstr "Aynı istek zaten işleniyor."
 
-#: includes/Services/Auth.php:405
-#: includes/Services/Auth.php:484
+#: includes/Services/Auth.php:410
+#: includes/Services/Auth.php:502
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT düzgün yapılandırılmamış, lütfen yönetici ile iletişime geçin"
 
@@ -1670,7 +1674,7 @@ msgstr ""
 msgid "This movement was recorded after counting began."
 msgstr "Bu hareket sayım başladıktan sonra kaydedildi."
 
-#: includes/Services/Cash_Movement_Store.php:145
+#: includes/Services/Cash_Movement_Store.php:153
 msgid "The movement has already been voided or is unavailable."
 msgstr "Hareket zaten iptal edilmiş veya kullanılamıyor."
 
@@ -1678,19 +1682,19 @@ msgstr "Hareket zaten iptal edilmiş veya kullanılamıyor."
 msgid "The session cannot be closed."
 msgstr "Oturum kapatılamıyor."
 
-#: includes/Services/Closure_Store.php:439
+#: includes/Services/Closure_Store.php:451
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
 "Bu oturum için zaten bir kapanış var; sayım yeniden sayım olarak kaydedildi."
 
-#: includes/Services/Closure_Store.php:456
+#: includes/Services/Closure_Store.php:468
 #: includes/Services/Register_Session_Store.php:237
 #: includes/Services/Register_Session_Store.php:343
 msgid "The session state has changed."
 msgstr "Oturumun durumu değişti."
 
-#: includes/Services/Closure_Store.php:482
+#: includes/Services/Closure_Store.php:494
 msgid "The closure number precedes the register sequence."
 msgstr "Kapanış numarası kasa sırasından önce geliyor."
 
@@ -1698,15 +1702,21 @@ msgstr "Kapanış numarası kasa sırasından önce geliyor."
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "Bu sitede WCPOS Cloud Print devre dışı bırakıldı."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:91
+#: includes/Services/Cloud_Print_Relay_Service.php:94
+msgid ""
+"WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again."
+msgstr ""
+"WCPOS Cloud Print, sitenizin HTTPS kullanmasını gerektirir. Ayarlar > Genel bölümünde Site Adresi'ni (URL) https:// ile başlayan bir adres olarak ayarlayın ve tekrar deneyin."
+
+#: includes/Services/Cloud_Print_Relay_Service.php:101
 msgid "Could not create a relay verification token."
 msgstr "Geçiş doğrulama jetonu oluşturulamadı."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:117
+#: includes/Services/Cloud_Print_Relay_Service.php:127
 msgid "Relay registration failed."
 msgstr "Aktarma kaydı başarısız oldu."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:124
+#: includes/Services/Cloud_Print_Relay_Service.php:134
 msgid "Relay registration returned invalid credentials."
 msgstr "Aktarma kaydı geçersiz kimlik bilgileri döndürdü."
 
@@ -1753,7 +1763,7 @@ msgstr "Satıştan sonra POS kaynak bilgisi anahtarları değiştirilemez: %s"
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:506
 #: includes/Templates/Payment.php:334
-#: tests/includes/Templates/Test_Receipt_Renderers.php:299
+#: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
 msgstr "Misafir"
 
@@ -1895,13 +1905,19 @@ msgstr "Vergi"
 msgid "PrintNode authentication failed."
 msgstr "PrintNode kimlik doğrulaması başarısız oldu."
 
+#: includes/Services/PrintNode_Client.php:208
+msgid ""
+"PrintNode refused the request. Check that the API key is correct and the PrintNode account is active."
+msgstr ""
+"PrintNode isteği reddetti. API anahtarının doğru ve PrintNode hesabının etkin olduğunu kontrol edin."
+
 #. translators: %d: HTTP status code.
-#: includes/Services/PrintNode_Client.php:222
+#: includes/Services/PrintNode_Client.php:230
 #, php-format
 msgid "PrintNode request failed with status %d."
 msgstr "PrintNode isteği %d durum koduyla başarısız oldu."
 
-#: includes/Services/PrintNode_Client.php:250
+#: includes/Services/PrintNode_Client.php:258
 msgid "PrintNode returned an unexpected print job response."
 msgstr "PrintNode beklenmedik bir yazdırma işi yanıtı döndürdü."
 
@@ -1953,11 +1969,11 @@ msgstr "kağıt bitti"
 msgid "spooler stopped"
 msgstr "yazdırma biriktiricisi durdu"
 
-#: includes/Services/Providers/Printnode_Adapter.php:202
+#: includes/Services/Providers/Printnode_Adapter.php:210
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr "Bu PrintNode yazıcısında API anahtarı veya yazıcı kimliği eksik."
 
-#: includes/Services/Providers/Printnode_Adapter.php:216
+#: includes/Services/Providers/Printnode_Adapter.php:224
 msgid "Could not generate the test print."
 msgstr "Test baskısı oluşturulamadı."
 
@@ -3014,7 +3030,7 @@ msgstr "Platform"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:95
+#: includes/Services/Register_Store.php:116
 #: includes/Services/Reports_Registry.php:188
 msgid "Register"
 msgstr "Kasa"
@@ -4355,10 +4371,10 @@ msgstr "Teklif"
 #: templates/receipt.php:184
 #: tests/includes/Test_i18n_Storefront.php:95
 #: tests/includes/Test_i18n_Storefront.php:105
-#: tests/includes/Test_i18n_Storefront.php:118
-#: tests/includes/Test_i18n_Storefront.php:169
-#: tests/includes/Test_i18n_Storefront.php:181
-#: tests/includes/Test_i18n_Storefront.php:199
+#: tests/includes/Test_i18n_Storefront.php:123
+#: tests/includes/Test_i18n_Storefront.php:174
+#: tests/includes/Test_i18n_Storefront.php:186
+#: tests/includes/Test_i18n_Storefront.php:204
 msgid "Receipt"
 msgstr "Rapor"
 
@@ -4792,7 +4808,7 @@ msgstr "ID %s ile ayarlar bulunamadı"
 msgid "Can not save settings with id %s"
 msgstr "ID %s ile ayarlar kaydedilemiyor"
 
-#: includes/Services/Settings/Access_Section.php:249
+#: includes/Services/Settings/Access_Section.php:267
 msgid "You do not have permission to update access settings."
 msgstr "Erişim ayarlarını güncelleme izniniz yok."
 
@@ -5302,41 +5318,41 @@ msgstr "Eksik durum parametresi."
 msgid "Too many requests. Please try again later."
 msgstr "Çok fazla istek. Lütfen daha sonra tekrar deneyin."
 
-#: includes/Templates/Auth.php:256
+#: includes/Templates/Auth.php:267
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Kimlik doğrulama oturumu sona erdi. Lütfen uygulamadan tekrar giriş yapmayı deneyin."
 
-#: includes/Templates/Auth.php:262
+#: includes/Templates/Auth.php:273
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Geçersiz kimlik doğrulama oturumu. Lütfen uygulamadan tekrar giriş yapmayı deneyin."
 
-#: includes/Templates/Auth.php:282
+#: includes/Templates/Auth.php:293
 msgid "Security check failed. Please try again."
 msgstr "Güvenlik kontrolü başarısız oldu. Lütfen tekrar deneyin."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:292
+#: includes/Templates/Auth.php:303
 msgid "Authentication failed."
 msgstr "Kimlik doğrulama başarısız."
 
-#: includes/Templates/Auth.php:302
+#: includes/Templates/Auth.php:313
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Bu hesap, çok fazla başarısız giriş denemesi nedeniyle geçici olarak kilitlendi. Lütfen daha sonra tekrar deneyin."
 
-#: includes/Templates/Auth.php:343
+#: includes/Templates/Auth.php:354
 msgid "Failed to generate authentication tokens."
 msgstr "Kimlik doğrulama belirteçleri oluşturulamadı."
 
-#: includes/Templates/Auth.php:393
+#: includes/Templates/Auth.php:404
 msgid "Please enter both username and password."
 msgstr "Lütfen hem kullanıcı adını hem de şifreyi girin."
 
-#: includes/Templates/Auth.php:407
-#: includes/Templates/Auth.php:416
+#: includes/Templates/Auth.php:418
+#: includes/Templates/Auth.php:427
 msgid "Invalid username or password."
 msgstr "Geçersiz kullanıcı adı veya şifre."
 

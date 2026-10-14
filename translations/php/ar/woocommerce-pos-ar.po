@@ -1137,8 +1137,8 @@ msgstr "يجب أن تكون الدفعة كائنًا."
 #: includes/API/V2/Payments_Controller.php:151
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:98
-#: includes/Payments/Contract/Ledger.php:840
+#: includes/Payments/Contract/Gateway_Submission.php:99
+#: includes/Payments/Contract/Ledger.php:1085
 msgid "Payment method not found."
 msgstr "طريقة الدفع غير موجودة."
 
@@ -1163,8 +1163,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "عذرًا، ليس لديك صلاحية تهيئة طرق الدفع."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:1503
+#: includes/Payments/Contract/Gateway_Submission.php:52
+#: includes/Payments/Contract/Ledger.php:1748
 msgid "Payment capture mode is unsupported."
 msgstr "وضع تحصيل الدفعة غير مدعوم."
 
@@ -1285,7 +1285,6 @@ msgstr "بطاقة"
 #: includes/Gateways/Card.php:70
 #: includes/Gateways/Card.php:148
 #: includes/Gateways/Card.php:230
-#: tests/includes/Gateways/Test_Card_Gateway.php:234
 msgid "Cashback"
 msgstr "استرداد نقدي"
 
@@ -1356,28 +1355,33 @@ msgid ""
 msgstr ""
 "لا يمكن تشغيل WCPOS جنبًا إلى جنب مع إضافة wePOS بسبب مشاكل التوافق. تم تعطيل WCPOS."
 
+#: includes/Load_Integrity.php:357
+msgid ""
+"WCPOS is being updated on this site. Please try again in a few seconds."
+msgstr "يجري تحديث WCPOS على هذا الموقع. يُرجى المحاولة مجددًا بعد بضع ثوانٍ."
+
 #. translators: POS order status label.
-#: includes/Orders.php:106
-#: includes/Orders.php:1245
+#: includes/Orders.php:107
+#: includes/Orders.php:1204
 msgctxt "Order status"
 msgid "POS - Open"
 msgstr "POS - مفتوح"
 
 #. translators: POS order status label.
-#: includes/Orders.php:107
-#: includes/Orders.php:1263
+#: includes/Orders.php:108
+#: includes/Orders.php:1222
 msgctxt "Order status"
 msgid "POS - Partial Payment"
 msgstr "POS - دفع جزئي"
 
 #. translators: %s: payment gateway title.
-#: includes/Orders.php:568
+#: includes/Orders.php:527
 #, php-format
 msgid "Order status set by %s; no payment was taken at the till."
 msgstr "تم تعيين حالة الطلب بواسطة %s؛ ولم يتم تحصيل أي مبلغ في نقطة البيع."
 
 #. translators: %s is the number of orders with POS - Open status.
-#: includes/Orders.php:1251
+#: includes/Orders.php:1210
 #, php-format
 msgid "POS - Open <span class=\"count\">(%s)</span>"
 msgid_plural "POS - Open <span class=\"count\">(%s)</span>"
@@ -1389,7 +1393,7 @@ msgstr[4] "POS - مفتوح <span class=\"count\">(%s)</span>"
 msgstr[5] "POS - مفتوح <span class=\"count\">(%s)</span>"
 
 #. translators: %s is the number of orders with POS - Partial Payment status.
-#: includes/Orders.php:1269
+#: includes/Orders.php:1228
 #, php-format
 msgid "POS - Partial Payment <span class=\"count\">(%s)</span>"
 msgid_plural "POS - Partial Payment <span class=\"count\">(%s)</span>"
@@ -1412,41 +1416,41 @@ msgstr "لم يسترد مزوّد الدفع هذه الدفعة."
 msgid "This payment cannot be voided."
 msgstr "لا يمكن إبطال هذه الدفعة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Gateway_Submission.php:55
 msgid "Attempt ID must be a UUID."
 msgstr "يجب أن يكون معرّف المحاولة UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:57
+#: includes/Payments/Contract/Gateway_Submission.php:58
 msgid "Only POS orders take a gateway submission."
 msgstr "تُرسل طلبات بوابة الدفع لطلبات نقطة البيع فقط."
 
-#: includes/Payments/Contract/Gateway_Submission.php:81
+#: includes/Payments/Contract/Gateway_Submission.php:82
 msgid "This attempt was cancelled at the till."
 msgstr "أُلغيت هذه المحاولة عند نقطة البيع."
 
-#: includes/Payments/Contract/Gateway_Submission.php:86
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "Payment method is not enabled for the POS."
 msgstr "طريقة الدفع غير مفعّلة لنقطة البيع."
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:90
 msgid "Order is already paid."
 msgstr "الطلب مدفوع بالفعل."
 
-#: includes/Payments/Contract/Gateway_Submission.php:93
+#: includes/Payments/Contract/Gateway_Submission.php:94
 msgid "Order already has a live payment."
 msgstr "للطلب دفعة نشطة بالفعل."
 
-#: includes/Payments/Contract/Gateway_Submission.php:184
+#: includes/Payments/Contract/Gateway_Submission.php:174
 msgid "The payment method rejected the details entered."
 msgstr "رفضت طريقة الدفع البيانات المُدخلة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:239
-#: includes/Payments/Contract/Gateway_Submission.php:254
+#: includes/Payments/Contract/Gateway_Submission.php:229
+#: includes/Payments/Contract/Gateway_Submission.php:244
 msgid "The payment provider failed."
 msgstr "تعذّر على مزوّد الدفع إتمام العملية."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:258
+#: includes/Payments/Contract/Gateway_Submission.php:248
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1454,153 +1458,153 @@ msgstr ""
 "تريد طريقة الدفع هذه فتح %s في متصفح، لكن نقطة البيع لا تستطيع متابعة ذلك."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:297
+#: includes/Payments/Contract/Gateway_Submission.php:287
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "تمت التسوية عبر نقطة البيع: %1$s في %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:313
+#: includes/Payments/Contract/Gateway_Submission.php:303
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "أُرسل عبر نقطة البيع: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:338
+#: includes/Payments/Contract/Gateway_Submission.php:328
 msgid "This invoice cannot be cancelled."
 msgstr "لا يمكن إلغاء هذه الفاتورة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:341
+#: includes/Payments/Contract/Gateway_Submission.php:331
 msgid "The invoice was sent by a different payment method."
 msgstr "أُرسلت الفاتورة بطريقة دفع أخرى."
 
-#: includes/Payments/Contract/Gateway_Submission.php:345
+#: includes/Payments/Contract/Gateway_Submission.php:335
 msgid "A newer invoice has been sent for this order."
 msgstr "أُرسلت فاتورة أحدث لهذا الطلب."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:351
+#: includes/Payments/Contract/Gateway_Submission.php:341
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "أُلغي عبر نقطة البيع: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:497
+#: includes/Payments/Contract/Gateway_Submission.php:487
 msgid "This field must be true or false."
 msgstr "يجب أن تكون قيمة هذا الحقل true أو false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:502
+#: includes/Payments/Contract/Gateway_Submission.php:492
 msgid "This field must be text."
 msgstr "يجب أن يكون هذا الحقل نصًا."
 
-#: includes/Payments/Contract/Gateway_Submission.php:506
+#: includes/Payments/Contract/Gateway_Submission.php:496
 msgid "This field is required."
 msgstr "هذا الحقل مطلوب."
 
-#: includes/Payments/Contract/Gateway_Submission.php:510
+#: includes/Payments/Contract/Gateway_Submission.php:500
 msgid "Choose one of the listed options."
 msgstr "اختر أحد الخيارات المدرجة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:524
+#: includes/Payments/Contract/Gateway_Submission.php:514
 msgid "Check the payment fields."
 msgstr "تحقّق من حقول الدفع."
 
-#: includes/Payments/Contract/Ledger.php:220
+#: includes/Payments/Contract/Ledger.php:465
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "لا يمكن تسجيل طريقة الدفع هذه؛ إذ يجب أن تنفذ جزء الدفع الخاص بها."
 
-#: includes/Payments/Contract/Ledger.php:226
+#: includes/Payments/Contract/Ledger.php:471
 msgid "Recorded payments must be captured or authorized."
 msgstr "يجب تحصيل المدفوعات المسجلة أو تفويضها."
 
-#: includes/Payments/Contract/Ledger.php:231
-#: includes/Payments/Contract/Ledger.php:235
+#: includes/Payments/Contract/Ledger.php:476
+#: includes/Payments/Contract/Ledger.php:480
 msgid "Tendered amount is invalid for this payment method."
 msgstr "المبلغ المدفوع غير صالح لطريقة الدفع هذه."
 
-#: includes/Payments/Contract/Ledger.php:339
+#: includes/Payments/Contract/Ledger.php:584
 msgid "Payment method is disabled."
 msgstr "طريقة الدفع معطلة."
 
-#: includes/Payments/Contract/Ledger.php:390
-#: includes/Payments/Contract/Ledger.php:900
+#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:1145
 msgid "The order is already paid."
 msgstr "تم دفع الطلب بالفعل."
 
-#: includes/Payments/Contract/Ledger.php:390
-#: includes/Payments/Contract/Ledger.php:901
+#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:1146
 msgid "Payment amount exceeds the order balance."
 msgstr "مبلغ الدفع يتجاوز رصيد الطلب."
 
-#: includes/Payments/Contract/Ledger.php:402
-#: includes/Payments/Contract/Ledger.php:903
+#: includes/Payments/Contract/Ledger.php:647
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Another payment is already in progress on this order."
 msgstr "هناك دفعة أخرى قيد التنفيذ لهذا الطلب بالفعل."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:556
+#: includes/Payments/Contract/Ledger.php:801
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr "مبلغ دفعة WCPOS ‏%1$s غير مطابق: المتوقع %2$s، والمؤكد %3$s."
 
-#: includes/Payments/Contract/Ledger.php:561
+#: includes/Payments/Contract/Ledger.php:806
 msgid "Tip"
 msgstr "إكرامية"
 
-#: includes/Payments/Contract/Ledger.php:624
+#: includes/Payments/Contract/Ledger.php:869
 msgid "Refund must belong to this order."
 msgstr "يجب أن يكون الاسترداد تابعًا لهذا الطلب."
 
-#: includes/Payments/Contract/Ledger.php:627
-#: includes/Payments/Contract/Ledger.php:642
-#: includes/Payments/Contract/Ledger.php:663
+#: includes/Payments/Contract/Ledger.php:872
+#: includes/Payments/Contract/Ledger.php:887
+#: includes/Payments/Contract/Ledger.php:908
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "لا يمكن تخصيص مبلغ الاسترداد لهذه الدفعة."
 
-#: includes/Payments/Contract/Ledger.php:699
-#: includes/Payments/Contract/Ledger.php:815
+#: includes/Payments/Contract/Ledger.php:944
+#: includes/Payments/Contract/Ledger.php:1060
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "يجب أن يكون ID الدفعة UUID."
 
-#: includes/Payments/Contract/Ledger.php:706
-#: includes/Payments/Contract/Ledger.php:879
+#: includes/Payments/Contract/Ledger.php:951
+#: includes/Payments/Contract/Ledger.php:1124
 msgid "Payment id conflicts with an existing payment."
 msgstr "يتعارض ID الدفعة مع دفعة موجودة."
 
-#: includes/Payments/Contract/Ledger.php:737
+#: includes/Payments/Contract/Ledger.php:982
 msgid "Refund status is invalid."
 msgstr "حالة الاسترداد غير صالحة."
 
-#: includes/Payments/Contract/Ledger.php:818
-#: includes/Payments/Contract/Ledger.php:822
+#: includes/Payments/Contract/Ledger.php:1063
+#: includes/Payments/Contract/Ledger.php:1067
 msgid "Payment amount must be positive."
 msgstr "يجب أن يكون مبلغ الدفعة موجبًا."
 
-#: includes/Payments/Contract/Ledger.php:827
+#: includes/Payments/Contract/Ledger.php:1072
 msgid "Payment currency must match the order."
 msgstr "يجب أن تطابق عملة الدفع عملة الطلب."
 
-#: includes/Payments/Contract/Ledger.php:902
+#: includes/Payments/Contract/Ledger.php:1147
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "المبلغ أو العملة اللذان أكدهما موفر الدفع لا يطابقان الدفعة."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1007
+#: includes/Payments/Contract/Ledger.php:1252
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "أُبطلت دفعة WCPOS ‏%s."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1009
+#: includes/Payments/Contract/Ledger.php:1254
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "أُبطلت دفعة WCPOS ‏%1$s: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1498
+#: includes/Payments/Contract/Ledger.php:1743
 msgid "Payment not found."
 msgstr "الدفعة غير موجودة."
 
-#: includes/Payments/Contract/Ledger.php:1508
+#: includes/Payments/Contract/Ledger.php:1753
 msgid "Payment transition is invalid."
 msgstr "انتقال حالة الدفع غير صالح."
 
@@ -1637,8 +1641,8 @@ msgstr "تمت إعادة استخدام مفتاح عدم التكرار مع �
 msgid "An identical request is already being processed."
 msgstr "تتم معالجة طلب مماثل بالفعل."
 
-#: includes/Services/Auth.php:405
-#: includes/Services/Auth.php:484
+#: includes/Services/Auth.php:410
+#: includes/Services/Auth.php:502
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT غير مهيأ بشكل صحيح، يرجى الاتصال بالمسؤول"
 
@@ -1667,7 +1671,7 @@ msgstr ""
 msgid "This movement was recorded after counting began."
 msgstr "سُجلت هذه الحركة بعد بدء العد."
 
-#: includes/Services/Cash_Movement_Store.php:145
+#: includes/Services/Cash_Movement_Store.php:153
 msgid "The movement has already been voided or is unavailable."
 msgstr "أُبطلت هذه الحركة بالفعل أو لم تعد متاحة."
 
@@ -1675,18 +1679,18 @@ msgstr "أُبطلت هذه الحركة بالفعل أو لم تعد متاح�
 msgid "The session cannot be closed."
 msgstr "لا يمكن إغلاق الجلسة."
 
-#: includes/Services/Closure_Store.php:439
+#: includes/Services/Closure_Store.php:451
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "للجلسة إغلاق بالفعل؛ سُجل العد كإعادة عد."
 
-#: includes/Services/Closure_Store.php:456
+#: includes/Services/Closure_Store.php:468
 #: includes/Services/Register_Session_Store.php:237
 #: includes/Services/Register_Session_Store.php:343
 msgid "The session state has changed."
 msgstr "تغيرت حالة الجلسة."
 
-#: includes/Services/Closure_Store.php:482
+#: includes/Services/Closure_Store.php:494
 msgid "The closure number precedes the register sequence."
 msgstr "يسبق رقم الإغلاق تسلسل سجل الدفع."
 
@@ -1694,15 +1698,21 @@ msgstr "يسبق رقم الإغلاق تسلسل سجل الدفع."
 msgid "WCPOS Cloud Print is disabled on this site."
 msgstr "ميزة الطباعة السحابية في WCPOS معطّلة على هذا الموقع."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:91
+#: includes/Services/Cloud_Print_Relay_Service.php:94
+msgid ""
+"WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again."
+msgstr ""
+"يتطلب WCPOS Cloud Print أن يستخدم موقعك بروتوكول HTTPS. اضبط عنوان الموقع (URL) في الإعدادات > عام على عنوان يبدأ بـ https://، ثم حاول مجددًا."
+
+#: includes/Services/Cloud_Print_Relay_Service.php:101
 msgid "Could not create a relay verification token."
 msgstr "تعذّر إنشاء رمز مميّز للتحقّق من Relay."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:117
+#: includes/Services/Cloud_Print_Relay_Service.php:127
 msgid "Relay registration failed."
 msgstr "فشل تسجيل Relay."
 
-#: includes/Services/Cloud_Print_Relay_Service.php:124
+#: includes/Services/Cloud_Print_Relay_Service.php:134
 msgid "Relay registration returned invalid credentials."
 msgstr "أعاد تسجيل Relay بيانات اعتماد غير صالحة."
 
@@ -1749,7 +1759,7 @@ msgstr "لا يمكن تغيير مفاتيح مصدر بيانات POS بعد �
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:506
 #: includes/Templates/Payment.php:334
-#: tests/includes/Templates/Test_Receipt_Renderers.php:299
+#: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
 msgstr "ضيف"
 
@@ -1889,13 +1899,19 @@ msgstr "الضريبة"
 msgid "PrintNode authentication failed."
 msgstr "فشل التحقق من هوية PrintNode."
 
+#: includes/Services/PrintNode_Client.php:208
+msgid ""
+"PrintNode refused the request. Check that the API key is correct and the PrintNode account is active."
+msgstr ""
+"رفض PrintNode الطلب. تحقّق من صحة مفتاح API ومن أن حساب PrintNode نشط."
+
 #. translators: %d: HTTP status code.
-#: includes/Services/PrintNode_Client.php:222
+#: includes/Services/PrintNode_Client.php:230
 #, php-format
 msgid "PrintNode request failed with status %d."
 msgstr "فشل طلب PrintNode مع الحالة %d."
 
-#: includes/Services/PrintNode_Client.php:250
+#: includes/Services/PrintNode_Client.php:258
 msgid "PrintNode returned an unexpected print job response."
 msgstr "أعاد PrintNode استجابة غير متوقعة لمهمة الطباعة."
 
@@ -1947,12 +1963,12 @@ msgstr "نفد الورق"
 msgid "spooler stopped"
 msgstr "توقّف التخزين المؤقت للطباعة"
 
-#: includes/Services/Providers/Printnode_Adapter.php:202
+#: includes/Services/Providers/Printnode_Adapter.php:210
 msgid "This PrintNode printer is missing its API key or printer id."
 msgstr ""
 "طابعة PrintNode هذه تفتقد مفتاح واجهة برمجة التطبيقات أو معرّف الطابعة."
 
-#: includes/Services/Providers/Printnode_Adapter.php:216
+#: includes/Services/Providers/Printnode_Adapter.php:224
 msgid "Could not generate the test print."
 msgstr "تعذّر إنشاء الطباعة التجريبية."
 
@@ -3008,7 +3024,7 @@ msgstr "النظام الأساسي"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:95
+#: includes/Services/Register_Store.php:116
 #: includes/Services/Reports_Registry.php:188
 msgid "Register"
 msgstr "سجل الدفع"
@@ -4349,10 +4365,10 @@ msgstr "عرض سعر"
 #: templates/receipt.php:184
 #: tests/includes/Test_i18n_Storefront.php:95
 #: tests/includes/Test_i18n_Storefront.php:105
-#: tests/includes/Test_i18n_Storefront.php:118
-#: tests/includes/Test_i18n_Storefront.php:169
-#: tests/includes/Test_i18n_Storefront.php:181
-#: tests/includes/Test_i18n_Storefront.php:199
+#: tests/includes/Test_i18n_Storefront.php:123
+#: tests/includes/Test_i18n_Storefront.php:174
+#: tests/includes/Test_i18n_Storefront.php:186
+#: tests/includes/Test_i18n_Storefront.php:204
 msgid "Receipt"
 msgstr "إيصال"
 
@@ -4784,7 +4800,7 @@ msgstr "الإعدادات مع المعرف %s غير موجودة"
 msgid "Can not save settings with id %s"
 msgstr "لا يمكن حفظ الإعدادات مع المعرف %s"
 
-#: includes/Services/Settings/Access_Section.php:249
+#: includes/Services/Settings/Access_Section.php:267
 msgid "You do not have permission to update access settings."
 msgstr "ليس لديك صلاحية لتحديث إعدادات الوصول."
 
@@ -5292,41 +5308,41 @@ msgstr "معلمة الحالة مفقودة."
 msgid "Too many requests. Please try again later."
 msgstr "طلبات كثيرة جدًا. يرجى المحاولة مرة أخرى لاحقًا."
 
-#: includes/Templates/Auth.php:256
+#: includes/Templates/Auth.php:267
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "انتهت صلاحية جلسة المصادقة. يرجى محاولة تسجيل الدخول مرة أخرى من التطبيق."
 
-#: includes/Templates/Auth.php:262
+#: includes/Templates/Auth.php:273
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "جلسة المصادقة غير صالحة. يرجى محاولة تسجيل الدخول مرة أخرى من التطبيق."
 
-#: includes/Templates/Auth.php:282
+#: includes/Templates/Auth.php:293
 msgid "Security check failed. Please try again."
 msgstr "فشل التحقق الأمني. يرجى المحاولة مرة أخرى."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:292
+#: includes/Templates/Auth.php:303
 msgid "Authentication failed."
 msgstr "فشل التحقق من الهوية."
 
-#: includes/Templates/Auth.php:302
+#: includes/Templates/Auth.php:313
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "تم قفل هذا الحساب مؤقتًا بسبب عدد كبير من محاولات تسجيل الدخول الفاشلة. يرجى المحاولة مرة أخرى لاحقًا."
 
-#: includes/Templates/Auth.php:343
+#: includes/Templates/Auth.php:354
 msgid "Failed to generate authentication tokens."
 msgstr "فشل في إنشاء رموز التحقق."
 
-#: includes/Templates/Auth.php:393
+#: includes/Templates/Auth.php:404
 msgid "Please enter both username and password."
 msgstr "يرجى إدخال اسم المستخدم وكلمة المرور."
 
-#: includes/Templates/Auth.php:407
-#: includes/Templates/Auth.php:416
+#: includes/Templates/Auth.php:418
+#: includes/Templates/Auth.php:427
 msgid "Invalid username or password."
 msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
 
