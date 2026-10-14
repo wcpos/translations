@@ -342,7 +342,7 @@ return array(
 		'The session state has changed.' => 'El estado de la sesión ha cambiado.',
 		'The closure number precedes the register sequence.' => 'El número de cierre es anterior a la secuencia de la caja.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print está deshabilitado en este sitio.',
-		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print requiere que su sitio use HTTPS. Cambie la dirección del sitio (URL) en Ajustes > Generales por una dirección https:// y vuelva a intentarlo.',
+		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print requiere que su sitio utilice HTTPS. Cambie la dirección del sitio (URL) en Ajustes > Generales por una dirección https:// y vuelva a intentarlo.',
 		'Could not create a relay verification token.' => 'No se pudo crear un token de verificación de retransmisión.',
 		'Relay registration failed.' => 'Error en el registro de retransmisión.',
 		'Relay registration returned invalid credentials.' => 'El registro de retransmisión devolvió credenciales no válidas.',
