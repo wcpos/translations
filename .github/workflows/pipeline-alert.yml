@@ -1,0 +1,46 @@
+# Opens (or comments on) a `pipeline` issue when a translations pipeline workflow fails,
+# so a stalled pipeline is noticed (2026-10-15: nothing shipped for two weeks while
+# Receive and Release failed silently).
+name: Pipeline alert
+
+on:
+  workflow_run:
+    workflows: ['Receive JS Strings', 'Receive PHP Strings', 'Sync main into next', 'Release', 'Publish next lane']
+    types: [completed]
+
+permissions:
+  issues: write
+
+jobs:
+  alert:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or update pipeline issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          WORKFLOW: ${{ github.event.workflow_run.name }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT: ${{ github.event.workflow_run.event }}
+        run: |
+          title="Pipeline failure: $WORKFLOW"
+          body=$(printf '%s\n' \
+            "Workflow: $WORKFLOW" \
+            "Branch: $BRANCH" \
+            "SHA: $SHA" \
+            "Triggering event: $EVENT" \
+            "Run URL: $RUN_URL" \
+            "This issue stays open until someone closes it after the fix.")
+          number=$(gh issue list --label pipeline --state open --json number,title --limit 100 |
+            jq -r --arg t "$title" 'map(select(.title == $t)) | .[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "$body"
+            echo "Commented on pipeline issue #$number for $WORKFLOW"
+          else
+            gh label create pipeline --color d73a4a --description "Translations pipeline failure" 2>/dev/null || true
+            gh issue create --title "$title" --label pipeline --body "$body"
+            echo "Opened pipeline issue for $WORKFLOW"
+          fi
