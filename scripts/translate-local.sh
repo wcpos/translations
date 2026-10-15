@@ -106,13 +106,29 @@ pnpm install --frozen-lockfile --prefer-offline --silent
 SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}")
 TOTAL=$(printf '%s' "$SUMMARY" | jq -r .total)
 if [ "$TOTAL" -eq 0 ]; then log "nothing to translate"; exit 0; fi
-WORK_HASH=$(cat .translate/work/*.json | shasum -a 256 | cut -d' ' -f1)
+# Promote next's identical-source translations so the lanes agree and sync-next does not conflict on them.
+PROMOTED=0
+if [ "$BASE" = main ] && [ "$DRY_RUN" -eq 0 ]; then
+  SEED_SUMMARY=$(node scripts/seed-from-lane.js --work .translate/work --ref origin/next --out .translate/promote)
+  if [ "$(printf '%s' "$SEED_SUMMARY" | jq -r .seeded)" -gt 0 ]; then
+    node scripts/apply-translations.js --work .translate/promote/work --results .translate/promote/results --report .translate/promote-report.json > /dev/null
+    PROMOTED=$(jq -r .applied .translate/promote-report.json)
+    log "promoted $PROMOTED strings from next"
+    SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}")
+    TOTAL=$(printf '%s' "$SUMMARY" | jq -r .total)
+  fi
+fi
+SKIP_MODEL=0
+if [ "$TOTAL" -eq 0 ]; then SKIP_MODEL=1; fi
+WORK_HASH=
+if [ "$TOTAL" -gt 0 ]; then WORK_HASH=$(cat .translate/work/*.json | shasum -a 256 | cut -d' ' -f1); fi
 if [ "$DRY_RUN" -eq 1 ]; then printf '%s\n' "$SUMMARY"; exit 0; fi
 if [ "$RETRY" -eq 0 ] && [ -f "$STATE" ]; then
   read -r RECORDED < "$STATE"
   if [ "$(( $(date +%s) - RECORDED ))" -lt "$RETRY_AFTER" ] && tail -n +2 "$STATE" | grep -Fxq "$WORK_HASH"; then
     log "same work as an unsuccessful run at $(date -u -r "$RECORDED" +%Y-%m-%dT%H:%M:%SZ); skipping the model until $(date -u -r "$((RECORDED + RETRY_AFTER))" +%Y-%m-%dT%H:%M:%SZ) (pass --retry to override)"
-    exit 0
+    if [ "$PROMOTED" -eq 0 ]; then exit 0; fi
+    SKIP_MODEL=1
   fi
 fi
 
@@ -137,7 +153,11 @@ else
   REVIEW_COMMAND=(claude -p --model "$REVIEW_MODEL" --permission-mode acceptEdits --allowedTools "Read,Write,Glob,Grep")
 fi
 mkdir -p .translate/results .translate/logs
-node scripts/translate-chunks.js plan .translate/work .translate/parts "$MAX_PER_CALL" > .translate/chunks
+if [ "$SKIP_MODEL" -eq 0 ]; then
+  node scripts/translate-chunks.js plan .translate/work .translate/parts "$MAX_PER_CALL" > .translate/chunks
+else
+  : > .translate/chunks
+fi
 CHUNK=0
 REVIEW_USED=skipped
 while IFS= read -r PACKETS; do
@@ -169,12 +189,14 @@ while IFS= read -r PACKETS; do
 done < .translate/chunks
 APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --parts .translate/parts --report .translate/report.json --report-md .translate/report.md)
 log "$APPLY_SUMMARY"
-REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
-if [ "$(printf '%s' "$REMAINING_SUMMARY" | jq -r .total)" -gt 0 ]; then
-  REMAINING_HASH=$(cat .translate/remaining/*.json | shasum -a 256 | cut -d' ' -f1)
-  printf '%s\n' "$(date +%s)" "$WORK_HASH" "$REMAINING_HASH" > "$STATE"
-else
-  rm -f "$STATE"
+if [ "$SKIP_MODEL" -eq 0 ] || [ "$TOTAL" -eq 0 ]; then
+  REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
+  if [ "$(printf '%s' "$REMAINING_SUMMARY" | jq -r .total)" -gt 0 ]; then
+    REMAINING_HASH=$(cat .translate/remaining/*.json | shasum -a 256 | cut -d' ' -f1)
+    printf '%s\n' "$(date +%s)" "$WORK_HASH" "$REMAINING_HASH" > "$STATE"
+  else
+    rm -f "$STATE"
+  fi
 fi
 if [ -z "$(git status --porcelain -- translations)" ]; then log "no translations accepted"; exit 1; fi
 node scripts/cleanup-stale-keys.js > .translate/cleanup.log
@@ -184,9 +206,13 @@ if ! node scripts/validate-translations.js; then
   exit 1
 fi
 APPLIED=$(jq -r .applied .translate/report.json)
-LOCALES=$(jq -r '[.files_written[] | split("/")[2]] | unique | join(", ")' .translate/report.json)
-N_LOCALES=$(jq '[.files_written[] | split("/")[2]] | unique | length' .translate/report.json)
+APPLIED=$((APPLIED + PROMOTED))
+REPORTS=(.translate/report.json)
+if [ -f .translate/promote-report.json ]; then REPORTS+=(.translate/promote-report.json); fi
+LOCALES=$(jq -sr '[.[].files_written[] | split("/")[2]] | unique | join(", ")' "${REPORTS[@]}")
+N_LOCALES=$(jq -s '[.[].files_written[] | split("/")[2]] | unique | length' "${REPORTS[@]}")
 {
+  if [ "$PROMOTED" -gt 0 ]; then printf 'Promoted %s strings from next (identical English source).\n\n' "$PROMOTED"; fi
   printf 'Applied %s strings for %s locales (%s); translator: %s (%s); review: %s.\n\n' "$APPLIED" "$N_LOCALES" "$LOCALES" "$TRANSLATOR" "$MODEL" "$REVIEW_USED"
   cat .translate/report.md
   printf '\n'
