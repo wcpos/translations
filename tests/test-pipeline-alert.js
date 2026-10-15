@@ -130,7 +130,7 @@ scenario('same workflow comments on its existing issue', [
   const comment = calls.find(args => args[0] === 'issue' && args[1] === 'comment');
   assert.ok(comment, 'issue comment call missing');
   assert.strictEqual(comment[2], '12');
-  assert.ok(comment[comment.indexOf('--body') + 1].includes('https://example.test/run/1'));
+  assert.ok(comment[comment.indexOf('--body') + 1].split('\n').includes('Run URL: https://example.test/run/1'));
   assert.ok(!calls.some(args => args[0] === 'issue' && args[1] === 'create'));
 });
 
