@@ -277,7 +277,7 @@ return array(
 		'Only an administrator can edit or delete a staff account from the POS.' => 'Endast en administratör kan redigera eller ta bort ett personalkonto från POS.',
 		'Gift Wrapping' => 'Presentpapper',
 		'Flat Rate Shipping' => 'Fast transportpris',
-		'Summer Sale (%s%%)' => 'Sommarerbjudande (%s%)',
+		'Summer Sale (%s%%)' => 'Sommarerbjudande (%s%%)',
 		'Please gift wrap this order. Thank you!' => 'Vänligen packa detta paket med presentpapper. Tack!',
 		'Tax Receipt' => 'Skattekvitto',
 		'Tax ID' => 'Momsregistreringsnummer',
