@@ -5,19 +5,37 @@ const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const { parsePoFile, serializePoFile, buildPoEntryKey, generateL10nPhp } = require('./po-file');
 
-function mergeJson(nextText, mainText) {
+function mergeJson(nextText, mainText, baseText) {
   const next = JSON.parse(nextText);
   const main = JSON.parse(mainText);
+  const base = baseText === undefined ? {} : JSON.parse(baseText);
   const values = { ...main, ...next };
+  for (const key of Object.keys(values)) {
+    if (Object.hasOwn(base, key) && (!Object.hasOwn(next, key) ||
+      (!Object.hasOwn(main, key) && JSON.stringify(base[key]) === JSON.stringify(next[key])))) delete values[key];
+  }
   const sorted = Object.fromEntries(Object.keys(values).sort().map(key => [key, values[key]]));
   return JSON.stringify(sorted, null, 2) + '\n';
 }
 
-function mergePo(nextText, mainText) {
+function poTranslationContent(entry) {
+  return JSON.stringify([entry.msgid_plural ?? null, entry.msgstr ?? '', entry.msgstr_plural ?? [], [...(entry.flags ?? [])].sort()]);
+}
+
+function mergePo(nextText, mainText, baseText) {
   const next = parsePoFile(nextText);
   const main = parsePoFile(mainText);
+  const base = new Map((baseText === undefined ? [] : parsePoFile(baseText).entries).map(entry => [buildPoEntryKey(entry.msgctxt, entry.msgid), entry]));
+  const mainKeys = new Set(main.entries.map(entry => buildPoEntryKey(entry.msgctxt, entry.msgid)));
   const keys = new Set(next.entries.map(entry => buildPoEntryKey(entry.msgctxt, entry.msgid)));
-  const entries = [...next.entries, ...main.entries.filter(entry => !keys.has(buildPoEntryKey(entry.msgctxt, entry.msgid)))];
+  const entries = next.entries.filter(entry => {
+    const key = buildPoEntryKey(entry.msgctxt, entry.msgid);
+    return mainKeys.has(key) || !base.has(key) || poTranslationContent(base.get(key)) !== poTranslationContent(entry);
+  });
+  entries.push(...main.entries.filter(entry => {
+    const key = buildPoEntryKey(entry.msgctxt, entry.msgid);
+    return !keys.has(key) && !base.has(key);
+  }));
   return { po: serializePoFile(next.header, entries), l10n: generateL10nPhp(entries, next.header) };
 }
 
@@ -69,13 +87,13 @@ function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
       continue;
     }
     if (!isPo && !isL10n) {
-      fs.writeFileSync(path.join(cwd, file), mergeJson(git('show', `:2:${file}`), git('show', `:3:${file}`)));
+      fs.writeFileSync(path.join(cwd, file), mergeJson(git('show', `:2:${file}`), git('show', `:3:${file}`), stages.has(1) ? git('show', ':1:' + file) : undefined));
       git('add', '--', file);
       continue;
     }
     let l10n;
     if (isPo) {
-      const merged = mergePo(git('show', `:2:${file}`), git('show', `:3:${file}`));
+      const merged = mergePo(git('show', `:2:${file}`), git('show', `:3:${file}`), stages.has(1) ? git('show', ':1:' + file) : undefined);
       fs.writeFileSync(path.join(cwd, file), merged.po);
       l10n = merged.l10n;
     } else {

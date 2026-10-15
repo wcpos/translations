@@ -68,6 +68,73 @@ try {
 }
 console.log('✓ PO whole entries, plurals, flags, contexts, next header and loadable PHP');
 
+{
+  const baseJson = '{"a":"A","b":"B","c":"C","d":"D","e":"E","__proto__":"P"}';
+  const nextJson = '{"b":"B","c":"Cn","e":"En","g":"G","__proto__":"P"}';
+  const mainJson = '{"a":"A","c":"Cm","d":"Dm","f":"F"}';
+  const json = mergeJson(nextJson, mainJson, baseJson);
+  const values = JSON.parse(json);
+  assert.deepEqual(values, { c: 'Cn', e: 'En', f: 'F', g: 'G' });
+  assert.deepEqual(Object.keys(values), ['c', 'e', 'f', 'g']);
+  assert.ok(!Object.hasOwn(values, '__proto__'));
+  console.log('✓ JSON three-way keeps deletions from either lane');
+
+  const basePo = [
+    'msgid ""\nmsgstr ""\n"Language: da\\n"\n"X-Lane: base\\n"',
+    'msgid "Deleted on next"\nmsgstr "Base"',
+    'msgid "Deleted on main"\nmsgstr "Base"',
+    '#: base.php:1\nmsgid "Reference only"\nmsgstr "Base"',
+    'msgid "Fuzzy on next"\nmsgstr "Base"',
+    'msgid "Shared"\nmsgstr "Base"',
+    'msgid "Changed on main"\nmsgstr "Base"',
+  ].join('\n\n') + '\n';
+  const nextPo = [
+    'msgid ""\nmsgstr ""\n"Language: da\\n"\n"X-Lane: next\\n"',
+    'msgid "Deleted on main"\nmsgstr "Base"',
+    '#: next.php:2\nmsgid "Reference only"\nmsgstr "Base"',
+    '#, fuzzy\nmsgid "Fuzzy on next"\nmsgstr "Base"',
+    '# Next comment\n#: next.php:3\nmsgid "Shared"\nmsgstr "Next"',
+  ].join('\n\n') + '\n';
+  const mainPo = [
+    'msgid ""\nmsgstr ""\n"Language: da\\n"\n"X-Lane: main\\n"',
+    'msgid "Deleted on next"\nmsgstr "Base"',
+    '# Main comment\n#: main.php:3\nmsgid "Shared"\nmsgstr "Main"',
+    'msgid "Changed on main"\nmsgstr "Main"',
+    'msgid "Main only"\nmsgstr "Added"',
+  ].join('\n\n') + '\n';
+  const nextParsed = parsePoFile(nextPo);
+  const mainParsed = parsePoFile(mainPo);
+  const merged = mergePo(nextPo, mainPo, basePo);
+  const parsed = parsePoFile(merged.po);
+  assert.deepEqual(parsed.entries.map(entry => entry.msgid), ['Fuzzy on next', 'Shared', 'Main only']);
+  assert.deepEqual(parsed.entries, [...nextParsed.entries.slice(2), mainParsed.entries[3]]);
+  assert.equal(parsed.header, nextParsed.header);
+  assert.equal(merged.l10n, generateL10nPhp(parsed.entries, nextParsed.header));
+  console.log('✓ PO three-way keeps deletions from either lane');
+
+  scenario('Three-way: a deletion on either lane stays deleted', {
+    base: { [jsonFile]: baseJson, [poFile]: basePo },
+    main: { [jsonFile]: mainJson, [poFile]: mainPo },
+    next: { [jsonFile]: nextJson, [poFile]: nextPo },
+  }, ({ cwd, git, read }) => {
+    assert.notEqual(git('ls-files', '-u', '--', jsonFile), '');
+    assert.notEqual(git('ls-files', '-u', '--', poFile), '');
+    resolveLaneConflicts({ cwd });
+    assert.equal(git('ls-files', '-u'), '');
+    assert.equal(read(jsonFile), mergeJson(nextJson, mainJson, baseJson));
+    const expected = mergePo(nextPo, mainPo, basePo);
+    assert.equal(read(poFile), expected.po);
+    assert.equal(read(phpFile), expected.l10n);
+    const values = JSON.parse(read(jsonFile));
+    assert.ok(!Object.hasOwn(values, 'a'));
+    assert.ok(!Object.hasOwn(values, 'b'));
+    const msgids = parsePoFile(read(poFile)).entries.map(entry => entry.msgid);
+    assert.ok(!msgids.includes('Deleted on next'));
+    assert.ok(!msgids.includes('Deleted on main'));
+    execFileSync('php', ['-r', phpCheck, path.join(cwd, phpFile)]);
+  });
+}
+
 function scenario(name, { base, main, next }, verify) {
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'lane-conflicts-'));
   const git = (...args) => execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
