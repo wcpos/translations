@@ -156,7 +156,8 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
       }
       if (!changed) continue;
       fs.mkdirSync(path.dirname(target), { recursive: true });
-      fs.writeFileSync(target, JSON.stringify(existing, null, 2) + '\n');
+      const sorted = Object.fromEntries(Object.keys(existing).sort().map(key => [key, existing[key]]));
+      fs.writeFileSync(target, JSON.stringify(sorted, null, 2) + '\n');
       report.files_written.push(relative);
     }
     for (const domain of Object.keys(packet.php)) {

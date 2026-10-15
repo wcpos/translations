@@ -87,7 +87,7 @@ try {
   assert.deepEqual(report.missing_results, ['fr_FR']);
   assert.deepEqual(report.files_written, [jsFile, 'translations/js/de_DE/monorepo/new.json', phpFile, poFile].sort());
   const translated = JSON.parse(read(jsFile));
-  assert.deepEqual(Object.keys(translated), ['second', 'old', 'stale', 'welcome', 'brand', 'colour', 'warning']);
+  assert.deepEqual(Object.keys(translated), ['brand', 'colour', 'old', 'second', 'stale', 'warning', 'welcome']);
   assert.deepEqual(translated, { second: 'Zweite', old: 'Gespeichert', stale: 'Erhalten',
     welcome: 'Hallo {name}', brand: 'WCPOS', colour: 'Farbe', warning: 'Webseite' });
   assert.equal(read(jsFile), JSON.stringify(translated, null, 2) + '\n');

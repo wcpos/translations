@@ -21,5 +21,8 @@ jobs:
         with:
           node-version: '24'
           cache: pnpm
+      # tests/test-resolve-lane-conflicts.js and tests/test-sync-next.js load
+      # generated .l10n.php files with php, which the macOS runner image lacks.
+      - run: brew install php
       - run: pnpm install --frozen-lockfile
       - run: pnpm test

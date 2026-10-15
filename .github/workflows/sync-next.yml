@@ -53,6 +53,7 @@ jobs:
             echo "::error::git ls-remote failed with status $status"
             exit "$status"
           fi
+          php --version || echo "::warning::php not found; a translations conflict will fail the sync"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for attempt in 1 2 3; do
@@ -60,23 +61,15 @@ jobs:
             git checkout -B next origin/next
             if ! git merge --no-edit origin/main; then
               conflicts=$(git diff --name-only --diff-filter=U)
-              other=$(printf '%s\n' "$conflicts" | grep -v '^source/' || true)
-              # Files under source/ belong to their lane: next's copy comes from the consumers' next
-              # branches, so a conflict there keeps next's side. Any other conflict still needs a person.
-              if [ -n "$other" ] || [ -z "$conflicts" ]; then
+              # Keep next's source files and union translation JSON/PO entries with next winning.
+              # Regenerate PHP translations; every other kind of conflict still fails.
+              if [ -z "$conflicts" ] || ! node scripts/resolve-lane-conflicts.js; then
                 git merge --abort
                 echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
                 exit 1
               fi
-              while IFS= read -r path; do
-                if git checkout --ours -- "$path"; then
-                  git add -- "$path"
-                else
-                  git rm -q -- "$path"
-                fi
-              done <<< "$conflicts"
               git commit --no-edit
-              echo "::notice::Kept next's side of lane-owned source files: ${conflicts//$'\n'/, }"
+              echo "::notice::Kept next's side of lane-owned conflicts: ${conflicts//$'\n'/, }"
             fi
             if git push origin HEAD:next; then exit 0; fi
             echo "Push rejected (attempt $attempt); fetching and re-merging"

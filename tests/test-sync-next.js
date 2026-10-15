@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-// Run the actual sync-next merge step against local Git remotes so source
-// conflicts keep next's side and conflicts elsewhere still stop the sync.
+// Run the actual sync-next merge step against local Git remotes so lane-owned
+// conflicts resolve and conflicts elsewhere still stop the sync.
 
 const assert = require('node:assert');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { execFileSync, spawnSync } = require('node:child_process');
+const { parsePoFile, generateL10nPhp } = require('../scripts/po-file');
 
 const ROOT = path.resolve(__dirname, '..');
 const WORKFLOW = path.join(ROOT, '.github/workflows/sync-next.yml');
@@ -55,7 +56,9 @@ function scenario(name, { base, main, next, expectSuccess = true }, verify) {
     run('git', ['config', 'user.email', 'test@example.com'], seed);
     run('git', ['remote', 'add', 'origin', remote], seed);
 
-    for (const [lane, files] of Object.entries({ base, main, next })) {
+    const scripts = Object.fromEntries(['resolve-lane-conflicts.js', 'po-file.js']
+      .map(file => [`scripts/${file}`, fs.readFileSync(path.join(ROOT, 'scripts', file), 'utf8')]));
+    for (const [lane, files] of Object.entries({ base: { ...base, ...scripts }, main, next })) {
       if (lane !== 'base') run('git', ['checkout', lane], seed);
       for (const [file, content] of Object.entries(files)) {
         const target = path.join(seed, file);
@@ -117,17 +120,38 @@ scenario('Source conflict resolves to next', {
 });
 
 scenario('Conflict outside source fails', {
-  base: { [POT]: pot('Base'), 'translations/js/da/b.json': '{"b":"Base"}\n' },
+  base: { [POT]: pot('Base'), 'translations/js/da/b.json': '{"b":"Base"}\n', 'README.md': 'Base\n' },
   main: {
+    'README.md': 'Main\n',
     [POT]: pot('Main'),
     'translations/js/da/a.json': '{"a":"Main"}\n',
     'translations/js/da/b.json': '{"b":"Main"}\n',
   },
-  next: { [POT]: pot('Next'), 'translations/js/da/b.json': '{"b":"Next"}\n' },
+  next: { [POT]: pot('Next'), 'translations/js/da/b.json': '{"b":"Next"}\n', 'README.md': 'Next\n' },
   expectSuccess: false,
 }, ({ runner, output, nextBefore }) => {
   assert.ok(output.includes('::error::Merge conflicts:'), 'merge conflict error missing');
   assert.strictEqual(run('git', ['rev-parse', 'origin/next'], runner), nextBefore, 'next must not move');
+});
+
+const JSON_FILE = 'translations/js/da/conflict.json';
+const PO_FILE = 'translations/php/da/conflict.po';
+const PHP_FILE = PO_FILE.replace(/\.po$/, '.l10n.php');
+const nextPo = 'msgid "Shared"\nmsgstr "Next"\n';
+const mainPo = 'msgid "Shared"\nmsgstr "Main"\n\nmsgid "Main only"\nmsgstr "Main only value"\n';
+scenario('Translations conflict resolves to next', {
+  base: { [JSON_FILE]: '{"shared":"Base"}\n', [PO_FILE]: 'msgid "Shared"\nmsgstr "Base"\n' },
+  main: { [JSON_FILE]: '{"shared":"Main","mainOnly":"Main only value"}\n', [PO_FILE]: mainPo },
+  next: { [JSON_FILE]: '{"shared":"Next","nextOnly":"Next only value"}\n', [PO_FILE]: nextPo },
+}, ({ runner, output, nextBefore }) => {
+  const parents = run('git', ['log', '-1', '--format=%P', 'origin/next'], runner).split(' ');
+  assert.deepStrictEqual(parents, [nextBefore, run('git', ['rev-parse', 'origin/main'], runner)]);
+  const json = JSON.parse(run('git', ['show', `origin/next:${JSON_FILE}`], runner));
+  assert.deepStrictEqual(json, { shared: 'Next', mainOnly: 'Main only value', nextOnly: 'Next only value' });
+  const po = parsePoFile(run('git', ['show', `origin/next:${PO_FILE}`], runner));
+  assert.deepStrictEqual(po.entries, [...parsePoFile(nextPo).entries, parsePoFile(mainPo).entries[1]]);
+  assert.strictEqual(run('git', ['show', `origin/next:${PHP_FILE}`], runner), generateL10nPhp(po.entries, po.header).trim());
+  assert.ok(output.includes("::notice::Kept next's side"), 'translation resolution notice missing');
 });
 
 scenario('Clean merge', {
