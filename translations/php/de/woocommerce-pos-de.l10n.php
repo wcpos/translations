@@ -132,7 +132,7 @@ return array(
 		'POS handling type for the gateway.' => 'POS-Verarbeitungstyp für das Gateway.',
 		'POS capabilities exposed by the gateway.' => 'Vom Gateway bereitgestellte POS-Funktionen.',
 		'Provider-specific public metadata.' => 'Öffentliche anbieterspezifische Metadaten.',
-		'Order status (without the wc- prefix) the merchant configured this gateway to settle a POS sale to, or null when none is stored.' => 'Bestellstatus (ohne das Präfix wc-), auf den dieses Gateway laut Händler einen POS-Verkauf setzt, oder null, wenn kein Status gespeichert ist.',
+		'Order status (without the wc- prefix) the merchant configured this gateway to settle a POS sale to, or null when none is stored.' => 'Bestellstatus (ohne das Präfix wc-), auf den der Händler diese Zahlungsschnittstelle eingestellt hat, um einen POS-Verkauf abzuschließen, oder null, falls kein Status gespeichert ist.',
 		'The PrintNode API key must be sent in the request body, not the query string.' => 'Der PrintNode-API-Schlüssel muss im Request-Body gesendet werden, nicht im Query-String.',
 		'A PrintNode API key is required.' => 'Ein PrintNode-API-Schlüssel ist erforderlich.',
 		'The Star Online API key must be sent in the request body, not the query string.' => 'Der Star Online-API-Schlüssel muss im Request-Body gesendet werden, nicht im Query-String.',
