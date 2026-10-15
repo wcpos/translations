@@ -23,6 +23,10 @@ jobs:
           cache: pnpm
       # tests/test-resolve-lane-conflicts.js and tests/test-sync-next.js load
       # generated .l10n.php files with php, which the macOS runner image lacks.
-      - run: brew install php
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: none
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
