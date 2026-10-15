@@ -6,7 +6,7 @@ on:
       - update-js-strings
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: receive-js-${{ github.event.client_payload.repo_name }}-${{ github.event.client_payload.lane || 'main' }}
@@ -16,14 +16,35 @@ jobs:
   receive:
     if: github.event.client_payload.repo_name && github.event.client_payload.ref
     runs-on: ubuntu-latest
+    # Payload values reach shell only through env, never as ${{ }} inside run: scripts.
+    env:
+      REPO: ${{ github.event.client_payload.repo_name }}
+      REF: ${{ github.event.client_payload.ref }}
+      LANE: ${{ github.event.client_payload.lane || 'main' }}
+      FORCE: ${{ github.event.client_payload.force }}
     steps:
-      - name: Validate lane
+      - name: Validate payload
         run: |
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
           if [ "$LANE" != main ] && [ "$LANE" != next ]; then
             echo "::error::Invalid lane: $LANE (expected main or next)"
             exit 1
           fi
+
+          case "$REPO" in
+            monorepo|woocommerce-pos|woocommerce-pos-pro|electron) ;;
+            *)
+              echo "::error::Invalid source repo: $REPO"
+              exit 1
+              ;;
+          esac
+
+          case "$REF" in
+            translations-source|translations-source-next) ;;
+            *)
+              echo "::error::Invalid source ref: $REF"
+              exit 1
+              ;;
+          esac
 
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,22 +63,20 @@ jobs:
 
       - name: Fetch source strings
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
           mkdir -p "source/js/$REPO"
 
-          git clone --depth 1 --branch ${{ github.event.client_payload.ref }} \
+          git clone --depth 1 --branch "$REF" \
             https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git \
             _source
 
           cp _source/*.json "source/js/$REPO/"
           rm -rf _source
 
-          echo "Copied files from wcpos/$REPO@${{ github.event.client_payload.ref }}:"
+          echo "Copied files from wcpos/$REPO@$REF:"
           ls -la "source/js/$REPO/"
 
       - name: Normalize JSON formatting
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
           for f in source/js/$REPO/*.json; do
             [ -f "$f" ] || continue
             python3 -c "
@@ -74,7 +93,6 @@ jobs:
 
       - name: Validate source key counts
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
           for f in source/js/$REPO/*.json; do
             [ -f "$f" ] || continue
             filename=$(basename "$f")
@@ -113,10 +131,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
-          REPO="${{ github.event.client_payload.repo_name }}"
           git add source/js/
-          if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+          if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
             echo "No changes"
             echo "changed=false" >> $GITHUB_OUTPUT
             exit 0
@@ -141,7 +157,7 @@ jobs:
             git reset --hard "origin/$LANE"
             cp "$RUNNER_TEMP/source-js"/*.json source/js/"$REPO"/
             git add source/js/
-            if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+            if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
               echo "Source strings already on $LANE"
               pushed=1
               break
