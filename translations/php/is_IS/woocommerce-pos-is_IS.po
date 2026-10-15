@@ -73,7 +73,7 @@ msgstr "Virkja varanlega tengla"
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
-#: includes/Templates/Payment.php:316
+#: includes/Templates/Payment.php:341
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Gjaldkeri"
@@ -320,8 +320,8 @@ msgstr ""
 #: includes/Form_Handler.php:66
 #: includes/Form_Handler.php:80
 #: includes/Form_Handler.php:94
-#: includes/Templates/Payment.php:178
-#: includes/Templates/Payment.php:458
+#: includes/Templates/Payment.php:199
+#: includes/Templates/Payment.php:483
 #: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Villa"
@@ -868,8 +868,8 @@ msgstr "Lokunarsniðmát er nauðsynlegt."
 
 #. translators: Error message displayed when a template cannot be found.
 #: includes/API/V1/Receipts_Controller.php:304
-#: includes/Template_Router.php:246
-#: includes/Template_Router.php:264
+#: includes/Template_Router.php:257
+#: includes/Template_Router.php:275
 msgid "Template not found."
 msgstr "Sniðmát fannst ekki."
 
@@ -899,11 +899,11 @@ msgstr "Ekki tókst að lesa kvittunarskjal."
 msgid "Sorry, you cannot view receipts."
 msgstr "Því miður geturðu ekki skoðað viðmótsgjaldi."
 
-#: includes/API/V1/Settings.php:195
+#: includes/API/V1/Settings.php:189
 msgid "This payment method does not list terminals."
 msgstr "Þessi greiðslumáti sýnir engar greiðslustöðvar."
 
-#: includes/API/V1/Settings.php:471
+#: includes/API/V1/Settings.php:458
 msgid "Settings section not registered."
 msgstr "Stillingahluti hefur ekki verið skráður."
 
@@ -1649,7 +1649,7 @@ msgid "An identical request is already being processed."
 msgstr "Sams konar beiðni er þegar í vinnslu."
 
 #: includes/Services/Auth.php:410
-#: includes/Services/Auth.php:502
+#: includes/Services/Auth.php:504
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT er ekki rétt stillt, vinsamlegast hafðu samband við stjórnanda"
 
@@ -1821,7 +1821,7 @@ msgstr "Ekki er hægt að breyta upprunalyklum POS eftir sölu: %s"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:506
-#: includes/Templates/Payment.php:334
+#: includes/Templates/Payment.php:359
 #: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
 msgstr "Gestur"
@@ -4922,8 +4922,8 @@ msgid "Cannot complete order: %d item(s) exceed available stock."
 msgstr "Ekki er hægt að ljúka pöntun: %d vörur fara yfir tiltækar birgðir."
 
 #. translators: %s: WP Overnight document type.
-#: includes/Services/Template_Pdf_Service.php:132
-#: includes/Services/Template_Pdf_Service.php:145
+#: includes/Services/Template_Pdf_Service.php:133
+#: includes/Services/Template_Pdf_Service.php:146
 #, php-format
 msgid "WP Overnight %s PDF could not be generated."
 msgstr "Ekki tókst að búa til WP Overnight %s PDF."
@@ -5369,54 +5369,54 @@ msgstr "Árstíðabundið"
 msgid "Promotion"
 msgstr "Kynning"
 
-#: includes/Templates/Auth.php:113
+#: includes/Templates/Auth.php:127
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Vantar eða ógilt redirect_uri breytu."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:119
+#: includes/Templates/Auth.php:133
 msgid "Missing state parameter."
 msgstr "Vantar state breytu."
 
-#: includes/Templates/Auth.php:131
+#: includes/Templates/Auth.php:145
 msgid "Too many requests. Please try again later."
 msgstr "Of margar beiðnir. Vinsamlegast reyndu aftur síðar."
 
-#: includes/Templates/Auth.php:267
+#: includes/Templates/Auth.php:361
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Auðkenningarlota rann út. Vinsamlegast reyndu að skrá þig inn aftur í appinu."
 
-#: includes/Templates/Auth.php:273
+#: includes/Templates/Auth.php:367
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Ógild auðkenningarlota. Vinsamlegast reyndu að skrá þig inn aftur í appinu."
 
-#: includes/Templates/Auth.php:293
+#: includes/Templates/Auth.php:387
 msgid "Security check failed. Please try again."
 msgstr "Öryggisathugun mistókst. Vinsamlegast reyndu aftur."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:303
+#: includes/Templates/Auth.php:397
 msgid "Authentication failed."
 msgstr "Auðkenning mistókst."
 
-#: includes/Templates/Auth.php:313
+#: includes/Templates/Auth.php:407
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Þessi reikningur er tímabundið læstur vegna of margra misheppnaðra innskráningartilrauna. Vinsamlegast reyndu aftur síðar."
 
-#: includes/Templates/Auth.php:354
+#: includes/Templates/Auth.php:448
 msgid "Failed to generate authentication tokens."
 msgstr "Mistókst að búa til auðkenningarmerki."
 
-#: includes/Templates/Auth.php:404
+#: includes/Templates/Auth.php:498
 msgid "Please enter both username and password."
 msgstr "Vinsamlegast sláðu inn bæði notandanafn og lykilorð."
 
-#: includes/Templates/Auth.php:418
-#: includes/Templates/Auth.php:427
+#: includes/Templates/Auth.php:512
+#: includes/Templates/Auth.php:521
 msgid "Invalid username or password."
 msgstr "Ógilt notandanafn eða lykilorð."
 
@@ -5831,78 +5831,84 @@ msgstr "Lokun og X-skýrsla með greiðslufjölda, peningahreyfingum og samtölu
 msgid "Thermal Closure"
 msgstr "Hitaprentuð lokun"
 
-#: includes/Templates/Payment.php:176
+#: includes/Templates/Payment.php:197
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Því miður getur þessi áskrift ekki verið greidd. Áskriftarmiði er ótæma eða ógilt."
 
-#: includes/Templates/Payment.php:195
+#: includes/Templates/Payment.php:216
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:202
+#: includes/Templates/Payment.php:224
 msgid "Pay for order"
 msgstr "Greiða fyrir pöntun"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:237
+#: includes/Templates/Payment.php:260
 msgid "Checkout Settings"
 msgstr "Stillingar útskráningar"
 
-#: includes/Templates/Payment.php:243
+#: includes/Templates/Payment.php:266
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Skripti og stílar geta truflað sérsniðna greiðslusniðmátið, notaðu þetta form til að fjarlægja vandamálaskript."
 
-#: includes/Templates/Payment.php:245
+#: includes/Templates/Payment.php:268
 msgid "Disable All Styles and Scripts"
 msgstr "Slökkva á öllum stílum og skriptum"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:248
+#: includes/Templates/Payment.php:271
 msgid "Disable wp_head"
 msgstr "Slökkva á wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:253
+#: includes/Templates/Payment.php:276
 msgid "Disable wp_footer"
 msgstr "Slökkva á wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:258
+#: includes/Templates/Payment.php:281
 msgid "Disable Selected Styles"
 msgstr "Slökkva á völdum stílum"
 
+#: includes/Templates/Payment.php:288
+#: includes/Templates/Payment.php:300
+msgid "always removed on the POS payment page"
+msgstr "er alltaf fjarlægt af greiðslusíðu POS"
+
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:269
+#: includes/Templates/Payment.php:293
 msgid "Disable Selected Scripts"
 msgstr "Slökkva á völdum skriptum"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:281
+#: includes/Templates/Payment.php:306
 msgid "Submit"
 msgstr "Senda"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:358
 msgid "Paying as customer"
 msgstr "Greiða sem viðskiptavinur"
 
-#: includes/Templates/Payment.php:434
+#: includes/Templates/Payment.php:459
+#: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr ""
 "Fyrirgefðu, þessi pöntun er ógild og ekki er hægt að greiða fyrir hana."
 
-#: includes/Templates/Payment.php:438
+#: includes/Templates/Payment.php:463
 msgid "Sorry, this order has already been paid for."
 msgstr "Fyrirgefðu, þessi pöntun hefur þegar verið greidd."
 
-#: includes/Templates/Payment.php:456
+#: includes/Templates/Payment.php:481
 msgid "You do not have permission to modify checkout settings."
 msgstr "Þú hefur ekki heimild til að breyta útvarpsstillingum."
 

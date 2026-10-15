@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Keela wp_head',
 		'Disable wp_footer' => 'Keela wp_footer',
 		'Disable Selected Styles' => 'Keela valitud stiilid',
+		'always removed on the POS payment page' => 'eemaldatakse alati POS-i makselehelt',
 		'Disable Selected Scripts' => 'Keela valitud skriptid',
 		'Submit' => 'Esita',
 		'Paying as customer' => 'Maksad kliendina',

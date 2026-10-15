@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Nonaktifkan wp_head',
 		'Disable wp_footer' => 'Nonaktifkan wp_footer',
 		'Disable Selected Styles' => 'Nonaktifkan Gaya Terpilih',
+		'always removed on the POS payment page' => 'selalu dihapus dari halaman pembayaran POS',
 		'Disable Selected Scripts' => 'Nonaktifkan Skrip Terpilih',
 		'Submit' => 'Kirim',
 		'Paying as customer' => 'Membayar sebagai pelanggan',

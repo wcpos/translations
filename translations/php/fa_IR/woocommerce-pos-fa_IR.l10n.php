@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'غیرفعال کردن wp_head',
 		'Disable wp_footer' => 'غیرفعال کردن wp_footer',
 		'Disable Selected Styles' => 'غیرفعال کردن استایل‌های انتخاب‌شده',
+		'always removed on the POS payment page' => 'همیشه از صفحه پرداخت POS حذف می‌شود',
 		'Disable Selected Scripts' => 'غیرفعال کردن اسکریپت‌های انتخاب‌شده',
 		'Submit' => 'ارسال',
 		'Paying as customer' => 'پرداخت به عنوان مشتری',

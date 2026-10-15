@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Dezactivați wp_head',
 		'Disable wp_footer' => 'Dezactivați wp_footer',
 		'Disable Selected Styles' => 'Dezactivați stilurile selectate',
+		'always removed on the POS payment page' => 'este eliminat întotdeauna de pe pagina de plată POS',
 		'Disable Selected Scripts' => 'Dezactivați scripturile selectate',
 		'Submit' => 'Trimiteți',
 		'Paying as customer' => 'Plătiți ca client',

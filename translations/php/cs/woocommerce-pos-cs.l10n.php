@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Zakázat wp_head',
 		'Disable wp_footer' => 'Zakázat wp_footer',
 		'Disable Selected Styles' => 'Zakázat vybrané styly',
+		'always removed on the POS payment page' => 'vždy se odstraní ze stránky plateb v POS',
 		'Disable Selected Scripts' => 'Zakázat vybrané skripty',
 		'Submit' => 'Odeslat',
 		'Paying as customer' => 'Platba jako zákazník',

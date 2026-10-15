@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'បិទ wp_head',
 		'Disable wp_footer' => 'បិទ wp_footer',
 		'Disable Selected Styles' => 'បិទបាំងរចនាប័ទ្មដែលបានជ្រើស',
+		'always removed on the POS payment page' => 'តែងតែត្រូវបានលុបចេញពីទំព័រទូទាត់ POS',
 		'Disable Selected Scripts' => 'បិទបាំងស្គ្រីបដែលបានជ្រើស',
 		'Submit' => 'ដាក់ស្នើ',
 		'Paying as customer' => 'កំពុងបង់ប្រាក់ជាអតិថិជន',

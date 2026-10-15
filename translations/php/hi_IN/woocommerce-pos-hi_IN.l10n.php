@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_head अक्षम करें',
 		'Disable wp_footer' => 'wp_footer अक्षम करें',
 		'Disable Selected Styles' => 'चयनित शैलियाँ अक्षम करें',
+		'always removed on the POS payment page' => 'POS भुगतान पेज से हमेशा हटाया जाता है',
 		'Disable Selected Scripts' => 'चयनित स्क्रिप्ट अक्षम करें',
 		'Submit' => 'प्रस्तुत करें',
 		'Paying as customer' => 'ग्राहक के रूप में भुगतान',

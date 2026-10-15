@@ -73,7 +73,7 @@ msgstr "Aktivera permalänkar"
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
-#: includes/Templates/Payment.php:316
+#: includes/Templates/Payment.php:341
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Kassör"
@@ -321,8 +321,8 @@ msgstr ""
 #: includes/Form_Handler.php:66
 #: includes/Form_Handler.php:80
 #: includes/Form_Handler.php:94
-#: includes/Templates/Payment.php:178
-#: includes/Templates/Payment.php:458
+#: includes/Templates/Payment.php:199
+#: includes/Templates/Payment.php:483
 #: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Fel"
@@ -869,8 +869,8 @@ msgstr "En stängningsmall krävs."
 
 #. translators: Error message displayed when a template cannot be found.
 #: includes/API/V1/Receipts_Controller.php:304
-#: includes/Template_Router.php:246
-#: includes/Template_Router.php:264
+#: includes/Template_Router.php:257
+#: includes/Template_Router.php:275
 msgid "Template not found."
 msgstr "Mallen hittades inte."
 
@@ -900,11 +900,11 @@ msgstr "Det gick inte att läsa kvittodokumentet."
 msgid "Sorry, you cannot view receipts."
 msgstr "Tyvärr kan du inte visa kvitton."
 
-#: includes/API/V1/Settings.php:195
+#: includes/API/V1/Settings.php:189
 msgid "This payment method does not list terminals."
 msgstr "Den här betalningsmetoden har inga terminaler angivna."
 
-#: includes/API/V1/Settings.php:471
+#: includes/API/V1/Settings.php:458
 msgid "Settings section not registered."
 msgstr "Inställningssektionen har inte registrerats."
 
@@ -1647,7 +1647,7 @@ msgid "An identical request is already being processed."
 msgstr "En identisk begäran behandlas redan."
 
 #: includes/Services/Auth.php:410
-#: includes/Services/Auth.php:502
+#: includes/Services/Auth.php:504
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT är inte korrekt konfigurerad, vänligen kontakta administratören"
 
@@ -1821,7 +1821,7 @@ msgstr "POS-proveniensnycklar kan inte ändras efter försäljningen: %s"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:506
-#: includes/Templates/Payment.php:334
+#: includes/Templates/Payment.php:359
 #: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
 msgstr "Gäst"
@@ -4922,8 +4922,8 @@ msgstr ""
 "Kan inte slutföra ordern: lagret räcker inte till för %d artikel/artiklar."
 
 #. translators: %s: WP Overnight document type.
-#: includes/Services/Template_Pdf_Service.php:132
-#: includes/Services/Template_Pdf_Service.php:145
+#: includes/Services/Template_Pdf_Service.php:133
+#: includes/Services/Template_Pdf_Service.php:146
 #, php-format
 msgid "WP Overnight %s PDF could not be generated."
 msgstr "WP Overnight-%s-PDF kunde inte genereras."
@@ -5369,52 +5369,52 @@ msgstr "Säsong"
 msgid "Promotion"
 msgstr "Kampanj"
 
-#: includes/Templates/Auth.php:113
+#: includes/Templates/Auth.php:127
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Saknad eller ogiltig redirect_uri parameter."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:119
+#: includes/Templates/Auth.php:133
 msgid "Missing state parameter."
 msgstr "Saknad state parameter."
 
-#: includes/Templates/Auth.php:131
+#: includes/Templates/Auth.php:145
 msgid "Too many requests. Please try again later."
 msgstr "För många förfrågningar. Försök igen senare."
 
-#: includes/Templates/Auth.php:267
+#: includes/Templates/Auth.php:361
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "Autentiseringssessionen har gått ut. Försök logga in igen från appen."
 
-#: includes/Templates/Auth.php:273
+#: includes/Templates/Auth.php:367
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Ogiltig autentiseringssession. Försök logga in igen från appen."
 
-#: includes/Templates/Auth.php:293
+#: includes/Templates/Auth.php:387
 msgid "Security check failed. Please try again."
 msgstr "Säkerhetskontroll misslyckades. Försök igen."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:303
+#: includes/Templates/Auth.php:397
 msgid "Authentication failed."
 msgstr "Autentisering misslyckades."
 
-#: includes/Templates/Auth.php:313
+#: includes/Templates/Auth.php:407
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Detta konto är tillfälligt låst på grund av för många misslyckade inloggningsförsök. Försök igen senare."
 
-#: includes/Templates/Auth.php:354
+#: includes/Templates/Auth.php:448
 msgid "Failed to generate authentication tokens."
 msgstr "Misslyckades med att generera autentiseringstoken."
 
-#: includes/Templates/Auth.php:404
+#: includes/Templates/Auth.php:498
 msgid "Please enter both username and password."
 msgstr "Ange både användarnamn och lösenord."
 
-#: includes/Templates/Auth.php:418
-#: includes/Templates/Auth.php:427
+#: includes/Templates/Auth.php:512
+#: includes/Templates/Auth.php:521
 msgid "Invalid username or password."
 msgstr "Ogiltigt användarnamn eller lösenord."
 
@@ -5830,76 +5830,82 @@ msgstr ""
 msgid "Thermal Closure"
 msgstr "Termoutskrift av stängning"
 
-#: includes/Templates/Payment.php:176
+#: includes/Templates/Payment.php:197
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig."
 
-#: includes/Templates/Payment.php:195
+#: includes/Templates/Payment.php:216
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "Denna beställning kan inte betalas. Kontakta oss om du behöver hjälp."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:202
+#: includes/Templates/Payment.php:224
 msgid "Pay for order"
 msgstr "Betala för beställning"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:237
+#: includes/Templates/Payment.php:260
 msgid "Checkout Settings"
 msgstr "Inställningar för kassan"
 
-#: includes/Templates/Payment.php:243
+#: includes/Templates/Payment.php:266
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Skript och stilar kan störa den anpassade betalningsmallen, använd detta formulär för att ta bort problematiska skript."
 
-#: includes/Templates/Payment.php:245
+#: includes/Templates/Payment.php:268
 msgid "Disable All Styles and Scripts"
 msgstr "Inaktivera alla stilar och skript"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:248
+#: includes/Templates/Payment.php:271
 msgid "Disable wp_head"
 msgstr "Inaktivera wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:253
+#: includes/Templates/Payment.php:276
 msgid "Disable wp_footer"
 msgstr "Inaktivera wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:258
+#: includes/Templates/Payment.php:281
 msgid "Disable Selected Styles"
 msgstr "Inaktivera valda stilar"
 
+#: includes/Templates/Payment.php:288
+#: includes/Templates/Payment.php:300
+msgid "always removed on the POS payment page"
+msgstr "tas alltid bort från POS-betalningssidan"
+
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:269
+#: includes/Templates/Payment.php:293
 msgid "Disable Selected Scripts"
 msgstr "Inaktivera valda skript"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:281
+#: includes/Templates/Payment.php:306
 msgid "Submit"
 msgstr "Skicka"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:358
 msgid "Paying as customer"
 msgstr "Betalar som kund"
 
-#: includes/Templates/Payment.php:434
+#: includes/Templates/Payment.php:459
+#: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Tyvärr, denna beställning är ogiltig och kan inte betalas."
 
-#: includes/Templates/Payment.php:438
+#: includes/Templates/Payment.php:463
 msgid "Sorry, this order has already been paid for."
 msgstr "Tyvärr, denna beställning har redan betalats."
 
-#: includes/Templates/Payment.php:456
+#: includes/Templates/Payment.php:481
 msgid "You do not have permission to modify checkout settings."
 msgstr "Du har inte behörighet att modifiera justeringsinställningarna."
 

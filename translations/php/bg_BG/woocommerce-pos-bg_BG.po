@@ -73,7 +73,7 @@ msgstr "Активирайте пермалинкове"
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
-#: includes/Templates/Payment.php:316
+#: includes/Templates/Payment.php:341
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Касиер"
@@ -321,8 +321,8 @@ msgstr ""
 #: includes/Form_Handler.php:66
 #: includes/Form_Handler.php:80
 #: includes/Form_Handler.php:94
-#: includes/Templates/Payment.php:178
-#: includes/Templates/Payment.php:458
+#: includes/Templates/Payment.php:199
+#: includes/Templates/Payment.php:483
 #: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Грешка"
@@ -870,8 +870,8 @@ msgstr "Необходим е шаблон за приключване."
 
 #. translators: Error message displayed when a template cannot be found.
 #: includes/API/V1/Receipts_Controller.php:304
-#: includes/Template_Router.php:246
-#: includes/Template_Router.php:264
+#: includes/Template_Router.php:257
+#: includes/Template_Router.php:275
 msgid "Template not found."
 msgstr "Шаблонът не е намерен."
 
@@ -902,11 +902,11 @@ msgstr "Документът на касовата бележка не можа 
 msgid "Sorry, you cannot view receipts."
 msgstr "Съжаляваме, не можете да разгледате сч. наст."
 
-#: includes/API/V1/Settings.php:195
+#: includes/API/V1/Settings.php:189
 msgid "This payment method does not list terminals."
 msgstr "Този метод на плащане не показва терминали."
 
-#: includes/API/V1/Settings.php:471
+#: includes/API/V1/Settings.php:458
 msgid "Settings section not registered."
 msgstr "Секцията с настройките не е регистрирана."
 
@@ -1651,7 +1651,7 @@ msgid "An identical request is already being processed."
 msgstr "Идентична заявка вече се обработва."
 
 #: includes/Services/Auth.php:410
-#: includes/Services/Auth.php:502
+#: includes/Services/Auth.php:504
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT не е конфигуриран правилно, моля свържете се с администратора"
 
@@ -1825,7 +1825,7 @@ msgstr ""
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:506
-#: includes/Templates/Payment.php:334
+#: includes/Templates/Payment.php:359
 #: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
 msgstr "Гост"
@@ -4929,8 +4929,8 @@ msgstr ""
 "Поръчката не може да бъде завършена: наличността не достига за %d артикула."
 
 #. translators: %s: WP Overnight document type.
-#: includes/Services/Template_Pdf_Service.php:132
-#: includes/Services/Template_Pdf_Service.php:145
+#: includes/Services/Template_Pdf_Service.php:133
+#: includes/Services/Template_Pdf_Service.php:146
 #, php-format
 msgid "WP Overnight %s PDF could not be generated."
 msgstr "PDF за WP Overnight %s не можа да бъде генериран."
@@ -5377,54 +5377,54 @@ msgstr "Сезонни"
 msgid "Promotion"
 msgstr "Промоция"
 
-#: includes/Templates/Auth.php:113
+#: includes/Templates/Auth.php:127
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Липсващ или невалиден параметър redirect_uri."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:119
+#: includes/Templates/Auth.php:133
 msgid "Missing state parameter."
 msgstr "Липсващ параметър за състояние."
 
-#: includes/Templates/Auth.php:131
+#: includes/Templates/Auth.php:145
 msgid "Too many requests. Please try again later."
 msgstr "Твърде много заявки. Моля, опитайте отново по-късно."
 
-#: includes/Templates/Auth.php:267
+#: includes/Templates/Auth.php:361
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Сесията за удостоверяване е изтекла. Моля, опитайте да влезете отново от приложението."
 
-#: includes/Templates/Auth.php:273
+#: includes/Templates/Auth.php:367
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Невалидна сесия за удостоверяване. Моля, опитайте да влезете отново от приложението."
 
-#: includes/Templates/Auth.php:293
+#: includes/Templates/Auth.php:387
 msgid "Security check failed. Please try again."
 msgstr "Проверката за сигурност не бе успешна. Моля, опитайте отново."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:303
+#: includes/Templates/Auth.php:397
 msgid "Authentication failed."
 msgstr "Удостоверяването не бе успешно."
 
-#: includes/Templates/Auth.php:313
+#: includes/Templates/Auth.php:407
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Този акаунт е временно заключен поради твърде много неуспешни опити за влизане. Моля, опитайте отново по-късно."
 
-#: includes/Templates/Auth.php:354
+#: includes/Templates/Auth.php:448
 msgid "Failed to generate authentication tokens."
 msgstr "Неуспешно генериране на токени за удостоверяване."
 
-#: includes/Templates/Auth.php:404
+#: includes/Templates/Auth.php:498
 msgid "Please enter both username and password."
 msgstr "Моля, въведете както потребителско име, така и парола."
 
-#: includes/Templates/Auth.php:418
-#: includes/Templates/Auth.php:427
+#: includes/Templates/Auth.php:512
+#: includes/Templates/Auth.php:521
 msgid "Invalid username or password."
 msgstr "Невалидно потребителско име или парола."
 
@@ -5840,77 +5840,83 @@ msgstr ""
 msgid "Thermal Closure"
 msgstr "Приключване за термопринтер"
 
-#: includes/Templates/Payment.php:176
+#: includes/Templates/Payment.php:197
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Съжаляваме, тази поръчка не може да бъде платена. Липсва ключ за поръчка или е невалиден."
 
-#: includes/Templates/Payment.php:195
+#: includes/Templates/Payment.php:216
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:202
+#: includes/Templates/Payment.php:224
 msgid "Pay for order"
 msgstr "Плащане на поръчка"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:237
+#: includes/Templates/Payment.php:260
 msgid "Checkout Settings"
 msgstr "Настройки за плащане"
 
-#: includes/Templates/Payment.php:243
+#: includes/Templates/Payment.php:266
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Скриптовете и стиловете могат да пречат на персонализирания шаблон за плащане, използвайте тази форма, за да премахнете проблемните скриптове."
 
-#: includes/Templates/Payment.php:245
+#: includes/Templates/Payment.php:268
 msgid "Disable All Styles and Scripts"
 msgstr "Деактивиране на всички стилове и скриптове"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:248
+#: includes/Templates/Payment.php:271
 msgid "Disable wp_head"
 msgstr "Деактивиране на wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:253
+#: includes/Templates/Payment.php:276
 msgid "Disable wp_footer"
 msgstr "Деактивиране на wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:258
+#: includes/Templates/Payment.php:281
 msgid "Disable Selected Styles"
 msgstr "Деактивиране на избраните стилове"
 
+#: includes/Templates/Payment.php:288
+#: includes/Templates/Payment.php:300
+msgid "always removed on the POS payment page"
+msgstr "винаги се премахва от страницата за плащане на POS"
+
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:269
+#: includes/Templates/Payment.php:293
 msgid "Disable Selected Scripts"
 msgstr "Деактивиране на избраните скриптове"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:281
+#: includes/Templates/Payment.php:306
 msgid "Submit"
 msgstr "Изпрати"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:358
 msgid "Paying as customer"
 msgstr "Плащане като клиент"
 
-#: includes/Templates/Payment.php:434
+#: includes/Templates/Payment.php:459
+#: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Съжаляваме, тази поръчка е невалидна и не може да бъде платена."
 
-#: includes/Templates/Payment.php:438
+#: includes/Templates/Payment.php:463
 msgid "Sorry, this order has already been paid for."
 msgstr "Съжаляваме, тази поръчка вече е платена."
 
-#: includes/Templates/Payment.php:456
+#: includes/Templates/Payment.php:481
 msgid "You do not have permission to modify checkout settings."
 msgstr "Нямате разрешение да измените настройките на пункта за плащане."
 

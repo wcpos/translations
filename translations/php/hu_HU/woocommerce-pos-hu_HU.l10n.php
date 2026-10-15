@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_head letiltása',
 		'Disable wp_footer' => 'wp_footer letiltása',
 		'Disable Selected Styles' => 'Kiválasztott stílusok letiltása',
+		'always removed on the POS payment page' => 'mindig eltávolítják a POS fizetési oldaláról',
 		'Disable Selected Scripts' => 'Kiválasztott szkriptek letiltása',
 		'Submit' => 'Beküldés',
 		'Paying as customer' => 'Fizetés vásárlóként',

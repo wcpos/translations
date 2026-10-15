@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => '禁用 wp_head',
 		'Disable wp_footer' => '禁用 wp_footer',
 		'Disable Selected Styles' => '禁用选定的样式',
+		'always removed on the POS payment page' => '始终从 POS 付款页面移除',
 		'Disable Selected Scripts' => '禁用选定的脚本',
 		'Submit' => '提交',
 		'Paying as customer' => '以顾客身份支付',

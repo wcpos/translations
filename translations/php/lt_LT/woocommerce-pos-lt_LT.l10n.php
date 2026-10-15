@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Išjungti wp_head',
 		'Disable wp_footer' => 'Išjungti wp_footer',
 		'Disable Selected Styles' => 'Išjungti pasirinktus stilius',
+		'always removed on the POS payment page' => 'visada pašalinama iš POS mokėjimo puslapio',
 		'Disable Selected Scripts' => 'Išjungti pasirinktus skriptus',
 		'Submit' => 'Pateikti',
 		'Paying as customer' => 'Mokama kaip klientas',

@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Вимкнути wp_head',
 		'Disable wp_footer' => 'Вимкнути wp_footer',
 		'Disable Selected Styles' => 'Вимкнути вибрані стилі',
+		'always removed on the POS payment page' => 'завжди видаляється зі сторінки оплати POS',
 		'Disable Selected Scripts' => 'Вимкнути вибрані скрипти',
 		'Submit' => 'Надіслати',
 		'Paying as customer' => 'Оплата як клієнт',
