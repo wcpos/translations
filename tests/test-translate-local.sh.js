@@ -68,17 +68,34 @@ if (tool === 'git') {
     const counts = (call === 1 ? config.counts || [2, 1] : config.remainingCounts || []), locales = {};
     const out = args[args.lastIndexOf('--out') + 1];
     fs.mkdirSync(out, { recursive: true });
+    for (const file of fs.readdirSync(out)) if (file.endsWith('.json')) fs.unlinkSync(path.join(out, file));
     fs.writeFileSync(counter, String(call));
     counts.forEach((n, i) => {
+      if (!n) return;
       const locale = ['aa', 'bb'][i]; locales[locale] = { js: n, php: 0 };
       const js = { 'app/x.json': Object.fromEntries(Array.from({ length: n }, (_, k) => ['k' + (k + 1), { source: 's' + (k + 1) }])) };
       fs.writeFileSync(path.join(out, locale + '.json'), JSON.stringify({ locale, counts: locales[locale], source: config.packetSource || 'original', js, php: {} }));
     });
     console.log(JSON.stringify({ total: counts.reduce((a, b) => a + b, 0), locales }));
+  } else if (args[0].endsWith('seed-from-lane.js')) {
+    const seeded = config.seeded || 0, out = args[args.indexOf('--out') + 1];
+    if (seeded) for (const dir of ['work', 'results']) {
+      fs.mkdirSync(path.join(out, dir), { recursive: true });
+      fs.writeFileSync(path.join(out, dir, 'aa.json'), JSON.stringify({ locale: 'aa', js: {}, php: {} }));
+    }
+    console.log(JSON.stringify({ seeded, locales: {} }));
   } else if (args[0].endsWith('apply-translations.js')) {
-    const locales = [...new Set(fs.readdirSync('.translate/results').filter(f => f.endsWith('.json')).map(f => f.replace(/(\.part\d+)?\.json$/, '')))];
+    const results = args.includes('--results') ? args[args.indexOf('--results') + 1] : '.translate/results';
+    const work = args.includes('--work') ? args[args.indexOf('--work') + 1] : '.translate/work';
+    const reportFile = args.includes('--report') ? args[args.indexOf('--report') + 1] : '.translate/report.json';
+    if (work === '.translate/promote/work' && results === '.translate/promote/results') {
+      fs.writeFileSync(reportFile, JSON.stringify({ applied: config.seeded, files_written: ['translations/js/aa/app/x.json'] }));
+      fs.writeFileSync('.translate/accepted', '');
+      process.exit(0);
+    }
+    const locales = [...new Set(fs.readdirSync(results).filter(f => f.endsWith('.json')).map(f => f.replace(/(\.part\d+)?\.json$/, '')))];
     const report = { applied: locales.length, files_written: locales.map(l => 'translations/js/' + l + '/app.json') };
-    fs.writeFileSync('.translate/report.json', JSON.stringify(report));
+    fs.writeFileSync(reportFile, JSON.stringify(report));
     fs.writeFileSync('.translate/report.md', 'REPORT\n');
     if (locales.length) fs.writeFileSync('.translate/accepted', '');
     console.log(JSON.stringify({ applied: locales.length, rejected: 0, warnings: 0, files: locales.length }));
@@ -181,6 +198,7 @@ if (tool === 'git') {
   assert.match(result.stdout, /review 1 failed/);
   result = run();
   assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => isCall(c, 'node', 'scripts/seed-from-lane.js', '--ref', 'origin/next')));
   const cleanupIndex = result.calls.findIndex(c => c.tool === 'node' && c.args[0] === 'scripts/cleanup-stale-keys.js');
   assert.ok(cleanupIndex !== -1);
   assert.ok(cleanupIndex > result.calls.findIndex(c => isCall(c, 'node', 'scripts/apply-translations.js')));
@@ -277,6 +295,41 @@ if (tool === 'git') {
   assert.equal(result.status, 0, result.stderr);
   assert.ok(result.calls.some(c => c.tool === 'codex'));
   assert.ok(!fs.existsSync(state));
+  result = run({ counts: [2], seeded: 2, remainingCounts: [] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
+  assert.ok(!result.calls.some(c => isCall(c, 'node', 'scripts/translate-chunks.js', 'plan')));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'commit') && c.args.some(arg => arg.includes('translate 2 strings'))));
+  assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'create')));
+  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /Promoted 2 strings from next \(identical English source\)\.\n\nApplied 2 strings for 1 locales \(aa\); translator: codex \(gpt-6-luna\); review: skipped\./);
+  result = run({ counts: [2, 1], seeded: 2, remainingCounts: [0, 1] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  const prompts = result.calls.filter(c => c.tool === 'prompt');
+  assert.ok(prompts.length > 0);
+  for (const { prompt } of prompts) {
+    assert.match(prompt, /\/bb\.json/);
+    assert.doesNotMatch(prompt, /\/aa\.json/);
+  }
+  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /Promoted 2 strings from next \(identical English source\)\.\n\nApplied 3 strings for 2 locales \(aa, bb\)/);
+  for (const args of [['--base', 'next'], ['--dry-run']]) {
+    result = run({ seeded: 2 }, args);
+    assert.equal(result.status, 0, result.stderr);
+    assert.ok(!result.calls.some(c => isCall(c, 'node', 'scripts/seed-from-lane.js')));
+  }
+  const postPromotion = JSON.stringify({
+    locale: 'bb', counts: { js: 1, php: 0 }, source: 'original',
+    js: { 'app/x.json': { k1: { source: 's1' } } }, php: {},
+  });
+  const promotedState = `${Math.floor(Date.now() / 1000)}\n${createHash('sha256').update(postPromotion).digest('hex')}\n`;
+  fs.writeFileSync(state, promotedState);
+  result = run({ counts: [2, 1], seeded: 2, remainingCounts: [0, 1] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /skipping the model/);
+  assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'commit')));
+  assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'create')));
+  assert.equal(fs.readFileSync(state, 'utf8'), promotedState);
   console.log('translate-local checks passed');
 } finally {
   fs.rmSync(root, { recursive: true, force: true });
