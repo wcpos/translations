@@ -78,10 +78,22 @@ jobs:
           echo "Copied free plugin POT file from wcpos/$REPO@$REF:$POT_FILE"
           grep -c '^msgid ' source/php/woocommerce-pos.pot || true
 
+      # Pushes to main use the translations-ci App token: ruleset 24240730 lets only that App
+      # bypass its required check (GITHUB_TOKEN pushes are refused with GH013).
+      - name: Generate translations push token
+        id: push-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: translations
+          permission-contents: write
+
       - name: Commit
         id: commit
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.push-token.outputs.token }}
         run: |
           LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
@@ -199,10 +211,22 @@ jobs:
           echo "Copied pro plugin POT file from wcpos/$REPO@$REF:$POT_FILE"
           grep -c '^msgid ' source/php/woocommerce-pos-pro.pot || true
 
+      # Pushes to main use the translations-ci App token: ruleset 24240730 lets only that App
+      # bypass its required check (GITHUB_TOKEN pushes are refused with GH013).
+      - name: Generate translations push token
+        id: push-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v2
+        with:
+          app-id: ${{ secrets.TRANSLATION_APP_ID }}
+          private-key: ${{ secrets.TRANSLATION_APP_PRIVATE_KEY }}
+          owner: wcpos
+          repositories: translations
+          permission-contents: write
+
       - name: Commit
         id: commit
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.push-token.outputs.token }}
         run: |
           LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
