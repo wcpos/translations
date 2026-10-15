@@ -53,6 +53,7 @@ jobs:
             echo "::error::git ls-remote failed with status $status"
             exit "$status"
           fi
+          php --version | head -1 || echo "::warning::php not found; a translations conflict will fail the sync"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for attempt in 1 2 3; do

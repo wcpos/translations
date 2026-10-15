@@ -22,7 +22,7 @@ function mergePo(nextText, mainText) {
 }
 
 function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
-  const run = (command, args) => execFileSync(command, args, { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const run = (command, args) => execFileSync(command, args, { cwd, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
   const git = (...args) => run('git', args);
   const conflicts = new Map();
   for (const record of git('ls-files', '-u', '-z').split('\0').filter(Boolean)) {
