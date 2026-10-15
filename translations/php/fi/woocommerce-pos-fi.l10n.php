@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Poista wp_head käytöstä',
 		'Disable wp_footer' => 'Poista wp_footer käytöstä',
 		'Disable Selected Styles' => 'Poista valitut tyylit käytöstä',
+		'always removed on the POS payment page' => 'poistetaan aina POS-maksusivulta',
 		'Disable Selected Scripts' => 'Poista valitut skriptit käytöstä',
 		'Submit' => 'Lähetä',
 		'Paying as customer' => 'Maksaa asiakkaana',

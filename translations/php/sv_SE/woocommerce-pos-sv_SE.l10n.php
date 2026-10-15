@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Inaktivera wp_head',
 		'Disable wp_footer' => 'Inaktivera wp_footer',
 		'Disable Selected Styles' => 'Inaktivera valda stilar',
+		'always removed on the POS payment page' => 'tas alltid bort från POS-betalningssidan',
 		'Disable Selected Scripts' => 'Inaktivera valda skript',
 		'Submit' => 'Skicka',
 		'Paying as customer' => 'Betalar som kund',

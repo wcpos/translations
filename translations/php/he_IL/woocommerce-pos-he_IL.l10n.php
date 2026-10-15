@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'השבת wp_head',
 		'Disable wp_footer' => 'השבת wp_footer',
 		'Disable Selected Styles' => 'השבת סגנונות נבחרים',
+		'always removed on the POS payment page' => 'מוסר תמיד מדף התשלום ב-POS',
 		'Disable Selected Scripts' => 'השבת סקריפטים נבחרים',
 		'Submit' => 'שלח',
 		'Paying as customer' => 'משלם כלקוח',

@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_head\'i Devre Dışı Bırak',
 		'Disable wp_footer' => 'wp_footer\'ı Devre Dışı Bırak',
 		'Disable Selected Styles' => 'Seçili Stilleri Devre Dışı Bırak',
+		'always removed on the POS payment page' => 'POS ödeme sayfasından her zaman kaldırılır',
 		'Disable Selected Scripts' => 'Seçili Betikleri Devre Dışı Bırak',
 		'Submit' => 'Gönder',
 		'Paying as customer' => 'Müşteri olarak ödeme yapılıyor',

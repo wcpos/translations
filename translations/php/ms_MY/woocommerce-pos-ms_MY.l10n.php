@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Nyahaktif wp_head',
 		'Disable wp_footer' => 'Nyahaktif wp_footer',
 		'Disable Selected Styles' => 'Nyahaktif Gaya Terpilih',
+		'always removed on the POS payment page' => 'sentiasa dialih keluar daripada halaman pembayaran POS',
 		'Disable Selected Scripts' => 'Nyahaktif Skrip Terpilih',
 		'Submit' => 'Hantar',
 		'Paying as customer' => 'Membayar sebagai pelanggan',

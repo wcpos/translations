@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'تعطيل wp_head',
 		'Disable wp_footer' => 'تعطيل wp_footer',
 		'Disable Selected Styles' => 'تعطيل الأنماط المحددة',
+		'always removed on the POS payment page' => 'يُزال دائمًا من صفحة الدفع في POS',
 		'Disable Selected Scripts' => 'تعطيل السكربتات المحددة',
 		'Submit' => 'إرسال',
 		'Paying as customer' => 'الدفع كعميل',

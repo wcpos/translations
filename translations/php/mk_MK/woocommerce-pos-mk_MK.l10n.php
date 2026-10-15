@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Оневозможи wp_head',
 		'Disable wp_footer' => 'Оневозможи wp_footer',
 		'Disable Selected Styles' => 'Оневозможи избрани стилови',
+		'always removed on the POS payment page' => 'секогаш се отстранува од страницата за плаќање на POS',
 		'Disable Selected Scripts' => 'Оневозможи избрани скрипти',
 		'Submit' => 'Поднеси',
 		'Paying as customer' => 'Плаќање како клиент',

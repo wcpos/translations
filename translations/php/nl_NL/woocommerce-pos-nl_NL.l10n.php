@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_head uitschakelen',
 		'Disable wp_footer' => 'wp_footer uitschakelen',
 		'Disable Selected Styles' => 'Geselecteerde stijlen uitschakelen',
+		'always removed on the POS payment page' => 'wordt altijd verwijderd van de POS-betaalpagina',
 		'Disable Selected Scripts' => 'Geselecteerde scripts uitschakelen',
 		'Submit' => 'Verzenden',
 		'Paying as customer' => 'Betalen als klant',

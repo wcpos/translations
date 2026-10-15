@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_head 비활성화',
 		'Disable wp_footer' => 'wp_footer 비활성화',
 		'Disable Selected Styles' => '선택한 스타일 비활성화',
+		'always removed on the POS payment page' => 'POS 결제 페이지에서 항상 제거됩니다',
 		'Disable Selected Scripts' => '선택한 스크립트 비활성화',
 		'Submit' => '제출',
 		'Paying as customer' => '고객으로 결제',

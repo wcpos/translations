@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Vô hiệu hóa wp_head',
 		'Disable wp_footer' => 'Vô hiệu hóa wp_footer',
 		'Disable Selected Styles' => 'Vô hiệu hóa Styles đã chọn',
+		'always removed on the POS payment page' => 'luôn bị xóa khỏi trang thanh toán POS',
 		'Disable Selected Scripts' => 'Vô hiệu hóa Scripts đã chọn',
 		'Submit' => 'Gửi',
 		'Paying as customer' => 'Thanh toán với tư cách khách hàng',

@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Slökkva á wp_head',
 		'Disable wp_footer' => 'Slökkva á wp_footer',
 		'Disable Selected Styles' => 'Slökkva á völdum stílum',
+		'always removed on the POS payment page' => 'er alltaf fjarlægt af greiðslusíðu POS',
 		'Disable Selected Scripts' => 'Slökkva á völdum skriptum',
 		'Submit' => 'Senda',
 		'Paying as customer' => 'Greiða sem viðskiptavinur',

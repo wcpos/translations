@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Απενεργοποίηση wp_head',
 		'Disable wp_footer' => 'Απενεργοποίηση wp_footer',
 		'Disable Selected Styles' => 'Απενεργοποίηση επιλεγμένων στυλ',
+		'always removed on the POS payment page' => 'αφαιρείται πάντα από τη σελίδα πληρωμής του POS',
 		'Disable Selected Scripts' => 'Απενεργοποίηση επιλεγμένων scripts',
 		'Submit' => 'Υποβολή',
 		'Paying as customer' => 'Πληρωμή ως πελάτης',

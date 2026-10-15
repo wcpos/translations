@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'Disabilita wp_head',
 		'Disable wp_footer' => 'Disabilita wp_footer',
 		'Disable Selected Styles' => 'Disabilita gli stili selezionati',
+		'always removed on the POS payment page' => 'viene sempre rimosso dalla pagina di pagamento del POS',
 		'Disable Selected Scripts' => 'Disabilita gli script selezionati',
 		'Submit' => 'Invia',
 		'Paying as customer' => 'Pagando come cliente',

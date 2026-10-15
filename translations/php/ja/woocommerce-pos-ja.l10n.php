@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'wp_headを無効にする',
 		'Disable wp_footer' => 'wp_footerを無効にする',
 		'Disable Selected Styles' => '選択されたスタイルを無効にする',
+		'always removed on the POS payment page' => 'POSの決済ページでは常に削除されます',
 		'Disable Selected Scripts' => '選択されたスクリプトを無効にする',
 		'Submit' => '送信',
 		'Paying as customer' => '顧客として支払う',

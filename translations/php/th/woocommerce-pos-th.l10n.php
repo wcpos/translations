@@ -1121,6 +1121,7 @@ return array(
 		'Disable wp_head' => 'ปิดใช้งาน wp_head',
 		'Disable wp_footer' => 'ปิดใช้งาน wp_footer',
 		'Disable Selected Styles' => 'ปิดใช้งานสไตล์ที่เลือก',
+		'always removed on the POS payment page' => 'ถูกนำออกจากหน้าชำระเงิน POS เสมอ',
 		'Disable Selected Scripts' => 'ปิดใช้งานสคริปต์ที่เลือก',
 		'Submit' => 'ส่ง',
 		'Paying as customer' => 'ชำระเงินในฐานะลูกค้า',
