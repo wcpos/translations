@@ -1,4 +1,4 @@
-# Opens (or comments on) a `pipeline` issue when a translations pipeline workflow fails,
+# Opens (or comments on) a `pipeline` issue when a pipeline workflow fails, times out or fails to start,
 # so a stalled pipeline is noticed (2026-10-15: nothing shipped for two weeks while
 # Receive and Release failed silently).
 name: Pipeline alert
@@ -11,9 +11,13 @@ on:
 permissions:
   issues: write
 
+concurrency:
+  group: pipeline-alert-${{ github.event.workflow_run.name }}
+  cancel-in-progress: false
+
 jobs:
   alert:
-    if: github.event.workflow_run.conclusion == 'failure'
+    if: contains(fromJSON('["failure","timed_out","startup_failure"]'), github.event.workflow_run.conclusion)
     runs-on: ubuntu-latest
     steps:
       - name: Open or update pipeline issue
@@ -26,6 +30,7 @@ jobs:
           SHA: ${{ github.event.workflow_run.head_sha }}
           EVENT: ${{ github.event.workflow_run.event }}
         run: |
+          set -o pipefail
           title="Pipeline failure: $WORKFLOW"
           body=$(printf '%s\n' \
             "Workflow: $WORKFLOW" \

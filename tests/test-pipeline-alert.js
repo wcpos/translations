@@ -24,8 +24,12 @@ check('runs when a workflow completes', () => {
   assert.match(workflow, /^    types: \[completed\]$/m);
 });
 
-check('alerts only on failure', () => {
-  assert.match(workflow, /^  alert:\n    if: github\.event\.workflow_run\.conclusion == 'failure'$/m);
+check('alerts on failure, timed_out and startup_failure', () => {
+  assert.match(workflow, /^  alert:\n    if: contains\(fromJSON\('\["failure","timed_out","startup_failure"\]'\), github\.event\.workflow_run\.conclusion\)$/m);
+});
+
+check('serialises alerts per workflow without cancelling', () => {
+  assert.match(workflow, /^concurrency:\n  group: pipeline-alert-\$\{\{ github\.event\.workflow_run\.name \}\}\n  cancel-in-progress: false$/m);
 });
 
 check('grants only issues write permission', () => {
@@ -53,6 +57,10 @@ for (const line of lines.slice(runIndex + 1)) {
 }
 const script = scriptLines.join('\n');
 
+check('run block sets pipefail', () => {
+  assert.strictEqual(scriptLines[0], 'set -o pipefail');
+});
+
 check('run block contains no GitHub expressions', () => {
   assert.ok(script.trim(), 'run block is empty');
   assert.ok(!script.includes('${{'));
@@ -63,7 +71,7 @@ if (spawnSync('bash', ['--noprofile', '--norc', '-c', 'command -v jq']).status !
   process.exit(0);
 }
 
-function scenario(name, issues, verify) {
+function scenario(name, issues, verify, { listFails = false, expectStatus = 0 } = {}) {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'pipeline-alert-'));
   try {
     const fakeBin = path.join(tempRoot, 'bin');
@@ -77,6 +85,7 @@ const fs = require('node:fs');
 const args = process.argv.slice(2);
 fs.appendFileSync(process.env.GH_LOG, args.map(arg => JSON.stringify(arg)).join('\t') + '\\n');
 if (args[0] === 'issue' && args[1] === 'list') {
+  if (process.env.GH_LIST_FAIL === '1') process.exit(1);
   process.stdout.write(fs.readFileSync(process.env.GH_LIST_JSON));
 }
 `, { mode: 0o755 });
@@ -89,6 +98,7 @@ if (args[0] === 'issue' && args[1] === 'list') {
         PATH: `${fakeBin}:${process.env.PATH}`,
         GH_LOG: log,
         GH_LIST_JSON: listJson,
+        GH_LIST_FAIL: listFails ? '1' : '0',
         GH_TOKEN: 'test',
         GH_REPO: 'test/translations',
         WORKFLOW: 'Release',
@@ -99,7 +109,7 @@ if (args[0] === 'issue' && args[1] === 'list') {
       },
     });
     assert.ifError(result.error);
-    assert.strictEqual(result.status, 0, `${name}: ${result.stdout}${result.stderr}`);
+    assert.strictEqual(result.status, expectStatus, `${name}: ${result.stdout}${result.stderr}`);
     const calls = fs.readFileSync(log, 'utf8').trim().split('\n')
       .map(line => line.split('\t').map(arg => JSON.parse(arg)));
     verify(calls);
@@ -140,3 +150,9 @@ scenario('another workflow issue does not prevent creation', [
   assert.ok(calls.some(args => args[0] === 'issue' && args[1] === 'create'));
   assert.ok(!calls.some(args => args[0] === 'issue' && args[1] === 'comment'));
 });
+
+scenario('failed issue list stops without creating an issue', [], calls => {
+  assert.ok(!calls.some(args => args[0] === 'issue' && args[1] === 'create'));
+  assert.ok(!calls.some(args => args[0] === 'issue' && args[1] === 'comment'));
+  assert.ok(!calls.some(args => args[0] === 'label' && args[1] === 'create'));
+}, { listFails: true, expectStatus: 1 });
