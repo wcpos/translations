@@ -60,9 +60,23 @@ jobs:
             git checkout -B next origin/next
             if ! git merge --no-edit origin/main; then
               conflicts=$(git diff --name-only --diff-filter=U)
-              git merge --abort
-              echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
-              exit 1
+              other=$(printf '%s\n' "$conflicts" | grep -v '^source/' || true)
+              # Files under source/ belong to their lane: next's copy comes from the consumers' next
+              # branches, so a conflict there keeps next's side. Any other conflict still needs a person.
+              if [ -n "$other" ] || [ -z "$conflicts" ]; then
+                git merge --abort
+                echo "::error::Merge conflicts: ${conflicts//$'\n'/, }"
+                exit 1
+              fi
+              while IFS= read -r path; do
+                if git checkout --ours -- "$path"; then
+                  git add -- "$path"
+                else
+                  git rm -q -- "$path"
+                fi
+              done <<< "$conflicts"
+              git commit --no-edit
+              echo "::notice::Kept next's side of lane-owned source files: ${conflicts//$'\n'/, }"
             fi
             if git push origin HEAD:next; then exit 0; fi
             echo "Push rejected (attempt $attempt); fetching and re-merging"
