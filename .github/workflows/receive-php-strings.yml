@@ -8,7 +8,7 @@ on:
       - update-pro-pot
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: extract-php-${{ github.event.client_payload.lane || 'main' }}
@@ -18,6 +18,13 @@ jobs:
   receive-free:
     if: github.event.action == 'update-free-pot'
     runs-on: ubuntu-latest
+    # Payload values reach shell only through env, never as ${{ }} inside run: scripts.
+    env:
+      REPO: ${{ github.event.client_payload.repo_name }}
+      REF: ${{ github.event.client_payload.ref }}
+      LANE: ${{ github.event.client_payload.lane || 'main' }}
+      FORCE: ${{ github.event.client_payload.force }}
+      POT_FILE: ${{ github.event.client_payload.pot_file }}
     steps:
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -27,14 +34,10 @@ jobs:
 
       - name: Validate payload
         run: |
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
           if [ "$LANE" != main ] && [ "$LANE" != next ]; then
             echo "::error::Invalid lane: $LANE (expected main or next)"
             exit 1
           fi
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
-          POT_FILE="${{ github.event.client_payload.pot_file }}"
 
           if [ "$REPO" != "woocommerce-pos" ]; then
             echo "Invalid source repo: $REPO"
@@ -63,9 +66,6 @@ jobs:
       - name: Fetch POT file
         id: fetch-pot
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
-          POT_FILE="${{ github.event.client_payload.pot_file }}"
 
           mkdir -p source/php
           git clone --depth 1 --branch "$REF" \
@@ -95,12 +95,11 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.push-token.outputs.token }}
         run: |
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git add source/php/woocommerce-pos.pot
-          if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+          if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
             echo "No changes"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
@@ -123,7 +122,7 @@ jobs:
             git reset --hard "origin/$LANE"
             cp "$RUNNER_TEMP/woocommerce-pos.pot" source/php/woocommerce-pos.pot
             git add source/php/woocommerce-pos.pot
-            if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+            if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
               echo "POT already on $LANE"
               pushed=1
               break
@@ -142,8 +141,6 @@ jobs:
       - name: Delete source branch
         if: ${{ always() && steps.app-token.outcome == 'success' && steps.fetch-pot.outcome == 'success' && steps.commit.outcome == 'success' }}
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
           git push \
             "https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git" \
             --delete "$REF"
@@ -151,6 +148,13 @@ jobs:
   receive-pro:
     if: github.event.action == 'update-pro-pot'
     runs-on: ubuntu-latest
+    # Payload values reach shell only through env, never as ${{ }} inside run: scripts.
+    env:
+      REPO: ${{ github.event.client_payload.repo_name }}
+      REF: ${{ github.event.client_payload.ref }}
+      LANE: ${{ github.event.client_payload.lane || 'main' }}
+      FORCE: ${{ github.event.client_payload.force }}
+      POT_FILE: ${{ github.event.client_payload.pot_file }}
     steps:
       - name: Checkout translations
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -160,14 +164,10 @@ jobs:
 
       - name: Validate payload
         run: |
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
           if [ "$LANE" != main ] && [ "$LANE" != next ]; then
             echo "::error::Invalid lane: $LANE (expected main or next)"
             exit 1
           fi
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
-          POT_FILE="${{ github.event.client_payload.pot_file }}"
 
           if [ "$REPO" != "woocommerce-pos-pro" ]; then
             echo "Invalid source repo: $REPO"
@@ -196,9 +196,6 @@ jobs:
       - name: Fetch POT file
         id: fetch-pot
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
-          POT_FILE="${{ github.event.client_payload.pot_file }}"
 
           mkdir -p source/php
           git clone --depth 1 --branch "$REF" \
@@ -228,12 +225,11 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.push-token.outputs.token }}
         run: |
-          LANE="${{ github.event.client_payload.lane || 'main' }}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           git add source/php/woocommerce-pos-pro.pot
-          if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+          if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
             echo "No changes"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
@@ -256,7 +252,7 @@ jobs:
             git reset --hard "origin/$LANE"
             cp "$RUNNER_TEMP/woocommerce-pos-pro.pot" source/php/woocommerce-pos-pro.pot
             git add source/php/woocommerce-pos-pro.pot
-            if git diff --staged --quiet && [ "${{ github.event.client_payload.force }}" != "true" ]; then
+            if git diff --staged --quiet && [ "$FORCE" != "true" ]; then
               echo "POT already on $LANE"
               pushed=1
               break
@@ -275,8 +271,6 @@ jobs:
       - name: Delete source branch
         if: ${{ always() && steps.app-token.outcome == 'success' && steps.fetch-pot.outcome == 'success' && steps.commit.outcome == 'success' }}
         run: |
-          REPO="${{ github.event.client_payload.repo_name }}"
-          REF="${{ github.event.client_payload.ref }}"
           git push \
             "https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/wcpos/$REPO.git" \
             --delete "$REF"

@@ -47,8 +47,6 @@ function commitStepScript(force, lane) {
   }
   return script
     .join('\n')
-    .replace(/\$\{\{ github\.event\.client_payload\.force \}\}/g, force ? 'true' : 'false')
-    .replace(/\$\{\{ github\.event\.client_payload\.lane \|\| 'main' \}\}/g, lane)
     // The step points origin at a tokenised GitHub URL; keep the test's bare remote.
     .replace(/^git remote set-url origin .*$/m, ':');
 }
@@ -102,6 +100,8 @@ function scenario(name, { competitorPot = null, runnerPot, expectPush, lane = 'm
       env: {
         ...process.env,
         GH_TOKEN: 'test',
+        LANE: lane,
+        FORCE: 'false',
         GITHUB_OUTPUT: output,
         RUNNER_TEMP: runnerTemp,
         PATH: `${fakeBin}:${process.env.PATH}`,
