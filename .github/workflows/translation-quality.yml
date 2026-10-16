@@ -7,9 +7,12 @@ on:
       - 'translations/**/*.po'
       - 'scripts/check-translation-quality.js'
       - 'scripts/check-completeness.js'
+      - 'scripts/check-po-format.sh'
       - 'scripts/plural-rules.js'
       - 'tests/test-translation-quality-check.js'
       - 'tests/test-completeness-naming.js'
+      - 'tests/test-po-format-check.js'
+      - 'tests/fixtures/po-format/**'
       - '.ai/rules/**/*.mdc'
       - '.github/workflows/translation-quality.yml'
   workflow_dispatch:
@@ -41,6 +44,15 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install gettext
+        run: command -v msgfmt >/dev/null || { sudo apt-get update -q && sudo apt-get install -y -q gettext; }
+
+      - name: Prove the PO format gate rejects the sv_SE bare-% fixture
+        run: node tests/test-po-format-check.js
+
+      - name: Check PHP format directives in every .po (msgfmt --check-format)
+        run: sh scripts/check-po-format.sh
 
       - name: Run changed-file completeness gate
         env:
