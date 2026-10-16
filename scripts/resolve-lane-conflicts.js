@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
-const { parsePoFile, serializePoFile, buildPoEntryKey, generateL10nPhp } = require('./po-file');
+const { parsePoFile, serializePoFile, buildPoEntryKey, generateL10nPhp, compileMo } = require('./po-file');
 
 function mergeJson(nextText, mainText, baseText) {
   const next = JSON.parse(nextText);
@@ -54,8 +54,8 @@ function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
     if (file.startsWith('source/')) return false;
     if (/^translations\/js\/.*\.json$/.test(file)) return false;
     if (/^translations\/php\/.*\.po$/.test(file)) return false;
-    if (/^translations\/php\/.*\.l10n\.php$/.test(file)) {
-      return !fs.existsSync(path.join(cwd, file.replace(/\.l10n\.php$/, '.po')));
+    if (/^translations\/php\/.*\.(l10n\.php|mo)$/.test(file)) {
+      return !fs.existsSync(path.join(cwd, file.replace(/\.(l10n\.php|mo)$/, '.po')));
     }
     return true;
   });
@@ -63,18 +63,18 @@ function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
 
   for (const [file, stages] of conflicts) {
     const isPo = /^translations\/php\/.*\.po$/.test(file);
-    const isL10n = /^translations\/php\/.*\.l10n\.php$/.test(file);
-    const poFile = isL10n ? file.replace(/\.l10n\.php$/, '.po') : file;
-    if (isL10n && conflicts.has(poFile)) continue;
-    if (!isL10n && (file.startsWith('source/') || !stages.has(2) || !stages.has(3))) {
+    const isDerived = /^translations\/php\/.*\.(l10n\.php|mo)$/.test(file);
+    const poFile = isDerived ? file.replace(/\.(l10n\.php|mo)$/, '.po') : file;
+    if (isDerived && conflicts.has(poFile)) continue;
+    if (!isDerived && (file.startsWith('source/') || !stages.has(2) || !stages.has(3))) {
       if (stages.has(2)) {
         git('checkout', '--ours', '--', file);
         git('add', '--', file);
       } else {
         git('rm', '-q', '--', file);
       }
-      if (isPo) {
-        const sibling = file.replace(/\.po$/, '.l10n.php');
+      if (isPo) for (const extension of ['.l10n.php', '.mo']) {
+        const sibling = file.replace(/\.po$/, extension);
         let exists = true;
         try { git('cat-file', '-e', `HEAD:${sibling}`); } catch { exists = false; }
         if (exists) {
@@ -86,7 +86,7 @@ function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
       }
       continue;
     }
-    if (!isPo && !isL10n) {
+    if (!isPo && !isDerived) {
       fs.writeFileSync(path.join(cwd, file), mergeJson(git('show', `:2:${file}`), git('show', `:3:${file}`), stages.has(1) ? git('show', ':1:' + file) : undefined));
       git('add', '--', file);
       continue;
@@ -103,7 +103,10 @@ function resolveLaneConflicts({ cwd = process.cwd() } = {}) {
     const sibling = poFile.replace(/\.po$/, '.l10n.php');
     fs.writeFileSync(path.join(cwd, sibling), l10n);
     run('php', ['-r', "$r = require $argv[1]; exit(is_array($r) && isset($r['messages']) && is_array($r['messages']) ? 0 : 1);", path.resolve(cwd, sibling)]);
-    git('add', '--', ...(isPo ? [file, sibling] : [sibling]));
+    const moFile = poFile.replace(/\.po$/, '.mo');
+    const parsed = parsePoFile(fs.readFileSync(path.join(cwd, poFile), 'utf8'));
+    fs.writeFileSync(path.join(cwd, moFile), compileMo(parsed.entries, parsed.header));
+    git('add', '--', ...(isPo ? [file, sibling, moFile] : [sibling, moFile]));
   }
   return { resolved: [...conflicts.keys()] };
 }

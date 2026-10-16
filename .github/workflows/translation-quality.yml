@@ -5,6 +5,9 @@ on:
     paths:
       - 'translations/**/*.json'
       - 'translations/**/*.po'
+      - 'translations/**/*.mo'
+      - 'scripts/po-file.js'
+      - 'scripts/generate-mo-files.js'
       - 'scripts/check-translation-quality.js'
       - 'scripts/check-completeness.js'
       - 'scripts/check-po-format.sh'
@@ -53,6 +56,9 @@ jobs:
 
       - name: Check PHP format directives in every .po (msgfmt --check-format)
         run: sh scripts/check-po-format.sh
+
+      - name: Check committed .mo files match their .po
+        run: node scripts/generate-mo-files.js --check
 
       - name: Run changed-file completeness gate
         env:
