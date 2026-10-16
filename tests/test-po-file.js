@@ -102,3 +102,73 @@ for (const locale of fs.readdirSync(root, { withFileTypes: true })) {
 }
 assert.ok(fileCount > 0, 'Expected non-English PO files');
 console.log(`PASS: ${fileCount} PO/PHP file pairs round-trip byte for byte; unit cases passed.`);
+
+const { compileMo } = require('../scripts/po-file');
+const gettextParser = require('gettext-parser');
+const moInput = parsePoFile(`msgid ""
+msgstr ""
+"Language: da\\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
+
+msgid "Paid"
+msgstr "Betalt"
+
+msgctxt "button"
+msgid "Save"
+msgstr "Gem"
+
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d vare"
+msgstr[1] "%d varer"
+
+#, fuzzy
+msgid "Draft"
+msgstr "Kladde"
+
+msgid "Missing"
+msgstr ""
+
+msgid "Total"
+msgstr "I alt – æøå"
+`);
+const mo = compileMo(moInput.entries, moInput.header);
+const parsedMo = gettextParser.mo.parse(mo);
+assert.equal(parsedMo.headers.Language, 'da');
+assert.deepEqual(parsedMo.translations[''].Paid.msgstr, ['Betalt']);
+assert.deepEqual(parsedMo.translations.button.Save.msgstr, ['Gem']);
+assert.equal(parsedMo.translations['']['%d item'].msgid_plural, '%d items');
+assert.deepEqual(parsedMo.translations['']['%d item'].msgstr, ['%d vare', '%d varer']);
+assert.deepEqual(parsedMo.translations[''].Draft.msgstr, ['Kladde']);
+assert.deepEqual(parsedMo.translations[''].Total.msgstr, ['I alt – æøå']);
+assert.ok(!Object.hasOwn(parsedMo.translations[''], 'Missing'));
+console.log('✓ compileMo round-trips headers, context, plurals, fuzzy and UTF-8 translations');
+
+const moPhp = generateL10nPhp(moInput.entries, moInput.header);
+let moMessageCount = 0;
+for (const [context, messages] of Object.entries(parsedMo.translations)) {
+  for (const msgid of Object.keys(messages)) {
+    if (msgid === '') continue;
+    const key = context ? `${context}\u0004${msgid}` : msgid;
+    const phpKey = key.replace(/\u0004/g, `' . "\\x04" . '`);
+    assert.ok(moPhp.includes(`\t\t'${phpKey}' => `), `Missing PHP key: ${key}`);
+    moMessageCount++;
+  }
+}
+assert.equal(moMessageCount, moPhp.split('\n').filter(line => line.startsWith('\t\t')).length);
+console.log('✓ compileMo includes the same message keys as generateL10nPhp');
+
+assert.equal(mo.readUInt32LE(0), 0x950412de);
+const originalKeys = [];
+for (let i = 0; i < mo.readUInt32LE(8); i++) {
+  const tableOffset = mo.readUInt32LE(12) + i * 8;
+  const length = mo.readUInt32LE(tableOffset);
+  const offset = mo.readUInt32LE(tableOffset + 4);
+  originalKeys.push(mo.subarray(offset, offset + length));
+}
+for (let i = 1; i < originalKeys.length; i++) {
+  assert.ok(Buffer.compare(originalKeys[i - 1], originalKeys[i]) < 0);
+}
+assert.ok(mo.equals(compileMo(moInput.entries, moInput.header)));
+console.log('✓ compileMo writes GNU MO magic, sorted keys and deterministic bytes');

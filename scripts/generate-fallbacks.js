@@ -14,6 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { parsePoFile, compileMo } = require('./po-file');
 
 const TRANSLATIONS_JS_DIR = path.resolve(__dirname, '../translations/js');
 const TRANSLATIONS_PHP_DIR = path.resolve(__dirname, '../translations/php');
@@ -74,6 +75,7 @@ for (const [baseCode, sourceVariant] of Object.entries(FALLBACK_MAP)) {
     fs.mkdirSync(phpDest, { recursive: true });
     const files = fs.readdirSync(phpSource);
     for (const file of files) {
+      if (file.endsWith('.mo')) continue;
       // Rename: woocommerce-pos-de_DE.po → woocommerce-pos-de.po
       const renamed = file.replace(sourceVariant, baseCode);
       if (file.endsWith('.po') || file.endsWith('.l10n.php')) {
@@ -82,6 +84,10 @@ for (const [baseCode, sourceVariant] of Object.entries(FALLBACK_MAP)) {
           ? content.replace(/^"Language: [^"\r\n]*\\n"/m, `"Language: ${baseCode}\\n"`)
           : content.replace(/^(\s*'language' => ')[^'\r\n]*(',)/m, `$1${baseCode}$2`);
         fs.writeFileSync(path.join(phpDest, renamed), updated, 'latin1');
+        if (file.endsWith('.po')) {
+          const { header, entries } = parsePoFile(Buffer.from(updated, 'latin1').toString('utf8'));
+          fs.writeFileSync(path.join(phpDest, renamed.replace(/\.po$/, '.mo')), compileMo(entries, header));
+        }
       } else {
         fs.copyFileSync(path.join(phpSource, file), path.join(phpDest, renamed));
       }

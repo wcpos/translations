@@ -303,6 +303,40 @@ function generateL10nPhp(entries, header = '') {
   return lines.join('\n');
 }
 
+function compileMo(entries, header = '') {
+  const messages = [];
+  if (header) messages.push([Buffer.from(''), Buffer.from(header)]);
+  for (const entry of entries) {
+    const forms = entry.msgstr_plural && entry.msgstr_plural.length > 0
+      ? entry.msgstr_plural
+      : [entry.msgstr];
+    if (forms.every((form) => !form || form.trim() === '')) continue;
+    const key = (entry.msgctxt !== undefined ? `${entry.msgctxt}\u0004` : '')
+      + entry.msgid + (entry.msgid_plural !== undefined ? `\u0000${entry.msgid_plural}` : '');
+    messages.push([Buffer.from(key), Buffer.from(forms.join('\u0000'))]);
+  }
+  messages.sort((a, b) => Buffer.compare(a[0], b[0]));
+  const count = messages.length;
+  const dataOffset = 28 + 16 * count;
+  const size = dataOffset + messages.reduce((sum, [key, value]) => sum + key.length + value.length + 2, 0);
+  const buffer = Buffer.alloc(size);
+  [0x950412de, 0, count, 28, 28 + 8 * count, 0, dataOffset].forEach((value, index) => {
+    buffer.writeUInt32LE(value, index * 4);
+  });
+  let offset = dataOffset;
+  for (let column = 0; column < 2; column++) {
+    messages.forEach((message, index) => {
+      const bytes = message[column];
+      const tableOffset = 28 + column * 8 * count + index * 8;
+      buffer.writeUInt32LE(bytes.length, tableOffset);
+      buffer.writeUInt32LE(offset, tableOffset + 4);
+      bytes.copy(buffer, offset);
+      offset += bytes.length + 1;
+    });
+  }
+  return buffer;
+}
+
 function parsePluralSlotCount(header) {
   const match = header.match(/Plural-Forms:\s*[^\n]*nplurals\s*=\s*(\d+)/iu);
   if (!match?.[1]) return undefined;
@@ -313,4 +347,5 @@ function parsePluralSlotCount(header) {
 module.exports = {
   getPhpPluralForms, ensurePoHeader, parsePoFile, serializePoFile, buildPoEntryKey,
   hasPoEntryTranslation, mergePoEntries, generateL10nPhp, parsePluralSlotCount,
+  compileMo,
 };
