@@ -6,11 +6,14 @@ const os = require('node:os');
 const path = require('node:path');
 const { execFileSync, spawnSync } = require('node:child_process');
 const { mergeJson, mergePo, resolveLaneConflicts } = require('../scripts/resolve-lane-conflicts');
-const { parsePoFile, generateL10nPhp } = require('../scripts/po-file');
+const { parsePoFile, generateL10nPhp, compileMo } = require('../scripts/po-file');
 
 const jsonFile = 'translations/js/da/app/core.json';
 const poFile = 'translations/php/da/app.po';
 const phpFile = poFile.replace(/\.po$/, '.l10n.php');
+const moFile = poFile.replace(/\.po$/, '.mo');
+const laneBasePo = 'msgid "Shared"\nmsgstr "Base"\n';
+const moOf = text => { const p = parsePoFile(text); return compileMo(p.entries, p.header); };
 const nextJson = '{"shared":"Next","nextOnly":"Next only","empty":"","__proto__":"data"}';
 const mainJson = '{"shared":"Main","mainOnly":"Main only","empty":"Main filled"}';
 const nextPo = [
@@ -212,22 +215,56 @@ scenario('A PHP-only conflict regenerates from the working PO', {
   assert.equal(git('ls-files', '-u'), '');
 });
 
+scenario('PO and MO conflicts regenerate the MO from the merged PO', {
+  base: { [poFile]: laneBasePo, [moFile]: moOf(laneBasePo) },
+  main: { [poFile]: mainPo, [moFile]: moOf(mainPo) },
+  next: { [poFile]: nextPo, [moFile]: moOf(nextPo) },
+}, ({ cwd, git, read }) => {
+  assert.deepEqual(resolveLaneConflicts({ cwd }).resolved.sort(), [moFile, poFile].sort());
+  assert.equal(git('ls-files', '-u'), '');
+  assert.ok(fs.readFileSync(path.join(cwd, moFile)).equals(moOf(read(poFile))));
+  assert.equal(git('diff', '--name-only', '--', moFile), '');
+});
+
+scenario('A PO conflict regenerates an MO that did not conflict', {
+  base: { [poFile]: laneBasePo, [moFile]: moOf(laneBasePo) },
+  main: { [poFile]: mainPo },
+  next: { [poFile]: nextPo, [moFile]: moOf(nextPo) },
+}, ({ cwd, git, read }) => {
+  assert.deepEqual(resolveLaneConflicts({ cwd }).resolved, [poFile]);
+  assert.ok(fs.readFileSync(path.join(cwd, moFile)).equals(moOf(read(poFile))));
+  assert.ok(!fs.readFileSync(path.join(cwd, moFile)).equals(moOf(nextPo)));
+  assert.equal(git('diff', '--name-only', '--', moFile), '');
+});
+
+scenario('An MO-only conflict regenerates from the working PO', {
+  base: { [poFile]: nextPo, [moFile]: 'Base\n' },
+  main: { [moFile]: 'Main\n' },
+  next: { [moFile]: 'Next\n' },
+}, ({ cwd, git, read }) => {
+  assert.deepEqual(resolveLaneConflicts({ cwd }).resolved, [moFile]);
+  assert.equal(read(poFile), nextPo);
+  assert.ok(fs.readFileSync(path.join(cwd, moFile)).equals(moOf(nextPo)));
+  assert.equal(git('ls-files', '-u'), '');
+});
+
 for (const deletedLane of ['next', 'main']) {
   scenario(`${deletedLane} deletes JSON and PO; next determines files and committed PHP`, {
-    base: { [jsonFile]: '{"shared":"Base"}', [poFile]: 'msgid "Shared"\nmsgstr "Base"\n', [phpFile]: 'Base PHP\n' },
+    base: { [jsonFile]: '{"shared":"Base"}', [poFile]: 'msgid "Shared"\nmsgstr "Base"\n', [phpFile]: 'Base PHP\n', [moFile]: 'Base MO\n' },
     main: { [jsonFile]: deletedLane === 'main' ? null : mainJson, [poFile]: deletedLane === 'main' ? null : mainPo,
-      [phpFile]: 'Main changed PHP\n' },
+      [phpFile]: 'Main changed PHP\n', [moFile]: 'Main changed MO\n' },
     next: { [jsonFile]: deletedLane === 'next' ? null : nextJson, [poFile]: deletedLane === 'next' ? null : nextPo,
-      [phpFile]: deletedLane === 'next' ? null : 'Next committed PHP\n' },
+      [phpFile]: deletedLane === 'next' ? null : 'Next committed PHP\n', [moFile]: deletedLane === 'next' ? null : 'Next committed MO\n' },
   }, ({ cwd, git, read }) => {
     resolveLaneConflicts({ cwd });
     assert.equal(git('ls-files', '-u'), '');
     if (deletedLane === 'next') {
-      for (const file of [jsonFile, poFile, phpFile]) assert.ok(!fs.existsSync(path.join(cwd, file)));
+      for (const file of [jsonFile, poFile, phpFile, moFile]) assert.ok(!fs.existsSync(path.join(cwd, file)));
     } else {
       assert.equal(read(jsonFile), nextJson);
       assert.equal(read(poFile), nextPo);
       assert.equal(read(phpFile), 'Next committed PHP\n');
+      assert.equal(read(moFile), 'Next committed MO\n');
     }
   });
 }

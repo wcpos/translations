@@ -5,7 +5,7 @@ const path = require('path');
 const { checkTranslation, normalizeWcposProductNames, checkEnglishSource } = require('./translation-rules');
 const {
   parsePoFile, serializePoFile, ensurePoHeader, parsePluralSlotCount, getPhpPluralForms,
-  mergePoEntries, buildPoEntryKey, generateL10nPhp,
+  mergePoEntries, buildPoEntryKey, generateL10nPhp, compileMo,
 } = require('./po-file');
 
 function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, resultsDir, partsDir }) {
@@ -189,9 +189,12 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
       }
       if (!changed) continue;
       fs.mkdirSync(path.dirname(target), { recursive: true });
-      fs.writeFileSync(target, serializePoFile(header, mergedEntries));
+      const poText = serializePoFile(header, mergedEntries);
+      fs.writeFileSync(target, poText);
       fs.writeFileSync(target.replace(/\.po$/, '.l10n.php'), generateL10nPhp(mergedEntries, header));
-      report.files_written.push(relative, relative.replace(/\.po$/, '.l10n.php'));
+      const written = parsePoFile(poText);
+      fs.writeFileSync(target.replace(/\.po$/, '.mo'), compileMo(written.entries, written.header));
+      report.files_written.push(relative, relative.replace(/\.po$/, '.l10n.php'), relative.replace(/\.po$/, '.mo'));
     }
   }
   report.files_written.sort();

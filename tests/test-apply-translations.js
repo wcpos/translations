@@ -7,7 +7,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const { buildWorklist } = require('../scripts/translation-worklist');
 const { applyTranslations } = require('../scripts/apply-translations');
-const { parsePoFile, serializePoFile, ensurePoHeader, generateL10nPhp } = require('../scripts/po-file');
+const { parsePoFile, serializePoFile, ensurePoHeader, generateL10nPhp, compileMo } = require('../scripts/po-file');
 
 const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'apply-translations-'));
 const workDir = path.join(rootDir, 'work');
@@ -15,6 +15,7 @@ const resultsDir = path.join(rootDir, 'results');
 const jsFile = 'translations/js/de_DE/monorepo/core.json';
 const poFile = 'translations/php/de_DE/woocommerce-pos-de_DE.po';
 const phpFile = poFile.replace(/\.po$/, '.l10n.php');
+const moFile = poFile.replace(/\.po$/, '.mo');
 const read = file => fs.readFileSync(path.join(rootDir, file), 'utf8');
 function write(file, content) {
   const target = path.join(rootDir, file);
@@ -85,7 +86,7 @@ try {
   assert.equal(report.applied, 8);
   assert.equal(report.unexpected, 4);
   assert.deepEqual(report.missing_results, ['fr_FR']);
-  assert.deepEqual(report.files_written, [jsFile, 'translations/js/de_DE/monorepo/new.json', phpFile, poFile].sort());
+  assert.deepEqual(report.files_written, [jsFile, 'translations/js/de_DE/monorepo/new.json', phpFile, poFile, moFile].sort());
   const translated = JSON.parse(read(jsFile));
   assert.deepEqual(Object.keys(translated), ['brand', 'colour', 'old', 'second', 'stale', 'warning', 'welcome']);
   assert.deepEqual(translated, { second: 'Zweite', old: 'Gespeichert', stale: 'Erhalten',
@@ -106,6 +107,7 @@ try {
   assert.equal(read(poFile).split('\n\n').find(block => block.includes('#. Keep this comment')), untouchedBlock);
   assert.equal(read(phpFile), generateL10nPhp(po.entries, po.header));
   assert.ok(read(phpFile).includes('Bezahlt'));
+  assert.ok(fs.readFileSync(path.join(rootDir, moFile)).equals(compileMo(po.entries, po.header)));
   assert.ok(!fs.existsSync(path.join(rootDir, 'translations/php/de_DE/other-de_DE.po')));
   assert.ok(!fs.existsSync(path.join(rootDir, 'translations/js/fr_FR')));
   const written = [...new Set([...initialFiles, ...report.files_written])];
