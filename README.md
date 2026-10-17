@@ -65,6 +65,8 @@ Example:
 https://cdn.jsdelivr.net/gh/wcpos/translations@2026.2.0/translations/js/de_DE/monorepo/core.json
 ```
 
+When the `CLOUDFLARE_CDN_TOKEN` repository secret is configured, release workflows also mirror the `translations/` tree to `https://cdn.wcpos.com/t/<tag>/translations/...` (for example, `translations/js/{locale}/{project}/{namespace}.json` after `/t/<tag>/`). Completed tagged uploads are immutable; `https://cdn.wcpos.com/t/next/translations/...` is overwritten on each next-lane publish. Existing consumers continue to use jsDelivr; switching their base URLs is separate work.
+
 ## PHP Distribution
 
 PHP translations ship as `.l10n.php` files (WordPress 6.5+ format). The plugins download them from jsDelivr at the pinned version, and they are also attached to GitHub Releases. The `.mo` files in `translations/php/` are no longer maintained or released, because the plugins never load them.
