@@ -201,3 +201,23 @@ jobs:
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           node scripts/update-consumer-version-prs.js "$VERSION"
+
+      - name: Check CDN configuration
+        id: cdn
+        env:
+          CLOUDFLARE_CDN_TOKEN: ${{ secrets.CLOUDFLARE_CDN_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_CDN_TOKEN" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mirror release to cdn.wcpos.com
+        if: ${{ env.CDN_CONFIGURED == 'true' }}
+        env:
+          CDN_CONFIGURED: ${{ steps.cdn.outputs.configured }}
+          CLOUDFLARE_CDN_TOKEN: ${{ secrets.CLOUDFLARE_CDN_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          node scripts/cdn-upload.js --ref "$VERSION"
