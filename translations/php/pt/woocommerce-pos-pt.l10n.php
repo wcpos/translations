@@ -910,7 +910,7 @@ return array(
 		'POS fiscal receipt snapshot created (receipt #%d).' => 'Foi criado um instantâneo do recibo fiscal POS (recibo #%d).',
 		'This register already has an open session.' => 'Esta caixa já tem uma sessão aberta.',
 		'The cashier who opened this session cannot approve it.' => 'O operador que abriu esta sessão não pode aprová-la.',
-		'The closure count differs from the closed session.' => 'A contagem de fechos difere da sessão fechada.',
+		'The closure count differs from the closed session.' => 'A contagem de fechos difere da sessão encerrada.',
 		'Manager approval is required to close this session.' => 'É necessária a aprovação de um gerente para fechar esta sessão.',
 		'The session approval has changed.' => 'A aprovação da sessão foi alterada.',
 		'Category' => 'Categoria',
