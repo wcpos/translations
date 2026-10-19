@@ -188,9 +188,16 @@ function buildPrBody(version) {
 // a repo without auto-merge, or a PR that is already armed, must not fail the release; the
 // PR still exists and a person can merge it as before.
 function enableAutoMerge(repo, prRef, runCommand = run) {
-  const result = runCommand('gh', ['pr', 'merge', '--auto', '--squash', '--repo', repo, prRef], {
-    allowFailure: true,
-  });
+  let result;
+  try {
+    result = runCommand('gh', ['pr', 'merge', '--auto', '--squash', '--repo', repo, prRef], {
+      allowFailure: true,
+    });
+  } catch (error) {
+    // `run` throws on a spawn error or its 120 s timeout before `allowFailure` applies.
+    log(`Could not enable auto-merge on ${repo} ${prRef}: ${error.message}`);
+    return false;
+  }
   if (result.status !== 0) {
     const stderr = (result.stderr || result.stdout || '').trim();
     log(`Could not enable auto-merge on ${repo} ${prRef}: ${stderr}`);

@@ -118,6 +118,13 @@ test('a failed auto-merge enable is logged, not thrown, so the release still com
   assert.equal(ok, false);
 });
 
+test('a gh spawn error or timeout while enabling auto-merge is logged, not thrown', () => {
+  const ok = enableAutoMerge('wcpos/monorepo', '7', () => {
+    throw new Error('gh pr merge failed: spawnSync gh ETIMEDOUT');
+  });
+  assert.equal(ok, false);
+});
+
 function getWorkflowStep(workflow, stepName) {
   const escapedName = stepName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return workflow.match(new RegExp(`-\\s*name:\\s*${escapedName}[\\s\\S]*?(?=\\n\\s{6}-\\s*name:|$)`))?.[0] || '';
