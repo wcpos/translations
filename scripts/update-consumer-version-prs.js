@@ -181,6 +181,25 @@ function buildPrBody(version) {
   ].join('\n');
 }
 
+// The consumer repos' Merge Gate passes this PR by shape (translations-ci author, exact
+// title, only the version line changed) and their review gate exempts the same shape from
+// Codex (wcpos/.github#19, 2026-10-19), so nothing is left for a person to do: arm squash
+// auto-merge and GitHub merges it once the required checks report. Enabling is best-effort —
+// a repo without auto-merge, or a PR that is already armed, must not fail the release; the
+// PR still exists and a person can merge it as before.
+function enableAutoMerge(repo, prRef, runCommand = run) {
+  const result = runCommand('gh', ['pr', 'merge', '--auto', '--squash', '--repo', repo, prRef], {
+    allowFailure: true,
+  });
+  if (result.status !== 0) {
+    const stderr = (result.stderr || result.stdout || '').trim();
+    log(`Could not enable auto-merge on ${repo} ${prRef}: ${stderr}`);
+    return false;
+  }
+  log(`Auto-merge enabled on ${repo} ${prRef}`);
+  return true;
+}
+
 async function prepareRepoCheckout(tempRoot, repoKey, config) {
   const checkoutPath = repoPath(tempRoot, repoKey);
   run('gh', ['repo', 'clone', config.repo, checkoutPath]);
@@ -238,6 +257,7 @@ async function updateRepo(repoKey, version, tempRoot) {
   if (prNumber) {
     run('gh', ['pr', 'edit', prNumber, '--repo', config.repo, '--title', prTitle, '--body', prBody], { cwd });
     log(`Updated existing PR #${prNumber}`);
+    enableAutoMerge(config.repo, prNumber);
     return { repo: config.repo, status: 'updated-pr', prNumber };
   }
 
@@ -256,8 +276,10 @@ async function updateRepo(repoKey, version, tempRoot) {
     prBody,
   ], { cwd });
 
-  log(`Created PR ${created.stdout.trim()}`);
-  return { repo: config.repo, status: 'created-pr', prUrl: created.stdout.trim() };
+  const prUrl = created.stdout.trim();
+  log(`Created PR ${prUrl}`);
+  enableAutoMerge(config.repo, prUrl);
+  return { repo: config.repo, status: 'created-pr', prUrl };
 }
 
 async function main() {
@@ -297,6 +319,7 @@ module.exports = {
   buildPrTitle,
   buildPrBody,
   setupGitAuthentication,
+  enableAutoMerge,
 };
 
 if (require.main === module) {

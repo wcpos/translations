@@ -10,6 +10,7 @@ const {
   validateVersion,
   applyVersionUpdate,
   setupGitAuthentication,
+  enableAutoMerge,
 } = require('../scripts/update-consumer-version-prs');
 
 const VERSION = '2026.4.47';
@@ -97,6 +98,24 @@ test('configures gh as git credential helper for GitHub pushes', () => {
   assert.deepEqual(calls, [
     ['gh', ['auth', 'setup-git', '--hostname', 'github.com']],
   ]);
+});
+
+test('arms squash auto-merge on the consumer PR it just created or updated', () => {
+  const calls = [];
+  const ok = enableAutoMerge('wcpos/woocommerce-pos', 'https://github.com/wcpos/woocommerce-pos/pull/2310', (cmd, args, options) => {
+    calls.push([cmd, args, options]);
+    return { status: 0, stdout: '', stderr: '' };
+  });
+
+  assert.equal(ok, true);
+  assert.deepEqual(calls, [
+    ['gh', ['pr', 'merge', '--auto', '--squash', '--repo', 'wcpos/woocommerce-pos', 'https://github.com/wcpos/woocommerce-pos/pull/2310'], { allowFailure: true }],
+  ]);
+});
+
+test('a failed auto-merge enable is logged, not thrown, so the release still completes', () => {
+  const ok = enableAutoMerge('wcpos/electron', '42', () => ({ status: 1, stdout: '', stderr: 'auto-merge is not allowed' }));
+  assert.equal(ok, false);
 });
 
 function getWorkflowStep(workflow, stepName) {
