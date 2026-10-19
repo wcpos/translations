@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Dokument pakowania WP Overnight jest niedostępny.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Nie udało się wyrenderować dokumentu pakowania WP Overnight dla tego zamówienia.',
 		'The WCPOS plugin failed to load correctly.' => 'Wtyczka WCPOS nie załadowała się poprawnie.',
+		'Hello' => 'Cześć',
 	),
 );

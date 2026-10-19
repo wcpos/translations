@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight の納品書ドキュメントは利用できません。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'この注文の WP Overnight 納品書ドキュメントを表示できませんでした。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOSプラグインの読み込みに失敗しました。',
+		'Hello' => 'こんにちは',
 	),
 );
