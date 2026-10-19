@@ -795,6 +795,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight reikninginn fyrir þessa pöntun.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight fylgiseðillinn er ekki tiltækur.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight fylgiseðilinn fyrir þessa pöntun.',
+		'Hello' => 'Halló',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS viðbótin mistókst að hlaðast rétt.',
 	),
 );
