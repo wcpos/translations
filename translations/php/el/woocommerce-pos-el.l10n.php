@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Δεν είναι δυνατή η ακύρωση αυτής της πληρωμής.',
 		'Attempt ID must be a UUID.' => 'Το αναγνωριστικό προσπάθειας πρέπει να είναι UUID.',
 		'Only POS orders take a gateway submission.' => 'Μόνο για παραγγελίες POS μπορεί να υποβληθεί αίτημα σε πύλη πληρωμών.',
-		'This attempt was cancelled at the till.' => 'Αυτή η προσπάθεια ακυρώθηκε στο ταμείο.',
+		'This attempt was cancelled or superseded at the till.' => 'Αυτή η προσπάθεια ακυρώθηκε ή αντικαταστάθηκε από άλλη στο ταμείο.',
 		'Payment method is not enabled for the POS.' => 'Ο τρόπος πληρωμής δεν είναι ενεργοποιημένος για το POS.',
 		'Order is already paid.' => 'Η παραγγελία έχει ήδη πληρωθεί.',
 		'Order already has a live payment.' => 'Η παραγγελία έχει ήδη ενεργή πληρωμή.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
 		'The WCPOS plugin failed to load correctly.' => 'Το πρόσθετο WCPOS απέτυχε να φορτωθεί σωστά.',
-		'Hello' => 'Γεια σας',
 	),
 );

@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Seda makset ei saa tühistada.',
 		'Attempt ID must be a UUID.' => 'Katse ID peab olema UUID.',
 		'Only POS orders take a gateway submission.' => 'Makseväravale saab päringu esitada ainult POS-tellimuse puhul.',
-		'This attempt was cancelled at the till.' => 'See katse tühistati kassas.',
+		'This attempt was cancelled or superseded at the till.' => 'See katse tühistati või asendati kassas.',
 		'Payment method is not enabled for the POS.' => 'Makseviis pole POS-is lubatud.',
 		'Order is already paid.' => 'Tellimus on juba tasutud.',
 		'Order already has a live payment.' => 'Tellimusel on juba aktiivne makse.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnighti saatelehedokument pole saadaval.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnighti saatelehedokumenti ei saanud selle tellimuse jaoks renderdada.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS plugin ei laadinud õigesti.',
-		'Hello' => 'Tere',
 	),
 );

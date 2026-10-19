@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Bu ödeme iptal edilemez.',
 		'Attempt ID must be a UUID.' => 'Deneme kimliği UUID olmalıdır.',
 		'Only POS orders take a gateway submission.' => 'Ödeme ağ geçidi gönderimi yalnızca POS siparişleri için yapılabilir.',
-		'This attempt was cancelled at the till.' => 'Bu deneme kasada iptal edildi.',
+		'This attempt was cancelled or superseded at the till.' => 'Bu deneme kasada iptal edildi veya yerini başka bir deneme aldı.',
 		'Payment method is not enabled for the POS.' => 'Ödeme yöntemi POS için etkinleştirilmemiş.',
 		'Order is already paid.' => 'Sipariş zaten ödenmiş.',
 		'Order already has a live payment.' => 'Siparişte zaten etkin bir ödeme var.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight paket fişi belgesi kullanılamıyor.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Bu sipariş için WP Overnight paket fişi belgesi oluşturulamadı.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS eklentisi doğru yüklenemedi.',
-		'Hello' => 'Merhaba',
 	),
 );

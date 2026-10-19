@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Tätä maksua ei voi mitätöidä.',
 		'Attempt ID must be a UUID.' => 'Yrityksen tunnisteen on oltava UUID.',
 		'Only POS orders take a gateway submission.' => 'Maksutavalle voi lähettää pyyntöjä vain POS-tilauksista.',
-		'This attempt was cancelled at the till.' => 'Tämä yritys peruutettiin kassalla.',
+		'This attempt was cancelled or superseded at the till.' => 'Tämä yritys peruutettiin tai korvattiin kassalla.',
 		'Payment method is not enabled for the POS.' => 'Maksutapa ei ole käytössä POS-järjestelmässä.',
 		'Order is already paid.' => 'Tilaus on jo maksettu.',
 		'Order already has a live payment.' => 'Tilauksella on jo aktiivinen maksu.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight -pakkauslistadokumentti ei ole käytettävissä.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnight -pakkauslistadokumenttia ei voitu luoda tätä tilausta varten.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS-liitännäisen lataaminen epäonnistui.',
-		'Hello' => 'Hei',
 	),
 );

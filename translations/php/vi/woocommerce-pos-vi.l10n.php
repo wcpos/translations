@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Không thể hủy khoản thanh toán này.',
 		'Attempt ID must be a UUID.' => 'ID lần thử phải là UUID.',
 		'Only POS orders take a gateway submission.' => 'Chỉ đơn hàng POS mới được gửi đến cổng thanh toán.',
-		'This attempt was cancelled at the till.' => 'Lần thử này đã bị hủy tại quầy thanh toán.',
+		'This attempt was cancelled or superseded at the till.' => 'Lần thử này đã bị hủy hoặc bị thay thế tại quầy thu ngân.',
 		'Payment method is not enabled for the POS.' => 'Phương thức thanh toán chưa được bật cho POS.',
 		'Order is already paid.' => 'Đơn hàng đã được thanh toán.',
 		'Order already has a live payment.' => 'Đơn hàng đã có một khoản thanh toán đang hoạt động.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Tài liệu phiếu đóng gói WP Overnight không khả dụng.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Không thể hiển thị tài liệu phiếu đóng gói WP Overnight cho đơn hàng này.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS không tải đúng cách.',
-		'Hello' => 'Xin chào',
 	),
 );

@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'ยกเลิกการชำระเงินนี้ไม่ได้',
 		'Attempt ID must be a UUID.' => 'ID ของการพยายามต้องเป็น UUID',
 		'Only POS orders take a gateway submission.' => 'ส่งรายการไปยังเกตเวย์ได้เฉพาะคำสั่งซื้อ POS เท่านั้น',
-		'This attempt was cancelled at the till.' => 'ยกเลิกการพยายามนี้ที่จุดชำระเงินแล้ว',
+		'This attempt was cancelled or superseded at the till.' => 'ความพยายามนี้ถูกยกเลิกหรือแทนที่ที่เครื่องคิดเงิน',
 		'Payment method is not enabled for the POS.' => 'ไม่ได้เปิดใช้วิธีชำระเงินนี้สำหรับ POS',
 		'Order is already paid.' => 'ชำระเงินสำหรับคำสั่งซื้อนี้แล้ว',
 		'Order already has a live payment.' => 'คำสั่งซื้อนี้มีการชำระเงินที่ยังใช้งานอยู่แล้ว',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'เอกสารใบส่งสินค้าของ WP Overnight ไม่พร้อมใช้งาน',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'ไม่สามารถแสดงเอกสารใบส่งสินค้าของ WP Overnight สำหรับคำสั่งซื้อนี้ได้',
 		'The WCPOS plugin failed to load correctly.' => 'ปลั๊กอิน WCPOS ไม่สามารถโหลดได้อย่างถูกต้อง',
-		'Hello' => 'สวัสดี',
 	),
 );

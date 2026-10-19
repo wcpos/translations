@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Deze betaling kan niet worden geannuleerd.',
 		'Attempt ID must be a UUID.' => 'De poging-ID moet een UUID zijn.',
 		'Only POS orders take a gateway submission.' => 'Alleen POS-bestellingen kunnen een gateway-aanvraag ontvangen.',
-		'This attempt was cancelled at the till.' => 'Deze poging is aan de kassa geannuleerd.',
+		'This attempt was cancelled or superseded at the till.' => 'Deze poging is aan de kassa geannuleerd of vervangen.',
 		'Payment method is not enabled for the POS.' => 'De betaalmethode is niet ingeschakeld voor de POS.',
 		'Order is already paid.' => 'De bestelling is al betaald.',
 		'Order already has a live payment.' => 'De bestelling heeft al een actieve betaling.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Het WP Overnight-pakbondocument is niet beschikbaar.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Het WP Overnight-pakbondocument kon voor deze bestelling niet worden weergegeven.',
 		'The WCPOS plugin failed to load correctly.' => 'De WCPOS-plugin kon niet correct worden geladen.',
-		'Hello' => 'Hallo',
 	),
 );

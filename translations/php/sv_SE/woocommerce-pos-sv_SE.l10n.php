@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Den här betalningen kan inte makuleras.',
 		'Attempt ID must be a UUID.' => 'Försöks-ID:t måste vara ett UUID.',
 		'Only POS orders take a gateway submission.' => 'Endast POS-ordrar kan skickas till en betalningsgateway.',
-		'This attempt was cancelled at the till.' => 'Det här försöket avbröts i kassan.',
+		'This attempt was cancelled or superseded at the till.' => 'Det här försöket avbröts eller ersattes i kassan.',
 		'Payment method is not enabled for the POS.' => 'Betalningsmetoden är inte aktiverad för POS.',
 		'Order is already paid.' => 'Ordern är redan betald.',
 		'Order already has a live payment.' => 'Ordern har redan en aktiv betalning.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnights packsedelsdokument är inte tillgängligt.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnights packsedelsdokument kunde inte återges för denna order.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS-pluginet kunde inte laddas korrekt.',
-		'Hello' => 'Hej',
 	),
 );

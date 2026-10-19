@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Цей платіж не можна анулювати.',
 		'Attempt ID must be a UUID.' => 'ID спроби має бути UUID.',
 		'Only POS orders take a gateway submission.' => 'Надсилати запит через платіжний шлюз можна лише для замовлень POS.',
-		'This attempt was cancelled at the till.' => 'Цю спробу скасовано на касі.',
+		'This attempt was cancelled or superseded at the till.' => 'Цю спробу було скасовано або замінено іншою на касі.',
 		'Payment method is not enabled for the POS.' => 'Спосіб оплати не ввімкнено для POS.',
 		'Order is already paid.' => 'Замовлення вже оплачено.',
 		'Order already has a live payment.' => 'Для цього замовлення вже є активний платіж.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Документ пакувального листа WP Overnight недоступний.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Не вдалося відобразити документ пакувального листа WP Overnight для цього замовлення.',
 		'The WCPOS plugin failed to load correctly.' => 'Плагін WCPOS не вдалося завантажити правильно.',
-		'Hello' => 'Вітаю',
 	),
 );

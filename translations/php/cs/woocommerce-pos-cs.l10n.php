@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Tuto platbu nelze stornovat.',
 		'Attempt ID must be a UUID.' => 'ID pokusu musí být UUID.',
 		'Only POS orders take a gateway submission.' => 'Odeslání přes platební bránu je možné pouze u objednávek z POS.',
-		'This attempt was cancelled at the till.' => 'Tento pokus byl zrušen u pokladny.',
+		'This attempt was cancelled or superseded at the till.' => 'Tento pokus byl u pokladny zrušen nebo nahrazen jiným.',
 		'Payment method is not enabled for the POS.' => 'Platební metoda není pro POS povolena.',
 		'Order is already paid.' => 'Objednávka je již zaplacena.',
 		'Order already has a live payment.' => 'Objednávka již má probíhající platbu.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Dokument dodacího listu WP Overnight není k dispozici.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokument dodacího listu WP Overnight se pro tuto objednávku nepodařilo vykreslit.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS se nepodařilo správně načíst.',
-		'Hello' => 'Dobrý den',
 	),
 );

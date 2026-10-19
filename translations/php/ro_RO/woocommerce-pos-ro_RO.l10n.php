@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Această plată nu poate fi anulată.',
 		'Attempt ID must be a UUID.' => 'ID-ul încercării trebuie să fie un UUID.',
 		'Only POS orders take a gateway submission.' => 'Numai comenzile POS pot trimite o solicitare către gateway.',
-		'This attempt was cancelled at the till.' => 'Această încercare a fost anulată la casă.',
+		'This attempt was cancelled or superseded at the till.' => 'Această încercare a fost anulată sau înlocuită la casa de marcat.',
 		'Payment method is not enabled for the POS.' => 'Metoda de plată nu este activată pentru POS.',
 		'Order is already paid.' => 'Comanda este deja plătită.',
 		'Order already has a live payment.' => 'Comanda are deja o plată activă.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Documentul de aviz de expediție WP Overnight nu este disponibil.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Documentul de aviz de expediție WP Overnight nu a putut fi generat pentru această comandă.',
 		'The WCPOS plugin failed to load correctly.' => 'Pluginul WCPOS nu s-a încărcat corect.',
-		'Hello' => 'Bună',
 	),
 );

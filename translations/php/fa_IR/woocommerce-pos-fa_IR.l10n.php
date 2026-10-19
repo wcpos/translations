@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'این پرداخت را نمی‌توان باطل کرد.',
 		'Attempt ID must be a UUID.' => 'شناسهٔ تلاش باید یک UUID باشد.',
 		'Only POS orders take a gateway submission.' => 'فقط برای سفارش‌های POS می‌توان درخواست درگاه پرداخت فرستاد.',
-		'This attempt was cancelled at the till.' => 'این تلاش در صندوق لغو شد.',
+		'This attempt was cancelled or superseded at the till.' => 'این تلاش در صندوق لغو یا جایگزین شد.',
 		'Payment method is not enabled for the POS.' => 'این روش پرداخت برای POS فعال نیست.',
 		'Order is already paid.' => 'سفارش قبلاً پرداخت شده است.',
 		'Order already has a live payment.' => 'سفارش از قبل یک پرداخت فعال دارد.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'سند برگه بسته‌بندی WP Overnight در دسترس نیست.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'رندر کردن سند برگه بسته‌بندی WP Overnight برای این سفارش ممکن نبود.',
 		'The WCPOS plugin failed to load correctly.' => 'پلاگین WCPOS به درستی بارگذاری نشد.',
-		'Hello' => 'سلام',
 	),
 );

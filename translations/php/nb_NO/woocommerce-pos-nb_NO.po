@@ -537,7 +537,7 @@ msgstr "Betalingsgateway er ikke tilgjengelig for POS-utsjekking."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:318
+#: includes/API/V2/Payments_Controller.php:329
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Ordre ble ikke funnet."
@@ -1135,31 +1135,31 @@ msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
 "Samlingen «%1$s» leveres ikke av denne ruten. Støttede samlinger: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:80
+#: includes/API/V2/Payments_Controller.php:91
 msgid "Sorry, you cannot manage order payments."
 msgstr "Beklager, du kan ikke administrere ordrebetalinger."
 
-#: includes/API/V2/Payments_Controller.php:99
+#: includes/API/V2/Payments_Controller.php:110
 msgid "Payment must be an object."
 msgstr "Betalingen må være et objekt."
 
-#: includes/API/V2/Payments_Controller.php:151
+#: includes/API/V2/Payments_Controller.php:162
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:99
-#: includes/Payments/Contract/Ledger.php:1110
+#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Ledger.php:1251
 msgid "Payment method not found."
 msgstr "Betalingsmetode ikke funnet."
 
-#: includes/API/V2/Payments_Controller.php:157
+#: includes/API/V2/Payments_Controller.php:168
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Verdiene må være et objekt, og forsøks-ID-en må være en UUID."
 
-#: includes/API/V2/Payments_Controller.php:162
+#: includes/API/V2/Payments_Controller.php:173
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "Forsøks-ID-en må angi det sendte forsøket som skal avbrytes."
 
-#: includes/API/V2/Payments_Controller.php:268
+#: includes/API/V2/Payments_Controller.php:279
 msgid "Invalid payment operation parameters."
 msgstr "Ugyldige parametere for betalingsoperasjonen."
 
@@ -1172,8 +1172,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Beklager, du kan ikke klargjøre betalingsmetoder."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:52
-#: includes/Payments/Contract/Ledger.php:1791
+#: includes/Payments/Contract/Gateway_Submission.php:53
+#: includes/Payments/Contract/Ledger.php:2042
 msgid "Payment capture mode is unsupported."
 msgstr "Modus for betalingsbelastning støttes ikke."
 
@@ -1204,18 +1204,18 @@ msgid "Sorry, you cannot access registers."
 msgstr "Beklager, du har ikke tilgang til kasser."
 
 #. translators: %s: register field name.
-#: includes/API/V2/Registers_Controller.php:420
+#: includes/API/V2/Registers_Controller.php:439
 #, php-format
 msgid "Invalid register field: %s."
 msgstr "Ugyldig kassefelt: %s."
 
-#: includes/API/V2/Registers_Controller.php:425
+#: includes/API/V2/Registers_Controller.php:444
 #: includes/Services/Report_Scope_Resolver.php:63
 #: includes/Services/Report_Scope_Resolver.php:66
 msgid "Register not found."
 msgstr "Kasse ikke funnet."
 
-#: includes/API/V2/Registers_Controller.php:430
+#: includes/API/V2/Registers_Controller.php:449
 msgid "Register could not be saved."
 msgstr "Kunne ikke lagre kassen."
 
@@ -1254,12 +1254,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Rapporten «%1$s» mislyktes: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:390
+#: includes/API/V2/Sessions_Controller.php:410
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Ugyldig parameter: %s"
 
-#: includes/API/V2/Sessions_Controller.php:392
+#: includes/API/V2/Sessions_Controller.php:412
 msgid "The session request could not be completed."
 msgstr "Kunne ikke fullføre forespørselen om økten."
 
@@ -1419,41 +1419,41 @@ msgstr "Betalingsleverandøren refunderte ikke denne betalingen."
 msgid "This payment cannot be voided."
 msgstr "Denne betalingen kan ikke annulleres."
 
-#: includes/Payments/Contract/Gateway_Submission.php:55
+#: includes/Payments/Contract/Gateway_Submission.php:56
 msgid "Attempt ID must be a UUID."
 msgstr "Forsøks-ID-en må være en UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:58
+#: includes/Payments/Contract/Gateway_Submission.php:59
 msgid "Only POS orders take a gateway submission."
 msgstr "Bare POS-ordrer kan sende inn en forespørsel til betalingsløsningen."
 
-#: includes/Payments/Contract/Gateway_Submission.php:82
-msgid "This attempt was cancelled at the till."
-msgstr "Dette forsøket ble avbrutt i kassen."
+#: includes/Payments/Contract/Gateway_Submission.php:84
+msgid "This attempt was cancelled or superseded at the till."
+msgstr "Dette forsøket ble avbrutt eller erstattet i kassen."
 
-#: includes/Payments/Contract/Gateway_Submission.php:87
+#: includes/Payments/Contract/Gateway_Submission.php:89
 msgid "Payment method is not enabled for the POS."
 msgstr "Betalingsmåten er ikke aktivert for POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:90
+#: includes/Payments/Contract/Gateway_Submission.php:92
 msgid "Order is already paid."
 msgstr "Ordren er allerede betalt."
 
-#: includes/Payments/Contract/Gateway_Submission.php:94
+#: includes/Payments/Contract/Gateway_Submission.php:96
 msgid "Order already has a live payment."
 msgstr "Ordren har allerede en aktiv betaling."
 
-#: includes/Payments/Contract/Gateway_Submission.php:174
+#: includes/Payments/Contract/Gateway_Submission.php:177
 msgid "The payment method rejected the details entered."
 msgstr "Betalingsmåten avviste opplysningene som ble angitt."
 
-#: includes/Payments/Contract/Gateway_Submission.php:229
-#: includes/Payments/Contract/Gateway_Submission.php:244
+#: includes/Payments/Contract/Gateway_Submission.php:246
+#: includes/Payments/Contract/Gateway_Submission.php:261
 msgid "The payment provider failed."
 msgstr "Det oppstod en feil hos betalingsleverandøren."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:248
+#: includes/Payments/Contract/Gateway_Submission.php:265
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1461,156 +1461,156 @@ msgstr ""
 "Denne betalingsmåten vil åpne %s i en nettleser, men POS kan ikke fortsette."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:287
+#: includes/Payments/Contract/Gateway_Submission.php:305
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Gjort opp via POS: %1$s med ordrestatus %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:303
+#: includes/Payments/Contract/Gateway_Submission.php:322
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Sendt via POS: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:328
+#: includes/Payments/Contract/Gateway_Submission.php:364
 msgid "This invoice cannot be cancelled."
 msgstr "Denne fakturaen kan ikke avbrytes."
 
-#: includes/Payments/Contract/Gateway_Submission.php:331
+#: includes/Payments/Contract/Gateway_Submission.php:367
 msgid "The invoice was sent by a different payment method."
 msgstr "Fakturaen ble sendt med en annen betalingsmåte."
 
-#: includes/Payments/Contract/Gateway_Submission.php:335
+#: includes/Payments/Contract/Gateway_Submission.php:371
 msgid "A newer invoice has been sent for this order."
 msgstr "En nyere faktura er sendt for denne ordren."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:341
+#: includes/Payments/Contract/Gateway_Submission.php:377
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Avbrutt via POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:487
+#: includes/Payments/Contract/Gateway_Submission.php:527
 msgid "This field must be true or false."
 msgstr "Dette feltet må være true eller false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:492
+#: includes/Payments/Contract/Gateway_Submission.php:532
 msgid "This field must be text."
 msgstr "Dette feltet må være tekst."
 
-#: includes/Payments/Contract/Gateway_Submission.php:496
+#: includes/Payments/Contract/Gateway_Submission.php:536
 msgid "This field is required."
 msgstr "Dette feltet er obligatorisk."
 
-#: includes/Payments/Contract/Gateway_Submission.php:500
+#: includes/Payments/Contract/Gateway_Submission.php:540
 msgid "Choose one of the listed options."
 msgstr "Velg ett av alternativene på listen."
 
-#: includes/Payments/Contract/Gateway_Submission.php:514
+#: includes/Payments/Contract/Gateway_Submission.php:554
 msgid "Check the payment fields."
 msgstr "Kontroller betalingsfeltene."
 
-#: includes/Payments/Contract/Ledger.php:490
+#: includes/Payments/Contract/Ledger.php:611
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Denne betalingsmetoden kan ikke registreres; den må gjennomføre sin egen betalingsdel."
 
-#: includes/Payments/Contract/Ledger.php:496
+#: includes/Payments/Contract/Ledger.php:617
 msgid "Recorded payments must be captured or authorized."
 msgstr "Registrerte betalinger må være belastet eller autorisert."
 
-#: includes/Payments/Contract/Ledger.php:501
-#: includes/Payments/Contract/Ledger.php:505
+#: includes/Payments/Contract/Ledger.php:622
+#: includes/Payments/Contract/Ledger.php:626
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Mottatt beløp er ugyldig for denne betalingsmetoden."
 
-#: includes/Payments/Contract/Ledger.php:609
+#: includes/Payments/Contract/Ledger.php:730
 msgid "Payment method is disabled."
 msgstr "Betalingsmetoden er deaktivert."
 
-#: includes/Payments/Contract/Ledger.php:660
-#: includes/Payments/Contract/Ledger.php:1170
+#: includes/Payments/Contract/Ledger.php:781
+#: includes/Payments/Contract/Ledger.php:1311
 msgid "The order is already paid."
 msgstr "Ordren er allerede betalt."
 
-#: includes/Payments/Contract/Ledger.php:660
-#: includes/Payments/Contract/Ledger.php:1171
+#: includes/Payments/Contract/Ledger.php:781
+#: includes/Payments/Contract/Ledger.php:1312
 msgid "Payment amount exceeds the order balance."
 msgstr "Betalingsbeløpet overstiger det utestående ordrebeløpet."
 
-#: includes/Payments/Contract/Ledger.php:672
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:1314
 msgid "Another payment is already in progress on this order."
 msgstr "En annen betaling pågår allerede for denne ordren."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:826
+#: includes/Payments/Contract/Ledger.php:947
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS-betaling %1$s: beløpet stemmer ikke. Forventet %2$s, bekreftet %3$s."
 
-#: includes/Payments/Contract/Ledger.php:831
+#: includes/Payments/Contract/Ledger.php:952
 msgid "Tip"
 msgstr "Tips"
 
-#: includes/Payments/Contract/Ledger.php:894
+#: includes/Payments/Contract/Ledger.php:1015
 msgid "Refund must belong to this order."
 msgstr "Refusjonen må tilhøre denne ordren."
 
-#: includes/Payments/Contract/Ledger.php:897
-#: includes/Payments/Contract/Ledger.php:912
-#: includes/Payments/Contract/Ledger.php:933
+#: includes/Payments/Contract/Ledger.php:1018
+#: includes/Payments/Contract/Ledger.php:1033
+#: includes/Payments/Contract/Ledger.php:1054
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Refusjonsbeløpet kan ikke tilordnes denne betalingen."
 
-#: includes/Payments/Contract/Ledger.php:969
-#: includes/Payments/Contract/Ledger.php:1085
+#: includes/Payments/Contract/Ledger.php:1092
+#: includes/Payments/Contract/Ledger.php:1226
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Betalings-ID må være en UUID."
 
-#: includes/Payments/Contract/Ledger.php:976
-#: includes/Payments/Contract/Ledger.php:1149
+#: includes/Payments/Contract/Ledger.php:1113
+#: includes/Payments/Contract/Ledger.php:1290
 msgid "Payment id conflicts with an existing payment."
 msgstr "Betalings-ID er i konflikt med en eksisterende betaling."
 
-#: includes/Payments/Contract/Ledger.php:1007
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund status is invalid."
 msgstr "Statusen for refusjonen er ugyldig."
 
-#: includes/Payments/Contract/Ledger.php:1088
-#: includes/Payments/Contract/Ledger.php:1092
+#: includes/Payments/Contract/Ledger.php:1229
+#: includes/Payments/Contract/Ledger.php:1233
 msgid "Payment amount must be positive."
 msgstr "Betalingsbeløpet må være positivt."
 
-#: includes/Payments/Contract/Ledger.php:1097
+#: includes/Payments/Contract/Ledger.php:1238
 msgid "Payment currency must match the order."
 msgstr "Betalingsvalutaen må samsvare med ordren."
 
-#: includes/Payments/Contract/Ledger.php:1172
+#: includes/Payments/Contract/Ledger.php:1313
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Beløp eller valuta bekreftet av leverandøren samsvarer ikke med betalingen."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1277
+#: includes/Payments/Contract/Ledger.php:1418
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-betaling %s annullert."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1279
+#: includes/Payments/Contract/Ledger.php:1420
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-betaling %1$s annullert: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1786
+#: includes/Payments/Contract/Ledger.php:2037
 msgid "Payment not found."
 msgstr "Betaling ikke funnet."
 
-#: includes/Payments/Contract/Ledger.php:1796
+#: includes/Payments/Contract/Ledger.php:2047
 msgid "Payment transition is invalid."
 msgstr "Ugyldig betalingsstatusovergang."
 
@@ -1673,11 +1673,11 @@ msgid ""
 msgstr ""
 "Tildel dem under WCPOS-innstillinger, Tilgang, eller tildel en rolle som har dem."
 
-#: includes/Services/Cash_Movement_Store.php:96
+#: includes/Services/Cash_Movement_Store.php:119
 msgid "This movement was recorded after counting began."
 msgstr "Denne kontantbevegelsen ble registrert etter at opptellingen startet."
 
-#: includes/Services/Cash_Movement_Store.php:160
+#: includes/Services/Cash_Movement_Store.php:167
 msgid "The movement has already been voided or is unavailable."
 msgstr "Kontantbevegelsen er allerede annullert eller utilgjengelig."
 
@@ -1692,8 +1692,8 @@ msgstr ""
 "Denne økten har allerede et dagsoppgjør; opptellingen ble registrert som en ny opptelling."
 
 #: includes/Services/Closure_Store.php:533
-#: includes/Services/Register_Session_Store.php:251
-#: includes/Services/Register_Session_Store.php:417
+#: includes/Services/Register_Session_Store.php:278
+#: includes/Services/Register_Session_Store.php:439
 msgid "The session state has changed."
 msgstr "Øktstatusen er endret."
 
@@ -3088,7 +3088,7 @@ msgstr "Plattform"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:116
+#: includes/Services/Register_Store.php:153
 #: includes/Services/Reports_Registry.php:188
 msgid "Register"
 msgstr "Kasse"
@@ -4762,23 +4762,23 @@ msgstr "Avgiftspliktig: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Øyeblikksbilde av POS-skattekvittering opprettet (kvittering #%d)."
 
-#: includes/Services/Register_Session_Store.php:130
+#: includes/Services/Register_Session_Store.php:161
 msgid "This register already has an open session."
 msgstr "Denne kassen har allerede en åpen økt."
 
-#: includes/Services/Register_Session_Store.php:196
+#: includes/Services/Register_Session_Store.php:227
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Kassemedarbeideren som åpnet denne økten, kan ikke godkjenne den."
 
-#: includes/Services/Register_Session_Store.php:298
+#: includes/Services/Register_Session_Store.php:320
 msgid "The closure count differs from the closed session."
 msgstr "Antallet avslutninger samsvarer ikke med den avsluttede økten."
 
-#: includes/Services/Register_Session_Store.php:348
+#: includes/Services/Register_Session_Store.php:370
 msgid "Manager approval is required to close this session."
 msgstr "Lederens godkjenning kreves for å lukke denne økten."
 
-#: includes/Services/Register_Session_Store.php:420
+#: includes/Services/Register_Session_Store.php:442
 msgid "The session approval has changed."
 msgstr "Godkjenningen av økten er endret."
 
@@ -6074,7 +6074,3 @@ msgstr ""
 #: woocommerce-pos.php:163
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "WCPOS-pluginen kunne ikke lastes riktig."
-
-#: tests/includes/Test_i18n.php:757
-msgid "Hello"
-msgstr "Hei"

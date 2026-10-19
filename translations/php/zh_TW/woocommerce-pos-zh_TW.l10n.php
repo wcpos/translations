@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => '此付款無法作廢。',
 		'Attempt ID must be a UUID.' => '嘗試 ID 必須是 UUID。',
 		'Only POS orders take a gateway submission.' => '只有 POS 訂單可以提交至付款閘道。',
-		'This attempt was cancelled at the till.' => '此嘗試已在收銀台取消。',
+		'This attempt was cancelled or superseded at the till.' => '此次嘗試已在收銀台取消或遭後續嘗試取代。',
 		'Payment method is not enabled for the POS.' => '此付款方式未在 POS 啟用。',
 		'Order is already paid.' => '訂單已付款。',
 		'Order already has a live payment.' => '訂單已有進行中的付款。',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => '無法使用 WP Overnight 裝箱單文件。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '無法為此訂單呈現 WP Overnight 裝箱單文件。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 插件未能正確加載。',
-		'Hello' => '您好',
 	),
 );
