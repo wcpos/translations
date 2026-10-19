@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'この支払いは取り消せません。',
 		'Attempt ID must be a UUID.' => '試行 ID は UUID である必要があります。',
 		'Only POS orders take a gateway submission.' => 'ゲートウェイへの送信ができるのは POS 注文のみです。',
-		'This attempt was cancelled at the till.' => 'この試行はレジでキャンセルされました。',
+		'This attempt was cancelled or superseded at the till.' => 'この試行はレジでキャンセルされたか、別の試行に置き換えられました。',
 		'Payment method is not enabled for the POS.' => 'この決済方法は POS で有効になっていません。',
 		'Order is already paid.' => '注文はすでに支払い済みです。',
 		'Order already has a live payment.' => '注文にはすでに有効な支払いがあります。',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight の納品書ドキュメントは利用できません。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'この注文の WP Overnight 納品書ドキュメントを表示できませんでした。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOSプラグインの読み込みに失敗しました。',
-		'Hello' => 'こんにちは',
 	),
 );

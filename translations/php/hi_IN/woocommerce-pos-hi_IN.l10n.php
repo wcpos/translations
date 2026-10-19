@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'यह भुगतान रद्द नहीं किया जा सकता।',
 		'Attempt ID must be a UUID.' => 'प्रयास ID UUID होना चाहिए।',
 		'Only POS orders take a gateway submission.' => 'केवल POS ऑर्डर ही भुगतान गेटवे सबमिशन कर सकते हैं।',
-		'This attempt was cancelled at the till.' => 'यह प्रयास काउंटर पर रद्द किया गया था।',
+		'This attempt was cancelled or superseded at the till.' => 'यह प्रयास काउंटर पर रद्द कर दिया गया था या इसकी जगह दूसरा प्रयास किया गया था।',
 		'Payment method is not enabled for the POS.' => 'यह भुगतान विधि POS के लिए सक्षम नहीं है।',
 		'Order is already paid.' => 'ऑर्डर का भुगतान पहले ही हो चुका है।',
 		'Order already has a live payment.' => 'इस ऑर्डर के लिए पहले से ही एक सक्रिय भुगतान है।',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight पैकिंग स्लिप दस्तावेज़ उपलब्ध नहीं है।',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'इस ऑर्डर के लिए WP Overnight पैकिंग स्लिप दस्तावेज़ रेंडर नहीं किया जा सका।',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS प्लगइन सही ढंग से लोड नहीं हो सका।',
-		'Hello' => 'नमस्ते',
 	),
 );

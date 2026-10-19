@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Ez a fizetés nem érvényteleníthető.',
 		'Attempt ID must be a UUID.' => 'A kísérletazonosítónak UUID-nek kell lennie.',
 		'Only POS orders take a gateway submission.' => 'Fizetési átjárón keresztüli beküldés csak POS-rendeléseknél lehetséges.',
-		'This attempt was cancelled at the till.' => 'Ezt a kísérletet a pénztárnál visszavonták.',
+		'This attempt was cancelled or superseded at the till.' => 'Ezt a próbálkozást a pénztárnál törölték, vagy egy másik váltotta fel.',
 		'Payment method is not enabled for the POS.' => 'A fizetési mód nincs engedélyezve a POS-hoz.',
 		'Order is already paid.' => 'A rendelés már ki van fizetve.',
 		'Order already has a live payment.' => 'A rendeléshez már tartozik aktív fizetés.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'A WP Overnight csomagjegyzék nem érhető el.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'A WP Overnight csomagjegyzék nem jeleníthető meg ehhez a rendeléshez.',
 		'The WCPOS plugin failed to load correctly.' => 'A WCPOS bővítmény nem töltődött be megfelelően.',
-		'Hello' => 'Szia',
 	),
 );

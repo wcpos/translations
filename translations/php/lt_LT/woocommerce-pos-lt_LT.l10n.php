@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Šio mokėjimo negalima anuliuoti.',
 		'Attempt ID must be a UUID.' => 'Bandymo ID turi būti UUID.',
 		'Only POS orders take a gateway submission.' => 'Mokėjimo šliuzo pateikimas galimas tik POS užsakymams.',
-		'This attempt was cancelled at the till.' => 'Šis bandymas atšauktas kasoje.',
+		'This attempt was cancelled or superseded at the till.' => 'Šis bandymas kasoje buvo atšauktas arba pakeistas kitu.',
 		'Payment method is not enabled for the POS.' => 'Šis mokėjimo būdas POS sistemoje neįjungtas.',
 		'Order is already paid.' => 'Užsakymas jau apmokėtas.',
 		'Order already has a live payment.' => 'Užsakymui jau vykdomas mokėjimas.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight pakavimo lapo dokumentas neprieinamas.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS įskiepis nepavyko tinkamai įkelti.',
-		'Hello' => 'Sveiki',
 	),
 );

@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Pembayaran ini tidak dapat dibatalkan.',
 		'Attempt ID must be a UUID.' => 'ID percobaan harus berupa UUID.',
 		'Only POS orders take a gateway submission.' => 'Hanya pesanan POS yang dapat mengirimkan transaksi ke gateway pembayaran.',
-		'This attempt was cancelled at the till.' => 'Percobaan ini dibatalkan di kasir.',
+		'This attempt was cancelled or superseded at the till.' => 'Percobaan ini dibatalkan atau digantikan di meja kasir.',
 		'Payment method is not enabled for the POS.' => 'Metode pembayaran tidak diaktifkan untuk POS.',
 		'Order is already paid.' => 'Pesanan sudah dibayar.',
 		'Order already has a live payment.' => 'Pesanan sudah memiliki pembayaran aktif.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Dokumen slip pengemasan WP Overnight tidak tersedia.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokumen slip pengemasan WP Overnight tidak dapat dirender untuk pesanan ini.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS gagal dimuat dengan benar.',
-		'Hello' => 'Halo',
 	),
 );

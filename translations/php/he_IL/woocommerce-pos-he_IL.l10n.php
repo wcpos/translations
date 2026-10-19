@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'אי אפשר לבטל את התשלום הזה.',
 		'Attempt ID must be a UUID.' => 'מזהה הניסיון חייב להיות UUID.',
 		'Only POS orders take a gateway submission.' => 'רק הזמנות POS יכולות לשלוח בקשת תשלום לשיטת תשלום.',
-		'This attempt was cancelled at the till.' => 'הניסיון הזה בוטל בקופה.',
+		'This attempt was cancelled or superseded at the till.' => 'הניסיון הזה בוטל או הוחלף בקופה.',
 		'Payment method is not enabled for the POS.' => 'שיטת התשלום אינה מופעלת עבור POS.',
 		'Order is already paid.' => 'ההזמנה כבר שולמה.',
 		'Order already has a live payment.' => 'כבר יש להזמנה תשלום פעיל.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'מסמך תעודת המשלוח של WP Overnight אינו זמין.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'לא ניתן היה להציג את מסמך תעודת המשלוח של WP Overnight עבור הזמנה זו.',
 		'The WCPOS plugin failed to load correctly.' => 'התוסף WCPOS נכשל בטעינה נכונה.',
-		'Hello' => 'שלום',
 	),
 );

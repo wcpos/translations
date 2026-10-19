@@ -536,7 +536,7 @@ msgstr "Mokėjimo būdas negalimas POS atsiskaitymui."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:318
+#: includes/API/V2/Payments_Controller.php:329
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Užsakymas nerastas."
@@ -1133,31 +1133,31 @@ msgstr "Neteisinga _woocommerce_pos_uuid meta_data reikšmė."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "Šis maršrutas neteikia rinkinio „%1$s“. Palaikomi: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:80
+#: includes/API/V2/Payments_Controller.php:91
 msgid "Sorry, you cannot manage order payments."
 msgstr "Deja, negalite tvarkyti užsakymų mokėjimų."
 
-#: includes/API/V2/Payments_Controller.php:99
+#: includes/API/V2/Payments_Controller.php:110
 msgid "Payment must be an object."
 msgstr "Mokėjimas turi būti objektas."
 
-#: includes/API/V2/Payments_Controller.php:151
+#: includes/API/V2/Payments_Controller.php:162
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:99
-#: includes/Payments/Contract/Ledger.php:1110
+#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Ledger.php:1251
 msgid "Payment method not found."
 msgstr "Mokėjimo būdas nerastas."
 
-#: includes/API/V2/Payments_Controller.php:157
+#: includes/API/V2/Payments_Controller.php:168
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Reikšmės turi būti objektas, o bandymo ID – UUID."
 
-#: includes/API/V2/Payments_Controller.php:162
+#: includes/API/V2/Payments_Controller.php:173
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "Bandymo ID turi nurodyti išsiųstą bandymą, kurį reikia atšaukti."
 
-#: includes/API/V2/Payments_Controller.php:268
+#: includes/API/V2/Payments_Controller.php:279
 msgid "Invalid payment operation parameters."
 msgstr "Netinkami mokėjimo operacijos parametrai."
 
@@ -1170,8 +1170,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Deja, negalite inicijuoti mokėjimo būdų."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:52
-#: includes/Payments/Contract/Ledger.php:1791
+#: includes/Payments/Contract/Gateway_Submission.php:53
+#: includes/Payments/Contract/Ledger.php:2042
 msgid "Payment capture mode is unsupported."
 msgstr "Mokėjimo nurašymo režimas nepalaikomas."
 
@@ -1202,18 +1202,18 @@ msgid "Sorry, you cannot access registers."
 msgstr "Deja, negalite pasiekti kasų."
 
 #. translators: %s: register field name.
-#: includes/API/V2/Registers_Controller.php:420
+#: includes/API/V2/Registers_Controller.php:439
 #, php-format
 msgid "Invalid register field: %s."
 msgstr "Netinkamas kasos laukas: %s."
 
-#: includes/API/V2/Registers_Controller.php:425
+#: includes/API/V2/Registers_Controller.php:444
 #: includes/Services/Report_Scope_Resolver.php:63
 #: includes/Services/Report_Scope_Resolver.php:66
 msgid "Register not found."
 msgstr "Kasa nerasta."
 
-#: includes/API/V2/Registers_Controller.php:430
+#: includes/API/V2/Registers_Controller.php:449
 msgid "Register could not be saved."
 msgstr "Nepavyko išsaugoti kasos."
 
@@ -1252,12 +1252,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Nepavyko sudaryti ataskaitos „%1$s“: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:390
+#: includes/API/V2/Sessions_Controller.php:410
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Netinkamas parametras: %s"
 
-#: includes/API/V2/Sessions_Controller.php:392
+#: includes/API/V2/Sessions_Controller.php:412
 msgid "The session request could not be completed."
 msgstr "Nepavyko įvykdyti seanso užklausos."
 
@@ -1418,41 +1418,41 @@ msgstr "Mokėjimo paslaugų teikėjas šio mokėjimo negrąžino."
 msgid "This payment cannot be voided."
 msgstr "Šio mokėjimo negalima anuliuoti."
 
-#: includes/Payments/Contract/Gateway_Submission.php:55
+#: includes/Payments/Contract/Gateway_Submission.php:56
 msgid "Attempt ID must be a UUID."
 msgstr "Bandymo ID turi būti UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:58
+#: includes/Payments/Contract/Gateway_Submission.php:59
 msgid "Only POS orders take a gateway submission."
 msgstr "Mokėjimo šliuzo pateikimas galimas tik POS užsakymams."
 
-#: includes/Payments/Contract/Gateway_Submission.php:82
-msgid "This attempt was cancelled at the till."
-msgstr "Šis bandymas atšauktas kasoje."
+#: includes/Payments/Contract/Gateway_Submission.php:84
+msgid "This attempt was cancelled or superseded at the till."
+msgstr "Šis bandymas kasoje buvo atšauktas arba pakeistas kitu."
 
-#: includes/Payments/Contract/Gateway_Submission.php:87
+#: includes/Payments/Contract/Gateway_Submission.php:89
 msgid "Payment method is not enabled for the POS."
 msgstr "Šis mokėjimo būdas POS sistemoje neįjungtas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:90
+#: includes/Payments/Contract/Gateway_Submission.php:92
 msgid "Order is already paid."
 msgstr "Užsakymas jau apmokėtas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:94
+#: includes/Payments/Contract/Gateway_Submission.php:96
 msgid "Order already has a live payment."
 msgstr "Užsakymui jau vykdomas mokėjimas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:174
+#: includes/Payments/Contract/Gateway_Submission.php:177
 msgid "The payment method rejected the details entered."
 msgstr "Mokėjimo būdas atmetė įvestus duomenis."
 
-#: includes/Payments/Contract/Gateway_Submission.php:229
-#: includes/Payments/Contract/Gateway_Submission.php:244
+#: includes/Payments/Contract/Gateway_Submission.php:246
+#: includes/Payments/Contract/Gateway_Submission.php:261
 msgid "The payment provider failed."
 msgstr "Įvyko mokėjimo paslaugų teikėjo klaida."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:248
+#: includes/Payments/Contract/Gateway_Submission.php:265
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1460,155 +1460,155 @@ msgstr ""
 "Šis mokėjimo būdas nori naršyklėje atidaryti %s, tačiau POS negali tęsti."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:287
+#: includes/Payments/Contract/Gateway_Submission.php:305
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Atsiskaityta per POS: %1$s, užsakymo būsena %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:303
+#: includes/Payments/Contract/Gateway_Submission.php:322
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Išsiųsta per POS: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:328
+#: includes/Payments/Contract/Gateway_Submission.php:364
 msgid "This invoice cannot be cancelled."
 msgstr "Šios sąskaitos faktūros atšaukti negalima."
 
-#: includes/Payments/Contract/Gateway_Submission.php:331
+#: includes/Payments/Contract/Gateway_Submission.php:367
 msgid "The invoice was sent by a different payment method."
 msgstr "Sąskaita faktūra išsiųsta kitu mokėjimo būdu."
 
-#: includes/Payments/Contract/Gateway_Submission.php:335
+#: includes/Payments/Contract/Gateway_Submission.php:371
 msgid "A newer invoice has been sent for this order."
 msgstr "Šiam užsakymui išsiųsta naujesnė sąskaita faktūra."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:341
+#: includes/Payments/Contract/Gateway_Submission.php:377
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Atšaukta per POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:487
+#: includes/Payments/Contract/Gateway_Submission.php:527
 msgid "This field must be true or false."
 msgstr "Šio lauko reikšmė turi būti true arba false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:492
+#: includes/Payments/Contract/Gateway_Submission.php:532
 msgid "This field must be text."
 msgstr "Šio lauko reikšmė turi būti tekstas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:496
+#: includes/Payments/Contract/Gateway_Submission.php:536
 msgid "This field is required."
 msgstr "Šis laukas yra privalomas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:500
+#: includes/Payments/Contract/Gateway_Submission.php:540
 msgid "Choose one of the listed options."
 msgstr "Pasirinkite vieną iš pateiktų parinkčių."
 
-#: includes/Payments/Contract/Gateway_Submission.php:514
+#: includes/Payments/Contract/Gateway_Submission.php:554
 msgid "Check the payment fields."
 msgstr "Patikrinkite mokėjimo laukus."
 
-#: includes/Payments/Contract/Ledger.php:490
+#: includes/Payments/Contract/Ledger.php:611
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Šio mokėjimo būdo negalima tiesiog užregistruoti; juo reikia atlikti atskirą mokėjimo operaciją."
 
-#: includes/Payments/Contract/Ledger.php:496
+#: includes/Payments/Contract/Ledger.php:617
 msgid "Recorded payments must be captured or authorized."
 msgstr "Užregistruoti mokėjimai turi būti nurašyti arba autorizuoti."
 
-#: includes/Payments/Contract/Ledger.php:501
-#: includes/Payments/Contract/Ledger.php:505
+#: includes/Payments/Contract/Ledger.php:622
+#: includes/Payments/Contract/Ledger.php:626
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Šiam mokėjimo būdui nurodyta suma netinkama."
 
-#: includes/Payments/Contract/Ledger.php:609
+#: includes/Payments/Contract/Ledger.php:730
 msgid "Payment method is disabled."
 msgstr "Mokėjimo būdas išjungtas."
 
-#: includes/Payments/Contract/Ledger.php:660
-#: includes/Payments/Contract/Ledger.php:1170
+#: includes/Payments/Contract/Ledger.php:781
+#: includes/Payments/Contract/Ledger.php:1311
 msgid "The order is already paid."
 msgstr "Užsakymas jau apmokėtas."
 
-#: includes/Payments/Contract/Ledger.php:660
-#: includes/Payments/Contract/Ledger.php:1171
+#: includes/Payments/Contract/Ledger.php:781
+#: includes/Payments/Contract/Ledger.php:1312
 msgid "Payment amount exceeds the order balance."
 msgstr "Mokėjimo suma viršija užsakymo likutį."
 
-#: includes/Payments/Contract/Ledger.php:672
-#: includes/Payments/Contract/Ledger.php:1173
+#: includes/Payments/Contract/Ledger.php:793
+#: includes/Payments/Contract/Ledger.php:1314
 msgid "Another payment is already in progress on this order."
 msgstr "Šiam užsakymui jau vykdomas kitas mokėjimas."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:826
+#: includes/Payments/Contract/Ledger.php:947
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS mokėjimo %1$s sumos neatitinka: tikėtasi %2$s, patvirtinta %3$s."
 
-#: includes/Payments/Contract/Ledger.php:831
+#: includes/Payments/Contract/Ledger.php:952
 msgid "Tip"
 msgstr "Arbatpinigiai"
 
-#: includes/Payments/Contract/Ledger.php:894
+#: includes/Payments/Contract/Ledger.php:1015
 msgid "Refund must belong to this order."
 msgstr "Grąžinimas turi priklausyti šiam užsakymui."
 
-#: includes/Payments/Contract/Ledger.php:897
-#: includes/Payments/Contract/Ledger.php:912
-#: includes/Payments/Contract/Ledger.php:933
+#: includes/Payments/Contract/Ledger.php:1018
+#: includes/Payments/Contract/Ledger.php:1033
+#: includes/Payments/Contract/Ledger.php:1054
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Grąžinimo sumos negalima priskirti šiam mokėjimui."
 
-#: includes/Payments/Contract/Ledger.php:969
-#: includes/Payments/Contract/Ledger.php:1085
+#: includes/Payments/Contract/Ledger.php:1092
+#: includes/Payments/Contract/Ledger.php:1226
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Mokėjimo ID turi būti UUID."
 
-#: includes/Payments/Contract/Ledger.php:976
-#: includes/Payments/Contract/Ledger.php:1149
+#: includes/Payments/Contract/Ledger.php:1113
+#: includes/Payments/Contract/Ledger.php:1290
 msgid "Payment id conflicts with an existing payment."
 msgstr "Mokėjimo ID sutampa su esamo mokėjimo ID."
 
-#: includes/Payments/Contract/Ledger.php:1007
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund status is invalid."
 msgstr "Lėšų grąžinimo būsena netinkama."
 
-#: includes/Payments/Contract/Ledger.php:1088
-#: includes/Payments/Contract/Ledger.php:1092
+#: includes/Payments/Contract/Ledger.php:1229
+#: includes/Payments/Contract/Ledger.php:1233
 msgid "Payment amount must be positive."
 msgstr "Mokėjimo suma turi būti teigiama."
 
-#: includes/Payments/Contract/Ledger.php:1097
+#: includes/Payments/Contract/Ledger.php:1238
 msgid "Payment currency must match the order."
 msgstr "Mokėjimo valiuta turi sutapti su užsakymo valiuta."
 
-#: includes/Payments/Contract/Ledger.php:1172
+#: includes/Payments/Contract/Ledger.php:1313
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "Teikėjo patvirtinta suma arba valiuta neatitinka mokėjimo duomenų."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1277
+#: includes/Payments/Contract/Ledger.php:1418
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS mokėjimas %s anuliuotas."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1279
+#: includes/Payments/Contract/Ledger.php:1420
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS mokėjimas %1$s anuliuotas: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:1786
+#: includes/Payments/Contract/Ledger.php:2037
 msgid "Payment not found."
 msgstr "Mokėjimas nerastas."
 
-#: includes/Payments/Contract/Ledger.php:1796
+#: includes/Payments/Contract/Ledger.php:2047
 msgid "Payment transition is invalid."
 msgstr "Netinkamas mokėjimo būsenos pakeitimas."
 
@@ -1672,11 +1672,11 @@ msgid ""
 msgstr ""
 "Suteikite jas skiltyje „WCPOS“ → „Nustatymai“ → „Prieiga“ arba priskirkite vaidmenį, kuriam jos suteiktos."
 
-#: includes/Services/Cash_Movement_Store.php:96
+#: includes/Services/Cash_Movement_Store.php:119
 msgid "This movement was recorded after counting began."
 msgstr "Šis judėjimas užregistruotas pradėjus skaičiuoti."
 
-#: includes/Services/Cash_Movement_Store.php:160
+#: includes/Services/Cash_Movement_Store.php:167
 msgid "The movement has already been voided or is unavailable."
 msgstr "Judėjimas jau anuliuotas arba nepasiekiamas."
 
@@ -1691,8 +1691,8 @@ msgstr ""
 "Šis seansas jau turi uždarymo įrašą; suskaičiuoti duomenys užregistruoti kaip perskaičiavimas."
 
 #: includes/Services/Closure_Store.php:533
-#: includes/Services/Register_Session_Store.php:251
-#: includes/Services/Register_Session_Store.php:417
+#: includes/Services/Register_Session_Store.php:278
+#: includes/Services/Register_Session_Store.php:439
 msgid "The session state has changed."
 msgstr "Seanso būsena pasikeitė."
 
@@ -3085,7 +3085,7 @@ msgstr "Platforma"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:116
+#: includes/Services/Register_Store.php:153
 #: includes/Services/Reports_Registry.php:188
 msgid "Register"
 msgstr "Kasa"
@@ -4758,23 +4758,23 @@ msgstr "Apmokestinama: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Sukurta POS fiskalinio kvito momentinė kopija (kvitas #%d)."
 
-#: includes/Services/Register_Session_Store.php:130
+#: includes/Services/Register_Session_Store.php:161
 msgid "This register already has an open session."
 msgstr "Ši kasa jau turi atidarytą sesiją."
 
-#: includes/Services/Register_Session_Store.php:196
+#: includes/Services/Register_Session_Store.php:227
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Šią sesiją atidaręs kasininkas negali jos patvirtinti."
 
-#: includes/Services/Register_Session_Store.php:298
+#: includes/Services/Register_Session_Store.php:320
 msgid "The closure count differs from the closed session."
 msgstr "Uždarymų skaičius skiriasi nuo uždarytos sesijos."
 
-#: includes/Services/Register_Session_Store.php:348
+#: includes/Services/Register_Session_Store.php:370
 msgid "Manager approval is required to close this session."
 msgstr "Norint uždaryti šią sesiją, būtinas vadovo patvirtinimas."
 
-#: includes/Services/Register_Session_Store.php:420
+#: includes/Services/Register_Session_Store.php:442
 msgid "The session approval has changed."
 msgstr "Sesijos patvirtinimas pasikeitė."
 
@@ -6070,7 +6070,3 @@ msgstr ""
 #: woocommerce-pos.php:163
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "WCPOS įskiepis nepavyko tinkamai įkelti."
-
-#: tests/includes/Test_i18n.php:757
-msgid "Hello"
-msgstr "Sveiki"

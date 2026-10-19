@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'Ekki er hægt að afturkalla þessa greiðslu.',
 		'Attempt ID must be a UUID.' => 'Tilraunaauðkennið verður að vera UUID.',
 		'Only POS orders take a gateway submission.' => 'Aðeins POS-pantanir geta sent greiðslu í gegnum greiðslugátt.',
-		'This attempt was cancelled at the till.' => 'Hætt var við þessa tilraun við kassann.',
+		'This attempt was cancelled or superseded at the till.' => 'Þessari tilraun var hætt eða önnur tók við af henni í kassanum.',
 		'Payment method is not enabled for the POS.' => 'Greiðslumátinn er ekki virkjaður fyrir POS.',
 		'Order is already paid.' => 'Pöntunin er þegar greidd.',
 		'Order already has a live payment.' => 'Pöntunin er þegar með virka greiðslu.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight fylgiseðillinn er ekki tiltækur.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight fylgiseðilinn fyrir þessa pöntun.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS viðbótin mistókst að hlaðast rétt.',
-		'Hello' => 'Halló',
 	),
 );

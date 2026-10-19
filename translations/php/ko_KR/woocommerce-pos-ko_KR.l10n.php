@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => '이 결제는 무효 처리할 수 없습니다.',
 		'Attempt ID must be a UUID.' => '시도 ID는 UUID여야 합니다.',
 		'Only POS orders take a gateway submission.' => 'POS 주문만 PG 서비스에 제출할 수 있습니다.',
-		'This attempt was cancelled at the till.' => '이 시도는 계산대에서 취소되었습니다.',
+		'This attempt was cancelled or superseded at the till.' => '계산대에서 이 시도가 취소되었거나 다른 시도로 대체되었습니다.',
 		'Payment method is not enabled for the POS.' => '이 결제 수단은 POS에서 활성화되어 있지 않습니다.',
 		'Order is already paid.' => '주문이 이미 결제되었습니다.',
 		'Order already has a live payment.' => '주문에 이미 진행 중인 결제가 있습니다.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 포장 명세서 문서를 사용할 수 없습니다.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 포장 명세서 문서를 렌더링할 수 없습니다.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 플러그인이 올바르게 로드되지 않았습니다.',
-		'Hello' => '안녕하세요',
 	),
 );

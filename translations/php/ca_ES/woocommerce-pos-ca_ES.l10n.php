@@ -286,7 +286,7 @@ return array(
 		'This payment cannot be voided.' => 'No es pot anul·lar aquest pagament.',
 		'Attempt ID must be a UUID.' => 'L’ID de l’intent ha de ser un UUID.',
 		'Only POS orders take a gateway submission.' => 'Només les comandes del POS es poden enviar a una passarel·la de pagament.',
-		'This attempt was cancelled at the till.' => 'Aquest intent s’ha cancel·lat a la caixa.',
+		'This attempt was cancelled or superseded at the till.' => 'Aquest intent s’ha cancel·lat o substituït per un altre a la caixa.',
 		'Payment method is not enabled for the POS.' => 'El mètode de pagament no està activat per al POS.',
 		'Order is already paid.' => 'La comanda ja està pagada.',
 		'Order already has a live payment.' => 'La comanda ja té un pagament actiu.',
@@ -1160,6 +1160,5 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'El document d\'albarà d\'entrega de WP Overnight no està disponible.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'No s\'ha pogut renderitzar el document d\'albarà d\'entrega de WP Overnight per a aquesta comanda.',
 		'The WCPOS plugin failed to load correctly.' => 'El plugin WCPOS no s\'ha carregat correctament.',
-		'Hello' => 'Hola',
 	),
 );
