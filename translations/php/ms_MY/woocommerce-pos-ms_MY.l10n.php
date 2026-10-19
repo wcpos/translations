@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Laporan “%1$s” gagal: %2$s',
 		'Invalid parameter: %s' => 'Parameter tidak sah: %s',
 		'The session request could not be completed.' => 'Permintaan sesi tidak dapat diselesaikan.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: stok untuk %1$s tidak dapat dilaraskan sebanyak %2$s; selaraskan stok produk secara manual.',
 		'Order does not exist.' => 'Pesanan tidak wujud.',
 		'Order key mismatch.' => 'Kunci pesanan tidak sepadan.',
 		'Token not provided.' => 'Token tidak disediakan.',

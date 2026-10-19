@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Échec du rapport « %1$s » : %2$s',
 		'Invalid parameter: %s' => 'Paramètre invalide : %s',
 		'The session request could not be completed.' => 'La requête de session n’a pas pu aboutir.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS : le stock de %1$s n’a pas pu être ajusté de %2$s ; rapprochez manuellement le stock du produit.',
 		'Order does not exist.' => 'La commande n\'existe pas.',
 		'Order key mismatch.' => 'Clé de commande non correspondante.',
 		'Token not provided.' => 'Jeton non fourni.',

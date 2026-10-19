@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => '报表“%1$s”失败：%2$s',
 		'Invalid parameter: %s' => '参数无效：%s',
 		'The session request could not be completed.' => '无法完成会话请求。',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS：无法按 %2$s 调整 %1$s 的库存；请手动核对该商品的库存。',
 		'Order does not exist.' => '订单不存在。',
 		'Order key mismatch.' => '订单密钥不匹配。',
 		'Token not provided.' => '未提供令牌。',

@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Báo cáo “%1$s” không thành công: %2$s',
 		'Invalid parameter: %s' => 'Tham số không hợp lệ: %s',
 		'The session request could not be completed.' => 'Không thể hoàn tất yêu cầu phiên.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: không thể điều chỉnh tồn kho của %1$s theo %2$s; vui lòng tự đối soát tồn kho của sản phẩm.',
 		'Order does not exist.' => 'Đơn hàng không tồn tại.',
 		'Order key mismatch.' => 'Khóa đơn hàng không khớp.',
 		'Token not provided.' => 'Không cung cấp mã thông báo.',

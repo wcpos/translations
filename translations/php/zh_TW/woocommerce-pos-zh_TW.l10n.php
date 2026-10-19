@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => '報表「%1$s」失敗：%2$s',
 		'Invalid parameter: %s' => '參數無效：%s',
 		'The session request could not be completed.' => '無法完成工作階段要求。',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS：無法依 %2$s 調整 %1$s 的庫存；請手動核對該商品的庫存。',
 		'Order does not exist.' => '訂單不存在。',
 		'Order key mismatch.' => '訂單金鑰不匹配。',
 		'Token not provided.' => '未提供令牌。',

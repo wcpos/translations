@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'הדוח „%1$s” נכשל: %2$s',
 		'Invalid parameter: %s' => 'הפרמטר אינו תקין: %s',
 		'The session request could not be completed.' => 'לא ניתן היה להשלים את בקשת המשמרת.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: לא ניתן היה להתאים את המלאי של %1$s ב־%2$s; יש להתאים ידנית את מלאי המוצר.',
 		'Order does not exist.' => 'ההזמנה אינה קיימת.',
 		'Order key mismatch.' => 'חוסר התאמה במפתח ההזמנה.',
 		'Token not provided.' => 'לא סופק אסימון.',

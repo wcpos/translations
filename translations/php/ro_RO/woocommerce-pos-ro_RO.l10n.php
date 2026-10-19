@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Raportul „%1$s” a eșuat: %2$s',
 		'Invalid parameter: %s' => 'Parametru nevalid: %s',
 		'The session request could not be completed.' => 'Cererea pentru sesiune nu a putut fi finalizată.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: stocul pentru %1$s nu a putut fi ajustat cu %2$s; reconciliați manual stocul produsului.',
 		'Order does not exist.' => 'Comanda nu există.',
 		'Order key mismatch.' => 'Cheia comenzii nu corespunde.',
 		'Token not provided.' => 'Tokenul nu a fost furnizat.',

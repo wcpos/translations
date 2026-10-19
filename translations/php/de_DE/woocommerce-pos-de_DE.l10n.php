@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Bericht „%1$s“ fehlgeschlagen: %2$s',
 		'Invalid parameter: %s' => 'Ungültiger Parameter: %s',
 		'The session request could not be completed.' => 'Die Sitzungsanfrage konnte nicht abgeschlossen werden.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: Der Bestand von %1$s konnte nicht um %2$s angepasst werden. Bitte gleichen Sie den Produktbestand manuell ab.',
 		'Order does not exist.' => 'Bestellung existiert nicht.',
 		'Order key mismatch.' => 'Bestellschlüssel stimmt nicht überein.',
 		'Token not provided.' => 'Token nicht bereitgestellt.',

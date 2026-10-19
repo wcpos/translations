@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Αποτυχία αναφοράς «%1$s»: %2$s',
 		'Invalid parameter: %s' => 'Μη έγκυρη παράμετρος: %s',
 		'The session request could not be completed.' => 'Δεν ήταν δυνατή η ολοκλήρωση του αιτήματος συνεδρίας.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: Δεν ήταν δυνατή η προσαρμογή του αποθέματος του προϊόντος %1$s κατά %2$s· προσαρμόστε χειροκίνητα το απόθεμα του προϊόντος.',
 		'Order does not exist.' => 'Η παραγγελία δεν υπάρχει.',
 		'Order key mismatch.' => 'Ασυμφωνία κλειδιού παραγγελίας.',
 		'Token not provided.' => 'Δεν παρέχεται διακριτικό.',

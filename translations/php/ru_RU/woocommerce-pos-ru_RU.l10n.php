@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Не удалось сформировать отчёт «%1$s»: %2$s',
 		'Invalid parameter: %s' => 'Недопустимый параметр: %s',
 		'The session request could not be completed.' => 'Не удалось выполнить запрос сеанса.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: не удалось скорректировать запас товара %1$s на %2$s; скорректируйте запас товара вручную.',
 		'Order does not exist.' => 'Заказ не существует.',
 		'Order key mismatch.' => 'Несоответствие ключа заказа.',
 		'Token not provided.' => 'Токен не предоставлен.',

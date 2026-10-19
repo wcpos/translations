@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Rapporten «%1$s» mislyktes: %2$s',
 		'Invalid parameter: %s' => 'Ugyldig parameter: %s',
 		'The session request could not be completed.' => 'Kunne ikke fullføre forespørselen om økten.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: lagerbeholdningen for %1$s kunne ikke justeres med %2$s; avstem produktets lagerbeholdning manuelt.',
 		'Order does not exist.' => 'Bestillingen eksisterer ikke.',
 		'Order key mismatch.' => 'Bestillingsnøkkel samsvarer ikke.',
 		'Token not provided.' => 'Token ikke oppgitt.',

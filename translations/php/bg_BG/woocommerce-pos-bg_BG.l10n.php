@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Отчетът „%1$s“ не бе изпълнен: %2$s',
 		'Invalid parameter: %s' => 'Невалиден параметър: %s',
 		'The session request could not be completed.' => 'Заявката за сесията не можа да бъде изпълнена.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: наличността на %1$s не можа да бъде коригирана с %2$s; коригирайте наличността на продукта ръчно.',
 		'Order does not exist.' => 'Поръчката не съществува.',
 		'Order key mismatch.' => 'Несъответствие на ключа на поръчката.',
 		'Token not provided.' => 'Токенът не е предоставен.',

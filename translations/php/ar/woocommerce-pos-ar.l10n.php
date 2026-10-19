@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'فشل التقرير «%1$s»: %2$s',
 		'Invalid parameter: %s' => 'المعلمة غير صالحة: %s',
 		'The session request could not be completed.' => 'تعذر إكمال طلب الجلسة.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: تعذّر تعديل مخزون %1$s بمقدار %2$s؛ سوِّ مخزون المنتج يدويًا.',
 		'Order does not exist.' => 'الطلب غير موجود.',
 		'Order key mismatch.' => 'عدم تطابق مفتاح الطلب.',
 		'Token not provided.' => 'لم يتم توفير الرمز.',

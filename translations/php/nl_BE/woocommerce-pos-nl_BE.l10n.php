@@ -259,6 +259,7 @@ return array(
 		'Report "%1$s" failed: %2$s' => 'Rapport ‘%1$s’ mislukt: %2$s',
 		'Invalid parameter: %s' => 'Ongeldige parameter: %s',
 		'The session request could not be completed.' => 'Het verzoek voor de sessie kon niet worden voltooid.',
+		'WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product\'s stock manually.' => 'WCPOS: de voorraad van %1$s kon niet met %2$s worden aangepast; stem de productvoorraad handmatig af.',
 		'Order does not exist.' => 'Bestelling bestaat niet.',
 		'Order key mismatch.' => 'Bestelsleutel komt niet overeen.',
 		'Token not provided.' => 'Token niet verstrekt.',
