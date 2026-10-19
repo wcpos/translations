@@ -481,7 +481,7 @@ return array(
 		'Refund Shipping Taxes' => 'Taksat e dërgesës së rimbursuar',
 		'Fiscal' => 'Fiskale',
 		'Immutable ID' => 'ID-ja e pandryshueshme',
-		'Receipt Number' => 'Numri i kuponit tatimor',
+		'Receipt Number' => 'Numri i kuponit',
 		'Sequence' => 'Sekuenca',
 		'Hash' => 'Hash',
 		'QR Payload' => 'Të dhënat e QR Code',
