@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Berikan kapabilitas tersebut melalui Pengaturan WCPOS > Akses, atau tetapkan peran yang memilikinya.',
 		'This movement was recorded after counting began.' => 'Pergerakan ini dicatat setelah penghitungan dimulai.',
 		'The movement has already been voided or is unavailable.' => 'Pergerakan ini sudah dibatalkan atau tidak tersedia.',
+		'This movement id is already used by another session.' => 'ID pergerakan ini sudah digunakan oleh sesi lain.',
 		'The session cannot be closed.' => 'Sesi tidak dapat ditutup.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Sesi ini sudah memiliki penutupan; penghitungan dicatat sebagai penghitungan ulang.',
 		'The session state has changed.' => 'Status sesi telah berubah.',

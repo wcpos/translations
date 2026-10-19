@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Надайте ці дозволи в Налаштуваннях WCPOS → Доступ або призначте роль, яка їх має.',
 		'This movement was recorded after counting began.' => 'Цей рух коштів записано після початку підрахунку.',
 		'The movement has already been voided or is unavailable.' => 'Цей рух коштів уже анульовано або він недоступний.',
+		'This movement id is already used by another session.' => 'Цей ідентифікатор руху коштів уже використовується іншим сеансом.',
 		'The session cannot be closed.' => 'Не можна закрити цей сеанс.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Для цього сеансу вже є закриття; підрахунок записано як повторний.',
 		'The session state has changed.' => 'Стан сеансу змінився.',

@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Ken deze rechten toe via WCPOS-instellingen, Toegang, of wijs een rol toe die over deze rechten beschikt.',
 		'This movement was recorded after counting began.' => 'Deze geldbeweging is geregistreerd nadat het tellen begon.',
 		'The movement has already been voided or is unavailable.' => 'De geldbeweging is al geannuleerd of is niet beschikbaar.',
+		'This movement id is already used by another session.' => 'Deze bewegings-ID wordt al gebruikt door een andere sessie.',
 		'The session cannot be closed.' => 'De sessie kan niet worden afgesloten.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Deze sessie heeft al een kassasluiting; de telling is als hertelling geregistreerd.',
 		'The session state has changed.' => 'De sessiestatus is gewijzigd.',

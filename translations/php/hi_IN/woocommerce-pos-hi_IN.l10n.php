@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'उन्हें WCPOS Settings के Access अनुभाग में प्रदान करें, या ऐसी भूमिका असाइन करें जिसमें वे क्षमताएँ हों।',
 		'This movement was recorded after counting began.' => 'यह नकदी गतिविधि गिनती शुरू होने के बाद दर्ज की गई थी।',
 		'The movement has already been voided or is unavailable.' => 'यह नकदी गतिविधि पहले ही रद्द की जा चुकी है या उपलब्ध नहीं है।',
+		'This movement id is already used by another session.' => 'इस नकदी गतिविधि की आईडी पहले से किसी अन्य सत्र में उपयोग की जा रही है।',
 		'The session cannot be closed.' => 'सत्र बंद नहीं किया जा सकता।',
 		'This session already has a closure; the count was recorded as a recount.' => 'इस सत्र का क्लोज़र पहले से है; गिनती दोबारा की गई गिनती के रूप में दर्ज हुई।',
 		'The session state has changed.' => 'सत्र की स्थिति बदल गई है।',

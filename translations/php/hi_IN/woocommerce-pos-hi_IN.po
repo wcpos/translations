@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:650
+#: includes/Activator.php:915
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> के लिए PHP %1$s या उससे अधिक की आवश्यकता है। <a href=\"%2$s\">कैसे अपडेट करें</a> के बारे में अधिक जानकारी पढ़ें"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:674
+#: includes/Activator.php:939
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> के लिए <a href=\"%1$s\">WooCommerce %2$s या उससे अधिक</a> की आवश्यकता है। कृपया <a href=\"%3$s\">WooCommerce इंस्टॉल और सक्रिय करें</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:696
+#: includes/Activator.php:961
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> को सही से काम करने के लिए <em>सुंदर</em> पर्मालिंक्स की आवश्यकता है"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:697
+#: includes/Activator.php:962
 msgid "Enable permalinks"
 msgstr "पर्मालिंक्स सक्षम करें"
 
@@ -69,7 +69,7 @@ msgstr "पर्मालिंक्स सक्षम करें"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:948
+#: includes/Activator.php:1213
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "कैशियर"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1145
+#: includes/Activator.php:1410
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1255,12 +1255,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "रिपोर्ट \"%1$s\" विफल रही: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:410
+#: includes/API/V2/Sessions_Controller.php:415
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "अमान्य पैरामीटर: %s"
 
-#: includes/API/V2/Sessions_Controller.php:412
+#: includes/API/V2/Sessions_Controller.php:417
 msgid "The session request could not be completed."
 msgstr "सत्र का अनुरोध पूरा नहीं किया जा सका।"
 
@@ -1672,35 +1672,40 @@ msgid ""
 msgstr ""
 "उन्हें WCPOS Settings के Access अनुभाग में प्रदान करें, या ऐसी भूमिका असाइन करें जिसमें वे क्षमताएँ हों।"
 
-#: includes/Services/Cash_Movement_Store.php:119
+#: includes/Services/Cash_Movement_Store.php:129
 msgid "This movement was recorded after counting began."
 msgstr "यह नकदी गतिविधि गिनती शुरू होने के बाद दर्ज की गई थी।"
 
-#: includes/Services/Cash_Movement_Store.php:167
+#: includes/Services/Cash_Movement_Store.php:144
 msgid "The movement has already been voided or is unavailable."
 msgstr "यह नकदी गतिविधि पहले ही रद्द की जा चुकी है या उपलब्ध नहीं है।"
 
-#: includes/Services/Closure_Store.php:641
+#: includes/Services/Cash_Movement_Store.php:254
+msgid "This movement id is already used by another session."
+msgstr ""
+"इस नकदी गतिविधि की आईडी पहले से किसी अन्य सत्र में उपयोग की जा रही है।"
+
+#: includes/Services/Closure_Store.php:620
 msgid "The session cannot be closed."
 msgstr "सत्र बंद नहीं किया जा सकता।"
 
-#: includes/Services/Closure_Store.php:715
+#: includes/Services/Closure_Store.php:693
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
 "इस सत्र का क्लोज़र पहले से है; गिनती दोबारा की गई गिनती के रूप में दर्ज हुई।"
 
-#: includes/Services/Closure_Store.php:732
-#: includes/Services/Register_Session_Store.php:294
-#: includes/Services/Register_Session_Store.php:459
+#: includes/Services/Closure_Store.php:710
+#: includes/Services/Register_Session_Store.php:296
+#: includes/Services/Register_Session_Store.php:461
 msgid "The session state has changed."
 msgstr "सत्र की स्थिति बदल गई है।"
 
-#: includes/Services/Closure_Store.php:758
+#: includes/Services/Closure_Store.php:736
 msgid "The closure number is too far ahead of the register sequence."
 msgstr "क्लोज़र नंबर रजिस्टर की क्रम संख्या से बहुत आगे है।"
 
-#: includes/Services/Closure_Store.php:769
+#: includes/Services/Closure_Store.php:747
 msgid "The closure number precedes the register sequence."
 msgstr "क्लोज़र संख्या रजिस्टर के क्रम से पहले की है।"
 
@@ -1784,16 +1789,16 @@ msgstr ""
 msgid "Reinstall the plugin to restore its files."
 msgstr "फ़ाइलें बहाल करने के लिए प्लगइन फिर से इंस्टॉल करें।"
 
-#: includes/Services/Fiscal_Record_Store.php:322
+#: includes/Services/Fiscal_Record_Store.php:332
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "क्षमा करें, आपको रजिस्टर के दस्तावेज़ पढ़ने की अनुमति नहीं है।"
 
-#: includes/Services/Fiscal_Record_Store.php:327
-#: includes/Services/Fiscal_Record_Store.php:335
+#: includes/Services/Fiscal_Record_Store.php:337
+#: includes/Services/Fiscal_Record_Store.php:345
 msgid "Receipt document not found."
 msgstr "रसीद दस्तावेज़ नहीं मिला।"
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:342
 msgid "Invalid receipt document."
 msgstr "अमान्य रसीद दस्तावेज़।"
 
@@ -4762,23 +4767,23 @@ msgstr "कर योग्य: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "POS राजकोषीय रसीद स्नैपशॉट बनाया गया (रसीद #%d)।"
 
-#: includes/Services/Register_Session_Store.php:177
+#: includes/Services/Register_Session_Store.php:179
 msgid "This register already has an open session."
 msgstr "इस रजिस्टर में पहले से एक खुला सत्र है।"
 
-#: includes/Services/Register_Session_Store.php:243
+#: includes/Services/Register_Session_Store.php:245
 msgid "The cashier who opened this session cannot approve it."
 msgstr "जिस कैशियर ने यह सत्र खोला था, वह इसे स्वीकृति नहीं दे सकता।"
 
-#: includes/Services/Register_Session_Store.php:336
+#: includes/Services/Register_Session_Store.php:338
 msgid "The closure count differs from the closed session."
 msgstr "क्लोज़र की संख्या बंद सत्र से अलग है।"
 
-#: includes/Services/Register_Session_Store.php:386
+#: includes/Services/Register_Session_Store.php:388
 msgid "Manager approval is required to close this session."
 msgstr "यह सत्र बंद करने के लिए प्रबंधक की स्वीकृति आवश्यक है।"
 
-#: includes/Services/Register_Session_Store.php:462
+#: includes/Services/Register_Session_Store.php:464
 msgid "The session approval has changed."
 msgstr "सत्र की स्वीकृति बदल गई है।"
 

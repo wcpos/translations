@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => '請在 WCPOS 設定的「存取權限」中授予這些權限，或指派具有這些權限的角色。',
 		'This movement was recorded after counting began.' => '此筆現金異動是在開始清點後記錄的。',
 		'The movement has already been voided or is unavailable.' => '此筆現金異動已作廢或無法使用。',
+		'This movement id is already used by another session.' => '此筆現金異動的 ID 已被另一個工作階段使用。',
 		'The session cannot be closed.' => '無法關閉此工作階段。',
 		'This session already has a closure; the count was recorded as a recount.' => '此工作階段已有交班紀錄；本次清點已記錄為重新清點。',
 		'The session state has changed.' => '工作階段狀態已變更。',

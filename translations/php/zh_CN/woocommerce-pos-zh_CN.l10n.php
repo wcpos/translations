@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => '请在 WCPOS 设置的“访问权限”中授予这些权限，或分配一个拥有这些权限的角色。',
 		'This movement was recorded after counting began.' => '此笔资金变动记录于开始清点后。',
 		'The movement has already been voided or is unavailable.' => '此笔资金变动已作废或不可用。',
+		'This movement id is already used by another session.' => '此笔资金变动的 ID 已被另一个会话使用。',
 		'The session cannot be closed.' => '无法关闭此会话。',
 		'This session already has a closure; the count was recorded as a recount.' => '此会话已有关账记录；本次清点已记录为重新清点。',
 		'The session state has changed.' => '会话状态已更改。',

@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Εκχωρήστε τα από τις Ρυθμίσεις WCPOS, στην ενότητα Πρόσβαση, ή αναθέστε έναν ρόλο που τα διαθέτει.',
 		'This movement was recorded after counting began.' => 'Η κίνηση καταχωρίστηκε αφού ξεκίνησε η καταμέτρηση.',
 		'The movement has already been voided or is unavailable.' => 'Η κίνηση έχει ήδη ακυρωθεί ή δεν είναι διαθέσιμη.',
+		'This movement id is already used by another session.' => 'Το αναγνωριστικό αυτής της κίνησης χρησιμοποιείται ήδη από άλλη συνεδρία.',
 		'The session cannot be closed.' => 'Δεν είναι δυνατό το κλείσιμο της συνεδρίας.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Αυτή η συνεδρία έχει ήδη κλείσιμο· η καταμέτρηση καταχωρίστηκε ως νέα καταμέτρηση.',
 		'The session state has changed.' => 'Η κατάσταση της συνεδρίας άλλαξε.',

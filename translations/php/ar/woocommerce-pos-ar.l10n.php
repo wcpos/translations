@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'امنحهم الصلاحيات من إعدادات WCPOS > الوصول، أو عيّن لهم دورًا يتضمنها.',
 		'This movement was recorded after counting began.' => 'سُجلت هذه الحركة بعد بدء العد.',
 		'The movement has already been voided or is unavailable.' => 'أُبطلت هذه الحركة بالفعل أو لم تعد متاحة.',
+		'This movement id is already used by another session.' => 'مُعرّف هذه الحركة مستخدم بالفعل في جلسة أخرى.',
 		'The session cannot be closed.' => 'لا يمكن إغلاق الجلسة.',
 		'This session already has a closure; the count was recorded as a recount.' => 'للجلسة إغلاق بالفعل؛ سُجل العد كإعادة عد.',
 		'The session state has changed.' => 'تغيرت حالة الجلسة.',

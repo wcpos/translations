@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'សូមផ្តល់សិទ្ធិទាំងនោះនៅក្នុង ការកំណត់ WCPOS > ការចូលប្រើ ឬកំណត់តួនាទីដែលមានសិទ្ធិទាំងនោះ។',
 		'This movement was recorded after counting began.' => 'ចលនាប្រាក់នេះត្រូវបានកត់ត្រាបន្ទាប់ពីចាប់ផ្តើមរាប់ប្រាក់។',
 		'The movement has already been voided or is unavailable.' => 'ចលនាប្រាក់នេះត្រូវបានលុបចោលរួចហើយ ឬមិនអាចប្រើបាន។',
+		'This movement id is already used by another session.' => 'លេខសម្គាល់ចលនានេះត្រូវបានប្រើរួចហើយក្នុងសម័យផ្សេងទៀត។',
 		'The session cannot be closed.' => 'មិនអាចបិទវគ្គនេះបានទេ។',
 		'This session already has a closure; the count was recorded as a recount.' => 'វគ្គនេះមានការបិទវគ្គរួចហើយ។ ចំនួនដែលរាប់បានត្រូវបានកត់ត្រាជាការរាប់ឡើងវិញ។',
 		'The session state has changed.' => 'ស្ថានភាពវគ្គបានផ្លាស់ប្តូរ។',

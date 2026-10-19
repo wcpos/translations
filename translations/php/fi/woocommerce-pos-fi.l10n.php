@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Myönnä ne WCPOS-asetusten Käyttöoikeudet-kohdassa tai määritä rooli, jolla ne ovat.',
 		'This movement was recorded after counting began.' => 'Tämä tapahtuma kirjattiin laskennan alkamisen jälkeen.',
 		'The movement has already been voided or is unavailable.' => 'Tapahtuma on jo mitätöity tai ei ole käytettävissä.',
+		'This movement id is already used by another session.' => 'Tämän tapahtuman tunnus on jo käytössä toisessa istunnossa.',
 		'The session cannot be closed.' => 'Istuntoa ei voi sulkea.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Tällä istunnolla on jo sulkemistietue; laskenta kirjattiin uudelleenlaskennaksi.',
 		'The session state has changed.' => 'Istunnon tila on muuttunut.',

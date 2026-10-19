@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Concedeix-les a Configuració de WCPOS, Accés, o assigna una funció que les tingui.',
 		'This movement was recorded after counting began.' => 'Aquest moviment s\'ha registrat després d\'iniciar el recompte.',
 		'The movement has already been voided or is unavailable.' => 'El moviment ja s\'ha anul·lat o no està disponible.',
+		'This movement id is already used by another session.' => 'L\'identificador d\'aquest moviment ja està en ús en una altra sessió.',
 		'The session cannot be closed.' => 'No es pot tancar la sessió.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Aquesta sessió ja té un tancament; el recompte s\'ha registrat com a recompte posterior.',
 		'The session state has changed.' => 'L\'estat de la sessió ha canviat.',

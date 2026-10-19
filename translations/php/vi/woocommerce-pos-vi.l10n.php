@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Cấp các quyền đó trong WCPOS Settings, Access hoặc gán một vai trò có các quyền đó.',
 		'This movement was recorded after counting began.' => 'Khoản điều chỉnh này được ghi nhận sau khi bắt đầu kiểm đếm.',
 		'The movement has already been voided or is unavailable.' => 'Khoản điều chỉnh đã bị hủy hoặc không khả dụng.',
+		'This movement id is already used by another session.' => 'Mã điều chỉnh này đã được một phiên khác sử dụng.',
 		'The session cannot be closed.' => 'Không thể đóng phiên này.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Phiên này đã có bản chốt; lần kiểm đếm được ghi nhận là kiểm đếm lại.',
 		'The session state has changed.' => 'Trạng thái phiên đã thay đổi.',

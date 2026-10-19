@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'WCPOS 설정의 액세스에서 권한을 부여하거나 해당 권한이 있는 역할을 할당하세요.',
 		'This movement was recorded after counting began.' => '집계를 시작한 후 이 현금 이동이 기록되었습니다.',
 		'The movement has already been voided or is unavailable.' => '이 현금 이동은 이미 무효 처리되었거나 사용할 수 없습니다.',
+		'This movement id is already used by another session.' => '이 현금 이동 ID는 이미 다른 세션에서 사용 중입니다.',
 		'The session cannot be closed.' => '세션을 종료할 수 없습니다.',
 		'This session already has a closure; the count was recorded as a recount.' => '이 세션에는 이미 마감 기록이 있어 재집계로 기록되었습니다.',
 		'The session state has changed.' => '세션 상태가 변경되었습니다.',

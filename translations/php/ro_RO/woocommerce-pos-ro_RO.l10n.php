@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Acordați-le din Setări WCPOS > Acces sau atribuiți un rol care le include.',
 		'This movement was recorded after counting began.' => 'Această mișcare a fost înregistrată după începerea numărării.',
 		'The movement has already been voided or is unavailable.' => 'Mișcarea a fost deja anulată sau nu este disponibilă.',
+		'This movement id is already used by another session.' => 'ID-ul acestei mișcări este deja folosit de o altă sesiune.',
 		'The session cannot be closed.' => 'Sesiunea nu poate fi închisă.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Această sesiune are deja o închidere; numărătoarea a fost înregistrată ca renumărare.',
 		'The session state has changed.' => 'Starea sesiunii s-a schimbat.',

@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Veittu þær undir WCPOS Settings > Access eða úthlutaðu hlutverki sem hefur þær.',
 		'This movement was recorded after counting began.' => 'Þessi færsla var skráð eftir að talning hófst.',
 		'The movement has already been voided or is unavailable.' => 'Færslan hefur þegar verið afturkölluð eða er ekki tiltæk.',
+		'This movement id is already used by another session.' => 'Auðkenni þessarar færslu er þegar notað í annarri setu.',
 		'The session cannot be closed.' => 'Ekki er hægt að loka lotunni.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Þessi lota hefur þegar lokun; talningin var skráð sem endurtalning.',
 		'The session state has changed.' => 'Staða lotunnar hefur breyst.',

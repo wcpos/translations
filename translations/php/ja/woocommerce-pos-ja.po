@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:650
+#: includes/Activator.php:915
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong>はPHP %1$s以上が必要です。<a href=\"%2$s\">更新方法</a>についての詳細をお読みください"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:674
+#: includes/Activator.php:939
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong>は<a href=\"%1$s\">WooCommerce %2$s以上</a>が必要です。<a href=\"%3$s\">WooCommerceをインストールして有効化してください</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:696
+#: includes/Activator.php:961
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong>は<em>きれいな</em>パーマリンクが正しく動作するために必要です"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:697
+#: includes/Activator.php:962
 msgid "Enable permalinks"
 msgstr "パーマリンクを有効にする"
 
@@ -69,7 +69,7 @@ msgstr "パーマリンクを有効にする"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:948
+#: includes/Activator.php:1213
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "レジ係"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1145
+#: includes/Activator.php:1410
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1231,12 +1231,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "レポート「%1$s」に失敗しました：%2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:410
+#: includes/API/V2/Sessions_Controller.php:415
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "パラメーターが無効です：%s"
 
-#: includes/API/V2/Sessions_Controller.php:412
+#: includes/API/V2/Sessions_Controller.php:417
 msgid "The session request could not be completed."
 msgstr "セッションのリクエストを完了できませんでした。"
 
@@ -1639,34 +1639,38 @@ msgid ""
 "Grant them under WCPOS Settings, Access, or assign a role that has them."
 msgstr "WCPOS設定の「アクセス」で権限を付与するか、必要な権限を持つ権限グループを割り当ててください。"
 
-#: includes/Services/Cash_Movement_Store.php:119
+#: includes/Services/Cash_Movement_Store.php:129
 msgid "This movement was recorded after counting began."
 msgstr "集計開始後にこの入出金が記録されました。"
 
-#: includes/Services/Cash_Movement_Store.php:167
+#: includes/Services/Cash_Movement_Store.php:144
 msgid "The movement has already been voided or is unavailable."
 msgstr "この入出金はすでに取り消されているか、利用できません。"
 
-#: includes/Services/Closure_Store.php:641
+#: includes/Services/Cash_Movement_Store.php:254
+msgid "This movement id is already used by another session."
+msgstr "この現金移動IDはすでに別のセッションで使用されています。"
+
+#: includes/Services/Closure_Store.php:620
 msgid "The session cannot be closed."
 msgstr "セッションを終了できません。"
 
-#: includes/Services/Closure_Store.php:715
+#: includes/Services/Closure_Store.php:693
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "このセッションはすでに締め処理済みのため、集計は再集計として記録されました。"
 
-#: includes/Services/Closure_Store.php:732
-#: includes/Services/Register_Session_Store.php:294
-#: includes/Services/Register_Session_Store.php:459
+#: includes/Services/Closure_Store.php:710
+#: includes/Services/Register_Session_Store.php:296
+#: includes/Services/Register_Session_Store.php:461
 msgid "The session state has changed."
 msgstr "セッションの状態が変更されました。"
 
-#: includes/Services/Closure_Store.php:758
+#: includes/Services/Closure_Store.php:736
 msgid "The closure number is too far ahead of the register sequence."
 msgstr "締め番号がレジの連番より大幅に先行しています。"
 
-#: includes/Services/Closure_Store.php:769
+#: includes/Services/Closure_Store.php:747
 msgid "The closure number precedes the register sequence."
 msgstr "締め番号がレジの連番より前です。"
 
@@ -1748,16 +1752,16 @@ msgstr ""
 msgid "Reinstall the plugin to restore its files."
 msgstr "ファイルを復元するには、プラグインを再インストールしてください。"
 
-#: includes/Services/Fiscal_Record_Store.php:322
+#: includes/Services/Fiscal_Record_Store.php:332
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "レジのドキュメントを読み取る権限がありません。"
 
-#: includes/Services/Fiscal_Record_Store.php:327
-#: includes/Services/Fiscal_Record_Store.php:335
+#: includes/Services/Fiscal_Record_Store.php:337
+#: includes/Services/Fiscal_Record_Store.php:345
 msgid "Receipt document not found."
 msgstr "レシートのドキュメントが見つかりません。"
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:342
 msgid "Invalid receipt document."
 msgstr "レシートのドキュメントが無効です。"
 
@@ -4718,23 +4722,23 @@ msgstr "課税対象: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "POS の税務レシートスナップショットを作成しました（レシート #%d）。"
 
-#: includes/Services/Register_Session_Store.php:177
+#: includes/Services/Register_Session_Store.php:179
 msgid "This register already has an open session."
 msgstr "このレジにはすでに進行中のセッションがあります。"
 
-#: includes/Services/Register_Session_Store.php:243
+#: includes/Services/Register_Session_Store.php:245
 msgid "The cashier who opened this session cannot approve it."
 msgstr "このセッションを開始したレジ係は承認できません。"
 
-#: includes/Services/Register_Session_Store.php:336
+#: includes/Services/Register_Session_Store.php:338
 msgid "The closure count differs from the closed session."
 msgstr "締め処理の回数が、終了済みセッションの回数と一致しません。"
 
-#: includes/Services/Register_Session_Store.php:386
+#: includes/Services/Register_Session_Store.php:388
 msgid "Manager approval is required to close this session."
 msgstr "このセッションを終了するにはマネージャーの承認が必要です。"
 
-#: includes/Services/Register_Session_Store.php:462
+#: includes/Services/Register_Session_Store.php:464
 msgid "The session approval has changed."
 msgstr "セッションの承認状態が変更されました。"
 

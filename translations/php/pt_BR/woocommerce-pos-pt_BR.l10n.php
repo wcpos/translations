@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Conceda essas capacidades em Configurações do WCPOS > Acesso ou atribua uma função que as tenha.',
 		'This movement was recorded after counting began.' => 'Esta movimentação foi registrada após o início da contagem.',
 		'The movement has already been voided or is unavailable.' => 'A movimentação já foi anulada ou está indisponível.',
+		'This movement id is already used by another session.' => 'O ID deste movimento já está sendo usado por outra sessão.',
 		'The session cannot be closed.' => 'Não é possível fechar a sessão.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Esta sessão já tem um fechamento; a contagem foi registrada como recontagem.',
 		'The session state has changed.' => 'O estado da sessão foi alterado.',

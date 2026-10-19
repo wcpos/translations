@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Bu yetkileri WCPOS Ayarları > Erişim bölümünden verin veya bu yetkilere sahip bir rol atayın.',
 		'This movement was recorded after counting began.' => 'Bu hareket sayım başladıktan sonra kaydedildi.',
 		'The movement has already been voided or is unavailable.' => 'Hareket zaten iptal edilmiş veya kullanılamıyor.',
+		'This movement id is already used by another session.' => 'Bu hareket kimliği başka bir oturum tarafından zaten kullanılıyor.',
 		'The session cannot be closed.' => 'Oturum kapatılamıyor.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Bu oturum için zaten bir kapanış var; sayım yeniden sayım olarak kaydedildi.',
 		'The session state has changed.' => 'Oturumun durumu değişti.',

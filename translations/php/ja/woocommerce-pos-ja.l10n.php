@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'WCPOS設定の「アクセス」で権限を付与するか、必要な権限を持つ権限グループを割り当ててください。',
 		'This movement was recorded after counting began.' => '集計開始後にこの入出金が記録されました。',
 		'The movement has already been voided or is unavailable.' => 'この入出金はすでに取り消されているか、利用できません。',
+		'This movement id is already used by another session.' => 'この現金移動IDはすでに別のセッションで使用されています。',
 		'The session cannot be closed.' => 'セッションを終了できません。',
 		'This session already has a closure; the count was recorded as a recount.' => 'このセッションはすでに締め処理済みのため、集計は再集計として記録されました。',
 		'The session state has changed.' => 'セッションの状態が変更されました。',

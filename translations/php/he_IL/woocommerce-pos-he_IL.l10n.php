@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'העניקו את היכולות האלה דרך הגדרות WCPOS > גישה, או הקצו תפקיד שמכיל אותן.',
 		'This movement was recorded after counting began.' => 'התנועה הזאת תועדה לאחר תחילת הספירה.',
 		'The movement has already been voided or is unavailable.' => 'התנועה כבר בוטלה או שאינה זמינה.',
+		'This movement id is already used by another session.' => 'המזהה של תנועה זו כבר נמצא בשימוש בהפעלה אחרת.',
 		'The session cannot be closed.' => 'אי אפשר לסגור את המשמרת.',
 		'This session already has a closure; the count was recorded as a recount.' => 'למשמרת הזאת כבר יש סגירה; הספירה תועדה כספירה חוזרת.',
 		'The session state has changed.' => 'מצב המשמרת השתנה.',

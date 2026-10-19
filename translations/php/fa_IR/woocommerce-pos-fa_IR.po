@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:650
+#: includes/Activator.php:915
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> نیاز به PHP %1$s یا بالاتر دارد. اطلاعات بیشتر درباره <a href=\"%2$s\">چگونگی به‌روزرسانی</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:674
+#: includes/Activator.php:939
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> نیاز به <a href=\"%1$s\">ووکامرس %2$s یا بالاتر</a> دارد. لطفاً <a href=\"%3$s\">ووکامرس را نصب و فعال کنید</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:696
+#: includes/Activator.php:961
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>ووکامرس REST API</strong> نیاز به پیوندهای یکتا <em>زیبا</em> برای عملکرد صحیح دارد"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:697
+#: includes/Activator.php:962
 msgid "Enable permalinks"
 msgstr "فعال‌سازی پیوندهای یکتا"
 
@@ -69,7 +69,7 @@ msgstr "فعال‌سازی پیوندهای یکتا"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:948
+#: includes/Activator.php:1213
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "صندوقدار"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1145
+#: includes/Activator.php:1410
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1251,12 +1251,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "گزارش «%1$s» ناموفق بود: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:410
+#: includes/API/V2/Sessions_Controller.php:415
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "پارامتر نامعتبر: %s"
 
-#: includes/API/V2/Sessions_Controller.php:412
+#: includes/API/V2/Sessions_Controller.php:417
 msgid "The session request could not be completed."
 msgstr "تکمیل درخواست نشست ممکن نشد."
 
@@ -1668,34 +1668,38 @@ msgid ""
 msgstr ""
 "این قابلیت‌ها را از مسیر تنظیمات WCPOS، دسترسی، اعطا کنید یا نقشی را اختصاص دهید که این قابلیت‌ها را داشته باشد."
 
-#: includes/Services/Cash_Movement_Store.php:119
+#: includes/Services/Cash_Movement_Store.php:129
 msgid "This movement was recorded after counting began."
 msgstr "این جابه‌جایی پس از شروع شمارش ثبت شد."
 
-#: includes/Services/Cash_Movement_Store.php:167
+#: includes/Services/Cash_Movement_Store.php:144
 msgid "The movement has already been voided or is unavailable."
 msgstr "این جابه‌جایی قبلاً باطل شده یا در دسترس نیست."
 
-#: includes/Services/Closure_Store.php:641
+#: includes/Services/Cash_Movement_Store.php:254
+msgid "This movement id is already used by another session."
+msgstr "شناسهٔ این جابه‌جایی قبلاً در نشست دیگری استفاده شده است."
+
+#: includes/Services/Closure_Store.php:620
 msgid "The session cannot be closed."
 msgstr "نمی‌توان این نشست را بست."
 
-#: includes/Services/Closure_Store.php:715
+#: includes/Services/Closure_Store.php:693
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "این نشست از قبل بسته شده است؛ شمارش به‌عنوان شمارش مجدد ثبت شد."
 
-#: includes/Services/Closure_Store.php:732
-#: includes/Services/Register_Session_Store.php:294
-#: includes/Services/Register_Session_Store.php:459
+#: includes/Services/Closure_Store.php:710
+#: includes/Services/Register_Session_Store.php:296
+#: includes/Services/Register_Session_Store.php:461
 msgid "The session state has changed."
 msgstr "وضعیت نشست تغییر کرده است."
 
-#: includes/Services/Closure_Store.php:758
+#: includes/Services/Closure_Store.php:736
 msgid "The closure number is too far ahead of the register sequence."
 msgstr "شمارهٔ بستن صندوق بیش از حد از توالی صندوق جلوتر است."
 
-#: includes/Services/Closure_Store.php:769
+#: includes/Services/Closure_Store.php:747
 msgid "The closure number precedes the register sequence."
 msgstr "شماره بستن صندوق از توالی صندوق عقب‌تر است."
 
@@ -1779,16 +1783,16 @@ msgstr ""
 msgid "Reinstall the plugin to restore its files."
 msgstr "برای بازیابی فایل‌ها، افزونه را دوباره نصب کنید."
 
-#: includes/Services/Fiscal_Record_Store.php:322
+#: includes/Services/Fiscal_Record_Store.php:332
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "متأسفیم، اجازه خواندن اسناد صندوق را ندارید."
 
-#: includes/Services/Fiscal_Record_Store.php:327
-#: includes/Services/Fiscal_Record_Store.php:335
+#: includes/Services/Fiscal_Record_Store.php:337
+#: includes/Services/Fiscal_Record_Store.php:345
 msgid "Receipt document not found."
 msgstr "سند رسید پیدا نشد."
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:342
 msgid "Invalid receipt document."
 msgstr "سند رسید نامعتبر است."
 
@@ -4758,23 +4762,23 @@ msgstr "مشمول مالیات: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "تصویر لحظه‌ای رسید مالیاتی POS ایجاد شد (رسید شمارهٔ %d)."
 
-#: includes/Services/Register_Session_Store.php:177
+#: includes/Services/Register_Session_Store.php:179
 msgid "This register already has an open session."
 msgstr "این صندوق از قبل نشست بازی دارد."
 
-#: includes/Services/Register_Session_Store.php:243
+#: includes/Services/Register_Session_Store.php:245
 msgid "The cashier who opened this session cannot approve it."
 msgstr "صندوقداری که این نشست را باز کرده نمی‌تواند آن را تأیید کند."
 
-#: includes/Services/Register_Session_Store.php:336
+#: includes/Services/Register_Session_Store.php:338
 msgid "The closure count differs from the closed session."
 msgstr "تعداد بستن‌ها با نشست بسته‌شده تفاوت دارد."
 
-#: includes/Services/Register_Session_Store.php:386
+#: includes/Services/Register_Session_Store.php:388
 msgid "Manager approval is required to close this session."
 msgstr "برای بستن این نشست، تأیید مدیر لازم است."
 
-#: includes/Services/Register_Session_Store.php:462
+#: includes/Services/Register_Session_Store.php:464
 msgid "The session approval has changed."
 msgstr "تأیید نشست تغییر کرده است."
 

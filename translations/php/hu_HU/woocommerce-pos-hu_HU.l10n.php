@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Adja meg ezeket a WCPOS Beállítások > Hozzáférés menüpontjában, vagy rendeljen hozzá egy olyan szerepkört, amely rendelkezik velük.',
 		'This movement was recorded after counting began.' => 'Ezt a pénzmozgást a számlálás megkezdése után rögzítették.',
 		'The movement has already been voided or is unavailable.' => 'A pénzmozgást már érvénytelenítették, vagy nem érhető el.',
+		'This movement id is already used by another session.' => 'Ezt a mozgásazonosítót már egy másik munkamenet használja.',
 		'The session cannot be closed.' => 'A munkamenet nem zárható le.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Ehhez a munkamenethez már tartozik pénztárzárás; a számlálást újraszámlálásként rögzítettük.',
 		'The session state has changed.' => 'A munkamenet állapota megváltozott.',

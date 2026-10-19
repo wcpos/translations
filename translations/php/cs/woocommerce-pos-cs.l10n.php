@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Přidejte je v Nastavení WCPOS v části Přístup nebo přiřaďte roli, která je obsahuje.',
 		'This movement was recorded after counting began.' => 'Tento pohyb byl zaznamenán po zahájení počítání.',
 		'The movement has already been voided or is unavailable.' => 'Pohyb již byl stornován nebo není dostupný.',
+		'This movement id is already used by another session.' => 'ID tohoto pohybu se již používá v jiné relaci.',
 		'The session cannot be closed.' => 'Relaci nelze uzavřít.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Tato relace již má uzávěrku; počítání bylo zaznamenáno jako přepočítání.',
 		'The session state has changed.' => 'Stav této relace se změnil.',

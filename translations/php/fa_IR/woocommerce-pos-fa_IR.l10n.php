@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'این قابلیت‌ها را از مسیر تنظیمات WCPOS، دسترسی، اعطا کنید یا نقشی را اختصاص دهید که این قابلیت‌ها را داشته باشد.',
 		'This movement was recorded after counting began.' => 'این جابه‌جایی پس از شروع شمارش ثبت شد.',
 		'The movement has already been voided or is unavailable.' => 'این جابه‌جایی قبلاً باطل شده یا در دسترس نیست.',
+		'This movement id is already used by another session.' => 'شناسهٔ این جابه‌جایی قبلاً در نشست دیگری استفاده شده است.',
 		'The session cannot be closed.' => 'نمی‌توان این نشست را بست.',
 		'This session already has a closure; the count was recorded as a recount.' => 'این نشست از قبل بسته شده است؛ شمارش به‌عنوان شمارش مجدد ثبت شد.',
 		'The session state has changed.' => 'وضعیت نشست تغییر کرده است.',

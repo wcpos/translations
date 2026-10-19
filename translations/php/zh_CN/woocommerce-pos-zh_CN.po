@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:650
+#: includes/Activator.php:915
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong>需要PHP %1$s或更高版本。阅读更多关于<a href=\"%2$s\">如何更新</a>的信息"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:674
+#: includes/Activator.php:939
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,13 +54,13 @@ msgstr ""
 "<strong>WCPOS</strong>需要<a href=\"%1$s\">WooCommerce %2$s或更高版本</a>。请<a href=\"%3$s\">安装并激活WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:696
+#: includes/Activator.php:961
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr "<strong>WooCommerce REST API</strong>需要<em>美观的</em>固定链接才能正常工作"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:697
+#: includes/Activator.php:962
 msgid "Enable permalinks"
 msgstr "启用固定链接"
 
@@ -68,7 +68,7 @@ msgstr "启用固定链接"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:948
+#: includes/Activator.php:1213
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -78,7 +78,7 @@ msgid "Cashier"
 msgstr "收银员"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1145
+#: includes/Activator.php:1410
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1229,12 +1229,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "报表“%1$s”失败：%2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:410
+#: includes/API/V2/Sessions_Controller.php:415
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "参数无效：%s"
 
-#: includes/API/V2/Sessions_Controller.php:412
+#: includes/API/V2/Sessions_Controller.php:417
 msgid "The session request could not be completed."
 msgstr "无法完成会话请求。"
 
@@ -1637,34 +1637,38 @@ msgid ""
 "Grant them under WCPOS Settings, Access, or assign a role that has them."
 msgstr "请在 WCPOS 设置的“访问权限”中授予这些权限，或分配一个拥有这些权限的角色。"
 
-#: includes/Services/Cash_Movement_Store.php:119
+#: includes/Services/Cash_Movement_Store.php:129
 msgid "This movement was recorded after counting began."
 msgstr "此笔资金变动记录于开始清点后。"
 
-#: includes/Services/Cash_Movement_Store.php:167
+#: includes/Services/Cash_Movement_Store.php:144
 msgid "The movement has already been voided or is unavailable."
 msgstr "此笔资金变动已作废或不可用。"
 
-#: includes/Services/Closure_Store.php:641
+#: includes/Services/Cash_Movement_Store.php:254
+msgid "This movement id is already used by another session."
+msgstr "此笔资金变动的 ID 已被另一个会话使用。"
+
+#: includes/Services/Closure_Store.php:620
 msgid "The session cannot be closed."
 msgstr "无法关闭此会话。"
 
-#: includes/Services/Closure_Store.php:715
+#: includes/Services/Closure_Store.php:693
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "此会话已有关账记录；本次清点已记录为重新清点。"
 
-#: includes/Services/Closure_Store.php:732
-#: includes/Services/Register_Session_Store.php:294
-#: includes/Services/Register_Session_Store.php:459
+#: includes/Services/Closure_Store.php:710
+#: includes/Services/Register_Session_Store.php:296
+#: includes/Services/Register_Session_Store.php:461
 msgid "The session state has changed."
 msgstr "会话状态已更改。"
 
-#: includes/Services/Closure_Store.php:758
+#: includes/Services/Closure_Store.php:736
 msgid "The closure number is too far ahead of the register sequence."
 msgstr "关账编号远超收银台流水序号。"
 
-#: includes/Services/Closure_Store.php:769
+#: includes/Services/Closure_Store.php:747
 msgid "The closure number precedes the register sequence."
 msgstr "关账编号早于收银台流水序号。"
 
@@ -1744,16 +1748,16 @@ msgstr "缺少 %1$d 个文件，另有 %2$d 个文件与已发布版本不同。
 msgid "Reinstall the plugin to restore its files."
 msgstr "重新安装插件以恢复文件。"
 
-#: includes/Services/Fiscal_Record_Store.php:322
+#: includes/Services/Fiscal_Record_Store.php:332
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "抱歉，您无权读取收银台文档。"
 
-#: includes/Services/Fiscal_Record_Store.php:327
-#: includes/Services/Fiscal_Record_Store.php:335
+#: includes/Services/Fiscal_Record_Store.php:337
+#: includes/Services/Fiscal_Record_Store.php:345
 msgid "Receipt document not found."
 msgstr "未找到收据文档。"
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:342
 msgid "Invalid receipt document."
 msgstr "收据文档无效。"
 
@@ -4714,23 +4718,23 @@ msgstr "应税：%s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "已创建 POS 税务收据快照（收据编号 %d）。"
 
-#: includes/Services/Register_Session_Store.php:177
+#: includes/Services/Register_Session_Store.php:179
 msgid "This register already has an open session."
 msgstr "此收银台已有一个未关闭的班次。"
 
-#: includes/Services/Register_Session_Store.php:243
+#: includes/Services/Register_Session_Store.php:245
 msgid "The cashier who opened this session cannot approve it."
 msgstr "开启此班次的收银员不能审批该班次。"
 
-#: includes/Services/Register_Session_Store.php:336
+#: includes/Services/Register_Session_Store.php:338
 msgid "The closure count differs from the closed session."
 msgstr "关账次数与已关闭的班次不一致。"
 
-#: includes/Services/Register_Session_Store.php:386
+#: includes/Services/Register_Session_Store.php:388
 msgid "Manager approval is required to close this session."
 msgstr "关闭此班次需要经理审批。"
 
-#: includes/Services/Register_Session_Store.php:462
+#: includes/Services/Register_Session_Store.php:464
 msgid "The session approval has changed."
 msgstr "班次审批状态已更改。"
 

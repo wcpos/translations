@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Andke need õigused WCPOS-i seadetes jaotises Juurdepääs või määrake talle roll, millel need õigused on.',
 		'This movement was recorded after counting began.' => 'See liikumine salvestati pärast loendamise algust.',
 		'The movement has already been voided or is unavailable.' => 'Liikumine on juba tühistatud või pole saadaval.',
+		'This movement id is already used by another session.' => 'Selle liikumise ID on juba kasutusel teises seansis.',
 		'The session cannot be closed.' => 'Vahetust ei saa sulgeda.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Sellel vahetusel on juba sulgemisdokument; loendus salvestati kordusloendusena.',
 		'The session state has changed.' => 'Vahetuse olek on muutunud.',

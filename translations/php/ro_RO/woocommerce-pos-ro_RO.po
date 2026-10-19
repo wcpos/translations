@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:650
+#: includes/Activator.php:915
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> necesită PHP %1$s sau mai mare. Citiți mai multe informații despre <a href=\"%2$s\">cum puteți actualiza</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:674
+#: includes/Activator.php:939
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> necesită <a href=\"%1$s\">WooCommerce %2$s sau mai mare</a>. Vă rugăm să <a href=\"%3$s\">instalați și activați WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:696
+#: includes/Activator.php:961
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> necesită permalinks <em>frumoase</em> pentru a funcționa corect"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:697
+#: includes/Activator.php:962
 msgid "Enable permalinks"
 msgstr "Activează permalinks"
 
@@ -69,7 +69,7 @@ msgstr "Activează permalinks"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:948
+#: includes/Activator.php:1213
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "Casier"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1145
+#: includes/Activator.php:1410
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1263,12 +1263,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Raportul „%1$s” a eșuat: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:410
+#: includes/API/V2/Sessions_Controller.php:415
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Parametru nevalid: %s"
 
-#: includes/API/V2/Sessions_Controller.php:412
+#: includes/API/V2/Sessions_Controller.php:417
 msgid "The session request could not be completed."
 msgstr "Cererea pentru sesiune nu a putut fi finalizată."
 
@@ -1684,35 +1684,39 @@ msgid ""
 msgstr ""
 "Acordați-le din Setări WCPOS > Acces sau atribuiți un rol care le include."
 
-#: includes/Services/Cash_Movement_Store.php:119
+#: includes/Services/Cash_Movement_Store.php:129
 msgid "This movement was recorded after counting began."
 msgstr "Această mișcare a fost înregistrată după începerea numărării."
 
-#: includes/Services/Cash_Movement_Store.php:167
+#: includes/Services/Cash_Movement_Store.php:144
 msgid "The movement has already been voided or is unavailable."
 msgstr "Mișcarea a fost deja anulată sau nu este disponibilă."
 
-#: includes/Services/Closure_Store.php:641
+#: includes/Services/Cash_Movement_Store.php:254
+msgid "This movement id is already used by another session."
+msgstr "ID-ul acestei mișcări este deja folosit de o altă sesiune."
+
+#: includes/Services/Closure_Store.php:620
 msgid "The session cannot be closed."
 msgstr "Sesiunea nu poate fi închisă."
 
-#: includes/Services/Closure_Store.php:715
+#: includes/Services/Closure_Store.php:693
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr ""
 "Această sesiune are deja o închidere; numărătoarea a fost înregistrată ca renumărare."
 
-#: includes/Services/Closure_Store.php:732
-#: includes/Services/Register_Session_Store.php:294
-#: includes/Services/Register_Session_Store.php:459
+#: includes/Services/Closure_Store.php:710
+#: includes/Services/Register_Session_Store.php:296
+#: includes/Services/Register_Session_Store.php:461
 msgid "The session state has changed."
 msgstr "Starea sesiunii s-a schimbat."
 
-#: includes/Services/Closure_Store.php:758
+#: includes/Services/Closure_Store.php:736
 msgid "The closure number is too far ahead of the register sequence."
 msgstr "Numărul de închidere este cu mult înaintea secvenței casei de marcat."
 
-#: includes/Services/Closure_Store.php:769
+#: includes/Services/Closure_Store.php:747
 msgid "The closure number precedes the register sequence."
 msgstr "Numărul închiderii precedă secvența casei de marcat."
 
@@ -1796,16 +1800,16 @@ msgstr ""
 msgid "Reinstall the plugin to restore its files."
 msgstr "Reinstalați pluginul pentru a-i restaura fișierele."
 
-#: includes/Services/Fiscal_Record_Store.php:322
+#: includes/Services/Fiscal_Record_Store.php:332
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Ne pare rău, nu ai permisiunea de a citi documentele casei de marcat."
 
-#: includes/Services/Fiscal_Record_Store.php:327
-#: includes/Services/Fiscal_Record_Store.php:335
+#: includes/Services/Fiscal_Record_Store.php:337
+#: includes/Services/Fiscal_Record_Store.php:345
 msgid "Receipt document not found."
 msgstr "Documentul bonului nu a fost găsit."
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:342
 msgid "Invalid receipt document."
 msgstr "Document nevalid pentru bon."
 
@@ -4779,24 +4783,24 @@ msgstr "Suma impozabilă: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "Instantaneu al bonului fiscal POS creat (bon #%d)."
 
-#: includes/Services/Register_Session_Store.php:177
+#: includes/Services/Register_Session_Store.php:179
 msgid "This register already has an open session."
 msgstr "Această casă de marcat are deja o sesiune deschisă."
 
-#: includes/Services/Register_Session_Store.php:243
+#: includes/Services/Register_Session_Store.php:245
 msgid "The cashier who opened this session cannot approve it."
 msgstr "Casierul care a deschis această sesiune nu o poate aproba."
 
-#: includes/Services/Register_Session_Store.php:336
+#: includes/Services/Register_Session_Store.php:338
 msgid "The closure count differs from the closed session."
 msgstr "Numărul închiderilor diferă de cel al sesiunii închise."
 
-#: includes/Services/Register_Session_Store.php:386
+#: includes/Services/Register_Session_Store.php:388
 msgid "Manager approval is required to close this session."
 msgstr ""
 "Este necesară aprobarea unui manager pentru a închide această sesiune."
 
-#: includes/Services/Register_Session_Store.php:462
+#: includes/Services/Register_Session_Store.php:464
 msgid "The session approval has changed."
 msgstr "Aprobarea sesiunii s-a schimbat."
 

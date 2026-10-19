@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Suteikite jas skiltyje „WCPOS“ → „Nustatymai“ → „Prieiga“ arba priskirkite vaidmenį, kuriam jos suteiktos.',
 		'This movement was recorded after counting began.' => 'Šis judėjimas užregistruotas pradėjus skaičiuoti.',
 		'The movement has already been voided or is unavailable.' => 'Judėjimas jau anuliuotas arba nepasiekiamas.',
+		'This movement id is already used by another session.' => 'Šį judėjimo ID jau naudoja kita sesija.',
 		'The session cannot be closed.' => 'Seanso uždaryti negalima.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Šis seansas jau turi uždarymo įrašą; suskaičiuoti duomenys užregistruoti kaip perskaičiavimas.',
 		'The session state has changed.' => 'Seanso būsena pasikeitė.',

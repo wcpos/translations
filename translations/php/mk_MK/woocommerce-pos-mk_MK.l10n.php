@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Доделете им ги во Поставки на WCPOS > Пристап или доделете улога што ги има.',
 		'This movement was recorded after counting began.' => 'Движењето е евидентирано откако започна пребројувањето.',
 		'The movement has already been voided or is unavailable.' => 'Движењето веќе е поништено или не е достапно.',
+		'This movement id is already used by another session.' => 'Идентификаторот на ова движење веќе се користи во друга сесија.',
 		'The session cannot be closed.' => 'Сесијата не може да се затвори.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Оваа сесија веќе има затворање; пребројувањето е евидентирано како повторно пребројување.',
 		'The session state has changed.' => 'Состојбата на сесијата е променета.',

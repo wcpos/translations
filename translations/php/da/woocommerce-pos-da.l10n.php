@@ -337,6 +337,7 @@ return array(
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Tildel dem under WCPOS-indstillinger, Adgang, eller tildel en rolle, der har dem.',
 		'This movement was recorded after counting began.' => 'Bevægelsen blev registreret, efter optællingen begyndte.',
 		'The movement has already been voided or is unavailable.' => 'Bevægelsen er allerede annulleret eller er ikke tilgængelig.',
+		'This movement id is already used by another session.' => 'Dette bevægelses-id bruges allerede af en anden session.',
 		'The session cannot be closed.' => 'Sessionen kan ikke lukkes.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Denne session har allerede en lukning; optællingen blev registreret som en ny optælling.',
 		'The session state has changed.' => 'Sessionens tilstand er ændret.',
