@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 装箱单文档不可用。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '无法为此订单渲染 WP Overnight 装箱单文档。',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 插件未能正确加载。',
+		'Hello' => '你好',
 	),
 );

@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'A WP Overnight csomagjegyzék nem érhető el.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'A WP Overnight csomagjegyzék nem jeleníthető meg ehhez a rendeléshez.',
 		'The WCPOS plugin failed to load correctly.' => 'A WCPOS bővítmény nem töltődött be megfelelően.',
+		'Hello' => 'Szia',
 	),
 );

@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Documentul de aviz de expediție WP Overnight nu este disponibil.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Documentul de aviz de expediție WP Overnight nu a putut fi generat pentru această comandă.',
 		'The WCPOS plugin failed to load correctly.' => 'Pluginul WCPOS nu s-a încărcat corect.',
+		'Hello' => 'Bună',
 	),
 );

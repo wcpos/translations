@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight paket fişi belgesi kullanılamıyor.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Bu sipariş için WP Overnight paket fişi belgesi oluşturulamadı.',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS eklentisi doğru yüklenemedi.',
+		'Hello' => 'Merhaba',
 	),
 );

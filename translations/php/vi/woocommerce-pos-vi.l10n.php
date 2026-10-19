@@ -1160,5 +1160,6 @@ return array(
 		'The WP Overnight packing slip document is not available.' => 'Tài liệu phiếu đóng gói WP Overnight không khả dụng.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Không thể hiển thị tài liệu phiếu đóng gói WP Overnight cho đơn hàng này.',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS không tải đúng cách.',
+		'Hello' => 'Xin chào',
 	),
 );
