@@ -350,7 +350,7 @@ return array(
 		'State / Region' => 'Qarku / rajoni',
 		'Postcode' => 'Kodi postar',
 		'Line Items' => 'Artikujt',
-		'Item Key' => 'Çelësi i artikullit',
+		'Item Key' => 'Key i artikullit',
 		'SKU' => 'SKU',
 		'Product Name' => 'Emri i produktit',
 		'Quantity' => 'Sasia',
