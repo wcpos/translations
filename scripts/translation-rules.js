@@ -27,7 +27,8 @@ function checkTranslation({ locale, source, translation }) {
   const errors = [];
   const warnings = [];
 
-  if (translation.trim() === '') errors.push('Translation is empty');
+  // An empty source (an icon-only column header, for example) is mirrored as an empty translation.
+  if (translation.trim() === '' && source.trim() !== '') errors.push('Translation is empty');
   if (JSON.stringify(extractPlaceholders(source)) !== JSON.stringify(extractPlaceholders(translation))) {
     errors.push('Placeholder mismatch between source and translation');
   }

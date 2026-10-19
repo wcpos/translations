@@ -188,6 +188,14 @@ try {
   assert.deepEqual(report.rejected, []);
   assert.deepEqual(report.files_written, ['translations/js/de_DE/monorepo/only.json']);
   assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/only.json')), { hello: 'Hallo' });
+  // An empty English source needs no model output: the key is written as '' even when the results omit it,
+  // while an omitted key with a real source is still rejected.
+  write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/blank.json': { 'stores.col_actions': { source: '' }, 'stores.col_name': { source: 'Store' } } }, php: {} });
+  write('results/de_DE.json', { locale: 'de_DE', js: { 'monorepo/blank.json': {} }, php: {} });
+  report = apply();
+  assert.equal(report.applied, 1);
+  assert.deepEqual(report.rejected.map(item => [item.key, item.reasons[0]]), [['stores.col_name', 'no translation returned']]);
+  assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/blank.json')), { 'stores.col_actions': '' });
   console.log('Apply translations tests passed');
 } finally {
   fs.rmSync(rootDir, { recursive: true, force: true });

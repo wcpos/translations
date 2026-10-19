@@ -123,4 +123,8 @@ assert.equal(normalizeWcposProductNames('WooCommerce POS and WooCommerce POS Pro
 assert.equal(normalizeWcposProductNames('xWooCommerce POS WooCommerce POSitive'),
   'xWooCommerce POS WooCommerce POSitive');
 
+// An empty English source (icon-only column header) is mirrored as an empty translation; a real string is not.
+assert.deepEqual(checkTranslation({ locale: 'sq', source: '', translation: '' }).errors, []);
+assert.deepEqual(checkTranslation({ locale: 'sq', source: 'Actions', translation: '' }).errors, ['Translation is empty']);
+
 console.log(`${scenarios.length} fixture scenarios and direct translation rule assertions passed`);
