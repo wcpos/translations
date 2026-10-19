@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Không thể đóng phiên này.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Phiên này đã có bản chốt; lần kiểm đếm được ghi nhận là kiểm đếm lại.',
 		'The session state has changed.' => 'Trạng thái phiên đã thay đổi.',
+		'The closure number is too far ahead of the register sequence.' => 'Số phiên chốt vượt quá xa số thứ tự của máy tính tiền.',
 		'The closure number precedes the register sequence.' => 'Số phiên chốt đứng trước số thứ tự của máy tính tiền.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print bị vô hiệu hóa trên trang này.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print yêu cầu trang web của bạn sử dụng HTTPS. Đặt Địa chỉ trang web (URL) trong Cài đặt > Tổng quan thành địa chỉ bắt đầu bằng https://, rồi thử lại.',

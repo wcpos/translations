@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => '세션을 종료할 수 없습니다.',
 		'This session already has a closure; the count was recorded as a recount.' => '이 세션에는 이미 마감 기록이 있어 재집계로 기록되었습니다.',
 		'The session state has changed.' => '세션 상태가 변경되었습니다.',
+		'The closure number is too far ahead of the register sequence.' => '마감 번호가 계산대 번호 순서보다 너무 앞서 있습니다.',
 		'The closure number precedes the register sequence.' => '마감 번호가 계산대 순서보다 앞섭니다.',
 		'WCPOS Cloud Print is disabled on this site.' => '이 사이트에서는 WCPOS Cloud Print가 비활성화되어 있습니다.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print를 사용하려면 사이트에서 HTTPS를 사용해야 합니다. 설정 > 일반에서 사이트 주소(URL)를 https://로 시작하는 주소로 설정한 다음 다시 시도하십시오.',

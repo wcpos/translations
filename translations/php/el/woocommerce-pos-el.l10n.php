@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Δεν είναι δυνατό το κλείσιμο της συνεδρίας.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Αυτή η συνεδρία έχει ήδη κλείσιμο· η καταμέτρηση καταχωρίστηκε ως νέα καταμέτρηση.',
 		'The session state has changed.' => 'Η κατάσταση της συνεδρίας άλλαξε.',
+		'The closure number is too far ahead of the register sequence.' => 'Ο αριθμός κλεισίματος είναι πολύ πιο μπροστά από τη σειρά του ταμείου.',
 		'The closure number precedes the register sequence.' => 'Ο αριθμός κλεισίματος προηγείται της ακολουθίας του ταμείου.',
 		'WCPOS Cloud Print is disabled on this site.' => 'Το WCPOS Cloud Print είναι απενεργοποιημένο σε αυτόν τον ιστότοπο.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'Το WCPOS Cloud Print απαιτεί ο ιστότοπός σας να χρησιμοποιεί HTTPS. Ορίστε τη διεύθυνση ιστότοπου (URL) στις Ρυθμίσεις > Γενικά σε διεύθυνση https:// και δοκιμάστε ξανά.',

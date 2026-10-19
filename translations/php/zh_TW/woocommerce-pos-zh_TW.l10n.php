@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => '無法關閉此工作階段。',
 		'This session already has a closure; the count was recorded as a recount.' => '此工作階段已有交班紀錄；本次清點已記錄為重新清點。',
 		'The session state has changed.' => '工作階段狀態已變更。',
+		'The closure number is too far ahead of the register sequence.' => '交班編號遠遠超出收銀機序號。',
 		'The closure number precedes the register sequence.' => '交班編號早於收銀機序號。',
 		'WCPOS Cloud Print is disabled on this site.' => '此網站已停用 WCPOS Cloud Print。',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print 要求您的網站使用 HTTPS。請在「設定」>「一般」中將網站位址（URL）設為以 https:// 開頭的位址，然後再試。',

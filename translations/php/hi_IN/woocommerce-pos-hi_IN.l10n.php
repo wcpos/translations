@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'सत्र बंद नहीं किया जा सकता।',
 		'This session already has a closure; the count was recorded as a recount.' => 'इस सत्र का क्लोज़र पहले से है; गिनती दोबारा की गई गिनती के रूप में दर्ज हुई।',
 		'The session state has changed.' => 'सत्र की स्थिति बदल गई है।',
+		'The closure number is too far ahead of the register sequence.' => 'क्लोज़र नंबर रजिस्टर की क्रम संख्या से बहुत आगे है।',
 		'The closure number precedes the register sequence.' => 'क्लोज़र संख्या रजिस्टर के क्रम से पहले की है।',
 		'WCPOS Cloud Print is disabled on this site.' => 'इस साइट पर WCPOS Cloud Print अक्षम है।',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print के लिए आपकी साइट का HTTPS का उपयोग करना ज़रूरी है। सेटिंग्स > सामान्य में साइट का पता (URL) https:// वाले पते पर सेट करें, फिर दोबारा कोशिश करें।',

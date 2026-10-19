@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'نمی‌توان این نشست را بست.',
 		'This session already has a closure; the count was recorded as a recount.' => 'این نشست از قبل بسته شده است؛ شمارش به‌عنوان شمارش مجدد ثبت شد.',
 		'The session state has changed.' => 'وضعیت نشست تغییر کرده است.',
+		'The closure number is too far ahead of the register sequence.' => 'شمارهٔ بستن صندوق بیش از حد از توالی صندوق جلوتر است.',
 		'The closure number precedes the register sequence.' => 'شماره بستن صندوق از توالی صندوق عقب‌تر است.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print در این سایت غیرفعال است.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print به استفاده سایت شما از HTTPS نیاز دارد. نشانی سایت (URL) را در تنظیمات > عمومی به نشانی https:// تغییر دهید و دوباره تلاش کنید.',

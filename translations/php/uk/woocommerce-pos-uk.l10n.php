@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Не можна закрити цей сеанс.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Для цього сеансу вже є закриття; підрахунок записано як повторний.',
 		'The session state has changed.' => 'Стан сеансу змінився.',
+		'The closure number is too far ahead of the register sequence.' => 'Номер закриття надто випереджає нумерацію каси.',
 		'The closure number precedes the register sequence.' => 'Номер закриття передує послідовності каси.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print вимкнено на цьому сайті.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'Для роботи WCPOS Cloud Print ваш сайт має використовувати HTTPS. У розділі Налаштування > Загальні вкажіть адресу сайту (URL), що починається з https://, а потім спробуйте ще раз.',

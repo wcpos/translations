@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Ekki er hægt að loka lotunni.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Þessi lota hefur þegar lokun; talningin var skráð sem endurtalning.',
 		'The session state has changed.' => 'Staða lotunnar hefur breyst.',
+		'The closure number is too far ahead of the register sequence.' => 'Lokunarnúmerið er of langt á undan númeraröð kassans.',
 		'The closure number precedes the register sequence.' => 'Lokunarnúmerið er á undan númeraröð kassans.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print er óvirkt á þessari síðu.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print krefst þess að vefsvæðið þitt noti HTTPS. Stilltu vefslóðina (URL) undir Stillingar > Almennt á https://-slóð og reyndu svo aftur.',

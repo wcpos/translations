@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Passet kan inte stängas.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Det här passet har redan en stängning; uppräkningen registrerades som en omräkning.',
 		'The session state has changed.' => 'Passets status har ändrats.',
+		'The closure number is too far ahead of the register sequence.' => 'Stängningsnumret ligger för långt fram i kassans nummerserie.',
 		'The closure number precedes the register sequence.' => 'Stängningsnumret kommer före kassans nummerserie.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print är inaktiverat på den här webbplatsen.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print kräver att webbplatsen använder HTTPS. Ange en adress som börjar med https:// som webbplatsens adress (URL) under Inställningar > Allmänt och försök igen.',

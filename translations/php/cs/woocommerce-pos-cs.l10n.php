@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Relaci nelze uzavřít.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Tato relace již má uzávěrku; počítání bylo zaznamenáno jako přepočítání.',
 		'The session state has changed.' => 'Stav této relace se změnil.',
+		'The closure number is too far ahead of the register sequence.' => 'Číslo uzávěrky je příliš napřed v číselné řadě pokladny.',
 		'The closure number precedes the register sequence.' => 'Číslo uzávěrky předchází číselné řadě pokladny.',
 		'WCPOS Cloud Print is disabled on this site.' => 'Cloudový tisk WCPOS je na tomto webu zakázán.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print vyžaduje, aby váš web používal HTTPS. V Nastavení > Obecné nastavte adresu webu (URL) na adresu začínající https:// a zkuste to znovu.',

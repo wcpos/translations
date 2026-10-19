@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'لا يمكن إغلاق الجلسة.',
 		'This session already has a closure; the count was recorded as a recount.' => 'للجلسة إغلاق بالفعل؛ سُجل العد كإعادة عد.',
 		'The session state has changed.' => 'تغيرت حالة الجلسة.',
+		'The closure number is too far ahead of the register sequence.' => 'رقم الإغلاق متقدم كثيرًا على تسلسل أرقام صندوق الدفع.',
 		'The closure number precedes the register sequence.' => 'يسبق رقم الإغلاق تسلسل سجل الدفع.',
 		'WCPOS Cloud Print is disabled on this site.' => 'ميزة الطباعة السحابية في WCPOS معطّلة على هذا الموقع.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'يتطلب WCPOS Cloud Print أن يستخدم موقعك بروتوكول HTTPS. اضبط عنوان الموقع (URL) في الإعدادات > عام على عنوان يبدأ بـ https://، ثم حاول مجددًا.',

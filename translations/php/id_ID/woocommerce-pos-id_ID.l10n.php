@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Sesi tidak dapat ditutup.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Sesi ini sudah memiliki penutupan; penghitungan dicatat sebagai penghitungan ulang.',
 		'The session state has changed.' => 'Status sesi telah berubah.',
+		'The closure number is too far ahead of the register sequence.' => 'Nomor penutupan terlalu jauh mendahului urutan nomor register.',
 		'The closure number precedes the register sequence.' => 'Nomor penutupan mendahului urutan mesin kasir.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print dinonaktifkan di situs ini.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print mengharuskan situs Anda menggunakan HTTPS. Atur Alamat Situs (URL) di Pengaturan > Umum ke alamat https://, lalu coba lagi.',

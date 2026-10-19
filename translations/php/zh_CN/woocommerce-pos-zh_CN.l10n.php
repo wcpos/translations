@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => '无法关闭此会话。',
 		'This session already has a closure; the count was recorded as a recount.' => '此会话已有关账记录；本次清点已记录为重新清点。',
 		'The session state has changed.' => '会话状态已更改。',
+		'The closure number is too far ahead of the register sequence.' => '关账编号远超收银台流水序号。',
 		'The closure number precedes the register sequence.' => '关账编号早于收银台流水序号。',
 		'WCPOS Cloud Print is disabled on this site.' => '此站点已禁用 WCPOS Cloud Print。',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print 要求您的网站使用 HTTPS。请在“设置”>“常规”中将站点地址（URL）设为以 https:// 开头的地址，然后重试。',

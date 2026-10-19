@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'אי אפשר לסגור את המשמרת.',
 		'This session already has a closure; the count was recorded as a recount.' => 'למשמרת הזאת כבר יש סגירה; הספירה תועדה כספירה חוזרת.',
 		'The session state has changed.' => 'מצב המשמרת השתנה.',
+		'The closure number is too far ahead of the register sequence.' => 'מספר הסגירה מקדים מדי את הרצף של הקופה.',
 		'The closure number precedes the register sequence.' => 'מספר הסגירה קודם לרצף המספרים של הקופה.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print מושבת באתר זה.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print דורש שהאתר שלכם ישתמש ב-HTTPS. הגדירו את כתובת האתר (URL) בהגדרות > כללי לכתובת https:// ונסו שוב.',

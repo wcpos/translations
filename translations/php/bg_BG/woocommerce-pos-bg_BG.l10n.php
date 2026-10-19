@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Сесията не може да бъде затворена.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Тази сесия вече има приключване; преброяването е записано като повторно.',
 		'The session state has changed.' => 'Състоянието на сесията е променено.',
+		'The closure number is too far ahead of the register sequence.' => 'Номерът на приключването е твърде далеч напред спрямо номерацията на касата.',
 		'The closure number precedes the register sequence.' => 'Номерът на приключването предхожда поредността на касата.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print е деактивиран на този сайт.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print изисква сайтът ви да използва HTTPS. Задайте адреса на сайта (URL) в Настройки > Общи като адрес с https:// и опитайте отново.',

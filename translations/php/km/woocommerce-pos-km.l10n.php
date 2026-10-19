@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'មិនអាចបិទវគ្គនេះបានទេ។',
 		'This session already has a closure; the count was recorded as a recount.' => 'វគ្គនេះមានការបិទវគ្គរួចហើយ។ ចំនួនដែលរាប់បានត្រូវបានកត់ត្រាជាការរាប់ឡើងវិញ។',
 		'The session state has changed.' => 'ស្ថានភាពវគ្គបានផ្លាស់ប្តូរ។',
+		'The closure number is too far ahead of the register sequence.' => 'លេខបិទវគ្គនាំមុខលំដាប់លេខរបស់ម៉ាស៊ីនគិតលុយឆ្ងាយពេក។',
 		'The closure number precedes the register sequence.' => 'លេខបិទវគ្គមកមុនលំដាប់លេខម៉ាស៊ីនគិតលុយ។',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print ត្រូវបានបិទនៅលើគេហទំព័រនេះ។',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print តម្រូវឱ្យគេហទំព័ររបស់អ្នកប្រើ HTTPS។ កំណត់អាសយដ្ឋានគេហទំព័រ (URL) នៅក្នុង ការកំណត់ > ទូទៅ ជាអាសយដ្ឋាន https:// រួចសាកល្បងម្តងទៀត។',

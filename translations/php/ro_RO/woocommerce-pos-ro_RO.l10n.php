@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Sesiunea nu poate fi închisă.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Această sesiune are deja o închidere; numărătoarea a fost înregistrată ca renumărare.',
 		'The session state has changed.' => 'Starea sesiunii s-a schimbat.',
+		'The closure number is too far ahead of the register sequence.' => 'Numărul de închidere este cu mult înaintea secvenței casei de marcat.',
 		'The closure number precedes the register sequence.' => 'Numărul închiderii precedă secvența casei de marcat.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print este dezactivat pe acest site.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print necesită ca site-ul să utilizeze HTTPS. Setați adresa site-ului (URL) din Setări > Generale la o adresă https://, apoi încercați din nou.',

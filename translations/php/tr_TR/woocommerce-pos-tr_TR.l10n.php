@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Oturum kapatılamıyor.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Bu oturum için zaten bir kapanış var; sayım yeniden sayım olarak kaydedildi.',
 		'The session state has changed.' => 'Oturumun durumu değişti.',
+		'The closure number is too far ahead of the register sequence.' => 'Kapanış numarası kasa sıra numarasının çok ilerisinde.',
 		'The closure number precedes the register sequence.' => 'Kapanış numarası kasa sırasından önce geliyor.',
 		'WCPOS Cloud Print is disabled on this site.' => 'Bu sitede WCPOS Cloud Print devre dışı bırakıldı.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print, sitenizin HTTPS kullanmasını gerektirir. Ayarlar > Genel bölümünde Site Adresi\'ni (URL) https:// ile başlayan bir adres olarak ayarlayın ve tekrar deneyin.',

@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Istuntoa ei voi sulkea.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Tällä istunnolla on jo sulkemistietue; laskenta kirjattiin uudelleenlaskennaksi.',
 		'The session state has changed.' => 'Istunnon tila on muuttunut.',
+		'The closure number is too far ahead of the register sequence.' => 'Sulkemisen numero on liian kaukana kassan numerosarjan edellä.',
 		'The closure number precedes the register sequence.' => 'Sulkemisen numero edeltää kassan järjestysnumeroa.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print on poistettu käytöstä tällä sivustolla.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print edellyttää, että sivustosi käyttää HTTPS-yhteyttä. Aseta sivuston osoitteeksi (URL) kohdassa Asetukset > Yleinen https://-alkuinen osoite ja yritä uudelleen.',

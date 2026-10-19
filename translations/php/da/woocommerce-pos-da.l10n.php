@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Sessionen kan ikke lukkes.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Denne session har allerede en lukning; optællingen blev registreret som en ny optælling.',
 		'The session state has changed.' => 'Sessionens tilstand er ændret.',
+		'The closure number is too far ahead of the register sequence.' => 'Lukningsnummeret ligger for langt foran kasseapparatets nummerserie.',
 		'The closure number precedes the register sequence.' => 'Lukningsnummeret ligger før kassens nummerserie.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print er deaktiveret på dette websted.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print kræver, at dit websted bruger HTTPS. Angiv webstedets adresse (URL) under Indstillinger > Generelt som en https://-adresse, og prøv igen.',

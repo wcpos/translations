@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Økten kan ikke lukkes.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Denne økten har allerede et dagsoppgjør; opptellingen ble registrert som en ny opptelling.',
 		'The session state has changed.' => 'Øktstatusen er endret.',
+		'The closure number is too far ahead of the register sequence.' => 'Dagsoppgjørsnummeret ligger for langt foran kassens nummerserie.',
 		'The closure number precedes the register sequence.' => 'Dagsoppgjørsnummeret kommer før kassens nummerserie.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print er deaktivert på dette nettstedet.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print krever at nettstedet bruker HTTPS. Angi en adresse som begynner med https:// som nettstedets adresse (URL) under Innstillinger > Generelt, og prøv igjen.',

@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'セッションを終了できません。',
 		'This session already has a closure; the count was recorded as a recount.' => 'このセッションはすでに締め処理済みのため、集計は再集計として記録されました。',
 		'The session state has changed.' => 'セッションの状態が変更されました。',
+		'The closure number is too far ahead of the register sequence.' => '締め番号がレジの連番より大幅に先行しています。',
 		'The closure number precedes the register sequence.' => '締め番号がレジの連番より前です。',
 		'WCPOS Cloud Print is disabled on this site.' => 'このサイトでは WCPOS Cloud Print が無効になっています。',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Printを使用するには、サイトでHTTPSを利用する必要があります。「設定」>「一般」でサイトアドレス（URL）をhttps://で始まるアドレスに変更してから、もう一度お試しください。',

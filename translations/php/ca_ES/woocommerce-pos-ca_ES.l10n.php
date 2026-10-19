@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'No es pot tancar la sessió.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Aquesta sessió ja té un tancament; el recompte s\'ha registrat com a recompte posterior.',
 		'The session state has changed.' => 'L\'estat de la sessió ha canviat.',
+		'The closure number is too far ahead of the register sequence.' => 'El número de tancament va massa avançat respecte a la seqüència de la caixa.',
 		'The closure number precedes the register sequence.' => 'El número de tancament és anterior a la seqüència de la caixa.',
 		'WCPOS Cloud Print is disabled on this site.' => 'La impressió al núvol de WCPOS està desactivada en aquest lloc.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print necessita que el vostre lloc utilitzi HTTPS. Canvieu l\'adreça del lloc (URL) a Configuració > General per una adreça https:// i torneu-ho a provar.',

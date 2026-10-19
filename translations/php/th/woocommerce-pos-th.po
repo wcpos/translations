@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:401
+#: includes/Activator.php:650
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> ต้องการ PHP %1$s หรือสูงกว่า อ่านข้อมูลเพิ่มเติมเกี่ยวกับ <a href=\"%2$s\">วิธีการอัปเดต</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:425
+#: includes/Activator.php:674
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> ต้องการ <a href=\"%1$s\">WooCommerce %2$s หรือสูงกว่า</a> กรุณา <a href=\"%3$s\">ติดตั้งและเปิดใช้ WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:447
+#: includes/Activator.php:696
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> ต้องการลิงก์ถาวร <em>สวยงาม</em> เพื่อทำงานอย่างถูกต้อง"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:448
+#: includes/Activator.php:697
 msgid "Enable permalinks"
 msgstr "เปิดใช้งานลิงก์ถาวร"
 
@@ -69,7 +69,7 @@ msgstr "เปิดใช้งานลิงก์ถาวร"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:699
+#: includes/Activator.php:948
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "แคชเชียร์"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:896
+#: includes/Activator.php:1145
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -882,7 +882,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "กำลังพิมพ์คำสั่งซื้อนี้อีกชุดอยู่ โปรดลองอีกครั้ง"
 
 #: includes/API/V1/Receipts_Controller.php:395
-#: includes/API/V2/Closures_Controller.php:374
+#: includes/API/V2/Closures_Controller.php:384
 #: includes/Templates/Receipt.php:528
 msgid "The closure request could not be completed."
 msgstr "ดำเนินการคำขอปิดรอบไม่สำเร็จ"
@@ -1667,22 +1667,26 @@ msgstr "บันทึกการเคลื่อนไหวนี้หล
 msgid "The movement has already been voided or is unavailable."
 msgstr "ยกเลิกการเคลื่อนไหวนี้แล้วหรือไม่พร้อมใช้งาน"
 
-#: includes/Services/Closure_Store.php:442
+#: includes/Services/Closure_Store.php:641
 msgid "The session cannot be closed."
 msgstr "ปิดเซสชันไม่ได้"
 
-#: includes/Services/Closure_Store.php:516
+#: includes/Services/Closure_Store.php:715
 msgid ""
 "This session already has a closure; the count was recorded as a recount."
 msgstr "เซสชันนี้มีรายการปิดรอบแล้ว บันทึกการนับนี้เป็นการนับซ้ำ"
 
-#: includes/Services/Closure_Store.php:533
-#: includes/Services/Register_Session_Store.php:278
-#: includes/Services/Register_Session_Store.php:439
+#: includes/Services/Closure_Store.php:732
+#: includes/Services/Register_Session_Store.php:294
+#: includes/Services/Register_Session_Store.php:459
 msgid "The session state has changed."
 msgstr "สถานะเซสชันเปลี่ยนแล้ว"
 
-#: includes/Services/Closure_Store.php:559
+#: includes/Services/Closure_Store.php:758
+msgid "The closure number is too far ahead of the register sequence."
+msgstr "หมายเลขปิดรอบล้ำหน้าลำดับหมายเลขของเครื่องคิดเงินมากเกินไป"
+
+#: includes/Services/Closure_Store.php:769
 msgid "The closure number precedes the register sequence."
 msgstr "หมายเลขปิดรอบน้อยกว่าลำดับของเครื่องคิดเงิน"
 
@@ -3068,7 +3072,7 @@ msgstr "แพลตฟอร์ม"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:153
+#: includes/Services/Register_Store.php:171
 #: includes/Services/Reports_Registry.php:188
 msgid "Register"
 msgstr "เครื่องคิดเงิน"
@@ -4739,23 +4743,23 @@ msgstr "ฐานภาษี: %s"
 msgid "POS fiscal receipt snapshot created (receipt #%d)."
 msgstr "สร้างสแนปช็อตใบเสร็จทางภาษีของ POS แล้ว (ใบเสร็จเลขที่ %d)"
 
-#: includes/Services/Register_Session_Store.php:161
+#: includes/Services/Register_Session_Store.php:177
 msgid "This register already has an open session."
 msgstr "เครื่องคิดเงินนี้มีเซสชันที่เปิดอยู่แล้ว"
 
-#: includes/Services/Register_Session_Store.php:227
+#: includes/Services/Register_Session_Store.php:243
 msgid "The cashier who opened this session cannot approve it."
 msgstr "พนักงานเก็บเงินที่เปิดเซสชันนี้อนุมัติไม่ได้"
 
-#: includes/Services/Register_Session_Store.php:320
+#: includes/Services/Register_Session_Store.php:336
 msgid "The closure count differs from the closed session."
 msgstr "จำนวนรายการปิดรอบไม่ตรงกับเซสชันที่ปิดแล้ว"
 
-#: includes/Services/Register_Session_Store.php:370
+#: includes/Services/Register_Session_Store.php:386
 msgid "Manager approval is required to close this session."
 msgstr "ต้องได้รับอนุมัติจากผู้จัดการเพื่อปิดเซสชันนี้"
 
-#: includes/Services/Register_Session_Store.php:442
+#: includes/Services/Register_Session_Store.php:462
 msgid "The session approval has changed."
 msgstr "การอนุมัติเซสชันมีการเปลี่ยนแปลง"
 

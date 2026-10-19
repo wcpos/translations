@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Seanso uždaryti negalima.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Šis seansas jau turi uždarymo įrašą; suskaičiuoti duomenys užregistruoti kaip perskaičiavimas.',
 		'The session state has changed.' => 'Seanso būsena pasikeitė.',
+		'The closure number is too far ahead of the register sequence.' => 'Uždarymo numeris per daug lenkia kasos numerių seką.',
 		'The closure number precedes the register sequence.' => 'Uždarymo numeris yra ankstesnis už kasos sekos numerį.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print šioje svetainėje išjungtas.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'Kad veiktų WCPOS Cloud Print, jūsų svetainė turi naudoti HTTPS. Nustatymuose > Bendrieji nustatykite svetainės adresą (URL) su https:// ir bandykite dar kartą.',

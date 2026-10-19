@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'ปิดเซสชันไม่ได้',
 		'This session already has a closure; the count was recorded as a recount.' => 'เซสชันนี้มีรายการปิดรอบแล้ว บันทึกการนับนี้เป็นการนับซ้ำ',
 		'The session state has changed.' => 'สถานะเซสชันเปลี่ยนแล้ว',
+		'The closure number is too far ahead of the register sequence.' => 'หมายเลขปิดรอบล้ำหน้าลำดับหมายเลขของเครื่องคิดเงินมากเกินไป',
 		'The closure number precedes the register sequence.' => 'หมายเลขปิดรอบน้อยกว่าลำดับของเครื่องคิดเงิน',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print ถูกปิดใช้งานบนไซต์นี้',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print กำหนดให้เว็บไซต์ของคุณใช้ HTTPS ตั้งค่าที่อยู่เว็บไซต์ (URL) ใน การตั้งค่า > ทั่วไป ให้เป็นที่อยู่ที่ขึ้นต้นด้วย https:// แล้วลองอีกครั้ง',

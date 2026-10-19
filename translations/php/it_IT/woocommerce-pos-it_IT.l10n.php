@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'Non è possibile chiudere la sessione.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Questa sessione ha già una chiusura; il conteggio è stato registrato come nuovo conteggio.',
 		'The session state has changed.' => 'Lo stato della sessione è cambiato.',
+		'The closure number is too far ahead of the register sequence.' => 'Il numero di chiusura è troppo avanti rispetto alla sequenza della cassa.',
 		'The closure number precedes the register sequence.' => 'Il numero di chiusura precede la sequenza della cassa.',
 		'WCPOS Cloud Print is disabled on this site.' => 'WCPOS Cloud Print è disabilitato su questo sito.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'WCPOS Cloud Print richiede che il sito utilizzi HTTPS. Imposta l\'indirizzo del sito (URL) in Impostazioni > Generali su un indirizzo https://, poi riprova.',

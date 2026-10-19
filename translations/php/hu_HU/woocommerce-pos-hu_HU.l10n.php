@@ -340,6 +340,7 @@ return array(
 		'The session cannot be closed.' => 'A munkamenet nem zárható le.',
 		'This session already has a closure; the count was recorded as a recount.' => 'Ehhez a munkamenethez már tartozik pénztárzárás; a számlálást újraszámlálásként rögzítettük.',
 		'The session state has changed.' => 'A munkamenet állapota megváltozott.',
+		'The closure number is too far ahead of the register sequence.' => 'A pénztárzárás sorszáma túl messze jár a pénztár számsora előtt.',
 		'The closure number precedes the register sequence.' => 'A pénztárzárás sorszáma megelőzi a pénztárgép sorszámát.',
 		'WCPOS Cloud Print is disabled on this site.' => 'A WCPOS Cloud Print le van tiltva ezen az oldalon.',
 		'WCPOS Cloud Print needs your site to use HTTPS. Set the Site Address (URL) in Settings > General to an https:// address, then try again.' => 'A WCPOS Cloud Print használatához a webhelynek HTTPS-t kell használnia. A Beállítások > Általános részen állítsa a webhely címét (URL) https:// kezdetű címre, majd próbálja újra.',
