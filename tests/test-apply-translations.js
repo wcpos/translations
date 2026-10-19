@@ -196,6 +196,13 @@ try {
   assert.equal(report.applied, 1);
   assert.deepEqual(report.rejected.map(item => [item.key, item.reasons[0]]), [['stores.col_name', 'no translation returned']]);
   assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/blank.json')), { 'stores.col_actions': '' });
+  // A stale non-empty value returned for an empty source is overridden by the empty mirror, not persisted.
+  fs.rmSync(path.join(rootDir, 'translations/js/de_DE/monorepo/blank.json'));
+  write('results/de_DE.json', { locale: 'de_DE', js: { 'monorepo/blank.json': { 'stores.col_actions': 'Aktionen', 'stores.col_name': 'Laden' } } }, php: {} });
+  report = apply();
+  assert.equal(report.applied, 2);
+  assert.deepEqual(report.rejected, []);
+  assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/blank.json')), { 'stores.col_actions': '', 'stores.col_name': 'Laden' });
   console.log('Apply translations tests passed');
 } finally {
   fs.rmSync(rootDir, { recursive: true, force: true });

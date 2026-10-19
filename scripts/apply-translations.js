@@ -120,11 +120,12 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
       const reasons = [];
       const warnings = [];
       let translations;
-      if (!values || !Object.hasOwn(values, resultKey)) {
-        // A JS key whose English source is empty needs no model output: mirror the empty string so the
-        // key exists in every locale file and the completeness gate stops asking for it.
-        if (js && sources[0].trim() === '') translations = [''];
-        else reasons.push('no translation returned');
+      if (js && sources[0].trim() === '') {
+        // A JS key whose English source is empty needs no model output: mirror the empty string, whatever
+        // the results say, so the key exists in every locale file and the completeness gate stops asking.
+        translations = [''];
+      } else if (!values || !Object.hasOwn(values, resultKey)) {
+        reasons.push('no translation returned');
       } else {
         translations = js ? [values[resultKey]] : values[resultKey];
         if (!Array.isArray(translations) || translations.length !== forms) {
