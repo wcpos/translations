@@ -17,6 +17,7 @@ for (const required of ['gpt-6-luna', 'gpt-6-sol', '--review-model', 'TRANSLATE_
   assert.ok(source.includes(required), required);
 }
 assert.match(source, /^#!\/bin\/bash\nset -euo pipefail/);
+assert.ok(source.includes('git add translations source'));
 assert.ok(fs.statSync(script).mode & 0o111);
 const root = fs.realpathSync(fs.mkdtempSync(path.join(os.tmpdir(), 'translate-local-')));
 const bin = path.join(root, 'bin');
@@ -37,6 +38,7 @@ function run(config = {}, args = [], overrides = {}) {
 try {
   for (const dir of [bin, path.join(wt, 'scripts')]) fs.mkdirSync(dir, { recursive: true });
   for (const script of ['translate-chunks.js', 'plural-rules.js']) fs.copyFileSync(path.resolve(__dirname, '../scripts', script), path.join(wt, 'scripts', script));
+  fs.writeFileSync(path.join(wt, 'scripts/source-hashes.js'), '');
   fs.writeFileSync(path.join(wt, 'scripts/translate-prompt.md'), 'TRANSLATE\n');
   fs.writeFileSync(path.join(wt, 'scripts/review-prompt.md'), 'REVIEW\n');
   // Only shorten the timeout in this isolated copy.
@@ -62,6 +64,8 @@ if (tool === 'git') {
 } else if (tool === 'node') {
   if (args[0] === '-e' || args[0].endsWith('translate-chunks.js')) {
     const r = cp.spawnSync(process.execPath, args, { stdio: 'inherit' }); process.exit(r.status ?? 1);
+  } else if (args[0].endsWith('source-hashes.js')) {
+    console.log('{"seeded":0,"changed":0,"removed":0,"keys":[]}');
   } else if (args[0].endsWith('translation-worklist.js')) {
     const counter = '.translate/worklist-count';
     const call = fs.existsSync(counter) ? Number(fs.readFileSync(counter, 'utf8')) + 1 : 1;
@@ -198,6 +202,9 @@ if (tool === 'git') {
   assert.match(result.stdout, /review 1 failed/);
   result = run();
   assert.equal(result.status, 0, result.stderr);
+  const sourceHashIndex = result.calls.findIndex(c => isCall(c, 'node', 'scripts/source-hashes.js'));
+  const worklistIndex = result.calls.findIndex(c => isCall(c, 'node', 'scripts/translation-worklist.js'));
+  assert.ok(sourceHashIndex !== -1 && sourceHashIndex < worklistIndex);
   assert.ok(result.calls.some(c => isCall(c, 'node', 'scripts/seed-from-lane.js', '--ref', 'origin/next')));
   const cleanupIndex = result.calls.findIndex(c => c.tool === 'node' && c.args[0] === 'scripts/cleanup-stale-keys.js');
   assert.ok(cleanupIndex !== -1);
