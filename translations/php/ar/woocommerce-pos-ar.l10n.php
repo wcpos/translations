@@ -795,6 +795,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'تعذر عرض مستند فاتورة WP Overnight لهذا الطلب.',
 		'The WP Overnight packing slip document is not available.' => 'مستند قسيمة التعبئة WP Overnight غير متاح.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'تعذر عرض مستند قسيمة التعبئة WP Overnight لهذا الطلب.',
+		'Hello' => 'مرحبًا',
 		'The WCPOS plugin failed to load correctly.' => 'فشل تحميل إضافة WCPOS بشكل صحيح.',
 	),
 );

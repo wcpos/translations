@@ -795,6 +795,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Šios užsakymo WP Overnight sąskaitos faktūros dokumento nepavyko atvaizduoti.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight pakavimo lapo dokumentas neprieinamas.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti.',
+		'Hello' => 'Sveiki',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS įskiepis nepavyko tinkamai įkelti.',
 	),
 );
