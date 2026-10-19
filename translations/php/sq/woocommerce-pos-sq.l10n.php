@@ -347,7 +347,7 @@ return array(
 		'Address line 1' => 'Rreshti 1 i adresës',
 		'Address line 2' => 'Rreshti 2 i adresës',
 		'City' => 'Qyteti',
-		'State / Region' => 'Rajoni',
+		'State / Region' => 'Shteti / Rajoni',
 		'Postcode' => 'Kodi postar',
 		'Line Items' => 'Artikujt',
 		'Item Key' => 'Key i artikullit',
