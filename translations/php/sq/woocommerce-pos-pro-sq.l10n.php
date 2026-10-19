@@ -28,7 +28,7 @@ return array(
 		'Left with space' => 'Majtas me hapësirë',
 		'Right with space' => 'Djathtas me hapësirë',
 		'Inherit site timezone' => 'Trashëgoni zonën kohore të sajtit',
-		'All authorized users' . "\x04" . 'All' => 'Të gjitha',
+		'All authorized users' . "\x04" . 'All' => 'Të gjithë',
 		'Open POS' => 'Hapni POS',
 		'Store' => 'Dyqani',
 		'Authorized Users' => 'Përdoruesit e autorizuar',

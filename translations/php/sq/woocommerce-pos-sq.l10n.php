@@ -651,7 +651,7 @@ return array(
 		'Template Attributes' => 'Atributet e modelit',
 		'Parent Template:' => 'Modeli prind:',
 		'Add New Template' => 'Shtoni model të ri',
-		'Add New' => 'Shtoni tjetër',
+		'Add New' => 'Shtoni të ri',
 		'New Template' => 'Model i ri',
 		'Edit Template' => 'Redaktoni modelin',
 		'Update Template' => 'Përditësoni modelin',
