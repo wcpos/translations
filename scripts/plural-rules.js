@@ -53,6 +53,7 @@ const PLURAL_SUFFIXES = {
   is_IS: ['one', 'other'],
   lt_LT: ['one', 'few', 'many', 'other'],
   mk_MK: ['one', 'other'],
+  sq: ['one', 'other'],
 
   // Slavic (one, few, many, other)
   ru_RU: ['one', 'few', 'many', 'other'],
