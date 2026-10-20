@@ -1145,7 +1145,7 @@ msgstr "Betalningen måste vara ett objekt."
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:118
-#: includes/Payments/Contract/Ledger.php:1345
+#: includes/Payments/Contract/Ledger.php:1603
 msgid "Payment method not found."
 msgstr "Betalningsmetoden hittades inte."
 
@@ -1189,7 +1189,7 @@ msgstr "Tyvärr får du inte initiera betalningsmetoder."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:54
-#: includes/Payments/Contract/Ledger.php:2313
+#: includes/Payments/Contract/Ledger.php:2580
 msgid "Payment capture mode is unsupported."
 msgstr "Betalningens debiteringsläge stöds inte."
 
@@ -1455,11 +1455,11 @@ msgid ""
 msgstr ""
 "WCPOS: återöppningen kunde inte registreras i slutförandehistoriken; stäm av manuellt."
 
-#: includes/Payments/Contract/Gateway_Handler.php:70
+#: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
 msgstr "Betalningsleverantören återbetalade inte den här betalningen."
 
-#: includes/Payments/Contract/Gateway_Handler.php:94
+#: includes/Payments/Contract/Gateway_Handler.php:97
 msgid "This payment cannot be voided."
 msgstr "Den här betalningen kan inte makuleras."
 
@@ -1564,104 +1564,124 @@ msgstr ""
 msgid "Recorded payments must be captured or authorized."
 msgstr "Registrerade betalningar måste vara debiterade eller auktoriserade."
 
-#: includes/Payments/Contract/Ledger.php:667
-#: includes/Payments/Contract/Ledger.php:671
+#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:674
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Det mottagna beloppet är ogiltigt för den här betalningsmetoden."
 
-#: includes/Payments/Contract/Ledger.php:840
+#: includes/Payments/Contract/Ledger.php:843
 msgid "Payment method is disabled."
 msgstr "Betalningsmetoden är inaktiverad."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1406
-#: includes/Payments/Contract/Ledger.php:1456
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1664
+#: includes/Payments/Contract/Ledger.php:1714
 msgid "The order is already paid."
 msgstr "Beställningen är redan betald."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1407
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1665
 msgid "Payment amount exceeds the order balance."
 msgstr ""
 "Betalningsbeloppet överstiger det återstående beloppet för beställningen."
 
-#: includes/Payments/Contract/Ledger.php:860
-#: includes/Payments/Contract/Ledger.php:1409
-#: includes/Payments/Contract/Ledger.php:1586
+#: includes/Payments/Contract/Ledger.php:863
+#: includes/Payments/Contract/Ledger.php:1667
+#: includes/Payments/Contract/Ledger.php:1851
 msgid "Another payment is already in progress on this order."
 msgstr "En annan betalning pågår redan för den här ordern."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1028
+#: includes/Payments/Contract/Ledger.php:1031
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS-betalningen %1$s har fel belopp: förväntat %2$s, bekräftat %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1035
+#: includes/Payments/Contract/Ledger.php:1038
 msgid "Tip"
 msgstr "Dricks"
 
-#: includes/Payments/Contract/Ledger.php:1109
+#: includes/Payments/Contract/Ledger.php:1114
 msgid "Refund must belong to this order."
 msgstr "Återbetalningen måste tillhöra den här beställningen."
 
-#: includes/Payments/Contract/Ledger.php:1112
-#: includes/Payments/Contract/Ledger.php:1127
-#: includes/Payments/Contract/Ledger.php:1148
+#: includes/Payments/Contract/Ledger.php:1117
+#: includes/Payments/Contract/Ledger.php:1132
+#: includes/Payments/Contract/Ledger.php:1183
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Återbetalningsbeloppet kan inte fördelas på den här betalningen."
 
-#: includes/Payments/Contract/Ledger.php:1186
-#: includes/Payments/Contract/Ledger.php:1320
+#: includes/Payments/Contract/Ledger.php:1153
+msgid "The refund could not be reserved; retry."
+msgstr "Återbetalningen kunde inte reserveras; försök igen."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1395
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
+msgstr ""
+"WCPOS: återbetalning #%1$d på %2$s skickades till %3$s; bekräfta den hos leverantören innan du försöker igen."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1398
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
+msgstr ""
+"WCPOS: återbetalning #%1$d på %2$s gick inte igenom via %3$s, men reservationen kunde inte tas bort; kontrollera betalningen innan du försöker igen."
+
+#: includes/Payments/Contract/Ledger.php:1444
+#: includes/Payments/Contract/Ledger.php:1578
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Betalnings-ID måste vara ett UUID."
 
-#: includes/Payments/Contract/Ledger.php:1207
-#: includes/Payments/Contract/Ledger.php:1385
+#: includes/Payments/Contract/Ledger.php:1465
+#: includes/Payments/Contract/Ledger.php:1643
 msgid "Payment id conflicts with an existing payment."
 msgstr "Betalnings-ID:t står i konflikt med en befintlig betalning."
 
-#: includes/Payments/Contract/Ledger.php:1242
+#: includes/Payments/Contract/Ledger.php:1500
 msgid "Refund status is invalid."
 msgstr "Återbetalningens status är ogiltig."
 
-#: includes/Payments/Contract/Ledger.php:1323
-#: includes/Payments/Contract/Ledger.php:1327
+#: includes/Payments/Contract/Ledger.php:1581
+#: includes/Payments/Contract/Ledger.php:1585
 msgid "Payment amount must be positive."
 msgstr "Betalningsbeloppet måste vara positivt."
 
-#: includes/Payments/Contract/Ledger.php:1332
+#: includes/Payments/Contract/Ledger.php:1590
 msgid "Payment currency must match the order."
 msgstr "Betalningens valuta måste stämma med beställningens."
 
-#: includes/Payments/Contract/Ledger.php:1408
+#: includes/Payments/Contract/Ledger.php:1666
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Beloppet eller valutan som leverantören bekräftade stämmer inte med betalningen."
 
-#: includes/Payments/Contract/Ledger.php:1503
+#: includes/Payments/Contract/Ledger.php:1762
 msgid "The order is not covered by its payments."
 msgstr "Ordern täcks inte av sina betalningar."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1663
+#: includes/Payments/Contract/Ledger.php:1928
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-betalningen %s makulerades."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1665
+#: includes/Payments/Contract/Ledger.php:1930
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-betalningen %1$s makulerades: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2308
+#: includes/Payments/Contract/Ledger.php:2575
 msgid "Payment not found."
 msgstr "Betalningen hittades inte."
 
-#: includes/Payments/Contract/Ledger.php:2318
+#: includes/Payments/Contract/Ledger.php:2585
 msgid "Payment transition is invalid."
 msgstr "Ogiltig betalningsövergång."
 
@@ -5030,7 +5050,7 @@ msgid ""
 msgstr ""
 "Okänd hook för Collection Rules \"%s\"; värdet skickades vidare oförändrat."
 
-#: includes/Sync/Health.php:77
+#: includes/Sync/Health.php:82
 msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""

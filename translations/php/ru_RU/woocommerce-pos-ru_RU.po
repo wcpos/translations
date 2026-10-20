@@ -1150,7 +1150,7 @@ msgstr "Платёж должен быть объектом."
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:118
-#: includes/Payments/Contract/Ledger.php:1345
+#: includes/Payments/Contract/Ledger.php:1603
 msgid "Payment method not found."
 msgstr "Способ оплаты не найден."
 
@@ -1194,7 +1194,7 @@ msgstr "У вас нет прав для инициализации способ
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:54
-#: includes/Payments/Contract/Ledger.php:2313
+#: includes/Payments/Contract/Ledger.php:2580
 msgid "Payment capture mode is unsupported."
 msgstr "Режим списания платежа не поддерживается."
 
@@ -1464,11 +1464,11 @@ msgid ""
 msgstr ""
 "WCPOS: не удалось зафиксировать повторное открытие в истории завершений. Выполните сверку вручную."
 
-#: includes/Payments/Contract/Gateway_Handler.php:70
+#: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
 msgstr "Платёжный провайдер не выполнил возврат по этому платежу."
 
-#: includes/Payments/Contract/Gateway_Handler.php:94
+#: includes/Payments/Contract/Gateway_Handler.php:97
 msgid "This payment cannot be voided."
 msgstr "Этот платёж нельзя отменить."
 
@@ -1573,103 +1573,123 @@ msgstr ""
 msgid "Recorded payments must be captured or authorized."
 msgstr "Записанные платежи должны быть списаны или авторизованы."
 
-#: includes/Payments/Contract/Ledger.php:667
-#: includes/Payments/Contract/Ledger.php:671
+#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:674
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Внесённая сумма недопустима для этого способа оплаты."
 
-#: includes/Payments/Contract/Ledger.php:840
+#: includes/Payments/Contract/Ledger.php:843
 msgid "Payment method is disabled."
 msgstr "Способ оплаты отключён."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1406
-#: includes/Payments/Contract/Ledger.php:1456
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1664
+#: includes/Payments/Contract/Ledger.php:1714
 msgid "The order is already paid."
 msgstr "Заказ уже оплачен."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1407
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1665
 msgid "Payment amount exceeds the order balance."
 msgstr "Сумма платежа превышает остаток к оплате по заказу."
 
-#: includes/Payments/Contract/Ledger.php:860
-#: includes/Payments/Contract/Ledger.php:1409
-#: includes/Payments/Contract/Ledger.php:1586
+#: includes/Payments/Contract/Ledger.php:863
+#: includes/Payments/Contract/Ledger.php:1667
+#: includes/Payments/Contract/Ledger.php:1851
 msgid "Another payment is already in progress on this order."
 msgstr "Для этого заказа уже выполняется другой платёж."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1028
+#: includes/Payments/Contract/Ledger.php:1031
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Сумма платежа WCPOS %1$s не совпадает: ожидалось %2$s, подтверждено %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1035
+#: includes/Payments/Contract/Ledger.php:1038
 msgid "Tip"
 msgstr "Чаевые"
 
-#: includes/Payments/Contract/Ledger.php:1109
+#: includes/Payments/Contract/Ledger.php:1114
 msgid "Refund must belong to this order."
 msgstr "Возврат должен относиться к этому заказу."
 
-#: includes/Payments/Contract/Ledger.php:1112
-#: includes/Payments/Contract/Ledger.php:1127
-#: includes/Payments/Contract/Ledger.php:1148
+#: includes/Payments/Contract/Ledger.php:1117
+#: includes/Payments/Contract/Ledger.php:1132
+#: includes/Payments/Contract/Ledger.php:1183
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Сумму возврата нельзя отнести к этому платежу."
 
-#: includes/Payments/Contract/Ledger.php:1186
-#: includes/Payments/Contract/Ledger.php:1320
+#: includes/Payments/Contract/Ledger.php:1153
+msgid "The refund could not be reserved; retry."
+msgstr "Не удалось зарезервировать возврат средств; повторите попытку."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1395
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
+msgstr ""
+"WCPOS: возврат средств #%1$d на сумму %2$s отправлен в %3$s; подтвердите его у провайдера, прежде чем повторить попытку."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1398
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
+msgstr ""
+"WCPOS: возврат средств #%1$d на сумму %2$s не прошёл через %3$s, но удалить резервирование не удалось; проверьте платёж, прежде чем повторить попытку."
+
+#: includes/Payments/Contract/Ledger.php:1444
+#: includes/Payments/Contract/Ledger.php:1578
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID платежа должен быть UUID."
 
-#: includes/Payments/Contract/Ledger.php:1207
-#: includes/Payments/Contract/Ledger.php:1385
+#: includes/Payments/Contract/Ledger.php:1465
+#: includes/Payments/Contract/Ledger.php:1643
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID платежа конфликтует с существующим платежом."
 
-#: includes/Payments/Contract/Ledger.php:1242
+#: includes/Payments/Contract/Ledger.php:1500
 msgid "Refund status is invalid."
 msgstr "Недопустимый статус возврата средств."
 
-#: includes/Payments/Contract/Ledger.php:1323
-#: includes/Payments/Contract/Ledger.php:1327
+#: includes/Payments/Contract/Ledger.php:1581
+#: includes/Payments/Contract/Ledger.php:1585
 msgid "Payment amount must be positive."
 msgstr "Сумма платежа должна быть положительной."
 
-#: includes/Payments/Contract/Ledger.php:1332
+#: includes/Payments/Contract/Ledger.php:1590
 msgid "Payment currency must match the order."
 msgstr "Валюта платежа должна совпадать с валютой заказа."
 
-#: includes/Payments/Contract/Ledger.php:1408
+#: includes/Payments/Contract/Ledger.php:1666
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Подтверждённая провайдером сумма или валюта не совпадает с данными платежа."
 
-#: includes/Payments/Contract/Ledger.php:1503
+#: includes/Payments/Contract/Ledger.php:1762
 msgid "The order is not covered by its payments."
 msgstr "Платежи не покрывают сумму заказа."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1663
+#: includes/Payments/Contract/Ledger.php:1928
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Платёж WCPOS %s отменён."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1665
+#: includes/Payments/Contract/Ledger.php:1930
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Платёж WCPOS %1$s отменён: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2308
+#: includes/Payments/Contract/Ledger.php:2575
 msgid "Payment not found."
 msgstr "Платёж не найден."
 
-#: includes/Payments/Contract/Ledger.php:2318
+#: includes/Payments/Contract/Ledger.php:2585
 msgid "Payment transition is invalid."
 msgstr "Недопустимый переход состояния платежа."
 
@@ -5037,7 +5057,7 @@ msgid ""
 msgstr ""
 "Неизвестный хук правил коллекции \"%s\"; значение передано без изменений."
 
-#: includes/Sync/Health.php:77
+#: includes/Sync/Health.php:82
 msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""

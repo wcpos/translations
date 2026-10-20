@@ -357,11 +357,11 @@ msgstr "एक्सटेंशन स्थापित नहीं है।
 msgid "Plugin update failed."
 msgstr "प्लगइन अपडेट विफल रहा।"
 
-#: includes/API/V1/Order_Refunds_Controller.php:132
+#: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
 msgstr "अमान्य ऑर्डर ID।"
 
-#: includes/API/V1/Order_Refunds_Controller.php:143
+#: includes/API/V1/Order_Refunds_Controller.php:140
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "X-WCPOS-Idempotency-Key हेडर अनुपस्थित है।"
 
@@ -395,7 +395,7 @@ msgstr "इस भुगतान के जवाब का इंतज़ा�
 
 #: includes/API/V2/Payments_Answer_Controller.php:71
 #: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Device/Device_Handler.php:229
 #: includes/Payments/Server/Abstract_Provider_Adapter.php:123
 #: includes/Payments/Server/Server_Handler.php:331
 msgid "This payment provider does not support that operation."
@@ -423,11 +423,11 @@ msgstr "इस आइडेम्पोटेंसी कुंजी वाल
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:135
 #: includes/Payments/Idempotency_Repository.php:131
-#: includes/Payments/Idempotency_Repository.php:178
+#: includes/Payments/Idempotency_Repository.php:180
 msgid "Idempotency key was reused with a different request."
 msgstr "आइडेम्पोटेंसी कुंजी का पुन: उपयोग किसी भिन्न अनुरोध के साथ किया गया।"
 
-#: includes/Payments/Device/Device_Handler.php:243
+#: includes/Payments/Device/Device_Handler.php:245
 msgid "The provider could not confirm this payment."
 msgstr "प्रदाता इस भुगतान की पुष्टि नहीं कर सका।"
 
@@ -590,34 +590,25 @@ msgid "Details"
 msgstr "विवरण"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
-#: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:201
-#: includes/Payments/Refund_Processor.php:271
+#: includes/Payments/Refund_Processor.php:184
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr "अमान्य रिफंड गंतव्य। अनुमत मान: original_method, cash, manual।"
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:230
+#: includes/Payments/Refund_Processor.php:213
 msgid "The original payment gateway is not available for refunds."
 msgstr "मूल भुगतान गेटवे रिफंड के लिए उपलब्ध नहीं है।"
 
-#. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:257
-#: includes/Payments/Refund_Processor.php:279
-msgid "The refund resolver returned an invalid result."
-msgstr "रिफंड रिज़ॉल्वर ने अमान्य परिणाम लौटाया।"
-
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:395
+#: includes/Payments/Refund_Processor.php:327
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "दर्ज भुगतानों के ज़रिए मूल भुगतान विधि से यह राशि वापस नहीं की जा सकती।"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:456
+#: includes/Payments/Refund_Processor.php:388
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -696,16 +687,32 @@ msgstr ""
 msgid "You are not allowed to download this support bundle."
 msgstr "आपको यह सहायता बंडल डाउनलोड करने की अनुमति नहीं है।"
 
-#: includes/Registers.php:74
+#: includes/Registers.php:372
+#: includes/Services/Meta_Register_Repository.php:144
 msgid "Register"
 msgstr "रजिस्टर"
 
-#: includes/Registers.php:243
+#: includes/Registers.php:518
+msgid "The store must be a published store you are authorized for."
+msgstr ""
+"स्टोर प्रकाशित होना चाहिए और आपके पास उस तक पहुँचने की अनुमति होनी चाहिए।"
+
+#: includes/Registers.php:525
+msgid "Pick a store for the new register."
+msgstr "नए रजिस्टर के लिए स्टोर चुनें।"
+
+#: includes/Registers.php:528
+msgid ""
+"Pick a store for the new register; the site's unassigned register already exists."
+msgstr ""
+"नए रजिस्टर के लिए स्टोर चुनें; साइट का बिना असाइन किया गया रजिस्टर पहले से मौजूद है।"
+
+#: includes/Registers.php:647
 msgid "The target store must be a published store you are authorized for."
 msgstr ""
 "लक्ष्य स्टोर प्रकाशित होना चाहिए और आपको उस तक पहुँचने की अनुमति होनी चाहिए।"
 
-#: includes/Registers.php:246
+#: includes/Registers.php:650
 msgid "Close the register session before moving it to another store."
 msgstr "रजिस्टर को दूसरे स्टोर में ले जाने से पहले उसका सत्र बंद करें।"
 

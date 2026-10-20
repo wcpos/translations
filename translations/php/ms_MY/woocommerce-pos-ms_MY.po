@@ -1146,7 +1146,7 @@ msgstr "Pembayaran mestilah objek."
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:118
-#: includes/Payments/Contract/Ledger.php:1345
+#: includes/Payments/Contract/Ledger.php:1603
 msgid "Payment method not found."
 msgstr "Kaedah pembayaran tidak ditemukan."
 
@@ -1190,7 +1190,7 @@ msgstr "Maaf, anda tidak boleh memulakan kaedah pembayaran."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:54
-#: includes/Payments/Contract/Ledger.php:2313
+#: includes/Payments/Contract/Ledger.php:2580
 msgid "Payment capture mode is unsupported."
 msgstr "Mod penerimaan pembayaran tidak disokong."
 
@@ -1456,11 +1456,11 @@ msgid ""
 msgstr ""
 "WCPOS: pembukaan semula tidak dapat direkodkan dalam sejarah penyelesaian. Selaraskan secara manual."
 
-#: includes/Payments/Contract/Gateway_Handler.php:70
+#: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
 msgstr "Penyedia pembayaran tidak membayar balik transaksi ini."
 
-#: includes/Payments/Contract/Gateway_Handler.php:94
+#: includes/Payments/Contract/Gateway_Handler.php:97
 msgid "This payment cannot be voided."
 msgstr "Pembayaran ini tidak boleh dibatalkan."
 
@@ -1566,103 +1566,123 @@ msgstr ""
 msgid "Recorded payments must be captured or authorized."
 msgstr "Pembayaran yang direkodkan mesti telah diterima atau dibenarkan."
 
-#: includes/Payments/Contract/Ledger.php:667
-#: includes/Payments/Contract/Ledger.php:671
+#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:674
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Jumlah yang diterima tidak sah untuk kaedah pembayaran ini."
 
-#: includes/Payments/Contract/Ledger.php:840
+#: includes/Payments/Contract/Ledger.php:843
 msgid "Payment method is disabled."
 msgstr "Kaedah pembayaran dilumpuhkan."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1406
-#: includes/Payments/Contract/Ledger.php:1456
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1664
+#: includes/Payments/Contract/Ledger.php:1714
 msgid "The order is already paid."
 msgstr "Pesanan telah dibayar."
 
-#: includes/Payments/Contract/Ledger.php:848
-#: includes/Payments/Contract/Ledger.php:1407
+#: includes/Payments/Contract/Ledger.php:851
+#: includes/Payments/Contract/Ledger.php:1665
 msgid "Payment amount exceeds the order balance."
 msgstr "Amaun pembayaran melebihi baki pesanan."
 
-#: includes/Payments/Contract/Ledger.php:860
-#: includes/Payments/Contract/Ledger.php:1409
-#: includes/Payments/Contract/Ledger.php:1586
+#: includes/Payments/Contract/Ledger.php:863
+#: includes/Payments/Contract/Ledger.php:1667
+#: includes/Payments/Contract/Ledger.php:1851
 msgid "Another payment is already in progress on this order."
 msgstr "Pembayaran lain sedang diproses untuk pesanan ini."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1028
+#: includes/Payments/Contract/Ledger.php:1031
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Amaun pembayaran WCPOS %1$s tidak sepadan: dijangka %2$s, disahkan %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1035
+#: includes/Payments/Contract/Ledger.php:1038
 msgid "Tip"
 msgstr "Tip"
 
-#: includes/Payments/Contract/Ledger.php:1109
+#: includes/Payments/Contract/Ledger.php:1114
 msgid "Refund must belong to this order."
 msgstr "Bayaran balik mesti dikaitkan dengan pesanan ini."
 
-#: includes/Payments/Contract/Ledger.php:1112
-#: includes/Payments/Contract/Ledger.php:1127
-#: includes/Payments/Contract/Ledger.php:1148
+#: includes/Payments/Contract/Ledger.php:1117
+#: includes/Payments/Contract/Ledger.php:1132
+#: includes/Payments/Contract/Ledger.php:1183
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Amaun bayaran balik tidak boleh diperuntukkan kepada pembayaran ini."
 
-#: includes/Payments/Contract/Ledger.php:1186
-#: includes/Payments/Contract/Ledger.php:1320
+#: includes/Payments/Contract/Ledger.php:1153
+msgid "The refund could not be reserved; retry."
+msgstr "Bayaran balik tidak dapat ditempah; cuba lagi."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1395
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
+msgstr ""
+"WCPOS: bayaran balik #%1$d untuk %2$s telah dihantar kepada %3$s; sahkannya dengan penyedia sebelum mencuba lagi."
+
+#. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
+#: includes/Payments/Contract/Ledger.php:1398
+#, php-format
+msgid ""
+"WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
+msgstr ""
+"WCPOS: bayaran balik #%1$d untuk %2$s tidak berjaya melalui %3$s, tetapi tempahannya tidak dapat dibatalkan; semak pembayaran sebelum mencuba lagi."
+
+#: includes/Payments/Contract/Ledger.php:1444
+#: includes/Payments/Contract/Ledger.php:1578
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID pembayaran mestilah UUID."
 
-#: includes/Payments/Contract/Ledger.php:1207
-#: includes/Payments/Contract/Ledger.php:1385
+#: includes/Payments/Contract/Ledger.php:1465
+#: includes/Payments/Contract/Ledger.php:1643
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID pembayaran bercanggah dengan pembayaran sedia ada."
 
-#: includes/Payments/Contract/Ledger.php:1242
+#: includes/Payments/Contract/Ledger.php:1500
 msgid "Refund status is invalid."
 msgstr "Status bayaran balik tidak sah."
 
-#: includes/Payments/Contract/Ledger.php:1323
-#: includes/Payments/Contract/Ledger.php:1327
+#: includes/Payments/Contract/Ledger.php:1581
+#: includes/Payments/Contract/Ledger.php:1585
 msgid "Payment amount must be positive."
 msgstr "Amaun pembayaran mesti positif."
 
-#: includes/Payments/Contract/Ledger.php:1332
+#: includes/Payments/Contract/Ledger.php:1590
 msgid "Payment currency must match the order."
 msgstr "Mata wang pembayaran mesti sama dengan pesanan."
 
-#: includes/Payments/Contract/Ledger.php:1408
+#: includes/Payments/Contract/Ledger.php:1666
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Amaun atau mata wang yang disahkan penyedia tidak sepadan dengan pembayaran."
 
-#: includes/Payments/Contract/Ledger.php:1503
+#: includes/Payments/Contract/Ledger.php:1762
 msgid "The order is not covered by its payments."
 msgstr "Pembayaran tidak mencukupi untuk menampung jumlah pesanan."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1663
+#: includes/Payments/Contract/Ledger.php:1928
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Pembayaran WCPOS %s dibatalkan."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1665
+#: includes/Payments/Contract/Ledger.php:1930
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Pembayaran WCPOS %1$s dibatalkan: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2308
+#: includes/Payments/Contract/Ledger.php:2575
 msgid "Payment not found."
 msgstr "Pembayaran tidak ditemukan."
 
-#: includes/Payments/Contract/Ledger.php:2318
+#: includes/Payments/Contract/Ledger.php:2585
 msgid "Payment transition is invalid."
 msgstr "Peralihan status pembayaran tidak sah."
 
@@ -5033,7 +5053,7 @@ msgid ""
 msgstr ""
 "Hook Collection Rules \"%s\" tidak dikenali; nilainya diteruskan tanpa perubahan."
 
-#: includes/Sync/Health.php:77
+#: includes/Sync/Health.php:82
 msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""
