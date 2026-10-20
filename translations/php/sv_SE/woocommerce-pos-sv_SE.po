@@ -537,7 +537,7 @@ msgstr "Betalningsgatewayn är inte tillgänglig för POS-utcheckning."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:329
+#: includes/API/V2/Payments_Controller.php:370
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Order hittades inte."
@@ -1133,32 +1133,32 @@ msgstr "Ogiltigt meta_data-värde för _woocommerce_pos_uuid."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "Samlingen ”%1$s” hanteras inte av den här routen. Stöds: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:91
+#: includes/API/V2/Payments_Controller.php:117
 msgid "Sorry, you cannot manage order payments."
 msgstr "Tyvärr får du inte hantera betalningar för beställningar."
 
-#: includes/API/V2/Payments_Controller.php:110
+#: includes/API/V2/Payments_Controller.php:136
 msgid "Payment must be an object."
 msgstr "Betalningen måste vara ett objekt."
 
-#: includes/API/V2/Payments_Controller.php:162
+#: includes/API/V2/Payments_Controller.php:203
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:101
-#: includes/Payments/Contract/Ledger.php:1251
+#: includes/Payments/Contract/Gateway_Submission.php:106
+#: includes/Payments/Contract/Ledger.php:1315
 msgid "Payment method not found."
 msgstr "Betalningsmetoden hittades inte."
 
-#: includes/API/V2/Payments_Controller.php:168
+#: includes/API/V2/Payments_Controller.php:209
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Värdena måste vara ett objekt och försöks-ID:t ett UUID."
 
-#: includes/API/V2/Payments_Controller.php:173
+#: includes/API/V2/Payments_Controller.php:214
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr ""
 "Försöks-ID:t måste identifiera det skickade försöket som ska avbrytas."
 
-#: includes/API/V2/Payments_Controller.php:279
+#: includes/API/V2/Payments_Controller.php:320
 msgid "Invalid payment operation parameters."
 msgstr "Ogiltiga parametrar för betalningsåtgärden."
 
@@ -1172,7 +1172,7 @@ msgstr "Tyvärr får du inte initiera betalningsmetoder."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:53
-#: includes/Payments/Contract/Ledger.php:2042
+#: includes/Payments/Contract/Ledger.php:2234
 msgid "Payment capture mode is unsupported."
 msgstr "Betalningens debiteringsläge stöds inte."
 
@@ -1263,7 +1263,7 @@ msgid "The session request could not be completed."
 msgstr "Det gick inte att slutföra passbegäran."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:558
+#: includes/API/V2/Writers/Order_Writer.php:633
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
@@ -1417,6 +1417,23 @@ msgstr[1] "POS - Delbetalningar <span class=\"count\">(%s)</span>"
 msgid "This payment capture mode does not support that operation."
 msgstr "Det här debiteringsläget för betalningar stöder inte åtgärden."
 
+#: includes/Payments/Contract/Completion_Stamp.php:255
+msgid "WCPOS: completion could not be recorded; reconcile manually."
+msgstr "WCPOS: slutförandet kunde inte registreras; stäm av manuellt."
+
+#. translators: %d: completion number.
+#: includes/Payments/Contract/Completion_Stamp.php:294
+#, php-format
+msgid "WCPOS: completion %d could not be recorded; reconcile manually."
+msgstr "WCPOS: slutförandet %d kunde inte registreras; stäm av manuellt."
+
+#: includes/Payments/Contract/Completion_Stamp.php:369
+#: includes/Payments/Contract/Completion_Stamp.php:391
+msgid ""
+"WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
+msgstr ""
+"WCPOS: återöppningen kunde inte registreras i slutförandehistoriken; stäm av manuellt."
+
 #: includes/Payments/Contract/Gateway_Handler.php:70
 msgid "The payment provider did not refund this payment."
 msgstr "Betalningsleverantören återbetalade inte den här betalningen."
@@ -1441,25 +1458,25 @@ msgstr "Det här försöket avbröts eller ersattes i kassan."
 msgid "Payment method is not enabled for the POS."
 msgstr "Betalningsmetoden är inte aktiverad för POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:92
+#: includes/Payments/Contract/Gateway_Submission.php:97
 msgid "Order is already paid."
 msgstr "Ordern är redan betald."
 
-#: includes/Payments/Contract/Gateway_Submission.php:96
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Order already has a live payment."
 msgstr "Ordern har redan en aktiv betalning."
 
-#: includes/Payments/Contract/Gateway_Submission.php:177
+#: includes/Payments/Contract/Gateway_Submission.php:182
 msgid "The payment method rejected the details entered."
 msgstr "Betalningsmetoden avvisade de angivna uppgifterna."
 
-#: includes/Payments/Contract/Gateway_Submission.php:246
-#: includes/Payments/Contract/Gateway_Submission.php:261
+#: includes/Payments/Contract/Gateway_Submission.php:251
+#: includes/Payments/Contract/Gateway_Submission.php:266
 msgid "The payment provider failed."
 msgstr "Ett fel uppstod hos betalningsleverantören."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:265
+#: includes/Payments/Contract/Gateway_Submission.php:270
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1467,157 +1484,163 @@ msgstr ""
 "Den här betalningsmetoden vill öppna %s i en webbläsare, vilket POS inte kan göra."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:305
+#: includes/Payments/Contract/Gateway_Submission.php:310
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Slutförd via POS: %1$s den %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:322
+#: includes/Payments/Contract/Gateway_Submission.php:329
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Skickad via POS: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:364
+#: includes/Payments/Contract/Gateway_Submission.php:375
 msgid "This invoice cannot be cancelled."
 msgstr "Den här fakturan kan inte avbrytas."
 
-#: includes/Payments/Contract/Gateway_Submission.php:367
+#: includes/Payments/Contract/Gateway_Submission.php:378
 msgid "The invoice was sent by a different payment method."
 msgstr "Fakturan skickades med en annan betalningsmetod."
 
-#: includes/Payments/Contract/Gateway_Submission.php:371
+#: includes/Payments/Contract/Gateway_Submission.php:382
 msgid "A newer invoice has been sent for this order."
 msgstr "En nyare faktura har skickats för den här ordern."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:377
+#: includes/Payments/Contract/Gateway_Submission.php:388
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Avbruten via POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:527
+#: includes/Payments/Contract/Gateway_Submission.php:538
 msgid "This field must be true or false."
 msgstr "Fältet måste vara true eller false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:532
+#: includes/Payments/Contract/Gateway_Submission.php:543
 msgid "This field must be text."
 msgstr "Fältet måste innehålla text."
 
-#: includes/Payments/Contract/Gateway_Submission.php:536
+#: includes/Payments/Contract/Gateway_Submission.php:547
 msgid "This field is required."
 msgstr "Fältet är obligatoriskt."
 
-#: includes/Payments/Contract/Gateway_Submission.php:540
+#: includes/Payments/Contract/Gateway_Submission.php:551
 msgid "Choose one of the listed options."
 msgstr "Välj ett av alternativen i listan."
 
-#: includes/Payments/Contract/Gateway_Submission.php:554
+#: includes/Payments/Contract/Gateway_Submission.php:565
 msgid "Check the payment fields."
 msgstr "Kontrollera betalningsfälten."
 
-#: includes/Payments/Contract/Ledger.php:611
+#: includes/Payments/Contract/Ledger.php:655
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Den här betalningsmetoden kan inte registreras; den måste hantera sin egen betalningsprocess."
 
-#: includes/Payments/Contract/Ledger.php:617
+#: includes/Payments/Contract/Ledger.php:661
 msgid "Recorded payments must be captured or authorized."
 msgstr "Registrerade betalningar måste vara debiterade eller auktoriserade."
 
-#: includes/Payments/Contract/Ledger.php:622
-#: includes/Payments/Contract/Ledger.php:626
+#: includes/Payments/Contract/Ledger.php:666
+#: includes/Payments/Contract/Ledger.php:670
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Det mottagna beloppet är ogiltigt för den här betalningsmetoden."
 
-#: includes/Payments/Contract/Ledger.php:730
+#: includes/Payments/Contract/Ledger.php:779
 msgid "Payment method is disabled."
 msgstr "Betalningsmetoden är inaktiverad."
 
-#: includes/Payments/Contract/Ledger.php:781
-#: includes/Payments/Contract/Ledger.php:1311
+#: includes/Payments/Contract/Ledger.php:834
+#: includes/Payments/Contract/Ledger.php:1375
+#: includes/Payments/Contract/Ledger.php:1425
 msgid "The order is already paid."
 msgstr "Beställningen är redan betald."
 
-#: includes/Payments/Contract/Ledger.php:781
-#: includes/Payments/Contract/Ledger.php:1312
+#: includes/Payments/Contract/Ledger.php:834
+#: includes/Payments/Contract/Ledger.php:1376
 msgid "Payment amount exceeds the order balance."
 msgstr ""
 "Betalningsbeloppet överstiger det återstående beloppet för beställningen."
 
-#: includes/Payments/Contract/Ledger.php:793
-#: includes/Payments/Contract/Ledger.php:1314
+#: includes/Payments/Contract/Ledger.php:846
+#: includes/Payments/Contract/Ledger.php:1378
+#: includes/Payments/Contract/Ledger.php:1511
 msgid "Another payment is already in progress on this order."
 msgstr "En annan betalning pågår redan för den här ordern."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:947
+#: includes/Payments/Contract/Ledger.php:1006
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS-betalningen %1$s har fel belopp: förväntat %2$s, bekräftat %3$s."
 
-#: includes/Payments/Contract/Ledger.php:952
+#: includes/Payments/Contract/Ledger.php:1013
 msgid "Tip"
 msgstr "Dricks"
 
-#: includes/Payments/Contract/Ledger.php:1015
+#: includes/Payments/Contract/Ledger.php:1079
 msgid "Refund must belong to this order."
 msgstr "Återbetalningen måste tillhöra den här beställningen."
 
-#: includes/Payments/Contract/Ledger.php:1018
-#: includes/Payments/Contract/Ledger.php:1033
-#: includes/Payments/Contract/Ledger.php:1054
+#: includes/Payments/Contract/Ledger.php:1082
+#: includes/Payments/Contract/Ledger.php:1097
+#: includes/Payments/Contract/Ledger.php:1118
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Återbetalningsbeloppet kan inte fördelas på den här betalningen."
 
-#: includes/Payments/Contract/Ledger.php:1092
-#: includes/Payments/Contract/Ledger.php:1226
+#: includes/Payments/Contract/Ledger.php:1156
+#: includes/Payments/Contract/Ledger.php:1290
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Betalnings-ID måste vara ett UUID."
 
-#: includes/Payments/Contract/Ledger.php:1113
-#: includes/Payments/Contract/Ledger.php:1290
+#: includes/Payments/Contract/Ledger.php:1177
+#: includes/Payments/Contract/Ledger.php:1354
 msgid "Payment id conflicts with an existing payment."
 msgstr "Betalnings-ID:t står i konflikt med en befintlig betalning."
 
-#: includes/Payments/Contract/Ledger.php:1148
+#: includes/Payments/Contract/Ledger.php:1212
 msgid "Refund status is invalid."
 msgstr "Återbetalningens status är ogiltig."
 
-#: includes/Payments/Contract/Ledger.php:1229
-#: includes/Payments/Contract/Ledger.php:1233
+#: includes/Payments/Contract/Ledger.php:1293
+#: includes/Payments/Contract/Ledger.php:1297
 msgid "Payment amount must be positive."
 msgstr "Betalningsbeloppet måste vara positivt."
 
-#: includes/Payments/Contract/Ledger.php:1238
+#: includes/Payments/Contract/Ledger.php:1302
 msgid "Payment currency must match the order."
 msgstr "Betalningens valuta måste stämma med beställningens."
 
-#: includes/Payments/Contract/Ledger.php:1313
+#: includes/Payments/Contract/Ledger.php:1377
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Beloppet eller valutan som leverantören bekräftade stämmer inte med betalningen."
 
+#: includes/Payments/Contract/Ledger.php:1469
+msgid "The order is not covered by its payments."
+msgstr "Ordern täcks inte av sina betalningar."
+
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1418
+#: includes/Payments/Contract/Ledger.php:1587
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-betalningen %s makulerades."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1420
+#: includes/Payments/Contract/Ledger.php:1589
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-betalningen %1$s makulerades: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2037
+#: includes/Payments/Contract/Ledger.php:2229
 msgid "Payment not found."
 msgstr "Betalningen hittades inte."
 
-#: includes/Payments/Contract/Ledger.php:2047
+#: includes/Payments/Contract/Ledger.php:2239
 msgid "Payment transition is invalid."
 msgstr "Ogiltig betalningsövergång."
 
@@ -1798,22 +1821,22 @@ msgstr ""
 msgid "Reinstall the plugin to restore its files."
 msgstr "Installera om tillägget för att återställa filerna."
 
-#: includes/Services/Fiscal_Record_Store.php:332
+#: includes/Services/Fiscal_Record_Store.php:352
 msgid "Sorry, you are not allowed to read register documents."
 msgstr "Tyvärr får du inte läsa kassadokument."
 
-#: includes/Services/Fiscal_Record_Store.php:337
-#: includes/Services/Fiscal_Record_Store.php:345
+#: includes/Services/Fiscal_Record_Store.php:357
+#: includes/Services/Fiscal_Record_Store.php:365
 msgid "Receipt document not found."
 msgstr "Kvittodokumentet hittades inte."
 
-#: includes/Services/Fiscal_Record_Store.php:342
+#: includes/Services/Fiscal_Record_Store.php:362
 msgid "Invalid receipt document."
 msgstr "Ogiltigt kvittodokument."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:65
-#: includes/Services/Fiscal_Record_Writers.php:89
+#: includes/Services/Fiscal_Record_Writers.php:73
+#: includes/Services/Fiscal_Record_Writers.php:149
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
@@ -1848,7 +1871,7 @@ msgstr "Gäst"
 #: includes/Services/Order_Notes.php:61
 #: includes/Services/Receipt_Data_Builder.php:486
 #: includes/Services/Receipt_Data_Builder.php:892
-#: tests/includes/Services/Test_Receipt_Data_Builder.php:1584
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:1583
 #, php-format
 msgid "Store #%d"
 msgstr "Butik #%d"
