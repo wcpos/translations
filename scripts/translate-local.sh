@@ -7,7 +7,7 @@ CLAUDE_MODEL=sonnet # Default model for Claude.
 CODEX_REVIEW_MODEL=gpt-6-sol # Default model for Codex review pass.
 CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
-MAX_PER_CALL=250 # Maximum summed packet items per call; larger locale packets are split into parts.
+MAX_PER_CALL=100 # Maximum summed packet items per call; larger locale packets are split into parts. gpt-6-luna returns nothing for ~200-item chunks (#410, #420).
 CALL_TIMEOUT=1800 # Seconds allowed for each translation or review call.
 RETRY_AFTER=86400 # Seconds before retrying work that an earlier run left untranslated.
 
@@ -177,7 +177,7 @@ while IFS= read -r PACKETS; do
   HAS_RESULTS=0
   for PACKET in $PACKETS; do
     NAME=$(basename "$PACKET" .json)
-    if [ -f ".translate/results/$NAME.json" ]; then HAS_RESULTS=1; fi
+    if [ -f ".translate/results/$NAME.json" ]; then HAS_RESULTS=1; else log "chunk $CHUNK returned no results for $NAME"; fi
   done
   if [ "$REVIEW" -eq 1 ] && [ "$HAS_RESULTS" -eq 1 ]; then
     REVIEW_USED=$REVIEW_MODEL
@@ -191,6 +191,13 @@ while IFS= read -r PACKETS; do
     fi
   fi
 done < .translate/chunks
+# Keep this model run's chunk logs outside the worktree: the next poll wipes .translate before its skip check.
+if [ "$SKIP_MODEL" -eq 0 ]; then
+  LOG_KEEP="$REPO_ROOT/.claude/translate-logs/${BASE//\//-}"
+  rm -rf "$LOG_KEEP"
+  mkdir -p "$(dirname "$LOG_KEEP")"
+  cp -R .translate/logs "$LOG_KEEP"
+fi
 APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --results .translate/results --parts .translate/parts --report .translate/report.json --report-md .translate/report.md)
 log "$APPLY_SUMMARY"
 if [ "$SKIP_MODEL" -eq 0 ] || [ "$TOTAL" -eq 0 ]; then
