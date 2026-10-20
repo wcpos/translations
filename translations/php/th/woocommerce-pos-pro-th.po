@@ -356,11 +356,11 @@ msgstr "ส่วนขยายยังไม่ได้ติดตั้ง
 msgid "Plugin update failed."
 msgstr "การอัปเดตปลั๊กอินล้มเหลว"
 
-#: includes/API/V1/Order_Refunds_Controller.php:132
+#: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
 msgstr "รหัสคำสั่งซื้อไม่ถูกต้อง"
 
-#: includes/API/V1/Order_Refunds_Controller.php:143
+#: includes/API/V1/Order_Refunds_Controller.php:140
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "ไม่พบส่วนหัว X-WCPOS-Idempotency-Key"
 
@@ -394,7 +394,7 @@ msgstr "การชำระเงินนี้ไม่ได้รอคำ
 
 #: includes/API/V2/Payments_Answer_Controller.php:71
 #: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Device/Device_Handler.php:229
 #: includes/Payments/Server/Abstract_Provider_Adapter.php:123
 #: includes/Payments/Server/Server_Handler.php:331
 msgid "This payment provider does not support that operation."
@@ -422,11 +422,11 @@ msgstr "คำขอที่ใช้คีย์ idempotency นี้กำ�
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:135
 #: includes/Payments/Idempotency_Repository.php:131
-#: includes/Payments/Idempotency_Repository.php:178
+#: includes/Payments/Idempotency_Repository.php:180
 msgid "Idempotency key was reused with a different request."
 msgstr "มีการใช้คีย์ idempotency ซ้ำกับคำขอที่แตกต่างกัน"
 
-#: includes/Payments/Device/Device_Handler.php:243
+#: includes/Payments/Device/Device_Handler.php:245
 msgid "The provider could not confirm this payment."
 msgstr "ผู้ให้บริการยืนยันการชำระเงินนี้ไม่ได้"
 
@@ -588,34 +588,25 @@ msgid "Details"
 msgstr "รายละเอียด"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
-#: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:201
-#: includes/Payments/Refund_Processor.php:271
+#: includes/Payments/Refund_Processor.php:184
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
 "ปลายทางการคืนเงินไม่ถูกต้อง ค่าที่อนุญาต: original_method, cash, manual"
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:230
+#: includes/Payments/Refund_Processor.php:213
 msgid "The original payment gateway is not available for refunds."
 msgstr "ช่องทางการชำระเงินเดิมไม่สามารถใช้สำหรับการคืนเงินได้"
 
-#. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:257
-#: includes/Payments/Refund_Processor.php:279
-msgid "The refund resolver returned an invalid result."
-msgstr "ตัวแก้ไขการคืนเงินส่งผลลัพธ์ที่ไม่ถูกต้อง"
-
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:395
+#: includes/Payments/Refund_Processor.php:327
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "รายการชำระเงินที่บันทึกไว้ไม่สามารถคืนเงินจำนวนนี้ผ่านวิธีเดิมได้"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:456
+#: includes/Payments/Refund_Processor.php:388
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -693,16 +684,31 @@ msgstr ""
 msgid "You are not allowed to download this support bundle."
 msgstr "คุณไม่ได้รับอนุญาตให้ดาวน์โหลดชุดข้อมูลสนับสนุนนี้"
 
-#: includes/Registers.php:74
+#: includes/Registers.php:372
+#: includes/Services/Meta_Register_Repository.php:144
 msgid "Register"
 msgstr "เครื่องคิดเงิน"
 
-#: includes/Registers.php:243
+#: includes/Registers.php:518
+msgid "The store must be a published store you are authorized for."
+msgstr "ร้านค้าต้องเผยแพร่แล้ว และคุณต้องได้รับอนุญาตให้ใช้งาน"
+
+#: includes/Registers.php:525
+msgid "Pick a store for the new register."
+msgstr "เลือกร้านค้าสำหรับเครื่องคิดเงินใหม่"
+
+#: includes/Registers.php:528
+msgid ""
+"Pick a store for the new register; the site's unassigned register already exists."
+msgstr ""
+"เลือกร้านค้าสำหรับเครื่องคิดเงินใหม่ เครื่องคิดเงินของไซต์ที่ยังไม่ได้กำหนดให้ร้านค้ามีอยู่แล้ว"
+
+#: includes/Registers.php:647
 msgid "The target store must be a published store you are authorized for."
 msgstr ""
 "ร้านค้าเป้าหมายต้องเผยแพร่แล้ว และคุณต้องได้รับอนุญาตให้เข้าถึงร้านค้านั้น"
 
-#: includes/Registers.php:246
+#: includes/Registers.php:650
 msgid "Close the register session before moving it to another store."
 msgstr "ปิดเซสชันเครื่องคิดเงินก่อนย้ายไปยังร้านค้าอื่น"
 

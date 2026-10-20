@@ -354,11 +354,11 @@ msgstr "확장 기능이 설치되어 있지 않습니다."
 msgid "Plugin update failed."
 msgstr "플러그인 업데이트에 실패했습니다."
 
-#: includes/API/V1/Order_Refunds_Controller.php:132
+#: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
 msgstr "잘못된 주문 ID입니다."
 
-#: includes/API/V1/Order_Refunds_Controller.php:143
+#: includes/API/V1/Order_Refunds_Controller.php:140
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "X-WCPOS-Idempotency-Key 헤더가 누락되었습니다."
 
@@ -392,7 +392,7 @@ msgstr "이 결제는 더 이상 응답을 기다리고 있지 않습니다."
 
 #: includes/API/V2/Payments_Answer_Controller.php:71
 #: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Device/Device_Handler.php:229
 #: includes/Payments/Server/Abstract_Provider_Adapter.php:123
 #: includes/Payments/Server/Server_Handler.php:331
 msgid "This payment provider does not support that operation."
@@ -420,11 +420,11 @@ msgstr "이 멱등성 키를 사용하는 요청이 이미 처리 중입니다."
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:135
 #: includes/Payments/Idempotency_Repository.php:131
-#: includes/Payments/Idempotency_Repository.php:178
+#: includes/Payments/Idempotency_Repository.php:180
 msgid "Idempotency key was reused with a different request."
 msgstr "멱등성 키가 다른 요청에 재사용되었습니다."
 
-#: includes/Payments/Device/Device_Handler.php:243
+#: includes/Payments/Device/Device_Handler.php:245
 msgid "The provider could not confirm this payment."
 msgstr "제공업체가 이 결제를 확인하지 못했습니다."
 
@@ -582,33 +582,24 @@ msgid "Details"
 msgstr "세부 정보"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
-#: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:201
-#: includes/Payments/Refund_Processor.php:271
+#: includes/Payments/Refund_Processor.php:184
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr "잘못된 환불 대상입니다. 허용되는 값: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:230
+#: includes/Payments/Refund_Processor.php:213
 msgid "The original payment gateway is not available for refunds."
 msgstr "원래 결제 게이트웨이는 환불에 사용할 수 없습니다."
 
-#. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:257
-#: includes/Payments/Refund_Processor.php:279
-msgid "The refund resolver returned an invalid result."
-msgstr "환불 처리기가 유효하지 않은 결과를 반환했습니다."
-
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:395
+#: includes/Payments/Refund_Processor.php:327
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "기록된 결제로는 원래 결제 수단을 통해 이 금액을 환불할 수 없습니다."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:456
+#: includes/Payments/Refund_Processor.php:388
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -685,15 +676,29 @@ msgstr ""
 msgid "You are not allowed to download this support bundle."
 msgstr "이 지원 자료 묶음을 다운로드할 권한이 없습니다."
 
-#: includes/Registers.php:74
+#: includes/Registers.php:372
+#: includes/Services/Meta_Register_Repository.php:144
 msgid "Register"
 msgstr "계산대"
 
-#: includes/Registers.php:243
+#: includes/Registers.php:518
+msgid "The store must be a published store you are authorized for."
+msgstr "매장은 게시된 상태여야 하며 액세스 권한이 있어야 합니다."
+
+#: includes/Registers.php:525
+msgid "Pick a store for the new register."
+msgstr "새 계산대에 사용할 매장을 선택하십시오."
+
+#: includes/Registers.php:528
+msgid ""
+"Pick a store for the new register; the site's unassigned register already exists."
+msgstr "새 계산대에 사용할 매장을 선택하십시오. 사이트의 미지정 계산대가 이미 존재합니다."
+
+#: includes/Registers.php:647
 msgid "The target store must be a published store you are authorized for."
 msgstr "대상 매장은 게시된 상태여야 하며, 해당 매장에 접근할 권한이 있어야 합니다."
 
-#: includes/Registers.php:246
+#: includes/Registers.php:650
 msgid "Close the register session before moving it to another store."
 msgstr "다른 매장으로 이동하기 전에 계산대 세션을 종료하십시오."
 

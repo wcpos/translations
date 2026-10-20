@@ -356,11 +356,11 @@ msgstr "Tillägget är inte installerat."
 msgid "Plugin update failed."
 msgstr "Plugin-uppdateringen misslyckades."
 
-#: includes/API/V1/Order_Refunds_Controller.php:132
+#: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
 msgstr "Ogiltigt order-ID."
 
-#: includes/API/V1/Order_Refunds_Controller.php:143
+#: includes/API/V1/Order_Refunds_Controller.php:140
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Saknar X-WCPOS-Idempotency-Key-rubrik."
 
@@ -394,7 +394,7 @@ msgstr "Den här betalningen väntar inte längre på svar."
 
 #: includes/API/V2/Payments_Answer_Controller.php:71
 #: includes/Payments/Device/Abstract_Device_Provider_Adapter.php:68
-#: includes/Payments/Device/Device_Handler.php:228
+#: includes/Payments/Device/Device_Handler.php:229
 #: includes/Payments/Server/Abstract_Provider_Adapter.php:123
 #: includes/Payments/Server/Server_Handler.php:331
 msgid "This payment provider does not support that operation."
@@ -423,11 +423,11 @@ msgstr "En begäran med denna idempotensnyckel behandlas redan."
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Adapters/In_Memory_Idempotency_Store.php:135
 #: includes/Payments/Idempotency_Repository.php:131
-#: includes/Payments/Idempotency_Repository.php:178
+#: includes/Payments/Idempotency_Repository.php:180
 msgid "Idempotency key was reused with a different request."
 msgstr "Idempotensnyckeln återanvändes med en annan begäran."
 
-#: includes/Payments/Device/Device_Handler.php:243
+#: includes/Payments/Device/Device_Handler.php:245
 msgid "The provider could not confirm this payment."
 msgstr "Leverantören kunde inte bekräfta betalningen."
 
@@ -592,36 +592,27 @@ msgid "Details"
 msgstr "Detaljer"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
-#: includes/Payments/Refund_Orchestrator.php:35
-#: includes/Payments/Refund_Processor.php:201
-#: includes/Payments/Refund_Processor.php:271
+#: includes/Payments/Refund_Processor.php:184
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
 "Ogiltig återbetalningsdestination. Tillåtna värden: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Orchestrator.php:54
-#: includes/Payments/Refund_Processor.php:230
+#: includes/Payments/Refund_Processor.php:213
 msgid "The original payment gateway is not available for refunds."
 msgstr ""
 "Den ursprungliga betalningsmetoden är inte tillgänglig för återbetalningar."
 
-#. translators: Refund API error when a custom refund resolver returns an unexpected value.
-#: includes/Payments/Refund_Processor.php:257
-#: includes/Payments/Refund_Processor.php:279
-msgid "The refund resolver returned an invalid result."
-msgstr "Återbetalningsresolvern returnerade ett ogiltigt resultat."
-
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:395
+#: includes/Payments/Refund_Processor.php:327
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Det här beloppet kan inte återbetalas via den ursprungliga betalningsmetoden för de registrerade betalningarna."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:456
+#: includes/Payments/Refund_Processor.php:388
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -700,16 +691,32 @@ msgstr ""
 msgid "You are not allowed to download this support bundle."
 msgstr "Du har inte behörighet att ladda ned det här supportpaketet."
 
-#: includes/Registers.php:74
+#: includes/Registers.php:372
+#: includes/Services/Meta_Register_Repository.php:144
 msgid "Register"
 msgstr "Kassa"
 
-#: includes/Registers.php:243
+#: includes/Registers.php:518
+msgid "The store must be a published store you are authorized for."
+msgstr ""
+"Butiken måste vara publicerad och du måste ha behörighet att använda den."
+
+#: includes/Registers.php:525
+msgid "Pick a store for the new register."
+msgstr "Välj en butik för den nya kassan."
+
+#: includes/Registers.php:528
+msgid ""
+"Pick a store for the new register; the site's unassigned register already exists."
+msgstr ""
+"Välj en butik för den nya kassan; webbplatsens otilldelade kassa finns redan."
+
+#: includes/Registers.php:647
 msgid "The target store must be a published store you are authorized for."
 msgstr ""
 "Målbutiken måste vara publicerad och du måste ha behörighet att komma åt den."
 
-#: includes/Registers.php:246
+#: includes/Registers.php:650
 msgid "Close the register session before moving it to another store."
 msgstr "Stäng kassapasset innan du flyttar det till en annan butik."
 
