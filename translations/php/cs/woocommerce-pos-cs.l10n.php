@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Hodnoty musí být objektem a ID pokusu musí být UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'ID pokusu musí označovat odeslaný pokus, který se má zrušit.',
 		'Invalid payment operation parameters.' => 'Neplatné parametry platební operace.',
+		'Command ID must be a UUID.' => 'ID příkazu musí být UUID.',
+		'A payment command needs the order revision it was built against.' => 'Platební příkaz potřebuje revizi objednávky, podle které byl vytvořen.',
+		'This command ID was already used with a different request.' => 'Toto ID příkazu již bylo použito s jiným požadavkem.',
+		'The order changed since this command was built; read it again.' => 'Objednávka se od vytvoření tohoto příkazu změnila; načtěte ji znovu.',
 		'Sorry, you cannot view payment methods.' => 'Nemáte oprávnění zobrazit platební metody.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Nemáte oprávnění inicializovat platební metody.',
 		'Payment capture mode is unsupported.' => 'Režim zaúčtování platby není podporován.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Dokument faktury WP Overnight se pro tuto objednávku nepodařilo vykreslit.',
 		'The WP Overnight packing slip document is not available.' => 'Dokument dodacího listu WP Overnight není k dispozici.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokument dodacího listu WP Overnight se pro tuto objednávku nepodařilo vykreslit.',
+		'Hello' => 'Dobrý den',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS se nepodařilo správně načíst.',
 	),
 );

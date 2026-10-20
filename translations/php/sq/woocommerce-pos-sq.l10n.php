@@ -236,6 +236,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Vlerat duhet të jenë objekt dhe ID-ja e përpjekjes një UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'ID-ja e përpjekjes duhet të përcaktojë përpjekjen e dërguar që do të anulohet.',
 		'Invalid payment operation parameters.' => 'Parametrat e veprimit të pagesës janë të pavlefshëm.',
+		'Command ID must be a UUID.' => 'ID-ja e komandës duhet të jetë UUID.',
+		'A payment command needs the order revision it was built against.' => 'Komanda e pagesës ka nevojë për versionin e porosisë mbi të cilin u krijua.',
+		'This command ID was already used with a different request.' => 'Kjo ID komande është përdorur tashmë me një kërkesë tjetër.',
+		'The order changed since this command was built; read it again.' => 'Porosia ka ndryshuar që nga krijimi i kësaj komande. Lexojeni përsëri.',
 		'Sorry, you cannot view payment methods.' => 'Na vjen keq, nuk mund të shihni mënyrat e pagesës.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Na vjen keq, nuk mund të inicializoni mënyrat e pagesës.',
 		'Payment capture mode is unsupported.' => 'Mënyra e arkëtimit të pagesës nuk mbështetet.',
@@ -1164,6 +1168,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Dokumenti i faturës WP Overnight nuk mund të përpunohej për këtë porosi.',
 		'The WP Overnight packing slip document is not available.' => 'Dokumenti i fletës së paketimit WP Overnight nuk është i disponueshëm.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokumenti i fletës së paketimit WP Overnight nuk mund të përpunohej për këtë porosi.',
+		'Hello' => 'Përshëndetje',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin-i WCPOS nuk u ngarkua siç duhet.',
 	),
 );

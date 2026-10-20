@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Az értékeknek objektumnak, a kísérletazonosítónak pedig UUID-nek kell lennie.',
 		'Attempt ID must name the sent attempt to cancel.' => 'A kísérletazonosítónak a visszavonandó elküldött kísérletet kell megadnia.',
 		'Invalid payment operation parameters.' => 'Érvénytelen fizetési műveleti paraméterek.',
+		'Command ID must be a UUID.' => 'A parancsazonosítónak UUID-nek kell lennie.',
+		'A payment command needs the order revision it was built against.' => 'A fizetési parancsnak szüksége van annak a rendelésnek a verziójára, amely alapján létrehozták.',
+		'This command ID was already used with a different request.' => 'Ezt a parancsazonosítót már használták egy másik kéréssel.',
+		'The order changed since this command was built; read it again.' => 'A rendelés megváltozott a parancs létrehozása óta; olvassa be újra.',
 		'Sorry, you cannot view payment methods.' => 'Sajnáljuk, nem tekintheti meg a fizetési módokat.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Sajnáljuk, nem inicializálhatja a fizetési módokat.',
 		'Payment capture mode is unsupported.' => 'A fizetésbeszedési mód nem támogatott.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'A WP Overnight számladokumentum nem jeleníthető meg ehhez a rendeléshez.',
 		'The WP Overnight packing slip document is not available.' => 'A WP Overnight csomagjegyzék nem érhető el.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'A WP Overnight csomagjegyzék nem jeleníthető meg ehhez a rendeléshez.',
+		'Hello' => 'Üdvözlöm',
 		'The WCPOS plugin failed to load correctly.' => 'A WCPOS bővítmény nem töltődött be megfelelően.',
 	),
 );

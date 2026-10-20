@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => '값은 객체여야 하며 시도 ID는 UUID여야 합니다.',
 		'Attempt ID must name the sent attempt to cancel.' => '시도 ID는 취소할 전송된 시도를 가리켜야 합니다.',
 		'Invalid payment operation parameters.' => '결제 작업 매개변수가 유효하지 않습니다.',
+		'Command ID must be a UUID.' => '명령 ID는 UUID여야 합니다.',
+		'A payment command needs the order revision it was built against.' => '결제 명령에는 생성 당시의 주문 리비전이 필요합니다.',
+		'This command ID was already used with a different request.' => '이 명령 ID는 이미 다른 요청에 사용되었습니다.',
+		'The order changed since this command was built; read it again.' => '이 명령을 생성한 후 주문이 변경되었습니다. 주문을 다시 불러오십시오.',
 		'Sorry, you cannot view payment methods.' => '결제 수단을 볼 권한이 없습니다.',
 		'Sorry, you cannot bootstrap payment methods.' => '결제 수단을 초기화할 권한이 없습니다.',
 		'Payment capture mode is unsupported.' => '지원되지 않는 결제 매입 방식입니다.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 인보이스 문서를 렌더링할 수 없습니다.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 포장 명세서 문서를 사용할 수 없습니다.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 포장 명세서 문서를 렌더링할 수 없습니다.',
+		'Hello' => '안녕하세요',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 플러그인이 올바르게 로드되지 않았습니다.',
 	),
 );

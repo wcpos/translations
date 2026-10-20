@@ -528,7 +528,7 @@ msgstr "이 결제 게이트웨이는 POS 체크아웃에 사용할 수 없습�
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:370
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "주문을 찾을 수 없습니다."
@@ -1112,33 +1112,49 @@ msgstr "유효하지 않은 _woocommerce_pos_uuid meta_data 값입니다."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "“%1$s” 컬렉션은 이 경로에서 제공하지 않습니다. 지원 항목: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:117
+#: includes/API/V2/Payments_Controller.php:139
 msgid "Sorry, you cannot manage order payments."
 msgstr "주문 결제를 관리할 권한이 없습니다."
 
-#: includes/API/V2/Payments_Controller.php:136
+#: includes/API/V2/Payments_Controller.php:159
 msgid "Payment must be an object."
 msgstr "결제는 객체여야 합니다."
 
-#: includes/API/V2/Payments_Controller.php:203
+#: includes/API/V2/Payments_Controller.php:230
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:106
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Gateway_Submission.php:118
+#: includes/Payments/Contract/Ledger.php:1345
 msgid "Payment method not found."
 msgstr "결제 수단을 찾을 수 없습니다."
 
-#: includes/API/V2/Payments_Controller.php:209
+#: includes/API/V2/Payments_Controller.php:236
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "값은 객체여야 하며 시도 ID는 UUID여야 합니다."
 
-#: includes/API/V2/Payments_Controller.php:214
+#: includes/API/V2/Payments_Controller.php:241
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "시도 ID는 취소할 전송된 시도를 가리켜야 합니다."
 
-#: includes/API/V2/Payments_Controller.php:320
+#: includes/API/V2/Payments_Controller.php:352
 msgid "Invalid payment operation parameters."
 msgstr "결제 작업 매개변수가 유효하지 않습니다."
+
+#: includes/API/V2/Payments_Controller.php:403
+msgid "Command ID must be a UUID."
+msgstr "명령 ID는 UUID여야 합니다."
+
+#: includes/API/V2/Payments_Controller.php:414
+msgid "A payment command needs the order revision it was built against."
+msgstr "결제 명령에는 생성 당시의 주문 리비전이 필요합니다."
+
+#: includes/API/V2/Payments_Controller.php:426
+msgid "This command ID was already used with a different request."
+msgstr "이 명령 ID는 이미 다른 요청에 사용되었습니다."
+
+#: includes/API/V2/Payments_Controller.php:498
+msgid "The order changed since this command was built; read it again."
+msgstr "이 명령을 생성한 후 주문이 변경되었습니다. 주문을 다시 불러오십시오."
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
@@ -1149,8 +1165,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "결제 수단을 초기화할 권한이 없습니다."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:53
-#: includes/Payments/Contract/Ledger.php:2234
+#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Ledger.php:2313
 msgid "Payment capture mode is unsupported."
 msgstr "지원되지 않는 결제 매입 방식입니다."
 
@@ -1418,200 +1434,200 @@ msgstr "결제 제공업체가 이 결제를 환불하지 않았습니다."
 msgid "This payment cannot be voided."
 msgstr "이 결제는 무효 처리할 수 없습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:56
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Attempt ID must be a UUID."
 msgstr "시도 ID는 UUID여야 합니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:60
 msgid "Only POS orders take a gateway submission."
 msgstr "POS 주문만 PG 서비스에 제출할 수 있습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:84
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "이 시도는 계산대에서 취소되었거나 다른 시도로 대체되었습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Payment method is not enabled for the POS."
 msgstr "이 결제 수단은 POS에서 활성화되어 있지 않습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:97
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "Order is already paid."
 msgstr "주문이 이미 결제되었습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Order already has a live payment."
 msgstr "주문에 이미 진행 중인 결제가 있습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:182
+#: includes/Payments/Contract/Gateway_Submission.php:194
 msgid "The payment method rejected the details entered."
 msgstr "입력한 정보가 결제 수단에서 거부되었습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:251
-#: includes/Payments/Contract/Gateway_Submission.php:266
+#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:289
 msgid "The payment provider failed."
 msgstr "결제 제공업체에 오류가 발생했습니다."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:270
+#: includes/Payments/Contract/Gateway_Submission.php:293
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
 msgstr "이 결제 수단은 브라우저에서 %s을(를) 열려고 하지만 POS에서는 계속 진행할 수 없습니다."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:310
+#: includes/Payments/Contract/Gateway_Submission.php:334
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "POS에서 정산됨: %1$s, 주문 상태 %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:329
+#: includes/Payments/Contract/Gateway_Submission.php:354
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "POS에서 전송됨: %1$s(%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:375
+#: includes/Payments/Contract/Gateway_Submission.php:408
 msgid "This invoice cannot be cancelled."
 msgstr "이 청구서는 취소할 수 없습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:411
 msgid "The invoice was sent by a different payment method."
 msgstr "청구서가 다른 결제 수단으로 전송되었습니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:382
+#: includes/Payments/Contract/Gateway_Submission.php:415
 msgid "A newer invoice has been sent for this order."
 msgstr "이 주문에 대해 더 최근에 전송된 청구서가 있습니다."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:388
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "POS에서 취소됨: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:538
+#: includes/Payments/Contract/Gateway_Submission.php:683
 msgid "This field must be true or false."
 msgstr "이 필드는 true 또는 false여야 합니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:543
+#: includes/Payments/Contract/Gateway_Submission.php:688
 msgid "This field must be text."
 msgstr "이 필드는 텍스트여야 합니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:547
+#: includes/Payments/Contract/Gateway_Submission.php:692
 msgid "This field is required."
 msgstr "이 필드는 필수입니다."
 
-#: includes/Payments/Contract/Gateway_Submission.php:551
+#: includes/Payments/Contract/Gateway_Submission.php:696
 msgid "Choose one of the listed options."
 msgstr "목록에 있는 옵션 중 하나를 선택하십시오."
 
-#: includes/Payments/Contract/Gateway_Submission.php:565
+#: includes/Payments/Contract/Gateway_Submission.php:710
 msgid "Check the payment fields."
 msgstr "결제 필드를 확인하십시오."
 
-#: includes/Payments/Contract/Ledger.php:655
+#: includes/Payments/Contract/Ledger.php:656
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "이 결제 수단은 기록할 수 없습니다. 자체 결제 절차를 실행해야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:661
+#: includes/Payments/Contract/Ledger.php:662
 msgid "Recorded payments must be captured or authorized."
 msgstr "기록된 결제는 매입되거나 승인된 상태여야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:666
-#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:667
+#: includes/Payments/Contract/Ledger.php:671
 msgid "Tendered amount is invalid for this payment method."
 msgstr "이 결제 수단의 결제 금액이 유효하지 않습니다."
 
-#: includes/Payments/Contract/Ledger.php:779
+#: includes/Payments/Contract/Ledger.php:840
 msgid "Payment method is disabled."
 msgstr "결제 수단이 비활성화되었습니다."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1375
-#: includes/Payments/Contract/Ledger.php:1425
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1456
 msgid "The order is already paid."
 msgstr "주문이 이미 결제되었습니다."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1376
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1407
 msgid "Payment amount exceeds the order balance."
 msgstr "결제 금액이 주문 잔액을 초과합니다."
 
-#: includes/Payments/Contract/Ledger.php:846
-#: includes/Payments/Contract/Ledger.php:1378
-#: includes/Payments/Contract/Ledger.php:1511
+#: includes/Payments/Contract/Ledger.php:860
+#: includes/Payments/Contract/Ledger.php:1409
+#: includes/Payments/Contract/Ledger.php:1586
 msgid "Another payment is already in progress on this order."
 msgstr "이 주문에 대해 다른 결제가 이미 진행 중입니다."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1006
+#: includes/Payments/Contract/Ledger.php:1028
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr "WCPOS 결제 %1$s 금액이 일치하지 않습니다. 예상: %2$s, 확인됨: %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1013
+#: includes/Payments/Contract/Ledger.php:1035
 msgid "Tip"
 msgstr "팁"
 
-#: includes/Payments/Contract/Ledger.php:1079
+#: includes/Payments/Contract/Ledger.php:1109
 msgid "Refund must belong to this order."
 msgstr "환불은 이 주문에 속해야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:1082
-#: includes/Payments/Contract/Ledger.php:1097
-#: includes/Payments/Contract/Ledger.php:1118
+#: includes/Payments/Contract/Ledger.php:1112
+#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "환불 금액을 이 결제에 배정할 수 없습니다."
 
-#: includes/Payments/Contract/Ledger.php:1156
-#: includes/Payments/Contract/Ledger.php:1290
+#: includes/Payments/Contract/Ledger.php:1186
+#: includes/Payments/Contract/Ledger.php:1320
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "결제 ID는 UUID여야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:1177
-#: includes/Payments/Contract/Ledger.php:1354
+#: includes/Payments/Contract/Ledger.php:1207
+#: includes/Payments/Contract/Ledger.php:1385
 msgid "Payment id conflicts with an existing payment."
 msgstr "결제 ID가 기존 결제와 충돌합니다."
 
-#: includes/Payments/Contract/Ledger.php:1212
+#: includes/Payments/Contract/Ledger.php:1242
 msgid "Refund status is invalid."
 msgstr "환불 상태가 유효하지 않습니다."
 
-#: includes/Payments/Contract/Ledger.php:1293
-#: includes/Payments/Contract/Ledger.php:1297
+#: includes/Payments/Contract/Ledger.php:1323
+#: includes/Payments/Contract/Ledger.php:1327
 msgid "Payment amount must be positive."
 msgstr "결제 금액은 양수여야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:1302
+#: includes/Payments/Contract/Ledger.php:1332
 msgid "Payment currency must match the order."
 msgstr "결제 통화는 주문 통화와 일치해야 합니다."
 
-#: includes/Payments/Contract/Ledger.php:1377
+#: includes/Payments/Contract/Ledger.php:1408
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "제공업체가 확인한 금액 또는 통화가 결제 정보와 일치하지 않습니다."
 
-#: includes/Payments/Contract/Ledger.php:1469
+#: includes/Payments/Contract/Ledger.php:1503
 msgid "The order is not covered by its payments."
 msgstr "주문 금액이 결제 금액으로 충당되지 않았습니다."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1587
+#: includes/Payments/Contract/Ledger.php:1663
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS 결제 %s이(가) 무효 처리되었습니다."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1589
+#: includes/Payments/Contract/Ledger.php:1665
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS 결제 %1$s이(가) 무효 처리되었습니다: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2229
+#: includes/Payments/Contract/Ledger.php:2308
 msgid "Payment not found."
 msgstr "결제를 찾을 수 없습니다."
 
-#: includes/Payments/Contract/Ledger.php:2239
+#: includes/Payments/Contract/Ledger.php:2318
 msgid "Payment transition is invalid."
 msgstr "유효하지 않은 결제 상태 변경입니다."
 
@@ -6033,6 +6049,10 @@ msgstr "WP Overnight 포장 명세서 문서를 사용할 수 없습니다."
 msgid ""
 "The WP Overnight packing slip document could not be rendered for this order."
 msgstr "이 주문에 대해 WP Overnight 포장 명세서 문서를 렌더링할 수 없습니다."
+
+#: tests/includes/Test_i18n.php:710
+msgid "Hello"
+msgstr "안녕하세요"
 
 #: woocommerce-pos.php:163
 msgid "The WCPOS plugin failed to load correctly."

@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Reikšmės turi būti objektas, o bandymo ID – UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Bandymo ID turi nurodyti išsiųstą bandymą, kurį reikia atšaukti.',
 		'Invalid payment operation parameters.' => 'Netinkami mokėjimo operacijos parametrai.',
+		'Command ID must be a UUID.' => 'Komandos ID turi būti UUID.',
+		'A payment command needs the order revision it was built against.' => 'Mokėjimo komandai reikalinga užsakymo versija, pagal kurią ji buvo sukurta.',
+		'This command ID was already used with a different request.' => 'Šis komandos ID jau buvo panaudotas kitai užklausai.',
+		'The order changed since this command was built; read it again.' => 'Sukūrus šią komandą užsakymas pasikeitė. Įkelkite jį iš naujo.',
 		'Sorry, you cannot view payment methods.' => 'Deja, negalite peržiūrėti mokėjimo būdų.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Deja, negalite inicijuoti mokėjimo būdų.',
 		'Payment capture mode is unsupported.' => 'Mokėjimo nurašymo režimas nepalaikomas.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Šios užsakymo WP Overnight sąskaitos faktūros dokumento nepavyko atvaizduoti.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight pakavimo lapo dokumentas neprieinamas.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Šios užsakymo WP Overnight pakavimo lapo dokumento nepavyko atvaizduoti.',
+		'Hello' => 'Sveiki',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS įskiepis nepavyko tinkamai įkelti.',
 	),
 );

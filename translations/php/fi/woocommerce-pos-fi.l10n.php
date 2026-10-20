@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Arvojen on oltava objekti ja yrityksen tunnisteen UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Yrityksen tunnisteen on vastattava peruutettavaa lähetettyä yritystä.',
 		'Invalid payment operation parameters.' => 'Virheelliset maksutoiminnon parametrit.',
+		'Command ID must be a UUID.' => 'Komennon tunnuksen on oltava UUID.',
+		'A payment command needs the order revision it was built against.' => 'Maksukomento tarvitsee tilauksen version, jonka pohjalta se luotiin.',
+		'This command ID was already used with a different request.' => 'Tätä komennon tunnusta on jo käytetty eri pyynnössä.',
+		'The order changed since this command was built; read it again.' => 'Tilaus on muuttunut komennon luomisen jälkeen; lue se uudelleen.',
 		'Sorry, you cannot view payment methods.' => 'Et voi tarkastella maksutapoja.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Et voi alustaa maksutapoja.',
 		'Payment capture mode is unsupported.' => 'Maksun veloitustilaa ei tueta.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'WP Overnight -laskudokumenttia ei voitu luoda tätä tilausta varten.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight -pakkauslistadokumentti ei ole käytettävissä.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnight -pakkauslistadokumenttia ei voitu luoda tätä tilausta varten.',
+		'Hello' => 'Hei',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS-liitännäisen lataaminen epäonnistui.',
 	),
 );

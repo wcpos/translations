@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'តម្លៃត្រូវតែជាវត្ថុ ហើយ ID ការប៉ុនប៉ងត្រូវតែជា UUID។',
 		'Attempt ID must name the sent attempt to cancel.' => 'ID ការប៉ុនប៉ងត្រូវតែសម្គាល់ការប៉ុនប៉ងដែលបានផ្ញើ ដែលត្រូវបោះបង់។',
 		'Invalid payment operation parameters.' => 'ប៉ារ៉ាម៉ែត្រប្រតិបត្តិការបង់ប្រាក់មិនត្រឹមត្រូវ។',
+		'Command ID must be a UUID.' => 'ID ពាក្យបញ្ជាត្រូវតែជា UUID។',
+		'A payment command needs the order revision it was built against.' => 'ពាក្យបញ្ជាទូទាត់ត្រូវការកំណែការបញ្ជាទិញដែលវាត្រូវបានបង្កើតឡើង។',
+		'This command ID was already used with a different request.' => 'ID ពាក្យបញ្ជានេះត្រូវបានប្រើរួចហើយជាមួយសំណើផ្សេង។',
+		'The order changed since this command was built; read it again.' => 'ការបញ្ជាទិញបានផ្លាស់ប្តូរចាប់តាំងពីពាក្យបញ្ជានេះត្រូវបានបង្កើត។ សូមអានវាម្តងទៀត។',
 		'Sorry, you cannot view payment methods.' => 'សូមអភ័យទោស អ្នកមិនអាចមើលមធ្យោបាយបង់ប្រាក់បានទេ។',
 		'Sorry, you cannot bootstrap payment methods.' => 'សូមអភ័យទោស អ្នកមិនអាចចាប់ផ្តើមមធ្យោបាយបង់ប្រាក់បានទេ។',
 		'Payment capture mode is unsupported.' => 'មិនគាំទ្ររបៀបទទួលការបង់ប្រាក់នេះទេ។',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'មិនអាចបង្ហាញឯកសារវិក្កយបត្រ WP Overnight សម្រាប់ការបញ្ជាទិញនេះបានទេ។',
 		'The WP Overnight packing slip document is not available.' => 'ឯកសារប័ណ្ណខ្ចប់ WP Overnight មិនមានទេ។',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'មិនអាចបង្ហាញឯកសារប័ណ្ណខ្ចប់ WP Overnight សម្រាប់ការបញ្ជាទិញនេះបានទេ។',
+		'Hello' => 'សួស្តី',
 		'The WCPOS plugin failed to load correctly.' => 'កម្មវិធីជំនួយ WCPOS បានបរាជ័យក្នុងការផ្ទុកត្រឹមត្រូវ។',
 	),
 );

@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Gildin verða að vera hlutur og tilraunaauðkennið UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Tilraunaauðkennið verður að vísa til sendu tilraunarinnar sem á að hætta við.',
 		'Invalid payment operation parameters.' => 'Ógildar færibreytur greiðsluaðgerðar.',
+		'Command ID must be a UUID.' => 'Auðkenni skipunar verður að vera UUID.',
+		'A payment command needs the order revision it was built against.' => 'Greiðsluskipun þarf útgáfu pöntunarinnar sem hún var byggð á.',
+		'This command ID was already used with a different request.' => 'Þetta auðkenni skipunar hefur þegar verið notað með annarri beiðni.',
+		'The order changed since this command was built; read it again.' => 'Pöntunin hefur breyst síðan skipunin var búin til; lestu hana aftur.',
 		'Sorry, you cannot view payment methods.' => 'Því miður hefurðu ekki heimild til að skoða greiðslumáta.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Því miður hefurðu ekki heimild til að frumstilla greiðslumáta.',
 		'Payment capture mode is unsupported.' => 'Þessi innheimtuaðferð greiðslu er ekki studd.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight reikninginn fyrir þessa pöntun.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight fylgiseðillinn er ekki tiltækur.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Ekki var hægt að birta WP Overnight fylgiseðilinn fyrir þessa pöntun.',
+		'Hello' => 'Halló',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS viðbótin mistókst að hlaðast rétt.',
 	),
 );

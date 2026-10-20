@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Väärtused peavad olema objekt ning katse ID UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Katse ID peab tähistama tühistatavat saadetud katset.',
 		'Invalid payment operation parameters.' => 'Makse toimingu parameetrid on vigased.',
+		'Command ID must be a UUID.' => 'Käsu ID peab olema UUID.',
+		'A payment command needs the order revision it was built against.' => 'Maksekäsk vajab selle loomisel aluseks olnud tellimuse versiooni.',
+		'This command ID was already used with a different request.' => 'Seda käsu ID-d on juba kasutatud teise päringuga.',
+		'The order changed since this command was built; read it again.' => 'Tellimus on pärast selle käsu loomist muutunud; lugege see uuesti sisse.',
 		'Sorry, you cannot view payment methods.' => 'Vabandust, te ei saa makseviise vaadata.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Vabandust, te ei saa makseviise algkäivitada.',
 		'Payment capture mode is unsupported.' => 'Makse hõivamise režiim pole toetatud.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'WP Overnighti arvedokumenti ei saanud selle tellimuse jaoks renderdada.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnighti saatelehedokument pole saadaval.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'WP Overnighti saatelehedokumenti ei saanud selle tellimuse jaoks renderdada.',
+		'Hello' => 'Tere',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS plugin ei laadinud õigesti.',
 	),
 );

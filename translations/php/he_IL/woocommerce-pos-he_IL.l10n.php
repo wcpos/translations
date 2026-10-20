@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'הערכים חייבים להיות אובייקט ומזהה הניסיון חייב להיות UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'מזהה הניסיון חייב לציין את הניסיון שנשלח לביטול.',
 		'Invalid payment operation parameters.' => 'הפרמטרים של פעולת התשלום אינם תקינים.',
+		'Command ID must be a UUID.' => 'מזהה הפקודה חייב להיות UUID.',
+		'A payment command needs the order revision it was built against.' => 'פקודת תשלום זקוקה לגרסת ההזמנה שעל בסיסה נוצרה.',
+		'This command ID was already used with a different request.' => 'מזהה הפקודה הזה כבר שימש עם בקשה אחרת.',
+		'The order changed since this command was built; read it again.' => 'ההזמנה השתנתה מאז יצירת הפקודה; יש לקרוא אותה שוב.',
 		'Sorry, you cannot view payment methods.' => 'אין לך הרשאה לצפות בשיטות תשלום.',
 		'Sorry, you cannot bootstrap payment methods.' => 'אין לך הרשאה לאתחל שיטות תשלום.',
 		'Payment capture mode is unsupported.' => 'מצב חיוב התשלום אינו נתמך.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'לא ניתן היה להציג את מסמך החשבונית של WP Overnight עבור הזמנה זו.',
 		'The WP Overnight packing slip document is not available.' => 'מסמך תעודת המשלוח של WP Overnight אינו זמין.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'לא ניתן היה להציג את מסמך תעודת המשלוח של WP Overnight עבור הזמנה זו.',
+		'Hello' => 'שלום',
 		'The WCPOS plugin failed to load correctly.' => 'התוסף WCPOS נכשל בטעינה נכונה.',
 	),
 );

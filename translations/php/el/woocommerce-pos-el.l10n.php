@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Οι τιμές πρέπει να είναι αντικείμενο και το αναγνωριστικό προσπάθειας UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Το αναγνωριστικό προσπάθειας πρέπει να αντιστοιχεί στην απεσταλμένη προσπάθεια που θέλετε να ακυρώσετε.',
 		'Invalid payment operation parameters.' => 'Μη έγκυρες παράμετροι λειτουργίας πληρωμής.',
+		'Command ID must be a UUID.' => 'Το αναγνωριστικό εντολής πρέπει να είναι UUID.',
+		'A payment command needs the order revision it was built against.' => 'Μια εντολή πληρωμής χρειάζεται την αναθεώρηση της παραγγελίας στην οποία βασίστηκε.',
+		'This command ID was already used with a different request.' => 'Αυτό το αναγνωριστικό εντολής έχει ήδη χρησιμοποιηθεί με διαφορετικό αίτημα.',
+		'The order changed since this command was built; read it again.' => 'Η παραγγελία άλλαξε από τότε που δημιουργήθηκε αυτή η εντολή· διαβάστε την ξανά.',
 		'Sorry, you cannot view payment methods.' => 'Δεν έχετε δικαίωμα προβολής των μεθόδων πληρωμής.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Δεν έχετε δικαίωμα αρχικοποίησης των μεθόδων πληρωμής.',
 		'Payment capture mode is unsupported.' => 'Η λειτουργία είσπραξης πληρωμής δεν υποστηρίζεται.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
 		'The WP Overnight packing slip document is not available.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
+		'Hello' => 'Γεια σας',
 		'The WCPOS plugin failed to load correctly.' => 'Το πρόσθετο WCPOS απέτυχε να φορτωθεί σωστά.',
 	),
 );

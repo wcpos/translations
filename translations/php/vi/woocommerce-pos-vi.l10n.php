@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Các giá trị phải là một đối tượng và ID lần thử phải là UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'ID lần thử phải xác định lần thử đã gửi cần hủy.',
 		'Invalid payment operation parameters.' => 'Tham số thao tác thanh toán không hợp lệ.',
+		'Command ID must be a UUID.' => 'ID lệnh phải là UUID.',
+		'A payment command needs the order revision it was built against.' => 'Lệnh thanh toán cần có phiên bản đơn hàng mà lệnh được tạo dựa trên đó.',
+		'This command ID was already used with a different request.' => 'ID lệnh này đã được dùng cho một yêu cầu khác.',
+		'The order changed since this command was built; read it again.' => 'Đơn hàng đã thay đổi kể từ khi lệnh này được tạo. Hãy đọc lại đơn hàng.',
 		'Sorry, you cannot view payment methods.' => 'Rất tiếc, bạn không thể xem phương thức thanh toán.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Rất tiếc, bạn không thể khởi tạo phương thức thanh toán.',
 		'Payment capture mode is unsupported.' => 'Chế độ thu tiền không được hỗ trợ.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Không thể hiển thị tài liệu hóa đơn WP Overnight cho đơn hàng này.',
 		'The WP Overnight packing slip document is not available.' => 'Tài liệu phiếu đóng gói WP Overnight không khả dụng.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Không thể hiển thị tài liệu phiếu đóng gói WP Overnight cho đơn hàng này.',
+		'Hello' => 'Xin chào',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin WCPOS không tải đúng cách.',
 	),
 );

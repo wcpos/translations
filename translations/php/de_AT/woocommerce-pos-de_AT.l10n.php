@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Die Werte müssen ein Objekt und die Versuchs-ID eine UUID sein.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Die Versuchs-ID muss den gesendeten Versuch bezeichnen, der abgebrochen werden soll.',
 		'Invalid payment operation parameters.' => 'Ungültige Parameter für den Zahlungsvorgang.',
+		'Command ID must be a UUID.' => 'Die Befehls-ID muss eine UUID sein.',
+		'A payment command needs the order revision it was built against.' => 'Ein Zahlungsbefehl benötigt die Bestellrevision, auf deren Grundlage er erstellt wurde.',
+		'This command ID was already used with a different request.' => 'Diese Befehls-ID wurde bereits mit einer anderen Anfrage verwendet.',
+		'The order changed since this command was built; read it again.' => 'Die Bestellung wurde geändert, seit dieser Befehl erstellt wurde. Lesen Sie sie erneut ein.',
 		'Sorry, you cannot view payment methods.' => 'Sie sind nicht berechtigt, Zahlungsmethoden anzuzeigen.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Sie sind nicht berechtigt, Zahlungsmethoden zu initialisieren.',
 		'Payment capture mode is unsupported.' => 'Dieser Erfassungsmodus für Zahlungen wird nicht unterstützt.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Das Rechnung-Dokument von WP Overnight konnte für diese Bestellung nicht gerendert werden.',
 		'The WP Overnight packing slip document is not available.' => 'Das Lieferschein-Dokument von WP Overnight ist nicht verfügbar.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Das Lieferschein-Dokument von WP Overnight konnte für diese Bestellung nicht gerendert werden.',
+		'Hello' => 'Hallo',
 		'The WCPOS plugin failed to load correctly.' => 'Das WCPOS-Plugin konnte nicht korrekt geladen werden.',
 	),
 );

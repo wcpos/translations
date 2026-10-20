@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => '值必须是对象，尝试 ID 必须是 UUID。',
 		'Attempt ID must name the sent attempt to cancel.' => '尝试 ID 必须对应要取消的已发送尝试。',
 		'Invalid payment operation parameters.' => '付款操作参数无效。',
+		'Command ID must be a UUID.' => '命令 ID 必须是 UUID。',
+		'A payment command needs the order revision it was built against.' => '支付命令需要其创建时所依据的订单修订版本。',
+		'This command ID was already used with a different request.' => '此命令 ID 已用于其他请求。',
+		'The order changed since this command was built; read it again.' => '创建此命令后，订单已发生变化；请重新读取订单。',
 		'Sorry, you cannot view payment methods.' => '抱歉，您无权查看支付方式。',
 		'Sorry, you cannot bootstrap payment methods.' => '抱歉，您无权初始化支付方式。',
 		'Payment capture mode is unsupported.' => '不支持此付款捕获模式。',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => '无法为此订单渲染 WP Overnight 发票文档。',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 装箱单文档不可用。',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '无法为此订单渲染 WP Overnight 装箱单文档。',
+		'Hello' => '您好',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 插件未能正确加载。',
 	),
 );

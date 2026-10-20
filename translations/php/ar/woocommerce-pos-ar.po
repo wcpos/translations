@@ -535,7 +535,7 @@ msgstr "بوابة الدفع غير متاحة للدفع عبر نقطة ال�
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:370
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "الطلب غير موجود."
@@ -1126,33 +1126,49 @@ msgstr "قيمة meta_data ‏_woocommerce_pos_uuid غير صالحة."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "المجموعة «%1$s» غير متاحة عبر هذا المسار. المدعوم: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:117
+#: includes/API/V2/Payments_Controller.php:139
 msgid "Sorry, you cannot manage order payments."
 msgstr "عذرًا، ليس لديك صلاحية إدارة مدفوعات الطلبات."
 
-#: includes/API/V2/Payments_Controller.php:136
+#: includes/API/V2/Payments_Controller.php:159
 msgid "Payment must be an object."
 msgstr "يجب أن تكون الدفعة كائنًا."
 
-#: includes/API/V2/Payments_Controller.php:203
+#: includes/API/V2/Payments_Controller.php:230
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:106
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Gateway_Submission.php:118
+#: includes/Payments/Contract/Ledger.php:1345
 msgid "Payment method not found."
 msgstr "طريقة الدفع غير موجودة."
 
-#: includes/API/V2/Payments_Controller.php:209
+#: includes/API/V2/Payments_Controller.php:236
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "يجب أن تكون القيم كائنًا، وأن يكون معرّف المحاولة UUID."
 
-#: includes/API/V2/Payments_Controller.php:214
+#: includes/API/V2/Payments_Controller.php:241
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "يجب أن يطابق معرّف المحاولة المحاولة المرسلة المراد إلغاؤها."
 
-#: includes/API/V2/Payments_Controller.php:320
+#: includes/API/V2/Payments_Controller.php:352
 msgid "Invalid payment operation parameters."
 msgstr "معلمات عملية الدفع غير صالحة."
+
+#: includes/API/V2/Payments_Controller.php:403
+msgid "Command ID must be a UUID."
+msgstr "يجب أن يكون معرّف الأمر UUID."
+
+#: includes/API/V2/Payments_Controller.php:414
+msgid "A payment command needs the order revision it was built against."
+msgstr "يحتاج أمر الدفع إلى إصدار الطلب الذي بُني عليه."
+
+#: includes/API/V2/Payments_Controller.php:426
+msgid "This command ID was already used with a different request."
+msgstr "سبق استخدام معرّف هذا الأمر مع طلب مختلف."
+
+#: includes/API/V2/Payments_Controller.php:498
+msgid "The order changed since this command was built; read it again."
+msgstr "تغيّر الطلب منذ إنشاء هذا الأمر؛ أعد قراءته."
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
@@ -1163,8 +1179,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "عذرًا، ليس لديك صلاحية تهيئة طرق الدفع."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:53
-#: includes/Payments/Contract/Ledger.php:2234
+#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Ledger.php:2313
 msgid "Payment capture mode is unsupported."
 msgstr "وضع تحصيل الدفعة غير مدعوم."
 
@@ -1444,41 +1460,41 @@ msgstr "لم يسترد مزوّد الدفع هذه الدفعة."
 msgid "This payment cannot be voided."
 msgstr "لا يمكن إبطال هذه الدفعة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:56
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Attempt ID must be a UUID."
 msgstr "يجب أن يكون معرّف المحاولة UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:60
 msgid "Only POS orders take a gateway submission."
 msgstr "تُرسل طلبات بوابة الدفع لطلبات نقطة البيع فقط."
 
-#: includes/Payments/Contract/Gateway_Submission.php:84
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "أُلغيت هذه المحاولة أو استُبدلت بأخرى عند نقطة البيع."
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Payment method is not enabled for the POS."
 msgstr "طريقة الدفع غير مفعّلة لنقطة البيع."
 
-#: includes/Payments/Contract/Gateway_Submission.php:97
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "Order is already paid."
 msgstr "الطلب مدفوع بالفعل."
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Order already has a live payment."
 msgstr "للطلب دفعة نشطة بالفعل."
 
-#: includes/Payments/Contract/Gateway_Submission.php:182
+#: includes/Payments/Contract/Gateway_Submission.php:194
 msgid "The payment method rejected the details entered."
 msgstr "رفضت طريقة الدفع البيانات المُدخلة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:251
-#: includes/Payments/Contract/Gateway_Submission.php:266
+#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:289
 msgid "The payment provider failed."
 msgstr "تعذّر على مزوّد الدفع إتمام العملية."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:270
+#: includes/Payments/Contract/Gateway_Submission.php:293
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1486,159 +1502,159 @@ msgstr ""
 "تريد طريقة الدفع هذه فتح %s في متصفح، لكن نقطة البيع لا تستطيع متابعة ذلك."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:310
+#: includes/Payments/Contract/Gateway_Submission.php:334
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "تمت التسوية عبر نقطة البيع: %1$s في %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:329
+#: includes/Payments/Contract/Gateway_Submission.php:354
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "أُرسل عبر نقطة البيع: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:375
+#: includes/Payments/Contract/Gateway_Submission.php:408
 msgid "This invoice cannot be cancelled."
 msgstr "لا يمكن إلغاء هذه الفاتورة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:411
 msgid "The invoice was sent by a different payment method."
 msgstr "أُرسلت الفاتورة بطريقة دفع أخرى."
 
-#: includes/Payments/Contract/Gateway_Submission.php:382
+#: includes/Payments/Contract/Gateway_Submission.php:415
 msgid "A newer invoice has been sent for this order."
 msgstr "أُرسلت فاتورة أحدث لهذا الطلب."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:388
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "أُلغي عبر نقطة البيع: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:538
+#: includes/Payments/Contract/Gateway_Submission.php:683
 msgid "This field must be true or false."
 msgstr "يجب أن تكون قيمة هذا الحقل true أو false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:543
+#: includes/Payments/Contract/Gateway_Submission.php:688
 msgid "This field must be text."
 msgstr "يجب أن يكون هذا الحقل نصًا."
 
-#: includes/Payments/Contract/Gateway_Submission.php:547
+#: includes/Payments/Contract/Gateway_Submission.php:692
 msgid "This field is required."
 msgstr "هذا الحقل مطلوب."
 
-#: includes/Payments/Contract/Gateway_Submission.php:551
+#: includes/Payments/Contract/Gateway_Submission.php:696
 msgid "Choose one of the listed options."
 msgstr "اختر أحد الخيارات المدرجة."
 
-#: includes/Payments/Contract/Gateway_Submission.php:565
+#: includes/Payments/Contract/Gateway_Submission.php:710
 msgid "Check the payment fields."
 msgstr "تحقّق من حقول الدفع."
 
-#: includes/Payments/Contract/Ledger.php:655
+#: includes/Payments/Contract/Ledger.php:656
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "لا يمكن تسجيل طريقة الدفع هذه؛ إذ يجب أن تنفذ جزء الدفع الخاص بها."
 
-#: includes/Payments/Contract/Ledger.php:661
+#: includes/Payments/Contract/Ledger.php:662
 msgid "Recorded payments must be captured or authorized."
 msgstr "يجب تحصيل المدفوعات المسجلة أو تفويضها."
 
-#: includes/Payments/Contract/Ledger.php:666
-#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:667
+#: includes/Payments/Contract/Ledger.php:671
 msgid "Tendered amount is invalid for this payment method."
 msgstr "المبلغ المدفوع غير صالح لطريقة الدفع هذه."
 
-#: includes/Payments/Contract/Ledger.php:779
+#: includes/Payments/Contract/Ledger.php:840
 msgid "Payment method is disabled."
 msgstr "طريقة الدفع معطلة."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1375
-#: includes/Payments/Contract/Ledger.php:1425
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1456
 msgid "The order is already paid."
 msgstr "تم دفع الطلب بالفعل."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1376
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1407
 msgid "Payment amount exceeds the order balance."
 msgstr "مبلغ الدفع يتجاوز رصيد الطلب."
 
-#: includes/Payments/Contract/Ledger.php:846
-#: includes/Payments/Contract/Ledger.php:1378
-#: includes/Payments/Contract/Ledger.php:1511
+#: includes/Payments/Contract/Ledger.php:860
+#: includes/Payments/Contract/Ledger.php:1409
+#: includes/Payments/Contract/Ledger.php:1586
 msgid "Another payment is already in progress on this order."
 msgstr "هناك دفعة أخرى قيد التنفيذ لهذا الطلب بالفعل."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1006
+#: includes/Payments/Contract/Ledger.php:1028
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr "مبلغ دفعة WCPOS ‏%1$s غير مطابق: المتوقع %2$s، والمؤكد %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1013
+#: includes/Payments/Contract/Ledger.php:1035
 msgid "Tip"
 msgstr "إكرامية"
 
-#: includes/Payments/Contract/Ledger.php:1079
+#: includes/Payments/Contract/Ledger.php:1109
 msgid "Refund must belong to this order."
 msgstr "يجب أن يكون الاسترداد تابعًا لهذا الطلب."
 
-#: includes/Payments/Contract/Ledger.php:1082
-#: includes/Payments/Contract/Ledger.php:1097
-#: includes/Payments/Contract/Ledger.php:1118
+#: includes/Payments/Contract/Ledger.php:1112
+#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "لا يمكن تخصيص مبلغ الاسترداد لهذه الدفعة."
 
-#: includes/Payments/Contract/Ledger.php:1156
-#: includes/Payments/Contract/Ledger.php:1290
+#: includes/Payments/Contract/Ledger.php:1186
+#: includes/Payments/Contract/Ledger.php:1320
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "يجب أن يكون ID الدفعة UUID."
 
-#: includes/Payments/Contract/Ledger.php:1177
-#: includes/Payments/Contract/Ledger.php:1354
+#: includes/Payments/Contract/Ledger.php:1207
+#: includes/Payments/Contract/Ledger.php:1385
 msgid "Payment id conflicts with an existing payment."
 msgstr "يتعارض ID الدفعة مع دفعة موجودة."
 
-#: includes/Payments/Contract/Ledger.php:1212
+#: includes/Payments/Contract/Ledger.php:1242
 msgid "Refund status is invalid."
 msgstr "حالة الاسترداد غير صالحة."
 
-#: includes/Payments/Contract/Ledger.php:1293
-#: includes/Payments/Contract/Ledger.php:1297
+#: includes/Payments/Contract/Ledger.php:1323
+#: includes/Payments/Contract/Ledger.php:1327
 msgid "Payment amount must be positive."
 msgstr "يجب أن يكون مبلغ الدفعة موجبًا."
 
-#: includes/Payments/Contract/Ledger.php:1302
+#: includes/Payments/Contract/Ledger.php:1332
 msgid "Payment currency must match the order."
 msgstr "يجب أن تطابق عملة الدفع عملة الطلب."
 
-#: includes/Payments/Contract/Ledger.php:1377
+#: includes/Payments/Contract/Ledger.php:1408
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "المبلغ أو العملة اللذان أكدهما موفر الدفع لا يطابقان الدفعة."
 
-#: includes/Payments/Contract/Ledger.php:1469
+#: includes/Payments/Contract/Ledger.php:1503
 msgid "The order is not covered by its payments."
 msgstr "مدفوعات الطلب لا تغطي قيمته بالكامل."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1587
+#: includes/Payments/Contract/Ledger.php:1663
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "أُبطلت دفعة WCPOS ‏%s."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1589
+#: includes/Payments/Contract/Ledger.php:1665
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "أُبطلت دفعة WCPOS ‏%1$s: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2229
+#: includes/Payments/Contract/Ledger.php:2308
 msgid "Payment not found."
 msgstr "الدفعة غير موجودة."
 
-#: includes/Payments/Contract/Ledger.php:2239
+#: includes/Payments/Contract/Ledger.php:2318
 msgid "Payment transition is invalid."
 msgstr "انتقال حالة الدفع غير صالح."
 
@@ -6088,6 +6104,10 @@ msgstr "مستند قسيمة التعبئة WP Overnight غير متاح."
 msgid ""
 "The WP Overnight packing slip document could not be rendered for this order."
 msgstr "تعذر عرض مستند قسيمة التعبئة WP Overnight لهذا الطلب."
+
+#: tests/includes/Test_i18n.php:710
+msgid "Hello"
+msgstr "مرحبًا"
 
 #: woocommerce-pos.php:163
 msgid "The WCPOS plugin failed to load correctly."

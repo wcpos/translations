@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'مقادیر باید یک شیء و شناسهٔ تلاش یک UUID باشد.',
 		'Attempt ID must name the sent attempt to cancel.' => 'شناسهٔ تلاش باید مربوط به تلاش ارسال‌شده‌ای باشد که می‌خواهید لغو کنید.',
 		'Invalid payment operation parameters.' => 'پارامترهای عملیات پرداخت نامعتبر است.',
+		'Command ID must be a UUID.' => 'شناسهٔ فرمان باید یک UUID باشد.',
+		'A payment command needs the order revision it was built against.' => 'فرمان پرداخت به نسخهٔ سفارشی نیاز دارد که بر اساس آن ساخته شده است.',
+		'This command ID was already used with a different request.' => 'این شناسهٔ فرمان قبلاً با درخواست دیگری استفاده شده است.',
+		'The order changed since this command was built; read it again.' => 'سفارش از زمان ساخت این فرمان تغییر کرده است؛ دوباره آن را بخوانید.',
 		'Sorry, you cannot view payment methods.' => 'متأسفیم، اجازه مشاهده روش‌های پرداخت را ندارید.',
 		'Sorry, you cannot bootstrap payment methods.' => 'متأسفیم، اجازه راه‌اندازی روش‌های پرداخت را ندارید.',
 		'Payment capture mode is unsupported.' => 'حالت دریافت وجه پرداخت پشتیبانی نمی‌شود.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'رندر کردن سند فاکتور WP Overnight برای این سفارش ممکن نبود.',
 		'The WP Overnight packing slip document is not available.' => 'سند برگه بسته‌بندی WP Overnight در دسترس نیست.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'رندر کردن سند برگه بسته‌بندی WP Overnight برای این سفارش ممکن نبود.',
+		'Hello' => 'سلام',
 		'The WCPOS plugin failed to load correctly.' => 'پلاگین WCPOS به درستی بارگذاری نشد.',
 	),
 );

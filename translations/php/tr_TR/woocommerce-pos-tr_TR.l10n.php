@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Değerler bir nesne, deneme kimliği ise UUID olmalıdır.',
 		'Attempt ID must name the sent attempt to cancel.' => 'Deneme kimliği, iptal edilecek gönderilmiş denemeyi belirtmelidir.',
 		'Invalid payment operation parameters.' => 'Ödeme işlemi parametreleri geçersiz.',
+		'Command ID must be a UUID.' => 'Komut kimliği bir UUID olmalıdır.',
+		'A payment command needs the order revision it was built against.' => 'Bir ödeme komutu, oluşturulduğu sipariş revizyonuna ihtiyaç duyar.',
+		'This command ID was already used with a different request.' => 'Bu komut kimliği başka bir istekte zaten kullanıldı.',
+		'The order changed since this command was built; read it again.' => 'Bu komut oluşturulduktan sonra sipariş değişti. Siparişi yeniden okuyun.',
 		'Sorry, you cannot view payment methods.' => 'Üzgünüz, ödeme yöntemlerini görüntüleyemezsiniz.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Üzgünüz, ödeme yöntemlerini başlatamazsınız.',
 		'Payment capture mode is unsupported.' => 'Ödeme alma modu desteklenmiyor.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Bu sipariş için WP Overnight fatura belgesi oluşturulamadı.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight paket fişi belgesi kullanılamıyor.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Bu sipariş için WP Overnight paket fişi belgesi oluşturulamadı.',
+		'Hello' => 'Merhaba',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS eklentisi doğru yüklenemedi.',
 	),
 );

@@ -238,6 +238,10 @@ return array(
 		'Values must be an object and attempt ID a UUID.' => 'Стойностите трябва да са обект, а ID на опита — UUID.',
 		'Attempt ID must name the sent attempt to cancel.' => 'ID на опита трябва да обозначава изпратения опит, който ще бъде отменен.',
 		'Invalid payment operation parameters.' => 'Невалидни параметри за операцията по плащане.',
+		'Command ID must be a UUID.' => 'ID-то на командата трябва да е UUID.',
+		'A payment command needs the order revision it was built against.' => 'Командата за плащане изисква версията на поръчката, въз основа на която е създадена.',
+		'This command ID was already used with a different request.' => 'Този ID на команда вече е използван с друга заявка.',
+		'The order changed since this command was built; read it again.' => 'Поръчката е променена след създаването на командата; прочетете я отново.',
 		'Sorry, you cannot view payment methods.' => 'Нямате права да преглеждате методите на плащане.',
 		'Sorry, you cannot bootstrap payment methods.' => 'Нямате права да инициализирате методите на плащане.',
 		'Payment capture mode is unsupported.' => 'Режимът на осчетоводяване на плащане не се поддържа.',
@@ -1166,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Документът за фактура на WP Overnight не можа да бъде рендериран за тази поръчка.',
 		'The WP Overnight packing slip document is not available.' => 'Документът за опаковъчен лист на WP Overnight не е наличен.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Документът за опаковъчен лист на WP Overnight не можа да бъде рендериран за тази поръчка.',
+		'Hello' => 'Здравейте',
 		'The WCPOS plugin failed to load correctly.' => 'Плъгинът WCPOS не успя да се зареди правилно.',
 	),
 );
