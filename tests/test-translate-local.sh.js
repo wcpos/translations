@@ -178,6 +178,10 @@ if (tool === 'git') {
   assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'create') && c.args[c.args.indexOf('--title') + 1].endsWith(' (stack)')));
   assert.ok(result.calls.some(c => isCall(c, 'git', 'push', '--quiet', '-u', 'origin')));
   assert.ok(result.calls.filter(c => isCall(c, 'git', 'reset') || isCall(c, 'git', 'clean') || isCall(c, 'git', 'checkout')).every(c => c.cwd === wt));
+  assert.match(result.stdout, /chunk 1 returned no results for aa\.part1/);
+  assert.match(result.stdout, /chunk 2 returned no results for aa\.part2/);
+  assert.doesNotMatch(result.stdout, /no results for bb/);
+  for (const log of ['chunk-1.log', 'review-3.log']) assert.ok(fs.existsSync(path.join(root, '.claude/translate-logs/stack', log)), log);
   result = run({ counts: [2] }, ['--max-per-call', '1', '--no-review']);
   assert.equal(result.status, 0, result.stderr);
   for (const n of [1, 2]) assert.ok(fs.existsSync(path.join(wt, `.translate/results/aa.part${n}.json`)));
@@ -213,6 +217,8 @@ if (tool === 'git') {
   assert.match(result.stdout, /Removed 0 stale keys from 0 files\./);
   assert.deepEqual(result.calls.filter(c => c.tool === 'codex').map(c => c.args[c.args.indexOf('-m') + 1]), ['gpt-6-luna', 'gpt-6-sol']);
   assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: codex \(gpt-6-luna\); review: gpt-6-sol\./);
+  assert.ok(fs.existsSync(path.join(root, '.claude/translate-logs/main/chunk-1.log')));
+  assert.ok(!fs.existsSync(path.join(root, '.claude/translate-logs/main/chunk-2.log')));
   for (const translator of ['codex', 'claude']) {
     result = run({}, ['--translator', translator], { TRANSLATE_MODEL: 'env-model', TRANSLATE_REVIEW_MODEL: 'env-review' });
     assert.equal(result.status, 0, result.stderr);
@@ -244,6 +250,10 @@ if (tool === 'git') {
   assert.ok(!readCalls().some(c => isCall(c, 'git', 'reset')));
   assert.ok(!readCalls().some(c => isCall(c, 'git', 'for-each-ref')));
   assert.ok(fs.existsSync(path.join(root, '.claude/auto-translate.lock')));
+  result = run({ counts: [101] }, ['--no-review']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.deepEqual(result.calls.filter(c => c.tool === 'prompt' && c.prompt.startsWith('TRANSLATE')).map(c =>
+    [...c.prompt.matchAll(/^- (\S+) ->/gm)].map(m => m[1])), [['.translate/parts/aa.part1.json'], ['.translate/parts/aa.part2.json']]);
   const state = path.join(root, '.claude/auto-translate.state');
   const started = Math.floor(Date.now() / 1000);
   result = run({ counts: [1], remainingCounts: [1], fail: true }, ['--no-review', '--locale', 'aa']);
@@ -266,6 +276,7 @@ if (tool === 'git') {
     assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
     assert.equal(fs.readFileSync(state, 'utf8'), recorded);
   }
+  assert.ok(fs.existsSync(path.join(root, '.claude/translate-logs/main/chunk-1.log')));
   result = run({ counts: [1], remainingCounts: [1] }, ['--base', 'next']);
   assert.equal(result.status, 0, result.stderr);
   assert.ok(result.calls.some(c => c.tool === 'codex'));
@@ -330,9 +341,12 @@ if (tool === 'git') {
   });
   const promotedState = `${Math.floor(Date.now() / 1000)}\n${createHash('sha256').update(postPromotion).digest('hex')}\n`;
   fs.writeFileSync(state, promotedState);
+  const keptLog = path.join(root, '.claude/translate-logs/main/chunk-1.log');
+  assert.ok(fs.existsSync(keptLog), 'kept log before promote-only skip');
   result = run({ counts: [2, 1], seeded: 2, remainingCounts: [0, 1] });
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /skipping the model/);
+  assert.ok(fs.existsSync(keptLog), 'kept log survives promote-only skip');
   assert.ok(!result.calls.some(c => ['codex', 'claude'].includes(c.tool)));
   assert.ok(result.calls.some(c => isCall(c, 'git', 'commit')));
   assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'create')));
