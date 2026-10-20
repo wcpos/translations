@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:915
+#: includes/Activator.php:1037
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong>はPHP %1$s以上が必要です。<a href=\"%2$s\">更新方法</a>についての詳細をお読みください"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:939
+#: includes/Activator.php:1061
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong>は<a href=\"%1$s\">WooCommerce %2$s以上</a>が必要です。<a href=\"%3$s\">WooCommerceをインストールして有効化してください</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:961
+#: includes/Activator.php:1083
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong>は<em>きれいな</em>パーマリンクが正しく動作するために必要です"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:962
+#: includes/Activator.php:1084
 msgid "Enable permalinks"
 msgstr "パーマリンクを有効にする"
 
@@ -69,7 +69,7 @@ msgstr "パーマリンクを有効にする"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:1213
+#: includes/Activator.php:1335
 #: includes/Services/Receipt_Data_Schema.php:342
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:187
@@ -79,7 +79,7 @@ msgid "Cashier"
 msgstr "レジ係"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1410
+#: includes/Activator.php:1532
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -1176,29 +1176,33 @@ msgstr "税務記録のフィールドが無効です：%s。"
 msgid "Fiscal record not found."
 msgstr "税務記録が見つかりません。"
 
-#: includes/API/V2/Registers_Controller.php:75
+#: includes/API/V2/Registers_Controller.php:77
 msgid "Sorry, you cannot access registers."
 msgstr "レジにアクセスする権限がありません。"
 
+#: includes/API/V2/Registers_Controller.php:90
+msgid "More registers need WCPOS Pro."
+msgstr "レジを追加するにはWCPOS Proが必要です。"
+
 #. translators: %s: register field name.
-#: includes/API/V2/Registers_Controller.php:439
+#: includes/API/V2/Registers_Controller.php:425
 #, php-format
 msgid "Invalid register field: %s."
 msgstr "レジのフィールドが無効です：%s。"
 
-#: includes/API/V2/Registers_Controller.php:444
-#: includes/Services/Report_Scope_Resolver.php:63
-#: includes/Services/Report_Scope_Resolver.php:66
+#: includes/API/V2/Registers_Controller.php:430
+#: includes/Services/Report_Scope_Resolver.php:64
+#: includes/Services/Report_Scope_Resolver.php:67
 msgid "Register not found."
 msgstr "レジが見つかりません。"
 
-#: includes/API/V2/Registers_Controller.php:449
+#: includes/API/V2/Registers_Controller.php:435
 msgid "Register could not be saved."
 msgstr "レジを保存できませんでした。"
 
 #: includes/API/V2/Reports_Controller.php:120
 #: includes/Services/Report_Scope_Resolver.php:31
-#: includes/Services/Report_Scope_Resolver.php:77
+#: includes/Services/Report_Scope_Resolver.php:78
 msgid "Report not found."
 msgstr "レポートが見つかりません。"
 
@@ -1680,7 +1684,7 @@ msgstr "この入出金はすでに取り消されているか、利用できま
 msgid "This movement id is already used by another session."
 msgstr "この移動IDは、すでに別のセッションで使用されています。"
 
-#: includes/Services/Closure_Store.php:620
+#: includes/Services/Closure_Store.php:633
 msgid "The session cannot be closed."
 msgstr "セッションを終了できません。"
 
@@ -1818,7 +1822,7 @@ msgstr "販売後はPOSの出所情報キーを変更できません：%s"
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:506
+#: includes/Services/Receipt_Data_Builder.php:508
 #: includes/Templates/Payment.php:359
 #: tests/includes/Templates/Test_Receipt_Renderers.php:267
 msgid "Guest"
@@ -1828,9 +1832,9 @@ msgstr "ゲスト"
 #. translators: %d: Historical POS store ID that no longer exists.
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:486
-#: includes/Services/Receipt_Data_Builder.php:892
-#: tests/includes/Services/Test_Receipt_Data_Builder.php:1583
+#: includes/Services/Receipt_Data_Builder.php:488
+#: includes/Services/Receipt_Data_Builder.php:895
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:1579
 #, php-format
 msgid "Store #%d"
 msgstr "店舗 #%d"
@@ -2047,19 +2051,19 @@ msgid ""
 msgstr "クイック割引コード「%s」はストアクーポンに使用されています。別のコードを使用してください。"
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:229
+#: includes/Services/Receipt_Data_Builder.php:231
 #, php-format
 msgid "Session %s"
 msgstr "セッション%s"
 
 #. translators: Receipt label for discount amount or discount line.
-#: includes/Services/Receipt_Data_Builder.php:647
+#: includes/Services/Receipt_Data_Builder.php:649
 #: includes/Services/Receipt_I18n_Labels.php:186
 msgid "Discount"
 msgstr "割引"
 
 #. translators: %s: Discount percentage.
-#: includes/Services/Receipt_Data_Builder.php:649
+#: includes/Services/Receipt_Data_Builder.php:651
 #, php-format
 msgid "Discount (%s%%)"
 msgstr "割引（%s%%）"
@@ -3081,8 +3085,10 @@ msgstr "プラットフォーム"
 #. translators: Fiscal receipt label for the till (register) that rang the sale.
 #: includes/Services/Receipt_Data_Schema.php:1142
 #: includes/Services/Receipt_I18n_Labels.php:273
-#: includes/Services/Register_Store.php:171
+#: includes/Services/Register_Store.php:149
+#: includes/Services/Register_Store.php:266
 #: includes/Services/Reports_Registry.php:188
+#: includes/Services/Report_Scope_Resolver.php:94
 msgid "Register"
 msgstr "レジ"
 
@@ -4826,11 +4832,7 @@ msgstr "終了日は開始日より前にできません。"
 msgid "This range is beyond the report history limit."
 msgstr "この期間はレポート履歴の上限を超えています。"
 
-#: includes/Services/Report_Scope_Gate.php:38
-msgid "Reports across all registers require WCPOS Pro. Select this register."
-msgstr "すべてのレジを対象とするレポートにはWCPOS Proが必要です。このレジを選択してください。"
-
-#: includes/Services/Report_Scope_Gate.php:42
+#: includes/Services/Report_Scope_Gate.php:39
 msgid "Reports for earlier days or days other than today require WCPOS Pro."
 msgstr "過去の日付または今日以外の日付のレポートにはWCPOS Proが必要です。"
 
@@ -4846,7 +4848,7 @@ msgstr "このレポートは終了済みセッションを対象としていま
 msgid "The closed session must have a linked closure."
 msgstr "終了済みセッションには関連付けられた締め処理が必要です。"
 
-#: includes/Services/Report_Scope_Resolver.php:154
+#: includes/Services/Report_Scope_Resolver.php:155
 msgid "The session, register and store must describe the same scope."
 msgstr "セッション、レジ、店舗の対象範囲が一致している必要があります。"
 
