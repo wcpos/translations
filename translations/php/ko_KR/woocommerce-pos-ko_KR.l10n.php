@@ -1170,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 인보이스 문서를 렌더링할 수 없습니다.',
 		'The WP Overnight packing slip document is not available.' => 'WP Overnight 포장 명세서 문서를 사용할 수 없습니다.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => '이 주문에 대해 WP Overnight 포장 명세서 문서를 렌더링할 수 없습니다.',
+		'Hello' => '안녕하세요',
 		'The WCPOS plugin failed to load correctly.' => 'WCPOS 플러그인이 올바르게 로드되지 않았습니다.',
 	),
 );

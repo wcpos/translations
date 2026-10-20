@@ -1170,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'رندر کردن سند فاکتور WP Overnight برای این سفارش ممکن نبود.',
 		'The WP Overnight packing slip document is not available.' => 'سند برگه بسته‌بندی WP Overnight در دسترس نیست.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'رندر کردن سند برگه بسته‌بندی WP Overnight برای این سفارش ممکن نبود.',
+		'Hello' => 'سلام',
 		'The WCPOS plugin failed to load correctly.' => 'پلاگین WCPOS به درستی بارگذاری نشد.',
 	),
 );

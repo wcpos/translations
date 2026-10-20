@@ -1170,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Το έγγραφο τιμολογίου του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
 		'The WP Overnight packing slip document is not available.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν είναι διαθέσιμο.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Το έγγραφο δελτίου συσκευασίας του WP Overnight δεν μπόρεσε να αποδοθεί για αυτή την παραγγελία.',
+		'Hello' => 'Γεια σας',
 		'The WCPOS plugin failed to load correctly.' => 'Το πρόσθετο WCPOS απέτυχε να φορτωθεί σωστά.',
 	),
 );

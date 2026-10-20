@@ -1170,6 +1170,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'មិនអាចបង្ហាញឯកសារវិក្កយបត្រ WP Overnight សម្រាប់ការបញ្ជាទិញនេះបានទេ។',
 		'The WP Overnight packing slip document is not available.' => 'ឯកសារប័ណ្ណខ្ចប់ WP Overnight មិនមានទេ។',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'មិនអាចបង្ហាញឯកសារប័ណ្ណខ្ចប់ WP Overnight សម្រាប់ការបញ្ជាទិញនេះបានទេ។',
+		'Hello' => 'សួស្តី',
 		'The WCPOS plugin failed to load correctly.' => 'កម្មវិធីជំនួយ WCPOS បានបរាជ័យក្នុងការផ្ទុកត្រឹមត្រូវ។',
 	),
 );

@@ -1168,6 +1168,7 @@ return array(
 		'The WP Overnight invoice document could not be rendered for this order.' => 'Dokumenti i faturës WP Overnight nuk mund të përpunohej për këtë porosi.',
 		'The WP Overnight packing slip document is not available.' => 'Dokumenti i fletës së paketimit WP Overnight nuk është i disponueshëm.',
 		'The WP Overnight packing slip document could not be rendered for this order.' => 'Dokumenti i fletës së paketimit WP Overnight nuk mund të përpunohej për këtë porosi.',
+		'Hello' => 'Përshëndetje',
 		'The WCPOS plugin failed to load correctly.' => 'Plugin-i WCPOS nuk u ngarkua siç duhet.',
 	),
 );
