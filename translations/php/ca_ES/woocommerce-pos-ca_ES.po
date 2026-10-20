@@ -538,7 +538,7 @@ msgstr ""
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:370
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Comanda no trobada."
@@ -1142,35 +1142,53 @@ msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
 "Aquesta ruta no ofereix la col·lecció «%1$s». Col·leccions admeses: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:117
+#: includes/API/V2/Payments_Controller.php:139
 msgid "Sorry, you cannot manage order payments."
 msgstr "Ho sentim, no pots gestionar els pagaments de les comandes."
 
-#: includes/API/V2/Payments_Controller.php:136
+#: includes/API/V2/Payments_Controller.php:159
 msgid "Payment must be an object."
 msgstr "El pagament ha de ser un objecte."
 
-#: includes/API/V2/Payments_Controller.php:203
+#: includes/API/V2/Payments_Controller.php:230
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:106
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Gateway_Submission.php:118
+#: includes/Payments/Contract/Ledger.php:1345
 msgid "Payment method not found."
 msgstr "No s'ha trobat el mètode de pagament."
 
-#: includes/API/V2/Payments_Controller.php:209
+#: includes/API/V2/Payments_Controller.php:236
 msgid "Values must be an object and attempt ID a UUID."
 msgstr ""
 "Els valors han de ser un objecte i l’ID de l’intent ha de ser un UUID."
 
-#: includes/API/V2/Payments_Controller.php:214
+#: includes/API/V2/Payments_Controller.php:241
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr ""
 "L’ID de l’intent ha d’identificar l’intent enviat que es vol cancel·lar."
 
-#: includes/API/V2/Payments_Controller.php:320
+#: includes/API/V2/Payments_Controller.php:352
 msgid "Invalid payment operation parameters."
 msgstr "Paràmetres de l'operació de pagament no vàlids."
+
+#: includes/API/V2/Payments_Controller.php:403
+msgid "Command ID must be a UUID."
+msgstr "L'ID de l'ordre ha de ser un UUID."
+
+#: includes/API/V2/Payments_Controller.php:414
+msgid "A payment command needs the order revision it was built against."
+msgstr ""
+"Una ordre de pagament necessita la revisió de la comanda a partir de la qual s'ha creat."
+
+#: includes/API/V2/Payments_Controller.php:426
+msgid "This command ID was already used with a different request."
+msgstr "Aquest ID d'ordre ja s'ha fet servir amb una sol·licitud diferent."
+
+#: includes/API/V2/Payments_Controller.php:498
+msgid "The order changed since this command was built; read it again."
+msgstr ""
+"La comanda ha canviat des que s'ha creat aquesta ordre; torneu-la a llegir."
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
@@ -1181,8 +1199,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Ho sentim, no pots inicialitzar els mètodes de pagament."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:53
-#: includes/Payments/Contract/Ledger.php:2234
+#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Ledger.php:2313
 msgid "Payment capture mode is unsupported."
 msgstr "El mode de captura del pagament no és compatible."
 
@@ -1461,42 +1479,42 @@ msgstr "El proveïdor de pagament no ha reemborsat aquest pagament."
 msgid "This payment cannot be voided."
 msgstr "No es pot anul·lar aquest pagament."
 
-#: includes/Payments/Contract/Gateway_Submission.php:56
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Attempt ID must be a UUID."
 msgstr "L’ID de l’intent ha de ser un UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:60
 msgid "Only POS orders take a gateway submission."
 msgstr ""
 "Només les comandes del POS es poden enviar a una passarel·la de pagament."
 
-#: includes/Payments/Contract/Gateway_Submission.php:84
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Aquest intent s’ha cancel·lat o substituït a la caixa."
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Payment method is not enabled for the POS."
 msgstr "El mètode de pagament no està activat per al POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:97
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "Order is already paid."
 msgstr "La comanda ja està pagada."
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Order already has a live payment."
 msgstr "La comanda ja té un pagament actiu."
 
-#: includes/Payments/Contract/Gateway_Submission.php:182
+#: includes/Payments/Contract/Gateway_Submission.php:194
 msgid "The payment method rejected the details entered."
 msgstr "El mètode de pagament ha rebutjat les dades introduïdes."
 
-#: includes/Payments/Contract/Gateway_Submission.php:251
-#: includes/Payments/Contract/Gateway_Submission.php:266
+#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:289
 msgid "The payment provider failed."
 msgstr "El proveïdor de pagament ha fallat."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:270
+#: includes/Payments/Contract/Gateway_Submission.php:293
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1504,162 +1522,162 @@ msgstr ""
 "Aquest mètode de pagament vol obrir %s en un navegador, però el POS no pot seguir aquest pas."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:310
+#: includes/Payments/Contract/Gateway_Submission.php:334
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Liquidat mitjançant el POS: %1$s el %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:329
+#: includes/Payments/Contract/Gateway_Submission.php:354
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Enviat mitjançant el POS: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:375
+#: includes/Payments/Contract/Gateway_Submission.php:408
 msgid "This invoice cannot be cancelled."
 msgstr "Aquesta factura no es pot cancel·lar."
 
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:411
 msgid "The invoice was sent by a different payment method."
 msgstr "La factura s’ha enviat amb un altre mètode de pagament."
 
-#: includes/Payments/Contract/Gateway_Submission.php:382
+#: includes/Payments/Contract/Gateway_Submission.php:415
 msgid "A newer invoice has been sent for this order."
 msgstr "S’ha enviat una factura més recent per a aquesta comanda."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:388
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Cancel·lat mitjançant el POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:538
+#: includes/Payments/Contract/Gateway_Submission.php:683
 msgid "This field must be true or false."
 msgstr "Aquest camp ha de ser cert o fals."
 
-#: includes/Payments/Contract/Gateway_Submission.php:543
+#: includes/Payments/Contract/Gateway_Submission.php:688
 msgid "This field must be text."
 msgstr "Aquest camp ha de ser text."
 
-#: includes/Payments/Contract/Gateway_Submission.php:547
+#: includes/Payments/Contract/Gateway_Submission.php:692
 msgid "This field is required."
 msgstr "Aquest camp és obligatori."
 
-#: includes/Payments/Contract/Gateway_Submission.php:551
+#: includes/Payments/Contract/Gateway_Submission.php:696
 msgid "Choose one of the listed options."
 msgstr "Trieu una de les opcions de la llista."
 
-#: includes/Payments/Contract/Gateway_Submission.php:565
+#: includes/Payments/Contract/Gateway_Submission.php:710
 msgid "Check the payment fields."
 msgstr "Reviseu els camps de pagament."
 
-#: includes/Payments/Contract/Ledger.php:655
+#: includes/Payments/Contract/Ledger.php:656
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "No es pot registrar aquest mètode de pagament; ha de gestionar el seu propi procés de pagament."
 
-#: includes/Payments/Contract/Ledger.php:661
+#: includes/Payments/Contract/Ledger.php:662
 msgid "Recorded payments must be captured or authorized."
 msgstr "Els pagaments registrats s'han de capturar o autoritzar."
 
-#: includes/Payments/Contract/Ledger.php:666
-#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:667
+#: includes/Payments/Contract/Ledger.php:671
 msgid "Tendered amount is invalid for this payment method."
 msgstr "L'import lliurat no és vàlid per a aquest mètode de pagament."
 
-#: includes/Payments/Contract/Ledger.php:779
+#: includes/Payments/Contract/Ledger.php:840
 msgid "Payment method is disabled."
 msgstr "El mètode de pagament està desactivat."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1375
-#: includes/Payments/Contract/Ledger.php:1425
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1456
 msgid "The order is already paid."
 msgstr "La comanda ja està pagada."
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1376
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1407
 msgid "Payment amount exceeds the order balance."
 msgstr "L'import del pagament supera el saldo de la comanda."
 
-#: includes/Payments/Contract/Ledger.php:846
-#: includes/Payments/Contract/Ledger.php:1378
-#: includes/Payments/Contract/Ledger.php:1511
+#: includes/Payments/Contract/Ledger.php:860
+#: includes/Payments/Contract/Ledger.php:1409
+#: includes/Payments/Contract/Ledger.php:1586
 msgid "Another payment is already in progress on this order."
 msgstr "Ja hi ha un altre pagament en curs per a aquesta comanda."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1006
+#: includes/Payments/Contract/Ledger.php:1028
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "L'import del pagament %1$s de WCPOS no coincideix: s'esperava %2$s i s'ha confirmat %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1013
+#: includes/Payments/Contract/Ledger.php:1035
 msgid "Tip"
 msgstr "Propina"
 
-#: includes/Payments/Contract/Ledger.php:1079
+#: includes/Payments/Contract/Ledger.php:1109
 msgid "Refund must belong to this order."
 msgstr "El reemborsament ha de pertànyer a aquesta comanda."
 
-#: includes/Payments/Contract/Ledger.php:1082
-#: includes/Payments/Contract/Ledger.php:1097
-#: includes/Payments/Contract/Ledger.php:1118
+#: includes/Payments/Contract/Ledger.php:1112
+#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "No es pot assignar l'import del reemborsament a aquest pagament."
 
-#: includes/Payments/Contract/Ledger.php:1156
-#: includes/Payments/Contract/Ledger.php:1290
+#: includes/Payments/Contract/Ledger.php:1186
+#: includes/Payments/Contract/Ledger.php:1320
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "L'ID del pagament ha de ser un UUID."
 
-#: includes/Payments/Contract/Ledger.php:1177
-#: includes/Payments/Contract/Ledger.php:1354
+#: includes/Payments/Contract/Ledger.php:1207
+#: includes/Payments/Contract/Ledger.php:1385
 msgid "Payment id conflicts with an existing payment."
 msgstr "L'ID del pagament entra en conflicte amb un pagament existent."
 
-#: includes/Payments/Contract/Ledger.php:1212
+#: includes/Payments/Contract/Ledger.php:1242
 msgid "Refund status is invalid."
 msgstr "L'estat del reemborsament no és vàlid."
 
-#: includes/Payments/Contract/Ledger.php:1293
-#: includes/Payments/Contract/Ledger.php:1297
+#: includes/Payments/Contract/Ledger.php:1323
+#: includes/Payments/Contract/Ledger.php:1327
 msgid "Payment amount must be positive."
 msgstr "L'import del pagament ha de ser positiu."
 
-#: includes/Payments/Contract/Ledger.php:1302
+#: includes/Payments/Contract/Ledger.php:1332
 msgid "Payment currency must match the order."
 msgstr "La moneda del pagament ha de coincidir amb la de la comanda."
 
-#: includes/Payments/Contract/Ledger.php:1377
+#: includes/Payments/Contract/Ledger.php:1408
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "L'import o la moneda confirmats pel proveïdor no coincideixen amb el pagament."
 
-#: includes/Payments/Contract/Ledger.php:1469
+#: includes/Payments/Contract/Ledger.php:1503
 msgid "The order is not covered by its payments."
 msgstr "Els pagaments no cobreixen l'import de la comanda."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1587
+#: includes/Payments/Contract/Ledger.php:1663
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "S'ha anul·lat el pagament %s de WCPOS."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1589
+#: includes/Payments/Contract/Ledger.php:1665
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "S'ha anul·lat el pagament %1$s de WCPOS: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2229
+#: includes/Payments/Contract/Ledger.php:2308
 msgid "Payment not found."
 msgstr "No s'ha trobat el pagament."
 
-#: includes/Payments/Contract/Ledger.php:2239
+#: includes/Payments/Contract/Ledger.php:2318
 msgid "Payment transition is invalid."
 msgstr "La transició del pagament no és vàlida."
 

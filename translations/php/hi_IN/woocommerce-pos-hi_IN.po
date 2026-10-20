@@ -535,7 +535,7 @@ msgstr "पेमेंट गेटवे POS checkout के लिए उप�
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:279
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:370
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "ऑर्डर नहीं मिला।"
@@ -1135,33 +1135,50 @@ msgstr "अमान्य _woocommerce_pos_uuid meta_data मान।"
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "कलेक्शन \"%1$s\" इस रूट से उपलब्ध नहीं है। समर्थित: %2$s।"
 
-#: includes/API/V2/Payments_Controller.php:117
+#: includes/API/V2/Payments_Controller.php:139
 msgid "Sorry, you cannot manage order payments."
 msgstr "क्षमा करें, आप ऑर्डर के भुगतान प्रबंधित नहीं कर सकते।"
 
-#: includes/API/V2/Payments_Controller.php:136
+#: includes/API/V2/Payments_Controller.php:159
 msgid "Payment must be an object."
 msgstr "भुगतान एक ऑब्जेक्ट होना चाहिए।"
 
-#: includes/API/V2/Payments_Controller.php:203
+#: includes/API/V2/Payments_Controller.php:230
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:106
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Gateway_Submission.php:118
+#: includes/Payments/Contract/Ledger.php:1345
 msgid "Payment method not found."
 msgstr "भुगतान विधि नहीं मिली।"
 
-#: includes/API/V2/Payments_Controller.php:209
+#: includes/API/V2/Payments_Controller.php:236
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "मान एक ऑब्जेक्ट होना चाहिए और प्रयास ID UUID होना चाहिए।"
 
-#: includes/API/V2/Payments_Controller.php:214
+#: includes/API/V2/Payments_Controller.php:241
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "प्रयास ID से रद्द किए जाने वाले भेजे गए प्रयास की पहचान होनी चाहिए।"
 
-#: includes/API/V2/Payments_Controller.php:320
+#: includes/API/V2/Payments_Controller.php:352
 msgid "Invalid payment operation parameters."
 msgstr "भुगतान कार्रवाई के अमान्य पैरामीटर।"
+
+#: includes/API/V2/Payments_Controller.php:403
+msgid "Command ID must be a UUID."
+msgstr "कमांड ID UUID होना चाहिए।"
+
+#: includes/API/V2/Payments_Controller.php:414
+msgid "A payment command needs the order revision it was built against."
+msgstr ""
+"भुगतान कमांड के लिए उस ऑर्डर का संशोधन आवश्यक है जिसके आधार पर इसे बनाया गया था।"
+
+#: includes/API/V2/Payments_Controller.php:426
+msgid "This command ID was already used with a different request."
+msgstr "यह कमांड ID पहले ही किसी अन्य अनुरोध के साथ उपयोग किया जा चुका है।"
+
+#: includes/API/V2/Payments_Controller.php:498
+msgid "The order changed since this command was built; read it again."
+msgstr "यह कमांड बनाए जाने के बाद ऑर्डर बदल गया है; इसे फिर से पढ़ें।"
 
 #: includes/API/V2/Payment_Methods_Controller.php:70
 msgid "Sorry, you cannot view payment methods."
@@ -1172,8 +1189,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "क्षमा करें, आप भुगतान विधियाँ प्रारंभ नहीं कर सकते।"
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:53
-#: includes/Payments/Contract/Ledger.php:2234
+#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Ledger.php:2313
 msgid "Payment capture mode is unsupported."
 msgstr "भुगतान कैप्चर का यह मोड समर्थित नहीं है।"
 
@@ -1448,42 +1465,42 @@ msgstr "भुगतान प्रदाता ने इस भुगता�
 msgid "This payment cannot be voided."
 msgstr "यह भुगतान रद्द नहीं किया जा सकता।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:56
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Attempt ID must be a UUID."
 msgstr "प्रयास ID UUID होना चाहिए।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:60
 msgid "Only POS orders take a gateway submission."
 msgstr "केवल POS ऑर्डर ही भुगतान गेटवे सबमिशन कर सकते हैं।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:84
+#: includes/Payments/Contract/Gateway_Submission.php:87
 msgid "This attempt was cancelled or superseded at the till."
 msgstr ""
 "यह प्रयास काउंटर पर रद्द कर दिया गया या इसकी जगह दूसरा प्रयास शुरू हुआ।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:89
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Payment method is not enabled for the POS."
 msgstr "यह भुगतान विधि POS के लिए सक्षम नहीं है।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:97
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "Order is already paid."
 msgstr "ऑर्डर का भुगतान पहले ही हो चुका है।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Order already has a live payment."
 msgstr "इस ऑर्डर के लिए पहले से ही एक सक्रिय भुगतान है।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:182
+#: includes/Payments/Contract/Gateway_Submission.php:194
 msgid "The payment method rejected the details entered."
 msgstr "भुगतान विधि ने दर्ज की गई जानकारी अस्वीकार कर दी।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:251
-#: includes/Payments/Contract/Gateway_Submission.php:266
+#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:289
 msgid "The payment provider failed."
 msgstr "भुगतान प्रदाता में त्रुटि हुई।"
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:270
+#: includes/Payments/Contract/Gateway_Submission.php:293
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1491,160 +1508,160 @@ msgstr ""
 "यह भुगतान विधि ब्राउज़र में %s खोलना चाहती है, लेकिन POS वहाँ नहीं जा सकता।"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:310
+#: includes/Payments/Contract/Gateway_Submission.php:334
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "POS के ज़रिए पूरा किया गया: %1$s, स्थिति %2$s पर"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:329
+#: includes/Payments/Contract/Gateway_Submission.php:354
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "POS के ज़रिए भेजा गया: %1$s (%2$s)"
 
-#: includes/Payments/Contract/Gateway_Submission.php:375
+#: includes/Payments/Contract/Gateway_Submission.php:408
 msgid "This invoice cannot be cancelled."
 msgstr "यह इनवॉइस रद्द नहीं किया जा सकता।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:411
 msgid "The invoice was sent by a different payment method."
 msgstr "इनवॉइस किसी दूसरी भुगतान विधि से भेजा गया था।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:382
+#: includes/Payments/Contract/Gateway_Submission.php:415
 msgid "A newer invoice has been sent for this order."
 msgstr "इस ऑर्डर के लिए एक नया इनवॉइस भेजा गया है।"
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:388
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "POS के ज़रिए रद्द किया गया: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:538
+#: includes/Payments/Contract/Gateway_Submission.php:683
 msgid "This field must be true or false."
 msgstr "इस फ़ील्ड का मान true या false होना चाहिए।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:543
+#: includes/Payments/Contract/Gateway_Submission.php:688
 msgid "This field must be text."
 msgstr "इस फ़ील्ड में टेक्स्ट होना चाहिए।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:547
+#: includes/Payments/Contract/Gateway_Submission.php:692
 msgid "This field is required."
 msgstr "यह फ़ील्ड आवश्यक है।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:551
+#: includes/Payments/Contract/Gateway_Submission.php:696
 msgid "Choose one of the listed options."
 msgstr "सूची में दिए गए विकल्पों में से एक चुनें।"
 
-#: includes/Payments/Contract/Gateway_Submission.php:565
+#: includes/Payments/Contract/Gateway_Submission.php:710
 msgid "Check the payment fields."
 msgstr "भुगतान फ़ील्ड जाँचें।"
 
-#: includes/Payments/Contract/Ledger.php:655
+#: includes/Payments/Contract/Ledger.php:656
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "यह भुगतान विधि दर्ज नहीं की जा सकती; इसका अपना भुगतान चरण चलाना होगा।"
 
-#: includes/Payments/Contract/Ledger.php:661
+#: includes/Payments/Contract/Ledger.php:662
 msgid "Recorded payments must be captured or authorized."
 msgstr "दर्ज किए गए भुगतान कैप्चर या अधिकृत होने चाहिए।"
 
-#: includes/Payments/Contract/Ledger.php:666
-#: includes/Payments/Contract/Ledger.php:670
+#: includes/Payments/Contract/Ledger.php:667
+#: includes/Payments/Contract/Ledger.php:671
 msgid "Tendered amount is invalid for this payment method."
 msgstr "इस भुगतान विधि के लिए दी गई राशि अमान्य है।"
 
-#: includes/Payments/Contract/Ledger.php:779
+#: includes/Payments/Contract/Ledger.php:840
 msgid "Payment method is disabled."
 msgstr "भुगतान विधि अक्षम है।"
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1375
-#: includes/Payments/Contract/Ledger.php:1425
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1456
 msgid "The order is already paid."
 msgstr "ऑर्डर का भुगतान पहले ही हो चुका है।"
 
-#: includes/Payments/Contract/Ledger.php:834
-#: includes/Payments/Contract/Ledger.php:1376
+#: includes/Payments/Contract/Ledger.php:848
+#: includes/Payments/Contract/Ledger.php:1407
 msgid "Payment amount exceeds the order balance."
 msgstr "भुगतान राशि ऑर्डर की बकाया राशि से अधिक है।"
 
-#: includes/Payments/Contract/Ledger.php:846
-#: includes/Payments/Contract/Ledger.php:1378
-#: includes/Payments/Contract/Ledger.php:1511
+#: includes/Payments/Contract/Ledger.php:860
+#: includes/Payments/Contract/Ledger.php:1409
+#: includes/Payments/Contract/Ledger.php:1586
 msgid "Another payment is already in progress on this order."
 msgstr "इस ऑर्डर पर एक और भुगतान पहले से जारी है।"
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1006
+#: includes/Payments/Contract/Ledger.php:1028
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "WCPOS भुगतान %1$s की राशि मेल नहीं खाती: अपेक्षित %2$s, पुष्टि की गई %3$s।"
 
-#: includes/Payments/Contract/Ledger.php:1013
+#: includes/Payments/Contract/Ledger.php:1035
 msgid "Tip"
 msgstr "टिप"
 
-#: includes/Payments/Contract/Ledger.php:1079
+#: includes/Payments/Contract/Ledger.php:1109
 msgid "Refund must belong to this order."
 msgstr "रिफ़ंड इसी ऑर्डर का होना चाहिए।"
 
-#: includes/Payments/Contract/Ledger.php:1082
-#: includes/Payments/Contract/Ledger.php:1097
-#: includes/Payments/Contract/Ledger.php:1118
+#: includes/Payments/Contract/Ledger.php:1112
+#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1148
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "रिफ़ंड राशि इस भुगतान को आवंटित नहीं की जा सकती।"
 
-#: includes/Payments/Contract/Ledger.php:1156
-#: includes/Payments/Contract/Ledger.php:1290
+#: includes/Payments/Contract/Ledger.php:1186
+#: includes/Payments/Contract/Ledger.php:1320
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "भुगतान ID एक UUID होनी चाहिए।"
 
-#: includes/Payments/Contract/Ledger.php:1177
-#: includes/Payments/Contract/Ledger.php:1354
+#: includes/Payments/Contract/Ledger.php:1207
+#: includes/Payments/Contract/Ledger.php:1385
 msgid "Payment id conflicts with an existing payment."
 msgstr "भुगतान ID किसी मौजूदा भुगतान से टकराती है।"
 
-#: includes/Payments/Contract/Ledger.php:1212
+#: includes/Payments/Contract/Ledger.php:1242
 msgid "Refund status is invalid."
 msgstr "रिफ़ंड की स्थिति अमान्य है।"
 
-#: includes/Payments/Contract/Ledger.php:1293
-#: includes/Payments/Contract/Ledger.php:1297
+#: includes/Payments/Contract/Ledger.php:1323
+#: includes/Payments/Contract/Ledger.php:1327
 msgid "Payment amount must be positive."
 msgstr "भुगतान राशि शून्य से अधिक होनी चाहिए।"
 
-#: includes/Payments/Contract/Ledger.php:1302
+#: includes/Payments/Contract/Ledger.php:1332
 msgid "Payment currency must match the order."
 msgstr "भुगतान की मुद्रा ऑर्डर से मेल खानी चाहिए।"
 
-#: includes/Payments/Contract/Ledger.php:1377
+#: includes/Payments/Contract/Ledger.php:1408
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "प्रदाता द्वारा पुष्टि की गई राशि या मुद्रा भुगतान से मेल नहीं खाती।"
 
-#: includes/Payments/Contract/Ledger.php:1469
+#: includes/Payments/Contract/Ledger.php:1503
 msgid "The order is not covered by its payments."
 msgstr "ऑर्डर के भुगतानों से उसकी पूरी राशि नहीं चुकाई गई है।"
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1587
+#: includes/Payments/Contract/Ledger.php:1663
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS भुगतान %s रद्द किया गया।"
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1589
+#: includes/Payments/Contract/Ledger.php:1665
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS भुगतान %1$s रद्द किया गया: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2229
+#: includes/Payments/Contract/Ledger.php:2308
 msgid "Payment not found."
 msgstr "भुगतान नहीं मिला।"
 
-#: includes/Payments/Contract/Ledger.php:2239
+#: includes/Payments/Contract/Ledger.php:2318
 msgid "Payment transition is invalid."
 msgstr "भुगतान की स्थिति में यह बदलाव अमान्य है।"
 
