@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Enregistrement fiscal introuvable.',
 		'Sorry, you cannot access registers.' => 'Désolé, vous ne pouvez pas accéder aux caisses.',
 		'More registers need WCPOS Pro.' => 'Les caisses supplémentaires nécessitent WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Fermez la session de caisse avant de la retirer du service.',
 		'Invalid register field: %s.' => 'Champ de caisse invalide : %s.',
 		'Register not found.' => 'Caisse introuvable.',
 		'Register could not be saved.' => 'Impossible d’enregistrer la caisse.',

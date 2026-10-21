@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => '세무 기록을 찾을 수 없습니다.',
 		'Sorry, you cannot access registers.' => '계산대에 접근할 권한이 없습니다.',
 		'More registers need WCPOS Pro.' => '계산대를 추가하려면 WCPOS Pro가 필요합니다.',
+		'Close the register session before retiring it.' => '계산대를 사용 중지하기 전에 계산대 세션을 종료하십시오.',
 		'Invalid register field: %s.' => '계산대 필드가 유효하지 않습니다: %s.',
 		'Register not found.' => '계산대를 찾을 수 없습니다.',
 		'Register could not be saved.' => '계산대를 저장하지 못했습니다.',

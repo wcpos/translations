@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Înregistrarea fiscală nu a fost găsită.',
 		'Sorry, you cannot access registers.' => 'Ne pare rău, nu poți accesa casele de marcat.',
 		'More registers need WCPOS Pro.' => 'Casele suplimentare necesită WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Închide sesiunea casei înainte de a o scoate din uz.',
 		'Invalid register field: %s.' => 'Câmp nevalid pentru casa de marcat: %s.',
 		'Register not found.' => 'Casa de marcat nu a fost găsită.',
 		'Register could not be saved.' => 'Casa de marcat nu a putut fi salvată.',

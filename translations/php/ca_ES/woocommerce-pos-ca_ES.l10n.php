@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'No s\'ha trobat el registre fiscal.',
 		'Sorry, you cannot access registers.' => 'Ho sentim, no pots accedir a les caixes.',
 		'More registers need WCPOS Pro.' => 'Cal WCPOS Pro per tenir més caixes.',
+		'Close the register session before retiring it.' => 'Tanca la sessió de caixa abans de retirar-la.',
 		'Invalid register field: %s.' => 'Camp de caixa no vàlid: %s.',
 		'Register not found.' => 'No s\'ha trobat la caixa.',
 		'Register could not be saved.' => 'No s\'ha pogut desar la caixa.',

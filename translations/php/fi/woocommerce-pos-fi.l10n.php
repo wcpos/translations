@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Verotietuetta ei löytynyt.',
 		'Sorry, you cannot access registers.' => 'Et voi käyttää kassoja.',
 		'More registers need WCPOS Pro.' => 'Useampi kassa edellyttää WCPOS Prota.',
+		'Close the register session before retiring it.' => 'Sulje kassaistunto ennen kassan poistamista käytöstä.',
 		'Invalid register field: %s.' => 'Virheellinen kassan kenttä: %s.',
 		'Register not found.' => 'Kassaa ei löytynyt.',
 		'Register could not be saved.' => 'Kassaa ei voitu tallentaa.',

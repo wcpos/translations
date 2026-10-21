@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Nie znaleziono dokumentu fiskalnego.',
 		'Sorry, you cannot access registers.' => 'Nie możesz uzyskać dostępu do kas.',
 		'More registers need WCPOS Pro.' => 'Dodatkowe kasy wymagają WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Zamknij sesję kasy przed jej wycofaniem z użycia.',
 		'Invalid register field: %s.' => 'Nieprawidłowe pole kasy: %s.',
 		'Register not found.' => 'Nie znaleziono kasy.',
 		'Register could not be saved.' => 'Nie można zapisać kasy.',

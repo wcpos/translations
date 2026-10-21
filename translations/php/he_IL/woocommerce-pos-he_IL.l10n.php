@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'רשומת המס לא נמצאה.',
 		'Sorry, you cannot access registers.' => 'אין לך הרשאה לגשת לקופות.',
 		'More registers need WCPOS Pro.' => 'קופות נוספות דורשות WCPOS Pro.',
+		'Close the register session before retiring it.' => 'יש לסגור את משמרת הקופה לפני הוצאתה משימוש.',
 		'Invalid register field: %s.' => 'שדה הקופה אינו תקין: %s.',
 		'Register not found.' => 'הקופה לא נמצאה.',
 		'Register could not be saved.' => 'לא ניתן לשמור את הקופה.',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Фискальная запись не найдена.',
 		'Sorry, you cannot access registers.' => 'У вас нет прав для доступа к кассам.',
 		'More registers need WCPOS Pro.' => 'Для дополнительных касс требуется WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Закройте сеанс кассы, прежде чем вывести её из эксплуатации.',
 		'Invalid register field: %s.' => 'Недопустимое поле кассы: %s.',
 		'Register not found.' => 'Касса не найдена.',
 		'Register could not be saved.' => 'Не удалось сохранить кассу.',

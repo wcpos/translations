@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Không tìm thấy hồ sơ thuế.',
 		'Sorry, you cannot access registers.' => 'Rất tiếc, bạn không thể truy cập máy tính tiền.',
 		'More registers need WCPOS Pro.' => 'Cần WCPOS Pro để có thêm quầy.',
+		'Close the register session before retiring it.' => 'Đóng phiên làm việc của máy tính tiền trước khi ngừng sử dụng máy.',
 		'Invalid register field: %s.' => 'Trường máy tính tiền không hợp lệ: %s.',
 		'Register not found.' => 'Không tìm thấy máy tính tiền.',
 		'Register could not be saved.' => 'Không thể lưu máy tính tiền.',

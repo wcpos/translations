@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => '未找到税务记录。',
 		'Sorry, you cannot access registers.' => '抱歉，您无权访问收银台。',
 		'More registers need WCPOS Pro.' => '更多收银机需要 WCPOS Pro。',
+		'Close the register session before retiring it.' => '停用收银台前，请先关闭其会话。',
 		'Invalid register field: %s.' => '收银台字段无效：%s。',
 		'Register not found.' => '未找到收银台。',
 		'Register could not be saved.' => '无法保存收银台。',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'រកមិនឃើញកំណត់ត្រាពន្ធដារទេ។',
 		'Sorry, you cannot access registers.' => 'សូមអភ័យទោស អ្នកមិនអាចចូលប្រើម៉ាស៊ីនគិតលុយបានទេ។',
 		'More registers need WCPOS Pro.' => 'ម៉ាស៊ីនគិតលុយបន្ថែមត្រូវការ WCPOS Pro។',
+		'Close the register session before retiring it.' => 'សូមបិទសម័យប្រើប្រាស់ម៉ាស៊ីនគិតលុយ មុនពេលដកវាចេញពីការប្រើប្រាស់។',
 		'Invalid register field: %s.' => 'វាលម៉ាស៊ីនគិតលុយមិនត្រឹមត្រូវ៖ %s។',
 		'Register not found.' => 'រកមិនឃើញម៉ាស៊ីនគិតលុយទេ។',
 		'Register could not be saved.' => 'មិនអាចរក្សាទុកម៉ាស៊ីនគិតលុយបានទេ។',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Δεν βρέθηκε φορολογικό αρχείο.',
 		'Sorry, you cannot access registers.' => 'Δεν έχετε δικαίωμα πρόσβασης στα ταμεία.',
 		'More registers need WCPOS Pro.' => 'Για περισσότερα ταμεία απαιτείται το WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Κλείστε τη συνεδρία του ταμείου πριν το αποσύρετε.',
 		'Invalid register field: %s.' => 'Μη έγκυρο πεδίο ταμείου: %s.',
 		'Register not found.' => 'Δεν βρέθηκε ταμείο.',
 		'Register could not be saved.' => 'Δεν ήταν δυνατή η αποθήκευση του ταμείου.',

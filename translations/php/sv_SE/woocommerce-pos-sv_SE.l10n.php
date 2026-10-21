@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Den fiskala posten hittades inte.',
 		'Sorry, you cannot access registers.' => 'Tyvärr får du inte komma åt kassor.',
 		'More registers need WCPOS Pro.' => 'Fler kassor kräver WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Stäng kassapasset innan du tar kassan ur bruk.',
 		'Invalid register field: %s.' => 'Ogiltigt kassafält: %s.',
 		'Register not found.' => 'Kassan hittades inte.',
 		'Register could not be saved.' => 'Det gick inte att spara kassan.',

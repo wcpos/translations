@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Фискалниот запис не е пронајден.',
 		'Sorry, you cannot access registers.' => 'Немате дозвола за пристап до касите.',
 		'More registers need WCPOS Pro.' => 'За повеќе каси е потребен WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Затворете ја сесијата на касата пред да ја повлечете од употреба.',
 		'Invalid register field: %s.' => 'Неважечко поле на касата: %s.',
 		'Register not found.' => 'Касата не е пронајдена.',
 		'Register could not be saved.' => 'Касата не може да се зачува.',
