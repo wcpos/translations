@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'राजकोषीय रिकॉर्ड नहीं मिला।',
 		'Sorry, you cannot access registers.' => 'क्षमा करें, आप रजिस्टर नहीं देख सकते।',
 		'More registers need WCPOS Pro.' => 'अधिक रजिस्टर के लिए WCPOS Pro चाहिए।',
+		'Close the register session before retiring it.' => 'रजिस्टर को सेवा से हटाने से पहले उसका सत्र बंद करें।',
 		'Invalid register field: %s.' => 'अमान्य रजिस्टर फ़ील्ड: %s।',
 		'Register not found.' => 'रजिस्टर नहीं मिला।',
 		'Register could not be saved.' => 'रजिस्टर सहेजा नहीं जा सका।',

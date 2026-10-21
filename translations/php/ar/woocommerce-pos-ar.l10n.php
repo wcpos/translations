@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'السجل المالي غير موجود.',
 		'Sorry, you cannot access registers.' => 'عذرًا، ليس لديك صلاحية الوصول إلى سجلات الدفع.',
 		'More registers need WCPOS Pro.' => 'تتطلب الصناديق الإضافية WCPOS Pro.',
+		'Close the register session before retiring it.' => 'أغلق جلسة سجل الدفع قبل إخراجه من الخدمة.',
 		'Invalid register field: %s.' => 'حقل سجل الدفع غير صالح: %s.',
 		'Register not found.' => 'سجل الدفع غير موجود.',
 		'Register could not be saved.' => 'تعذر حفظ سجل الدفع.',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Skattagögnin fundust ekki.',
 		'Sorry, you cannot access registers.' => 'Því miður hefurðu ekki aðgang að kössum.',
 		'More registers need WCPOS Pro.' => 'Fleiri kassar krefjast WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Lokaðu lotu kassans áður en hann er tekinn úr notkun.',
 		'Invalid register field: %s.' => 'Ógilt kassasvið: %s.',
 		'Register not found.' => 'Kassinn fannst ekki.',
 		'Register could not be saved.' => 'Ekki tókst að vista kassann.',

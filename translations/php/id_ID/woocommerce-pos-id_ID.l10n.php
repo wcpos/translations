@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Catatan fiskal tidak ditemukan.',
 		'Sorry, you cannot access registers.' => 'Maaf, Anda tidak dapat mengakses mesin kasir.',
 		'More registers need WCPOS Pro.' => 'Register tambahan memerlukan WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Tutup sesi mesin kasir sebelum menghentikan penggunaannya.',
 		'Invalid register field: %s.' => 'Kolom mesin kasir tidak valid: %s.',
 		'Register not found.' => 'Mesin kasir tidak ditemukan.',
 		'Register could not be saved.' => 'Mesin kasir tidak dapat disimpan.',

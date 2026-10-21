@@ -250,6 +250,7 @@ return array(
 		'Fiscal record not found.' => 'Regjistrimi fiskal nuk u gjet.',
 		'Sorry, you cannot access registers.' => 'Na vjen keq, nuk mund të përdorni kasat.',
 		'More registers need WCPOS Pro.' => 'Arkat shtesë kërkojnë WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Mbyllni sesionin e kasës para se ta nxirrni atë jashtë përdorimit.',
 		'Invalid register field: %s.' => 'Fushë e pavlefshme e kasës: %s.',
 		'Register not found.' => 'Kasa nuk u gjet.',
 		'Register could not be saved.' => 'Kasa nuk mund të ruhej.',

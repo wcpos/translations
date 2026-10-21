@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Fiscaal gegeven niet gevonden.',
 		'Sorry, you cannot access registers.' => 'Je hebt geen toegang tot kassa’s.',
 		'More registers need WCPOS Pro.' => 'Voor extra kassa\'s is WCPOS Pro vereist.',
+		'Close the register session before retiring it.' => 'Sluit de kassasessie voordat je de kassa buiten gebruik stelt.',
 		'Invalid register field: %s.' => 'Ongeldig kassaveld: %s.',
 		'Register not found.' => 'Kassa niet gevonden.',
 		'Register could not be saved.' => 'Kassa kon niet worden opgeslagen.',

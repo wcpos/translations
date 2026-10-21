@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Maksuandmeid ei leitud.',
 		'Sorry, you cannot access registers.' => 'Vabandust, te ei pääse kassadele ligi.',
 		'More registers need WCPOS Pro.' => 'Rohkemate kassade jaoks on vaja WCPOS Pro-d.',
+		'Close the register session before retiring it.' => 'Sulge kassa seanss enne selle kasutuselt kõrvaldamist.',
 		'Invalid register field: %s.' => 'Kassa väli on vigane: %s.',
 		'Register not found.' => 'Kassat ei leitud.',
 		'Register could not be saved.' => 'Kassat ei saanud salvestada.',

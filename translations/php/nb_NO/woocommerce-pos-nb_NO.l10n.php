@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Fiskal registrering ikke funnet.',
 		'Sorry, you cannot access registers.' => 'Beklager, du har ikke tilgang til kasser.',
 		'More registers need WCPOS Pro.' => 'Flere kasser krever WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Lukk kassens økt før du tar den ut av bruk.',
 		'Invalid register field: %s.' => 'Ugyldig kassefelt: %s.',
 		'Register not found.' => 'Kasse ikke funnet.',
 		'Register could not be saved.' => 'Kunne ikke lagre kassen.',

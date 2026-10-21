@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Az adóügyi nyilvántartás nem található.',
 		'Sorry, you cannot access registers.' => 'Sajnáljuk, nem férhet hozzá a pénztárgépekhez.',
 		'More registers need WCPOS Pro.' => 'További pénztárakhoz WCPOS Pro szükséges.',
+		'Close the register session before retiring it.' => 'A pénztárgép kivonása előtt zárja le annak munkamenetét.',
 		'Invalid register field: %s.' => 'Érvénytelen pénztárgépmező: %s.',
 		'Register not found.' => 'A pénztárgép nem található.',
 		'Register could not be saved.' => 'Nem sikerült menteni a pénztárgépet.',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Mali kayıt bulunamadı.',
 		'Sorry, you cannot access registers.' => 'Üzgünüz, kasalara erişemezsiniz.',
 		'More registers need WCPOS Pro.' => 'Daha fazla kasa için WCPOS Pro gerekir.',
+		'Close the register session before retiring it.' => 'Kasayı kullanımdan kaldırmadan önce oturumunu kapatın.',
 		'Invalid register field: %s.' => 'Kasa alanı geçersiz: %s.',
 		'Register not found.' => 'Kasa bulunamadı.',
 		'Register could not be saved.' => 'Kasa kaydedilemedi.',

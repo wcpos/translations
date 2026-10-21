@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Fiskální záznam nebyl nalezen.',
 		'Sorry, you cannot access registers.' => 'Nemáte oprávnění přistupovat k pokladnám.',
 		'More registers need WCPOS Pro.' => 'Další pokladny vyžadují WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Před vyřazením pokladny zavřete její relaci.',
 		'Invalid register field: %s.' => 'Neplatné pole pokladny: %s.',
 		'Register not found.' => 'Pokladna nebyla nalezena.',
 		'Register could not be saved.' => 'Pokladnu se nepodařilo uložit.',

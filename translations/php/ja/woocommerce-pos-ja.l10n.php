@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => '税務記録が見つかりません。',
 		'Sorry, you cannot access registers.' => 'レジにアクセスする権限がありません。',
 		'More registers need WCPOS Pro.' => 'レジを追加するにはWCPOS Proが必要です。',
+		'Close the register session before retiring it.' => 'レジを廃止する前に、レジのセッションを終了してください。',
 		'Invalid register field: %s.' => 'レジのフィールドが無効です：%s。',
 		'Register not found.' => 'レジが見つかりません。',
 		'Register could not be saved.' => 'レジを保存できませんでした。',

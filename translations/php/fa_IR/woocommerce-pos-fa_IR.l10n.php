@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'سابقه مالیاتی پیدا نشد.',
 		'Sorry, you cannot access registers.' => 'متأسفیم، اجازه دسترسی به صندوق‌ها را ندارید.',
 		'More registers need WCPOS Pro.' => 'صندوق‌های بیشتر به WCPOS Pro نیاز دارند.',
+		'Close the register session before retiring it.' => 'پیش از خارج کردن صندوق از رده، نشست آن را ببندید.',
 		'Invalid register field: %s.' => 'فیلد صندوق نامعتبر است: %s.',
 		'Register not found.' => 'صندوق پیدا نشد.',
 		'Register could not be saved.' => 'ذخیره صندوق ممکن نشد.',

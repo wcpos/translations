@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'ไม่พบระเบียนทางภาษี',
 		'Sorry, you cannot access registers.' => 'ขออภัย คุณเข้าถึงเครื่องคิดเงินไม่ได้',
 		'More registers need WCPOS Pro.' => 'หากต้องการเครื่องคิดเงินเพิ่มต้องใช้ WCPOS Pro',
+		'Close the register session before retiring it.' => 'ปิดเซสชันของเครื่องคิดเงินก่อนนำเครื่องออกจากการใช้งาน',
 		'Invalid register field: %s.' => 'ฟิลด์เครื่องคิดเงินไม่ถูกต้อง: %s',
 		'Register not found.' => 'ไม่พบเครื่องคิดเงิน',
 		'Register could not be saved.' => 'บันทึกเครื่องคิดเงินไม่ได้',

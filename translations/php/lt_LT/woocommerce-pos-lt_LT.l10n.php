@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Fiskalinis įrašas nerastas.',
 		'Sorry, you cannot access registers.' => 'Deja, negalite pasiekti kasų.',
 		'More registers need WCPOS Pro.' => 'Papildomoms kasoms reikia WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Prieš išimdami kasą iš eksploatacijos, uždarykite jos seansą.',
 		'Invalid register field: %s.' => 'Netinkamas kasos laukas: %s.',
 		'Register not found.' => 'Kasa nerasta.',
 		'Register could not be saved.' => 'Nepavyko išsaugoti kasos.',

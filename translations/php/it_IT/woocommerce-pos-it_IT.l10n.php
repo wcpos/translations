@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Documento fiscale non trovato.',
 		'Sorry, you cannot access registers.' => 'Non puoi accedere alle casse.',
 		'More registers need WCPOS Pro.' => 'Per avere più casse serve WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Chiudi la sessione della cassa prima di dismetterla.',
 		'Invalid register field: %s.' => 'Campo della cassa non valido: %s.',
 		'Register not found.' => 'Cassa non trovata.',
 		'Register could not be saved.' => 'Non è stato possibile salvare la cassa.',

@@ -252,6 +252,7 @@ return array(
 		'Fiscal record not found.' => 'Rekod fiskal tidak ditemukan.',
 		'Sorry, you cannot access registers.' => 'Maaf, anda tidak boleh mengakses daftar tunai.',
 		'More registers need WCPOS Pro.' => 'Daftar tambahan memerlukan WCPOS Pro.',
+		'Close the register session before retiring it.' => 'Tutup sesi daftar tunai sebelum menamatkan penggunaannya.',
 		'Invalid register field: %s.' => 'Medan daftar tunai tidak sah: %s.',
 		'Register not found.' => 'Daftar tunai tidak ditemukan.',
 		'Register could not be saved.' => 'Daftar tunai tidak dapat disimpan.',
