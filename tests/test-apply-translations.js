@@ -166,6 +166,7 @@ try {
     assert.equal(run.stdout, '');
   }
   const many = Object.fromEntries(Array.from({ length: 52 }, (_, index) => [index === 0 ? String.raw`a\|b` : `key|${index}`, { source: 'WordPress' }]));
+  write('source/js/monorepo/many.json', Object.fromEntries(Object.keys(many).map(key => [key, 'WordPress'])));
   write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/many.json': many }, php: {} });
   write('results/de_DE.json', { locale: 'de_DE', js: {}, php: {} });
   run = cli('--work', workDir, '--results', resultsDir, '--report-md', path.join(rootDir, 'report.md'));
@@ -181,6 +182,7 @@ try {
   assert.ok(read('report.md').includes('…and 2 more'));
   assert.ok(read('report.md').includes('## Warnings'));
   assert.ok(!read('report.md').includes('## Rejected'));
+  write('source/js/monorepo/only.json', { hello: 'Hello' });
   write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/only.json': { hello: { source: 'Hello' } } }, php: {} });
   write('results/de_DE.json', { locale: 'de_DE', js: { 'monorepo/only.json': { hello: 'Hallo' } } });
   report = apply();
@@ -190,6 +192,7 @@ try {
   assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/only.json')), { hello: 'Hallo' });
   // An empty English source needs no model output: the key is written as '' even when the results omit it,
   // while an omitted key with a real source is still rejected.
+  write('source/js/monorepo/blank.json', { 'stores.col_actions': '', 'stores.col_name': 'Store' });
   write('work/de_DE.json', { locale: 'de_DE', js: { 'monorepo/blank.json': { 'stores.col_actions': { source: '' }, 'stores.col_name': { source: 'Store' } } }, php: {} });
   write('results/de_DE.json', { locale: 'de_DE', js: { 'monorepo/blank.json': {} }, php: {} });
   report = apply();
@@ -203,6 +206,20 @@ try {
   assert.equal(report.applied, 2);
   assert.deepEqual(report.rejected, []);
   assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/blank.json')), { 'stores.col_actions': '', 'stores.col_name': 'Laden' });
+  // The packet deliberately has no sibling context; apply must read the source file.
+  const pluralSource = { items_one: '{count} {term}', items_other: '{count} {term}' };
+  write('source/js/monorepo/plural.json', pluralSource);
+  for (const locale of ['de_DE', 'fr_FR', 'pt_PT']) {
+    write(`work/${locale}.json`, { locale, js: { 'monorepo/plural.json':
+      Object.fromEntries(Object.entries(pluralSource).map(([key, source]) => [key, { source }])) }, php: {} });
+    write(`results/${locale}.json`, { locale, js: { 'monorepo/plural.json':
+      { items_one: 'Ein {term}', items_other: 'Viele {term}' } }, php: {} });
+  }
+  report = apply();
+  assert.equal(report.applied, 1);
+  assert.equal(report.rejected.length, 5);
+  assert.deepEqual(JSON.parse(read('translations/js/de_DE/monorepo/plural.json')), { items_one: 'Ein {term}' });
+  assert.ok(report.rejected.every(item => item.reasons.includes('Placeholder mismatch between source and translation')));
   console.log('Apply translations tests passed');
 } finally {
   fs.rmSync(rootDir, { recursive: true, force: true });

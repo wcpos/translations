@@ -19,7 +19,7 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
 const gettextParser = require("gettext-parser");
-const { expectedKeysForLocale, parsePluralKey } = require("./plural-rules");
+const { expectedKeysForLocale, parsePluralKey, placeholdersMatch } = require("./plural-rules");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES = JSON.parse(
@@ -278,6 +278,8 @@ function log(msg = "") {
 
 // ── JS completeness ─────────────────────────────────────────────────────────
 
+const extractJsPlaceholders = text => text.match(/\{[^}]+\}/g) || [];
+
 function checkJsCompleteness() {
   log("\n== JS Translation Completeness ==\n");
 
@@ -296,6 +298,21 @@ function checkJsCompleteness() {
         continue;
       }
       const sourceKeys = Object.keys(sourceStrings);
+      for (const key of sourceKeys) {
+        const parsed = parsePluralKey(key);
+        if (parsed?.suffix !== "one" || typeof sourceStrings[key] !== "string") continue;
+        const other = sourceStrings[`${parsed.base}_other`];
+        if (typeof other !== "string") continue;
+        const remaining = extractJsPlaceholders(sourceStrings[key]);
+        const missing = extractJsPlaceholders(other).filter(token => {
+          const index = remaining.indexOf(token);
+          if (index < 0) return true;
+          remaining.splice(index, 1);
+          return false;
+        });
+        if (missing.length) error("source/" + project.name + "/" + sourceFile + ":" + key +
+          " — missing source placeholders from _other: [" + missing + "]");
+      }
 
       for (const locale of TRANSLATABLE_LOCALES) {
         const translationPath = path.join(
@@ -347,9 +364,11 @@ function checkJsCompleteness() {
           const sourceText = sourceTextForTranslationKey(sourceStrings, key);
           if (typeof sourceText !== "string") continue;
 
-          const srcPH = (sourceText.match(/\{[^}]+\}/g) || []).sort();
-          const trnPH = (translations[key].match(/\{[^}]+\}/g) || []).sort();
-          if (srcPH.join(",") !== trnPH.join(",")) {
+          const { ok, srcPH, trnPH } = placeholdersMatch({
+            locale, key, sourceStrings: { ...sourceStrings, [key]: sourceText },
+            translation: translations[key], extract: extractJsPlaceholders,
+          });
+          if (!ok) {
             error(locale + "/" + project.name + "/" + sourceFile + ":" + key +
               " — placeholder mismatch: source [" + srcPH + "], translation [" + trnPH + "]");
           }

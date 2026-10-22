@@ -10,6 +10,17 @@ const {
 } = require('../scripts/translation-rules');
 const { scenarios } = require('./fixtures/translate-evals.json');
 
+for (const locale of ['de_DE', 'fr_FR', 'pt_PT']) {
+  const sourceStrings = { items_one: '{count} {term} %s', items_other: '{count} {term} %s' };
+  const input = { locale, key: 'items_one', sourceStrings, source: sourceStrings.items_one, translation: '%s Ein {term}' };
+  assert.deepEqual(checkTranslation(input).errors,
+    locale === 'de_DE' ? [] : ['Placeholder mismatch between source and translation']);
+  for (const change of [{ key: undefined }, { sourceStrings: undefined }, { key: 'items_other' },
+    { translation: 'Ein {term}' }, { translation: '%s Ein Artikel' }]) {
+    assert.deepEqual(checkTranslation({ ...input, ...change }).errors, ['Placeholder mismatch between source and translation']);
+  }
+}
+
 for (const scenario of scenarios) {
   const counts = { errors: 0, warnings: 0 };
   for (const [key, source] of Object.entries(scenario.source)) {
