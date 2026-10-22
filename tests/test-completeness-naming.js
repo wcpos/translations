@@ -36,8 +36,9 @@ function oneIntegers(locale) {
 }
 
 test('count-free singular locales are pinned to ICU with explicit publication exclusions', () => {
-  const excluded = new Set(['pt_PT', 'de', 'en', 'es', 'fr', 'nl', 'pt', 'zh', 'en_GB', 'en_US']);
-  const expected = Object.keys(PLURAL_SUFFIXES).filter(locale =>
+  const excluded = new Set(['pt_PT', 'en', 'en_GB', 'en_US']);
+  const locales = new Set([...Object.keys(PLURAL_SUFFIXES), ...Object.keys(require('../locales.json'))]);
+  const expected = [...locales].filter(locale =>
     JSON.stringify(oneIntegers(locale)) === '[1]' && !excluded.has(locale));
   assert.deepEqual([...(ONE_IS_EXACTLY_ONE || [])].sort(), expected.sort());
 });
@@ -51,6 +52,7 @@ test('fallback copies of relaxed locales also use one only for 1', () => {
   assert.deepEqual(oneIntegers('pt_PT'), [1]);
   assert.deepEqual(oneIntegers('pt'), [0, 1]);
   for (const [copy, source] of Object.entries(map)) {
+    assert.equal(ONE_IS_EXACTLY_ONE.has(copy), ONE_IS_EXACTLY_ONE.has(source), `${copy} ← ${source}`);
     if (ONE_IS_EXACTLY_ONE.has(source)) assert.deepEqual(oneIntegers(copy), [1], `${copy} ← ${source}`);
   }
 });
@@ -60,10 +62,14 @@ test('placeholder relaxation removes exactly one count only from eligible paired
   const extract = text => text.match(/\{[^}]+\}/g) || [];
   for (const [locale, key, source, translation, paired, ok, relaxed] of [
     ['de_DE', 'items_one', '{count} item', 'Ein Artikel', true, true, true],
+    ['de', 'items_one', '{count} item', 'Ein Artikel', true, true, true],
+    ['es', 'items_one', '{count} item', 'Un artículo', true, true, true],
+    ['nl', 'items_one', '{count} item', 'Een artikel', true, true, true],
     ['de_DE', 'items_one', '{count} {term}', 'Ein {term}', true, true, true],
     ['de_DE', 'items_one', '{count} {term}', 'Ein Artikel', true, false, false],
     ['fr_FR', 'items_one', '{count} item', 'Un article', true, false, false],
     ['pt_PT', 'items_one', '{count} item', 'Um artigo', true, false, false],
+    ['pt', 'items_one', '{count} item', 'Um artigo', true, false, false],
     ['ru_RU', 'items_one', '{count} item', 'Item', true, false, false],
     ['en_US', 'items_one', '{count} item', 'One item', true, false, false],
     ['de_DE', 'items_one', '{n} item', 'Ein Artikel', true, false, false],
@@ -75,8 +81,8 @@ test('placeholder relaxation removes exactly one count only from eligible paired
     ['de_DE', 'items_one', '{count} {count}', 'Ein Artikel', true, false, false],
     ['de_DE', 'items_one', '{count} {term}', '{term} {count}', true, true, false],
   ]) {
-    const sourceStrings = { ...(paired ? { items_other: '{count} items' } : {}), [key]: source };
-    const result = placeholdersMatch({ locale, key, sourceStrings, translation, extract });
+    const sourceStrings = Object.freeze({ ...(paired ? { items_other: '{count} items' } : {}), [key]: 'Not the resolved source' });
+    const result = placeholdersMatch({ locale, key, sourceText: source, sourceStrings, translation, extract });
     assert.deepEqual(result, { ok, relaxed, srcPH: extract(source).sort(), trnPH: extract(translation).sort() },
       JSON.stringify({ locale, key, source, translation, paired }));
   }

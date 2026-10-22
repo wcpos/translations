@@ -33,7 +33,7 @@ function checkTranslation({ locale, source, translation, key, sourceStrings }) {
   if (translation.trim() === '' && source.trim() !== '') errors.push('Translation is empty');
   if (source.trim() === '' && translation.trim() !== '') errors.push('Source is empty; the translation must be empty too');
   const placeholdersOk = key !== undefined && sourceStrings !== undefined
-    ? placeholdersMatch({ locale, key, sourceStrings: { ...sourceStrings, [key]: source },
+    ? placeholdersMatch({ locale, key, sourceText: source, sourceStrings,
       translation, extract: extractPlaceholders }).ok
     : JSON.stringify(extractPlaceholders(source)) === JSON.stringify(extractPlaceholders(translation));
   if (!placeholdersOk) {

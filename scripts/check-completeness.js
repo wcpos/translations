@@ -365,7 +365,7 @@ function checkJsCompleteness() {
           if (typeof sourceText !== "string") continue;
 
           const { ok, srcPH, trnPH } = placeholdersMatch({
-            locale, key, sourceStrings: { ...sourceStrings, [key]: sourceText },
+            locale, key, sourceText, sourceStrings,
             translation: translations[key], extract: extractJsPlaceholders,
           });
           if (!ok) {

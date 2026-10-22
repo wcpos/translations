@@ -10,6 +10,14 @@ const {
 } = require('../scripts/translation-rules');
 const { scenarios } = require('./fixtures/translate-evals.json');
 
+assert.deepEqual(checkTranslation({
+  locale: 'de_DE', key: 'items_one', source: '{count} {term}', translation: 'Ein {term}',
+  sourceStrings: Object.freeze({
+    items_other: '{count} {term}',
+    get unrelated() { throw new Error('Must not read or copy unrelated catalogue entries'); },
+  }),
+}).errors, []);
+
 for (const locale of ['de_DE', 'fr_FR', 'pt_PT']) {
   const sourceStrings = { items_one: '{count} {term} %s', items_other: '{count} {term} %s' };
   const input = { locale, key: 'items_one', sourceStrings, source: sourceStrings.items_one, translation: '%s Ein {term}' };
