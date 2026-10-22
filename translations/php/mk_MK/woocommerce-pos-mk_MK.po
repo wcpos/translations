@@ -511,33 +511,33 @@ msgstr "Неуспешно преземање на податоците за п�
 msgid "Store not found or not accessible by this cashier."
 msgstr "Продавницата не е пронајдена или не е достапна за овој касиер."
 
-#: includes/API/V1/Checkout_Controller.php:102
+#: includes/API/V1/Checkout_Controller.php:103
 msgid "Sorry, you cannot view checkout state."
 msgstr "Жал ни е, не можете да ја видите состојбата на наплатата."
 
-#: includes/API/V1/Checkout_Controller.php:113
+#: includes/API/V1/Checkout_Controller.php:114
 msgid "Sorry, you cannot process checkout."
 msgstr "Жал ни е, не можете да ја обработите наплатата."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:141
+#: includes/API/V1/Checkout_Controller.php:142
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Недостасува X-WCPOS-Idempotency-Key заглавие."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:152
+#: includes/API/V1/Checkout_Controller.php:153
 #: includes/API/V1/Gateway_Bootstrap_Controller.php:98
 msgid "Payment gateway not found."
 msgstr "Платежната порта не е пронајдена."
 
-#: includes/API/V1/Checkout_Controller.php:160
+#: includes/API/V1/Checkout_Controller.php:161
 msgid "Payment gateway is not available for POS checkout."
 msgstr "Платежната порта не е достапна за POS наплата."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:279
+#: includes/API/V1/Checkout_Controller.php:282
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:583
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Нарачката не е пронајдена."
@@ -1148,7 +1148,7 @@ msgstr "Плаќањето мора да биде објект."
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:119
-#: includes/Payments/Contract/Ledger.php:1613
+#: includes/Payments/Contract/Ledger.php:1636
 msgid "Payment method not found."
 msgstr "Начинот на плаќање не е пронајден."
 
@@ -1193,7 +1193,7 @@ msgstr "Немате дозвола да иницирате начини на п
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:54
-#: includes/Payments/Contract/Ledger.php:2578
+#: includes/Payments/Contract/Ledger.php:3074
 msgid "Payment capture mode is unsupported."
 msgstr "Режимот за наплата на плаќање не е поддржан."
 
@@ -1448,22 +1448,26 @@ msgstr[1] "POS - Делумни плаќања <span class=\"count\">(%s)</span>
 msgid "This payment capture mode does not support that operation."
 msgstr "Овој режим за наплата на плаќање не ја поддржува таа операција."
 
-#: includes/Payments/Contract/Completion_Stamp.php:258
+#: includes/Payments/Contract/Completion_Stamp.php:264
 msgid "WCPOS: completion could not be recorded; reconcile manually."
 msgstr "WCPOS: завршувањето не можеше да се евидентира. Усогласете рачно."
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:297
+#: includes/Payments/Contract/Completion_Stamp.php:302
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: завршувањето %d не можеше да се евидентира. Усогласете рачно."
 
-#: includes/Payments/Contract/Completion_Stamp.php:330
-#: includes/Payments/Contract/Completion_Stamp.php:352
+#: includes/Payments/Contract/Completion_Stamp.php:335
+#: includes/Payments/Contract/Completion_Stamp.php:357
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
 "WCPOS: повторното отворање не можеше да се евидентира во историјата на завршувања. Усогласете рачно."
+
+#: includes/Payments/Contract/Completion_Stamp.php:494
+msgid "Recording the paid attempt"
+msgstr "Се евидентира успешниот обид за плаќање"
 
 #: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
@@ -1502,20 +1506,20 @@ msgid "The payment method rejected the details entered."
 msgstr "Начинот на плаќање ги одби внесените податоци."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:276
+#: includes/Payments/Contract/Gateway_Submission.php:278
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Обидот за плаќање %1$s на WCPOS: %2$s не успеа откако беше испратено плаќањето. Проверете со давателот дали средствата се повлечени, а потоа откажете го обидот на POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:280
-#: includes/Payments/Contract/Gateway_Submission.php:295
+#: includes/Payments/Contract/Gateway_Submission.php:282
+#: includes/Payments/Contract/Gateway_Submission.php:297
 msgid "The payment provider failed."
 msgstr "Настана грешка кај давателот на плаќањето."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:299
+#: includes/Payments/Contract/Gateway_Submission.php:301
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1523,126 +1527,126 @@ msgstr ""
 "Овој начин на плаќање сака да отвори %s во прелистувач, но POS не може да продолжи."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:340
+#: includes/Payments/Contract/Gateway_Submission.php:342
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Подмирено преку POS: %1$s со статус на нарачка %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:360
+#: includes/Payments/Contract/Gateway_Submission.php:362
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Испратено преку POS: %1$s (%2$s)"
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:420
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Обидот за плаќање %s можеби веќе е платен преку платежниот портал; усогласете го плаќањето пред да го откажете."
 
-#: includes/Payments/Contract/Gateway_Submission.php:423
+#: includes/Payments/Contract/Gateway_Submission.php:425
 msgid "This invoice cannot be cancelled."
 msgstr "Оваа фактура не може да се откаже."
 
-#: includes/Payments/Contract/Gateway_Submission.php:426
+#: includes/Payments/Contract/Gateway_Submission.php:428
 msgid "The invoice was sent by a different payment method."
 msgstr "Фактурата е испратена преку друг начин на плаќање."
 
-#: includes/Payments/Contract/Gateway_Submission.php:430
+#: includes/Payments/Contract/Gateway_Submission.php:432
 msgid "A newer invoice has been sent for this order."
 msgstr "За оваа нарачка е испратена понова фактура."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:437
+#: includes/Payments/Contract/Gateway_Submission.php:439
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Откажано преку POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:698
+#: includes/Payments/Contract/Gateway_Submission.php:709
 msgid "This field must be true or false."
 msgstr "Ова поле мора да биде true или false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:703
+#: includes/Payments/Contract/Gateway_Submission.php:714
 msgid "This field must be text."
 msgstr "Ова поле мора да биде текст."
 
-#: includes/Payments/Contract/Gateway_Submission.php:707
+#: includes/Payments/Contract/Gateway_Submission.php:718
 msgid "This field is required."
 msgstr "Ова поле е задолжително."
 
-#: includes/Payments/Contract/Gateway_Submission.php:711
+#: includes/Payments/Contract/Gateway_Submission.php:722
 msgid "Choose one of the listed options."
 msgstr "Изберете една од наведените опции."
 
-#: includes/Payments/Contract/Gateway_Submission.php:725
+#: includes/Payments/Contract/Gateway_Submission.php:736
 msgid "Check the payment fields."
 msgstr "Проверете ги полињата за плаќање."
 
-#: includes/Payments/Contract/Ledger.php:660
+#: includes/Payments/Contract/Ledger.php:686
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Овој начин на плаќање не може да се евидентира; мора самиот да го изврши својот чекор на плаќање."
 
-#: includes/Payments/Contract/Ledger.php:666
+#: includes/Payments/Contract/Ledger.php:692
 msgid "Recorded payments must be captured or authorized."
 msgstr "Евидентираните плаќања мора да бидат наплатени или авторизирани."
 
-#: includes/Payments/Contract/Ledger.php:674
-#: includes/Payments/Contract/Ledger.php:678
+#: includes/Payments/Contract/Ledger.php:700
+#: includes/Payments/Contract/Ledger.php:704
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Износот понуден за плаќање не е важечки за овој начин на плаќање."
 
-#: includes/Payments/Contract/Ledger.php:847
+#: includes/Payments/Contract/Ledger.php:873
 msgid "Payment method is disabled."
 msgstr "Начинот на плаќање е оневозможен."
 
-#: includes/Payments/Contract/Ledger.php:855
-#: includes/Payments/Contract/Ledger.php:1674
-#: includes/Payments/Contract/Ledger.php:1735
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1697
+#: includes/Payments/Contract/Ledger.php:1758
 msgid "The order is already paid."
 msgstr "Нарачката е веќе платена."
 
-#: includes/Payments/Contract/Ledger.php:855
-#: includes/Payments/Contract/Ledger.php:1675
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1698
 msgid "Payment amount exceeds the order balance."
 msgstr "Износот на плаќањето го надминува преостанатиот износ на нарачката."
 
-#: includes/Payments/Contract/Ledger.php:867
-#: includes/Payments/Contract/Ledger.php:1677
-#: includes/Payments/Contract/Ledger.php:1863
+#: includes/Payments/Contract/Ledger.php:893
+#: includes/Payments/Contract/Ledger.php:1700
+#: includes/Payments/Contract/Ledger.php:1886
 msgid "Another payment is already in progress on this order."
 msgstr "Друго плаќање веќе е во тек за оваа нарачка."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1035
+#: includes/Payments/Contract/Ledger.php:1060
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Несовпаѓање на износот за плаќањето %1$s преку WCPOS: се очекуваше %2$s, потврдено %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1045
+#: includes/Payments/Contract/Ledger.php:1070
 msgid "Tip"
 msgstr "Бакшиш"
 
-#: includes/Payments/Contract/Ledger.php:1124
+#: includes/Payments/Contract/Ledger.php:1147
 msgid "Refund must belong to this order."
 msgstr "Повратот мора да припаѓа на оваа нарачка."
 
-#: includes/Payments/Contract/Ledger.php:1127
-#: includes/Payments/Contract/Ledger.php:1142
-#: includes/Payments/Contract/Ledger.php:1193
+#: includes/Payments/Contract/Ledger.php:1150
+#: includes/Payments/Contract/Ledger.php:1165
+#: includes/Payments/Contract/Ledger.php:1216
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Износот за поврат не може да се додели на ова плаќање."
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1186
 msgid "The refund could not be reserved; retry."
 msgstr "Повратот не може да се резервира; обидете се повторно."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1405
+#: includes/Payments/Contract/Ledger.php:1429
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
@@ -1650,62 +1654,68 @@ msgstr ""
 "WCPOS: повратот бр. %1$d за %2$s е испратен до %3$s; потврдете го кај давателот пред повторен обид."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1408
+#: includes/Payments/Contract/Ledger.php:1432
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: повратот бр. %1$d за %2$s не помина преку %3$s, но не можеше да се отстрани неговата резервација; проверете го плаќањето пред повторен обид."
 
-#: includes/Payments/Contract/Ledger.php:1454
-#: includes/Payments/Contract/Ledger.php:1588
+#: includes/Payments/Contract/Ledger.php:1478
+#: includes/Payments/Contract/Ledger.php:1611
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID на плаќањето мора да биде UUID."
 
-#: includes/Payments/Contract/Ledger.php:1475
-#: includes/Payments/Contract/Ledger.php:1653
+#: includes/Payments/Contract/Ledger.php:1499
+#: includes/Payments/Contract/Ledger.php:1676
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID на плаќањето е во судир со постојно плаќање."
 
-#: includes/Payments/Contract/Ledger.php:1510
+#: includes/Payments/Contract/Ledger.php:1534
 msgid "Refund status is invalid."
 msgstr "Статусот на повратот на средства е неважечки."
 
-#: includes/Payments/Contract/Ledger.php:1591
-#: includes/Payments/Contract/Ledger.php:1595
+#: includes/Payments/Contract/Ledger.php:1614
+#: includes/Payments/Contract/Ledger.php:1618
 msgid "Payment amount must be positive."
 msgstr "Износот на плаќањето мора да биде позитивен."
 
-#: includes/Payments/Contract/Ledger.php:1600
+#: includes/Payments/Contract/Ledger.php:1623
 msgid "Payment currency must match the order."
 msgstr "Валутата на плаќањето мора да одговара на валутата на нарачката."
 
-#: includes/Payments/Contract/Ledger.php:1676
+#: includes/Payments/Contract/Ledger.php:1699
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "Потврдениот од давателот износ или валута не одговара на плаќањето."
 
-#: includes/Payments/Contract/Ledger.php:1776
+#: includes/Payments/Contract/Ledger.php:1799
 msgid "The order is not covered by its payments."
 msgstr "Нарачката не е покриена со уплатите."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1940
+#: includes/Payments/Contract/Ledger.php:1963
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Плаќањето %s преку WCPOS е поништено."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1942
+#: includes/Payments/Contract/Ledger.php:1965
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Плаќањето %1$s преку WCPOS е поништено: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2573
+#. translators: %s: what the deferred work was for.
+#: includes/Payments/Contract/Ledger.php:2625
+#, php-format
+msgid "WCPOS: %s did not complete; reconcile manually."
+msgstr "WCPOS: %s не беше завршено; усогласете рачно."
+
+#: includes/Payments/Contract/Ledger.php:3069
 msgid "Payment not found."
 msgstr "Плаќањето не е пронајдено."
 
-#: includes/Payments/Contract/Ledger.php:2583
+#: includes/Payments/Contract/Ledger.php:3079
 msgid "Payment transition is invalid."
 msgstr "Преминот на плаќањето е неважечки."
 
@@ -1733,6 +1743,10 @@ msgstr "Не може да се зачува потврдата за плаќа�
 msgid "This sale has a payment recorded at the till. Finish it at the till."
 msgstr ""
 "За оваа продажба е евидентирано плаќање на касата. Завршете ја на касата."
+
+#: includes/Payments/Contract/Webview_Passthrough.php:224
+msgid "Recording the payment WooCommerce took"
+msgstr "Се евидентира плаќањето што го прими WooCommerce"
 
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Idempotency_Repository.php:84
@@ -1908,8 +1922,8 @@ msgid "Invalid receipt document."
 msgstr "Неважечки документ за сметка."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:74
-#: includes/Services/Fiscal_Record_Writers.php:160
+#: includes/Services/Fiscal_Record_Writers.php:75
+#: includes/Services/Fiscal_Record_Writers.php:161
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""

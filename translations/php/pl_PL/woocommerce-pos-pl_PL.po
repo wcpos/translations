@@ -512,33 +512,33 @@ msgstr "Nie udało się pobrać danych sklepu."
 msgid "Store not found or not accessible by this cashier."
 msgstr "Sklep nie znaleziony lub niedostępny dla tego kasjera."
 
-#: includes/API/V1/Checkout_Controller.php:102
+#: includes/API/V1/Checkout_Controller.php:103
 msgid "Sorry, you cannot view checkout state."
 msgstr "Przepraszamy, nie możesz wyświetlić stanu kasowania."
 
-#: includes/API/V1/Checkout_Controller.php:113
+#: includes/API/V1/Checkout_Controller.php:114
 msgid "Sorry, you cannot process checkout."
 msgstr "Przepraszamy, nie możesz przeprowadzić kasowania."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:141
+#: includes/API/V1/Checkout_Controller.php:142
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Brak nagłówka X-WCPOS-Idempotency-Key."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:152
+#: includes/API/V1/Checkout_Controller.php:153
 #: includes/API/V1/Gateway_Bootstrap_Controller.php:98
 msgid "Payment gateway not found."
 msgstr "Nie znaleziono bramki płatności."
 
-#: includes/API/V1/Checkout_Controller.php:160
+#: includes/API/V1/Checkout_Controller.php:161
 msgid "Payment gateway is not available for POS checkout."
 msgstr "Bramka płatności nie jest dostępna dla kasowania POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:279
+#: includes/API/V1/Checkout_Controller.php:282
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:583
+#: includes/API/V2/Payments_Controller.php:585
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Nie znaleziono zamówienia."
@@ -1149,7 +1149,7 @@ msgstr "Płatność musi być obiektem."
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:119
-#: includes/Payments/Contract/Ledger.php:1613
+#: includes/Payments/Contract/Ledger.php:1636
 msgid "Payment method not found."
 msgstr "Nie znaleziono metody płatności."
 
@@ -1194,7 +1194,7 @@ msgstr "Nie możesz inicjować metod płatności."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:54
-#: includes/Payments/Contract/Ledger.php:2578
+#: includes/Payments/Contract/Ledger.php:3074
 msgid "Payment capture mode is unsupported."
 msgstr "Nieobsługiwany tryb przechwytywania płatności."
 
@@ -1453,22 +1453,26 @@ msgstr[2] "POS - Płatności częściowych <span class=\"count\">(%s)</span>"
 msgid "This payment capture mode does not support that operation."
 msgstr "Ten tryb przechwytywania płatności nie obsługuje tej operacji."
 
-#: includes/Payments/Contract/Completion_Stamp.php:258
+#: includes/Payments/Contract/Completion_Stamp.php:264
 msgid "WCPOS: completion could not be recorded; reconcile manually."
 msgstr "WCPOS: nie udało się zarejestrować zakończenia. Uzgodnij ręcznie."
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:297
+#: includes/Payments/Contract/Completion_Stamp.php:302
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: nie udało się zarejestrować zakończenia %d. Uzgodnij ręcznie."
 
-#: includes/Payments/Contract/Completion_Stamp.php:330
-#: includes/Payments/Contract/Completion_Stamp.php:352
+#: includes/Payments/Contract/Completion_Stamp.php:335
+#: includes/Payments/Contract/Completion_Stamp.php:357
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
 "WCPOS: nie udało się zarejestrować ponownego otwarcia w historii zakończeń. Uzgodnij ręcznie."
+
+#: includes/Payments/Contract/Completion_Stamp.php:494
+msgid "Recording the paid attempt"
+msgstr "Rejestrowanie opłaconej próby"
 
 #: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
@@ -1507,20 +1511,20 @@ msgid "The payment method rejected the details entered."
 msgstr "Metoda płatności odrzuciła wprowadzone dane."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:276
+#: includes/Payments/Contract/Gateway_Submission.php:278
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Próba płatności %1$s w WCPOS: %2$s nie powiodła się po wysłaniu płatności. Sprawdź u operatora, czy środki zostały pobrane, a następnie anuluj próbę w POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:280
-#: includes/Payments/Contract/Gateway_Submission.php:295
+#: includes/Payments/Contract/Gateway_Submission.php:282
+#: includes/Payments/Contract/Gateway_Submission.php:297
 msgid "The payment provider failed."
 msgstr "Wystąpił błąd operatora płatności."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:299
+#: includes/Payments/Contract/Gateway_Submission.php:301
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1528,126 +1532,126 @@ msgstr ""
 "Ta metoda płatności chce otworzyć %s w przeglądarce, ale POS nie może tego obsłużyć."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:340
+#: includes/Payments/Contract/Gateway_Submission.php:342
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Rozliczono przez POS: %1$s przy statusie zamówienia %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:360
+#: includes/Payments/Contract/Gateway_Submission.php:362
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Wysłano przez POS: %1$s (%2$s)"
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:420
+#: includes/Payments/Contract/Gateway_Submission.php:422
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Próba płatności %s mogła już zostać opłacona przez bramkę płatniczą; przed jej anulowaniem uzgodnij płatność."
 
-#: includes/Payments/Contract/Gateway_Submission.php:423
+#: includes/Payments/Contract/Gateway_Submission.php:425
 msgid "This invoice cannot be cancelled."
 msgstr "Nie można anulować tej faktury."
 
-#: includes/Payments/Contract/Gateway_Submission.php:426
+#: includes/Payments/Contract/Gateway_Submission.php:428
 msgid "The invoice was sent by a different payment method."
 msgstr "Faktura została wysłana za pomocą innej metody płatności."
 
-#: includes/Payments/Contract/Gateway_Submission.php:430
+#: includes/Payments/Contract/Gateway_Submission.php:432
 msgid "A newer invoice has been sent for this order."
 msgstr "Dla tego zamówienia wysłano nowszą fakturę."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:437
+#: includes/Payments/Contract/Gateway_Submission.php:439
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Anulowano przez POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:698
+#: includes/Payments/Contract/Gateway_Submission.php:709
 msgid "This field must be true or false."
 msgstr "To pole musi mieć wartość true lub false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:703
+#: includes/Payments/Contract/Gateway_Submission.php:714
 msgid "This field must be text."
 msgstr "To pole musi zawierać tekst."
 
-#: includes/Payments/Contract/Gateway_Submission.php:707
+#: includes/Payments/Contract/Gateway_Submission.php:718
 msgid "This field is required."
 msgstr "To pole jest wymagane."
 
-#: includes/Payments/Contract/Gateway_Submission.php:711
+#: includes/Payments/Contract/Gateway_Submission.php:722
 msgid "Choose one of the listed options."
 msgstr "Wybierz jedną z podanych opcji."
 
-#: includes/Payments/Contract/Gateway_Submission.php:725
+#: includes/Payments/Contract/Gateway_Submission.php:736
 msgid "Check the payment fields."
 msgstr "Sprawdź pola płatności."
 
-#: includes/Payments/Contract/Ledger.php:660
+#: includes/Payments/Contract/Ledger.php:686
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Nie można zarejestrować tej metody płatności; musi ona obsłużyć własną część płatności."
 
-#: includes/Payments/Contract/Ledger.php:666
+#: includes/Payments/Contract/Ledger.php:692
 msgid "Recorded payments must be captured or authorized."
 msgstr "Zarejestrowane płatności muszą zostać przechwycone lub autoryzowane."
 
-#: includes/Payments/Contract/Ledger.php:674
-#: includes/Payments/Contract/Ledger.php:678
+#: includes/Payments/Contract/Ledger.php:700
+#: includes/Payments/Contract/Ledger.php:704
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Kwota przyjęta dla tej metody płatności jest nieprawidłowa."
 
-#: includes/Payments/Contract/Ledger.php:847
+#: includes/Payments/Contract/Ledger.php:873
 msgid "Payment method is disabled."
 msgstr "Metoda płatności jest wyłączona."
 
-#: includes/Payments/Contract/Ledger.php:855
-#: includes/Payments/Contract/Ledger.php:1674
-#: includes/Payments/Contract/Ledger.php:1735
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1697
+#: includes/Payments/Contract/Ledger.php:1758
 msgid "The order is already paid."
 msgstr "Zamówienie jest już opłacone."
 
-#: includes/Payments/Contract/Ledger.php:855
-#: includes/Payments/Contract/Ledger.php:1675
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1698
 msgid "Payment amount exceeds the order balance."
 msgstr "Kwota płatności przekracza saldo zamówienia."
 
-#: includes/Payments/Contract/Ledger.php:867
-#: includes/Payments/Contract/Ledger.php:1677
-#: includes/Payments/Contract/Ledger.php:1863
+#: includes/Payments/Contract/Ledger.php:893
+#: includes/Payments/Contract/Ledger.php:1700
+#: includes/Payments/Contract/Ledger.php:1886
 msgid "Another payment is already in progress on this order."
 msgstr "Dla tego zamówienia trwa już inna płatność."
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1035
+#: includes/Payments/Contract/Ledger.php:1060
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Niezgodność kwoty płatności WCPOS %1$s: oczekiwano %2$s, potwierdzono %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1045
+#: includes/Payments/Contract/Ledger.php:1070
 msgid "Tip"
 msgstr "Napiwek"
 
-#: includes/Payments/Contract/Ledger.php:1124
+#: includes/Payments/Contract/Ledger.php:1147
 msgid "Refund must belong to this order."
 msgstr "Zwrot musi dotyczyć tego zamówienia."
 
-#: includes/Payments/Contract/Ledger.php:1127
-#: includes/Payments/Contract/Ledger.php:1142
-#: includes/Payments/Contract/Ledger.php:1193
+#: includes/Payments/Contract/Ledger.php:1150
+#: includes/Payments/Contract/Ledger.php:1165
+#: includes/Payments/Contract/Ledger.php:1216
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Nie można przypisać kwoty zwrotu do tej płatności."
 
-#: includes/Payments/Contract/Ledger.php:1163
+#: includes/Payments/Contract/Ledger.php:1186
 msgid "The refund could not be reserved; retry."
 msgstr "Nie udało się zarezerwować zwrotu; spróbuj ponownie."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1405
+#: includes/Payments/Contract/Ledger.php:1429
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
@@ -1655,63 +1659,69 @@ msgstr ""
 "WCPOS: zwrot #%1$d na kwotę %2$s został wysłany do %3$s; potwierdź go u dostawcy przed ponowną próbą."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1408
+#: includes/Payments/Contract/Ledger.php:1432
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: zwrot #%1$d na kwotę %2$s nie został zrealizowany przez %3$s, ale nie udało się usunąć jego rezerwacji; sprawdź płatność przed ponowną próbą."
 
-#: includes/Payments/Contract/Ledger.php:1454
-#: includes/Payments/Contract/Ledger.php:1588
+#: includes/Payments/Contract/Ledger.php:1478
+#: includes/Payments/Contract/Ledger.php:1611
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID płatności musi być UUID."
 
-#: includes/Payments/Contract/Ledger.php:1475
-#: includes/Payments/Contract/Ledger.php:1653
+#: includes/Payments/Contract/Ledger.php:1499
+#: includes/Payments/Contract/Ledger.php:1676
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID płatności koliduje z istniejącą płatnością."
 
-#: includes/Payments/Contract/Ledger.php:1510
+#: includes/Payments/Contract/Ledger.php:1534
 msgid "Refund status is invalid."
 msgstr "Status zwrotu jest nieprawidłowy."
 
-#: includes/Payments/Contract/Ledger.php:1591
-#: includes/Payments/Contract/Ledger.php:1595
+#: includes/Payments/Contract/Ledger.php:1614
+#: includes/Payments/Contract/Ledger.php:1618
 msgid "Payment amount must be positive."
 msgstr "Kwota płatności musi być dodatnia."
 
-#: includes/Payments/Contract/Ledger.php:1600
+#: includes/Payments/Contract/Ledger.php:1623
 msgid "Payment currency must match the order."
 msgstr "Waluta płatności musi być zgodna z zamówieniem."
 
-#: includes/Payments/Contract/Ledger.php:1676
+#: includes/Payments/Contract/Ledger.php:1699
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Kwota lub waluta potwierdzona przez operatora nie zgadza się z płatnością."
 
-#: includes/Payments/Contract/Ledger.php:1776
+#: includes/Payments/Contract/Ledger.php:1799
 msgid "The order is not covered by its payments."
 msgstr "Płatności nie pokrywają wartości zamówienia."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1940
+#: includes/Payments/Contract/Ledger.php:1963
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Unieważniono płatność WCPOS %s."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1942
+#: includes/Payments/Contract/Ledger.php:1965
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Unieważniono płatność WCPOS %1$s: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2573
+#. translators: %s: what the deferred work was for.
+#: includes/Payments/Contract/Ledger.php:2625
+#, php-format
+msgid "WCPOS: %s did not complete; reconcile manually."
+msgstr "WCPOS: %s nie zostało ukończone; uzgodnij ręcznie."
+
+#: includes/Payments/Contract/Ledger.php:3069
 msgid "Payment not found."
 msgstr "Nie znaleziono płatności."
 
-#: includes/Payments/Contract/Ledger.php:2583
+#: includes/Payments/Contract/Ledger.php:3079
 msgid "Payment transition is invalid."
 msgstr "Nieprawidłowa zmiana stanu płatności."
 
@@ -1739,6 +1749,10 @@ msgstr "Nie można zapisać oczekującego potwierdzenia płatności."
 msgid "This sale has a payment recorded at the till. Finish it at the till."
 msgstr ""
 "Dla tej sprzedaży zarejestrowano płatność przy kasie. Dokończ ją przy kasie."
+
+#: includes/Payments/Contract/Webview_Passthrough.php:224
+msgid "Recording the payment WooCommerce took"
+msgstr "Rejestrowanie płatności zrealizowanej przez WooCommerce"
 
 #. translators: API conflict error; idempotency key is a request identifier header/token, not a keyboard key.
 #: includes/Payments/Idempotency_Repository.php:84
@@ -1911,8 +1925,8 @@ msgid "Invalid receipt document."
 msgstr "Nieprawidłowy dokument paragonu."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:74
-#: includes/Services/Fiscal_Record_Writers.php:160
+#: includes/Services/Fiscal_Record_Writers.php:75
+#: includes/Services/Fiscal_Record_Writers.php:161
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
