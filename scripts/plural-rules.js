@@ -68,6 +68,14 @@ const PLURAL_SUFFIXES = {
   ar: ['zero', 'one', 'two', 'few', 'many', 'other'],
 };
 
+// Locales whose integer `one` category is exactly 1; excludes English and pt_PT/pt only.
+// pt_PT stays strict because generate-fallbacks publishes it as pt, whose `one` also covers 0.
+const ONE_IS_EXACTLY_ONE = new Set([
+  'ar', 'bg_BG', 'ca_ES', 'cs', 'da', 'de', 'de_AT', 'de_DE', 'el', 'es', 'es_AR', 'es_ES',
+  'es_MX', 'et', 'fi', 'he_IL', 'hu_HU', 'it_IT', 'nb_NO', 'nl', 'nl_BE', 'nl_NL',
+  'pl_PL', 'ro_RO', 'sq', 'sv_SE', 'tr_TR',
+]);
+
 /** Default for unknown locales. */
 const DEFAULT_PLURAL_SUFFIXES = ['one', 'other'];
 
@@ -92,6 +100,24 @@ function getPluralSuffixes(locale) {
 function parsePluralKey(key) {
   const m = key.match(SUFFIX_RE);
   return m ? { base: m[1], suffix: m[2] } : null;
+}
+
+/** Compare resolved source text; sourceStrings is only read to check for a paired _other key. */
+function placeholdersMatch({ locale, key, sourceText, sourceStrings, translation, extract }) {
+  const srcPH = extract(sourceText).sort();
+  const trnPH = extract(translation).sort();
+  if (JSON.stringify(srcPH) === JSON.stringify(trnPH)) {
+    return { ok: true, srcPH, trnPH, relaxed: false };
+  }
+  const parsed = parsePluralKey(key);
+  let relaxed = false;
+  if (parsed?.suffix === 'one' && Object.hasOwn(sourceStrings, `${parsed.base}_other`)
+      && ONE_IS_EXACTLY_ONE.has(locale) && srcPH.includes('{count}')) {
+    const withoutCount = [...srcPH];
+    withoutCount.splice(withoutCount.indexOf('{count}'), 1);
+    relaxed = JSON.stringify(withoutCount) === JSON.stringify(trnPH);
+  }
+  return { ok: relaxed, srcPH, trnPH, relaxed };
 }
 
 /**
@@ -128,6 +154,8 @@ function expectedKeysForLocale(sourceKeys, locale) {
 
 module.exports = {
   PLURAL_SUFFIXES,
+  ONE_IS_EXACTLY_ONE,
+  placeholdersMatch,
   DEFAULT_PLURAL_SUFFIXES,
   ALL_SUFFIXES,
   SUFFIX_RE,

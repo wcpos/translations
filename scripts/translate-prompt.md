@@ -56,6 +56,7 @@ Write exactly one JSON file per packet, at the given results path, with this sha
 - Preserve placeholders exactly: `{name}`, `{{name}}`, `%s`, `%d`, `%1$s`, `%2$s`
   and `%%`. Positional printf arguments may move within the sentence. Curly
   placeholder names never change.
+  Exception, subject to the gate: for a locale whose `one` category is exactly 1, the `_one` form may spell out the singular instead of `{count}`; every other placeholder stays.
 - Preserve markup tags and attributes exactly, for example `<strong>`, `<a href="%s">`
   and `<link>`. Translate only the text between tags.
 - Write `WCPOS` / `WCPOS Pro` for the product, never `WooCommerce POS`.

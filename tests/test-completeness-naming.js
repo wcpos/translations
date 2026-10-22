@@ -2,6 +2,8 @@
 
 const assert = require('node:assert/strict');
 const path = require('node:path');
+const fs = require('node:fs');
+const { PLURAL_SUFFIXES, ONE_IS_EXACTLY_ONE, placeholdersMatch } = require('../scripts/plural-rules');
 
 const {
   findWcposNamingIssues,
@@ -27,6 +29,97 @@ function test(name, fn) {
     process.exitCode = 1;
   }
 }
+
+function oneIntegers(locale) {
+  const rules = new Intl.PluralRules(locale.replace(/_/g, '-'));
+  return Array.from({ length: 1001 }, (_, n) => n).filter(n => rules.select(n) === 'one');
+}
+
+test('count-free singular locales are pinned to ICU with explicit publication exclusions', () => {
+  const excluded = new Set(['pt_PT', 'en', 'en_GB', 'en_US']);
+  const locales = new Set([...Object.keys(PLURAL_SUFFIXES), ...Object.keys(require('../locales.json'))]);
+  const expected = [...locales].filter(locale =>
+    JSON.stringify(oneIntegers(locale)) === '[1]' && !excluded.has(locale));
+  assert.deepEqual([...(ONE_IS_EXACTLY_ONE || [])].sort(), expected.sort());
+});
+
+test('fallback copies of relaxed locales also use one only for 1', () => {
+  // Read only the map literal: requiring this script would regenerate catalogues.
+  const script = fs.readFileSync(path.join(__dirname, '../scripts/generate-fallbacks.js'), 'utf8');
+  const map = require('node:vm').runInNewContext(`(${script.match(/const FALLBACK_MAP = (\{[\s\S]*?\});/)[1]})`);
+  assert.ok(ONE_IS_EXACTLY_ONE instanceof Set);
+  assert.equal(ONE_IS_EXACTLY_ONE.has('pt_PT'), false);
+  assert.deepEqual(oneIntegers('pt_PT'), [1]);
+  assert.deepEqual(oneIntegers('pt'), [0, 1]);
+  for (const [copy, source] of Object.entries(map)) {
+    assert.equal(ONE_IS_EXACTLY_ONE.has(copy), ONE_IS_EXACTLY_ONE.has(source), `${copy} ← ${source}`);
+    if (ONE_IS_EXACTLY_ONE.has(source)) assert.deepEqual(oneIntegers(copy), [1], `${copy} ← ${source}`);
+  }
+});
+
+test('placeholder relaxation removes exactly one count only from eligible paired singulars', () => {
+  assert.equal(typeof placeholdersMatch, 'function');
+  const extract = text => text.match(/\{[^}]+\}/g) || [];
+  for (const [locale, key, source, translation, paired, ok, relaxed] of [
+    ['de_DE', 'items_one', '{count} item', 'Ein Artikel', true, true, true],
+    ['de', 'items_one', '{count} item', 'Ein Artikel', true, true, true],
+    ['es', 'items_one', '{count} item', 'Un artículo', true, true, true],
+    ['nl', 'items_one', '{count} item', 'Een artikel', true, true, true],
+    ['de_DE', 'items_one', '{count} {term}', 'Ein {term}', true, true, true],
+    ['de_DE', 'items_one', '{count} {term}', 'Ein Artikel', true, false, false],
+    ['fr_FR', 'items_one', '{count} item', 'Un article', true, false, false],
+    ['pt_PT', 'items_one', '{count} item', 'Um artigo', true, false, false],
+    ['pt', 'items_one', '{count} item', 'Um artigo', true, false, false],
+    ['ru_RU', 'items_one', '{count} item', 'Item', true, false, false],
+    ['en_US', 'items_one', '{count} item', 'One item', true, false, false],
+    ['de_DE', 'items_one', '{n} item', 'Ein Artikel', true, false, false],
+    ['de_DE', 'items_one', 'One item', '{count} Artikel', true, false, false],
+    ['de_DE', 'items', '{count} item', 'Ein Artikel', true, false, false],
+    ['de_DE', 'items_other', '{count} items', 'Artikel', true, false, false],
+    ['de_DE', 'items_one', '{count} item', 'Ein Artikel', false, false, false],
+    ['de_DE', 'items_one', '{count} {count}', '{count}', true, true, true],
+    ['de_DE', 'items_one', '{count} {count}', 'Ein Artikel', true, false, false],
+    ['de_DE', 'items_one', '{count} {term}', '{term} {count}', true, true, false],
+  ]) {
+    const sourceStrings = Object.freeze({ ...(paired ? { items_other: '{count} items' } : {}), [key]: 'Not the resolved source' });
+    const result = placeholdersMatch({ locale, key, sourceText: source, sourceStrings, translation, extract });
+    assert.deepEqual(result, { ok, relaxed, srcPH: extract(source).sort(), trnPH: extract(translation).sort() },
+      JSON.stringify({ locale, key, source, translation, paired }));
+  }
+});
+
+test('release gate relaxes singulars and errors on missing source placeholders in every project', () => {
+  const root = fs.mkdtempSync(path.join(require('node:os').tmpdir(), 'one-form-gate-'));
+  const write = (file, value) => {
+    fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
+    fs.writeFileSync(path.join(root, file), JSON.stringify(value));
+  };
+  try {
+    fs.mkdirSync(path.join(root, 'scripts'));
+    fs.mkdirSync(path.join(root, 'source/php'), { recursive: true });
+    fs.symlinkSync(path.resolve(__dirname, '../node_modules'), path.join(root, 'node_modules'), 'dir');
+    for (const file of ['check-completeness.js', 'plural-rules.js']) {
+      fs.copyFileSync(path.join(__dirname, '../scripts', file), path.join(root, 'scripts', file));
+    }
+    write('locales.json', { de_DE: 'German' });
+    const files = ['monorepo/core.json', 'woocommerce-pos/wp-admin-settings.json', 'woocommerce-pos-pro/wp-admin-store-edit.json'];
+    for (const file of files) {
+      const source = { items_one: '{count} {term}', items_other: '{count} {term}', bad_one: 'One item', bad_other: '{n} items' };
+      write(`source/js/${file}`, source);
+      write(`translations/js/de_DE/${file}`, { ...source, items_one: 'Ein {term}' });
+    }
+    const run = require('node:child_process').spawnSync(process.execPath,
+      [path.join(root, 'scripts/check-completeness.js'), '--json'], { encoding: 'utf8' });
+    assert.equal(run.status, 1, run.stderr);
+    const report = JSON.parse(run.stdout);
+    assert.equal(report.errors, 3);
+    for (const file of files) assert.ok(report.details.errors.some(message =>
+      message.includes(`${file}:bad_one`) && message.includes('source') && message.includes('{n}')));
+    assert.ok(!report.details.errors.some(message => message.includes(':items_one')));
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
 
 test('flags customer-facing WooCommerce POS product names', () => {
   assert.deepEqual(findWcposNamingIssues('Please update WooCommerce POS Pro.'), [
