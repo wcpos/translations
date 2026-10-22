@@ -292,7 +292,7 @@ return array(
 		'WCPOS: completion could not be recorded; reconcile manually.' => 'WCPOS : impossible d’enregistrer la finalisation ; effectuez le rapprochement manuellement.',
 		'WCPOS: completion %d could not be recorded; reconcile manually.' => 'WCPOS : impossible d’enregistrer la finalisation %d ; effectuez le rapprochement manuellement.',
 		'WCPOS: the reopen could not be recorded on the completion history; reconcile manually.' => 'WCPOS : impossible d’enregistrer la réouverture dans l’historique des finalisations ; effectuez le rapprochement manuellement.',
-		'Recording the paid attempt' => 'Enregistrement de la tentative de paiement aboutie',
+		'Recording the paid attempt' => 'Enregistrement de la tentative de paiement réussie',
 		'The payment provider did not refund this payment.' => 'Le prestataire de paiement n’a pas remboursé ce paiement.',
 		'This payment cannot be voided.' => 'Ce paiement ne peut pas être annulé.',
 		'Attempt ID must be a UUID.' => 'L’ID de tentative doit être un UUID.',
