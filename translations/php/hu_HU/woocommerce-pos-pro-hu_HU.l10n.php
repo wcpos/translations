@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'POS megnyitása',
 		'Store' => 'Üzlet',
 		'Authorized Users' => 'Engedélyezett felhasználók',
+		'Registers' => 'Pénztárgépek',
 		'POS Barcode' => 'POS vonalkód',
 		'Product barcode used at the point of sale' => 'Termék vonalkód a pénztárnál',
 		'Important:' => 'Fontos:',

@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'បើក POS',
 		'Store' => 'ហាង',
 		'Authorized Users' => 'អ្នកប្រើដែលបានអនុញ្ញាត',
+		'Registers' => 'បញ្ជរលក់',
 		'POS Barcode' => 'បាកូដ POS',
 		'Product barcode used at the point of sale' => 'បាកូដផលិតផលប្រើនៅចំណុចលក់',
 		'Important:' => 'សំខាន់៖',

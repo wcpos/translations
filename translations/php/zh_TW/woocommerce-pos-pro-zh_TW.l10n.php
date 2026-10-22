@@ -34,6 +34,7 @@ return array(
 		'Open POS' => '開啟 POS',
 		'Store' => '商店',
 		'Authorized Users' => '授權用戶',
+		'Registers' => '收銀台',
 		'POS Barcode' => 'POS 條碼',
 		'Product barcode used at the point of sale' => '在銷售點使用的產品條碼',
 		'Important:' => '重要：',

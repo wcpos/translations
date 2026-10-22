@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'POSを開く',
 		'Store' => '店舗',
 		'Authorized Users' => '承認されたユーザー',
+		'Registers' => 'レジ',
 		'POS Barcode' => 'POSバーコード',
 		'Product barcode used at the point of sale' => '販売時点で使用される製品バーコード',
 		'Important:' => '重要：',

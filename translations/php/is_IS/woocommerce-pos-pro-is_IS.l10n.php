@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Opna POS',
 		'Store' => 'Verslun',
 		'Authorized Users' => 'Heimilaðir notendur',
+		'Registers' => 'Kassar',
 		'POS Barcode' => 'POS strikamerki',
 		'Product barcode used at the point of sale' => 'Vöru strikamerki notað við sölustað',
 		'Important:' => 'Mikilvægt:',

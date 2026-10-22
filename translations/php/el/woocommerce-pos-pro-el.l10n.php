@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Άνοιγμα POS',
 		'Store' => 'Κατάστημα',
 		'Authorized Users' => 'Εξουσιοδοτημένοι Χρήστες',
+		'Registers' => 'Ταμεία',
 		'POS Barcode' => 'Barcode POS',
 		'Product barcode used at the point of sale' => 'Barcode προϊόντος που χρησιμοποιείται στο σημείο πώλησης',
 		'Important:' => 'Σημαντικό:',

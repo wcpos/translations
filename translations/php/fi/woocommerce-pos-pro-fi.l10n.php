@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Avaa POS',
 		'Store' => 'Kauppa',
 		'Authorized Users' => 'Valtuutetut käyttäjät',
+		'Registers' => 'Kassat',
 		'POS Barcode' => 'POS-viivakoodi',
 		'Product barcode used at the point of sale' => 'Tuotteen viivakoodi myyntipisteessä',
 		'Important:' => 'Tärkeää:',

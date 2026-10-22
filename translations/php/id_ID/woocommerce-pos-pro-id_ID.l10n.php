@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Buka POS',
 		'Store' => 'Toko',
 		'Authorized Users' => 'Pengguna yang Diizinkan',
+		'Registers' => 'Mesin kasir',
 		'POS Barcode' => 'Barcode POS',
 		'Product barcode used at the point of sale' => 'Barcode produk digunakan di titik penjualan',
 		'Important:' => 'Penting:',

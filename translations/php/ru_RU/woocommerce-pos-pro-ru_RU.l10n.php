@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Открыть POS',
 		'Store' => 'Магазин',
 		'Authorized Users' => 'Авторизованные пользователи',
+		'Registers' => 'Кассы',
 		'POS Barcode' => 'Штрихкод POS',
 		'Product barcode used at the point of sale' => 'Штрихкод продукта, используемый на точке продажи',
 		'Important:' => 'Важно:',

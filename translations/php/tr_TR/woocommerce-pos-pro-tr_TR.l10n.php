@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'POS\'u Aç',
 		'Store' => 'Mağaza',
 		'Authorized Users' => 'Yetkili Kullanıcılar',
+		'Registers' => 'Kasalar',
 		'POS Barcode' => 'POS Barkod',
 		'Product barcode used at the point of sale' => 'Satış noktasında kullanılan ürün barkodu',
 		'Important:' => 'Önemli:',

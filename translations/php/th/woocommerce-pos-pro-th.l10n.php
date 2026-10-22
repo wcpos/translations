@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'เปิด POS',
 		'Store' => 'ร้านค้า',
 		'Authorized Users' => 'ผู้ใช้ที่ได้รับอนุญาต',
+		'Registers' => 'เครื่องคิดเงิน',
 		'POS Barcode' => 'บาร์โค้ด POS',
 		'Product barcode used at the point of sale' => 'บาร์โค้ดสินค้าที่ใช้ที่จุดขาย',
 		'Important:' => 'สำคัญ:',

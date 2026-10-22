@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Deschide POS',
 		'Store' => 'Magazin',
 		'Authorized Users' => 'Utilizatori Autorizați',
+		'Registers' => 'Case de marcat',
 		'POS Barcode' => 'Cod de bare POS',
 		'Product barcode used at the point of sale' => 'Cod de bare al produsului utilizat la punctul de vânzare',
 		'Important:' => 'Important:',

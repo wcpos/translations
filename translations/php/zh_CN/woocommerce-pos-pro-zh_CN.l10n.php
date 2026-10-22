@@ -34,6 +34,7 @@ return array(
 		'Open POS' => '打开 POS',
 		'Store' => '商店',
 		'Authorized Users' => '授权用户',
+		'Registers' => '收银台',
 		'POS Barcode' => 'POS条码',
 		'Product barcode used at the point of sale' => '在销售点使用的产品条码',
 		'Important:' => '重要：',

@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'POS 열기',
 		'Store' => '매장',
 		'Authorized Users' => '승인된 사용자',
+		'Registers' => '계산대',
 		'POS Barcode' => 'POS 바코드',
 		'Product barcode used at the point of sale' => '판매 시점에서 사용되는 제품 바코드',
 		'Important:' => '중요:',
