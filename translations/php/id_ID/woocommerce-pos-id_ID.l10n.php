@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Setiap sepuluh menit',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Pembayaran WCPOS %1$s: otorisasi untuk %2$s kedaluwarsa setelah pesanan ditandai lunas dan tidak pernah ditagih — perlu ditindaklanjuti.',
 		'Could not save the pending payment confirmation.' => 'Konfirmasi pembayaran tertunda tidak dapat disimpan.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Pembayaran untuk penjualan ini tercatat di mesin kasir. Selesaikan penjualan ini di mesin kasir.',
 		'Idempotency key was reused with a different request.' => 'Kunci idempotensi digunakan kembali dengan permintaan yang berbeda.',
 		'An identical request is already being processed.' => 'Permintaan identik sedang diproses.',
 		'JWT is not configured properly, please contact the admin' => 'JWT tidak dikonfigurasi dengan benar, silakan hubungi admin',

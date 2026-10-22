@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Her on dakikada bir',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS ödemesi %1$s: %2$s tutarındaki provizyon, sipariş ödendi olarak işaretlendikten sonra tahsil edilmeden sona erdi; ilgilenilmesi gerekiyor.',
 		'Could not save the pending payment confirmation.' => 'Bekleyen ödeme onayı kaydedilemedi.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Bu satış için kasada bir ödeme kaydedildi. Satışı kasada tamamlayın.',
 		'Idempotency key was reused with a different request.' => 'Idempotency anahtarı farklı bir istekle yeniden kullanıldı.',
 		'An identical request is already being processed.' => 'Aynı istek zaten işleniyor.',
 		'JWT is not configured properly, please contact the admin' => 'JWT düzgün yapılandırılmamış, lütfen yönetici ile iletişime geçin',

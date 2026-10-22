@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Cada deu minuts',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Pagament %1$s de WCPOS: l\'autorització de %2$s ha caducat després de marcar la comanda com a pagada i no s\'ha capturat mai; cal revisar-ho.',
 		'Could not save the pending payment confirmation.' => 'No s\'ha pogut desar la confirmació de pagament pendent.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Aquesta venda té un pagament registrat a la caixa. Acabeu-la a la caixa.',
 		'Idempotency key was reused with a different request.' => 'La clau d\'idempotència s\'ha reutilitzat amb una sol·licitud diferent.',
 		'An identical request is already being processed.' => 'Ja s\'està processant una sol·licitud idèntica.',
 		'JWT is not configured properly, please contact the admin' => 'JWT no està configurat correctament, si us plau contacta amb l\'administrador',

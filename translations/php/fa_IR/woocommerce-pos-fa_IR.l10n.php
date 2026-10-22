@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'هر ده دقیقه',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'پرداخت WCPOS %1$s: مجوز %2$s پس از علامت‌گذاری سفارش به‌عنوان پرداخت‌شده منقضی شد و هرگز دریافت نشد — نیازمند رسیدگی است.',
 		'Could not save the pending payment confirmation.' => 'ذخیره تأیید پرداخت در انتظار ممکن نشد.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'برای این فروش، پرداختی در صندوق ثبت شده است. آن را در صندوق تکمیل کنید.',
 		'Idempotency key was reused with a different request.' => 'کلید یکتاسازی با یک درخواست متفاوت دوباره استفاده شد.',
 		'An identical request is already being processed.' => 'یک درخواست یکسان از قبل در حال پردازش است.',
 		'JWT is not configured properly, please contact the admin' => 'JWT به درستی پیکربندی نشده است، لطفاً با مدیر تماس بگیرید',

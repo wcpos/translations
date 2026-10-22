@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => '10分ごと',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOSの支払い%1$s：注文が支払い済みになった後、%2$sの承認の有効期限が切れ、キャプチャされていません。対応が必要です。',
 		'Could not save the pending payment confirmation.' => '保留中の支払い確認を保存できませんでした。',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'この売上にはレジでの支払いが記録されています。レジで売上処理を完了してください。',
 		'Idempotency key was reused with a different request.' => '同じIDempotencyキーが別のリクエストで再利用されました。',
 		'An identical request is already being processed.' => '同一のリクエストがすでに処理中です。',
 		'JWT is not configured properly, please contact the admin' => 'JWTが正しく設定されていません。管理者に連絡してください。',

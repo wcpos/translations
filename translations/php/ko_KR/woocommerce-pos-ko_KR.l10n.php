@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => '10분마다',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS 결제 %1$s: 주문이 결제 완료로 표시된 후 금액 %2$s의 승인이 만료되었으며 결제 금액이 매입되지 않았습니다. 확인이 필요합니다.',
 		'Could not save the pending payment confirmation.' => '대기 중인 결제 확인을 저장하지 못했습니다.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => '이 판매 건에 대한 결제가 계산대에서 기록되었습니다. 계산대에서 판매를 완료하십시오.',
 		'Idempotency key was reused with a different request.' => 'idempotency key가 다른 요청에 재사용되었습니다.',
 		'An identical request is already being processed.' => '동일한 요청이 이미 처리 중입니다.',
 		'JWT is not configured properly, please contact the admin' => 'JWT가 제대로 구성되지 않았습니다. 관리자에게 문의하세요.',

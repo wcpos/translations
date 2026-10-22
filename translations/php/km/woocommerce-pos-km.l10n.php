@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'រៀងរាល់ដប់នាទី',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'ការបង់ប្រាក់ WCPOS %1$s៖ ការអនុញ្ញាតសម្រាប់ %2$s បានផុតកំណត់ បន្ទាប់ពីការបញ្ជាទិញត្រូវបានសម្គាល់ថាបង់ប្រាក់រួច ប៉ុន្តែមិនដែលបានទទួលប្រាក់ឡើយ — ត្រូវពិនិត្យ។',
 		'Could not save the pending payment confirmation.' => 'មិនអាចរក្សាទុកការបញ្ជាក់ការបង់ប្រាក់ដែលកំពុងរង់ចាំបានទេ។',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'ការលក់នេះមានការទូទាត់ដែលបានកត់ត្រានៅកន្លែងគិតប្រាក់។ សូមបញ្ចប់វានៅកន្លែងគិតប្រាក់។',
 		'Idempotency key was reused with a different request.' => 'បានប្រើសោ idempotency ឡើងវិញជាមួយសំណើផ្សេង។',
 		'An identical request is already being processed.' => 'សំណើដូចគ្នាមួយកំពុងត្រូវបានដំណើរការរួចហើយ។',
 		'JWT is not configured properly, please contact the admin' => 'JWT មិនត្រូវបានកំណត់រចនាសម្ព័ន្ធបានត្រឹមត្រូវ សូមទាក់ទងអ្នកគ្រប់គ្រង',

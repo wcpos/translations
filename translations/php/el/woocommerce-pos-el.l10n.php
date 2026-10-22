@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Κάθε δέκα λεπτά',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Πληρωμή WCPOS %1$s: η έγκριση για %2$s έληξε αφού η παραγγελία σημειώθηκε ως πληρωμένη και το ποσό δεν εισπράχθηκε ποτέ — απαιτείται έλεγχος.',
 		'Could not save the pending payment confirmation.' => 'Δεν ήταν δυνατή η αποθήκευση της επιβεβαίωσης εκκρεμούς πληρωμής.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Για αυτήν την πώληση έχει καταγραφεί πληρωμή στο ταμείο. Ολοκληρώστε την στο ταμείο.',
 		'Idempotency key was reused with a different request.' => 'Το κλειδί ιδιοδυναμίας χρησιμοποιήθηκε ξανά με διαφορετικό αίτημα.',
 		'An identical request is already being processed.' => 'Ένα πανομοιότυπο αίτημα βρίσκεται ήδη σε επεξεργασία.',
 		'JWT is not configured properly, please contact the admin' => 'Το JWT δεν έχει ρυθμιστεί σωστά, παρακαλώ επικοινωνήστε με τον διαχειριστή',

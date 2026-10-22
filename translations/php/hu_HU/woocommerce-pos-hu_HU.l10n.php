@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Tízpercenként',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS %1$s fizetés: a(z) %2$s engedélyezése lejárt, miután a rendelést kifizetettként jelölték, és soha nem történt beszedés — figyelmet igényel.',
 		'Could not save the pending payment confirmation.' => 'Nem sikerült menteni a függőben lévő fizetés megerősítését.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Ehhez az értékesítéshez fizetést rögzítettek a pénztárnál. Fejezze be a pénztárnál.',
 		'Idempotency key was reused with a different request.' => 'Az idempotencia kulcsot egy eltérő kéréshez használták újra.',
 		'An identical request is already being processed.' => 'Egy azonos kérés már feldolgozás alatt áll.',
 		'JWT is not configured properly, please contact the admin' => 'A JWT nincs megfelelően konfigurálva, kérjük, lépj kapcsolatba az adminisztrátorral',

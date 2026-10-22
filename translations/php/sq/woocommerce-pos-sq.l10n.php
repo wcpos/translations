@@ -343,6 +343,7 @@ return array(
 		'Every ten minutes' => 'Çdo dhjetë minuta',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Pagesa WCPOS %1$s: autorizimi për %2$s skadoi pasi porosia u shënua si e paguar dhe nuk u arkëtua kurrë — kërkon vëmendje.',
 		'Could not save the pending payment confirmation.' => 'Konfirmimi i pagesës në pritje nuk mund të ruhej.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Për këtë shitje është regjistruar një pagesë në arkë. Përfundojeni në arkë.',
 		'Idempotency key was reused with a different request.' => 'Key i idempotencës u ripërdor me një kërkesë tjetër.',
 		'An identical request is already being processed.' => 'Një kërkesë identike po përpunohet tashmë.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nuk është konfiguruar siç duhet; ju lutemi, kontaktoni administratorin',

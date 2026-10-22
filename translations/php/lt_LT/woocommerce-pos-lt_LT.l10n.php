@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Kas dešimt minučių',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS mokėjimo %1$s sumos %2$s autorizacijos galiojimas baigėsi po to, kai užsakymas buvo pažymėtas kaip apmokėtas, tačiau mokėjimo suma nebuvo nurašyta — reikia atkreipti dėmesį.',
 		'Could not save the pending payment confirmation.' => 'Nepavyko išsaugoti laukiančio mokėjimo patvirtinimo.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Šiam pardavimui kasoje užregistruotas mokėjimas. Užbaikite jį kasoje.',
 		'Idempotency key was reused with a different request.' => 'Idempotency raktas buvo panaudotas pakartotinai su kita užklausa.',
 		'An identical request is already being processed.' => 'Tokia pati užklausa jau apdorojama.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nėra tinkamai sukonfigūruotas, prašome susisiekti su administratoriumi',

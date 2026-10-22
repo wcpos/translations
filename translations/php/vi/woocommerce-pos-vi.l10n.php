@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Mỗi mười phút',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Thanh toán WCPOS %1$s: ủy quyền cho %2$s đã hết hạn sau khi đơn hàng được đánh dấu đã thanh toán và chưa từng được thu — cần xử lý.',
 		'Could not save the pending payment confirmation.' => 'Không thể lưu xác nhận thanh toán đang chờ.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Giao dịch bán này đã ghi nhận khoản thanh toán tại quầy thu ngân. Hãy hoàn tất giao dịch tại quầy.',
 		'Idempotency key was reused with a different request.' => 'Khóa idempotency đã được dùng lại với một yêu cầu khác.',
 		'An identical request is already being processed.' => 'Một yêu cầu giống hệt đang được xử lý.',
 		'JWT is not configured properly, please contact the admin' => 'JWT không được cấu hình đúng, vui lòng liên hệ quản trị viên',

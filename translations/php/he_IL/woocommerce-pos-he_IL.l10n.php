@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'כל עשר דקות',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'תשלום WCPOS %1$s: ההרשאה עבור %2$s פגה אחרי שההזמנה סומנה כשולמה, והתשלום מעולם לא חויב — נדרשת בדיקה.',
 		'Could not save the pending payment confirmation.' => 'לא ניתן היה לשמור את אישור התשלום הממתין.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'נרשם תשלום בקופה עבור המכירה הזו. יש להשלים אותה בקופה.',
 		'Idempotency key was reused with a different request.' => 'מפתח ה-idempotency שימש שוב עם בקשה אחרת.',
 		'An identical request is already being processed.' => 'בקשה זהה כבר נמצאת בעיבוד.',
 		'JWT is not configured properly, please contact the admin' => 'JWT לא מוגדר כראוי, אנא פנה למנהל',
