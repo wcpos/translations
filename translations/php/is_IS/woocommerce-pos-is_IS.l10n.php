@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Á tíu mínútna fresti',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS-greiðsla %1$s: heimildin fyrir %2$s rann út eftir að pöntunin var merkt greidd og var aldrei innheimt — þarfnast athygli.',
 		'Could not save the pending payment confirmation.' => 'Ekki tókst að vista biðandi greiðslustaðfestingu.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Greiðsla hefur verið skráð við kassann fyrir þessa sölu. Ljúktu henni við kassann.',
 		'Idempotency key was reused with a different request.' => 'Endurnýting á idempotency-lykli með annarri beiðni.',
 		'An identical request is already being processed.' => 'Sams konar beiðni er þegar í vinnslu.',
 		'JWT is not configured properly, please contact the admin' => 'JWT er ekki rétt stillt, vinsamlegast hafðu samband við stjórnanda',

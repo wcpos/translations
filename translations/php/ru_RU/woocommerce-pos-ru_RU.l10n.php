@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Каждые десять минут',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'Платёж WCPOS %1$s: срок авторизации на сумму %2$s истёк после того, как заказ был отмечен как оплаченный; средства так и не были списаны — требуется внимание.',
 		'Could not save the pending payment confirmation.' => 'Не удалось сохранить ожидающее подтверждение платежа.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Для этой продажи зарегистрирован платёж на кассе. Завершите её на кассе.',
 		'Idempotency key was reused with a different request.' => 'Ключ идемпотентности был использован повторно с другим запросом.',
 		'An identical request is already being processed.' => 'Уже обрабатывается идентичный запрос.',
 		'JWT is not configured properly, please contact the admin' => 'JWT настроен неправильно, пожалуйста, свяжитесь с администратором',

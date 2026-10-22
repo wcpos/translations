@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'Iga kümne minuti järel',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS-i makse %1$s: summa %2$s autoriseerimine aegus pärast tellimuse märkimist makstuks ja seda ei hõivatud — vajab tähelepanu.',
 		'Could not save the pending payment confirmation.' => 'Ootel maksekinnitust ei saanud salvestada.',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'Selle müügi eest on kassas makse registreeritud. Viige see kassas lõpule.',
 		'Idempotency key was reused with a different request.' => 'Idempotentsusvõtit kasutati uuesti teise päringuga.',
 		'An identical request is already being processed.' => 'Sama päringut töödeldakse juba.',
 		'JWT is not configured properly, please contact the admin' => 'JWT pole õigesti seadistatud, palun võtke ühendust administraatoriga',

@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'हर दस मिनट में',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS भुगतान %1$s: ऑर्डर को भुगतान किया हुआ चिह्नित करने के बाद %2$s का प्राधिकरण समाप्त हो गया और भुगतान कभी कैप्चर नहीं हुआ — ध्यान देना आवश्यक है।',
 		'Could not save the pending payment confirmation.' => 'लंबित भुगतान पुष्टि सहेजी नहीं जा सकी।',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'इस बिक्री के लिए काउंटर पर भुगतान दर्ज किया गया है। इसे काउंटर पर पूरा करें।',
 		'Idempotency key was reused with a different request.' => 'Idempotency key का उपयोग एक अलग अनुरोध के साथ फिर से किया गया।',
 		'An identical request is already being processed.' => 'एक समान अनुरोध पहले से ही प्रोसेस हो रहा है।',
 		'JWT is not configured properly, please contact the admin' => 'JWT सही तरीके से कॉन्फ़िगर नहीं किया गया है, कृपया व्यवस्थापक से संपर्क करें',

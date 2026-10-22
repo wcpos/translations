@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => '每十分钟',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'WCPOS 付款 %1$s：订单标记为已付款后，%2$s 的授权已过期且从未捕获 — 需要处理。',
 		'Could not save the pending payment confirmation.' => '无法保存待处理的付款确认。',
+		'This sale has a payment recorded at the till. Finish it at the till.' => '这笔销售已在收银台记录付款。请在收银台完成交易。',
 		'Idempotency key was reused with a different request.' => 'Idempotency key 与不同请求重复使用。',
 		'An identical request is already being processed.' => '已有完全相同的请求正在处理中。',
 		'JWT is not configured properly, please contact the admin' => 'JWT配置不正确，请联系管理员',

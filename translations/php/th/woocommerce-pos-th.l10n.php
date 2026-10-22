@@ -345,6 +345,7 @@ return array(
 		'Every ten minutes' => 'ทุก 10 นาที',
 		'WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention.' => 'การชำระเงิน WCPOS %1$s: การอนุมัติยอด %2$s หมดอายุหลังทำเครื่องหมายว่าชำระคำสั่งซื้อแล้ว แต่ยังไม่ได้เรียกเก็บเงิน — ต้องตรวจสอบ',
 		'Could not save the pending payment confirmation.' => 'บันทึกการยืนยันการชำระเงินที่รอดำเนินการไม่ได้',
+		'This sale has a payment recorded at the till. Finish it at the till.' => 'รายการขายนี้มีการบันทึกการชำระเงินที่เครื่องคิดเงินแล้ว โปรดดำเนินการขายให้เสร็จที่เครื่องคิดเงิน',
 		'Idempotency key was reused with a different request.' => 'คีย์ idempotency ถูกใช้ซ้ำกับคำขอที่แตกต่างกัน',
 		'An identical request is already being processed.' => 'กำลังประมวลผลคำขอที่เหมือนกันอยู่แล้ว',
 		'JWT is not configured properly, please contact the admin' => 'JWT ไม่ได้ถูกตั้งค่าอย่างถูกต้อง กรุณาติดต่อผู้ดูแลระบบ',
