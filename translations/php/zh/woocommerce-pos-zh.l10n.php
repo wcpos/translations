@@ -301,7 +301,7 @@ return array(
 		'Order is already paid.' => '订单已付款。',
 		'Order already has a live payment.' => '订单已有一笔有效付款。',
 		'The payment method rejected the details entered.' => '支付方式拒绝了输入的信息。',
-		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'WCPOS 支付尝试 %1$s：%2$s 在发送付款后失败。请向服务提供商确认是否已扣款，然后在 POS 中取消此次尝试。',
+		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'WCPOS 支付尝试 %1$s：%2$s 在发送付款后失败。请向服务提供商确认是否已扣款，然后在收银台取消此次尝试。',
 		'The payment provider failed.' => '支付服务商发生故障。',
 		'This payment method wants to open %s in a browser, which the POS cannot follow.' => '此支付方式需要在浏览器中打开 %s，但 POS 无法继续操作。',
 		'Settled via POS: %1$s on %2$s' => '通过 POS 完成：%1$s，时间：%2$s',

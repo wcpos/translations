@@ -301,7 +301,7 @@ return array(
 		'Order is already paid.' => 'De bestelling is al betaald.',
 		'Order already has a live payment.' => 'De bestelling heeft al een actieve betaling.',
 		'The payment method rejected the details entered.' => 'De betaalmethode heeft de ingevoerde gegevens afgewezen.',
-		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'WCPOS-betaalpoging %1$s: %2$s is mislukt nadat de betaling is verzonden. Controleer bij de provider of het bedrag is afgeschreven en annuleer daarna de poging in de POS.',
+		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'WCPOS-betaalpoging %1$s: %2$s is mislukt nadat de betaling is verzonden. Controleer bij de provider of het bedrag is afgeschreven en annuleer daarna de poging bij de kassa.',
 		'The payment provider failed.' => 'Er is een fout opgetreden bij de betalingsprovider.',
 		'This payment method wants to open %s in a browser, which the POS cannot follow.' => 'Deze betaalmethode wil %s openen in een browser, maar de POS kan dat niet volgen.',
 		'Settled via POS: %1$s on %2$s' => 'Afgewikkeld via POS: %1$s met bestelstatus %2$s',

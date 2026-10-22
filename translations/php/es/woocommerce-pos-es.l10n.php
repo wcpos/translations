@@ -301,7 +301,7 @@ return array(
 		'Order is already paid.' => 'El pedido ya está pagado.',
 		'Order already has a live payment.' => 'El pedido ya tiene un pago activo.',
 		'The payment method rejected the details entered.' => 'El método de pago ha rechazado los datos introducidos.',
-		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'El intento de pago %1$s de WCPOS: %2$s ha fallado después de enviar el pago. Consulte con el proveedor si se ha cobrado el importe y, después, cancele el intento en el TPV.',
+		'WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS.' => 'El intento de pago %1$s de WCPOS: %2$s ha fallado después de enviar el pago. Consulte con el proveedor si se ha cobrado el importe y, después, cancele el intento en la caja.',
 		'The payment provider failed.' => 'El proveedor de pagos ha fallado.',
 		'This payment method wants to open %s in a browser, which the POS cannot follow.' => 'Este método de pago quiere abrir %s en un navegador, pero el POS no puede seguir esa redirección.',
 		'Settled via POS: %1$s on %2$s' => 'Liquidado a través del POS: %1$s con estado %2$s',
