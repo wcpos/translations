@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'POS खोलें',
 		'Store' => 'स्टोर',
 		'Authorized Users' => 'अधिकृत उपयोगकर्ता',
+		'Registers' => 'रजिस्टर',
 		'POS Barcode' => 'POS बारकोड',
 		'Product barcode used at the point of sale' => 'बिक्री के बिंदु पर उपयोग किया जाने वाला उत्पाद बारकोड',
 		'Important:' => 'महत्वपूर्ण:',

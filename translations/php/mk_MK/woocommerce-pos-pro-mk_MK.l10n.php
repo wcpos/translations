@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Отвори POS',
 		'Store' => 'Продавница',
 		'Authorized Users' => 'Авторизирани корисници',
+		'Registers' => 'Каси',
 		'POS Barcode' => 'POS баркод',
 		'Product barcode used at the point of sale' => 'Баркод на производ користен на местото на продажба',
 		'Important:' => 'Важно:',

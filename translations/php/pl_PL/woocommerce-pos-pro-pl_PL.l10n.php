@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Otwórz POS',
 		'Store' => 'Sklep',
 		'Authorized Users' => 'Autoryzowani użytkownicy',
+		'Registers' => 'Kasy',
 		'POS Barcode' => 'Kod kreskowy POS',
 		'Product barcode used at the point of sale' => 'Kod kreskowy produktu używany w punkcie sprzedaży',
 		'Important:' => 'Ważne:',

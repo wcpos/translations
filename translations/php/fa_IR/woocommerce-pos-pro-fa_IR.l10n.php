@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'باز کردن POS',
 		'Store' => 'فروشگاه',
 		'Authorized Users' => 'کاربران مجاز',
+		'Registers' => 'صندوق‌ها',
 		'POS Barcode' => 'بارکد POS',
 		'Product barcode used at the point of sale' => 'بارکد محصول استفاده شده در نقطه فروش',
 		'Important:' => 'مهم:',

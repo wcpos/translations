@@ -32,6 +32,7 @@ return array(
 		'Open POS' => 'Hapni POS',
 		'Store' => 'Dyqani',
 		'Authorized Users' => 'Përdoruesit e autorizuar',
+		'Registers' => 'Kasat',
 		'POS Barcode' => 'POS Barcode',
 		'Product barcode used at the point of sale' => 'Barcode i produktit që përdoret në pikën e shitjes',
 		'Important:' => 'E rëndësishme:',

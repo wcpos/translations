@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Otevřít POS',
 		'Store' => 'Obchod',
 		'Authorized Users' => 'Autorizovaní uživatelé',
+		'Registers' => 'Pokladny',
 		'POS Barcode' => 'POS čárový kód',
 		'Product barcode used at the point of sale' => 'Čárový kód produktu používaný na místě prodeje',
 		'Important:' => 'Důležité:',

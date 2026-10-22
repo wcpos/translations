@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'פתח POS',
 		'Store' => 'חנות',
 		'Authorized Users' => 'משתמשים מורשים',
+		'Registers' => 'קופות',
 		'POS Barcode' => 'ברקוד POS',
 		'Product barcode used at the point of sale' => 'ברקוד מוצר המשמש בנקודת המכירה',
 		'Important:' => 'חשוב:',

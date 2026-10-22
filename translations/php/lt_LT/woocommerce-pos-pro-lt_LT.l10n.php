@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Atidaryti POS',
 		'Store' => 'Parduotuvė',
 		'Authorized Users' => 'Įgalioti vartotojai',
+		'Registers' => 'Kasos',
 		'POS Barcode' => 'POS brūkšninis kodas',
 		'Product barcode used at the point of sale' => 'Produkto brūkšninis kodas naudojamas pardavimo vietoje',
 		'Important:' => 'Svarbu:',

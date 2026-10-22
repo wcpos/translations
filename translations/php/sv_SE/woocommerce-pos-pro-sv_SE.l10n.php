@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Öppna POS',
 		'Store' => 'Butik',
 		'Authorized Users' => 'Auktoriserade användare',
+		'Registers' => 'Kassor',
 		'POS Barcode' => 'POS Streckkod',
 		'Product barcode used at the point of sale' => 'Produktstreckkod som används vid försäljningsstället',
 		'Important:' => 'Viktigt:',

@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'فتح نقطة البيع',
 		'Store' => 'المتجر',
 		'Authorized Users' => 'المستخدمون المصرح لهم',
+		'Registers' => 'سجلات الدفع',
 		'POS Barcode' => 'الباركود لنقطة البيع',
 		'Product barcode used at the point of sale' => 'باركود المنتج المستخدم في نقطة البيع',
 		'Important:' => 'مهم:',

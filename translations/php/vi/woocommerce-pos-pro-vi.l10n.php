@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Mở POS',
 		'Store' => 'Cửa hàng',
 		'Authorized Users' => 'Người dùng được ủy quyền',
+		'Registers' => 'Quầy thu ngân',
 		'POS Barcode' => 'Mã vạch POS',
 		'Product barcode used at the point of sale' => 'Mã vạch sản phẩm dùng tại điểm bán hàng',
 		'Important:' => 'Quan trọng:',

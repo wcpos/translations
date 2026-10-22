@@ -34,6 +34,7 @@ return array(
 		'Open POS' => 'Ava POS',
 		'Store' => 'Pood',
 		'Authorized Users' => 'Volitatud kasutajad',
+		'Registers' => 'Kassad',
 		'POS Barcode' => 'POS vöötkood',
 		'Product barcode used at the point of sale' => 'Müügikoha toote vöötkood',
 		'Important:' => 'Oluline:',
