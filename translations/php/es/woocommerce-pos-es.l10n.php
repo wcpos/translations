@@ -285,7 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Abierto <span class="count">(%s)</span>' . "\x00" . 'POS - Abiertos <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Pago parcial <span class="count">(%s)</span>' . "\x00" . 'POS - Pagos parciales <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Este modo de captura del pago no admite esa operación.',
-		'WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged.' => 'Intento de pago %1$s en WCPOS: se desconoce el resultado y %2$s no puede confirmar si se cobró el importe. Compruebe el pago con el proveedor y, si no se cobró nada, cancele el intento en caja.',
+		'WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged.' => 'Intento de pago %1$s en WCPOS: se desconoce el resultado y %2$s no puede confirmar si se ha cobrado el importe. Compruebe el pago con el proveedor y, si no se ha cobrado nada, cancele el intento en caja.',
 		'Clearing the awaiting-customer state' => 'Borrando el estado de espera del cliente',
 		'This command ID was already used with a different request.' => 'Este ID de comando ya se ha usado con otra solicitud.',
 		'This attempt was cancelled or superseded at the till.' => 'Este intento se ha cancelado o ha quedado sustituido en la caja.',
