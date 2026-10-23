@@ -1120,7 +1120,7 @@ msgstr "付款必须是对象。"
 #: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:105
+#: includes/Payments/Contract/Gateway_Submission.php:130
 #: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "未找到支付方式。"
@@ -1147,7 +1147,7 @@ msgstr "抱歉，您无权初始化支付方式。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:2980
+#: includes/Payments/Contract/Ledger.php:3019
 msgid "Payment capture mode is unsupported."
 msgstr "不支持此付款捕获模式。"
 
@@ -1396,7 +1396,15 @@ msgstr[0] "POS - 部分付款 <span class=\"count\">(%s)</span>"
 msgid "This payment capture mode does not support that operation."
 msgstr "此付款捕获模式不支持该操作。"
 
-#: includes/Payments/Contract/Attempts.php:257
+#. translators: 1: attempt id, 2: payment method title.
+#: includes/Payments/Contract/Attempts.php:317
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
+msgstr ""
+"WCPOS 付款尝试 %1$s：结果未知，%2$s 无法确认是否已收款。请向支付服务商核实付款情况；如果未扣款，请在 POS 中取消此次尝试。"
+
+#: includes/Payments/Contract/Attempts.php:406
 msgid "Clearing the awaiting-customer state"
 msgstr "正在清除等待客户状态"
 
@@ -1405,7 +1413,7 @@ msgid "This command ID was already used with a different request."
 msgstr "此命令 ID 已用于其他请求。"
 
 #: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:83
+#: includes/Payments/Contract/Gateway_Submission.php:108
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "此次尝试已在收银台取消或被后续操作取代。"
 
@@ -1413,18 +1421,18 @@ msgstr "此次尝试已在收银台取消或被后续操作取代。"
 msgid "The order changed since this command was built; read it again."
 msgstr "创建此命令后，订单已发生变化；请重新读取订单。"
 
-#: includes/Payments/Contract/Completion_Stamp.php:92
+#: includes/Payments/Contract/Completion_Stamp.php:94
 msgid "Recording the completion"
 msgstr "正在记录完成状态"
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:146
+#: includes/Payments/Contract/Completion_Stamp.php:148
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS：无法记录完成编号 %d；请手动核对。"
 
-#: includes/Payments/Contract/Completion_Stamp.php:181
-#: includes/Payments/Contract/Completion_Stamp.php:203
+#: includes/Payments/Contract/Completion_Stamp.php:183
+#: includes/Payments/Contract/Completion_Stamp.php:205
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr "WCPOS：无法在完成历史记录中记录重新打开操作；请手动核对。"
@@ -1433,7 +1441,11 @@ msgstr "WCPOS：无法在完成历史记录中记录重新打开操作；请手�
 msgid "The payment provider did not refund this payment."
 msgstr "支付服务商未退还此笔款项。"
 
-#: includes/Payments/Contract/Gateway_Handler.php:97
+#: includes/Payments/Contract/Gateway_Handler.php:115
+msgid "The order was paid before this payment attempt was sent."
+msgstr "此付款尝试发送前，订单已付款。"
+
+#: includes/Payments/Contract/Gateway_Handler.php:144
 msgid "This payment cannot be voided."
 msgstr "此付款无法作废。"
 
@@ -1445,102 +1457,118 @@ msgstr "尝试 ID 必须是 UUID。"
 msgid "Only POS orders take a gateway submission."
 msgstr "只有 POS 订单才能提交至支付网关。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:88
+#: includes/Payments/Contract/Gateway_Submission.php:79
+msgid "An earlier payment attempt on this order has no outcome yet."
+msgstr "此订单较早的付款尝试尚无结果。"
+
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Payment method is not enabled for the POS."
 msgstr "该支付方式未在 POS 中启用。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:96
+#: includes/Payments/Contract/Gateway_Submission.php:121
 msgid "Order is already paid."
 msgstr "订单已付款。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:100
+#: includes/Payments/Contract/Gateway_Submission.php:125
 msgid "Order already has a live payment."
 msgstr "订单已有一笔有效付款。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:181
+#: includes/Payments/Contract/Gateway_Submission.php:206
 msgid "The payment method rejected the details entered."
 msgstr "支付方式拒绝了输入的信息。"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:269
+#: includes/Payments/Contract/Gateway_Submission.php:294
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr "WCPOS 支付尝试 %1$s：%2$s 在发送付款后失败。请向服务提供商确认是否已扣款，然后在收银台取消此次尝试。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:273
-#: includes/Payments/Contract/Gateway_Submission.php:288
+#: includes/Payments/Contract/Gateway_Submission.php:298
+#: includes/Payments/Contract/Gateway_Submission.php:313
 msgid "The payment provider failed."
 msgstr "支付服务商发生故障。"
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:292
+#: includes/Payments/Contract/Gateway_Submission.php:317
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
 msgstr "此支付方式需要在浏览器中打开 %s，但 POS 无法继续操作。"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:353
+#: includes/Payments/Contract/Gateway_Submission.php:378
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "通过 POS 完成：%1$s，时间：%2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:369
+#: includes/Payments/Contract/Gateway_Submission.php:394
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "通过 POS 发送：%1$s（%2$s）"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:392
+#: includes/Payments/Contract/Gateway_Submission.php:417
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
 msgstr "WCPOS 付款尝试 %1$s：%2$s 已响应，但 POS 无法记录。请向服务提供商核实订单，然后在 POS 中取消此次尝试。"
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:416
+#: includes/Payments/Contract/Gateway_Submission.php:446
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr "支付尝试 %s 可能已通过支付网关完成付款；取消前请先核对该笔付款。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:419
+#: includes/Payments/Contract/Gateway_Submission.php:454
 msgid "This invoice cannot be cancelled."
 msgstr "无法取消此发票。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:422
+#: includes/Payments/Contract/Gateway_Submission.php:457
 msgid "The invoice was sent by a different payment method."
 msgstr "此发票由其他支付方式发送。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:426
+#: includes/Payments/Contract/Gateway_Submission.php:461
 msgid "A newer invoice has been sent for this order."
 msgstr "此订单已发送较新的发票。"
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:432
+#: includes/Payments/Contract/Gateway_Submission.php:467
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "通过 POS 取消：%1$s。%2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:607
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s closed at the POS by %2$s: nothing more was charged, and the sale's payments already cover it. %3$s"
+msgstr "%2$s 已在 POS 关闭 WCPOS 付款尝试 %1$s：未额外扣款，且该笔销售的付款已足额覆盖。%3$s"
+
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+msgid "an unknown user"
+msgstr "未知用户"
+
+#: includes/Payments/Contract/Gateway_Submission.php:626
 msgid "This field must be true or false."
 msgstr "此字段必须为 true 或 false。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:612
+#: includes/Payments/Contract/Gateway_Submission.php:631
 msgid "This field must be text."
 msgstr "此字段必须为文本。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:616
+#: includes/Payments/Contract/Gateway_Submission.php:635
 msgid "This field is required."
 msgstr "此字段为必填项。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:620
+#: includes/Payments/Contract/Gateway_Submission.php:639
 msgid "Choose one of the listed options."
 msgstr "请选择列表中的一个选项。"
 
-#: includes/Payments/Contract/Gateway_Submission.php:634
+#: includes/Payments/Contract/Gateway_Submission.php:653
 msgid "Check the payment fields."
 msgstr "请检查付款字段。"
 
@@ -1662,16 +1690,16 @@ msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS 付款 %1$s 已作废：%2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2631
+#: includes/Payments/Contract/Ledger.php:2626
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS：%s 未完成；请手动对账。"
 
-#: includes/Payments/Contract/Ledger.php:2975
+#: includes/Payments/Contract/Ledger.php:3014
 msgid "Payment not found."
 msgstr "未找到付款。"
 
-#: includes/Payments/Contract/Ledger.php:2985
+#: includes/Payments/Contract/Ledger.php:3024
 msgid "Payment transition is invalid."
 msgstr "付款状态转换无效。"
 
