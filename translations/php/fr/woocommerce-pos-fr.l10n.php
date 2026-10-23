@@ -305,7 +305,7 @@ return array(
 		'This payment method wants to open %s in a browser, which the POS cannot follow.' => 'Ce moyen de paiement tente d’ouvrir %s dans un navigateur, ce que le POS ne peut pas suivre.',
 		'Settled via POS: %1$s on %2$s' => 'Réglé via le POS : %1$s au statut %2$s',
 		'Sent via POS: %1$s (%2$s)' => 'Envoyé via le POS : %1$s (%2$s)',
-		'WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS.' => 'Tentative de paiement WCPOS %1$s : %2$s a répondu, mais le POS n\'a pas pu l\'enregistrer. Vérifiez la commande auprès du fournisseur, puis annulez la tentative sur le POS.',
+		'WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS.' => 'Tentative de paiement WCPOS %1$s : %2$s a répondu, mais le POS n’a pas pu l’enregistrer. Vérifiez la commande auprès du fournisseur, puis annulez la tentative sur le POS.',
 		'Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it.' => 'La tentative de paiement %s a peut-être déjà été payée via la passerelle de paiement ; rapprochez le paiement avant de l\'annuler.',
 		'This invoice cannot be cancelled.' => 'Cette facture ne peut pas être annulée.',
 		'The invoice was sent by a different payment method.' => 'La facture a été envoyée avec un autre moyen de paiement.',
