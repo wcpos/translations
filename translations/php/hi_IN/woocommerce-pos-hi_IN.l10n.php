@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'रसीद दस्तावेज़ नहीं मिला।',
 		'Invalid receipt document.' => 'अमान्य रसीद दस्तावेज़।',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS राजकोषीय %s रिकॉर्ड लिखा नहीं जा सका; इसे पुनर्प्राप्त करना होगा।',
+		'POS fiscal sale record recovered.' => 'POS बिक्री का वित्तीय रिकॉर्ड पुनर्प्राप्त किया गया।',
 		'Closed' => 'बंद',
 		'POS provenance keys cannot be changed after the sale: %s' => 'बिक्री के बाद POS स्रोत कुंजियाँ बदली नहीं जा सकतीं: %s',
 		'Guest' => 'अतिथि',

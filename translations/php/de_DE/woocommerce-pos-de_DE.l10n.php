@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Belegdokument nicht gefunden.',
 		'Invalid receipt document.' => 'Ungültiges Belegdokument.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Der POS-Steuerdatensatz %s konnte nicht geschrieben werden und muss wiederhergestellt werden.',
+		'POS fiscal sale record recovered.' => 'Der steuerliche Verkaufsdatensatz der POS wurde wiederhergestellt.',
 		'Closed' => 'Geschlossen',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-Herkunftsschlüssel können nach dem Verkauf nicht geändert werden: %s',
 		'Guest' => 'Gast',

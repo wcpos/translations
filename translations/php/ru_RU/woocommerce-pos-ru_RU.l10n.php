@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Документ чека не найден.',
 		'Invalid receipt document.' => 'Недопустимый документ чека.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Не удалось записать фискальную запись POS типа %s; потребуется восстановление.',
+		'POS fiscal sale record recovered.' => 'Восстановлена фискальная запись о продаже POS.',
 		'Closed' => 'Закрыт',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ключи происхождения POS нельзя изменить после продажи: %s',
 		'Guest' => 'Гость',

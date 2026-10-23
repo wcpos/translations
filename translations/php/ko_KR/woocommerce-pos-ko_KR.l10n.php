@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => '영수증 문서를 찾을 수 없습니다.',
 		'Invalid receipt document.' => '영수증 문서가 유효하지 않습니다.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS 세무 기록 %s을(를) 작성하지 못했습니다. 복구가 필요합니다.',
+		'POS fiscal sale record recovered.' => 'POS 판매의 세무 기록이 복구되었습니다.',
 		'Closed' => '마감',
 		'POS provenance keys cannot be changed after the sale: %s' => '판매 후에는 POS 출처 키를 변경할 수 없습니다: %s',
 		'Guest' => '손님',

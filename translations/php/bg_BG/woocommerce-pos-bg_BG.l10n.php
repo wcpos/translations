@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Документът на касовата бележка не е намерен.',
 		'Invalid receipt document.' => 'Невалиден документ на касова бележка.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Фискалният запис %s на POS не можа да бъде записан; ще трябва да бъде възстановен.',
+		'POS fiscal sale record recovered.' => 'Възстановен е фискалният запис за продажба на POS.',
 		'Closed' => 'Затворен',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ключовете за произход на POS не могат да се променят след продажбата: %s',
 		'Guest' => 'Гост',

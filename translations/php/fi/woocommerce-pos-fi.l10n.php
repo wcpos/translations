@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Kuittiasiakirjaa ei löytynyt.',
 		'Invalid receipt document.' => 'Virheellinen kuittiasiakirja.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS-verotietuetta %s ei voitu kirjoittaa; se on palautettava.',
+		'POS fiscal sale record recovered.' => 'POS-myynnin verotietue palautettiin.',
 		'Closed' => 'Suljettu',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-alkuperätietojen avaimia ei voi muuttaa myynnin jälkeen: %s',
 		'Guest' => 'Vieras',

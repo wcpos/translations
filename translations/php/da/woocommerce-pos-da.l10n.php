@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Kvitteringsdokumentet blev ikke fundet.',
 		'Invalid receipt document.' => 'Ugyldigt kvitteringsdokument.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Den fiskale POS-post %s kunne ikke skrives og skal gendannes.',
+		'POS fiscal sale record recovered.' => 'POS\'ens skatteregistrering for salget blev gendannet.',
 		'Closed' => 'Lukket',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-oprindelsesnøgler kan ikke ændres efter salget: %s',
 		'Guest' => 'Gæst',

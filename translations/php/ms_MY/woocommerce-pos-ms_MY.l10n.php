@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Dokumen resit tidak ditemukan.',
 		'Invalid receipt document.' => 'Dokumen resit tidak sah.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Rekod fiskal POS %s tidak dapat ditulis; pemulihan diperlukan.',
+		'POS fiscal sale record recovered.' => 'Rekod fiskal jualan POS telah dipulihkan.',
 		'Closed' => 'Ditutup',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Kunci asal-usul POS tidak boleh diubah selepas jualan: %s',
 		'Guest' => 'Tetamu',

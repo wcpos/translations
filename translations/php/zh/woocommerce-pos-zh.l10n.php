@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => '未找到收据文档。',
 		'Invalid receipt document.' => '收据文档无效。',
 		'POS fiscal %s record could not be written; it will need recovery.' => '无法写入 POS 税务记录 %s；需要恢复。',
+		'POS fiscal sale record recovered.' => '已恢复 POS 销售的税务记录。',
 		'Closed' => '已关闭',
 		'POS provenance keys cannot be changed after the sale: %s' => '销售完成后，无法更改 POS 来源记录键：%s',
 		'Guest' => '访客',

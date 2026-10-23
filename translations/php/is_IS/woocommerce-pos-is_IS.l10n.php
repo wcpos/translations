@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Kvittunarskjalið fannst ekki.',
 		'Invalid receipt document.' => 'Ógilt kvittunarskjal.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Ekki tókst að skrá skattalega POS-færslu %s; hana þarf að endurheimta.',
+		'POS fiscal sale record recovered.' => 'Skattaskráning POS-sölunnar var endurheimt.',
 		'Closed' => 'Lokað',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ekki er hægt að breyta upprunalyklum POS eftir sölu: %s',
 		'Guest' => 'Gestur',

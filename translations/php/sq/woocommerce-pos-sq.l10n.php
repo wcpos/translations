@@ -382,6 +382,7 @@ return array(
 		'Receipt document not found.' => 'Dokumenti i kuponit nuk u gjet.',
 		'Invalid receipt document.' => 'Dokumenti i kuponit është i pavlefshëm.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Regjistrimi fiskal POS %s nuk mund të shkruhej; do të kërkojë rikuperim.',
+		'POS fiscal sale record recovered.' => 'U rikuperua regjistri fiskal i shitjes POS.',
 		'Closed' => 'Mbyllur',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Çelësat e origjinës POS nuk mund të ndryshohen pas shitjes: %s',
 		'Guest' => 'Vizitor',

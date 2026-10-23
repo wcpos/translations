@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'Kviitungi dokumenti ei leitud.',
 		'Invalid receipt document.' => 'Kviitungi dokument on vigane.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS-i maksuandmete kirjet %s ei saanud kirjutada; see tuleb taastada.',
+		'POS fiscal sale record recovered.' => 'POS-i müügi maksuarvestus taastati.',
 		'Closed' => 'Suletud',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-i päritolu võtmeid ei saa pärast müüki muuta: %s',
 		'Guest' => 'Külaline',

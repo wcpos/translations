@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'レシートのドキュメントが見つかりません。',
 		'Invalid receipt document.' => 'レシートのドキュメントが無効です。',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POSの税務記録%sを書き込めませんでした。復旧が必要です。',
+		'POS fiscal sale record recovered.' => 'POSの税務上の販売記録を復元しました。',
 		'Closed' => '閉鎖',
 		'POS provenance keys cannot be changed after the sale: %s' => '販売後はPOSの出所情報キーを変更できません：%s',
 		'Guest' => 'ゲスト',

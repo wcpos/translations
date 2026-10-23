@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'مستند الإيصال غير موجود.',
 		'Invalid receipt document.' => 'مستند الإيصال غير صالح.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'تعذرت كتابة السجل المالي %s في POS؛ ويلزم استرداده.',
+		'POS fiscal sale record recovered.' => 'تم استرداد سجل البيع المالي الخاص بـ POS.',
 		'Closed' => 'مغلق',
 		'POS provenance keys cannot be changed after the sale: %s' => 'لا يمكن تغيير مفاتيح مصدر بيانات POS بعد البيع: %s',
 		'Guest' => 'ضيف',

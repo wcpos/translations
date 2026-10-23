@@ -384,6 +384,7 @@ return array(
 		'Receipt document not found.' => 'No se encontró el documento del recibo.',
 		'Invalid receipt document.' => 'El documento del recibo no es válido.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'No se pudo guardar el registro fiscal %s de POS; será necesario recuperarlo.',
+		'POS fiscal sale record recovered.' => 'Se recuperó el registro fiscal de la venta de POS.',
 		'Closed' => 'Cerrado',
 		'POS provenance keys cannot be changed after the sale: %s' => 'No se pueden cambiar las claves de procedencia de POS después de la venta: %s',
 		'Guest' => 'Invitado',
