@@ -533,7 +533,7 @@ msgstr "Maksevärav ei ole POS-kassas saadaval."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:282
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:459
+#: includes/API/V2/Payments_Controller.php:433
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Tellimust ei leitud."
@@ -1130,31 +1130,31 @@ msgstr "Metaandmete _woocommerce_pos_uuid väärtus on sobimatu."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "Kogu „%1$s” ei kuulu selle marsruudi alla. Toetatud: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:142
+#: includes/API/V2/Payments_Controller.php:127
 msgid "Sorry, you cannot manage order payments."
 msgstr "Vabandust, te ei saa tellimuste makseid hallata."
 
-#: includes/API/V2/Payments_Controller.php:162
+#: includes/API/V2/Payments_Controller.php:147
 msgid "Payment must be an object."
 msgstr "Makse peab olema objekt."
 
-#: includes/API/V2/Payments_Controller.php:233
+#: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:109
-#: includes/Payments/Contract/Ledger.php:1697
+#: includes/Payments/Contract/Gateway_Submission.php:110
+#: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "Makseviisi ei leitud."
 
-#: includes/API/V2/Payments_Controller.php:239
+#: includes/API/V2/Payments_Controller.php:224
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Väärtused peavad olema objekt ning katse ID UUID."
 
-#: includes/API/V2/Payments_Controller.php:244
+#: includes/API/V2/Payments_Controller.php:229
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "Katse ID peab tähistama tühistatavat saadetud katset."
 
-#: includes/API/V2/Payments_Controller.php:355
+#: includes/API/V2/Payments_Controller.php:340
 msgid "Invalid payment operation parameters."
 msgstr "Makse toimingu parameetrid on vigased."
 
@@ -1167,8 +1167,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Vabandust, te ei saa makseviise algkäivitada."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:55
-#: includes/Payments/Contract/Ledger.php:3260
+#: includes/Payments/Contract/Gateway_Submission.php:56
+#: includes/Payments/Contract/Ledger.php:3007
 msgid "Payment capture mode is unsupported."
 msgstr "Makse hõivamise režiim pole toetatud."
 
@@ -1268,7 +1268,7 @@ msgid "The session request could not be completed."
 msgstr "Vahetuse päringut ei saanud täita."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:577
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
@@ -1426,38 +1426,33 @@ msgstr "See makse hõivamise režiim ei toeta seda toimingut."
 msgid "This command ID was already used with a different request."
 msgstr "Seda käsu ID-d on juba kasutatud teise päringuga."
 
-#: includes/Payments/Contract/Command_Log.php:240
-#: includes/Payments/Contract/Gateway_Submission.php:87
+#: includes/Payments/Contract/Command_Log.php:241
+#: includes/Payments/Contract/Gateway_Submission.php:88
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "See katse tühistati või asendati kassas."
 
-#: includes/Payments/Contract/Command_Log.php:266
+#: includes/Payments/Contract/Command_Log.php:267
 msgid "The order changed since this command was built; read it again."
 msgstr ""
 "Tellimus on pärast selle käsu loomist muutunud; lugege see uuesti sisse."
 
-#: includes/Payments/Contract/Completion_Stamp.php:264
-msgid "WCPOS: completion could not be recorded; reconcile manually."
-msgstr ""
-"WCPOS: lõpetamist ei saanud registreerida; tehke käsitsi kooskõlastus."
+#: includes/Payments/Contract/Completion_Stamp.php:92
+msgid "Recording the completion"
+msgstr "Lõpetamise salvestamine"
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:302
+#: includes/Payments/Contract/Completion_Stamp.php:146
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr ""
 "WCPOS: lõpetamist %d ei saanud registreerida; tehke käsitsi kooskõlastus."
 
-#: includes/Payments/Contract/Completion_Stamp.php:335
-#: includes/Payments/Contract/Completion_Stamp.php:357
+#: includes/Payments/Contract/Completion_Stamp.php:181
+#: includes/Payments/Contract/Completion_Stamp.php:203
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
 "WCPOS: taasavamist ei saanud lõpetamiste ajalukku registreerida; tehke käsitsi kooskõlastus."
-
-#: includes/Payments/Contract/Completion_Stamp.php:494
-msgid "Recording the paid attempt"
-msgstr "Õnnestunud maksekatse salvestamine"
 
 #: includes/Payments/Contract/Gateway_Handler.php:73
 msgid "The payment provider did not refund this payment."
@@ -1467,45 +1462,45 @@ msgstr "Maksepakkuja ei tagastanud selle makse raha."
 msgid "This payment cannot be voided."
 msgstr "Seda makset ei saa tühistada."
 
-#: includes/Payments/Contract/Gateway_Submission.php:58
+#: includes/Payments/Contract/Gateway_Submission.php:59
 msgid "Attempt ID must be a UUID."
 msgstr "Katse ID peab olema UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:61
+#: includes/Payments/Contract/Gateway_Submission.php:62
 msgid "Only POS orders take a gateway submission."
 msgstr "Makseväravale saab päringu esitada ainult POS-tellimuse puhul."
 
-#: includes/Payments/Contract/Gateway_Submission.php:92
+#: includes/Payments/Contract/Gateway_Submission.php:93
 msgid "Payment method is not enabled for the POS."
 msgstr "Makseviis pole POS-is lubatud."
 
-#: includes/Payments/Contract/Gateway_Submission.php:100
+#: includes/Payments/Contract/Gateway_Submission.php:101
 msgid "Order is already paid."
 msgstr "Tellimus on juba tasutud."
 
-#: includes/Payments/Contract/Gateway_Submission.php:104
+#: includes/Payments/Contract/Gateway_Submission.php:105
 msgid "Order already has a live payment."
 msgstr "Tellimusel on juba aktiivne makse."
 
-#: includes/Payments/Contract/Gateway_Submission.php:185
+#: includes/Payments/Contract/Gateway_Submission.php:186
 msgid "The payment method rejected the details entered."
 msgstr "Makseviis lükkas sisestatud andmed tagasi."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:267
+#: includes/Payments/Contract/Gateway_Submission.php:274
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "WCPOS-i maksekatse %1$s: %2$s nurjus pärast makse saatmist. Kontrollige teenusepakkujalt, kas raha võeti, ja tühistage seejärel katse POS-is."
 
-#: includes/Payments/Contract/Gateway_Submission.php:271
-#: includes/Payments/Contract/Gateway_Submission.php:286
+#: includes/Payments/Contract/Gateway_Submission.php:278
+#: includes/Payments/Contract/Gateway_Submission.php:293
 msgid "The payment provider failed."
 msgstr "Maksepakkuja tõrge."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:290
+#: includes/Payments/Contract/Gateway_Submission.php:297
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1513,19 +1508,19 @@ msgstr ""
 "See makseviis soovib avada aadressi %s brauseris, kuid POS ei saa seda jätkata."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:351
+#: includes/Payments/Contract/Gateway_Submission.php:358
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Arveldatud POS-i kaudu: %1$s, olekuga %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:380
+#: includes/Payments/Contract/Gateway_Submission.php:387
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Saadetud POS-i kaudu: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:403
+#: includes/Payments/Contract/Gateway_Submission.php:410
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1533,112 +1528,112 @@ msgstr ""
 "WCPOS-i maksekatse %1$s: %2$s vastas, kuid POS ei saanud seda registreerida. Kontrollige tellimust teenusepakkujalt ja seejärel tühistage katse POS-is."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:449
+#: includes/Payments/Contract/Gateway_Submission.php:456
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Maksekatse %s võidi juba maksevärava kaudu tasuda; ühitage makse enne katse tühistamist."
 
-#: includes/Payments/Contract/Gateway_Submission.php:452
+#: includes/Payments/Contract/Gateway_Submission.php:459
 msgid "This invoice cannot be cancelled."
 msgstr "Seda arvet ei saa tühistada."
 
-#: includes/Payments/Contract/Gateway_Submission.php:455
+#: includes/Payments/Contract/Gateway_Submission.php:462
 msgid "The invoice was sent by a different payment method."
 msgstr "Arve saadeti teise makseviisiga."
 
-#: includes/Payments/Contract/Gateway_Submission.php:459
+#: includes/Payments/Contract/Gateway_Submission.php:466
 msgid "A newer invoice has been sent for this order."
 msgstr "Selle tellimuse kohta on saadetud uuem arve."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:465
+#: includes/Payments/Contract/Gateway_Submission.php:472
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Tühistatud POS-i kaudu: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:666
+#: includes/Payments/Contract/Gateway_Submission.php:702
 msgid "This field must be true or false."
 msgstr "Selle välja väärtus peab olema true või false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:671
+#: includes/Payments/Contract/Gateway_Submission.php:707
 msgid "This field must be text."
 msgstr "Selle välja väärtus peab olema tekst."
 
-#: includes/Payments/Contract/Gateway_Submission.php:675
+#: includes/Payments/Contract/Gateway_Submission.php:711
 msgid "This field is required."
 msgstr "See väli on kohustuslik."
 
-#: includes/Payments/Contract/Gateway_Submission.php:679
+#: includes/Payments/Contract/Gateway_Submission.php:715
 msgid "Choose one of the listed options."
 msgstr "Valige üks loendis olevatest valikutest."
 
-#: includes/Payments/Contract/Gateway_Submission.php:693
+#: includes/Payments/Contract/Gateway_Submission.php:729
 msgid "Check the payment fields."
 msgstr "Kontrollige maksevälju."
 
-#: includes/Payments/Contract/Ledger.php:681
+#: includes/Payments/Contract/Ledger.php:580
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "Seda makseviisi ei saa salvestada; see peab ise makse sooritama."
 
-#: includes/Payments/Contract/Ledger.php:687
+#: includes/Payments/Contract/Ledger.php:586
 msgid "Recorded payments must be captured or authorized."
 msgstr "Salvestatud maksed peavad olema hõivatud või autoriseeritud."
 
-#: includes/Payments/Contract/Ledger.php:695
-#: includes/Payments/Contract/Ledger.php:699
+#: includes/Payments/Contract/Ledger.php:594
+#: includes/Payments/Contract/Ledger.php:598
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Selle makseviisi jaoks saadud summa on vigane."
 
-#: includes/Payments/Contract/Ledger.php:902
+#: includes/Payments/Contract/Ledger.php:815
 msgid "Payment method is disabled."
 msgstr "Makseviis on keelatud."
 
-#: includes/Payments/Contract/Ledger.php:910
-#: includes/Payments/Contract/Ledger.php:1758
-#: includes/Payments/Contract/Ledger.php:1819
+#: includes/Payments/Contract/Ledger.php:823
+#: includes/Payments/Contract/Ledger.php:1685
+#: includes/Payments/Contract/Ledger.php:1746
 msgid "The order is already paid."
 msgstr "Tellimus on juba makstud."
 
-#: includes/Payments/Contract/Ledger.php:910
-#: includes/Payments/Contract/Ledger.php:1759
+#: includes/Payments/Contract/Ledger.php:823
+#: includes/Payments/Contract/Ledger.php:1686
 msgid "Payment amount exceeds the order balance."
 msgstr "Makse summa ületab tellimuse jääki."
 
-#: includes/Payments/Contract/Ledger.php:922
-#: includes/Payments/Contract/Ledger.php:1761
-#: includes/Payments/Contract/Ledger.php:1934
+#: includes/Payments/Contract/Ledger.php:835
+#: includes/Payments/Contract/Ledger.php:1688
+#: includes/Payments/Contract/Ledger.php:1861
 msgid "Another payment is already in progress on this order."
 msgstr "Selle tellimuse jaoks on juba teine makse pooleli."
 
-#: includes/Payments/Contract/Ledger.php:1162
+#: includes/Payments/Contract/Ledger.php:1078
 msgid "Tip"
 msgstr "Jootraha"
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1208
+#: includes/Payments/Contract/Ledger.php:1134
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr "WCPOS-i makse %1$s summa ei klapi: eeldati %2$s, kinnitati %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1300
+#: includes/Payments/Contract/Ledger.php:1226
 msgid "Refund must belong to this order."
 msgstr "Tagasimakse peab kuuluma sellele tellimusele."
 
-#: includes/Payments/Contract/Ledger.php:1303
-#: includes/Payments/Contract/Ledger.php:1318
-#: includes/Payments/Contract/Ledger.php:1373
+#: includes/Payments/Contract/Ledger.php:1229
+#: includes/Payments/Contract/Ledger.php:1244
+#: includes/Payments/Contract/Ledger.php:1299
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Tagasimakse summat ei saa sellele maksele määrata."
 
-#: includes/Payments/Contract/Ledger.php:1336
+#: includes/Payments/Contract/Ledger.php:1262
 msgid "The refund could not be reserved; retry."
 msgstr "Tagasimakset ei õnnestunud reserveerida; proovige uuesti."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1432
+#: includes/Payments/Contract/Ledger.php:1359
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
@@ -1646,76 +1641,76 @@ msgstr ""
 "WCPOS: tagasimakse #%1$d summas %2$s saadeti makseviisile %3$s; kinnitage see teenusepakkujaga enne uuesti proovimist."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1432
+#: includes/Payments/Contract/Ledger.php:1359
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: tagasimakse #%1$d summas %2$s ei läinud makseviisi %3$s kaudu läbi, kuid broneeringut ei õnnestunud eemaldada; kontrollige makset enne uuesti proovimist."
 
-#: includes/Payments/Contract/Ledger.php:1507
-#: includes/Payments/Contract/Ledger.php:1672
+#: includes/Payments/Contract/Ledger.php:1434
+#: includes/Payments/Contract/Ledger.php:1599
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Makse ID peab olema UUID."
 
-#: includes/Payments/Contract/Ledger.php:1528
-#: includes/Payments/Contract/Ledger.php:1737
+#: includes/Payments/Contract/Ledger.php:1455
+#: includes/Payments/Contract/Ledger.php:1664
 msgid "Payment id conflicts with an existing payment."
 msgstr "Makse ID on vastuolus olemasoleva maksega."
 
-#: includes/Payments/Contract/Ledger.php:1570
+#: includes/Payments/Contract/Ledger.php:1497
 msgid "Refund status is invalid."
 msgstr "Tagasimakse staatus on kehtetu."
 
-#: includes/Payments/Contract/Ledger.php:1675
-#: includes/Payments/Contract/Ledger.php:1679
+#: includes/Payments/Contract/Ledger.php:1602
+#: includes/Payments/Contract/Ledger.php:1606
 msgid "Payment amount must be positive."
 msgstr "Makse summa peab olema positiivne."
 
-#: includes/Payments/Contract/Ledger.php:1684
+#: includes/Payments/Contract/Ledger.php:1611
 msgid "Payment currency must match the order."
 msgstr "Makse valuuta peab vastama tellimuse valuutale."
 
-#: includes/Payments/Contract/Ledger.php:1760
+#: includes/Payments/Contract/Ledger.php:1687
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "Pakkuja kinnitatud summa või valuuta ei vasta maksele."
 
-#: includes/Payments/Contract/Ledger.php:1866
+#: includes/Payments/Contract/Ledger.php:1793
 msgid "The order is not covered by its payments."
 msgstr "Maksed ei kata tellimuse summat."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:2011
+#: includes/Payments/Contract/Ledger.php:1938
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-i makse %s tühistati."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:2013
+#: includes/Payments/Contract/Ledger.php:1940
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-i makse %1$s tühistati: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2792
+#: includes/Payments/Contract/Ledger.php:2643
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s ei jõudnud lõpule; kooskõlasta käsitsi."
 
-#: includes/Payments/Contract/Ledger.php:3255
+#: includes/Payments/Contract/Ledger.php:3002
 msgid "Payment not found."
 msgstr "Makset ei leitud."
 
-#: includes/Payments/Contract/Ledger.php:3265
+#: includes/Payments/Contract/Ledger.php:3012
 msgid "Payment transition is invalid."
 msgstr "Makse oleku muutmine on vigane."
 
-#: includes/Payments/Contract/Money_Command.php:60
+#: includes/Payments/Contract/Money_Command.php:72
 msgid "Command ID must be a UUID."
 msgstr "Käsu ID peab olema UUID."
 
-#: includes/Payments/Contract/Money_Command.php:64
+#: includes/Payments/Contract/Money_Command.php:76
 msgid "A payment command needs the order revision it was built against."
 msgstr "Maksekäsk vajab selle loomisel aluseks olnud tellimuse versiooni."
 
@@ -1952,7 +1947,7 @@ msgstr "Külaline"
 #: includes/Services/Order_Notes.php:61
 #: includes/Services/Receipt_Data_Builder.php:493
 #: includes/Services/Receipt_Data_Builder.php:916
-#: tests/includes/Services/Test_Receipt_Data_Builder.php:1625
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:1626
 #, php-format
 msgid "Store #%d"
 msgstr "Pood #%d"
