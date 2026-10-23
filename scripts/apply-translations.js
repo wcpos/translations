@@ -14,6 +14,7 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
     missing_results: [], unexpected: 0, files_written: [],
   };
   const seenSources = new Set();
+  const sourceFiles = new Map();
   const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   // Parse a results file; null when it is not a valid results object for this locale.
   const readResults = (file, locale) => {
@@ -135,7 +136,14 @@ function applyTranslations({ rootDir = path.resolve(__dirname, '..'), workDir, r
         } else {
           translations = translations.map(normalizeWcposProductNames);
           translations.forEach((translation, index) => {
-            const checked = checkTranslation({ locale, source: sources[index === 0 ? 0 : 1], translation });
+            let sourceStrings;
+            if (js && index === 0) {
+              if (!sourceFiles.has(file)) sourceFiles.set(file,
+                JSON.parse(fs.readFileSync(path.join(rootDir, 'source/js', file), 'utf8')));
+              sourceStrings = sourceFiles.get(file);
+            }
+            const checked = checkTranslation({ locale, source: sources[index === 0 ? 0 : 1],
+              translation, key, sourceStrings });
             reasons.push(...checked.errors);
             warnings.push(...checked.warnings);
           });

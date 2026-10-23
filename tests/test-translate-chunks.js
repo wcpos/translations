@@ -115,6 +115,8 @@ try {
   function scenario(name, mutate) {
     const dirs = setup(name, [split]);
     const rootDir = path.join(root, name);
+    fs.mkdirSync(path.join(rootDir, 'source/js/app'), { recursive: true });
+    write(path.join(rootDir, 'source/js/app/x.json'), { k0: 'Source 0', k1: 'Source 1' });
     fs.mkdirSync(path.join(rootDir, 'source/php'), { recursive: true });
     write(path.join(rootDir, 'source/php/shop.pot'), pot);
     planChunks({ ...dirs, max: 5 });
