@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - オープン <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - 一部入金 <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'この支払いキャプチャモードでは、その操作に対応していません。',
+		'Clearing the awaiting-customer state' => '顧客待ち状態を解除しています',
 		'This command ID was already used with a different request.' => 'このコマンドIDは、すでに別のリクエストで使用されています。',
 		'This attempt was cancelled or superseded at the till.' => 'レジでこの試行はキャンセルされたか、別の試行に置き換えられました。',
 		'The order changed since this command was built; read it again.' => 'このコマンドの作成後に注文が変更されました。再度読み込んでください。',

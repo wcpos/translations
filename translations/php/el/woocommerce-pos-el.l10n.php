@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Ανοιχτό <span class="count">(%s)</span>' . "\x00" . 'POS - Ανοιχτά <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Μερική Πληρωμή <span class="count">(%s)</span>' . "\x00" . 'POS - Μερικές Πληρωμές <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Αυτή η λειτουργία είσπραξης πληρωμής δεν υποστηρίζει αυτήν την ενέργεια.',
+		'Clearing the awaiting-customer state' => 'Εκκαθάριση της κατάστασης αναμονής πελάτη',
 		'This command ID was already used with a different request.' => 'Αυτό το αναγνωριστικό εντολής έχει ήδη χρησιμοποιηθεί με διαφορετικό αίτημα.',
 		'This attempt was cancelled or superseded at the till.' => 'Αυτή η προσπάθεια ακυρώθηκε ή αντικαταστάθηκε στο ταμείο.',
 		'The order changed since this command was built; read it again.' => 'Η παραγγελία άλλαξε από τότε που δημιουργήθηκε αυτή η εντολή· διαβάστε την ξανά.',

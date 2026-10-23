@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Отворено <span class="count">(%s)</span>' . "\x00" . 'POS - Отворени <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Частично плащане <span class="count">(%s)</span>' . "\x00" . 'POS - Частични плащания <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Този режим на осчетоводяване не поддържа тази операция.',
+		'Clearing the awaiting-customer state' => 'Изчистване на състоянието „изчакване на клиент“',
 		'This command ID was already used with a different request.' => 'Този ID на команда вече е използван с друга заявка.',
 		'This attempt was cancelled or superseded at the till.' => 'Този опит беше отменен или заменен на касата.',
 		'The order changed since this command was built; read it again.' => 'Поръчката е променена след създаването на командата; прочетете я отново.',

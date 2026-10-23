@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>' . "\x00" . 'POS - مفتوح <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>' . "\x00" . 'POS - دفعة جزئية <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'وضع تحصيل هذه الدفعة لا يدعم هذه العملية.',
+		'Clearing the awaiting-customer state' => 'جارٍ مسح حالة انتظار العميل',
 		'This command ID was already used with a different request.' => 'سبق استخدام معرّف هذا الأمر مع طلب مختلف.',
 		'This attempt was cancelled or superseded at the till.' => 'أُلغيت هذه المحاولة أو استُبدلت بأخرى عند نقطة البيع.',
 		'The order changed since this command was built; read it again.' => 'تغيّر الطلب منذ إنشاء هذا الأمر؛ أعد قراءته.',

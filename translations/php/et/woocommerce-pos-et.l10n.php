@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Avatud <span class="count">(%s)</span>' . "\x00" . 'POS - Avatud <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Osaline makse <span class="count">(%s)</span>' . "\x00" . 'POS - Osaline makse <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'See makse hõivamise režiim ei toeta seda toimingut.',
+		'Clearing the awaiting-customer state' => 'Kliendi ootamise oleku tühjendamine',
 		'This command ID was already used with a different request.' => 'Seda käsu ID-d on juba kasutatud teise päringuga.',
 		'This attempt was cancelled or superseded at the till.' => 'See katse tühistati või asendati kassas.',
 		'The order changed since this command was built; read it again.' => 'Tellimus on pärast selle käsu loomist muutunud; lugege see uuesti sisse.',

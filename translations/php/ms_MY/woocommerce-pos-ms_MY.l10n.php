@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Terbuka <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Bayaran Separa <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Mod penerimaan pembayaran ini tidak menyokong operasi itu.',
+		'Clearing the awaiting-customer state' => 'Mengosongkan status menunggu pelanggan',
 		'This command ID was already used with a different request.' => 'ID arahan ini telah digunakan dengan permintaan lain.',
 		'This attempt was cancelled or superseded at the till.' => 'Percubaan ini dibatalkan atau digantikan di kaunter.',
 		'The order changed since this command was built; read it again.' => 'Pesanan telah berubah sejak arahan ini dibina; baca semula pesanan.',

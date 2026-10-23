@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - 열기 <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - 부분 결제 <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => '이 결제 매입 방식은 해당 작업을 지원하지 않습니다.',
+		'Clearing the awaiting-customer state' => '고객 대기 상태를 해제하고 있습니다',
 		'This command ID was already used with a different request.' => '이 명령 ID는 이미 다른 요청에 사용되었습니다.',
 		'This attempt was cancelled or superseded at the till.' => '이 시도는 계산대에서 취소되었거나 다른 시도로 대체되었습니다.',
 		'The order changed since this command was built; read it again.' => '이 명령을 생성한 후 주문이 변경되었습니다. 주문을 다시 불러오십시오.',

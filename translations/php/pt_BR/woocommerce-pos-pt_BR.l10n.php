@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Aberto <span class="count">(%s)</span>' . "\x00" . 'POS - Aberto <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Pagamento Parcial <span class="count">(%s)</span>' . "\x00" . 'POS - Pagamento Parcial <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Este modo de captura de pagamento não oferece suporte a essa operação.',
+		'Clearing the awaiting-customer state' => 'Limpando o estado de espera do cliente',
 		'This command ID was already used with a different request.' => 'Este ID de comando já foi usado em outra solicitação.',
 		'This attempt was cancelled or superseded at the till.' => 'Esta tentativa foi cancelada ou substituída no caixa.',
 		'The order changed since this command was built; read it again.' => 'O pedido foi alterado desde que este comando foi criado. Leia-o novamente.',

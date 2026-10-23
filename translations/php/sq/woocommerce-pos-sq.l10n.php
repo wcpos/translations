@@ -283,6 +283,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - E hapur <span class="count">(%s)</span>' . "\x00" . 'POS - E hapur <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Pagesë e pjesshme <span class="count">(%s)</span>' . "\x00" . 'POS - Pagesë e pjesshme <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Kjo mënyrë arkëtimi e pagesës nuk e mbështet atë veprim.',
+		'Clearing the awaiting-customer state' => 'Po pastrohet gjendja e pritjes së klientit',
 		'This command ID was already used with a different request.' => 'Kjo ID komande është përdorur tashmë me një kërkesë tjetër.',
 		'This attempt was cancelled or superseded at the till.' => 'Kjo përpjekje u anulua ose u zëvendësua në kasë.',
 		'The order changed since this command was built; read it again.' => 'Porosia ka ndryshuar që nga krijimi i kësaj komande. Lexojeni përsëri.',

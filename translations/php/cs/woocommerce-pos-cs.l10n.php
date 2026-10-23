@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Otevřeno <span class="count">(%s)</span>' . "\x00" . 'POS - Otevřeno <span class="count">(%s)</span>' . "\x00" . 'POS - Otevřeno <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Částečná platba <span class="count">(%s)</span>' . "\x00" . 'POS - Částečná platba <span class="count">(%s)</span>' . "\x00" . 'POS - Částečná platba <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Tento režim zaúčtování platby tuto operaci nepodporuje.',
+		'Clearing the awaiting-customer state' => 'Mazání stavu čekání na zákazníka',
 		'This command ID was already used with a different request.' => 'Toto ID příkazu již bylo použito s jiným požadavkem.',
 		'This attempt was cancelled or superseded at the till.' => 'Tento pokus byl u pokladny zrušen nebo nahrazen novějším.',
 		'The order changed since this command was built; read it again.' => 'Objednávka se od vytvoření tohoto příkazu změnila; načtěte ji znovu.',

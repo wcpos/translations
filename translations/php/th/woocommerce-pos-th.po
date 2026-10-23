@@ -1138,7 +1138,7 @@ msgstr "การชำระเงินต้องเป็นออบเจ
 #: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:110
+#: includes/Payments/Contract/Gateway_Submission.php:105
 #: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "ไม่พบวิธีชำระเงิน"
@@ -1164,8 +1164,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "ขออภัย คุณเริ่มต้นวิธีชำระเงินไม่ได้"
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:56
-#: includes/Payments/Contract/Ledger.php:3007
+#: includes/Payments/Contract/Gateway_Submission.php:51
+#: includes/Payments/Contract/Ledger.php:2980
 msgid "Payment capture mode is unsupported."
 msgstr "ไม่รองรับโหมดเรียกเก็บเงิน"
 
@@ -1416,12 +1416,16 @@ msgstr[0] "POS - ชำระเงินบางส่วน <span class=\"cou
 msgid "This payment capture mode does not support that operation."
 msgstr "โหมดเรียกเก็บเงินนี้ไม่รองรับการดำเนินการดังกล่าว"
 
+#: includes/Payments/Contract/Attempts.php:257
+msgid "Clearing the awaiting-customer state"
+msgstr "กำลังล้างสถานะรอลูกค้า"
+
 #: includes/Payments/Contract/Command_Log.php:105
 msgid "This command ID was already used with a different request."
 msgstr "ID คำสั่งนี้ถูกใช้กับคำขออื่นแล้ว"
 
 #: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:88
+#: includes/Payments/Contract/Gateway_Submission.php:83
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "ความพยายามครั้งนี้ถูกยกเลิกหรือถูกแทนที่ที่เครื่องคิดเงิน"
 
@@ -1456,45 +1460,45 @@ msgstr "ผู้ให้บริการชำระเงินไม่ไ
 msgid "This payment cannot be voided."
 msgstr "ยกเลิกการชำระเงินนี้ไม่ได้"
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:54
 msgid "Attempt ID must be a UUID."
 msgstr "ID ของการพยายามต้องเป็น UUID"
 
-#: includes/Payments/Contract/Gateway_Submission.php:62
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Only POS orders take a gateway submission."
 msgstr "ส่งรายการไปยังเกตเวย์ได้เฉพาะคำสั่งซื้อ POS เท่านั้น"
 
-#: includes/Payments/Contract/Gateway_Submission.php:93
+#: includes/Payments/Contract/Gateway_Submission.php:88
 msgid "Payment method is not enabled for the POS."
 msgstr "ไม่ได้เปิดใช้วิธีชำระเงินนี้สำหรับ POS"
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:96
 msgid "Order is already paid."
 msgstr "ชำระเงินสำหรับคำสั่งซื้อนี้แล้ว"
 
-#: includes/Payments/Contract/Gateway_Submission.php:105
+#: includes/Payments/Contract/Gateway_Submission.php:100
 msgid "Order already has a live payment."
 msgstr "คำสั่งซื้อนี้มีการชำระเงินที่ยังใช้งานอยู่แล้ว"
 
-#: includes/Payments/Contract/Gateway_Submission.php:186
+#: includes/Payments/Contract/Gateway_Submission.php:181
 msgid "The payment method rejected the details entered."
 msgstr "วิธีชำระเงินปฏิเสธข้อมูลที่ป้อน"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:269
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "ความพยายามชำระเงิน %1$s ของ WCPOS: %2$s ล้มเหลวหลังจากส่งการชำระเงินแล้ว โปรดตรวจสอบกับผู้ให้บริการว่ามีการหักเงินหรือไม่ จากนั้นยกเลิกความพยายามที่ POS"
 
-#: includes/Payments/Contract/Gateway_Submission.php:278
-#: includes/Payments/Contract/Gateway_Submission.php:293
+#: includes/Payments/Contract/Gateway_Submission.php:273
+#: includes/Payments/Contract/Gateway_Submission.php:288
 msgid "The payment provider failed."
 msgstr "ผู้ให้บริการชำระเงินขัดข้อง"
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:297
+#: includes/Payments/Contract/Gateway_Submission.php:292
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1502,19 +1506,19 @@ msgstr ""
 "วิธีชำระเงินนี้ต้องการเปิด %s ในเบราว์เซอร์ ซึ่ง POS ไม่สามารถดำเนินการต่อได้"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:358
+#: includes/Payments/Contract/Gateway_Submission.php:353
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "ดำเนินการผ่าน POS แล้ว: %1$s เมื่อ %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:387
+#: includes/Payments/Contract/Gateway_Submission.php:369
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "ส่งผ่าน POS แล้ว: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:410
+#: includes/Payments/Contract/Gateway_Submission.php:392
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1522,48 +1526,48 @@ msgstr ""
 "การพยายามชำระเงิน WCPOS %1$s: %2$s ตอบกลับแล้ว แต่ POS ไม่สามารถบันทึกได้ โปรดตรวจสอบคำสั่งซื้อกับผู้ให้บริการ แล้วจึงยกเลิกการพยายามนี้ใน POS"
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:456
+#: includes/Payments/Contract/Gateway_Submission.php:416
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "ความพยายามชำระเงิน %s อาจได้รับการชำระผ่านเกตเวย์แล้ว โปรดกระทบยอดการชำระเงินก่อนยกเลิก"
 
-#: includes/Payments/Contract/Gateway_Submission.php:459
+#: includes/Payments/Contract/Gateway_Submission.php:419
 msgid "This invoice cannot be cancelled."
 msgstr "ยกเลิกใบแจ้งหนี้นี้ไม่ได้"
 
-#: includes/Payments/Contract/Gateway_Submission.php:462
+#: includes/Payments/Contract/Gateway_Submission.php:422
 msgid "The invoice was sent by a different payment method."
 msgstr "ส่งใบแจ้งหนี้ด้วยวิธีชำระเงินอื่น"
 
-#: includes/Payments/Contract/Gateway_Submission.php:466
+#: includes/Payments/Contract/Gateway_Submission.php:426
 msgid "A newer invoice has been sent for this order."
 msgstr "มีการส่งใบแจ้งหนี้ฉบับใหม่กว่าสำหรับคำสั่งซื้อนี้แล้ว"
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:472
+#: includes/Payments/Contract/Gateway_Submission.php:432
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "ยกเลิกผ่าน POS แล้ว: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:702
+#: includes/Payments/Contract/Gateway_Submission.php:607
 msgid "This field must be true or false."
 msgstr "ฟิลด์นี้ต้องมีค่าเป็น true หรือ false"
 
-#: includes/Payments/Contract/Gateway_Submission.php:707
+#: includes/Payments/Contract/Gateway_Submission.php:612
 msgid "This field must be text."
 msgstr "ฟิลด์นี้ต้องเป็นข้อความ"
 
-#: includes/Payments/Contract/Gateway_Submission.php:711
+#: includes/Payments/Contract/Gateway_Submission.php:616
 msgid "This field is required."
 msgstr "จำเป็นต้องกรอกฟิลด์นี้"
 
-#: includes/Payments/Contract/Gateway_Submission.php:715
+#: includes/Payments/Contract/Gateway_Submission.php:620
 msgid "Choose one of the listed options."
 msgstr "เลือกหนึ่งตัวเลือกจากรายการ"
 
-#: includes/Payments/Contract/Gateway_Submission.php:729
+#: includes/Payments/Contract/Gateway_Submission.php:634
 msgid "Check the payment fields."
 msgstr "ตรวจสอบฟิลด์การชำระเงิน"
 
@@ -1687,16 +1691,16 @@ msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "ยกเลิกการชำระเงิน WCPOS %1$s แล้ว: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2643
+#: includes/Payments/Contract/Ledger.php:2631
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s ดำเนินการไม่สำเร็จ โปรดกระทบยอดด้วยตนเอง"
 
-#: includes/Payments/Contract/Ledger.php:3002
+#: includes/Payments/Contract/Ledger.php:2975
 msgid "Payment not found."
 msgstr "ไม่พบการชำระเงิน"
 
-#: includes/Payments/Contract/Ledger.php:3012
+#: includes/Payments/Contract/Ledger.php:2985
 msgid "Payment transition is invalid."
 msgstr "สถานะการชำระเงินเปลี่ยนไม่ถูกต้อง"
 

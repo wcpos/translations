@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Opið <span class="count">(%s)</span>' . "\x00" . 'POS - Opið <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Hluta greiðsla <span class="count">(%s)</span>' . "\x00" . 'POS - Hluta greiðsla <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Þessi innheimtuaðferð greiðslu styður ekki þá aðgerð.',
+		'Clearing the awaiting-customer state' => 'Hreinsa biðstöðu viðskiptavinar',
 		'This command ID was already used with a different request.' => 'Þetta auðkenni skipunar hefur þegar verið notað með annarri beiðni.',
 		'This attempt was cancelled or superseded at the till.' => 'Þessi tilraun var afturkölluð eða leyst af hólmi við kassann.',
 		'The order changed since this command was built; read it again.' => 'Pöntunin hefur breyst síðan skipunin var búin til; lestu hana aftur.',

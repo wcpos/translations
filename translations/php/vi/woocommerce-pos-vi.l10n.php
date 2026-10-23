@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Mở <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Thanh toán một phần <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Chế độ thu tiền này không hỗ trợ thao tác đó.',
+		'Clearing the awaiting-customer state' => 'Đang xóa trạng thái chờ khách hàng',
 		'This command ID was already used with a different request.' => 'ID lệnh này đã được dùng cho một yêu cầu khác.',
 		'This attempt was cancelled or superseded at the till.' => 'Lần thử này đã bị hủy hoặc thay thế tại quầy.',
 		'The order changed since this command was built; read it again.' => 'Đơn hàng đã thay đổi kể từ khi lệnh này được tạo. Hãy đọc lại đơn hàng.',

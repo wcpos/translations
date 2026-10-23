@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - פתוח <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>' . "\x00" . 'POS - פתוחים <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>' . "\x00" . 'POS - תשלום חלקי <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'מצב חיוב התשלום הזה לא תומך בפעולה הזאת.',
+		'Clearing the awaiting-customer state' => 'ניקוי מצב ההמתנה ללקוח',
 		'This command ID was already used with a different request.' => 'מזהה הפקודה הזה כבר שימש עם בקשה אחרת.',
 		'This attempt was cancelled or superseded at the till.' => 'ניסיון זה בוטל או הוחלף בקופה.',
 		'The order changed since this command was built; read it again.' => 'ההזמנה השתנתה מאז יצירת הפקודה; יש לקרוא אותה שוב.',

@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - បើក <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - ទូទាត់មួយផ្នែក <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'របៀបទទួលការបង់ប្រាក់នេះមិនគាំទ្រប្រតិបត្តិការនោះទេ។',
+		'Clearing the awaiting-customer state' => 'កំពុងសម្អាតស្ថានភាពរង់ចាំអតិថិជន',
 		'This command ID was already used with a different request.' => 'ID ពាក្យបញ្ជានេះត្រូវបានប្រើរួចហើយជាមួយសំណើផ្សេង។',
 		'This attempt was cancelled or superseded at the till.' => 'ការប៉ុនប៉ងនេះត្រូវបានបោះបង់ ឬជំនួសនៅកន្លែងគិតប្រាក់។',
 		'The order changed since this command was built; read it again.' => 'ការបញ្ជាទិញបានផ្លាស់ប្តូរចាប់តាំងពីពាក្យបញ្ជានេះត្រូវបានបង្កើត។ សូមអានវាម្តងទៀត។',

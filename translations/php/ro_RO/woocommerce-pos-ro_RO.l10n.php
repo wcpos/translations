@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Deschis <span class="count">(%s)</span>' . "\x00" . 'POS - Deschis <span class="count">(%s)</span>' . "\x00" . 'POS - Deschis <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Plată parțială <span class="count">(%s)</span>' . "\x00" . 'POS - Plată parțială <span class="count">(%s)</span>' . "\x00" . 'POS - Plată parțială <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Acest mod de încasare a plății nu acceptă această operațiune.',
+		'Clearing the awaiting-customer state' => 'Se șterge starea de așteptare a clientului',
 		'This command ID was already used with a different request.' => 'Acest ID de instrucțiune a fost deja folosit pentru o altă solicitare.',
 		'This attempt was cancelled or superseded at the till.' => 'Această încercare a fost anulată sau înlocuită la casă.',
 		'The order changed since this command was built; read it again.' => 'Comanda s-a modificat de când a fost creată această instrucțiune. Citiți-o din nou.',

@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Açık <span class="count">(%s)</span>' . "\x00" . 'POS - Açık <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Kısmi Ödeme <span class="count">(%s)</span>' . "\x00" . 'POS - Kısmi Ödeme <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Bu ödeme alma modu bu işlemi desteklemiyor.',
+		'Clearing the awaiting-customer state' => 'Müşteri bekleme durumu temizleniyor',
 		'This command ID was already used with a different request.' => 'Bu komut kimliği başka bir istekte zaten kullanıldı.',
 		'This attempt was cancelled or superseded at the till.' => 'Bu deneme kasada iptal edildi veya yerini başka bir deneme aldı.',
 		'The order changed since this command was built; read it again.' => 'Bu komut oluşturulduktan sonra sipariş değişti. Siparişi yeniden okuyun.',

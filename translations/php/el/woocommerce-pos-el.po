@@ -1154,7 +1154,7 @@ msgstr "Η πληρωμή πρέπει να είναι αντικείμενο."
 #: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:110
+#: includes/Payments/Contract/Gateway_Submission.php:105
 #: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "Δεν βρέθηκε η μέθοδος πληρωμής."
@@ -1182,8 +1182,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Δεν έχετε δικαίωμα αρχικοποίησης των μεθόδων πληρωμής."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
-#: includes/Payments/Contract/Gateway_Submission.php:56
-#: includes/Payments/Contract/Ledger.php:3007
+#: includes/Payments/Contract/Gateway_Submission.php:51
+#: includes/Payments/Contract/Ledger.php:2980
 msgid "Payment capture mode is unsupported."
 msgstr "Η λειτουργία είσπραξης πληρωμής δεν υποστηρίζεται."
 
@@ -1441,13 +1441,17 @@ msgid "This payment capture mode does not support that operation."
 msgstr ""
 "Αυτή η λειτουργία είσπραξης πληρωμής δεν υποστηρίζει αυτήν την ενέργεια."
 
+#: includes/Payments/Contract/Attempts.php:257
+msgid "Clearing the awaiting-customer state"
+msgstr "Εκκαθάριση της κατάστασης αναμονής πελάτη"
+
 #: includes/Payments/Contract/Command_Log.php:105
 msgid "This command ID was already used with a different request."
 msgstr ""
 "Αυτό το αναγνωριστικό εντολής έχει ήδη χρησιμοποιηθεί με διαφορετικό αίτημα."
 
 #: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:88
+#: includes/Payments/Contract/Gateway_Submission.php:83
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Αυτή η προσπάθεια ακυρώθηκε ή αντικαταστάθηκε στο ταμείο."
 
@@ -1482,45 +1486,45 @@ msgstr "Ο πάροχος πληρωμών δεν επέστρεψε τα χρή
 msgid "This payment cannot be voided."
 msgstr "Δεν είναι δυνατή η ακύρωση αυτής της πληρωμής."
 
-#: includes/Payments/Contract/Gateway_Submission.php:59
+#: includes/Payments/Contract/Gateway_Submission.php:54
 msgid "Attempt ID must be a UUID."
 msgstr "Το αναγνωριστικό προσπάθειας πρέπει να είναι UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:62
+#: includes/Payments/Contract/Gateway_Submission.php:57
 msgid "Only POS orders take a gateway submission."
 msgstr "Μόνο για παραγγελίες POS μπορεί να υποβληθεί αίτημα σε πύλη πληρωμών."
 
-#: includes/Payments/Contract/Gateway_Submission.php:93
+#: includes/Payments/Contract/Gateway_Submission.php:88
 msgid "Payment method is not enabled for the POS."
 msgstr "Ο τρόπος πληρωμής δεν είναι ενεργοποιημένος για το POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:101
+#: includes/Payments/Contract/Gateway_Submission.php:96
 msgid "Order is already paid."
 msgstr "Η παραγγελία έχει ήδη πληρωθεί."
 
-#: includes/Payments/Contract/Gateway_Submission.php:105
+#: includes/Payments/Contract/Gateway_Submission.php:100
 msgid "Order already has a live payment."
 msgstr "Η παραγγελία έχει ήδη ενεργή πληρωμή."
 
-#: includes/Payments/Contract/Gateway_Submission.php:186
+#: includes/Payments/Contract/Gateway_Submission.php:181
 msgid "The payment method rejected the details entered."
 msgstr "Ο τρόπος πληρωμής απέρριψε τα στοιχεία που καταχωρίσατε."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:274
+#: includes/Payments/Contract/Gateway_Submission.php:269
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Η προσπάθεια πληρωμής %1$s του WCPOS: %2$s απέτυχε αφού στάλθηκε η πληρωμή. Επικοινωνήστε με τον πάροχο για να επιβεβαιώσετε αν χρεώθηκε το ποσό και, στη συνέχεια, ακυρώστε την προσπάθεια στο POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:278
-#: includes/Payments/Contract/Gateway_Submission.php:293
+#: includes/Payments/Contract/Gateway_Submission.php:273
+#: includes/Payments/Contract/Gateway_Submission.php:288
 msgid "The payment provider failed."
 msgstr "Παρουσιάστηκε σφάλμα στον πάροχο πληρωμών."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:297
+#: includes/Payments/Contract/Gateway_Submission.php:292
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1528,19 +1532,19 @@ msgstr ""
 "Αυτός ο τρόπος πληρωμής θέλει να ανοίξει το %s σε πρόγραμμα περιήγησης, κάτι που το POS δεν μπορεί να ακολουθήσει."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:358
+#: includes/Payments/Contract/Gateway_Submission.php:353
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Ολοκληρώθηκε μέσω POS: %1$s με κατάσταση %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:387
+#: includes/Payments/Contract/Gateway_Submission.php:369
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Απεστάλη μέσω POS: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:410
+#: includes/Payments/Contract/Gateway_Submission.php:392
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1548,48 +1552,48 @@ msgstr ""
 "Προσπάθεια πληρωμής WCPOS %1$s: το %2$s απάντησε, αλλά το POS δεν μπόρεσε να την καταγράψει. Ελέγξτε την παραγγελία με τον πάροχο και, στη συνέχεια, ακυρώστε την προσπάθεια στο POS."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:456
+#: includes/Payments/Contract/Gateway_Submission.php:416
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Η προσπάθεια πληρωμής %s ενδέχεται να έχει ήδη πληρωθεί μέσω της πύλης πληρωμών· συμφωνήστε την πληρωμή πριν την ακυρώσετε."
 
-#: includes/Payments/Contract/Gateway_Submission.php:459
+#: includes/Payments/Contract/Gateway_Submission.php:419
 msgid "This invoice cannot be cancelled."
 msgstr "Δεν είναι δυνατή η ακύρωση αυτού του τιμολογίου."
 
-#: includes/Payments/Contract/Gateway_Submission.php:462
+#: includes/Payments/Contract/Gateway_Submission.php:422
 msgid "The invoice was sent by a different payment method."
 msgstr "Το τιμολόγιο στάλθηκε με διαφορετικό τρόπο πληρωμής."
 
-#: includes/Payments/Contract/Gateway_Submission.php:466
+#: includes/Payments/Contract/Gateway_Submission.php:426
 msgid "A newer invoice has been sent for this order."
 msgstr "Έχει σταλεί νεότερο τιμολόγιο για αυτήν την παραγγελία."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:472
+#: includes/Payments/Contract/Gateway_Submission.php:432
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Ακυρώθηκε μέσω POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:702
+#: includes/Payments/Contract/Gateway_Submission.php:607
 msgid "This field must be true or false."
 msgstr "Αυτό το πεδίο πρέπει να είναι true ή false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:707
+#: includes/Payments/Contract/Gateway_Submission.php:612
 msgid "This field must be text."
 msgstr "Αυτό το πεδίο πρέπει να περιέχει κείμενο."
 
-#: includes/Payments/Contract/Gateway_Submission.php:711
+#: includes/Payments/Contract/Gateway_Submission.php:616
 msgid "This field is required."
 msgstr "Αυτό το πεδίο είναι υποχρεωτικό."
 
-#: includes/Payments/Contract/Gateway_Submission.php:715
+#: includes/Payments/Contract/Gateway_Submission.php:620
 msgid "Choose one of the listed options."
 msgstr "Επιλέξτε μία από τις διαθέσιμες επιλογές."
 
-#: includes/Payments/Contract/Gateway_Submission.php:729
+#: includes/Payments/Contract/Gateway_Submission.php:634
 msgid "Check the payment fields."
 msgstr "Ελέγξτε τα πεδία πληρωμής."
 
@@ -1718,16 +1722,16 @@ msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Η πληρωμή WCPOS %1$s ακυρώθηκε: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2643
+#: includes/Payments/Contract/Ledger.php:2631
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: το %s δεν ολοκληρώθηκε· συμφωνήστε το χειροκίνητα."
 
-#: includes/Payments/Contract/Ledger.php:3002
+#: includes/Payments/Contract/Ledger.php:2975
 msgid "Payment not found."
 msgstr "Δεν βρέθηκε πληρωμή."
 
-#: includes/Payments/Contract/Ledger.php:3012
+#: includes/Payments/Contract/Ledger.php:2985
 msgid "Payment transition is invalid."
 msgstr "Η μετάβαση κατάστασης πληρωμής δεν είναι έγκυρη."
 

@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - खुला <span class="count">(%s)</span>' . "\x00" . 'POS - खुला <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - आंशिक भुगतान <span class="count">(%s)</span>' . "\x00" . 'POS - आंशिक भुगतान <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'भुगतान कैप्चर का यह मोड उस कार्रवाई को समर्थित नहीं करता।',
+		'Clearing the awaiting-customer state' => 'ग्राहक प्रतीक्षा स्थिति साफ़ की जा रही है',
 		'This command ID was already used with a different request.' => 'यह कमांड ID पहले ही किसी अन्य अनुरोध के साथ उपयोग किया जा चुका है।',
 		'This attempt was cancelled or superseded at the till.' => 'यह प्रयास काउंटर पर रद्द कर दिया गया या इसकी जगह दूसरा प्रयास शुरू हुआ।',
 		'The order changed since this command was built; read it again.' => 'यह कमांड बनाए जाने के बाद ऑर्डर बदल गया है; इसे फिर से पढ़ें।',

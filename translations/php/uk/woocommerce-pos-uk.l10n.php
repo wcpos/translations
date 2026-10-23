@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Відкрито <span class="count">(%s)</span>' . "\x00" . 'POS - Відкрито <span class="count">(%s)</span>' . "\x00" . 'POS - Відкрито <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Часткова оплата <span class="count">(%s)</span>' . "\x00" . 'POS - Часткова оплата <span class="count">(%s)</span>' . "\x00" . 'POS - Часткова оплата <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Цей режим списання платежу не підтримує цю операцію.',
+		'Clearing the awaiting-customer state' => 'Очищення стану очікування клієнта',
 		'This command ID was already used with a different request.' => 'Цей ID команди вже використовувався в іншому запиті.',
 		'This attempt was cancelled or superseded at the till.' => 'Цю спробу скасовано на касі або замінено іншою.',
 		'The order changed since this command was built; read it again.' => 'Після створення цієї команди замовлення змінилося. Прочитайте його ще раз.',

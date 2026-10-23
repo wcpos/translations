@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Avoin <span class="count">(%s)</span>' . "\x00" . 'POS - Avoin <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Osittaismaksu <span class="count">(%s)</span>' . "\x00" . 'POS - Osittaismaksu <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Tämä maksun veloitustila ei tue kyseistä toimintoa.',
+		'Clearing the awaiting-customer state' => 'Asiakkaan odotustilan tyhjentäminen',
 		'This command ID was already used with a different request.' => 'Tätä komennon tunnusta on jo käytetty eri pyynnössä.',
 		'This attempt was cancelled or superseded at the till.' => 'Tämä yritys peruutettiin tai korvattiin kassalla.',
 		'The order changed since this command was built; read it again.' => 'Tilaus on muuttunut komennon luomisen jälkeen; lue se uudelleen.',

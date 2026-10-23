@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - เปิด <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - ชำระเงินบางส่วน <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'โหมดเรียกเก็บเงินนี้ไม่รองรับการดำเนินการดังกล่าว',
+		'Clearing the awaiting-customer state' => 'กำลังล้างสถานะรอลูกค้า',
 		'This command ID was already used with a different request.' => 'ID คำสั่งนี้ถูกใช้กับคำขออื่นแล้ว',
 		'This attempt was cancelled or superseded at the till.' => 'ความพยายามครั้งนี้ถูกยกเลิกหรือถูกแทนที่ที่เครื่องคิดเงิน',
 		'The order changed since this command was built; read it again.' => 'คำสั่งซื้อมีการเปลี่ยนแปลงหลังจากสร้างคำสั่งนี้ โปรดอ่านคำสั่งซื้ออีกครั้ง',

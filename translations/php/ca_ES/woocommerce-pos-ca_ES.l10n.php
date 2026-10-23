@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Obert <span class="count">(%s)</span>' . "\x00" . 'POS - Obert <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Pagament parcial <span class="count">(%s)</span>' . "\x00" . 'POS - Pagament parcial <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Aquest mode de captura del pagament no admet aquesta operació.',
+		'Clearing the awaiting-customer state' => 'S\'està esborrant l\'estat d\'espera del client',
 		'This command ID was already used with a different request.' => 'Aquest ID d\'ordre ja s\'ha fet servir amb una sol·licitud diferent.',
 		'This attempt was cancelled or superseded at the till.' => 'Aquest intent s’ha cancel·lat o substituït a la caixa.',
 		'The order changed since this command was built; read it again.' => 'La comanda ha canviat des que s\'ha creat aquesta ordre; torneu-la a llegir.',

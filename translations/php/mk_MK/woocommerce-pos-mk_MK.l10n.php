@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Отворено <span class="count">(%s)</span>' . "\x00" . 'POS - Отворени <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Делумно плаќање <span class="count">(%s)</span>' . "\x00" . 'POS - Делумни плаќања <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Овој режим за наплата на плаќање не ја поддржува таа операција.',
+		'Clearing the awaiting-customer state' => 'Бришење на состојбата на чекање клиент',
 		'This command ID was already used with a different request.' => 'Овој ID на команда веќе е употребен со друго барање.',
 		'This attempt was cancelled or superseded at the till.' => 'Овој обид беше откажан или заменет на касата.',
 		'The order changed since this command was built; read it again.' => 'Нарачката е променета откако е создадена оваа команда. Прочитајте ја повторно.',

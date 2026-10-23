@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - 未結帳 <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - 部分付款 <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => '此付款請款模式不支援該作業。',
+		'Clearing the awaiting-customer state' => '正在清除等待顧客狀態',
 		'This command ID was already used with a different request.' => '此命令 ID 已用於其他請求。',
 		'This attempt was cancelled or superseded at the till.' => '此嘗試已在收銀台取消或遭後續操作取代。',
 		'The order changed since this command was built; read it again.' => '建立此命令後，訂單已變更；請重新讀取訂單。',

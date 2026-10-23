@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Nyitott <span class="count">(%s)</span>' . "\x00" . 'POS - Nyitott <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Részleges fizetés <span class="count">(%s)</span>' . "\x00" . 'POS - Részleges fizetés <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Ez a fizetésbeszedési mód nem támogatja ezt a műveletet.',
+		'Clearing the awaiting-customer state' => 'A vevőre várakozás állapotának törlése',
 		'This command ID was already used with a different request.' => 'Ezt a parancsazonosítót már használták egy másik kéréssel.',
 		'This attempt was cancelled or superseded at the till.' => 'Ez a próbálkozás a pénztárnál megszakadt vagy egy újabb felülírta.',
 		'The order changed since this command was built; read it again.' => 'A rendelés megváltozott a parancs létrehozása óta; olvassa be újra.',

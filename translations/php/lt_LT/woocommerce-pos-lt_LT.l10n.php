@@ -285,6 +285,7 @@ return array(
 		'POS - Open <span class="count">(%s)</span>' => 'POS - Atidaryta <span class="count">(%s)</span>' . "\x00" . 'POS - Atidaryta <span class="count">(%s)</span>' . "\x00" . 'POS - Atidaryta <span class="count">(%s)</span>',
 		'POS - Partial Payment <span class="count">(%s)</span>' => 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>' . "\x00" . 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>' . "\x00" . 'POS - Dalinis apmokėjimas <span class="count">(%s)</span>',
 		'This payment capture mode does not support that operation.' => 'Šis mokėjimo nurašymo režimas nepalaiko šios operacijos.',
+		'Clearing the awaiting-customer state' => 'Kliento laukimo būsenos išvalymas',
 		'This command ID was already used with a different request.' => 'Šis komandos ID jau buvo panaudotas kitai užklausai.',
 		'This attempt was cancelled or superseded at the till.' => 'Šis bandymas kasoje atšauktas arba pakeistas kitu.',
 		'The order changed since this command was built; read it again.' => 'Sukūrus šią komandą užsakymas pasikeitė. Įkelkite jį iš naujo.',
