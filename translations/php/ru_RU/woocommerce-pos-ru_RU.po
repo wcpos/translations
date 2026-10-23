@@ -1148,7 +1148,7 @@ msgstr "Платёж должен быть объектом."
 #: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:105
+#: includes/Payments/Contract/Gateway_Submission.php:130
 #: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "Способ оплаты не найден."
@@ -1176,7 +1176,7 @@ msgstr "У вас нет прав для инициализации способ
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:2980
+#: includes/Payments/Contract/Ledger.php:3019
 msgid "Payment capture mode is unsupported."
 msgstr "Режим списания платежа не поддерживается."
 
@@ -1434,7 +1434,15 @@ msgstr[2] "POS - Частичная оплата <span class=\"count\">(%s)</spa
 msgid "This payment capture mode does not support that operation."
 msgstr "Этот режим списания платежа не поддерживает эту операцию."
 
-#: includes/Payments/Contract/Attempts.php:257
+#. translators: 1: attempt id, 2: payment method title.
+#: includes/Payments/Contract/Attempts.php:317
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
+msgstr ""
+"Попытка платежа WCPOS %1$s: результат неизвестен, и %2$s не может сообщить, были ли списаны деньги. Проверьте платеж у провайдера, а затем отмените попытку в POS, если списания не было."
+
+#: includes/Payments/Contract/Attempts.php:406
 msgid "Clearing the awaiting-customer state"
 msgstr "Сброс состояния ожидания клиента"
 
@@ -1443,7 +1451,7 @@ msgid "This command ID was already used with a different request."
 msgstr "Этот ID команды уже использовался в другом запросе."
 
 #: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:83
+#: includes/Payments/Contract/Gateway_Submission.php:108
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Эта попытка на кассе была отменена или заменена более новой."
 
@@ -1451,18 +1459,18 @@ msgstr "Эта попытка на кассе была отменена или �
 msgid "The order changed since this command was built; read it again."
 msgstr "После создания этой команды заказ изменился. Прочитайте его заново."
 
-#: includes/Payments/Contract/Completion_Stamp.php:92
+#: includes/Payments/Contract/Completion_Stamp.php:94
 msgid "Recording the completion"
 msgstr "Запись завершения"
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:146
+#: includes/Payments/Contract/Completion_Stamp.php:148
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: не удалось записать завершение %d. Выполните сверку вручную."
 
-#: includes/Payments/Contract/Completion_Stamp.php:181
-#: includes/Payments/Contract/Completion_Stamp.php:203
+#: includes/Payments/Contract/Completion_Stamp.php:183
+#: includes/Payments/Contract/Completion_Stamp.php:205
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -1472,7 +1480,11 @@ msgstr ""
 msgid "The payment provider did not refund this payment."
 msgstr "Платёжный провайдер не выполнил возврат по этому платежу."
 
-#: includes/Payments/Contract/Gateway_Handler.php:97
+#: includes/Payments/Contract/Gateway_Handler.php:115
+msgid "The order was paid before this payment attempt was sent."
+msgstr "Заказ был оплачен до отправки этой попытки платежа."
+
+#: includes/Payments/Contract/Gateway_Handler.php:144
 msgid "This payment cannot be voided."
 msgstr "Этот платёж нельзя отменить."
 
@@ -1484,37 +1496,41 @@ msgstr "ID попытки должен быть UUID."
 msgid "Only POS orders take a gateway submission."
 msgstr "Отправить запрос через платёжный шлюз можно только для заказов POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:88
+#: includes/Payments/Contract/Gateway_Submission.php:79
+msgid "An earlier payment attempt on this order has no outcome yet."
+msgstr "Результат предыдущей попытки платежа по этому заказу пока неизвестен."
+
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Payment method is not enabled for the POS."
 msgstr "Способ оплаты не включён для POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:96
+#: includes/Payments/Contract/Gateway_Submission.php:121
 msgid "Order is already paid."
 msgstr "Заказ уже оплачен."
 
-#: includes/Payments/Contract/Gateway_Submission.php:100
+#: includes/Payments/Contract/Gateway_Submission.php:125
 msgid "Order already has a live payment."
 msgstr "Для заказа уже выполняется платёж."
 
-#: includes/Payments/Contract/Gateway_Submission.php:181
+#: includes/Payments/Contract/Gateway_Submission.php:206
 msgid "The payment method rejected the details entered."
 msgstr "Способ оплаты отклонил введённые данные."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:269
+#: includes/Payments/Contract/Gateway_Submission.php:294
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Попытка оплаты WCPOS %1$s: %2$s не удалась после отправки платежа. Уточните у провайдера, были ли списаны средства, затем отмените попытку в POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:273
-#: includes/Payments/Contract/Gateway_Submission.php:288
+#: includes/Payments/Contract/Gateway_Submission.php:298
+#: includes/Payments/Contract/Gateway_Submission.php:313
 msgid "The payment provider failed."
 msgstr "Ошибка платёжного провайдера."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:292
+#: includes/Payments/Contract/Gateway_Submission.php:317
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1522,19 +1538,19 @@ msgstr ""
 "Этот способ оплаты пытается открыть %s в браузере, но POS не может продолжить."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:353
+#: includes/Payments/Contract/Gateway_Submission.php:378
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Завершено через POS: %1$s, дата: %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:369
+#: includes/Payments/Contract/Gateway_Submission.php:394
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Отправлено через POS: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:392
+#: includes/Payments/Contract/Gateway_Submission.php:417
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1542,48 +1558,61 @@ msgstr ""
 "Попытка оплаты WCPOS %1$s: %2$s ответил, но POS не удалось зарегистрировать её. Проверьте заказ у поставщика, затем отмените попытку в POS."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:416
+#: includes/Payments/Contract/Gateway_Submission.php:446
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Попытка оплаты %s, возможно, уже оплачена через платёжный шлюз; сверьте платёж перед отменой."
 
-#: includes/Payments/Contract/Gateway_Submission.php:419
+#: includes/Payments/Contract/Gateway_Submission.php:454
 msgid "This invoice cannot be cancelled."
 msgstr "Этот счёт нельзя отменить."
 
-#: includes/Payments/Contract/Gateway_Submission.php:422
+#: includes/Payments/Contract/Gateway_Submission.php:457
 msgid "The invoice was sent by a different payment method."
 msgstr "Счёт отправлен другим способом оплаты."
 
-#: includes/Payments/Contract/Gateway_Submission.php:426
+#: includes/Payments/Contract/Gateway_Submission.php:461
 msgid "A newer invoice has been sent for this order."
 msgstr "Для этого заказа отправлен более новый счёт."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:432
+#: includes/Payments/Contract/Gateway_Submission.php:467
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Отменено через POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:607
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s closed at the POS by %2$s: nothing more was charged, and the sale's payments already cover it. %3$s"
+msgstr ""
+"Попытка платежа WCPOS %1$s закрыта в POS пользователем %2$s: дополнительная сумма не списана, платежи по продаже уже покрывают ее. %3$s"
+
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+msgid "an unknown user"
+msgstr "неизвестный пользователь"
+
+#: includes/Payments/Contract/Gateway_Submission.php:626
 msgid "This field must be true or false."
 msgstr "В этом поле должно быть значение true или false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:612
+#: includes/Payments/Contract/Gateway_Submission.php:631
 msgid "This field must be text."
 msgstr "В этом поле должен быть текст."
 
-#: includes/Payments/Contract/Gateway_Submission.php:616
+#: includes/Payments/Contract/Gateway_Submission.php:635
 msgid "This field is required."
 msgstr "Это поле обязательно для заполнения."
 
-#: includes/Payments/Contract/Gateway_Submission.php:620
+#: includes/Payments/Contract/Gateway_Submission.php:639
 msgid "Choose one of the listed options."
 msgstr "Выберите один из перечисленных вариантов."
 
-#: includes/Payments/Contract/Gateway_Submission.php:634
+#: includes/Payments/Contract/Gateway_Submission.php:653
 msgid "Check the payment fields."
 msgstr "Проверьте поля оплаты."
 
@@ -1710,16 +1739,16 @@ msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Платёж WCPOS %1$s отменён: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2631
+#: includes/Payments/Contract/Ledger.php:2626
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s не завершено; выполните сверку вручную."
 
-#: includes/Payments/Contract/Ledger.php:2975
+#: includes/Payments/Contract/Ledger.php:3014
 msgid "Payment not found."
 msgstr "Платёж не найден."
 
-#: includes/Payments/Contract/Ledger.php:2985
+#: includes/Payments/Contract/Ledger.php:3024
 msgid "Payment transition is invalid."
 msgstr "Недопустимый переход состояния платежа."
 

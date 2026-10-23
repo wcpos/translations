@@ -1145,7 +1145,7 @@ msgstr "Greiðslan verður að vera hlutur."
 #: includes/API/V2/Payments_Controller.php:218
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:105
+#: includes/Payments/Contract/Gateway_Submission.php:130
 #: includes/Payments/Contract/Ledger.php:1624
 msgid "Payment method not found."
 msgstr "Greiðslumátinn fannst ekki."
@@ -1173,7 +1173,7 @@ msgstr "Því miður hefurðu ekki heimild til að frumstilla greiðslumáta."
 
 #: includes/API/V2/Payment_Methods_Controller.php:114
 #: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:2980
+#: includes/Payments/Contract/Ledger.php:3019
 msgid "Payment capture mode is unsupported."
 msgstr "Þessi innheimtuaðferð greiðslu er ekki studd."
 
@@ -1429,7 +1429,15 @@ msgstr[1] "POS - Hluta greiðsla <span class=\"count\">(%s)</span>"
 msgid "This payment capture mode does not support that operation."
 msgstr "Þessi innheimtuaðferð greiðslu styður ekki þá aðgerð."
 
-#: includes/Payments/Contract/Attempts.php:257
+#. translators: 1: attempt id, 2: payment method title.
+#: includes/Payments/Contract/Attempts.php:317
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
+msgstr ""
+"WCPOS greiðslutilraun %1$s: niðurstaðan er óþekkt og %2$s getur ekki sagt til um hvort fé hafi verið tekið. Athugaðu greiðsluna hjá greiðsluþjónustunni og felldu síðan tilraunina úr gildi í POS ef ekkert var rukkað."
+
+#: includes/Payments/Contract/Attempts.php:406
 msgid "Clearing the awaiting-customer state"
 msgstr "Hreinsa biðstöðu viðskiptavinar"
 
@@ -1438,7 +1446,7 @@ msgid "This command ID was already used with a different request."
 msgstr "Þetta auðkenni skipunar hefur þegar verið notað með annarri beiðni."
 
 #: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:83
+#: includes/Payments/Contract/Gateway_Submission.php:108
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Þessi tilraun var afturkölluð eða leyst af hólmi við kassann."
 
@@ -1446,18 +1454,18 @@ msgstr "Þessi tilraun var afturkölluð eða leyst af hólmi við kassann."
 msgid "The order changed since this command was built; read it again."
 msgstr "Pöntunin hefur breyst síðan skipunin var búin til; lestu hana aftur."
 
-#: includes/Payments/Contract/Completion_Stamp.php:92
+#: includes/Payments/Contract/Completion_Stamp.php:94
 msgid "Recording the completion"
 msgstr "Skráning á lokum"
 
 #. translators: %d: completion number.
-#: includes/Payments/Contract/Completion_Stamp.php:146
+#: includes/Payments/Contract/Completion_Stamp.php:148
 #, php-format
 msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: ekki tókst að skrá lokafærslu %d; gerðu handvirka afstemmingu."
 
-#: includes/Payments/Contract/Completion_Stamp.php:181
-#: includes/Payments/Contract/Completion_Stamp.php:203
+#: includes/Payments/Contract/Completion_Stamp.php:183
+#: includes/Payments/Contract/Completion_Stamp.php:205
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -1467,7 +1475,11 @@ msgstr ""
 msgid "The payment provider did not refund this payment."
 msgstr "Greiðsluþjónustan endurgreiddi ekki þessa greiðslu."
 
-#: includes/Payments/Contract/Gateway_Handler.php:97
+#: includes/Payments/Contract/Gateway_Handler.php:115
+msgid "The order was paid before this payment attempt was sent."
+msgstr "Pöntunin var greidd áður en þessi greiðslutilraun var send."
+
+#: includes/Payments/Contract/Gateway_Handler.php:144
 msgid "This payment cannot be voided."
 msgstr "Ekki er hægt að afturkalla þessa greiðslu."
 
@@ -1479,37 +1491,42 @@ msgstr "Tilraunaauðkennið verður að vera UUID."
 msgid "Only POS orders take a gateway submission."
 msgstr "Aðeins POS-pantanir geta sent greiðslu í gegnum greiðslugátt."
 
-#: includes/Payments/Contract/Gateway_Submission.php:88
+#: includes/Payments/Contract/Gateway_Submission.php:79
+msgid "An earlier payment attempt on this order has no outcome yet."
+msgstr ""
+"Fyrri greiðslutilraun á þessari pöntun hefur ekki fengið niðurstöðu enn."
+
+#: includes/Payments/Contract/Gateway_Submission.php:113
 msgid "Payment method is not enabled for the POS."
 msgstr "Greiðslumátinn er ekki virkjaður fyrir POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:96
+#: includes/Payments/Contract/Gateway_Submission.php:121
 msgid "Order is already paid."
 msgstr "Pöntunin er þegar greidd."
 
-#: includes/Payments/Contract/Gateway_Submission.php:100
+#: includes/Payments/Contract/Gateway_Submission.php:125
 msgid "Order already has a live payment."
 msgstr "Pöntunin er þegar með virka greiðslu."
 
-#: includes/Payments/Contract/Gateway_Submission.php:181
+#: includes/Payments/Contract/Gateway_Submission.php:206
 msgid "The payment method rejected the details entered."
 msgstr "Greiðslumátinn hafnaði innsláttarupplýsingunum."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:269
+#: includes/Payments/Contract/Gateway_Submission.php:294
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Greiðslutilraun WCPOS %1$s: %2$s mistókst eftir að greiðslan var send. Athugaðu hjá þjónustuveitandanum hvort upphæðin hafi verið dregin af og felldu síðan tilraunina niður í POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:273
-#: includes/Payments/Contract/Gateway_Submission.php:288
+#: includes/Payments/Contract/Gateway_Submission.php:298
+#: includes/Payments/Contract/Gateway_Submission.php:313
 msgid "The payment provider failed."
 msgstr "Villa kom upp hjá greiðsluþjónustunni."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:292
+#: includes/Payments/Contract/Gateway_Submission.php:317
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1517,19 +1534,19 @@ msgstr ""
 "Þessi greiðslumáti reynir að opna %s í vafra, en POS getur ekki fylgt því eftir."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:353
+#: includes/Payments/Contract/Gateway_Submission.php:378
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Gengið frá í gegnum POS: %1$s með stöðuna %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:369
+#: includes/Payments/Contract/Gateway_Submission.php:394
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Sent í gegnum POS: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:392
+#: includes/Payments/Contract/Gateway_Submission.php:417
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1537,48 +1554,61 @@ msgstr ""
 "WCPOS-greiðslutilraun %1$s: %2$s svaraði, en POS gat ekki skráð hana. Athugaðu pöntunina hjá þjónustuveitandanum og afturkallaðu síðan tilraunina í POS."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:416
+#: includes/Payments/Contract/Gateway_Submission.php:446
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Greiðslutilraun %s gæti þegar hafa verið greidd í gegnum greiðslugáttina; stemmdu greiðsluna af áður en þú fellir hana niður."
 
-#: includes/Payments/Contract/Gateway_Submission.php:419
+#: includes/Payments/Contract/Gateway_Submission.php:454
 msgid "This invoice cannot be cancelled."
 msgstr "Ekki er hægt að hætta við þennan reikning."
 
-#: includes/Payments/Contract/Gateway_Submission.php:422
+#: includes/Payments/Contract/Gateway_Submission.php:457
 msgid "The invoice was sent by a different payment method."
 msgstr "Reikningurinn var sendur með öðrum greiðslumáta."
 
-#: includes/Payments/Contract/Gateway_Submission.php:426
+#: includes/Payments/Contract/Gateway_Submission.php:461
 msgid "A newer invoice has been sent for this order."
 msgstr "Nýrri reikningur hefur verið sendur fyrir þessa pöntun."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:432
+#: includes/Payments/Contract/Gateway_Submission.php:467
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Hætt við í gegnum POS: %1$s. %2$s"
 
-#: includes/Payments/Contract/Gateway_Submission.php:607
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+#, php-format
+msgid ""
+"WCPOS payment attempt %1$s closed at the POS by %2$s: nothing more was charged, and the sale's payments already cover it. %3$s"
+msgstr ""
+"%2$s lokaði WCPOS greiðslutilraun %1$s í POS: ekkert var rukkað til viðbótar og greiðslur sölunnar nægja nú þegar. %3$s"
+
+#. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
+#: includes/Payments/Contract/Gateway_Submission.php:501
+msgid "an unknown user"
+msgstr "óþekktur notandi"
+
+#: includes/Payments/Contract/Gateway_Submission.php:626
 msgid "This field must be true or false."
 msgstr "Þetta svæði verður að vera true eða false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:612
+#: includes/Payments/Contract/Gateway_Submission.php:631
 msgid "This field must be text."
 msgstr "Þetta svæði verður að innihalda texta."
 
-#: includes/Payments/Contract/Gateway_Submission.php:616
+#: includes/Payments/Contract/Gateway_Submission.php:635
 msgid "This field is required."
 msgstr "Þetta svæði er nauðsynlegt."
 
-#: includes/Payments/Contract/Gateway_Submission.php:620
+#: includes/Payments/Contract/Gateway_Submission.php:639
 msgid "Choose one of the listed options."
 msgstr "Veldu einn af valkostunum á listanum."
 
-#: includes/Payments/Contract/Gateway_Submission.php:634
+#: includes/Payments/Contract/Gateway_Submission.php:653
 msgid "Check the payment fields."
 msgstr "Athugaðu greiðslusvæðin."
 
@@ -1704,16 +1734,16 @@ msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-greiðsla %1$s afturkölluð: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2631
+#: includes/Payments/Contract/Ledger.php:2626
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s lauk ekki; gerðu handvirka afstemmingu."
 
-#: includes/Payments/Contract/Ledger.php:2975
+#: includes/Payments/Contract/Ledger.php:3014
 msgid "Payment not found."
 msgstr "Greiðslan fannst ekki."
 
-#: includes/Payments/Contract/Ledger.php:2985
+#: includes/Payments/Contract/Ledger.php:3024
 msgid "Payment transition is invalid."
 msgstr "Ógild breyting á stöðu greiðslu."
 
