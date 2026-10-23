@@ -4,7 +4,7 @@ set -euo pipefail
 DEFAULT_TRANSLATOR=codex # Local subscription CLI used for translation and review.
 CODEX_MODEL=gpt-6-luna # Codex translate pass, mechanical tier.
 CLAUDE_MODEL=sonnet # Default model for Claude.
-CODEX_REVIEW_MODEL=gpt-6-sol # Default model for Codex review pass.
+CODEX_REVIEW_MODEL=gpt-6-luna # Default model for Codex review pass.
 CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
 MAX_PER_CALL=100 # Maximum summed packet items per call; larger locale packets are split into parts. gpt-6-luna returns nothing for ~200-item chunks (#410, #420).
@@ -163,7 +163,8 @@ else
   : > .translate/chunks
 fi
 CHUNK=0
-REVIEW_USED=skipped
+REVIEW_OK=0
+REVIEW_FAILED=0
 while IFS= read -r PACKETS; do
   CHUNK=$((CHUNK + 1))
   cat scripts/translate-prompt.md > .translate/prompt
@@ -180,17 +181,29 @@ while IFS= read -r PACKETS; do
     if [ -f ".translate/results/$NAME.json" ]; then HAS_RESULTS=1; else log "chunk $CHUNK returned no results for $NAME"; fi
   done
   if [ "$REVIEW" -eq 1 ] && [ "$HAS_RESULTS" -eq 1 ]; then
-    REVIEW_USED=$REVIEW_MODEL
     cat scripts/review-prompt.md > .translate/prompt
     for PACKET in $PACKETS; do
       NAME=$(basename "$PACKET" .json)
       printf '\n- %s -> .translate/results/%s.json\n' "$PACKET" "$NAME" >> .translate/prompt
     done
-    if ! run_with_timeout "${REVIEW_COMMAND[@]}" < .translate/prompt > ".translate/logs/review-$CHUNK.log" 2>&1; then
+    if run_with_timeout "${REVIEW_COMMAND[@]}" < .translate/prompt > ".translate/logs/review-$CHUNK.log" 2>&1; then
+      REVIEW_OK=$((REVIEW_OK + 1))
+    else
+      REVIEW_FAILED=$((REVIEW_FAILED + 1))
       log "review $CHUNK failed or timed out; continuing"
     fi
   fi
 done < .translate/chunks
+REVIEW_TOTAL=$((REVIEW_OK + REVIEW_FAILED))
+if [ "$REVIEW_TOTAL" -eq 0 ]; then
+  REVIEW_USED=skipped
+elif [ "$REVIEW_OK" -eq 0 ]; then
+  REVIEW_USED="skipped ($REVIEW_MODEL failed on $REVIEW_FAILED chunks)"
+elif [ "$REVIEW_FAILED" -eq 0 ]; then
+  REVIEW_USED=$REVIEW_MODEL
+else
+  REVIEW_USED="$REVIEW_MODEL on $REVIEW_OK of $REVIEW_TOTAL chunks ($REVIEW_FAILED failed)"
+fi
 # Keep this model run's chunk logs outside the worktree: the next poll wipes .translate before its skip check.
 if [ "$SKIP_MODEL" -eq 0 ]; then
   LOG_KEEP="$REPO_ROOT/.claude/translate-logs/${BASE//\//-}"
