@@ -10,10 +10,10 @@ const script = path.resolve(__dirname, '../scripts/translate-local.sh');
 const source = fs.readFileSync(script, 'utf8');
 const syntax = spawnSync('/bin/bash', ['-n', script], { encoding: 'utf8' });
 assert.equal(syntax.status, 0, syntax.stderr);
-for (const forbidden of ['--force', 'push origin main', 'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'gpt-5.6']) {
+for (const forbidden of ['--force', 'push origin main', 'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'gpt-5.6', 'gpt-6-sol']) {
   assert.ok(!source.includes(forbidden), forbidden);
 }
-for (const required of ['gpt-6-luna', 'gpt-6-sol', '--review-model', 'TRANSLATE_REVIEW_MODEL']) {
+for (const required of ['gpt-6-luna', '--review-model', 'TRANSLATE_REVIEW_MODEL']) {
   assert.ok(source.includes(required), required);
 }
 assert.match(source, /^#!\/bin\/bash\nset -euo pipefail/);
@@ -112,7 +112,7 @@ if (tool === 'git') {
   const prompt = fs.readFileSync(0, 'utf8');
   fs.appendFileSync(path.join(root, 'calls.jsonl'), JSON.stringify({ tool: 'prompt', prompt }) + '\n');
   if (config.fail && /\/aa(?:\.part\d+)?\.json/.test(prompt)) process.exit(1);
-  if (config.failReview && prompt.startsWith('REVIEW')) process.exit(1);
+  if (config.failReview && prompt.startsWith('REVIEW') && (config.failReview === true || prompt.includes(config.failReview))) process.exit(1);
   if (config.hang) {
     const child = cp.spawn(process.execPath, ['-e', 'setInterval(()=>{},1000)'], { stdio: 'ignore' });
     fs.writeFileSync(path.join(root, 'child.pid'), String(child.pid));
@@ -204,6 +204,10 @@ if (tool === 'git') {
   assert.ok(result.calls.some(c => isCall(c, 'gh', 'comment', '42')));
   assert.ok(result.calls.some(c => isCall(c, 'git', 'merge', 'origin/main')));
   assert.match(result.stdout, /review 1 failed/);
+  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: claude \(\S+\); review: skipped \(sonnet failed on 1 chunks\)\./);
+  result = run({ counts: [2], failReview: 'part2' }, ['--max-per-call', '1']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /review: gpt-6-luna on 1 of 2 chunks \(1 failed\)\./);
   result = run();
   assert.equal(result.status, 0, result.stderr);
   const sourceHashIndex = result.calls.findIndex(c => isCall(c, 'node', 'scripts/source-hashes.js'));
@@ -215,8 +219,8 @@ if (tool === 'git') {
   assert.ok(cleanupIndex > result.calls.findIndex(c => isCall(c, 'node', 'scripts/apply-translations.js')));
   assert.ok(cleanupIndex < result.calls.findIndex(c => isCall(c, 'git', 'commit')));
   assert.match(result.stdout, /Removed 0 stale keys from 0 files\./);
-  assert.deepEqual(result.calls.filter(c => c.tool === 'codex').map(c => c.args[c.args.indexOf('-m') + 1]), ['gpt-6-luna', 'gpt-6-sol']);
-  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: codex \(gpt-6-luna\); review: gpt-6-sol\./);
+  assert.deepEqual(result.calls.filter(c => c.tool === 'codex').map(c => c.args[c.args.indexOf('-m') + 1]), ['gpt-6-luna', 'gpt-6-luna']);
+  assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: codex \(gpt-6-luna\); review: gpt-6-luna\./);
   assert.ok(fs.existsSync(path.join(root, '.claude/translate-logs/main/chunk-1.log')));
   assert.ok(!fs.existsSync(path.join(root, '.claude/translate-logs/main/chunk-2.log')));
   for (const translator of ['codex', 'claude']) {

@@ -16,7 +16,7 @@ translate strings yourself in this session. It works in its own worktree
 1. Run the command from the repository root. With no work it exits 0 after
    "nothing to translate", and there is nothing more to do.
 2. Otherwise it delegates translation to the chosen model CLI (default: Codex
-   `gpt-6-luna` with a `gpt-6-sol` review pass; `--translator claude` uses Claude Sonnet), applies the results
+   `gpt-6-luna` with a `gpt-6-luna` review pass; `--translator claude` uses Claude Sonnet), applies the results
    through `scripts/apply-translations.js`, validates, then pushes and opens a PR
    labelled `auto-translate` (or comments on the open one).
 3. Report back with the PR URL, the applied/rejected/warning counts from the script's
