@@ -1,3 +1,5 @@
+const { placeholdersMatch } = require('./plural-rules');
+
 let glossaryCache;
 let localeRulesCache;
 let englishRulesCache;
@@ -23,14 +25,18 @@ function extractMarkupTags(text) {
   return Array.from(tags, match => match[1]).sort();
 }
 
-function checkTranslation({ locale, source, translation }) {
+function checkTranslation({ locale, source, translation, key, sourceStrings }) {
   const errors = [];
   const warnings = [];
 
   // An empty source (an icon-only column header, for example) is mirrored as an empty translation.
   if (translation.trim() === '' && source.trim() !== '') errors.push('Translation is empty');
   if (source.trim() === '' && translation.trim() !== '') errors.push('Source is empty; the translation must be empty too');
-  if (JSON.stringify(extractPlaceholders(source)) !== JSON.stringify(extractPlaceholders(translation))) {
+  const placeholdersOk = key !== undefined && sourceStrings !== undefined
+    ? placeholdersMatch({ locale, key, sourceText: source, sourceStrings,
+      translation, extract: extractPlaceholders }).ok
+    : JSON.stringify(extractPlaceholders(source)) === JSON.stringify(extractPlaceholders(translation));
+  if (!placeholdersOk) {
     errors.push('Placeholder mismatch between source and translation');
   }
   if (JSON.stringify(extractMarkupTags(source)) !== JSON.stringify(extractMarkupTags(translation))) {

@@ -13,6 +13,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { placeholdersMatch } = require('../scripts/plural-rules');
 
 const TRANSLATIONS_DIR = path.resolve(__dirname, '../translations/js');
 const SOURCE_DIR = path.resolve(__dirname, '../source/js');
@@ -190,27 +191,26 @@ if (locales.length > 0) {
     test('placeholders use {variable} format and are preserved', () => {
       // Load source to know the English strings for each key
       let sourceEnglish = null;
+      let sourceStrings = {};
       const sourceFile = path.join(SOURCE_DIR, 'monorepo', 'core.json');
       if (fs.existsSync(sourceFile)) {
         const source = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
         sourceEnglish = getEnglishStrings(source);
+        sourceStrings = source;
       }
+      const extract = (text) => [...text.matchAll(/\{([^}]+)\}/g)].map(m => `{${m[1]}}`);
 
       for (const [key, value] of Object.entries(translations)) {
         // Get the English source string for this key
         const english = sourceEnglish?.get(key) || key;
+        if (extract(english).length === 0) continue;
 
-        const keyPlaceholders = [...english.matchAll(/\{([^}]+)\}/g)].map(m => m[1]);
-        if (keyPlaceholders.length === 0) continue;
-
-        const valuePlaceholders = [...value.matchAll(/\{([^}]+)\}/g)].map(m => m[1]);
-
-        for (const p of keyPlaceholders) {
-          assert(
-            valuePlaceholders.includes(p),
-            `placeholder {${p}} missing in translation of "${key}"`
-          );
-        }
+        // Same predicate as the completeness and apply gates: a locale whose CLDR
+        // `one` is exactly 1 may drop {count} from its `_one` form; nothing else may.
+        const { ok, srcPH, trnPH } = placeholdersMatch({
+          locale: sampleLocale, key, sourceText: english, sourceStrings, translation: value, extract,
+        });
+        assert(ok, `placeholders ${srcPH.join(', ')} not preserved in translation of "${key}" (found ${trnPH.join(', ') || 'none'})`);
       }
     });
 
