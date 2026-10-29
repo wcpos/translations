@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Auktoriserade användare',
 		'POS Barcode' => 'POS Streckkod',
 		'Product barcode used at the point of sale' => 'Produktstreckkod som används vid försäljningsstället',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro kunde inte förbereda uppdateringspaketet. Försök igen eller installera uppdateringen manuellt.',
 		'Important:' => 'Viktigt:',
 		'Release notes' => 'Versionsnyheter',
 		'The update server returned an error. Please try again later.' => 'Uppdateringsservern returnerade ett fel. Försök igen senare.',

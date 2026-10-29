@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Авторизовані користувачі',
 		'POS Barcode' => 'Штрих-код POS',
 		'Product barcode used at the point of sale' => 'Штрих-код продукту, що використовується на місці продажу',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro не вдалося підготувати пакет оновлення. Спробуйте ще раз або встановіть оновлення вручну.',
 		'Important:' => 'Важливо:',
 		'Release notes' => 'Примітки до випуску',
 		'The update server returned an error. Please try again later.' => 'Сервер оновлень повернув помилку. Повторіть спробу пізніше.',

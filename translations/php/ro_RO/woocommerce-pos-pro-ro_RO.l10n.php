@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Utilizatori Autorizați',
 		'POS Barcode' => 'Cod de bare POS',
 		'Product barcode used at the point of sale' => 'Cod de bare al produsului utilizat la punctul de vânzare',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nu a putut pregăti pachetul de actualizare. Încercați din nou sau instalați actualizarea manual.',
 		'Important:' => 'Important:',
 		'Release notes' => 'Note de lansare',
 		'The update server returned an error. Please try again later.' => 'Serverul de actualizări a returnat o eroare. Încercați din nou mai târziu.',

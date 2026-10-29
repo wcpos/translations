@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Autorizovaní uživatelé',
 		'POS Barcode' => 'POS čárový kód',
 		'Product barcode used at the point of sale' => 'Čárový kód produktu používaný na místě prodeje',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nemohl připravit aktualizační balíček. Zkuste to znovu nebo aktualizaci nainstalujte ručně.',
 		'Important:' => 'Důležité:',
 		'Release notes' => 'Poznámky k vydání',
 		'The update server returned an error. Please try again later.' => 'Aktualizační server vrátil chybu. Zkuste to prosím později.',

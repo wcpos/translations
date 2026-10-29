@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'अधिकृत उपयोगकर्ता',
 		'POS Barcode' => 'POS बारकोड',
 		'Product barcode used at the point of sale' => 'बिक्री के बिंदु पर उपयोग किया जाने वाला उत्पाद बारकोड',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro अपडेट पैकेज तैयार नहीं कर सका। कृपया फिर से कोशिश करें या अपडेट को मैन्युअल रूप से इंस्टॉल करें।',
 		'Important:' => 'महत्वपूर्ण:',
 		'Release notes' => 'रिलीज़ नोट्स',
 		'The update server returned an error. Please try again later.' => 'अपडेट सर्वर ने एक त्रुटि लौटाई। कृपया बाद में पुनः प्रयास करें।',

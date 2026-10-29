@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Įgalioti vartotojai',
 		'POS Barcode' => 'POS brūkšninis kodas',
 		'Product barcode used at the point of sale' => 'Produkto brūkšninis kodas naudojamas pardavimo vietoje',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nepavyko paruošti naujinimo paketo. Bandykite dar kartą arba įdiekite naujinimą rankiniu būdu.',
 		'Important:' => 'Svarbu:',
 		'Release notes' => 'Leidimo pastabos',
 		'The update server returned an error. Please try again later.' => 'Atnaujinimų serveris grąžino klaidą. Bandykite dar kartą vėliau.',

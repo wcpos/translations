@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Yetkili Kullanıcılar',
 		'POS Barcode' => 'POS Barkod',
 		'Product barcode used at the point of sale' => 'Satış noktasında kullanılan ürün barkodu',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro güncelleme paketini hazırlayamadı. Lütfen tekrar deneyin veya güncellemeyi manuel olarak yükleyin.',
 		'Important:' => 'Önemli:',
 		'Release notes' => 'Sürüm notları',
 		'The update server returned an error. Please try again later.' => 'Güncelleme sunucusu bir hata döndürdü. Lütfen daha sonra tekrar deneyin.',

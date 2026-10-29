@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Người dùng được ủy quyền',
 		'POS Barcode' => 'Mã vạch POS',
 		'Product barcode used at the point of sale' => 'Mã vạch sản phẩm dùng tại điểm bán hàng',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro không thể chuẩn bị gói cập nhật. Vui lòng thử lại hoặc cài đặt bản cập nhật theo cách thủ công.',
 		'Important:' => 'Quan trọng:',
 		'Release notes' => 'Ghi chú phát hành',
 		'The update server returned an error. Please try again later.' => 'Máy chủ cập nhật đã trả về lỗi. Vui lòng thử lại sau.',

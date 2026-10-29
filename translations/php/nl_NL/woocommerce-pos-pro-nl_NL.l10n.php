@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Geautoriseerde Gebruikers',
 		'POS Barcode' => 'POS-streepjescode',
 		'Product barcode used at the point of sale' => 'Productstreepjescode gebruikt bij het verkooppunt',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro kon het updatepakket niet voorbereiden. Probeer het opnieuw of installeer de update handmatig.',
 		'Important:' => 'Belangrijk:',
 		'Release notes' => 'Release-opmerkingen',
 		'The update server returned an error. Please try again later.' => 'De updateserver heeft een fout geretourneerd. Probeer het later opnieuw.',

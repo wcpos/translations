@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Utilisateurs Autorisés',
 		'POS Barcode' => 'Code-barres POS',
 		'Product barcode used at the point of sale' => 'Code-barres produit utilisé au point de vente',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro n’a pas pu préparer le paquet de mise à jour. Veuillez réessayer ou installer la mise à jour manuellement.',
 		'Important:' => 'Important :',
 		'Release notes' => 'Notes de version',
 		'The update server returned an error. Please try again later.' => 'Le serveur de mises à jour a renvoyé une erreur. Veuillez réessayer plus tard.',

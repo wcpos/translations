@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => '승인된 사용자',
 		'POS Barcode' => 'POS 바코드',
 		'Product barcode used at the point of sale' => '판매 시점에서 사용되는 제품 바코드',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro에서 업데이트 패키지를 준비하지 못했습니다. 다시 시도하거나 업데이트를 수동으로 설치하십시오.',
 		'Important:' => '중요:',
 		'Release notes' => '릴리스 노트',
 		'The update server returned an error. Please try again later.' => '업데이트 서버에서 오류가 발생했습니다. 나중에 다시 시도해 주세요.',

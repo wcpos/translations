@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Εξουσιοδοτημένοι Χρήστες',
 		'POS Barcode' => 'Barcode POS',
 		'Product barcode used at the point of sale' => 'Barcode προϊόντος που χρησιμοποιείται στο σημείο πώλησης',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'Το WCPOS Pro δεν μπόρεσε να προετοιμάσει το πακέτο ενημέρωσης. Δοκιμάστε ξανά ή εγκαταστήστε την ενημέρωση χειροκίνητα.',
 		'Important:' => 'Σημαντικό:',
 		'Release notes' => 'Σημειώσεις έκδοσης',
 		'The update server returned an error. Please try again later.' => 'Ο διακομιστής ενημερώσεων επέστρεψε ένα σφάλμα. Δοκιμάστε ξανά αργότερα.',
