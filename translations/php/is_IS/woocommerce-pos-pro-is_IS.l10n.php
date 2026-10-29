@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Heimilaðir notendur',
 		'POS Barcode' => 'POS strikamerki',
 		'Product barcode used at the point of sale' => 'Vöru strikamerki notað við sölustað',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro gat ekki undirbúið uppfærslupakkann. Reyndu aftur eða settu uppfærsluna upp handvirkt.',
 		'Important:' => 'Mikilvægt:',
 		'Release notes' => 'Útgáfuupplýsingar',
 		'The update server returned an error. Please try again later.' => 'Uppfærsluþjónninn skilaði villu. Vinsamlegast reyndu aftur síðar.',

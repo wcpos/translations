@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'អ្នកប្រើដែលបានអនុញ្ញាត',
 		'POS Barcode' => 'បាកូដ POS',
 		'Product barcode used at the point of sale' => 'បាកូដផលិតផលប្រើនៅចំណុចលក់',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro មិនអាចរៀបចំកញ្ចប់អាប់ដេតបានទេ។ សូមព្យាយាមម្ដងទៀត ឬដំឡើងអាប់ដេតដោយដៃ។',
 		'Important:' => 'សំខាន់៖',
 		'Release notes' => 'កំណត់ចំណាំការចេញផ្សាយ',
 		'The update server returned an error. Please try again later.' => 'ម៉ាស៊ីនមេអាប់ដេតបានត្រឡប់កំហុស។ សូមព្យាយាមម្ដងទៀតនៅពេលក្រោយ។',

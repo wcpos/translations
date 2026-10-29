@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Volitatud kasutajad',
 		'POS Barcode' => 'POS vöötkood',
 		'Product barcode used at the point of sale' => 'Müügikoha toote vöötkood',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro ei saanud värskenduspaketti ette valmistada. Proovige uuesti või installige värskendus käsitsi.',
 		'Important:' => 'Oluline:',
 		'Release notes' => 'Väljalaskemärkmed',
 		'The update server returned an error. Please try again later.' => 'Uuendusserver tagastas vea. Palun proovige hiljem uuesti.',

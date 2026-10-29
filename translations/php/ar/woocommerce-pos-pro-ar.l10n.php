@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'المستخدمون المصرح لهم',
 		'POS Barcode' => 'الباركود لنقطة البيع',
 		'Product barcode used at the point of sale' => 'باركود المنتج المستخدم في نقطة البيع',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'تعذّر على WCPOS Pro إعداد حزمة التحديث. يُرجى المحاولة مرة أخرى أو تثبيت التحديث يدويًا.',
 		'Important:' => 'مهم:',
 		'Release notes' => 'ملاحظات الإصدار',
 		'The update server returned an error. Please try again later.' => 'أعاد خادم التحديث خطأً. يُرجى المحاولة مرة أخرى لاحقًا.',

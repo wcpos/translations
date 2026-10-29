@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Pengguna Sah',
 		'POS Barcode' => 'Kod Bar POS',
 		'Product barcode used at the point of sale' => 'Kod bar produk digunakan di tempat jualan',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro tidak dapat menyediakan pakej kemas kini. Sila cuba lagi atau pasang kemas kini secara manual.',
 		'Important:' => 'Penting:',
 		'Release notes' => 'Nota keluaran',
 		'The update server returned an error. Please try again later.' => 'Pelayan kemas kini mengembalikan ralat. Sila cuba lagi kemudian.',

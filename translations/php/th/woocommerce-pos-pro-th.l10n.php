@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'ผู้ใช้ที่ได้รับอนุญาต',
 		'POS Barcode' => 'บาร์โค้ด POS',
 		'Product barcode used at the point of sale' => 'บาร์โค้ดสินค้าที่ใช้ที่จุดขาย',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro ไม่สามารถเตรียมแพ็กเกจอัปเดตได้ โปรดลองอีกครั้งหรือติดตั้งการอัปเดตด้วยตนเอง',
 		'Important:' => 'สำคัญ:',
 		'Release notes' => 'บันทึกประจำรุ่น',
 		'The update server returned an error. Please try again later.' => 'เซิร์ฟเวอร์อัปเดตส่งคืนข้อผิดพลาด โปรดลองอีกครั้งในภายหลัง',

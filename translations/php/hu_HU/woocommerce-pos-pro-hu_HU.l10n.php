@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Engedélyezett felhasználók',
 		'POS Barcode' => 'POS vonalkód',
 		'Product barcode used at the point of sale' => 'Termék vonalkód a pénztárnál',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'A WCPOS Pro nem tudta előkészíteni a frissítőcsomagot. Próbálja újra, vagy telepítse manuálisan a frissítést.',
 		'Important:' => 'Fontos:',
 		'Release notes' => 'Kiadási megjegyzések',
 		'The update server returned an error. Please try again later.' => 'A frissítési szerver hibát jelzett. Kérjük, próbálja meg később újra.',

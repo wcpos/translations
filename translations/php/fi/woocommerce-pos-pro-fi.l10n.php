@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'Valtuutetut käyttäjät',
 		'POS Barcode' => 'POS-viivakoodi',
 		'Product barcode used at the point of sale' => 'Tuotteen viivakoodi myyntipisteessä',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro ei voinut valmistella päivityspakettia. Yritä uudelleen tai asenna päivitys manuaalisesti.',
 		'Important:' => 'Tärkeää:',
 		'Release notes' => 'Julkaisutiedot',
 		'The update server returned an error. Please try again later.' => 'Päivityspalvelin palautti virheen. Yritä myöhemmin uudelleen.',

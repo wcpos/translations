@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'کاربران مجاز',
 		'POS Barcode' => 'بارکد POS',
 		'Product barcode used at the point of sale' => 'بارکد محصول استفاده شده در نقطه فروش',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro نتوانست بستهٔ به‌روزرسانی را آماده کند. لطفاً دوباره تلاش کنید یا به‌روزرسانی را به‌صورت دستی نصب کنید.',
 		'Important:' => 'مهم:',
 		'Release notes' => 'یادداشت‌های انتشار',
 		'The update server returned an error. Please try again later.' => 'سرور به‌روزرسانی خطایی برگرداند. لطفاً بعداً دوباره تلاش کنید.',

@@ -36,6 +36,7 @@ return array(
 		'Authorized Users' => 'משתמשים מורשים',
 		'POS Barcode' => 'ברקוד POS',
 		'Product barcode used at the point of sale' => 'ברקוד מוצר המשמש בנקודת המכירה',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro לא הצליח להכין את חבילת העדכון. יש לנסות שוב או להתקין את העדכון באופן ידני.',
 		'Important:' => 'חשוב:',
 		'Release notes' => 'הערות גרסה',
 		'The update server returned an error. Please try again later.' => 'שרת העדכונים החזיר שגיאה. נסו שוב מאוחר יותר.',
