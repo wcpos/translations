@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'Falha ao carregar o WCPOS Pro. Por favor, execute composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'agora inclui todos os recursos do plugin gratuito. O plugin gratuito independente foi desativado automaticamente. Você pode excluí-lo com segurança dos seus plugins.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'O WCPOS Pro não conseguiu preparar o pacote de atualização. Tente novamente ou instale a atualização manualmente.',
 	),
 );

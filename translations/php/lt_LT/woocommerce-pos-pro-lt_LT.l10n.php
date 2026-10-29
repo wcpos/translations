@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro nepavyko įkelti. Paleiskite composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'dabar apima visas nemokamo įskiepio funkcijas. Atskirai veikiantis nemokamas įskiepis buvo automatiškai išjungtas. Galite saugiai jį ištrinti iš savo įskiepių.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nepavyko paruošti naujinimo paketo. Bandykite dar kartą arba įdiekite naujinimą rankiniu būdu.',
 	),
 );

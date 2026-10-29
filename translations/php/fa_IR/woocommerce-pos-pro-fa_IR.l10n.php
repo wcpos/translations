@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'بارگذاری WCPOS Pro ناموفق بود. لطفاً composer install را اجرا کنید.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'اکنون شامل تمام ویژگی‌های افزونه رایگان است. افزونه رایگان مستقل به‌طور خودکار غیرفعال شده است. می‌توانید آن را با اطمینان از افزونه‌های خود حذف کنید.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro نتوانست بستهٔ به‌روزرسانی را آماده کند. لطفاً دوباره تلاش کنید یا به‌روزرسانی را به‌صورت دستی نصب کنید.',
 	),
 );

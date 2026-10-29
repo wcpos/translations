@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro không tải được. Vui lòng chạy composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'bây giờ bao gồm tất cả các tính năng từ plugin miễn phí. Plugin miễn phí độc lập đã được tự động vô hiệu hóa. Bạn có thể xóa nó an toàn khỏi các plugin của mình.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro không thể chuẩn bị gói cập nhật. Vui lòng thử lại hoặc cài đặt bản cập nhật theo cách thủ công.',
 	),
 );

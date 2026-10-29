@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro gagal dimuatkan. Sila jalankan pemasangan composer.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'kini merangkumi semua ciri dari plugin percuma. Plugin percuma yang berdiri sendiri telah dinyahaktifkan secara automatik. Anda boleh menghapuskannya dengan selamat dari plugin anda.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro tidak dapat menyediakan pakej kemas kini. Sila cuba lagi atau pasang kemas kini secara manual.',
 	),
 );

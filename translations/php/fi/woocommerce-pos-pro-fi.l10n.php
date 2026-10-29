@@ -185,5 +185,6 @@ return array(
 		'WCPOS Pro failed to load. Please run composer install.' => 'WCPOS Pro -lataus epäonnistui. Suorita composer install.',
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'sisältää nyt kaikki ilmaisen lisäosan ominaisuudet. Erillinen ilmainen lisäosa on automaattisesti poistettu käytöstä. Voit poistaa sen turvallisesti lisäosistasi.',
+		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro ei voinut valmistella päivityspakettia. Yritä uudelleen tai asenna päivitys manuaalisesti.',
 	),
 );
