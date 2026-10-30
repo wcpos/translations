@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Ši ataskaita sudaroma pagal uždarytą sesiją.',
 		'The closed session must have a linked closure.' => 'Uždaryta sesija turi turėti susietą uždarymą.',
 		'The session, register and store must describe the same scope.' => 'Sesija, kasa ir parduotuvė turi priklausyti tai pačiai aprėpčiai.',
+		'Invalid parameter.' => 'Netinkamas parametras.',
 		'Settings with id %1$s and key %2$s not found' => 'Nustatymai su id %1$s ir raktu %2$s nerasti',
 		'Settings with id %s not found' => 'Nustatymai su id %s nerasti',
 		'Can not save settings with id %s' => 'Nepavyksta išsaugoti nustatymų su id %s',

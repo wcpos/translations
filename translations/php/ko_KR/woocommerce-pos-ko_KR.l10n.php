@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => '이 보고서는 종료된 세션에서 실행됩니다.',
 		'The closed session must have a linked closure.' => '종료된 세션에는 연결된 마감 기록이 있어야 합니다.',
 		'The session, register and store must describe the same scope.' => '세션, 계산대, 매장의 범위가 서로 일치해야 합니다.',
+		'Invalid parameter.' => '유효하지 않은 매개변수입니다.',
 		'Settings with id %1$s and key %2$s not found' => 'ID %1$s 및 키 %2$s의 설정을 찾을 수 없습니다',
 		'Settings with id %s not found' => 'ID %s의 설정을 찾을 수 없습니다',
 		'Can not save settings with id %s' => 'ID %s의 설정을 저장할 수 없습니다',

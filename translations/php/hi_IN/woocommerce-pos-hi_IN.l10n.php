@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'यह रिपोर्ट बंद सत्र पर चलती है।',
 		'The closed session must have a linked closure.' => 'बंद सत्र से कोई क्लोज़र जुड़ा होना चाहिए।',
 		'The session, register and store must describe the same scope.' => 'सत्र, रजिस्टर और स्टोर का दायरा एक ही होना चाहिए।',
+		'Invalid parameter.' => 'अमान्य पैरामीटर।',
 		'Settings with id %1$s and key %2$s not found' => 'आईडी %1$s और कुंजी %2$s के साथ सेटिंग्स नहीं मिलीं',
 		'Settings with id %s not found' => 'आईडी %s के साथ सेटिंग्स नहीं मिलीं',
 		'Can not save settings with id %s' => 'आईडी %s के साथ सेटिंग्स सहेज नहीं सकते',

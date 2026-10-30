@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Báo cáo này chạy trên phiên đã đóng.',
 		'The closed session must have a linked closure.' => 'Phiên đã đóng phải có phiên chốt được liên kết.',
 		'The session, register and store must describe the same scope.' => 'Phiên, máy tính tiền và cửa hàng phải thuộc cùng một phạm vi.',
+		'Invalid parameter.' => 'Tham số không hợp lệ.',
 		'Settings with id %1$s and key %2$s not found' => 'Không tìm thấy cài đặt với id %1$s và key %2$s',
 		'Settings with id %s not found' => 'Không tìm thấy cài đặt với id %s',
 		'Can not save settings with id %s' => 'Không thể lưu cài đặt với id %s',

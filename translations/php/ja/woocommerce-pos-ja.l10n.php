@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'このレポートは終了済みセッションを対象としています。',
 		'The closed session must have a linked closure.' => '終了済みセッションには関連付けられた締め処理が必要です。',
 		'The session, register and store must describe the same scope.' => 'セッション、レジ、店舗の対象範囲が一致している必要があります。',
+		'Invalid parameter.' => '無効なパラメータです。',
 		'Settings with id %1$s and key %2$s not found' => 'ID %1$s とキー %2$s の設定が見つかりません',
 		'Settings with id %s not found' => 'ID %s の設定が見つかりません',
 		'Can not save settings with id %s' => 'ID %s の設定を保存できません',

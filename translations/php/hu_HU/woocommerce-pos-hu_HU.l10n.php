@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Ez a jelentés lezárt munkameneten fut.',
 		'The closed session must have a linked closure.' => 'A lezárt munkamenethez kapcsolódó pénztárzárás szükséges.',
 		'The session, register and store must describe the same scope.' => 'A munkamenetnek, a pénztárgépnek és az üzletnek ugyanahhoz a hatókörhöz kell tartoznia.',
+		'Invalid parameter.' => 'Érvénytelen paraméter.',
 		'Settings with id %1$s and key %2$s not found' => 'A(z) %1$s azonosítójú és %2$s kulcsú beállítások nem találhatók',
 		'Settings with id %s not found' => 'A(z) %s azonosítójú beállítások nem találhatók',
 		'Can not save settings with id %s' => 'Nem lehet menteni a(z) %s azonosítójú beállításokat',

@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'הדוח הזה מופק עבור משמרת סגורה.',
 		'The closed session must have a linked closure.' => 'למשמרת הסגורה חייבת להיות סגירה מקושרת.',
 		'The session, register and store must describe the same scope.' => 'המשמרת, הקופה והחנות חייבות להתייחס לאותו היקף.',
+		'Invalid parameter.' => 'פרמטר לא תקין.',
 		'Settings with id %1$s and key %2$s not found' => 'הגדרות עם מזהה %1$s ומפתח %2$s לא נמצאו',
 		'Settings with id %s not found' => 'הגדרות עם מזהה %s לא נמצאו',
 		'Can not save settings with id %s' => 'לא ניתן לשמור הגדרות עם מזהה %s',

@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => '此报告适用于已关闭的班次。',
 		'The closed session must have a linked closure.' => '已关闭的班次必须关联一个关账记录。',
 		'The session, register and store must describe the same scope.' => '班次、收银台和商店必须属于同一范围。',
+		'Invalid parameter.' => '参数无效。',
 		'Settings with id %1$s and key %2$s not found' => '未找到ID为%1$s和键为%2$s的设置',
 		'Settings with id %s not found' => '未找到ID为%s的设置',
 		'Can not save settings with id %s' => '无法保存ID为%s的设置',

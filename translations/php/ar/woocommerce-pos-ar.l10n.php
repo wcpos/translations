@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'يعمل هذا التقرير على جلسة مغلقة.',
 		'The closed session must have a linked closure.' => 'يجب ربط الجلسة المغلقة بإغلاق.',
 		'The session, register and store must describe the same scope.' => 'يجب أن تصف الجلسة وسجل الدفع والمتجر النطاق نفسه.',
+		'Invalid parameter.' => 'معلمة غير صالحة.',
 		'Settings with id %1$s and key %2$s not found' => 'الإعدادات مع المعرف %1$s والمفتاح %2$s غير موجودة',
 		'Settings with id %s not found' => 'الإعدادات مع المعرف %s غير موجودة',
 		'Can not save settings with id %s' => 'لا يمكن حفظ الإعدادات مع المعرف %s',

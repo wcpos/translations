@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Laporan ini dijalankan untuk sesi yang telah ditutup.',
 		'The closed session must have a linked closure.' => 'Sesi yang ditutup mesti mempunyai penutupan yang dipautkan.',
 		'The session, register and store must describe the same scope.' => 'Sesi, daftar tunai dan kedai mesti merujuk skop yang sama.',
+		'Invalid parameter.' => 'Parameter tidak sah.',
 		'Settings with id %1$s and key %2$s not found' => 'Tetapan dengan id %1$s dan kunci %2$s tidak ditemui',
 		'Settings with id %s not found' => 'Tetapan dengan id %s tidak ditemui',
 		'Can not save settings with id %s' => 'Tidak boleh menyimpan tetapan dengan id %s',

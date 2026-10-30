@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Αυτή η αναφορά εκτελείται σε κλειστή συνεδρία.',
 		'The closed session must have a linked closure.' => 'Η κλειστή συνεδρία πρέπει να έχει συνδεδεμένο κλείσιμο.',
 		'The session, register and store must describe the same scope.' => 'Η συνεδρία, η ταμειακή και το κατάστημα πρέπει να αφορούν την ίδια εμβέλεια.',
+		'Invalid parameter.' => 'Μη έγκυρη παράμετρος.',
 		'Settings with id %1$s and key %2$s not found' => 'Οι ρυθμίσεις με id %1$s και κλειδί %2$s δεν βρέθηκαν',
 		'Settings with id %s not found' => 'Οι ρυθμίσεις με id %s δεν βρέθηκαν',
 		'Can not save settings with id %s' => 'Δεν είναι δυνατή η αποθήκευση ρυθμίσεων με id %s',

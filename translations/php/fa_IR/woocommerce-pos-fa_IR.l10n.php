@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'این گزارش روی نشست بسته‌شده اجرا می‌شود.',
 		'The closed session must have a linked closure.' => 'نشست بسته‌شده باید بستن صندوق مرتبط داشته باشد.',
 		'The session, register and store must describe the same scope.' => 'نشست، صندوق و فروشگاه باید یک دامنه را مشخص کنند.',
+		'Invalid parameter.' => 'پارامتر نامعتبر است.',
 		'Settings with id %1$s and key %2$s not found' => 'تنظیمات با شناسه %1$s و کلید %2$s یافت نشد',
 		'Settings with id %s not found' => 'تنظیمات با شناسه %s یافت نشد',
 		'Can not save settings with id %s' => 'نمی‌توان تنظیمات با شناسه %s را ذخیره کرد',

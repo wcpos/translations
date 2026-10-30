@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Rapporten körs för en stängd session.',
 		'The closed session must have a linked closure.' => 'Den stängda sessionen måste ha en kopplad stängning.',
 		'The session, register and store must describe the same scope.' => 'Sessionen, kassan och butiken måste ha samma omfattning.',
+		'Invalid parameter.' => 'Ogiltig parameter.',
 		'Settings with id %1$s and key %2$s not found' => 'Inställningar med id %1$s och nyckel %2$s hittades inte',
 		'Settings with id %s not found' => 'Inställningar med id %s hittades inte',
 		'Can not save settings with id %s' => 'Kan inte spara inställningar med id %s',

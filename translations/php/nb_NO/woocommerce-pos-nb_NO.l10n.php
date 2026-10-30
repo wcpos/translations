@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Denne rapporten kjøres for en lukket økt.',
 		'The closed session must have a linked closure.' => 'Den lukkede økten må ha et tilknyttet dagsoppgjør.',
 		'The session, register and store must describe the same scope.' => 'Økten, kassen og butikken må tilhøre samme omfang.',
+		'Invalid parameter.' => 'Ugyldig parameter.',
 		'Settings with id %1$s and key %2$s not found' => 'Innstillinger med id %1$s og nøkkel %2$s ikke funnet',
 		'Settings with id %s not found' => 'Innstillinger med id %s ikke funnet',
 		'Can not save settings with id %s' => 'Kan ikke lagre innstillinger med id %s',

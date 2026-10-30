@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Raportti laaditaan suljetusta istunnosta.',
 		'The closed session must have a linked closure.' => 'Suljetulla istunnolla on oltava siihen liitetty sulkemisraportti.',
 		'The session, register and store must describe the same scope.' => 'Istunnon, kassan ja myymälän on kuuluttava samaan kokonaisuuteen.',
+		'Invalid parameter.' => 'Virheellinen parametri.',
 		'Settings with id %1$s and key %2$s not found' => 'Asetuksia, joiden id on %1$s ja avain %2$s, ei löydy',
 		'Settings with id %s not found' => 'Asetuksia, joiden id on %s, ei löydy',
 		'Can not save settings with id %s' => 'Asetuksia, joiden id on %s, ei voida tallentaa',

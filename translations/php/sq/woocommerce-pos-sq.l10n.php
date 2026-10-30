@@ -958,6 +958,7 @@ return array(
 		'This report runs on a closed session.' => 'Ky raport përdor një sesion të mbyllur.',
 		'The closed session must have a linked closure.' => 'Sesioni i mbyllur duhet të ketë një mbyllje të lidhur.',
 		'The session, register and store must describe the same scope.' => 'Sesioni, arka dhe dyqani duhet t\'i përkasin së njëjtës fushë.',
+		'Invalid parameter.' => 'Parametër i pavlefshëm.',
 		'Settings with id %1$s and key %2$s not found' => 'Cilësimet me ID %1$s dhe Key %2$s nuk u gjetën',
 		'Settings with id %s not found' => 'Cilësimet me ID %s nuk u gjetën',
 		'Can not save settings with id %s' => 'Nuk mund të ruhen cilësimet me ID %s',

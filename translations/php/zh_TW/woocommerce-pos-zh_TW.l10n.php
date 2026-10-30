@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => '此報表會在已關閉的工作階段上執行。',
 		'The closed session must have a linked closure.' => '已關閉的工作階段必須連結至交班紀錄。',
 		'The session, register and store must describe the same scope.' => '工作階段、收銀機和商店必須屬於相同範圍。',
+		'Invalid parameter.' => '參數無效。',
 		'Settings with id %1$s and key %2$s not found' => '找不到ID為%1$s和金鑰為%2$s的設定',
 		'Settings with id %s not found' => '找不到ID為%s的設定',
 		'Can not save settings with id %s' => '無法儲存ID為%s的設定',

@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Aquest informe s\'executa en una sessió tancada.',
 		'The closed session must have a linked closure.' => 'La sessió tancada ha d\'estar vinculada a un tancament.',
 		'The session, register and store must describe the same scope.' => 'La sessió, la caixa i la botiga han de correspondre al mateix àmbit.',
+		'Invalid parameter.' => 'Paràmetre no vàlid.',
 		'Settings with id %1$s and key %2$s not found' => 'Configuracions amb id %1$s i clau %2$s no trobades',
 		'Settings with id %s not found' => 'Configuracions amb id %s no trobades',
 		'Can not save settings with id %s' => 'No es poden desar les configuracions amb id %s',

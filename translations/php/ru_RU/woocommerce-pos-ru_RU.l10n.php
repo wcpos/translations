@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Этот отчёт формируется по закрытому сеансу.',
 		'The closed session must have a linked closure.' => 'У закрытого сеанса должна быть связанная запись о закрытии.',
 		'The session, register and store must describe the same scope.' => 'Сеанс, касса и магазин должны относиться к одной области.',
+		'Invalid parameter.' => 'Недопустимый параметр.',
 		'Settings with id %1$s and key %2$s not found' => 'Настройки с id %1$s и ключом %2$s не найдены',
 		'Settings with id %s not found' => 'Настройки с id %s не найдены',
 		'Can not save settings with id %s' => 'Невозможно сохранить настройки с id %s',

@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Овој извештај се однесува на затворена сесија.',
 		'The closed session must have a linked closure.' => 'Затворената сесија мора да има поврзано затворање.',
 		'The session, register and store must describe the same scope.' => 'Сесијата, касата и продавницата мора да се однесуваат на истиот опсег.',
+		'Invalid parameter.' => 'Неважечки параметар.',
 		'Settings with id %1$s and key %2$s not found' => 'Поставките со id %1$s и клуч %2$s не се пронајдени',
 		'Settings with id %s not found' => 'Поставките со id %s не се пронајдени',
 		'Can not save settings with id %s' => 'Не може да се зачуваат поставките со id %s',

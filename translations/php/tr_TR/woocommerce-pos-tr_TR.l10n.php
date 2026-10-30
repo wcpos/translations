@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Bu rapor kapatılmış bir oturumda çalışır.',
 		'The closed session must have a linked closure.' => 'Kapatılmış oturumun bağlantılı bir kapanışı olmalıdır.',
 		'The session, register and store must describe the same scope.' => 'Oturum, kasa ve mağaza aynı kapsamı belirtmelidir.',
+		'Invalid parameter.' => 'Geçersiz parametre.',
 		'Settings with id %1$s and key %2$s not found' => 'ID %1$s ve anahtar %2$s ile ayarlar bulunamadı',
 		'Settings with id %s not found' => 'ID %s ile ayarlar bulunamadı',
 		'Can not save settings with id %s' => 'ID %s ile ayarlar kaydedilemiyor',

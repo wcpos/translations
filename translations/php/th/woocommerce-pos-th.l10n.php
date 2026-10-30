@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'รายงานนี้ใช้กับเซสชันที่ปิดแล้ว',
 		'The closed session must have a linked closure.' => 'เซสชันที่ปิดแล้วต้องเชื่อมโยงกับรายการปิดรอบ',
 		'The session, register and store must describe the same scope.' => 'เซสชัน เครื่องคิดเงิน และร้านค้าต้องอยู่ในขอบเขตเดียวกัน',
+		'Invalid parameter.' => 'พารามิเตอร์ไม่ถูกต้อง',
 		'Settings with id %1$s and key %2$s not found' => 'ไม่พบการตั้งค่าที่มี id %1$s และคีย์ %2$s',
 		'Settings with id %s not found' => 'ไม่พบการตั้งค่าที่มี id %s',
 		'Can not save settings with id %s' => 'ไม่สามารถบันทึกการตั้งค่าที่มี id %s',

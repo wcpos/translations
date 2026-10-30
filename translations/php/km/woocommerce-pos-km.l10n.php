@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'របាយការណ៍នេះដំណើរការលើវគ្គដែលបានបិទ។',
 		'The closed session must have a linked closure.' => 'វគ្គដែលបានបិទត្រូវតែភ្ជាប់នឹងការបិទវគ្គ។',
 		'The session, register and store must describe the same scope.' => 'វគ្គ ម៉ាស៊ីនគិតលុយ និងហាងត្រូវតែស្ថិតក្នុងវិសាលភាពតែមួយ។',
+		'Invalid parameter.' => 'ប៉ារ៉ាម៉ែត្រមិនត្រឹមត្រូវ។',
 		'Settings with id %1$s and key %2$s not found' => 'ការកំណត់ជាមួយ id %1$s និង key %2$s មិនបានរកឃើញ',
 		'Settings with id %s not found' => 'ការកំណត់ជាមួយ id %s មិនបានរកឃើញ',
 		'Can not save settings with id %s' => 'មិនអាចរក្សាទុកការកំណត់ជាមួយ id %s',

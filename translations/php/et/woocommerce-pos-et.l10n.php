@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'See aruanne käib suletud vahetuse kohta.',
 		'The closed session must have a linked closure.' => 'Suletud vahetusel peab olema seotud sulgemisdokument.',
 		'The session, register and store must describe the same scope.' => 'Vahetus, kassa ja pood peavad kirjeldama sama ulatust.',
+		'Invalid parameter.' => 'Vigane parameeter.',
 		'Settings with id %1$s and key %2$s not found' => 'Seadeid id-ga %1$s ja võtmega %2$s ei leitud',
 		'Settings with id %s not found' => 'Seadeid id-ga %s ei leitud',
 		'Can not save settings with id %s' => 'Seadeid id-ga %s ei saa salvestada',

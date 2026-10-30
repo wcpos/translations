@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Dit rapport wordt uitgevoerd voor een afgesloten sessie.',
 		'The closed session must have a linked closure.' => 'Aan de afgesloten sessie moet een kassasluiting gekoppeld zijn.',
 		'The session, register and store must describe the same scope.' => 'De sessie, kassa en winkel moeten hetzelfde bereik beschrijven.',
+		'Invalid parameter.' => 'Ongeldige parameter.',
 		'Settings with id %1$s and key %2$s not found' => 'Instellingen met id %1$s en sleutel %2$s niet gevonden',
 		'Settings with id %s not found' => 'Instellingen met id %s niet gevonden',
 		'Can not save settings with id %s' => 'Kan instellingen met id %s niet opslaan',

@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Acest raport se generează pentru o sesiune închisă.',
 		'The closed session must have a linked closure.' => 'Sesiunea închisă trebuie să aibă o închidere asociată.',
 		'The session, register and store must describe the same scope.' => 'Sesiunea, casa de marcat și magazinul trebuie să se refere la același domeniu.',
+		'Invalid parameter.' => 'Parametru nevalid.',
 		'Settings with id %1$s and key %2$s not found' => 'Setările cu id %1$s și cheia %2$s nu au fost găsite',
 		'Settings with id %s not found' => 'Setările cu id %s nu au fost găsite',
 		'Can not save settings with id %s' => 'Nu se pot salva setările cu id %s',

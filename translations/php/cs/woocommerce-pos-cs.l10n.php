@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Tato sestava se týká uzavřené relace.',
 		'The closed session must have a linked closure.' => 'K uzavřené relaci musí být přiřazena uzávěrka.',
 		'The session, register and store must describe the same scope.' => 'Relace, pokladna a obchod musí odpovídat stejnému rozsahu.',
+		'Invalid parameter.' => 'Neplatný parametr.',
 		'Settings with id %1$s and key %2$s not found' => 'Nastavení s id %1$s a klíčem %2$s nebylo nalezeno',
 		'Settings with id %s not found' => 'Nastavení s id %s nebylo nalezeno',
 		'Can not save settings with id %s' => 'Nelze uložit nastavení s id %s',

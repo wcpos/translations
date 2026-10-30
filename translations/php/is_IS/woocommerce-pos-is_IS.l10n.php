@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Þessi skýrsla er keyrð fyrir lokaða lotu.',
 		'The closed session must have a linked closure.' => 'Lokaða lotan verður að vera tengd lokun.',
 		'The session, register and store must describe the same scope.' => 'Lota, kassi og verslun verða að tilheyra sama umfangi.',
+		'Invalid parameter.' => 'Ógild færibreyta.',
 		'Settings with id %1$s and key %2$s not found' => 'Stillingar með id %1$s og lykil %2$s fundust ekki',
 		'Settings with id %s not found' => 'Stillingar með id %s fundust ekki',
 		'Can not save settings with id %s' => 'Get ekki vistað stillingar með id %s',

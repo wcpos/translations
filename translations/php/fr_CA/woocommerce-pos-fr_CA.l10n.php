@@ -960,6 +960,7 @@ return array(
 		'This report runs on a closed session.' => 'Ce rapport porte sur une session fermée.',
 		'The closed session must have a linked closure.' => 'La session fermée doit être liée à une fermeture.',
 		'The session, register and store must describe the same scope.' => 'La session, la caisse et le magasin doivent correspondre à la même portée.',
+		'Invalid parameter.' => 'Paramètre non valide.',
 		'Settings with id %1$s and key %2$s not found' => 'Paramètres avec id %1$s et clé %2$s introuvables',
 		'Settings with id %s not found' => 'Paramètres avec id %s introuvables',
 		'Can not save settings with id %s' => 'Impossible d\'enregistrer les paramètres avec id %s',
