@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'افزونه نصب شد اما قابل یافتن نیست.',
 		'Extension is not installed.' => 'افزونه نصب نشده است.',
 		'Plugin update failed.' => 'به‌روزرسانی افزونه ناموفق بود.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s به WCPOS نسخهٔ %3$s یا بالاتر نیاز دارد؛ این سایت از WCPOS نسخهٔ %4$s استفاده می‌کند. ابتدا WCPOS Pro را به‌روزرسانی کنید.',
 		'Invalid order ID.' => 'شناسه سفارش نامعتبر است.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'هدر X-WCPOS-Idempotency-Key وجود ندارد.',
 		'You do not have permission to manage stores.' => 'شما اجازه مدیریت فروشگاه‌ها را ندارید.',

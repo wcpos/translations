@@ -76,6 +76,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin-i u instalua, por nuk u gjet.',
 		'Extension is not installed.' => 'Zgjerimi nuk është i instaluar.',
 		'Plugin update failed.' => 'Përditësimi i Plugin-it dështoi.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s kërkon WCPOS %3$s ose version më të ri; kjo faqe përdor WCPOS %4$s. Përditësoni fillimisht WCPOS Pro.',
 		'Invalid order ID.' => 'ID e porosisë është e pavlefshme.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Mungon kreu X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'Nuk keni leje për të menaxhuar dyqanet.',

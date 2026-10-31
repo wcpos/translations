@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => '插件已安装，但无法找到。',
 		'Extension is not installed.' => '扩展未安装。',
 		'Plugin update failed.' => '插件更新失败。',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s 需要 WCPOS %3$s 或更高版本；此网站运行的是 WCPOS %4$s。请先更新 WCPOS Pro。',
 		'Invalid order ID.' => '订单 ID 无效。',
 		'Missing X-WCPOS-Idempotency-Key header.' => '缺少 X-WCPOS-Idempotency-Key 请求头。',
 		'You do not have permission to manage stores.' => '您没有权限管理商店。',

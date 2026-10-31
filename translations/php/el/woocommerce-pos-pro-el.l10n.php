@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Το πρόσθετο εγκαταστάθηκε αλλά δεν μπόρεσε να εντοπιστεί.',
 		'Extension is not installed.' => 'Η επέκταση δεν είναι εγκατεστημένη.',
 		'Plugin update failed.' => 'Η ενημέρωση του πρόσθετου απέτυχε.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => 'Το %1$s %2$s απαιτεί WCPOS %3$s ή νεότερη έκδοση· αυτός ο ιστότοπος εκτελεί το WCPOS %4$s. Ενημερώστε πρώτα το WCPOS Pro.',
 		'Invalid order ID.' => 'Μη έγκυρο αναγνωριστικό παραγγελίας.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Λείπει η κεφαλίδα X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'Δεν έχετε άδεια να διαχειριστείτε καταστήματα.',

@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin paigaldati, kuid seda ei leitud.',
 		'Extension is not installed.' => 'Laiendus ei ole paigaldatud.',
 		'Plugin update failed.' => 'Plugin\'i uuendamine ebaõnnestus.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s vajab WCPOS-i versiooni %3$s või uuemat; sellel saidil töötab WCPOS %4$s. Uuenda esmalt WCPOS Pro-d.',
 		'Invalid order ID.' => 'Vigane tellimuse ID.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Päise X-WCPOS-Idempotency-Key puudub.',
 		'You do not have permission to manage stores.' => 'Teil puudub luba poodide haldamiseks.',

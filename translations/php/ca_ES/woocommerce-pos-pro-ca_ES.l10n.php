@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'El complement s\'ha instal·lat però no s\'ha pogut localitzar.',
 		'Extension is not installed.' => 'L\'extensió no està instal·lada.',
 		'Plugin update failed.' => 'L\'actualització del complement ha fallat.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s necessita WCPOS %3$s o una versió posterior; aquest lloc funciona amb WCPOS %4$s. Actualitzeu primer WCPOS Pro.',
 		'Invalid order ID.' => 'ID de comanda no vàlid.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Falta la capçalera X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'No tens permís per gestionar botigues.',

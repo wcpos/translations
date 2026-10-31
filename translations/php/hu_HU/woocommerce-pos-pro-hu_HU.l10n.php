@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'A bővítmény telepítve lett, de nem található.',
 		'Extension is not installed.' => 'A kiterjesztés nincs telepítve.',
 		'Plugin update failed.' => 'A bővítmény frissítése sikertelen.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => 'A(z) %1$s %2$s használatához WCPOS %3$s vagy újabb verzió szükséges; ezen a webhelyen WCPOS %4$s fut. Először frissítse a WCPOS Pro bővítményt.',
 		'Invalid order ID.' => 'Érvénytelen rendelésazonosító.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Hiányzó X-WCPOS-Idempotency-Key fejléc.',
 		'You do not have permission to manage stores.' => 'Nincs jogosultsága az üzletek kezeléséhez.',

@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => '플러그인이 설치되었지만 찾을 수 없습니다.',
 		'Extension is not installed.' => '확장 기능이 설치되어 있지 않습니다.',
 		'Plugin update failed.' => '플러그인 업데이트에 실패했습니다.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s을(를) 사용하려면 WCPOS %3$s 이상이 필요합니다. 이 사이트에서는 WCPOS %4$s을(를) 실행 중입니다. 먼저 WCPOS Pro를 업데이트하세요.',
 		'Invalid order ID.' => '잘못된 주문 ID입니다.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'X-WCPOS-Idempotency-Key 헤더가 누락되었습니다.',
 		'You do not have permission to manage stores.' => '상점을 관리할 권한이 없습니다.',

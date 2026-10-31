@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Viðbót var sett upp en fannst ekki.',
 		'Extension is not installed.' => 'Viðbót er ekki uppsett.',
 		'Plugin update failed.' => 'Uppfærsla viðbótar mistókst.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s krefst WCPOS %3$s eða nýrri útgáfu; þessi vefur keyrir WCPOS %4$s. Uppfærðu WCPOS Pro fyrst.',
 		'Invalid order ID.' => 'Ógilt pöntunarauðkenni.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'X-WCPOS-Idempotency-Key haus vantar.',
 		'You do not have permission to manage stores.' => 'Þú hefur ekki heimild til að stjórna verslunum.',

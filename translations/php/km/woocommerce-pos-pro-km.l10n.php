@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'ផ្លក់អ៊ីនត្រូវបានដំឡើងប៉ុន្តែមិនអាចរកឃើញបាន។',
 		'Extension is not installed.' => 'ផ្នែកបន្ថែមមិនត្រូវបានដំឡើង។',
 		'Plugin update failed.' => 'ការធ្វើបច្ចុប្បន្នភាពផ្លក់អ៊ីនបានបរាជ័យ។',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s ត្រូវការ WCPOS %3$s ឬកំណែថ្មីជាងនេះ។ គេហទំព័រនេះកំពុងប្រើ WCPOS %4$s។ សូមធ្វើបច្ចុប្បន្នភាព WCPOS Pro ជាមុនសិន។',
 		'Invalid order ID.' => 'លេខសម្គាល់ការបញ្ជាទិញមិនត្រឹមត្រូវ។',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'បាត់បឋមកថា X-WCPOS-Idempotency-Key។',
 		'You do not have permission to manage stores.' => 'អ្នកមិនមានសិទ្ធិក្នុងការគ្រប់គ្រងហាងទេ។',

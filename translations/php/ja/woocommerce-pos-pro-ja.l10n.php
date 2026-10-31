@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'プラグインはインストールされましたが、見つかりません。',
 		'Extension is not installed.' => '拡張機能がインストールされていません。',
 		'Plugin update failed.' => 'プラグインの更新に失敗しました。',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s には WCPOS %3$s 以降が必要ですが、このサイトでは WCPOS %4$s が実行されています。先に WCPOS Pro を更新してください。',
 		'Invalid order ID.' => '無効な注文IDです。',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'X-WCPOS-Idempotency-Keyヘッダーがありません。',
 		'You do not have permission to manage stores.' => '店舗を管理する権限がありません。',

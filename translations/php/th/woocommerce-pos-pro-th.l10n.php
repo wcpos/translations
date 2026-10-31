@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'ปลั๊กอินติดตั้งแล้วแต่ไม่สามารถค้นหาได้',
 		'Extension is not installed.' => 'ส่วนขยายยังไม่ได้ติดตั้ง',
 		'Plugin update failed.' => 'การอัปเดตปลั๊กอินล้มเหลว',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s ต้องใช้ WCPOS %3$s หรือใหม่กว่า เว็บไซต์นี้ใช้ WCPOS %4$s โปรดอัปเดต WCPOS Pro ก่อน',
 		'Invalid order ID.' => 'รหัสคำสั่งซื้อไม่ถูกต้อง',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'ไม่พบส่วนหัว X-WCPOS-Idempotency-Key',
 		'You do not have permission to manage stores.' => 'คุณไม่มีสิทธิ์ในการจัดการร้านค้า',

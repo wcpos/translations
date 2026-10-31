@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Плагин был установлен, но не может быть найден.',
 		'Extension is not installed.' => 'Расширение не установлено.',
 		'Plugin update failed.' => 'Обновление плагина не удалось.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => 'Для %1$s %2$s требуется WCPOS %3$s или более поздняя версия; на этом сайте используется WCPOS %4$s. Сначала обновите WCPOS Pro.',
 		'Invalid order ID.' => 'Неверный ID заказа.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Отсутствует заголовок X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'У вас нет прав для управления магазинами.',
