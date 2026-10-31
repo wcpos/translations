@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'प्लगइन स्थापित किया गया था लेकिन इसे ढूंढा नहीं जा सका।',
 		'Extension is not installed.' => 'एक्सटेंशन स्थापित नहीं है।',
 		'Plugin update failed.' => 'प्लगइन अपडेट विफल रहा।',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s के लिए WCPOS %3$s या बाद का संस्करण आवश्यक है; इस साइट पर WCPOS %4$s चल रहा है। पहले WCPOS Pro अपडेट करें।',
 		'Invalid order ID.' => 'अमान्य ऑर्डर ID।',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'X-WCPOS-Idempotency-Key हेडर अनुपस्थित है।',
 		'You do not have permission to manage stores.' => 'आपको स्टोर प्रबंधित करने की अनुमति नहीं है।',

@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Lisäosa asennettiin, mutta sitä ei voitu löytää.',
 		'Extension is not installed.' => 'Laajennusta ei ole asennettu.',
 		'Plugin update failed.' => 'Lisäosan päivitys epäonnistui.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s vaatii WCPOS-version %3$s tai uudemman; tällä sivustolla on käytössä WCPOS %4$s. Päivitä ensin WCPOS Pro.',
 		'Invalid order ID.' => 'Virheellinen tilaustunnus.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'X-WCPOS-Idempotency-Key-otsake puuttuu.',
 		'You do not have permission to manage stores.' => 'Sinulla ei ole oikeuksia hallita kauppoja.',

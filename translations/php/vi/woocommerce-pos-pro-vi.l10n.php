@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin đã được cài đặt nhưng không thể tìm thấy.',
 		'Extension is not installed.' => 'Tiện ích chưa được cài đặt.',
 		'Plugin update failed.' => 'Cập nhật plugin thất bại.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s yêu cầu WCPOS %3$s trở lên; trang web này đang chạy WCPOS %4$s. Trước tiên, hãy cập nhật WCPOS Pro.',
 		'Invalid order ID.' => 'ID đơn hàng không hợp lệ.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Thiếu tiêu đề X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'Bạn không có quyền quản lý cửa hàng.',

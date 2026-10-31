@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin byl nainstalován, ale nelze jej nalézt.',
 		'Extension is not installed.' => 'Rozšíření není nainstalováno.',
 		'Plugin update failed.' => 'Aktualizace pluginu selhala.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s vyžaduje WCPOS %3$s nebo novější; tento web používá WCPOS %4$s. Nejprve aktualizujte WCPOS Pro.',
 		'Invalid order ID.' => 'Neplatné ID objednávky.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Chybí hlavička X-WCPOS-Idempotency-Key.',
 		'You do not have permission to manage stores.' => 'Nemáte oprávnění spravovat obchody.',

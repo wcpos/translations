@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Įskiepis buvo įdiegtas, bet jo nepavyko rasti.',
 		'Extension is not installed.' => 'Plėtinys nėra įdiegtas.',
 		'Plugin update failed.' => 'Įskiepio atnaujinimas nepavyko.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s reikalinga WCPOS %3$s arba naujesnė versija; šioje svetainėje veikia WCPOS %4$s. Pirmiausia atnaujinkite WCPOS Pro.',
 		'Invalid order ID.' => 'Neteisingas užsakymo ID.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Trūksta X-WCPOS-Idempotency-Key antraštės.',
 		'You do not have permission to manage stores.' => 'Jūs neturite leidimo valdyti parduotuvių.',

@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Pluginul a fost instalat, dar nu a putut fi localizat.',
 		'Extension is not installed.' => 'Extensia nu este instalată.',
 		'Plugin update failed.' => 'Actualizarea pluginului a eșuat.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s necesită WCPOS %3$s sau o versiune ulterioară; acest site rulează WCPOS %4$s. Actualizați mai întâi WCPOS Pro.',
 		'Invalid order ID.' => 'ID comandă invalid.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Antetul X-WCPOS-Idempotency-Key lipsește.',
 		'You do not have permission to manage stores.' => 'Nu aveți permisiunea de a gestiona magazinele.',

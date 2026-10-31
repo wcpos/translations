@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'התוסף הותקן אך לא ניתן לאתר אותו.',
 		'Extension is not installed.' => 'ההרחבה לא מותקנת.',
 		'Plugin update failed.' => 'עדכון התוסף נכשל.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s דורש WCPOS בגרסה %3$s או חדשה יותר; באתר זה פועלת גרסה %4$s של WCPOS. יש לעדכן תחילה את WCPOS Pro.',
 		'Invalid order ID.' => 'מזהה הזמנה לא תקין.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'כותרת X-WCPOS-Idempotency-Key חסרה.',
 		'You do not have permission to manage stores.' => 'אין לך הרשאה לנהל חנויות.',

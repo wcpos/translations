@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'Plugin telah diinstal tetapi tidak dapat ditemukan.',
 		'Extension is not installed.' => 'Ekstensi tidak terpasang.',
 		'Plugin update failed.' => 'Pembaruan plugin gagal.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s memerlukan WCPOS %3$s atau yang lebih baru; situs ini menjalankan WCPOS %4$s. Perbarui WCPOS Pro terlebih dahulu.',
 		'Invalid order ID.' => 'ID pesanan tidak valid.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Header X-WCPOS-Idempotency-Key tidak ditemukan.',
 		'You do not have permission to manage stores.' => 'Anda tidak memiliki izin untuk mengelola toko.',

@@ -78,6 +78,7 @@ return array(
 		'Plugin was installed but could not be located.' => 'L\'extension a été installée mais n\'a pas pu être localisée.',
 		'Extension is not installed.' => 'L\'extension n\'est pas installée.',
 		'Plugin update failed.' => 'La mise à jour de l\'extension a échoué.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s nécessite WCPOS %3$s ou une version ultérieure ; ce site utilise WCPOS %4$s. Mettez d’abord WCPOS Pro à jour.',
 		'Invalid order ID.' => 'ID de commande invalide.',
 		'Missing X-WCPOS-Idempotency-Key header.' => 'En-tête X-WCPOS-Idempotency-Key manquant.',
 		'You do not have permission to manage stores.' => 'Vous n\'avez pas la permission de gérer les magasins.',
