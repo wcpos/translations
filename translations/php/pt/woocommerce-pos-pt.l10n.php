@@ -676,7 +676,7 @@ return array(
 		'Counted Opening Float' => 'Fundo de caixa inicial contado',
 		'Opening Variance' => 'Diferença inicial',
 		'Discount count' => 'Contagem de descontos',
-		'Items sold' => 'Itens vendidos',
+		'Items sold' => 'Artigos vendidos',
 		'Average sale' => 'Venda média',
 		'Drawer openings' => 'Aberturas da gaveta',
 		'Difference note' => 'Nota sobre a diferença',

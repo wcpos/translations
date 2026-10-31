@@ -1166,7 +1166,7 @@ return array(
 		'Right-to-left thermal receipt for 80mm printers. Mirrors column alignments for Arabic, Hebrew, Persian and Urdu. Requires a printer that supports an Arabic codepage (CP864 or Windows-1256) — check your printer\'s manual before ordering.' => 'Ticket thermique de droite à gauche pour imprimantes 80 mm. Miroire l’alignement des colonnes pour l’arabe, l’hébreu, le persan et l’ourdou. Nécessite une imprimante compatible avec une page de code arabe (CP864 ou Windows-1256) — vérifiez le manuel de votre imprimante avant de commander.',
 		'A tabular report with groups, subtotals and totals.' => 'Un rapport tabulaire avec groupes, sous-totaux et totaux.',
 		'Report (Letterhead)' => 'Rapport (papier à en-tête)',
-		'A printed report on the store\'s letterhead with the scope, the generated time and page-safe tables.' => 'Rapport imprimé sur le papier à en-tête du magasin, avec la période, la date de génération et des tableaux adaptés à l’impression.',
+		'A printed report on the store\'s letterhead with the scope, the generated time and page-safe tables.' => 'Rapport imprimé sur le papier à en-tête du magasin, avec le périmètre, l’heure de génération et des tableaux adaptés à l’impression.',
 		'Thermal Report' => 'Rapport thermique',
 		'Thermal Report (58mm)' => 'Rapport thermique (58 mm)',
 		'A report for 58 mm paper: each row prints as a label line over its values.' => 'Rapport pour papier de 58 mm : chaque ligne s’imprime sous forme d’intitulé au-dessus de ses valeurs.',
