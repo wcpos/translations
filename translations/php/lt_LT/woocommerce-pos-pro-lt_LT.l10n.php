@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'dabar apima visas nemokamo įskiepio funkcijas. Atskirai veikiantis nemokamas įskiepis buvo automatiškai išjungtas. Galite saugiai jį ištrinti iš savo įskiepių.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nepavyko paruošti naujinimo paketo. Bandykite dar kartą arba įdiekite naujinimą rankiniu būdu.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s reikalinga WCPOS %3$s arba naujesnė versija; šioje svetainėje veikia WCPOS %4$s. Pirmiausia atnaujinkite WCPOS Pro.',
 	),
 );

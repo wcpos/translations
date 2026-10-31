@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '現在包含免費插件的所有功能。獨立的免費插件已自動停用。您可以安全地從插件中刪除它。',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro 無法準備更新套件。請再試一次，或手動安裝更新。',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s 需要 WCPOS %3$s 或更新版本；此網站目前執行 WCPOS %4$s。請先更新 WCPOS Pro。',
 	),
 );

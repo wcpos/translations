@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'most tartalmazza az összes funkciót az ingyenes bővítményből. Az önálló ingyenes bővítmény automatikusan deaktiválva lett. Nyugodtan törölheti a bővítmények közül.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'A WCPOS Pro nem tudta előkészíteni a frissítőcsomagot. Próbálja újra, vagy telepítse manuálisan a frissítést.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => 'A(z) %1$s %2$s használatához WCPOS %3$s vagy újabb verzió szükséges; ezen a webhelyen WCPOS %4$s fut. Először frissítse a WCPOS Pro bővítményt.',
 	),
 );

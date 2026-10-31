@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'כעת כולל את כל התכונות מהתוסף החינמי. התוסף החינמי העצמאי הושבת אוטומטית. ניתן למחוק אותו בבטחה מהתוספים שלך.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro לא הצליח להכין את חבילת העדכון. יש לנסות שוב או להתקין את העדכון באופן ידני.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s דורש WCPOS בגרסה %3$s או חדשה יותר; באתר זה פועלת גרסה %4$s של WCPOS. יש לעדכן תחילה את WCPOS Pro.',
 	),
 );

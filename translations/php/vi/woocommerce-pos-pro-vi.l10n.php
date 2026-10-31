@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'bây giờ bao gồm tất cả các tính năng từ plugin miễn phí. Plugin miễn phí độc lập đã được tự động vô hiệu hóa. Bạn có thể xóa nó an toàn khỏi các plugin của mình.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro không thể chuẩn bị gói cập nhật. Vui lòng thử lại hoặc cài đặt bản cập nhật theo cách thủ công.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s yêu cầu WCPOS %3$s trở lên; trang web này đang chạy WCPOS %4$s. Trước tiên, hãy cập nhật WCPOS Pro.',
 	),
 );

@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'acum include toate funcțiile din pluginul gratuit. Pluginul gratuit independent a fost dezactivat automat. Îl puteți șterge în siguranță din pluginurile dvs.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro nu a putut pregăti pachetul de actualizare. Încercați din nou sau instalați actualizarea manual.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s necesită WCPOS %3$s sau o versiune ulterioară; acest site rulează WCPOS %4$s. Actualizați mai întâi WCPOS Pro.',
 	),
 );

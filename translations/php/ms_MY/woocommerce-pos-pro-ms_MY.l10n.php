@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'kini merangkumi semua ciri dari plugin percuma. Plugin percuma yang berdiri sendiri telah dinyahaktifkan secara automatik. Anda boleh menghapuskannya dengan selamat dari plugin anda.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro tidak dapat menyediakan pakej kemas kini. Sila cuba lagi atau pasang kemas kini secara manual.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s memerlukan WCPOS %3$s atau yang lebih baharu; laman ini menggunakan WCPOS %4$s. Kemas kini WCPOS Pro terlebih dahulu.',
 	),
 );

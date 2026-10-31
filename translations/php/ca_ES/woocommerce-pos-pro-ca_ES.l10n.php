@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => 'ara inclou totes les funcions del complement gratuït. El complement gratuït independent s\'ha desactivat automàticament. Pots eliminar-lo de manera segura dels teus complements.',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Pro no ha pogut preparar el paquet d’actualització. Torneu-ho a provar o instal·leu l’actualització manualment.',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s necessita WCPOS %3$s o una versió posterior; aquest lloc funciona amb WCPOS %4$s. Actualitzeu primer WCPOS Pro.',
 	),
 );

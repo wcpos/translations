@@ -186,5 +186,6 @@ return array(
 		'WCPOS Pro' => 'WCPOS Pro',
 		'now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins.' => '無料プラグインのすべての機能が含まれるようになりました。スタンドアロンの無料プラグインは自動的に無効化されました。プラグインから安全に削除できます。',
 		'WCPOS Pro could not prepare the update package. Please try again, or install the update manually.' => 'WCPOS Proで更新パッケージを準備できませんでした。もう一度お試しいただくか、更新を手動でインストールしてください。',
+		'%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first.' => '%1$s %2$s には WCPOS %3$s 以降が必要ですが、このサイトでは WCPOS %4$s が実行されています。先に WCPOS Pro を更新してください。',
 	),
 );
