@@ -349,20 +349,12 @@ test('detects plural-forms metadata in l10n.php artifacts', () => {
 });
 
 test('PHP artifact generator writes plural metadata into l10n.php', () => {
-  const { generateL10nPhp } = require('../scripts/generate-php-files.js');
-  const l10n = generateL10nPhp({
-    headers: {
-      'plural-forms': 'nplurals=2; plural=n != 1;',
-      language: 'de',
-    },
-    translations: {
-      '': {
-        'One order': {
-          msgstr: ['Eine Bestellung', '%s Bestellungen'],
-        },
-      },
-    },
-  });
+  // The pipeline's one generator (po-file.js): entries as parsePoFile() yields them, header as text.
+  const { generateL10nPhp } = require('../scripts/po-file.js');
+  const l10n = generateL10nPhp(
+    [{ msgid: 'One order', msgid_plural: '%s orders', msgstr: '', msgstr_plural: ['Eine Bestellung', '%s Bestellungen'] }],
+    'Language: de\nPlural-Forms: nplurals=2; plural=n != 1;\n'
+  );
 
   assert.match(l10n, /'plural-forms' => 'nplurals=2; plural=n != 1;'/);
   assert.match(l10n, /'language' => 'de'/);
