@@ -40,7 +40,7 @@ Versions are decoupled from plugin/app versions. Each consumer pins the translat
 - `sync-next.yml` merges `main` into `next` after every push to `main` and fails loudly on conflict. It skips syncing when `next` is absent during a release freeze.
 - The Mac mini runs `scripts/translate-local.sh --base next` as a second scheduled job, using `.claude/auto-translate.next.state` and PRs labelled `auto-translate` against `next`. Both jobs share the lock and worktree, so runs serialize; self-update reads from the selected base.
 
-**Release day:** open a PR from `next` into `main` before the consumers move their `next` to `main`, and merge it so already-translated strings ship instead of being re-translated. After the consumers re-cut `next`, re-create this repo's `next` from `main`: `git push origin main:next`.
+**Release day:** open a PR from `next` into `main` before the consumers move their `next` to `main`, and merge it so already-translated strings ship instead of being re-translated. Open it from a branch cut at `next`'s tip (`release/next-into-main-<ver>`), not from `next` itself, and expect to push one empty commit: on a PR this large (hundreds of files) GitHub fires the `pull_request` event before it has the merge commit, so the first event starts no `pull_request` workflow and the required `dependency-review` check never appears; a second commit once mergeability shows as computed starts them (2026-11-02, #488 → #489). Merging cuts the CalVer tag the consumers' promote cuts pin; close the bot's consumer pin PRs against the 1.x `main`s as superseded. After the consumers re-cut `next`, re-create this repo's `next` from `main`: `git push origin main:next`.
 
 ## Workflows
 
