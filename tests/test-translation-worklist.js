@@ -132,3 +132,22 @@ try {
 } finally {
   fs.rmSync(rootDir, { recursive: true, force: true });
 }
+
+{
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'translation-worklist-plain-other-'));
+  try {
+    fs.mkdirSync(path.join(rootDir, 'source/js/monorepo'), { recursive: true });
+    fs.mkdirSync(path.join(rootDir, 'source/php'), { recursive: true });
+    fs.mkdirSync(path.join(rootDir, 'scripts'));
+    fs.writeFileSync(path.join(rootDir, 'locales.json'), JSON.stringify({ en: 'English', ar: 'Arabic' }));
+    fs.writeFileSync(path.join(rootDir, 'scripts/translation-glossary.json'), '{}');
+    fs.writeFileSync(path.join(rootDir, 'source/js/monorepo/core.json'), JSON.stringify({ kind_cash: 'Cash', kind_other: 'Other' }));
+    const ar = buildWorklist({ rootDir }).packets.find(packet => packet.locale === 'ar');
+    assert.deepEqual(ar.js['monorepo/core.json'], {
+      kind_cash: { source: 'Cash', concepts: [] },
+      kind_other: { source: 'Other', concepts: [] },
+    });
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+}

@@ -102,6 +102,17 @@ function parsePluralKey(key) {
   return m ? { base: m[1], suffix: m[2] } : null;
 }
 
+/** A lone suffixed key (e.g. an enum label ending in _other) is a plain key. */
+function pluralBasesOf(sourceKeys) {
+  const keys = new Set(sourceKeys);
+  const bases = new Set();
+  for (const key of keys) {
+    const plural = parsePluralKey(key);
+    if (plural && plural.suffix === 'one' && keys.has(`${plural.base}_other`)) bases.add(plural.base);
+  }
+  return bases;
+}
+
 /** Compare resolved source text; sourceStrings is only read to check for a paired _other key. */
 function placeholdersMatch({ locale, key, sourceText, sourceStrings, translation, extract }) {
   const srcPH = extract(sourceText).sort();
@@ -128,11 +139,7 @@ function expectedKeysForLocale(sourceKeys, locale) {
   const suffixes = getPluralSuffixes(locale);
 
   // Identify plural base keys in source
-  const pluralBases = new Set();
-  for (const k of sourceKeys) {
-    const m = k.match(SUFFIX_RE);
-    if (m) pluralBases.add(m[1]);
-  }
+  const pluralBases = pluralBasesOf(sourceKeys);
 
   const expected = new Set();
   for (const k of sourceKeys) {
@@ -161,5 +168,6 @@ module.exports = {
   SUFFIX_RE,
   getPluralSuffixes,
   parsePluralKey,
+  pluralBasesOf,
   expectedKeysForLocale,
 };
