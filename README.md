@@ -129,8 +129,6 @@ pnpm run extract:php
 # Fill missing translations (see Translation Pipeline)
 scripts/translate-local.sh
 
-# Generate .mo and .l10n.php
-pnpm run generate:php
 ```
 
 ## License
