@@ -58,11 +58,11 @@ msgstr "レジ係"
 msgid "Gateways"
 msgstr "Gateways"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Proは現在スタンドアロンです。"
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr "Proプラグインには無料版のすべての機能が含まれています。このプラグインを安全に無効化して削除できます。"
@@ -142,6 +142,11 @@ msgstr "POSバーコード"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "販売時点で使用される製品バーコード"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr "WCPOS Proで更新パッケージを準備できませんでした。もう一度お試しいただくか、更新を手動でインストールしてください。"
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -321,43 +326,51 @@ msgstr "このロールのシグナルを読み取れません。"
 msgid "You are not authorized for this store."
 msgstr "このストアへのアクセス権限がありません。"
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "プラグインを管理する権限がありません。"
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "カタログに拡張機能 \"%s\" が見つかりません。"
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "無効な操作です。"
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "この拡張機能のダウンロードURLが利用できません。"
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "プラグインのインストールに失敗しました。"
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "プラグインはインストールされましたが、見つかりません。"
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "拡張機能がインストールされていません。"
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "プラグインの更新に失敗しました。"
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s には WCPOS %3$s 以降が必要ですが、このサイトでは WCPOS %4$s が実行されています。先に WCPOS Pro を更新してください。"
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -367,19 +380,19 @@ msgstr "無効な注文IDです。"
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "X-WCPOS-Idempotency-Keyヘッダーがありません。"
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "店舗を管理する権限がありません。"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "店舗が見つかりません。"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "店舗の削除に失敗しました。"
 
@@ -596,18 +609,28 @@ msgstr "無効な返金先です。許可される値: original_method、cash、
 msgid "The original payment gateway is not available for refunds."
 msgstr "元の支払いゲートウェイは返金に利用できません。"
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr "この注文ではまだ決済が確定していないため、返金できるものはありません。"
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "記録された支払いでは、この金額を元の支払い方法で返金できません。"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr "POS返金 #%1$d: %2$sを%3$sで返金できませんでした — %4$s。別の方法で返金してください。"
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "リーダーで処理中の支払いをキャンセルしています"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -676,7 +699,7 @@ msgid ""
 msgstr ""
 "このファイルをWCPOSサポートと共有してください。このサイトのすべてのPOS決済プロバイダーに関する情報が含まれます。シークレットとカード番号は削除されています。"
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "このサポート用データ一式をダウンロードする権限がありません。"
 
@@ -838,16 +861,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "無料プラグインのすべての機能が含まれるようになりました。スタンドアロンの無料プラグインは自動的に無効化されました。プラグインから安全に削除できます。"
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr "WCPOS Proで更新パッケージを準備できませんでした。もう一度お試しいただくか、更新を手動でインストールしてください。"
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s には WCPOS %3$s 以降が必要ですが、このサイトでは WCPOS %4$s が実行されています。先に WCPOS Pro を更新してください。"

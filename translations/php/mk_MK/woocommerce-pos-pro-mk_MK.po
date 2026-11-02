@@ -58,11 +58,11 @@ msgstr "Касиери"
 msgid "Gateways"
 msgstr "Gateways"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Pro сега е самостоен."
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr ""
@@ -143,6 +143,12 @@ msgstr "POS баркод"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "Баркод на производ користен на местото на продажба"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr ""
+"WCPOS Pro не можеше да го подготви пакетот за ажурирање. Обидете се повторно или инсталирајте го ажурирањето рачно."
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -324,43 +330,51 @@ msgstr "Не може да се прочитаат сигналите за та�
 msgid "You are not authorized for this store."
 msgstr "Немате овластување за оваа продавница."
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "Немате дозвола да управувате со додатоци."
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "Екстензијата \"%s\" не е пронајдена во каталогот."
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "Невалидна акција."
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "Нема достапен URL за преземање за оваа екстензија."
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "Инсталацијата на додатокот не успеа."
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "Додатокот беше инсталиран, но не може да се лоцира."
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "Екстензијата не е инсталирана."
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "Ажурирањето на додатокот не успеа."
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s бара WCPOS %3$s или понова верзија; на оваа страница работи WCPOS %4$s. Прво ажурирајте го WCPOS Pro."
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -370,19 +384,19 @@ msgstr "Невалиден ID на нарачка."
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Недостасува заглавие X-WCPOS-Idempotency-Key."
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "Немате дозвола да управувате со продавници."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "Продавницата не е пронајдена."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "Неуспешно бришење на продавницата."
 
@@ -610,20 +624,31 @@ msgstr ""
 msgid "The original payment gateway is not available for refunds."
 msgstr "Оригиналниот начин на плаќање не е достапен за поврат на средства."
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr ""
+"Сè уште нема наплатено плаќање за оваа нарачка, па нема што да се рефундира."
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Со евидентираните плаќања не може да се врати овој износ преку првичниот начин на плаќање."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "POS поврат #%1$d: %2$s не може да се врати преку %3$s — %4$s. Вратете ја сумата на друг начин."
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "Откажување на плаќањето што сè уште е активно на читачот"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -692,7 +717,7 @@ msgid ""
 msgstr ""
 "Споделете ја оваа датотека со поддршката на WCPOS. Ги опфаќа сите POS даватели на плаќања на оваа страница; тајните податоци и броевите на картички се отстранети."
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "Немате дозвола да го преземете овој пакет за поддршка."
 
@@ -858,17 +883,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "сега ги вклучува сите функции од бесплатниот додаток. Самостојниот бесплатен додаток е автоматски деактивиран. Може безбедно да го избришете од вашите додатоци."
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr ""
-"WCPOS Pro не можеше да го подготви пакетот за ажурирање. Обидете се повторно или инсталирајте го ажурирањето рачно."
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s бара WCPOS %3$s или понова верзија; на оваа страница работи WCPOS %4$s. Прво ажурирајте го WCPOS Pro."
