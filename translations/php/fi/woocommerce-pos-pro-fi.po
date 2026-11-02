@@ -58,11 +58,11 @@ msgstr "Kassanhoitajat"
 msgid "Gateways"
 msgstr "Gatewayt"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Pro on nyt itsenäinen."
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr ""
@@ -143,6 +143,12 @@ msgstr "POS-viivakoodi"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "Tuotteen viivakoodi myyntipisteessä"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr ""
+"WCPOS Pro ei voinut valmistella päivityspakettia. Yritä uudelleen tai asenna päivitys manuaalisesti."
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -323,43 +329,51 @@ msgstr "Tämän roolin signaaleja ei voi lukea."
 msgid "You are not authorized for this store."
 msgstr "Sinulla ei ole valtuuksia tässä kaupassa."
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "Sinulla ei ole oikeuksia hallita lisäosia."
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "Laajennusta \"%s\" ei löydy luettelosta."
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "Virheellinen toiminto."
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "Tälle laajennukselle ei ole saatavilla lataus-URL:ia."
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "Lisäosan asennus epäonnistui."
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "Lisäosa asennettiin, mutta sitä ei voitu löytää."
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "Laajennusta ei ole asennettu."
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "Lisäosan päivitys epäonnistui."
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s vaatii WCPOS-version %3$s tai uudemman; tällä sivustolla on käytössä WCPOS %4$s. Päivitä ensin WCPOS Pro."
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -369,19 +383,19 @@ msgstr "Virheellinen tilaustunnus."
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "X-WCPOS-Idempotency-Key-otsake puuttuu."
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "Sinulla ei ole oikeuksia hallita kauppoja."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "Kauppaa ei löytynyt."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "Kaupan poistaminen epäonnistui."
 
@@ -606,20 +620,31 @@ msgstr ""
 msgid "The original payment gateway is not available for refunds."
 msgstr "Alkuperäinen maksutapa ei ole käytettävissä palautuksiin."
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr ""
+"Tästä tilauksesta ei ole vielä veloitettu mitään, joten palautettavaa ei ole."
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Tallennetuilla maksuilla tätä summaa ei voi palauttaa alkuperäisellä maksutavalla."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "POS-palautus #%1$d: Summaa %2$s ei voitu palauttaa maksutavalla %3$s — %4$s. Palauta summa toisella tavalla."
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "Peruutetaan maksua, joka on yhä avoinna maksupäätteessä"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -689,7 +714,7 @@ msgid ""
 msgstr ""
 "Jaa tämä tiedosto WCPOS-tuen kanssa. Se kattaa kaikki tämän sivuston POS-maksupalveluntarjoajat; salaiset tiedot ja korttinumerot on poistettu."
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "Sinulla ei ole oikeutta ladata tätä tukipakettia."
 
@@ -854,17 +879,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "sisältää nyt kaikki ilmaisen lisäosan ominaisuudet. Erillinen ilmainen lisäosa on automaattisesti poistettu käytöstä. Voit poistaa sen turvallisesti lisäosistasi."
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr ""
-"WCPOS Pro ei voinut valmistella päivityspakettia. Yritä uudelleen tai asenna päivitys manuaalisesti."
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s vaatii WCPOS-version %3$s tai uudemman; tällä sivustolla on käytössä WCPOS %4$s. Päivitä ensin WCPOS Pro."

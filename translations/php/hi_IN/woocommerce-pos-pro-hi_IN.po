@@ -58,11 +58,11 @@ msgstr "कैशियर"
 msgid "Gateways"
 msgstr "गेटवे"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS प्रो अब स्टैंडअलोन है।"
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr ""
@@ -143,6 +143,12 @@ msgstr "POS बारकोड"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "बिक्री के बिंदु पर उपयोग किया जाने वाला उत्पाद बारकोड"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr ""
+"WCPOS Pro अपडेट पैकेज तैयार नहीं कर सका। कृपया फिर से कोशिश करें या अपडेट को मैन्युअल रूप से इंस्टॉल करें।"
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -324,43 +330,51 @@ msgstr "उस भूमिका के लिए सिग्नल पढ़�
 msgid "You are not authorized for this store."
 msgstr "आपको इस स्टोर की अनुमति नहीं है।"
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "आपको प्लगइन्स प्रबंधित करने की अनुमति नहीं है।"
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "कैटलॉग में एक्सटेंशन \"%s\" नहीं मिला।"
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "अमान्य क्रिया।"
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "इस एक्सटेंशन के लिए कोई डाउनलोड URL उपलब्ध नहीं है।"
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "प्लगइन स्थापना विफल रही।"
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "प्लगइन स्थापित किया गया था लेकिन इसे ढूंढा नहीं जा सका।"
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "एक्सटेंशन स्थापित नहीं है।"
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "प्लगइन अपडेट विफल रहा।"
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s के लिए WCPOS %3$s या बाद का संस्करण आवश्यक है; इस साइट पर WCPOS %4$s चल रहा है। पहले WCPOS Pro अपडेट करें।"
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -370,19 +384,19 @@ msgstr "अमान्य ऑर्डर ID।"
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "X-WCPOS-Idempotency-Key हेडर अनुपस्थित है।"
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "आपको स्टोर प्रबंधित करने की अनुमति नहीं है।"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "स्टोर नहीं मिला।"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "स्टोर को हटाने में विफल।"
 
@@ -605,20 +619,31 @@ msgstr "अमान्य रिफंड गंतव्य। अनुमत
 msgid "The original payment gateway is not available for refunds."
 msgstr "मूल भुगतान गेटवे रिफंड के लिए उपलब्ध नहीं है।"
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr ""
+"इस ऑर्डर के लिए अभी तक कोई भुगतान प्राप्त नहीं हुआ है, इसलिए रिफ़ंड करने के लिए कुछ नहीं है।"
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "दर्ज भुगतानों के ज़रिए मूल भुगतान विधि से यह राशि वापस नहीं की जा सकती।"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "POS रिफ़ंड #%1$d: %2$s को %3$s के ज़रिए वापस नहीं किया जा सका — %4$s। किसी और तरीके से रिफ़ंड करें।"
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "रीडर पर अभी भी खुले भुगतान को रद्द किया जा रहा है"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -688,7 +713,7 @@ msgid ""
 msgstr ""
 "इस फ़ाइल को WCPOS सहायता के साथ साझा करें। इसमें इस साइट के सभी POS भुगतान प्रदाताओं की जानकारी शामिल है; गोपनीय जानकारी और कार्ड नंबर हटा दिए गए हैं।"
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "आपको यह सहायता बंडल डाउनलोड करने की अनुमति नहीं है।"
 
@@ -853,17 +878,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "अब इसमें मुफ्त प्लगइन की सभी विशेषताएं शामिल हैं। स्वतंत्र मुफ्त प्लगइन को स्वचालित रूप से निष्क्रिय कर दिया गया है। आप इसे अपने प्लगइन्स से सुरक्षित रूप से हटा सकते हैं।"
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr ""
-"WCPOS Pro अपडेट पैकेज तैयार नहीं कर सका। कृपया फिर से कोशिश करें या अपडेट को मैन्युअल रूप से इंस्टॉल करें।"
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s के लिए WCPOS %3$s या बाद का संस्करण आवश्यक है; इस साइट पर WCPOS %4$s चल रहा है। पहले WCPOS Pro अपडेट करें।"
