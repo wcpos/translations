@@ -57,11 +57,11 @@ msgstr "收銀員"
 msgid "Gateways"
 msgstr "Gateways"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Pro 現在是獨立的。"
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr "Pro 插件包含免費版本的所有功能。您可以安全地停用並刪除此插件。"
@@ -141,6 +141,11 @@ msgstr "POS 條碼"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "在銷售點使用的產品條碼"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr "WCPOS Pro 無法準備更新套件。請再試一次，或手動安裝更新。"
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -320,43 +325,50 @@ msgstr "無法讀取該角色的訊號。"
 msgid "You are not authorized for this store."
 msgstr "您無權存取此商店。"
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "您沒有權限管理插件。"
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "目錄中找不到擴充功能 \"%s\"。"
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "無效的操作。"
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "此擴充功能沒有可用的下載 URL。"
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "插件安裝失敗。"
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "插件已安裝，但無法找到。"
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "擴充功能未安裝。"
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "插件更新失敗。"
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr "%1$s %2$s 需要 WCPOS %3$s 或更新版本；此網站目前執行 WCPOS %4$s。請先更新 WCPOS Pro。"
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -366,19 +378,19 @@ msgstr "無效的訂單 ID。"
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "缺少 X-WCPOS-Idempotency-Key 標頭。"
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "您沒有管理商店的權限。"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "找不到商店。"
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "無法刪除商店。"
 
@@ -595,18 +607,28 @@ msgstr "無效的退款目的地。允許的值：original_method、cash、manua
 msgid "The original payment gateway is not available for refunds."
 msgstr "原始付款閘道無法用於退款。"
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr "此訂單尚未收取任何款項，因此沒有可退款的金額。"
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "已記錄的付款無法透過原付款方式退還此金額。"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr "POS 退款 #%1$d：無法透過 %3$s 退還 %2$s — %4$s。請改用其他方式退款。"
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "正在取消讀卡機上仍待處理的付款"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -672,7 +694,7 @@ msgid ""
 "Share this file with WCPOS support. It covers every POS payment provider on this site; secrets and card numbers are removed."
 msgstr "請將此檔案分享給 WCPOS 支援團隊。檔案涵蓋此網站上的所有 POS 付款提供者；機密資料和卡號已移除。"
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "您沒有權限下載此支援套件。"
 
@@ -831,15 +853,3 @@ msgstr "WCPOS Pro"
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr "現在包含免費插件的所有功能。獨立的免費插件已自動停用。您可以安全地從插件中刪除它。"
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr "WCPOS Pro 無法準備更新套件。請再試一次，或手動安裝更新。"
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr "%1$s %2$s 需要 WCPOS %3$s 或更新版本；此網站目前執行 WCPOS %4$s。請先更新 WCPOS Pro。"

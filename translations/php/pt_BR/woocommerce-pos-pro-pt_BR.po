@@ -58,11 +58,11 @@ msgstr "Caixas"
 msgid "Gateways"
 msgstr "Gateways"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Pro agora é independente."
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr ""
@@ -143,6 +143,12 @@ msgstr "Código de Barras POS"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "Código de barras do produto usado no ponto de venda"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr ""
+"O WCPOS Pro não conseguiu preparar o pacote de atualização. Tente novamente ou instale a atualização manualmente."
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -324,43 +330,51 @@ msgstr "Não é possível ler os sinais desse perfil."
 msgid "You are not authorized for this store."
 msgstr "Você não tem autorização para esta loja."
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "Você não tem permissão para gerenciar plugins."
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "Extensão \"%s\" não encontrada no catálogo."
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "Ação inválida."
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "Nenhuma URL de download disponível para esta extensão."
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "Falha na instalação do plugin."
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "O plugin foi instalado, mas não pôde ser localizado."
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "A extensão não está instalada."
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "Falha na atualização do plugin."
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s requer o WCPOS %3$s ou superior; este site está executando o WCPOS %4$s. Atualize o WCPOS Pro primeiro."
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -370,19 +384,19 @@ msgstr "ID do pedido inválido."
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Cabeçalho X-WCPOS-Idempotency-Key ausente."
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "Você não tem permissão para gerenciar lojas."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "Loja não encontrada."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "Falha ao mover a loja para a lixeira."
 
@@ -611,20 +625,31 @@ msgstr ""
 msgid "The original payment gateway is not available for refunds."
 msgstr "O gateway de pagamento original não está disponível para reembolsos."
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr ""
+"Ainda não foi cobrado nenhum valor deste pedido, então não há nada para reembolsar."
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Os pagamentos registrados não permitem reembolsar esse valor pelo método original."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "Reembolso POS #%1$d: não foi possível reembolsar %2$s por %3$s — %4$s. Reembolse por outro meio."
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "Cancelando o pagamento que ainda está aberto no leitor"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -694,7 +719,7 @@ msgid ""
 msgstr ""
 "Compartilhe este arquivo com o suporte do WCPOS. Ele inclui todos os provedores de pagamento POS deste site; segredos e números de cartão foram removidos."
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "Você não tem permissão para baixar este pacote de suporte."
 
@@ -859,17 +884,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "agora inclui todos os recursos do plugin gratuito. O plugin gratuito independente foi desativado automaticamente. Você pode excluí-lo com segurança dos seus plugins."
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr ""
-"O WCPOS Pro não conseguiu preparar o pacote de atualização. Tente novamente ou instale a atualização manualmente."
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s requer o WCPOS %3$s ou superior; este site está executando o WCPOS %4$s. Atualize o WCPOS Pro primeiro."
