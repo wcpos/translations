@@ -58,11 +58,11 @@ msgstr "Kasos darbuotojai"
 msgid "Gateways"
 msgstr "Gateway"
 
-#: includes/Admin/Notices.php:90
+#: includes/Admin/Notices.php:91
 msgid "WooCommerce POS Pro is now standalone."
 msgstr "WCPOS Pro dabar yra savarankiškas."
 
-#: includes/Admin/Notices.php:91
+#: includes/Admin/Notices.php:92
 msgid ""
 "The Pro plugin includes all features from the free version. You can safely deactivate and delete this plugin."
 msgstr ""
@@ -143,6 +143,12 @@ msgstr "POS brūkšninis kodas"
 #: includes/Admin/templates/variation-metabox-pos-barcode.php:17
 msgid "Product barcode used at the point of sale"
 msgstr "Produkto brūkšninis kodas naudojamas pardavimo vietoje"
+
+#: includes/Admin/Updaters/Package_Source_Folder.php:136
+msgid ""
+"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
+msgstr ""
+"WCPOS Pro nepavyko paruošti naujinimo paketo. Bandykite dar kartą arba įdiekite naujinimą rankiniu būdu."
 
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:298
 #: includes/Admin/Updaters/Pro_Plugin_Updater.php:440
@@ -324,43 +330,51 @@ msgstr "Negalima skaityti šio vaidmens signalų."
 msgid "You are not authorized for this store."
 msgstr "Neturite teisės naudotis šia parduotuve."
 
-#: includes/API/V1/Extensions_Action.php:94
+#: includes/API/V1/Extensions_Action.php:97
 msgid "You do not have permission to manage plugins."
 msgstr "Neturite leidimo valdyti įskiepius."
 
 #. translators: %s: extension slug
-#: includes/API/V1/Extensions_Action.php:119
+#: includes/API/V1/Extensions_Action.php:122
 #, php-format
 msgid "Extension \"%s\" not found in catalog."
 msgstr "Plėtinys \"%s\" nerastas kataloge."
 
-#: includes/API/V1/Extensions_Action.php:143
+#: includes/API/V1/Extensions_Action.php:146
 msgid "Invalid action."
 msgstr "Neteisingas veiksmas."
 
-#: includes/API/V1/Extensions_Action.php:189
-#: includes/API/V1/Extensions_Action.php:325
+#: includes/API/V1/Extensions_Action.php:197
+#: includes/API/V1/Extensions_Action.php:343
 msgid "No download URL available for this extension."
 msgstr "Šiam plėtiniui nėra prieinamo atsisiuntimo URL."
 
-#: includes/API/V1/Extensions_Action.php:209
+#: includes/API/V1/Extensions_Action.php:222
 msgid "Plugin installation failed."
 msgstr "Įskiepio diegimas nepavyko."
 
-#: includes/API/V1/Extensions_Action.php:224
+#: includes/API/V1/Extensions_Action.php:237
 msgid "Plugin was installed but could not be located."
 msgstr "Įskiepis buvo įdiegtas, bet jo nepavyko rasti."
 
-#: includes/API/V1/Extensions_Action.php:260
-#: includes/API/V1/Extensions_Action.php:291
-#: includes/API/V1/Extensions_Action.php:317
-#: includes/API/V1/Extensions_Action.php:402
+#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:304
+#: includes/API/V1/Extensions_Action.php:330
+#: includes/API/V1/Extensions_Action.php:449
 msgid "Extension is not installed."
 msgstr "Plėtinys nėra įdiegtas."
 
-#: includes/API/V1/Extensions_Action.php:369
+#: includes/API/V1/Extensions_Action.php:387
 msgid "Plugin update failed."
 msgstr "Įskiepio atnaujinimas nepavyko."
+
+#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
+#: includes/API/V1/Extensions_Action.php:425
+#, php-format
+msgid ""
+"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
+msgstr ""
+"%1$s %2$s reikalinga WCPOS %3$s arba naujesnė versija; šioje svetainėje veikia WCPOS %4$s. Pirmiausia atnaujinkite WCPOS Pro."
 
 #: includes/API/V1/Order_Refunds_Controller.php:129
 msgid "Invalid order ID."
@@ -370,19 +384,19 @@ msgstr "Neteisingas užsakymo ID."
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Trūksta X-WCPOS-Idempotency-Key antraštės."
 
-#: includes/API/V1/Stores.php:182
+#: includes/API/V1/Stores.php:183
 msgid "You do not have permission to manage stores."
 msgstr "Jūs neturite leidimo valdyti parduotuvių."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:205
-#: includes/API/V1/Stores.php:259
-#: includes/API/V1/Stores.php:308
+#: includes/API/V1/Stores.php:206
+#: includes/API/V1/Stores.php:260
+#: includes/API/V1/Stores.php:309
 msgid "Store not found."
 msgstr "Parduotuvė nerasta."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:319
+#: includes/API/V1/Stores.php:320
 msgid "Failed to trash store."
 msgstr "Nepavyko ištrinti parduotuvės."
 
@@ -608,20 +622,31 @@ msgstr ""
 msgid "The original payment gateway is not available for refunds."
 msgstr "Pirminis mokėjimo šliuzas nepasiekiamas grąžinimams."
 
+#. translators: Refund API error when no payment has been captured on the order.
+#: includes/Payments/Refund_Processor.php:295
+msgid ""
+"Nothing has been captured on this order yet, so there is nothing to refund."
+msgstr ""
+"Už šį užsakymą dar nebuvo gautas joks mokėjimas, todėl nėra ko grąžinti."
+
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:327
+#: includes/Payments/Refund_Processor.php:339
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Pagal užregistruotus mokėjimus šios sumos negalima grąžinti pradiniu būdu."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:388
+#: includes/Payments/Refund_Processor.php:400
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "POS grąžinimas #%1$d: per %3$s nepavyko grąžinti %2$s — %4$s. Grąžinkite kitu būdu."
+
+#: includes/Payments/Server/Order_Status_Void.php:54
+msgid "Cancelling the payment still open on the reader"
+msgstr "Atšaukiamas mokėjimas, kuris vis dar atviras skaitytuve"
 
 #: includes/Payments/Server/Reader_Curation.php:119
 msgid "Choose a reader."
@@ -691,7 +716,7 @@ msgid ""
 msgstr ""
 "Bendrinkite šį failą su WCPOS pagalbos komanda. Jame pateikiama informacija apie visus šios svetainės POS mokėjimo teikėjus; slapti duomenys ir kortelių numeriai pašalinti."
 
-#: includes/Payments/Support_Bundle.php:267
+#: includes/Payments/Support_Bundle.php:268
 msgid "You are not allowed to download this support bundle."
 msgstr "Neturite teisės atsisiųsti šio pagalbos paketo."
 
@@ -856,17 +881,3 @@ msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
 "dabar apima visas nemokamo įskiepio funkcijas. Atskirai veikiantis nemokamas įskiepis buvo automatiškai išjungtas. Galite saugiai jį ištrinti iš savo įskiepių."
-
-#: includes/Admin/Updaters/Package_Source_Folder.php:136
-msgid ""
-"WCPOS Pro could not prepare the update package. Please try again, or install the update manually."
-msgstr ""
-"WCPOS Pro nepavyko paruošti naujinimo paketo. Bandykite dar kartą arba įdiekite naujinimą rankiniu būdu."
-
-#. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:425
-#, php-format
-msgid ""
-"%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
-msgstr ""
-"%1$s %2$s reikalinga WCPOS %3$s arba naujesnė versija; šioje svetainėje veikia WCPOS %4$s. Pirmiausia atnaujinkite WCPOS Pro."
