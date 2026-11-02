@@ -139,7 +139,7 @@ return array(
 		'Nothing has been captured on this order yet, so there is nothing to refund.' => 'Aucun montant n’a encore été encaissé pour cette commande, il n’y a donc rien à rembourser.',
 		'The recorded payments cannot return this amount through the original method.' => 'Les paiements enregistrés ne permettent pas de rembourser ce montant via le moyen de paiement d’origine.',
 		'POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way.' => 'Remboursement POS #%1$d : %2$s n’a pas pu être remboursé via %3$s — %4$s. Effectuez le remboursement autrement.',
-		'Cancelling the payment still open on the reader' => 'Annulation du paiement encore en attente sur le lecteur',
+		'Cancelling the payment still open on the reader' => 'Annulation du paiement encore ouvert sur le lecteur',
 		'Choose a reader.' => 'Choisissez un lecteur.',
 		'This reader is not allowed.' => 'Ce lecteur n’est pas autorisé.',
 		'This reader is unavailable.' => 'Ce lecteur n’est pas disponible.',
