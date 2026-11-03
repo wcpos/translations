@@ -37,7 +37,7 @@ function run(config = {}, args = [], overrides = {}) {
 }
 try {
   for (const dir of [bin, path.join(wt, 'scripts')]) fs.mkdirSync(dir, { recursive: true });
-  for (const script of ['translate-chunks.js', 'plural-rules.js']) fs.copyFileSync(path.resolve(__dirname, '../scripts', script), path.join(wt, 'scripts', script));
+  for (const script of ['translate-chunks.js', 'plural-rules.js', 'recover-results.js']) fs.copyFileSync(path.resolve(__dirname, '../scripts', script), path.join(wt, 'scripts', script));
   fs.writeFileSync(path.join(wt, 'scripts/source-hashes.js'), '');
   fs.writeFileSync(path.join(wt, 'scripts/translate-prompt.md'), 'TRANSLATE\n');
   fs.writeFileSync(path.join(wt, 'scripts/review-prompt.md'), 'REVIEW\n');
@@ -62,7 +62,7 @@ if (tool === 'git') {
   if (args[1] === 'list' && config.pr) console.log(JSON.stringify(config.pr));
   if (args[1] === 'create' && args[0] === 'pr') console.log('https://example.test/pr/1');
 } else if (tool === 'node') {
-  if (args[0] === '-e' || args[0].endsWith('translate-chunks.js')) {
+  if (args[0] === '-e' || args[0].endsWith('translate-chunks.js') || args[0].endsWith('recover-results.js')) {
     const r = cp.spawnSync(process.execPath, args, { stdio: 'inherit' }); process.exit(r.status ?? 1);
   } else if (args[0].endsWith('source-hashes.js')) {
     console.log('{"seeded":0,"changed":0,"removed":0,"keys":[]}');
@@ -118,12 +118,17 @@ if (tool === 'git') {
     fs.writeFileSync(path.join(root, 'child.pid'), String(child.pid));
     setInterval(() => {}, 1000);
   } else {
+    // printOnly: the translate pass prints its results (codex also as its -o last message) instead of writing them.
+    const printOnly = config.printOnly && prompt.startsWith('TRANSLATE');
+    let last;
     for (const match of prompt.matchAll(/- (\S+) -> (\.translate\/results\/([\w.]+)\.json)/g)) {
       const packet = JSON.parse(fs.readFileSync(match[1], 'utf8'));
       const js = Object.fromEntries(Object.entries(packet.js).map(([file, entries]) => [file,
         Object.fromEntries(Object.keys(entries).map(key => [key, 'translated ' + key]))]));
-      fs.writeFileSync(match[2], JSON.stringify({ locale: match[3].split('.')[0], js }));
+      last = JSON.stringify({ locale: match[3].split('.')[0], js });
+      if (printOnly) console.log(last); else fs.writeFileSync(match[2], last);
     }
+    if (printOnly && tool === 'codex' && last) fs.writeFileSync(args[args.indexOf('-o') + 1], last);
   }
 }
 `.replace('@NODE@', process.execPath);
@@ -227,6 +232,22 @@ if (tool === 'git') {
     result = run({}, ['--translator', translator], { TRANSLATE_MODEL: 'env-model', TRANSLATE_REVIEW_MODEL: 'env-review' });
     assert.equal(result.status, 0, result.stderr);
     assert.deepEqual(result.calls.filter(c => c.tool === translator).map(c => c.args[c.args.indexOf(translator === 'codex' ? '-m' : '--model') + 1]), ['env-model', 'env-review']);
+  }
+  // Results printed but not written are recovered: codex from its -o last message, claude from the chunk log.
+  for (const translator of ['codex', 'claude']) {
+    result = run({ counts: [1], printOnly: true }, translator === 'codex' ? [] : ['--translator', 'claude']);
+    assert.equal(result.status, 0, result.stderr);
+    assert.ok(fs.existsSync(path.join(wt, '.translate/results/aa.json')));
+    assert.match(result.stdout, /recovered aa from the translator's last message/);
+    assert.doesNotMatch(result.stdout, /returned no results for aa/);
+    assert.ok(result.calls.some(c => c.tool === 'prompt' && c.prompt.startsWith('REVIEW') && c.prompt.includes('.translate/work/aa.json')));
+    const [translate, review] = result.calls.filter(c => c.tool === translator);
+    if (translator === 'codex') {
+      assert.equal(translate.args[translate.args.indexOf('-o') + 1], path.join(wt, '.translate/last-message'));
+      assert.ok(!review.args.includes('-o'));
+    } else {
+      assert.match(fs.readFileSync(path.join(wt, '.translate/logs/chunk-1.log'), 'utf8'), /"locale":"aa"/);
+    }
   }
   result = run({ invalid: true }, ['--no-review']);
   assert.equal(result.status, 1);

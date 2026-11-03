@@ -150,7 +150,7 @@ run_with_timeout() {
   return "$status"
 }
 if [ "$TRANSLATOR" = codex ]; then
-  COMMAND=(codex exec -m "$MODEL" -c "model_reasoning_effort=\"$EFFORT\"" -c 'approval_policy="never"' -s workspace-write -C "$WT" -)
+  COMMAND=(codex exec -m "$MODEL" -c "model_reasoning_effort=\"$EFFORT\"" -c 'approval_policy="never"' -s workspace-write -C "$WT" -o "$WT/.translate/last-message" -)
   REVIEW_COMMAND=(codex exec -m "$REVIEW_MODEL" -c "model_reasoning_effort=\"$EFFORT\"" -c 'approval_policy="never"' -s workspace-write -C "$WT" -)
 else
   COMMAND=(claude -p --model "$MODEL" --permission-mode acceptEdits --allowedTools "Read,Write,Glob,Grep")
@@ -172,8 +172,18 @@ while IFS= read -r PACKETS; do
     NAME=$(basename "$PACKET" .json)
     printf '\n- %s -> .translate/results/%s.json\n' "$PACKET" "$NAME" >> .translate/prompt
   done
+  rm -f .translate/last-message
   if ! run_with_timeout "${COMMAND[@]}" < .translate/prompt > ".translate/logs/chunk-$CHUNK.log" 2>&1; then
     log "chunk $CHUNK failed or timed out; continuing"
+  fi
+  # The translator sometimes prints its results without writing them; recover those before the check and review.
+  if [ "$TRANSLATOR" = codex ]; then MESSAGE=.translate/last-message; else MESSAGE=".translate/logs/chunk-$CHUNK.log"; fi
+  if RECOVERED=$(node scripts/recover-results.js "$MESSAGE" .translate/results $PACKETS); then
+    while IFS= read -r LINE; do
+      if [ -n "$LINE" ]; then log "$LINE"; fi
+    done <<< "$RECOVERED"
+  else
+    log "result recovery failed for chunk $CHUNK; continuing"
   fi
   HAS_RESULTS=0
   for PACKET in $PACKETS; do
