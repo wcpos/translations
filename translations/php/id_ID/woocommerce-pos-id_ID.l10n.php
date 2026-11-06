@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Maaf, pesanan ini tidak valid.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Maaf, pesanan ini tidak dapat dilihat. Kunci pesanan hilang atau tidak valid.',
 		'Failed to create temporary template file.' => 'Gagal membuat file templat sementara.',
+		'WCPOS Login' => 'Login WCPOS',
 		'Closure %s' => 'Penutupan %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s penjualan belum ada di server · %2$s',
 		'Point of Sale' => 'Point of Sale',

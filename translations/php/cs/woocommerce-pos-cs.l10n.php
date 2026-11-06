@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Omlouváme se, tato objednávka je neplatná.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Omlouváme se, tuto objednávku nelze zobrazit. Objednávkový klíč chybí nebo je neplatný.',
 		'Failed to create temporary template file.' => 'Nepodařilo se vytvořit dočasný soubor šablony.',
+		'WCPOS Login' => 'Přihlášení k WCPOS',
 		'Closure %s' => 'Uzávěrka %s',
 		'%1$s sales not yet on the server · %2$s' => 'Prodeje dosud neodeslané na server: %1$s · %2$s',
 		'Point of Sale' => 'Pokladní systém',

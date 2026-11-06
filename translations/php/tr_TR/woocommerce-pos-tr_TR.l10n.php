@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Üzgünüz, bu sipariş geçersiz.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Üzgünüz, bu sipariş görüntülenemiyor. Sipariş anahtarı eksik ya da geçersiz.',
 		'Failed to create temporary template file.' => 'Geçici şablon dosyası oluşturulamadı.',
+		'WCPOS Login' => 'WCPOS Girişi',
 		'Closure %s' => 'Kapanış %s',
 		'%1$s sales not yet on the server · %2$s' => 'Sunucuda olmayan %1$s satış · %2$s',
 		'Point of Sale' => 'Satış Noktası',

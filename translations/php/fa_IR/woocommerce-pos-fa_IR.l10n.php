@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'متأسفیم، این سفارش نامعتبر است.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'ماسفیانه، این سفارش نمی‌تواند دیده شود. کلید سفارش اشتباه یا ناوجود است.',
 		'Failed to create temporary template file.' => 'ایجاد فایل موقت قالب انجام نشد.',
+		'WCPOS Login' => 'ورود به WCPOS',
 		'Closure %s' => 'بستن صندوق %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s فروش هنوز روی سرور نیست · %2$s',
 		'Point of Sale' => 'نقطه فروش',

@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Lo siento, este pedido es inválido.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Lo sentimos, este pedido no puede verse. La clave del pedido está ausente o no es válida.',
 		'Failed to create temporary template file.' => 'Falló la creación del archivo de plantilla temporal.',
+		'WCPOS Login' => 'Iniciar sesión en WCPOS',
 		'Closure %s' => 'Cierre %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s ventas aún no sincronizadas con el servidor · %2$s',
 		'Point of Sale' => 'Punto de Venta',

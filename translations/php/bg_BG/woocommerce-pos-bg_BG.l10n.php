@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Съжаляваме, тази поръчка е невалидна.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Съжаляваме, тази поръчка не може да бъде прегледана. Липсва ключ за поръчка или е невалиден.',
 		'Failed to create temporary template file.' => 'Неуспешно създаване на временен шаблонен файл.',
+		'WCPOS Login' => 'Вход в WCPOS',
 		'Closure %s' => 'Приключване %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s продажби още не са на сървъра · %2$s',
 		'Point of Sale' => 'Точка на продажба',

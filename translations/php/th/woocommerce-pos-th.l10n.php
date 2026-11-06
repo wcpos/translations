@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'ขออภัย การค้นหาการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง',
 		'Failed to create temporary template file.' => 'ไม่สามารถสร้างไฟล์แม่แบบชั่วคราวได้',
+		'WCPOS Login' => 'เข้าสู่ระบบ WCPOS',
 		'Closure %s' => 'ปิดรอบ %s',
 		'%1$s sales not yet on the server · %2$s' => 'ยอดขาย %1$s รายการยังไม่อยู่บนเซิร์ฟเวอร์ · %2$s',
 		'Point of Sale' => 'จุดขาย',

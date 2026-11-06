@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Sorry, deze bestelling is ongeldig.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Helaas kan deze bestelling niet worden bekeken. De bestelcode ontbreekt of is ongeldig.',
 		'Failed to create temporary template file.' => 'Mislukt om een tijdelijk templatebestand aan te maken.',
+		'WCPOS Login' => 'Inloggen bij WCPOS',
 		'Closure %s' => 'Kassasluiting %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s verkopen nog niet op de server · %2$s',
 		'Point of Sale' => 'Verkooppunt',

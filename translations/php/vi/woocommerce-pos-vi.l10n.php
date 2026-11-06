@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Xin lỗi, đơn hàng này không hợp lệ.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Xin lỗi, không thể xem đơn hàng này. Mã đơn hàng không tồn tại hoặc không hợp lệ.',
 		'Failed to create temporary template file.' => 'Không tạo được tệp tin mẫu tạm thời.',
+		'WCPOS Login' => 'Đăng nhập WCPOS',
 		'Closure %s' => 'Phiên chốt %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s lượt bán chưa đồng bộ lên máy chủ · %2$s',
 		'Point of Sale' => 'Điểm bán hàng',

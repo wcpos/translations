@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Sajnáljuk, ez a rendelés érvénytelen.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Sajnálatos módon ez a megrendelés nem tekinthető meg. A megrendeléskulcs hiányzik vagy érvénytelen.',
 		'Failed to create temporary template file.' => 'Ideiglenes sablonfájl létrehozása sikertelen.',
+		'WCPOS Login' => 'Bejelentkezés a WCPOS-ba',
 		'Closure %s' => 'Pénztárzárás %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s szerverre még fel nem került értékesítés · %2$s',
 		'Point of Sale' => 'Értékesítési pont',

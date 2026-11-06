@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => '抱歉，此訂單無效。',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => '很抱歉，無法查看此訂單。訂單金鑰遺失或無效。',
 		'Failed to create temporary template file.' => '無法建立臨時模板檔。',
+		'WCPOS Login' => 'WCPOS 登入',
 		'Closure %s' => '交班 %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s 筆銷售尚未同步至伺服器 · %2$s',
 		'Point of Sale' => '銷售點',

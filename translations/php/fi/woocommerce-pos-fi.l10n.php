@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Valitettavasti tämä tilaus on virheellinen.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Valitettavasti tätä tilausta ei voida tarkastella. Tilaustubarnin avain puuttuu tai on voimoton.',
 		'Failed to create temporary template file.' => 'Väliaikaisen tyylipohjatiedoston luominen epäonnistui.',
+		'WCPOS Login' => 'Kirjautuminen WCPOSiin',
 		'Closure %s' => 'Sulkeminen %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s myyntiä ei vielä palvelimella · %2$s',
 		'Point of Sale' => 'Myyntipiste',
