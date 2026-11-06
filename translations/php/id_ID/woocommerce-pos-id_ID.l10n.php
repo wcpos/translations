@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Kolom ini wajib diisi.',
 		'Choose one of the listed options.' => 'Pilih salah satu opsi yang tercantum.',
 		'Check the payment fields.' => 'Periksa kolom pembayaran.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Kasir ini meminta koneksi ke pembaca yang tidak diizinkan toko untuk metode pembayaran ini.',
+		'This payment was started on a different reader connection.' => 'Pembayaran ini dimulai melalui koneksi pembaca yang berbeda.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Metode pembayaran ini tidak dapat dicatat; metode ini harus menjalankan proses pembayarannya sendiri.',
 		'Recorded payments must be captured or authorized.' => 'Pembayaran yang dicatat harus ditagih atau diotorisasi.',
 		'Tendered amount is invalid for this payment method.' => 'Jumlah yang dibayarkan tidak valid untuk metode pembayaran ini.',

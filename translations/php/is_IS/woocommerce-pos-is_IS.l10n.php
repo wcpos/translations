@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Þetta svæði er nauðsynlegt.',
 		'Choose one of the listed options.' => 'Veldu einn af valkostunum á listanum.',
 		'Check the payment fields.' => 'Athugaðu greiðslusvæðin.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Þessi afgreiðslukassi óskaði eftir tengingu við lesara sem verslunin leyfir ekki fyrir þennan greiðslumáta.',
+		'This payment was started on a different reader connection.' => 'Þessi greiðsla var hafin með annarri tengingu við lesara.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Ekki er hægt að skrá þessa greiðslu; hún þarf að fara í gegnum eigin greiðsluferli.',
 		'Recorded payments must be captured or authorized.' => 'Skráðar greiðslur verða að vera innheimtar eða heimilaðar.',
 		'Tendered amount is invalid for this payment method.' => 'Uppgefin upphæð er ógild fyrir þennan greiðslumáta.',

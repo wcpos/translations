@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Acest câmp este obligatoriu.',
 		'Choose one of the listed options.' => 'Alegeți una dintre opțiunile listate.',
 		'Check the payment fields.' => 'Verificați câmpurile de plată.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Această casă a solicitat o conexiune la un cititor pe care magazinul nu o permite pentru această metodă de plată.',
+		'This payment was started on a different reader connection.' => 'Această plată a fost începută printr-o altă conexiune la cititor.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Această metodă de plată nu poate fi înregistrată; trebuie să proceseze singură plata.',
 		'Recorded payments must be captured or authorized.' => 'Plățile înregistrate trebuie încasate sau autorizate.',
 		'Tendered amount is invalid for this payment method.' => 'Suma încasată nu este validă pentru această metodă de plată.',

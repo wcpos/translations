@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Aquest camp és obligatori.',
 		'Choose one of the listed options.' => 'Trieu una de les opcions de la llista.',
 		'Check the payment fields.' => 'Reviseu els camps de pagament.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Aquest terminal ha sol·licitat una connexió amb un lector que la botiga no permet per a aquest mètode de pagament.',
+		'This payment was started on a different reader connection.' => 'Aquest pagament s\'ha iniciat amb una connexió diferent amb el lector.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'No es pot registrar aquest mètode de pagament; ha de gestionar el seu propi procés de pagament.',
 		'Recorded payments must be captured or authorized.' => 'Els pagaments registrats s\'han de capturar o autoritzar.',
 		'Tendered amount is invalid for this payment method.' => 'L\'import lliurat no és vàlid per a aquest mètode de pagament.',

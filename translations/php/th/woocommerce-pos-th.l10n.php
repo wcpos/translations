@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'จำเป็นต้องกรอกฟิลด์นี้',
 		'Choose one of the listed options.' => 'เลือกหนึ่งตัวเลือกจากรายการ',
 		'Check the payment fields.' => 'ตรวจสอบฟิลด์การชำระเงิน',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'เครื่องคิดเงินนี้ขอเชื่อมต่อกับเครื่องอ่านที่ร้านค้าไม่อนุญาตให้ใช้กับวิธีชำระเงินนี้',
+		'This payment was started on a different reader connection.' => 'การชำระเงินนี้เริ่มต้นผ่านการเชื่อมต่อกับเครื่องอ่านอีกเครื่องหนึ่ง',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'บันทึกวิธีชำระเงินนี้ไม่ได้ ต้องดำเนินการชำระเงินผ่านวิธีนี้เอง',
 		'Recorded payments must be captured or authorized.' => 'การชำระเงินที่บันทึกไว้ต้องเรียกเก็บเงินหรืออนุมัติแล้ว',
 		'Tendered amount is invalid for this payment method.' => 'จำนวนเงินที่รับมาใช้กับวิธีชำระเงินนี้ไม่ได้',

@@ -319,6 +319,8 @@ return array(
 		'This field is required.' => 'Kjo fushë është e detyrueshme.',
 		'Choose one of the listed options.' => 'Zgjidhni një nga opsionet e listuara.',
 		'Check the payment fields.' => 'Kontrolloni fushat e pagesës.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Kasa kërkoi një lidhje me lexuesin që dyqani nuk e lejon për këtë mënyrë pagese.',
+		'This payment was started on a different reader connection.' => 'Kjo pagesë u nis përmes një lidhjeje tjetër me lexuesin.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Kjo mënyrë pagese nuk mund të regjistrohet; duhet të kryejë vetë pjesën e saj të pagesës.',
 		'Recorded payments must be captured or authorized.' => 'Pagesat e regjistruara duhet të jenë të arkëtuara ose të autorizuara.',
 		'Tendered amount is invalid for this payment method.' => 'Shuma e marrë është e pavlefshme për këtë mënyrë pagese.',
