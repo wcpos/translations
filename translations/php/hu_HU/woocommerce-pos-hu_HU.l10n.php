@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'A mező kitöltése kötelező.',
 		'Choose one of the listed options.' => 'Válasszon egyet a felsorolt lehetőségek közül.',
 		'Check the payment fields.' => 'Ellenőrizze a fizetési mezőket.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Ez a pénztár olyan olvasókapcsolatot kért, amelyet az áruház ehhez a fizetési módhoz nem engedélyez.',
+		'This payment was started on a different reader connection.' => 'Ezt a fizetést egy másik olvasókapcsolaton keresztül indították el.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Ez a fizetési mód nem rögzíthető; a saját fizetési folyamatát kell végrehajtania.',
 		'Recorded payments must be captured or authorized.' => 'A rögzített fizetéseket be kell szedni vagy engedélyezni kell.',
 		'Tendered amount is invalid for this payment method.' => 'Az átvett összeg érvénytelen ehhez a fizetési módhoz.',

@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Dette feltet er obligatorisk.',
 		'Choose one of the listed options.' => 'Velg ett av alternativene på listen.',
 		'Check the payment fields.' => 'Kontroller betalingsfeltene.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Denne kassen ba om en leserforbindelse som butikken ikke tillater for denne betalingsmåten.',
+		'This payment was started on a different reader connection.' => 'Denne betalingen ble startet via en annen leserforbindelse.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Denne betalingsmetoden kan ikke registreres; den må gjennomføre sin egen betalingsdel.',
 		'Recorded payments must be captured or authorized.' => 'Registrerte betalinger må være belastet eller autorisert.',
 		'Tendered amount is invalid for this payment method.' => 'Mottatt beløp er ugyldig for denne betalingsmetoden.',

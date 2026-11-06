@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'このフィールドは必須です。',
 		'Choose one of the listed options.' => '一覧から1つ選択してください。',
 		'Check the payment fields.' => '決済項目を確認してください。',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'このレジは、この支払い方法では店舗が許可していないリーダー接続を要求しました。',
+		'This payment was started on a different reader connection.' => 'この支払いは別のリーダー接続で開始されました。',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'この支払い方法は記録できません。独自の支払い処理を実行する必要があります。',
 		'Recorded payments must be captured or authorized.' => '記録した支払いは、キャプチャまたは承認済みである必要があります。',
 		'Tendered amount is invalid for this payment method.' => 'この支払い方法では、受領額が無効です。',

@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'ត្រូវបំពេញវាលនេះ។',
 		'Choose one of the listed options.' => 'ជ្រើសរើសជម្រើសមួយក្នុងចំណោមជម្រើសដែលបានរាយ។',
 		'Check the payment fields.' => 'សូមពិនិត្យវាលទូទាត់។',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'ប្រព័ន្ធគិតលុយនេះបានស្នើសុំការតភ្ជាប់ទៅឧបករណ៍អាន ដែលហាងមិនអនុញ្ញាតសម្រាប់វិធីបង់ប្រាក់នេះទេ។',
+		'This payment was started on a different reader connection.' => 'ការបង់ប្រាក់នេះបានចាប់ផ្តើមតាមរយៈការតភ្ជាប់ទៅឧបករណ៍អានផ្សេងទៀត។',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'មិនអាចកត់ត្រាមធ្យោបាយបង់ប្រាក់នេះដោយផ្ទាល់បានទេ។ វាត្រូវដំណើរការផ្នែកបង់ប្រាក់របស់ខ្លួន។',
 		'Recorded payments must be captured or authorized.' => 'ការបង់ប្រាក់ដែលបានកត់ត្រាត្រូវតែបានទទួល ឬបានអនុញ្ញាត។',
 		'Tendered amount is invalid for this payment method.' => 'ចំនួនប្រាក់ដែលទទួលមិនត្រឹមត្រូវសម្រាប់មធ្យោបាយបង់ប្រាក់នេះ។',

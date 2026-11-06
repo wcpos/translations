@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Toto pole je povinné.',
 		'Choose one of the listed options.' => 'Vyberte jednu z uvedených možností.',
 		'Check the payment fields.' => 'Zkontrolujte platební pole.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Tato pokladna požádala o připojení ke čtečce, které obchod pro tuto platební metodu nepovoluje.',
+		'This payment was started on a different reader connection.' => 'Tato platba byla zahájena přes jiné připojení ke čtečce.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Tuto platební metodu nelze zaznamenat; musí zpracovat vlastní část platby.',
 		'Recorded payments must be captured or authorized.' => 'Zaznamenané platby musí být zaúčtovány nebo autorizovány.',
 		'Tendered amount is invalid for this payment method.' => 'Zadaná částka není pro tuto platební metodu platná.',

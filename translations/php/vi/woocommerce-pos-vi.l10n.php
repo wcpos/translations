@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Đây là trường bắt buộc.',
 		'Choose one of the listed options.' => 'Chọn một trong các tùy chọn được liệt kê.',
 		'Check the payment fields.' => 'Kiểm tra các trường thanh toán.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Quầy thu ngân này đã yêu cầu kết nối với đầu đọc mà cửa hàng không cho phép dùng cho phương thức thanh toán này.',
+		'This payment was started on a different reader connection.' => 'Khoản thanh toán này được bắt đầu bằng một kết nối đầu đọc khác.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Không thể ghi nhận phương thức thanh toán này; phương thức phải tự xử lý bước thanh toán.',
 		'Recorded payments must be captured or authorized.' => 'Khoản thanh toán đã ghi nhận phải được thu hoặc ủy quyền.',
 		'Tendered amount is invalid for this payment method.' => 'Số tiền thanh toán không hợp lệ với phương thức này.',

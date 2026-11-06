@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Tämä kenttä on pakollinen.',
 		'Choose one of the listed options.' => 'Valitse jokin luettelon vaihtoehdoista.',
 		'Check the payment fields.' => 'Tarkista maksukentät.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Tämä kassa pyysi yhteyttä lukijaan, jota kauppa ei salli tällä maksutavalla.',
+		'This payment was started on a different reader connection.' => 'Tämä maksu aloitettiin eri lukijayhteyden kautta.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Tätä maksutapaa ei voi kirjata; sen on käsiteltävä oma maksueränsä.',
 		'Recorded payments must be captured or authorized.' => 'Kirjatut maksut on veloitettava tai valtuutettava.',
 		'Tendered amount is invalid for this payment method.' => 'Tälle maksutavalle annettu summa ei kelpaa.',

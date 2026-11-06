@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'تکمیل این فیلد الزامی است.',
 		'Choose one of the listed options.' => 'یکی از گزینه‌های فهرست را انتخاب کنید.',
 		'Check the payment fields.' => 'فیلدهای پرداخت را بررسی کنید.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'این پایانه درخواست اتصال به دستگاه کارت‌خوانی را داده که فروشگاه برای این روش پرداخت اجازه نمی‌دهد.',
+		'This payment was started on a different reader connection.' => 'این پرداخت از طریق اتصال دیگری به دستگاه کارت‌خوان آغاز شده است.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'این روش پرداخت را نمی‌توان ثبت کرد؛ باید مرحله پرداخت خودش را اجرا کند.',
 		'Recorded payments must be captured or authorized.' => 'پرداخت‌های ثبت‌شده باید دریافت یا مجاز شده باشند.',
 		'Tendered amount is invalid for this payment method.' => 'مبلغ دریافتی برای این روش پرداخت نامعتبر است.',

@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Šis laukas yra privalomas.',
 		'Choose one of the listed options.' => 'Pasirinkite vieną iš pateiktų parinkčių.',
 		'Check the payment fields.' => 'Patikrinkite mokėjimo laukus.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Ši kasa paprašė skaitytuvo ryšio, kurio parduotuvė neleidžia naudoti šiam mokėjimo būdui.',
+		'This payment was started on a different reader connection.' => 'Šis mokėjimas pradėtas per kitą ryšį su skaitytuvu.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Šio mokėjimo būdo negalima tiesiog užregistruoti; juo reikia atlikti atskirą mokėjimo operaciją.',
 		'Recorded payments must be captured or authorized.' => 'Užregistruoti mokėjimai turi būti nurašyti arba autorizuoti.',
 		'Tendered amount is invalid for this payment method.' => 'Šiam mokėjimo būdui nurodyta suma netinkama.',

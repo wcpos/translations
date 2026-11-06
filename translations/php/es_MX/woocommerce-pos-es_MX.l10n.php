@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Este campo es obligatorio.',
 		'Choose one of the listed options.' => 'Elige una de las opciones de la lista.',
 		'Check the payment fields.' => 'Revisa los campos de pago.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Esta caja solicitó una conexión con un lector que la tienda no permite para este método de pago.',
+		'This payment was started on a different reader connection.' => 'Este pago se inició con una conexión diferente al lector.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'No se puede registrar este método de pago; debe procesar su propio pago.',
 		'Recorded payments must be captured or authorized.' => 'Los pagos registrados deben capturarse o autorizarse.',
 		'Tendered amount is invalid for this payment method.' => 'El monto entregado no es válido para este método de pago.',

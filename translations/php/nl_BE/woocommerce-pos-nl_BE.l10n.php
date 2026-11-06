@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Dit veld is verplicht.',
 		'Choose one of the listed options.' => 'Kies een van de vermelde opties.',
 		'Check the payment fields.' => 'Controleer de betalingsvelden.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Deze kassa heeft een verbinding met een lezer aangevraagd die de winkel niet toestaat voor deze betaalmethode.',
+		'This payment was started on a different reader connection.' => 'Deze betaling is gestart via een andere verbinding met de lezer.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Deze betaalmethode kan niet worden geregistreerd; ze moet haar eigen betalingsstap uitvoeren.',
 		'Recorded payments must be captured or authorized.' => 'Geregistreerde betalingen moeten geïnd of geautoriseerd zijn.',
 		'Tendered amount is invalid for this payment method.' => 'Het aangeboden bedrag is ongeldig voor deze betaalmethode.',

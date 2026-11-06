@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => '此字段为必填项。',
 		'Choose one of the listed options.' => '请选择列表中的一个选项。',
 		'Check the payment fields.' => '请检查付款字段。',
+		'This till asked for a reader connection the store does not allow for this payment method.' => '此收银台请求连接读卡器，但商店不允许此付款方式使用该连接。',
+		'This payment was started on a different reader connection.' => '此付款通过另一读卡器连接启动。',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => '无法记录此支付方式的付款；必须由该支付方式自行完成付款流程。',
 		'Recorded payments must be captured or authorized.' => '已记录的付款必须已捕获或已授权。',
 		'Tendered amount is invalid for this payment method.' => '此支付方式的实收金额无效。',

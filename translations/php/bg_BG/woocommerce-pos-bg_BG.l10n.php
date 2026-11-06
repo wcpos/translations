@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Това поле е задължително.',
 		'Choose one of the listed options.' => 'Изберете една от посочените опции.',
 		'Check the payment fields.' => 'Проверете полетата за плащане.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Тази каса поиска връзка с четец, която магазинът не разрешава за този начин на плащане.',
+		'This payment was started on a different reader connection.' => 'Това плащане е започнато през друга връзка с четец.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Този метод на плащане не може да бъде записан; трябва да изпълни собствената си част от плащането.',
 		'Recorded payments must be captured or authorized.' => 'Записаните плащания трябва да бъдат осчетоводени или оторизирани.',
 		'Tendered amount is invalid for this payment method.' => 'Получената сума е невалидна за този метод на плащане.',
