@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Fyrirgefðu, þessi pöntun er ógild.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Því miður getur þessi áskrift ekki verið borin fram. Áskriftarmiði er ótæma eða ógilt.',
 		'Failed to create temporary template file.' => 'Tókst ekki að búa til tilraunarkerfisgagnasvæðið.',
+		'WCPOS Login' => 'Innskráning í WCPOS',
 		'Closure %s' => 'Lokun %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s sölur ekki enn á þjóninum · %2$s',
 		'Point of Sale' => 'Sölustaður',

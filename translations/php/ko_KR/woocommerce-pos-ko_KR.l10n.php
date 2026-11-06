@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => '죄송합니다, 이 주문은 유효하지 않습니다.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => '죄송합니다. 이 주문을 열람할 수 없습니다. 주문 키가 누락되거나 잘못되었습니다.',
 		'Failed to create temporary template file.' => '임시 템플릿 파일 생성에 실패했습니다.',
+		'WCPOS Login' => 'WCPOS 로그인',
 		'Closure %s' => '마감 %s',
 		'%1$s sales not yet on the server · %2$s' => '서버에 동기화되지 않은 판매 %1$s건 · %2$s',
 		'Point of Sale' => '판매 시점 관리',

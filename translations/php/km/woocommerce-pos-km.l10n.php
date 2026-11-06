@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'សូមទោស, ការបញ្ជាទិញនេះមិនត្រឹមត្រូវ។',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'ស្ទើរ​ហើយ​! ការ​លក់​នេះ​មិនអាចមើល​បាន​សូវ។ វា​គឺ​ជា​មូលដ្ឋាន​ការលក់ មិនទាន់មាន ឬ​មិនសកម្ម។',
 		'Failed to create temporary template file.' => 'បានបរាត់បណ្ណាល់នូវ​បញ្ជី​ប្រវត្តិសាស្ត្រ។',
+		'WCPOS Login' => 'ចូល WCPOS',
 		'Closure %s' => 'ការបិទវគ្គ %s',
 		'%1$s sales not yet on the server · %2$s' => 'ការលក់ %1$s មិនទាន់មាននៅលើ Server · %2$s',
 		'Point of Sale' => 'ចំណុចលក់',

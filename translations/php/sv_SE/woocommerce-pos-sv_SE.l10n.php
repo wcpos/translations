@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Tyvärr, denna beställning är ogiltig.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Tyvärr kan denna order inte visas. Ordernyckeln saknas eller är ogiltig.',
 		'Failed to create temporary template file.' => 'Kunde inte skapa tillfällig mallfil.',
+		'WCPOS Login' => 'Logga in på WCPOS',
 		'Closure %s' => 'Stängning %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s försäljning finns ännu inte på servern · %2$s',
 		'Point of Sale' => 'Försäljningsställe',

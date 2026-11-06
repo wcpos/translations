@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'عذرًا، هذا الطلب غير صالح.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'عذرًا، لا يمكن عرض الطلب. مفتاح الطلب مفقود أو غير صحيح',
 		'Failed to create temporary template file.' => 'فشل في إنشاء ملف القالب المؤقت',
+		'WCPOS Login' => 'تسجيل الدخول إلى WCPOS',
 		'Closure %s' => 'الإغلاق %s',
 		'%1$s sales not yet on the server · %2$s' => 'مبيعات %1$s لم تُرسل إلى الخادم بعد · %2$s',
 		'Point of Sale' => 'نقطة البيع',

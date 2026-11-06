@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Ho sentim, aquesta comanda no és vàlida.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Ho sentim, no es pot visualitzar aquesta comanda. La clau de la comanda és inexistent o és incorrecta.',
 		'Failed to create temporary template file.' => 'No s\'ha pogut crear el fitxer de plantilla temporal.',
+		'WCPOS Login' => 'Inici de sessió a WCPOS',
 		'Closure %s' => 'Tancament %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s vendes pendents de sincronitzar · %2$s',
 		'Point of Sale' => 'Punt de venda',

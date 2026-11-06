@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Vabandame, see tellimus on vigane.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Antud tellimust ei saa hetkel avada. Tellimuse võti on puuduv või vigane.',
 		'Failed to create temporary template file.' => 'Ajutise templaadi faili loomine ebaõnnestus.',
+		'WCPOS Login' => 'WCPOS-i sisselogimine',
 		'Closure %s' => 'Sulgemine %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s müüki pole veel serveris · %2$s',
 		'Point of Sale' => 'Müügikoht',

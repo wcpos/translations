@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => '申し訳ありませんが、この注文は無効です。',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => '申し訳ございませんが、この注文を表示することはできません。注文キーが存在しないか無効です。',
 		'Failed to create temporary template file.' => '一時テンプレートファイルの作成に失敗しました。',
+		'WCPOS Login' => 'WCPOSログイン',
 		'Closure %s' => '締め処理 %s',
 		'%1$s sales not yet on the server · %2$s' => 'サーバー未同期の売上 %1$s件 · %2$s',
 		'Point of Sale' => 'POS',

@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Извинете, оваа нарачка е неважечка.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Нажалост, оваа порачка не може да се погледа. Клучот на порачката не е присутен или е неважечки.',
 		'Failed to create temporary template file.' => 'Неуспешно креирање на привремена шаблон датотека.',
+		'WCPOS Login' => 'Најава во WCPOS',
 		'Closure %s' => 'Затворање %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s продажби сè уште не се на серверот · %2$s',
 		'Point of Sale' => 'Продажно место',

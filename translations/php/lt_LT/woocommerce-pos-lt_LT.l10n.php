@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Atsiprašome, šis užsakymas neteisingas.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Deja, šis užsakymas negali būti peržiūrėtas. Užsakymo raktas trūksta ar yra neteisingas.',
 		'Failed to create temporary template file.' => 'Nepavyko sukurti laikino šablono failo.',
+		'WCPOS Login' => 'Prisijungimas prie WCPOS',
 		'Closure %s' => 'Uždarymas %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s pardavimų dar nėra serveryje · %2$s',
 		'Point of Sale' => 'Atsiskaitymo vieta',
