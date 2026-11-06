@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => '此欄位為必填。',
 		'Choose one of the listed options.' => '請從列出的選項中選擇一項。',
 		'Check the payment fields.' => '請檢查付款欄位。',
+		'This till asked for a reader connection the store does not allow for this payment method.' => '此收銀台要求連線至讀卡機，但商店不允許此付款方式使用該連線。',
+		'This payment was started on a different reader connection.' => '此筆付款是透過另一個讀卡機連線啟動的。',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => '無法記錄此付款方式；它必須自行執行付款流程。',
 		'Recorded payments must be captured or authorized.' => '記錄的付款必須已請款或已授權。',
 		'Tendered amount is invalid for this payment method.' => '此付款方式的收款金額無效。',

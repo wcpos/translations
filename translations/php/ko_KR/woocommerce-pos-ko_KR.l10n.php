@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => '이 필드는 필수입니다.',
 		'Choose one of the listed options.' => '목록에 있는 옵션 중 하나를 선택하십시오.',
 		'Check the payment fields.' => '결제 필드를 확인하십시오.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => '이 계산대에서 이 결제 수단에 대해 매장에서 허용하지 않는 리더 연결을 요청했습니다.',
+		'This payment was started on a different reader connection.' => '이 결제는 다른 리더 연결에서 시작되었습니다.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => '이 결제 수단은 기록할 수 없습니다. 자체 결제 절차를 실행해야 합니다.',
 		'Recorded payments must be captured or authorized.' => '기록된 결제는 매입되거나 승인된 상태여야 합니다.',
 		'Tendered amount is invalid for this payment method.' => '이 결제 수단의 결제 금액이 유효하지 않습니다.',

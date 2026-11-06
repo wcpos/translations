@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Medan ini wajib diisi.',
 		'Choose one of the listed options.' => 'Pilih salah satu pilihan yang disenaraikan.',
 		'Check the payment fields.' => 'Semak medan pembayaran.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Daftar ini meminta sambungan pembaca yang tidak dibenarkan oleh kedai untuk kaedah pembayaran ini.',
+		'This payment was started on a different reader connection.' => 'Pembayaran ini dimulakan melalui sambungan pembaca yang lain.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Kaedah pembayaran ini tidak boleh direkodkan; kaedah ini perlu menjalankan proses pembayarannya sendiri.',
 		'Recorded payments must be captured or authorized.' => 'Pembayaran yang direkodkan mesti telah diterima atau dibenarkan.',
 		'Tendered amount is invalid for this payment method.' => 'Jumlah yang diterima tidak sah untuk kaedah pembayaran ini.',

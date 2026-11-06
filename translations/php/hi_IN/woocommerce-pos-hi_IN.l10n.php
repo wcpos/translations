@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'यह फ़ील्ड आवश्यक है।',
 		'Choose one of the listed options.' => 'सूची में दिए गए विकल्पों में से एक चुनें।',
 		'Check the payment fields.' => 'भुगतान फ़ील्ड जाँचें।',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'इस POS ने रीडर कनेक्शन का अनुरोध किया, जिसकी अनुमति स्टोर इस भुगतान विधि के लिए नहीं देता।',
+		'This payment was started on a different reader connection.' => 'यह भुगतान किसी दूसरे रीडर कनेक्शन से शुरू किया गया था।',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'यह भुगतान विधि दर्ज नहीं की जा सकती; इसका अपना भुगतान चरण चलाना होगा।',
 		'Recorded payments must be captured or authorized.' => 'दर्ज किए गए भुगतान कैप्चर या अधिकृत होने चाहिए।',
 		'Tendered amount is invalid for this payment method.' => 'इस भुगतान विधि के लिए दी गई राशि अमान्य है।',

@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Bu alan zorunludur.',
 		'Choose one of the listed options.' => 'Listelenen seçeneklerden birini seçin.',
 		'Check the payment fields.' => 'Ödeme alanlarını kontrol edin.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Bu kasa, mağazanın bu ödeme yöntemi için izin vermediği bir okuyucu bağlantısı istedi.',
+		'This payment was started on a different reader connection.' => 'Bu ödeme farklı bir okuyucu bağlantısı üzerinden başlatıldı.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Bu ödeme yöntemi kaydedilemiyor; kendi ödeme adımını yürütmesi gerekir.',
 		'Recorded payments must be captured or authorized.' => 'Kaydedilen ödemeler tahsil edilmeli veya provizyona alınmalıdır.',
 		'Tendered amount is invalid for this payment method.' => 'Bu ödeme yöntemi için verilen tutar geçersiz.',

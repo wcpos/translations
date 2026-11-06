@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'هذا الحقل مطلوب.',
 		'Choose one of the listed options.' => 'اختر أحد الخيارات المدرجة.',
 		'Check the payment fields.' => 'تحقّق من حقول الدفع.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'طلبت نقطة البيع اتصالًا بقارئ لا يسمح المتجر باستخدامه مع طريقة الدفع هذه.',
+		'This payment was started on a different reader connection.' => 'بدأت هذه الدفعة عبر اتصال مختلف بالقارئ.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'لا يمكن تسجيل طريقة الدفع هذه؛ إذ يجب أن تنفذ جزء الدفع الخاص بها.',
 		'Recorded payments must be captured or authorized.' => 'يجب تحصيل المدفوعات المسجلة أو تفويضها.',
 		'Tendered amount is invalid for this payment method.' => 'المبلغ المدفوع غير صالح لطريقة الدفع هذه.',

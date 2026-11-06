@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'See väli on kohustuslik.',
 		'Choose one of the listed options.' => 'Valige üks loendis olevatest valikutest.',
 		'Check the payment fields.' => 'Kontrollige maksevälju.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'See kassa taotles ühendust lugejaga, mida pood selle makseviisi puhul ei luba.',
+		'This payment was started on a different reader connection.' => 'Selle makse alustamiseks kasutati teist ühendust lugejaga.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Seda makseviisi ei saa salvestada; see peab ise makse sooritama.',
 		'Recorded payments must be captured or authorized.' => 'Salvestatud maksed peavad olema hõivatud või autoriseeritud.',
 		'Tendered amount is invalid for this payment method.' => 'Selle makseviisi jaoks saadud summa on vigane.',

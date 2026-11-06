@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'Αυτό το πεδίο είναι υποχρεωτικό.',
 		'Choose one of the listed options.' => 'Επιλέξτε μία από τις διαθέσιμες επιλογές.',
 		'Check the payment fields.' => 'Ελέγξτε τα πεδία πληρωμής.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'Αυτό το ταμείο ζήτησε σύνδεση με συσκευή ανάγνωσης, την οποία το κατάστημα δεν επιτρέπει για αυτόν τον τρόπο πληρωμής.',
+		'This payment was started on a different reader connection.' => 'Αυτή η πληρωμή ξεκίνησε μέσω διαφορετικής σύνδεσης με συσκευή ανάγνωσης.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'Δεν είναι δυνατή η καταχώριση αυτής της μεθόδου πληρωμής· πρέπει να εκτελέσει το δικό της σκέλος πληρωμής.',
 		'Recorded payments must be captured or authorized.' => 'Οι καταχωρισμένες πληρωμές πρέπει να έχουν εισπραχθεί ή να έχουν εγκριθεί.',
 		'Tendered amount is invalid for this payment method.' => 'Το καταβληθέν ποσό δεν είναι έγκυρο για αυτήν τη μέθοδο πληρωμής.',

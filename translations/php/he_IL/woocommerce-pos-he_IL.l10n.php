@@ -321,6 +321,8 @@ return array(
 		'This field is required.' => 'זהו שדה חובה.',
 		'Choose one of the listed options.' => 'יש לבחור אחת מהאפשרויות שברשימה.',
 		'Check the payment fields.' => 'יש לבדוק את שדות התשלום.',
+		'This till asked for a reader connection the store does not allow for this payment method.' => 'הקופה הזו ביקשה חיבור לקורא שהחנות לא מתירה עבור אמצעי התשלום הזה.',
+		'This payment was started on a different reader connection.' => 'התשלום הזה התחיל באמצעות חיבור אחר לקורא.',
 		'This payment method cannot be recorded; it has to run its own payment leg.' => 'אי אפשר לתעד את שיטת התשלום הזאת; עליה לבצע את שלב התשלום שלה בעצמה.',
 		'Recorded payments must be captured or authorized.' => 'יש לחייב או לאשר תשלומים שתועדו.',
 		'Tendered amount is invalid for this payment method.' => 'הסכום שהתקבל אינו תקין עבור שיטת התשלום הזאת.',
