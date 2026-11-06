@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'מצטערים, הזמנה זו אינה תקפה.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'מצטער, לא ניתן לצפות ב焯:焯ឃ הזה. מפתח ה焯:焯ឃ חסר או שגוי.',
 		'Failed to create temporary template file.' => 'אי אפשר ליצור ملف תבנית זמני.',
+		'WCPOS Login' => 'התחברות ל-WCPOS',
 		'Closure %s' => 'סגירה %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s מכירות שטרם הגיעו לשרת · %2$s',
 		'Point of Sale' => 'נקודת מכירה',

@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Beklager, denne bestillingen er ugyldig.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Beklager, denne bestillingen kan ikke vises. Bestillingsnøkkelen mangler eller er ugyldig.',
 		'Failed to create temporary template file.' => 'Klarte ikke å opprette midlertidig mal-fil.',
+		'WCPOS Login' => 'Logg inn på WCPOS',
 		'Closure %s' => 'Dagsoppgjør %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s salg er ennå ikke på serveren · %2$s',
 		'Point of Sale' => 'Salgssted',

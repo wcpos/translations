@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Λυπούμαστε, αυτή η παραγγελία είναι άκυρη.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να προβλεφθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο.',
 		'Failed to create temporary template file.' => 'Απέτυχε η δημιουργία προσωρινού αρχείου προτύπου.',
+		'WCPOS Login' => 'Σύνδεση στο WCPOS',
 		'Closure %s' => 'Κλείσιμο %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s πωλήσεις που δεν έχουν φτάσει ακόμη στον διακομιστή · %2$s',
 		'Point of Sale' => 'Σημείο Πώλησης',

@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Przepraszamy, to zamówienie jest nieważne.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Niestety, to zamówienie nie może zostać wyświetlane. Klucz zamówienia jest brakujący lub nieprawidłowy.',
 		'Failed to create temporary template file.' => 'Nie udało się utworzyć tymczasowego pliku szablonu.',
+		'WCPOS Login' => 'Logowanie do WCPOS',
 		'Closure %s' => 'Zamknięcie %s',
 		'%1$s sales not yet on the server · %2$s' => 'Nieprzesłane na serwer transakcje sprzedaży: %1$s · %2$s',
 		'Point of Sale' => 'Punkt sprzedaży',

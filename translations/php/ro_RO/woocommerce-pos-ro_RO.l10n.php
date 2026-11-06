@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Ne pare rău, această comandă este invalidă.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Ne pare rău, această comandă nu poate fi vizualizată. Cheia comenzi este lipsă sau invalidă.',
 		'Failed to create temporary template file.' => 'Eșec la crearea fișierului temporar de sablon.',
+		'WCPOS Login' => 'Autentificare WCPOS',
 		'Closure %s' => 'Închiderea %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s vânzări încă nesincronizate cu serverul · %2$s',
 		'Point of Sale' => 'Punct de vânzare',

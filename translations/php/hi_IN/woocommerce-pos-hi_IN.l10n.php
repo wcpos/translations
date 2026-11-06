@@ -1215,6 +1215,7 @@ return array(
 		'Sorry, this order is invalid.' => 'क्षमा करें, यह आदेश अमान्य है।',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'क्षमा करें, आप इस आदेश का दर्शन नहीं कर सकते। आदेश कुंजी अनुपस्थित है या अमान्य है।',
 		'Failed to create temporary template file.' => 'अस्थाई टेम्पलेट फ़ाइल बनाने में विफल।',
+		'WCPOS Login' => 'WCPOS लॉगिन',
 		'Closure %s' => 'क्लोज़र %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s बिक्री अभी सर्वर पर नहीं पहुँची · %2$s',
 		'Point of Sale' => 'बिक्री का स्थान',

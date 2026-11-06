@@ -1213,6 +1213,7 @@ return array(
 		'Sorry, this order is invalid.' => 'Na vjen keq, kjo porosi është e pavlefshme.',
 		'Sorry, this order cannot be viewed. The order key is missing or invalid.' => 'Na vjen keq, kjo porosi nuk mund të shikohet. Çelësi i porosisë mungon ose është i pavlefshëm.',
 		'Failed to create temporary template file.' => 'Krijimi i skedarit të përkohshëm të modelit dështoi.',
+		'WCPOS Login' => 'Hyrje në WCPOS',
 		'Closure %s' => 'Mbyllja %s',
 		'%1$s sales not yet on the server · %2$s' => '%1$s shitje ende jo në server · %2$s',
 		'Point of Sale' => 'Pikë shitjeje',
