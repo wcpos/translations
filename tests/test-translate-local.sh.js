@@ -59,6 +59,7 @@ if (tool === 'git') {
   if (args.includes('merge') && !args.includes('--abort') && config.conflict) process.exit(1);
   if (args.includes('for-each-ref') && config.stale) process.stdout.write(config.stale.map(([name, tree]) => name + '\t' + (tree || '') + '\n').join(''));
 } else if (tool === 'gh') {
+  if (args[0] === 'pr' && args[1] === 'view') console.log(config.prState || 'OPEN');
   if (args[1] === 'list' && config.pr) console.log(JSON.stringify(config.pr));
   if (args[1] === 'create' && args[0] === 'pr') console.log('https://example.test/pr/1');
 } else if (tool === 'node') {
@@ -207,9 +208,23 @@ if (tool === 'git') {
   assert.equal(result.status, 0, result.stderr);
   assert.ok(result.calls.filter(c => c.tool === 'claude').every(c => c.args.includes('sonnet')));
   assert.ok(result.calls.some(c => isCall(c, 'gh', 'comment', '42')));
+  assert.ok(result.calls.some(c => isCall(c, 'gh', 'pr', 'view', '42')));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'push')));
   assert.ok(result.calls.some(c => isCall(c, 'git', 'merge', 'origin/main')));
   assert.match(result.stdout, /review 1 failed/);
   assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /translator: claude \(\S+\); review: skipped \(sonnet failed on 1 chunks\)\./);
+  for (const prState of ['MERGED', 'CLOSED']) {
+    result = run({ pr, prState, counts: [1], remainingCounts: [1] }, ['--no-review']);
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, new RegExp(`PR 42 is ${prState}; dropping this pass`));
+    assert.ok(!result.calls.some(c => isCall(c, 'git', 'commit')));
+    assert.ok(!result.calls.some(c => isCall(c, 'git', 'push')));
+    assert.ok(!result.calls.some(c => isCall(c, 'gh', 'comment', '42')));
+    assert.ok(!fs.existsSync(path.join(root, '.claude/auto-translate.state')));
+  }
+  result = run({ counts: [1] }, ['--no-review']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(!result.calls.some(c => isCall(c, 'gh', 'pr', 'view')));
   result = run({ counts: [2], failReview: 'part2' }, ['--max-per-call', '1']);
   assert.equal(result.status, 0, result.stderr);
   assert.match(fs.readFileSync(path.join(wt, '.translate/pr-body.md'), 'utf8'), /review: gpt-6-luna on 1 of 2 chunks \(1 failed\)\./);
