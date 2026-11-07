@@ -1,23 +1,8 @@
 name: Translation Quality Smoke Check
 
 on:
+  # No paths filter: ruleset 24240730 requires this check, and a PR the filter skipped would wait on it forever.
   pull_request:
-    paths:
-      - 'translations/**/*.json'
-      - 'translations/**/*.po'
-      - 'translations/**/*.mo'
-      - 'scripts/po-file.js'
-      - 'scripts/generate-mo-files.js'
-      - 'scripts/check-translation-quality.js'
-      - 'scripts/check-completeness.js'
-      - 'scripts/check-po-format.sh'
-      - 'scripts/plural-rules.js'
-      - 'tests/test-translation-quality-check.js'
-      - 'tests/test-completeness-naming.js'
-      - 'tests/test-po-format-check.js'
-      - 'tests/fixtures/po-format/**'
-      - '.ai/rules/**/*.mdc'
-      - '.github/workflows/translation-quality.yml'
   workflow_dispatch:
     inputs:
       changed_since:
