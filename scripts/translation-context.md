@@ -89,7 +89,7 @@ These terms should be translated using the standard retail/POS terminology for t
 - Refund → return/refund process
 - Void → cancel a transaction (keep it short, do NOT add "transaction" — just "Void" or equivalent)
 - Split → split payment (do NOT add "quantity" or other context)
-- Change → change due (money returned to customer)
+- Change → as a noun label, change due (money returned to customer); as a verb, modify ("Tap the amount to change it")
 - Payment → payment/transaction
 
 ### Tax & Rates — IMPORTANT
