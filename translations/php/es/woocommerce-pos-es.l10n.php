@@ -273,7 +273,7 @@ return array(
 		'Cash' => 'Efectivo',
 		'Amount Tendered' => 'Importe recibido',
 		'Change' => 'Cambio',
-		'Enter the full amount here, or use the Cash tile to take a part payment.' => 'Introduce aquí el importe completo o usa la opción «Efectivo» para aceptar un pago parcial.',
+		'Enter the full amount here, or use the Cash tile to take a part payment.' => 'Introduzca aquí el importe completo o use la opción «Efectivo» para aceptar un pago parcial.',
 		'Money returned from cash sale' . "\x04" . 'Change' => 'Cambio',
 		'Partial cash payments are not supported by the POS API checkout flow.' => 'Los pagos parciales en efectivo no son compatibles con el flujo de pago de la POS API.',
 		'Tendered amount must be zero or greater.' => 'El importe recibido debe ser cero o superior.',
