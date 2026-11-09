@@ -13,11 +13,11 @@ const CONSUMER_REPOS = {
     repo: 'wcpos/monorepo',
     branch: STABLE_BRANCH,
     baseBranch: 'main',
-    file: 'packages/core/src/contexts/translations/rxdb-backend.ts',
+    file: 'packages/core/src/contexts/translations/translation-version.json',
     replacements: [
       {
-        pattern: /TRANSLATION_VERSION = '[^']+'/g,
-        replace: (_, nextVersion) => `TRANSLATION_VERSION = '${nextVersion}'`,
+        pattern: /"version": "[^"]+"/g,
+        replace: (_, nextVersion) => `"version": "${nextVersion}"`,
       },
     ],
   },
@@ -128,6 +128,24 @@ function applyVersionUpdate(repoKey, content, version) {
   }
 
   return applyReplacements(content, config.replacements, validateVersion(version), repoKey);
+}
+
+function planVersionUpdate(repoKey, version, { readPinFile, findOpenPr }) {
+  const config = CONSUMER_REPOS[repoKey];
+  const content = readPinFile(config.repo, config.file, config.baseBranch);
+  const updated = applyVersionUpdate(repoKey, content, version);
+  const required = config.replacements.find((replacement) => replacement.required !== false);
+  const matched = content.match(required.pattern)[0];
+  const from = matched.match(/\d{4}\.\d+\.\d+/)[0];
+  const prNumber = updated === content ? '' : findOpenPr(config.repo, config.branch);
+
+  return {
+    repo: config.repo,
+    file: config.file,
+    from,
+    status: updated === content ? 'already-current' : prNumber ? 'would-update-pr' : 'would-create-pr',
+    prNumber,
+  };
 }
 
 function repoPath(tempRoot, repoKey) {
@@ -290,14 +308,36 @@ async function updateRepo(repoKey, version, tempRoot) {
 }
 
 async function main() {
-  const version = validateVersion(process.argv[2]);
-  const requestedRepos = process.argv.slice(3);
+  const dryRun = process.argv.slice(2).includes('--dry-run');
+  const args = process.argv.slice(2).filter((arg) => arg !== '--dry-run');
+  const version = validateVersion(args[0]);
+  const requestedRepos = args.slice(1);
   const repoKeys = requestedRepos.length > 0 ? requestedRepos : Object.keys(CONSUMER_REPOS);
 
   for (const repoKey of repoKeys) {
     if (!CONSUMER_REPOS[repoKey]) {
       throw new Error(`Unknown consumer repo: ${repoKey}`);
     }
+  }
+
+  if (dryRun) {
+    for (const repoKey of repoKeys) {
+      try {
+        const plan = planVersionUpdate(repoKey, version, {
+          readPinFile: (repo, file, ref) => run('gh', [
+            'api', `repos/${repo}/contents/${file}?ref=${ref}`,
+            '-H', 'Accept: application/vnd.github.raw',
+          ]).stdout,
+          findOpenPr: getOpenPrNumber,
+        });
+        const prSuffix = plan.status === 'would-update-pr' ? ` #${plan.prNumber}` : '';
+        log(`DRY RUN ${plan.repo}: ${plan.file} ${plan.from} -> ${version}: ${plan.status}${prSuffix}`);
+      } catch (error) {
+        log(`DRY RUN ${CONSUMER_REPOS[repoKey].repo}: ERROR ${error.message}`);
+        process.exitCode = 1;
+      }
+    }
+    return;
   }
 
   if (!process.env.GH_TOKEN) {
@@ -323,6 +363,7 @@ module.exports = {
   CONSUMER_REPOS,
   validateVersion,
   applyVersionUpdate,
+  planVersionUpdate,
   buildPrTitle,
   buildPrBody,
   setupGitAuthentication,
