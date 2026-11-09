@@ -9,11 +9,18 @@ const {
   CONSUMER_REPOS,
   validateVersion,
   applyVersionUpdate,
+  planVersionUpdate,
   setupGitAuthentication,
   enableAutoMerge,
 } = require('../scripts/update-consumer-version-prs');
 
 const VERSION = '2026.4.47';
+const CURRENT_PINS = {
+  monorepo: '{\n\t"version": "2026.11.12"\n}\n',
+  electron: "const TRANSLATION_VERSION = '2026.11.13';",
+  'woocommerce-pos': "\\define( __NAMESPACE__ . '\\TRANSLATION_VERSION', '2026.11.14' );",
+  'woocommerce-pos-pro': "const TRANSLATION_VERSION = '2026.11.14';\n\\define( 'WCPOS\\WooCommercePOS\\TRANSLATION_VERSION', TRANSLATION_VERSION );",
+};
 
 function test(name, fn) {
   try {
@@ -76,10 +83,85 @@ test('updates woocommerce-pos-pro when free namespace constant references the pr
   assert.match(updated, /TRANSLATION_VERSION', TRANSLATION_VERSION/);
 });
 
-test('updates monorepo translation backend version', () => {
+test('updates monorepo translation-version.json and keeps its layout', () => {
+  const updated = applyVersionUpdate('monorepo', CURRENT_PINS.monorepo, VERSION);
+  assert.equal(updated, '{\n\t"version": "2026.4.47"\n}\n');
+});
+
+test('monorepo entry points at translation-version.json', () => {
+  assert.equal(CONSUMER_REPOS.monorepo.file, 'packages/core/src/contexts/translations/translation-version.json');
+});
+
+test('old monorepo TS layout no longer matches the monorepo entry', () => {
   const original = "export const TRANSLATION_VERSION = '2026.2.10';\n";
-  const updated = applyVersionUpdate('monorepo', original, VERSION);
-  assert.match(updated, /TRANSLATION_VERSION = '2026\.4\.47'/);
+  assert.throws(() => applyVersionUpdate('monorepo', original, VERSION), /No match found for monorepo/);
+});
+
+test('old constant layouts still update for electron, woocommerce-pos and -pro', () => {
+  assert.equal(
+    applyVersionUpdate('electron', CURRENT_PINS.electron, VERSION),
+    "const TRANSLATION_VERSION = '2026.4.47';"
+  );
+  assert.equal(
+    applyVersionUpdate('woocommerce-pos', CURRENT_PINS['woocommerce-pos'], VERSION),
+    "\\define( __NAMESPACE__ . '\\TRANSLATION_VERSION', '2026.4.47' );"
+  );
+  assert.equal(
+    applyVersionUpdate('woocommerce-pos-pro', CURRENT_PINS['woocommerce-pos-pro'], VERSION),
+    "const TRANSLATION_VERSION = '2026.4.47';\n\\define( 'WCPOS\\WooCommercePOS\\TRANSLATION_VERSION', TRANSLATION_VERSION );"
+  );
+});
+
+test('dry-run plan reports would-create, would-update and already-current', () => {
+  const calls = [];
+  const readers = {
+    readPinFile: (repo) => CURRENT_PINS[repo.split('/')[1]],
+    findOpenPr: (repo, branch) => {
+      calls.push([repo, branch]);
+      return repo === 'wcpos/electron' ? '12' : '';
+    },
+  };
+  const versions = ['2026.11.12', '2026.11.13', '2026.11.14', '2026.11.14'];
+  Object.entries(CONSUMER_REPOS).forEach(([repoKey, config], index) => {
+    assert.deepEqual(planVersionUpdate(repoKey, '2026.11.16', readers), {
+      repo: config.repo,
+      file: config.file,
+      from: versions[index],
+      status: repoKey === 'electron' ? 'would-update-pr' : 'would-create-pr',
+      prNumber: repoKey === 'electron' ? '12' : '',
+    });
+  });
+  assert.deepEqual(calls, Object.values(CONSUMER_REPOS).map((config) => [config.repo, config.branch]));
+  calls.length = 0;
+  assert.deepEqual(planVersionUpdate('monorepo', '2026.11.12', readers), {
+    repo: 'wcpos/monorepo',
+    file: CONSUMER_REPOS.monorepo.file,
+    from: '2026.11.12',
+    status: 'already-current',
+    prNumber: '',
+  });
+  assert.deepEqual(calls, []);
+});
+
+test('dry-run plan passes repo, file and base branch to the reader', () => {
+  const calls = [];
+  planVersionUpdate('monorepo', '2026.11.16', {
+    readPinFile: (...args) => {
+      calls.push(args);
+      return CURRENT_PINS.monorepo;
+    },
+    findOpenPr: () => '',
+  });
+  assert.deepEqual(calls, [
+    ['wcpos/monorepo', 'packages/core/src/contexts/translations/translation-version.json', 'main'],
+  ]);
+});
+
+test('dry-run plan throws on a missing pin', () => {
+  assert.throws(() => planVersionUpdate('monorepo', '2026.11.16', {
+    readPinFile: () => '{}\n',
+    findOpenPr: () => assert.fail('must not look up a PR when the pin is missing'),
+  }), /No match found for monorepo/);
 });
 
 test('updates electron translation backend version', () => {
