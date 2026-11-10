@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Tidak ada Toko ditemukan di Sampah.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Produk ini menggunakan harga khusus toko, jadi perubahan harga atau pajak harus menyebutkan toko yang terkait. POS tidak mengirimkan toko—hubungkan kembali mesin kasir ke tokonya, lalu coba lagi.',
 		'Connecting to the point of sale…' => 'Menghubungkan ke POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Tampilan ini tidak dapat terhubung ke POS melalui jaringan ini. Kedua perangkat harus menggunakan Wi-Fi yang sama; jaringan tamu sering kali memblokirnya.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Layar ini tidak dapat terhubung ke POS. Pastikan kedua perangkat online; layar akan terus mencoba.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Layar ini tidak dapat terhubung ke toko Anda. Periksa koneksi internet perangkat ini.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Menunggu POS. Buka POS di kasir yang dipasangkan dengan layar ini.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS merespons, tetapi belum selesai menyiapkan layar ini. Mulai ulang POS dan coba lagi.',

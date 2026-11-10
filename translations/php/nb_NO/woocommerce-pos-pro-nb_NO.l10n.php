@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Ingen butikker funnet i papirkurven.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Dette produktet bruker butikkspesifikk prissetting, så en pris- eller skatteendring må angi hvilken butikk den gjelder. POS-systemet sendte ikke med noen butikk – koble kassen til butikken på nytt, og prøv igjen.',
 		'Connecting to the point of sale…' => 'Kobler til kassasystemet …',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Denne skjermen får ikke kontakt med kassen på dette nettverket. Begge enhetene må være på samme Wi-Fi-nettverk; gjestenettverk blokkerer ofte slik trafikk.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Denne skjermen kunne ikke koble til POS-systemet. Kontroller at begge enhetene er på nett; den fortsetter å prøve.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Denne skjermen får ikke kontakt med butikken. Kontroller enhetens internettforbindelse.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Venter på POS. Åpne POS på kassen denne skjermen er koblet til.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS svarte, men fullførte ikke oppsettet. Start POS på nytt og prøv igjen.',

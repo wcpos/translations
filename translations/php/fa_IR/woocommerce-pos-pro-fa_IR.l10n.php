@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'هیچ فروشگاهی در زباله‌دان یافت نشد.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'این محصول از قیمت‌گذاری اختصاصی هر فروشگاه استفاده می‌کند؛ بنابراین تغییر قیمت یا مالیات باید مشخص کند مربوط به کدام فروشگاه است. POS فروشگاهی را ارسال نکرد؛ صندوق را دوباره به فروشگاه خود متصل کنید و دوباره تلاش کنید.',
 		'Connecting to the point of sale…' => 'در حال اتصال به پایانه فروش…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'این نمایشگر در این شبکه به POS دسترسی ندارد. هر دو دستگاه باید به یک Wi-Fi وصل باشند؛ شبکه‌های مهمان اغلب این اتصال را مسدود می‌کنند.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'این نمایشگر نتوانست به POS متصل شود. بررسی کنید هر دو دستگاه آنلاین باشند؛ تلاش برای اتصال ادامه خواهد یافت.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'این نمایشگر نمی‌تواند به فروشگاه شما وصل شود. اتصال اینترنت این دستگاه را بررسی کنید.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'در انتظار POS. برنامه POS را روی صندوقی که این نمایشگر به آن متصل است باز کنید.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS پاسخ داد، اما راه‌اندازی این نمایشگر را کامل نکرد. POS را دوباره راه‌اندازی کنید و دوباره تلاش کنید.',

@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'ゴミ箱に店舗が見つかりません。',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'この商品では店舗ごとに価格が設定されているため、価格または税を変更するには対象の店舗を指定する必要があります。POSから店舗情報が送信されませんでした。レジを対象店舗に再接続して、もう一度お試しください。',
 		'Connecting to the point of sale…' => 'POSに接続しています…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'このディスプレイは、このネットワーク上のPOSに接続できません。両方のデバイスを同じWi-Fiに接続してください。ゲスト用ネットワークでは接続がブロックされることがあります。',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'このディスプレイはPOSに接続できませんでした。両方のデバイスがオンラインか確認してください。接続を引き続き試みます。',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'このディスプレイはストアに接続できません。デバイスのインターネット接続を確認してください。',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'POSを待っています。このディスプレイとペアリングしたレジでPOSを開いてください。',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POSは応答しましたが、ディスプレイの設定を完了できませんでした。POSを再起動して再試行してください。',

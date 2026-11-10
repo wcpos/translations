@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => '휴지통에서 매장을 찾을 수 없습니다.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => '이 상품은 매장별 가격을 사용하므로 가격 또는 세금이 변경되면 어느 매장에 해당하는지 지정해야 합니다. POS가 매장을 전송하지 않았습니다. 금전 등록기를 해당 매장에 다시 연결한 후 다시 시도하세요.',
 		'Connecting to the point of sale…' => 'POS에 연결하는 중…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => '이 디스플레이가 이 네트워크에서 POS에 연결할 수 없습니다. 두 장치가 같은 Wi-Fi에 연결되어야 합니다. 게스트 네트워크에서는 연결이 차단되는 경우가 많습니다.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => '이 디스플레이를 POS에 연결하지 못했습니다. 두 기기가 모두 온라인인지 확인해 주세요. 연결을 계속 시도합니다.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => '이 디스플레이가 스토어에 연결되지 않습니다. 이 기기의 인터넷 연결을 확인하십시오.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'POS를 기다리는 중입니다. 이 디스플레이와 연결된 계산대에서 POS를 여십시오.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS가 응답했지만 디스플레이 설정을 완료하지 못했습니다. POS를 다시 시작하고 다시 시도하십시오.',

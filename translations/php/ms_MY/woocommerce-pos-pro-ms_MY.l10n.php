@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Tiada Kedai dijumpai dalam Tong Sampah.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Produk ini menggunakan harga khusus kedai, jadi perubahan harga atau cukai mesti menyatakan kedai yang berkenaan. POS tidak menghantar maklumat kedai — sambungkan semula terminal POS ke kedainya dan cuba lagi.',
 		'Connecting to the point of sale…' => 'Menyambung ke tempat jualan…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Paparan ini tidak dapat mencapai POS melalui rangkaian ini. Kedua-dua peranti mesti menggunakan Wi-Fi yang sama; rangkaian tetamu sering menyekat sambungan ini.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Paparan ini tidak dapat disambungkan kepada POS. Pastikan kedua-dua peranti dalam talian; paparan akan terus mencuba.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Paparan ini tidak dapat mencapai kedai anda. Semak sambungan internet peranti ini.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Menunggu POS. Buka POS pada kaunter yang dipadankan dengan paparan ini.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS telah memberikan respons tetapi tidak menyelesaikan persediaan paparan. Mulakan semula POS dan cuba lagi.',

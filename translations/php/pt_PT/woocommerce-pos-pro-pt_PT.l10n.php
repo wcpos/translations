@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Nenhuma loja encontrada no Lixo.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Este produto utiliza preços específicos por loja, por isso qualquer alteração de preço ou imposto tem de indicar a loja a que se aplica. O POS não enviou uma loja — volte a ligar o terminal à respetiva loja e tente novamente.',
 		'Connecting to the point of sale…' => 'A ligar ao ponto de venda…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Este ecrã não consegue aceder ao POS nesta rede. Ambos os dispositivos têm de estar na mesma rede Wi-Fi; as redes de convidados costumam bloquear esta ligação.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Não foi possível ligar este ecrã ao POS. Verifique se ambos os dispositivos estão online; continuará a tentar.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Este ecrã não consegue aceder à loja. Verifique a ligação à Internet deste dispositivo.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'A aguardar o POS. Abra o POS na caixa registadora emparelhada com este ecrã.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'O POS respondeu, mas não concluiu a configuração do ecrã. Reinicie o POS e tente novamente.',

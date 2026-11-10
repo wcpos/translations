@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => '垃圾箱中未找到店铺。',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => '该商品使用门店专属定价，因此价格或税费变更必须注明对应门店。POS 未发送门店信息——请将收银终端重新连接到所属门店，然后重试。',
 		'Connecting to the point of sale…' => '正在连接到 POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => '此显示屏无法通过当前网络连接到 POS。两台设备必须连接到同一 Wi-Fi；访客网络通常会阻止此连接。',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => '此显示屏无法连接到 POS。请检查两台设备是否均已联网；系统将继续尝试连接。',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => '此显示屏无法连接到您的商店。请检查此设备的互联网连接。',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => '正在等待 POS。请在与此显示屏配对的收银台上打开 POS。',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS 已响应，但未能完成此显示屏的设置。请重新启动 POS 并重试。',

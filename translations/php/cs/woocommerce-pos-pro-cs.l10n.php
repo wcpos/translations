@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'V koši nebyly nalezeny žádné obchody.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Tento produkt používá ceny specifické pro jednotlivé prodejny, takže při změně ceny nebo daně je nutné uvést, které prodejny se týká. POS neodeslal prodejnu — znovu připojte pokladnu k příslušné prodejně a zkuste to znovu.',
 		'Connecting to the point of sale…' => 'Připojování k pokladně…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Tento displej se v této síti nemůže připojit k pokladně. Obě zařízení musí být ve stejné síti Wi-Fi; sítě pro hosty toto připojení často blokují.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Tento displej se nepodařilo připojit k POS. Zkontrolujte, zda jsou obě zařízení online; bude se dál pokoušet o připojení.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Tento displej se nemůže připojit k vašemu obchodu. Zkontrolujte internetové připojení zařízení.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Čeká se na POS. Otevřete POS na pokladně, se kterou je tento displej spárován.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS odpověděl, ale nedokončil nastavení displeje. Restartujte POS a zkuste to znovu.',

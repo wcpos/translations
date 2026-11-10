@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'לא נמצאו חנויות בפח האשפה.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'מוצר זה משתמש בתמחור ייחודי לכל חנות, לכן כל שינוי במחיר או במס חייב לציין לאיזו חנות הוא מיועד. הקופה לא שלחה חנות — חברו מחדש את הקופה לחנות שלה ונסו שוב.',
 		'Connecting to the point of sale…' => 'מתחבר לקופה…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'התצוגה הזאת לא מצליחה להתחבר לקופה דרך הרשת. שני המכשירים חייבים להיות מחוברים לאותה רשת Wi-Fi; רשתות אורחים חוסמות זאת לעיתים קרובות.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'המסך הזה לא הצליח להתחבר ל-POS. יש לבדוק ששני המכשירים מחוברים לרשת; הוא ימשיך לנסות.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'המסך הזה לא מצליח להתחבר לחנות שלך. יש לבדוק את חיבור האינטרנט של המכשיר.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'ממתין ל-POS. יש לפתוח את ה-POS בקופה שאליה המסך הזה משויך.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'ה-POS הגיב, אך לא סיים להגדיר את המסך הזה. יש להפעיל מחדש את ה-POS ולנסות שוב.',

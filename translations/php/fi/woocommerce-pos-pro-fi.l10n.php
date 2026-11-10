@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Roskakorista ei löytynyt myymälöitä.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Tässä tuotteessa käytetään myymäläkohtaista hinnoittelua, joten hinta- tai veromuutoksessa on ilmoitettava, mitä myymälää se koskee. POS ei lähettänyt myymälätietoa – yhdistä kassa uudelleen myymäläänsä ja yritä uudelleen.',
 		'Connecting to the point of sale…' => 'Yhdistetään kassaan…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Tämä näyttö ei saa yhteyttä kassaan tässä verkossa. Molempien laitteiden on oltava samassa Wi-Fi-verkossa; vierasverkot estävät tämän usein.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Näyttöä ei saatu yhdistettyä POS-järjestelmään. Tarkista, että molemmat laitteet ovat verkossa; yhteyttä yritetään edelleen.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Tämä näyttö ei saa yhteyttä kauppaasi. Tarkista laitteen internetyhteys.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Odotetaan POS-järjestelmää. Avaa POS-kassa, johon tämä näyttö on yhdistetty.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS vastasi, mutta näytön käyttöönotto jäi kesken. Käynnistä POS uudelleen ja yritä uudelleen.',

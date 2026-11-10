@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Nu au fost găsite magazine în Coșul de gunoi.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Acest produs folosește prețuri specifice magazinului, astfel încât orice modificare a prețului sau a taxei trebuie să precizeze pentru ce magazin este. POS-ul nu a trimis niciun magazin — reconectați casa de marcat la magazinul său și încercați din nou.',
 		'Connecting to the point of sale…' => 'Se conectează la punctul de vânzare…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Acest afișaj nu poate accesa POS-ul prin această rețea. Ambele dispozitive trebuie să fie conectate la aceeași rețea Wi-Fi; rețelele pentru oaspeți blochează adesea această conexiune.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Acest ecran nu s-a putut conecta la POS. Verifică dacă ambele dispozitive sunt online; va continua să încerce.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Acest ecran nu poate accesa magazinul. Verificați conexiunea la internet a dispozitivului.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Se așteaptă POS-ul. Deschideți POS-ul la casa de marcat asociată ecranului.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS-ul a răspuns, dar nu a terminat configurarea ecranului. Reporniți POS-ul și încercați din nou.',

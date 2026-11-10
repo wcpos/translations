@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Không tìm thấy Cửa hàng nào trong Thùng rác.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Sản phẩm này sử dụng mức giá riêng theo từng cửa hàng, vì vậy mọi thay đổi về giá hoặc thuế phải nêu rõ áp dụng cho cửa hàng nào. POS không gửi thông tin cửa hàng — hãy kết nối lại máy POS với cửa hàng tương ứng rồi thử lại.',
 		'Connecting to the point of sale…' => 'Đang kết nối với POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Màn hình này không thể kết nối với POS qua mạng này. Hai thiết bị phải dùng cùng Wi-Fi; mạng khách thường chặn kết nối này.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Màn hình này không thể kết nối với POS. Hãy kiểm tra cả hai thiết bị đều đang trực tuyến; màn hình sẽ tiếp tục thử.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Màn hình này không thể kết nối với cửa hàng. Hãy kiểm tra kết nối internet của thiết bị.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Đang chờ POS. Hãy mở POS trên quầy thanh toán được ghép nối với màn hình này.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS đã phản hồi nhưng chưa hoàn tất thiết lập màn hình. Hãy khởi động lại POS và thử lại.',

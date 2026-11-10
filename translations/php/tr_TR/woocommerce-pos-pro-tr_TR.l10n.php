@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Çöp kutusunda mağaza bulunamadı.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Bu ürün mağazaya özel fiyatlandırma kullanıyor; bu nedenle fiyat veya vergi değişikliği hangi mağaza için olduğunu belirtmelidir. POS bir mağaza göndermedi — POS terminalini mağazasına yeniden bağlayıp tekrar deneyin.',
 		'Connecting to the point of sale…' => 'Satış noktasına bağlanılıyor…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Bu ekran bu ağda POS\'a ulaşamıyor. İki cihaz da aynı Wi-Fi ağına bağlı olmalı; misafir ağları genellikle bunu engeller.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Bu ekran POS\'a bağlanamadı. Her iki cihazın da çevrimiçi olduğunu kontrol edin; bağlanmayı denemeye devam edecek.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Bu ekran mağazanıza ulaşamıyor. Cihazın internet bağlantısını kontrol edin.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'POS bekleniyor. Ekranın eşleştirildiği kasada POS\'u açın.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS yanıt verdi ancak ekran kurulumunu tamamlayamadı. POS\'u yeniden başlatıp tekrar deneyin.',

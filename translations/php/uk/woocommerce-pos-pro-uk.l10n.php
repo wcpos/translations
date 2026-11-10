@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'У кошику магазинів не знайдено.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Для цього товару використовуються ціни, специфічні для магазину, тому під час зміни ціни або податку потрібно вказати, для якого магазину вона виконується. POS не передав дані магазину — повторно підключіть касу до відповідного магазину та спробуйте ще раз.',
 		'Connecting to the point of sale…' => 'Підключення до каси…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Цей дисплей не може підключитися до POS через цю мережу. Обидва пристрої мають бути в одній мережі Wi-Fi; гостьові мережі часто блокують таке підключення.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Не вдалося підключити цей дисплей до POS. Перевірте, чи обидва пристрої в мережі; дисплей продовжить спроби.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Цей дисплей не може підключитися до магазину. Перевірте підключення пристрою до інтернету.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Очікування POS. Відкрийте POS на касі, з якою з’єднано дисплей.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS відповів, але не завершив налаштування дисплея. Перезапустіть POS і спробуйте ще раз.',

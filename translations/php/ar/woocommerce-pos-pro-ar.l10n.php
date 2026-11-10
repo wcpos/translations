@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'لم يتم العثور على متاجر في سلة المهملات.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'يستخدم هذا المنتج أسعارًا خاصة بكل متجر، لذا يجب أن يحدد أي تغيير في السعر أو الضريبة المتجر المعني. لم يرسل POS متجرًا — أعد ربط جهاز نقطة البيع بمتجره ثم حاول مرة أخرى.',
 		'Connecting to the point of sale…' => 'جارٍ الاتصال بنقطة البيع…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'لا يمكن لهذه الشاشة الوصول إلى POS عبر هذه الشبكة. يجب أن يكون الجهازان على شبكة Wi-Fi نفسها؛ فكثيرًا ما تمنع شبكات الضيوف ذلك.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'لم تتمكن هذه الشاشة من الاتصال بـ POS. تحقق من اتصال الجهازين بالإنترنت؛ وستواصل المحاولة.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'لا تستطيع هذه الشاشة الاتصال بمتجرك. تحقق من اتصال هذا الجهاز بالإنترنت.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'بانتظار نقطة البيع. افتح نقطة البيع على جهاز الكاشير المقترن بهذه الشاشة.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'استجابت نقطة البيع، لكنها لم تُكمل إعداد هذه الشاشة. أعد تشغيل نقطة البيع وحاول مرة أخرى.',

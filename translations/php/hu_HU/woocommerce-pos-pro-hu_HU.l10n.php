@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Nincsenek boltok a kukában.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Ez a termék üzletspecifikus árazást használ, ezért az ár- vagy adómódosításnál meg kell adni, melyik üzlethez tartozik. A POS nem küldött üzletet — csatlakoztassa újra a pénztárgépet a hozzá tartozó üzlethez, majd próbálja újra.',
 		'Connecting to the point of sale…' => 'Kapcsolódás az értékesítési ponthoz…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Ez a kijelző nem éri el a POS-t ezen a hálózaton. Mindkét eszköznek ugyanahhoz a Wi-Fi-hálózathoz kell csatlakoznia; a vendéghálózatok gyakran blokkolják ezt.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Ez a kijelző nem tudott csatlakozni a POS-rendszerhez. Ellenőrizze, hogy mindkét eszköz online van-e; a kijelző tovább próbálkozik.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Ez a kijelző nem éri el az áruházat. Ellenőrizze az eszköz internetkapcsolatát.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Várakozás a POS-ra. Nyissa meg a POS-t annál a pénztárnál, amellyel ez a kijelző párosítva van.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'A POS válaszolt, de nem fejezte be a kijelző beállítását. Indítsa újra a POS-t, majd próbálja újra.',

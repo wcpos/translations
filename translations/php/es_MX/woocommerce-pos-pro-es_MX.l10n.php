@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'No se encontraron tiendas en la papelera.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Este producto usa precios específicos por tienda, por lo que cualquier cambio de precio o impuesto debe indicar para qué tienda es. El POS no envió ninguna tienda; vuelve a conectar la caja con su tienda e inténtalo de nuevo.',
 		'Connecting to the point of sale…' => 'Conectando al punto de venta…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Esta pantalla no puede conectarse al POS en esta red. Ambos dispositivos deben estar en la misma red Wi-Fi; las redes para invitados suelen bloquear la conexión.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Esta pantalla no pudo conectarse al POS. Verifica que ambos dispositivos estén conectados; seguirá intentándolo.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Esta pantalla no puede conectarse a su tienda. Revise la conexión a Internet del dispositivo.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Esperando al POS. Abra el POS en la caja con la que está vinculada esta pantalla.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'El POS respondió, pero no terminó de configurar esta pantalla. Reinicie el POS e inténtelo de nuevo.',

@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Šiukšlinėje parduotuvių nerasta.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Šiam produktui taikomos konkrečiai parduotuvei nustatytos kainos, todėl keičiant kainą ar mokestį būtina nurodyti, kuriai parduotuvei tai taikoma. POS nenurodė parduotuvės — iš naujo susiekite kasos terminalą su jo parduotuve ir bandykite dar kartą.',
 		'Connecting to the point of sale…' => 'Jungiamasi prie pardavimo vietos…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Šis ekranas negali pasiekti POS per šį tinklą. Abu įrenginiai turi būti tame pačiame „Wi-Fi“ tinkle; svečių tinklai dažnai blokuoja ryšį.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Šio ekrano nepavyko prijungti prie POS. Patikrinkite, ar abu įrenginiai prisijungę prie interneto; ekranas bandys toliau.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Šis ekranas negali pasiekti parduotuvės. Patikrinkite įrenginio interneto ryšį.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Laukiama POS. Atidarykite POS susietoje kasoje.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS atsakė, bet neužbaigė ekrano sąrankos. Paleiskite POS iš naujo ir bandykite dar kartą.',

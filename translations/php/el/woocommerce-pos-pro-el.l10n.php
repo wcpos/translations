@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Δεν βρέθηκαν Καταστήματα στον Κάδο.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Αυτό το προϊόν χρησιμοποιεί τιμολόγηση ανά κατάστημα, επομένως κάθε αλλαγή τιμής ή φόρου πρέπει να αναφέρει για ποιο κατάστημα ισχύει. Το POS δεν έστειλε κατάστημα — επανασυνδέστε το ταμείο με το κατάστημά του και δοκιμάστε ξανά.',
 		'Connecting to the point of sale…' => 'Σύνδεση στο POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Αυτή η οθόνη δεν μπορεί να συνδεθεί με το POS μέσω αυτού του δικτύου. Και οι δύο συσκευές πρέπει να είναι στο ίδιο Wi-Fi· τα δίκτυα επισκεπτών συχνά αποκλείουν αυτήν τη σύνδεση.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Αυτή η οθόνη δεν μπόρεσε να συνδεθεί στο POS. Ελέγξτε ότι και οι δύο συσκευές είναι online· θα συνεχίσει να προσπαθεί.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Αυτή η οθόνη δεν μπορεί να συνδεθεί με το κατάστημά σας. Ελέγξτε τη σύνδεση στο διαδίκτυο της συσκευής.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Αναμονή για το POS. Ανοίξτε το POS στο ταμείο με το οποίο έχει συζευχθεί αυτή η οθόνη.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'Το POS απάντησε, αλλά δεν ολοκλήρωσε τη ρύθμιση αυτής της οθόνης. Επανεκκινήστε το POS και δοκιμάστε ξανά.',

@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Aucun magasin trouvé dans la corbeille.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Ce produit utilise une tarification propre à chaque magasin; tout changement de prix ou de taxe doit préciser le magasin concerné. Le POS n’a pas indiqué de magasin — reconnectez la caisse à son magasin, puis réessayez.',
 		'Connecting to the point of sale…' => 'Connexion au point de vente…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Cet écran ne peut pas joindre le point de vente sur ce réseau. Les deux appareils doivent être sur le même réseau Wi-Fi; les réseaux invités bloquent souvent ce type de connexion.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Cet écran n’a pas pu se connecter au POS. Vérifiez que les deux appareils sont en ligne ; il continuera d’essayer.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Cet écran ne peut pas joindre votre boutique. Vérifiez la connexion Internet de cet appareil.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'En attente du POS. Ouvrez le POS sur la caisse associée à cet écran.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'Le POS a répondu, mais n’a pas terminé la configuration de cet écran. Redémarrez le POS et réessayez.',

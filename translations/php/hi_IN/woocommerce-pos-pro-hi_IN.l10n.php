@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'कचरे में कोई स्टोर नहीं मिला।',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'यह उत्पाद स्टोर-विशिष्ट कीमतों का उपयोग करता है, इसलिए कीमत या टैक्स में बदलाव के लिए यह बताना ज़रूरी है कि वह किस स्टोर के लिए है। POS ने कोई स्टोर नहीं भेजा — कैश रजिस्टर को उसके स्टोर से फिर से कनेक्ट करें और दोबारा कोशिश करें।',
 		'Connecting to the point of sale…' => 'POS से कनेक्ट हो रहा है…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'यह डिस्प्ले इस नेटवर्क पर POS तक नहीं पहुँच सकता। दोनों डिवाइस एक ही Wi-Fi पर होने चाहिए; अतिथि नेटवर्क अक्सर इसे रोकते हैं।',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'यह डिस्प्ले POS से कनेक्ट नहीं हो पाया। जाँचें कि दोनों डिवाइस ऑनलाइन हैं; यह कोशिश जारी रखेगा।',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'यह डिस्प्ले आपके स्टोर से कनेक्ट नहीं हो पा रहा है। इस डिवाइस का इंटरनेट कनेक्शन जाँचें।',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'POS का इंतज़ार हो रहा है। जिस रजिस्टर के साथ यह डिस्प्ले जोड़ा गया है, उस पर POS खोलें।',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS ने जवाब दिया, लेकिन इस डिस्प्ले का सेटअप पूरा नहीं किया। POS रीस्टार्ट करें और फिर कोशिश करें।',

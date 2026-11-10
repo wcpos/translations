@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'No s\'han trobat botigues a la paperera.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Aquest producte utilitza preus específics de la botiga, per tant, qualsevol canvi de preu o d’impostos ha d’indicar per a quina botiga és. El TPV no ha enviat cap botiga; torna a connectar el terminal amb la seva botiga i torna-ho a provar.',
 		'Connecting to the point of sale…' => 'S\'està connectant al punt de venda…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Aquesta pantalla no pot connectar amb el TPV en aquesta xarxa. Tots dos dispositius han d\'estar a la mateixa Wi-Fi; les xarxes de convidats sovint ho impedeixen.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Aquesta pantalla no s’ha pogut connectar al POS. Comproveu que tots dos dispositius estiguin connectats; ho continuarà intentant.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Aquesta pantalla no pot connectar amb la botiga. Comproveu la connexió a Internet del dispositiu.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Esperant el POS. Obriu el POS a la caixa amb què està vinculada aquesta pantalla.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'El POS ha respost, però no ha acabat de configurar aquesta pantalla. Reinicieu el POS i torneu-ho a provar.',

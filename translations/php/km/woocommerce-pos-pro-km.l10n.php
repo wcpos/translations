@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'រកមិនឃើញហាងនៅក្នុងធុងសំរាម។',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'ផលិតផលនេះប្រើតម្លៃជាក់លាក់តាមហាង ដូច្នេះការផ្លាស់ប្តូរតម្លៃ ឬពន្ធ ត្រូវបញ្ជាក់ថាសម្រាប់ហាងណា។ POS មិនបានបញ្ជូនព័ត៌មានហាងទេ — សូមភ្ជាប់ម៉ាស៊ីនគិតប្រាក់ទៅហាងរបស់វាឡើងវិញ រួចព្យាយាមម្តងទៀត។',
 		'Connecting to the point of sale…' => 'កំពុងភ្ជាប់ទៅ POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'អេក្រង់នេះមិនអាចភ្ជាប់ទៅ POS តាមបណ្តាញនេះបានទេ។ ឧបករណ៍ទាំងពីរត្រូវប្រើ Wi-Fi ដូចគ្នា។ បណ្តាញភ្ញៀវច្រើនតែរារាំងការភ្ជាប់នេះ។',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'អេក្រង់នេះមិនអាចភ្ជាប់ទៅ POS បានទេ។ សូមពិនិត្យថាឧបករណ៍ទាំងពីរមានអ៊ីនធឺណិត ហើយវានឹងបន្តព្យាយាម។',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'អេក្រង់នេះមិនអាចភ្ជាប់ទៅហាងបានទេ។ ពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់ឧបករណ៍នេះ។',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'កំពុងរង់ចាំ POS។ បើក POS នៅលើម៉ាស៊ីនគិតលុយដែលផ្គូផ្គងនឹងអេក្រង់នេះ។',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS បានឆ្លើយតប ប៉ុន្តែមិនបានបញ្ចប់ការដំឡើងអេក្រង់នេះទេ។ ចាប់ផ្តើម POS ឡើងវិញ ហើយព្យាយាមម្តងទៀត។',

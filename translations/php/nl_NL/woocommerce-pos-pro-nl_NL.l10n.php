@@ -195,7 +195,7 @@ return array(
 		'No Stores found in Trash.' => 'Geen winkels gevonden in de prullenbak.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Dit product gebruikt winkel-specifieke prijzen. Daarom moet bij een prijs- of belastingwijziging worden aangegeven voor welke winkel deze geldt. De POS heeft geen winkel meegestuurd. Verbind de kassa opnieuw met de bijbehorende winkel en probeer het opnieuw.',
 		'Connecting to the point of sale…' => 'Verbinden met het verkooppunt…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Dit scherm kan het verkooppunt niet bereiken via dit netwerk. Beide apparaten moeten op hetzelfde wifi-netwerk zitten; gastnetwerken blokkeren dit vaak.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Dit scherm kon geen verbinding maken met de POS. Controleer of beide apparaten online zijn; het blijft proberen.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Dit scherm kan je winkel niet bereiken. Controleer de internetverbinding van dit apparaat.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Wachten op de POS. Open de POS op de kassa waaraan dit scherm is gekoppeld.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'De POS reageerde, maar voltooide de configuratie niet. Start de POS opnieuw en probeer het opnieuw.',

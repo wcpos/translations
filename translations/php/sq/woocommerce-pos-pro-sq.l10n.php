@@ -193,7 +193,7 @@ return array(
 		'No Stores found in Trash.' => 'Nuk u gjetën dyqane në kosh.',
 		'This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again.' => 'Ky produkt përdor çmime specifike për dyqanin, ndaj ndryshimi i çmimit ose taksës duhet të tregojë për cilin dyqan bëhet fjalë. POS nuk dërgoi dyqan — rilidhni arkën me dyqanin e saj dhe provoni përsëri.',
 		'Connecting to the point of sale…' => 'Po lidhet me POS…',
-		'This display can\'t reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this.' => 'Ky ekran nuk mund të lidhet me POS në këtë rrjet. Të dyja pajisjet duhet të jenë në të njëjtin Wi-Fi; rrjetet e vizitorëve shpesh e bllokojnë këtë.',
+		'This display couldn\'t connect to the POS. Check both devices are online; it will keep trying.' => 'Ky ekran nuk u lidh dot me POS-in. Kontrolloni që të dyja pajisjet të jenë online; ekrani do të vazhdojë të provojë.',
 		'This display can\'t reach your store. Check this device\'s internet connection.' => 'Ky ekran nuk mund të lidhet me dyqanin. Kontrolloni lidhjen e internetit të pajisjes.',
 		'Waiting for the POS. Open the POS on the till this display is paired with.' => 'Në pritje të POS-it. Hapni POS-in në arkën e çiftuar me këtë ekran.',
 		'The POS answered but didn\'t finish setting up this display. Restart the POS and try again.' => 'POS-i u përgjigj, por nuk përfundoi konfigurimin. Rinisni POS-in dhe provoni përsëri.',
