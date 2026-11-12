@@ -272,28 +272,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro דורש גרסה חדשה יותר של תוסף WCPOS (REST API עם גרסאות). הרחבות ה-REST של Pro מושבתות עד לעדכון התלות המצורפת."
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "אין תבנית תצוגה זמינה."
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "תצוגה לא מוכרת."
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "האות אינו שייך למכשיר הזה."
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "עמית איתות לא תקין."
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "תמונת המצב של התצוגה אינה תקינה."
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "אין אפשרות לקרוא אותות עבור התפקיד הזה."
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "אין לך הרשאה לחנות הזאת."
 
@@ -821,17 +829,21 @@ msgstr "חנות היעד חייבת להיות חנות שפורסמה, ועל�
 msgid "Close the register session before moving it to another store."
 msgstr "יש לסגור את משמרת הקופה לפני העברתה לחנות אחרת."
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "בוצעו יותר מדי ניסיונות צימוד."
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "קוד הצימוד לא תקין או שפג תוקפו."
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "פרטי הכניסה לתצוגה אינם תקינים."
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "תמונת המצב של התצוגה גדולה מדי."
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -879,75 +891,75 @@ msgid ""
 msgstr ""
 "מוצר זה משתמש בתמחור ייחודי לכל חנות, לכן כל שינוי במחיר או במס חייב לציין לאיזו חנות הוא מיועד. הקופה לא שלחה חנות — חברו מחדש את הקופה לחנות שלה ונסו שוב."
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "מתחבר לקופה…"
 
-#: includes/Templates/Display.php:113
+#: includes/Templates/Display.php:114
 msgid ""
 "This display couldn't connect to the POS. Check both devices are online; it will keep trying."
 msgstr ""
 "המסך הזה לא הצליח להתחבר ל-POS. יש לבדוק ששני המכשירים מחוברים לרשת; הוא ימשיך לנסות."
 
-#: includes/Templates/Display.php:114
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "המסך הזה לא מצליח להתחבר לחנות שלך. יש לבדוק את חיבור האינטרנט של המכשיר."
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr "ממתין ל-POS. יש לפתוח את ה-POS בקופה שאליה המסך הזה משויך."
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "ה-POS הגיב, אך לא סיים להגדיר את המסך הזה. יש להפעיל מחדש את ה-POS ולנסות שוב."
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "התצוגה הזאת הוסרה. יש לצמד אותה מחדש."
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "לא הוגדרה תבנית לתצוגת לקוח."
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "צימוד התצוגה הזאת"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "קוד צימוד"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "שם התצוגה"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "תצוגת לקוח"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "צימוד תצוגה"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "קוד הצימוד אינו תקין או שפג תוקפו."
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "בוצעו יותר מדי ניסיונות. יש לנסות שוב בעוד רגע."
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "החיבור נכשל. יש לבדוק את הרשת ולנסות שוב."
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "מתחבר מחדש…"
 

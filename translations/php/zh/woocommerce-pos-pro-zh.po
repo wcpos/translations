@@ -269,28 +269,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro 需要较新版本的 WCPOS 插件（带版本号的 REST API）。在更新随附的依赖项之前，Pro REST 扩展已被禁用。"
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "没有可用的显示模板。"
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "未知显示屏。"
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "信号不属于此设备。"
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "信号对端无效。"
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "显示状态快照无效。"
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "无法读取该角色的信号。"
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "您无权访问此商店。"
 
@@ -807,17 +815,21 @@ msgstr "目标商店必须已发布，并且您必须有权访问该商店。"
 msgid "Close the register session before moving it to another store."
 msgstr "将收银台移至其他商店前，请先关闭收银台会话。"
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "配对尝试次数过多。"
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "配对码无效或已过期。"
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "显示屏凭据无效。"
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "显示状态快照过大。"
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -864,72 +876,72 @@ msgid ""
 "This product uses store-specific pricing, so a price or tax change must say which store it is for. The POS did not send a store — reconnect the till to its store and try again."
 msgstr "该商品使用门店专属定价，因此价格或税费变更必须注明对应门店。POS 未发送门店信息——请将收银终端重新连接到所属门店，然后重试。"
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "正在连接到 POS…"
 
-#: includes/Templates/Display.php:113
+#: includes/Templates/Display.php:114
 msgid ""
 "This display couldn't connect to the POS. Check both devices are online; it will keep trying."
 msgstr "此显示屏无法连接到 POS。请检查两台设备是否均已联网；系统将继续尝试连接。"
 
-#: includes/Templates/Display.php:114
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr "此显示屏无法连接到您的商店。请检查此设备的互联网连接。"
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr "正在等待 POS。请在与此显示屏配对的收银台上打开 POS。"
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr "POS 已响应，但未能完成此显示屏的设置。请重新启动 POS 并重试。"
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "此显示屏已移除。请重新配对。"
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "尚未配置顾客显示屏模板。"
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "配对此显示屏"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "配对码"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "显示屏名称"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "顾客显示屏"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "配对显示屏"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "配对码无效或已过期。"
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "尝试次数过多，请稍后重试。"
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "无法连接。请检查网络并重试。"
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "正在重新连接…"
 

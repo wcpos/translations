@@ -273,28 +273,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro ต้องใช้ WCPOS เวอร์ชันใหม่กว่า (REST API แบบมีเวอร์ชัน) ส่วนขยาย REST ของ Pro จะถูกปิดใช้งานจนกว่าจะอัปเดตแพ็กเกจที่รวมมา"
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "ไม่มีเทมเพลตหน้าจอ"
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "ไม่ทราบหน้าจอ"
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "สัญญาณนี้ไม่ได้เป็นของอุปกรณ์นี้"
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "เพียร์ส่งสัญญาณไม่ถูกต้อง"
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "ภาพหน้าจอไม่ถูกต้อง"
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "อ่านสัญญาณสำหรับบทบาทนี้ไม่ได้"
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "คุณไม่ได้รับอนุญาตให้ใช้ร้านค้านี้"
 
@@ -825,17 +833,21 @@ msgstr ""
 msgid "Close the register session before moving it to another store."
 msgstr "ปิดเซสชันเครื่องคิดเงินก่อนย้ายไปยังร้านค้าอื่น"
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "จับคู่หลายครั้งเกินไป"
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "รหัสจับคู่ไม่ถูกต้องหรือหมดอายุแล้ว"
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "ข้อมูลรับรองหน้าจอไม่ถูกต้อง"
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "ภาพหน้าจอมีขนาดใหญ่เกินไป"
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -883,75 +895,75 @@ msgid ""
 msgstr ""
 "สินค้านี้ใช้ราคาที่กำหนดเฉพาะสำหรับแต่ละร้าน ดังนั้นเมื่อเปลี่ยนราคาหรือภาษีต้องระบุว่าการเปลี่ยนแปลงนั้นใช้กับร้านใด POS ไม่ได้ส่งข้อมูลร้านมา โปรดเชื่อมต่อเครื่อง POS กับร้านอีกครั้งแล้วลองใหม่"
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "กำลังเชื่อมต่อกับจุดขาย…"
 
-#: includes/Templates/Display.php:113
+#: includes/Templates/Display.php:114
 msgid ""
 "This display couldn't connect to the POS. Check both devices are online; it will keep trying."
 msgstr ""
 "จอแสดงผลนี้เชื่อมต่อกับ POS ไม่ได้ โปรดตรวจสอบว่าอุปกรณ์ทั้งสองออนไลน์อยู่ ระบบจะลองเชื่อมต่ออีกครั้งต่อไป"
 
-#: includes/Templates/Display.php:114
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "จอนี้เชื่อมต่อกับร้านค้าของคุณไม่ได้ โปรดตรวจสอบอินเทอร์เน็ตของอุปกรณ์"
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr "กำลังรอ POS เปิด POS บนเครื่องคิดเงินที่จับคู่กับจอนี้"
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "POS ตอบกลับแล้ว แต่ตั้งค่าจอไม่เสร็จ โปรดเริ่ม POS ใหม่แล้วลองอีกครั้ง"
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "นำหน้าจอนี้ออกแล้ว จับคู่อีกครั้ง"
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "ยังไม่ได้ตั้งค่าเทมเพลตหน้าจอลูกค้า"
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "จับคู่หน้าจอนี้"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "รหัสจับคู่"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "ชื่อหน้าจอ"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "หน้าจอลูกค้า"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "จับคู่หน้าจอ"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "รหัสจับคู่นี้ไม่ถูกต้องหรือหมดอายุแล้ว"
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "พยายามมากเกินไป ลองอีกครั้งในอีกสักครู่"
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "เชื่อมต่อไม่ได้ ตรวจสอบเครือข่ายแล้วลองอีกครั้ง"
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "กำลังเชื่อมต่ออีกครั้ง…"
 
