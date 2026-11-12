@@ -301,12 +301,12 @@ if (tool === 'git') {
   assert.match(result.stdout, /no translations accepted/);
   const recorded = fs.readFileSync(state, 'utf8');
   const lines = recorded.trim().split('\n');
-  assert.equal(lines.length, 3);
+  assert.equal(lines.length, 2);
   assert.ok(Number(lines[0]) >= started && Number(lines[0]) <= Math.floor(Date.now() / 1000));
-  for (const [i, dir] of ['work', 'remaining'].entries()) {
+  for (const dir of ['work', 'remaining']) {
     const folder = path.join(wt, '.translate', dir);
     const content = fs.readdirSync(folder).filter(f => f.endsWith('.json')).sort().map(f => fs.readFileSync(path.join(folder, f), 'utf8')).join('');
-    assert.equal(lines[i + 1], createHash('sha256').update(content).digest('hex'));
+    assert.equal(lines[1], createHash('sha256').update(content).digest('hex'));
   }
   assert.ok(result.calls.some(c => isCall(c, 'node', 'scripts/translation-worklist.js', '--out', '.translate/remaining', '--locale', 'aa')));
   for (const translator of ['codex', 'claude']) {
@@ -342,9 +342,11 @@ if (tool === 'git') {
   result = run({ counts: [2, 1], remainingCounts: [1], invalid: true }, ['--no-review']);
   assert.equal(result.status, 1, result.stderr);
   assert.match(result.stdout, /validation failed/);
-  const partial = fs.readFileSync(state, 'utf8').trim().split('\n');
-  assert.equal(partial.length, 3);
-  assert.notEqual(partial[1], partial[2]);
+  assert.ok(!fs.existsSync(state));
+  result = run({ counts: [1], remainingCounts: [1] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => c.tool === 'codex'));
+  assert.equal(fs.readFileSync(state, 'utf8').trim().split('\n').length, 2);
   result = run({ counts: [1] });
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /skipping the model/);
