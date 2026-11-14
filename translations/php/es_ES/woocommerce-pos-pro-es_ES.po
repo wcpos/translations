@@ -274,28 +274,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro requiere una versión más reciente del plugin WCPOS (API REST versionada). Las extensiones REST de Pro están desactivadas hasta que se actualice la dependencia incluida."
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "No hay ninguna plantilla de pantalla disponible."
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "Pantalla desconocida."
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "La señal no pertenece a este dispositivo."
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "Dispositivo de señalización no válido."
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "La instantánea de la pantalla no es válida."
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "No se pueden leer las señales para ese perfil."
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "No tiene autorización para esta tienda."
 
@@ -704,26 +712,26 @@ msgstr ""
 "Destino de reembolso no válido. Valores permitidos: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:213
+#: includes/Payments/Refund_Processor.php:214
 msgid "The original payment gateway is not available for refunds."
 msgstr "La pasarela de pago original no está disponible para reembolsos."
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:295
+#: includes/Payments/Refund_Processor.php:296
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr ""
 "Todavía no se ha cobrado nada de este pedido, así que no hay nada que reembolsar."
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:339
+#: includes/Payments/Refund_Processor.php:340
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "Los pagos registrados no permiten devolver este importe mediante el método original."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:400
+#: includes/Payments/Refund_Processor.php:461
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -835,17 +843,21 @@ msgstr ""
 msgid "Close the register session before moving it to another store."
 msgstr "Cierre la sesión de caja antes de trasladarla a otra tienda."
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "Se han realizado demasiados intentos de emparejamiento."
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "El código de emparejamiento no es válido o ha caducado."
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "Las credenciales de pantalla no son válidas."
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "La instantánea de la pantalla es demasiado grande."
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -893,76 +905,76 @@ msgid ""
 msgstr ""
 "Este producto utiliza precios específicos de cada tienda, por lo que cualquier cambio de precio o de impuestos debe indicar a qué tienda corresponde. El TPV no envió ninguna tienda; vuelve a conectar el terminal con su tienda e inténtalo de nuevo."
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "Conectando al punto de venta…"
 
-#: includes/Templates/Display.php:113
-msgid ""
-"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
-msgstr ""
-"Esta pantalla no puede conectarse al TPV en esta red. Ambos dispositivos deben estar en la misma red Wi-Fi; las redes de invitados suelen bloquear esta conexión."
-
 #: includes/Templates/Display.php:114
+msgid ""
+"This display couldn't connect to the POS. Check both devices are online; it will keep trying."
+msgstr ""
+"Esta pantalla no ha podido conectarse al POS. Compruebe que ambos dispositivos estén conectados; seguirá intentándolo."
+
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "Esta pantalla no puede conectarse a su tienda. Compruebe la conexión a Internet del dispositivo."
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr ""
 "Esperando al POS. Abra el POS en la caja con la que está emparejada esta pantalla."
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "El POS ha respondido, pero no ha terminado de configurar esta pantalla. Reinicie el POS e inténtelo de nuevo."
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "Se ha eliminado esta pantalla. Vuelva a emparejarla."
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "No se ha configurado ninguna plantilla para la pantalla del cliente."
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "Emparejar esta pantalla"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "Código de emparejamiento"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "Nombre de la pantalla"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "Pantalla del cliente"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "Emparejar pantalla"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "El código de emparejamiento no es válido o ha caducado."
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "Demasiados intentos. Vuelva a intentarlo dentro de un momento."
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "No se ha podido conectar. Compruebe la red y vuelva a intentarlo."
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "Volviendo a conectar…"
 
@@ -972,15 +984,15 @@ msgstr "Volviendo a conectar…"
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "%1$s requiere WCPOS Pro %2$s o una versión posterior."
 
-#: woocommerce-pos-pro.php:209
+#: woocommerce-pos-pro.php:211
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro no se pudo cargar. Por favor, ejecute composer install."
 
-#: woocommerce-pos-pro.php:294
+#: woocommerce-pos-pro.php:296
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:295
+#: woocommerce-pos-pro.php:297
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

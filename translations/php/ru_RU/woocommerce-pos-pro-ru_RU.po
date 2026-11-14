@@ -274,28 +274,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro требует более новой версии плагина WCPOS (версионируемый REST API). Расширения REST API Pro отключены, пока встроенная зависимость не будет обновлена."
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "Шаблон дисплея недоступен."
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "Неизвестный дисплей."
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "Сигнал не относится к этому устройству."
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "Недопустимый узел сигнализации."
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "Недопустимый снимок дисплея."
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "Не удалось прочитать сигналы для этой роли."
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "У вас нет прав для работы с этим магазином."
 
@@ -703,24 +711,24 @@ msgstr ""
 "Недопустимое назначение возврата. Допустимые значения: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:213
+#: includes/Payments/Refund_Processor.php:214
 msgid "The original payment gateway is not available for refunds."
 msgstr "Исходный платёжный шлюз недоступен для возвратов."
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:295
+#: includes/Payments/Refund_Processor.php:296
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr "По этому заказу ещё не было списаний, поэтому возвращать нечего."
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:339
+#: includes/Payments/Refund_Processor.php:340
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "Записанные платежи не позволяют вернуть эту сумму исходным способом."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:400
+#: includes/Payments/Refund_Processor.php:461
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -831,17 +839,21 @@ msgstr ""
 msgid "Close the register session before moving it to another store."
 msgstr "Закройте кассовую сессию, прежде чем перемещать её в другой магазин."
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "Слишком много попыток подключения."
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "Недействительный или просроченный код подключения."
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "Недействительные учётные данные дисплея."
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "Снимок дисплея слишком большой."
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -889,75 +901,75 @@ msgid ""
 msgstr ""
 "Для этого товара используются цены, зависящие от магазина, поэтому при изменении цены или налога необходимо указать, для какого магазина оно предназначено. POS не передал магазин — повторно подключите кассу к магазину и попробуйте снова."
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "Подключение к кассе…"
 
-#: includes/Templates/Display.php:113
-msgid ""
-"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
-msgstr ""
-"Дисплей не может подключиться к кассе через эту сеть. Оба устройства должны быть подключены к одной сети Wi-Fi; гостевые сети часто блокируют такое подключение."
-
 #: includes/Templates/Display.php:114
+msgid ""
+"This display couldn't connect to the POS. Check both devices are online; it will keep trying."
+msgstr ""
+"Не удалось подключить этот экран к POS. Проверьте, что оба устройства подключены к сети; экран продолжит попытки."
+
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "Этот дисплей не может подключиться к магазину. Проверьте подключение устройства к интернету."
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr "Ожидание POS. Откройте POS на сопряженной кассе."
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "POS ответил, но не завершил настройку дисплея. Перезапустите POS и попробуйте снова."
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "Этот дисплей был удалён. Подключите его заново."
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "Шаблон клиентского дисплея не настроен."
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "Подключить этот дисплей"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "Код подключения"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "Название дисплея"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "Дисплей покупателя"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "Подключить дисплей"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "Этот код подключения недействителен или просрочен."
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "Слишком много попыток. Попробуйте позже."
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "Не удалось подключиться. Проверьте сеть и попробуйте ещё раз."
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "Повторное подключение…"
 
@@ -967,16 +979,16 @@ msgstr "Повторное подключение…"
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "Для %1$s требуется WCPOS Pro версии %2$s или новее."
 
-#: woocommerce-pos-pro.php:209
+#: woocommerce-pos-pro.php:211
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr ""
 "Не удалось загрузить WCPOS Pro. Пожалуйста, выполните composer install."
 
-#: woocommerce-pos-pro.php:294
+#: woocommerce-pos-pro.php:296
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:295
+#: woocommerce-pos-pro.php:297
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
