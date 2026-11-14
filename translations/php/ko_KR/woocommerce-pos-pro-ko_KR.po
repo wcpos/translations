@@ -270,28 +270,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro를 사용하려면 최신 버전의 WCPOS 플러그인(버전 관리 REST API)이 필요합니다. 번들 종속성이 업데이트될 때까지 Pro REST 확장 기능이 비활성화됩니다."
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "사용 가능한 디스플레이 템플릿이 없습니다."
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "알 수 없는 디스플레이입니다."
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "신호가 이 장치에 속하지 않습니다."
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "유효하지 않은 신호 피어입니다."
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "디스플레이 스냅샷이 유효하지 않습니다."
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "해당 역할의 신호를 읽을 수 없습니다."
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "이 매장에 대한 권한이 없습니다."
 
@@ -689,24 +697,24 @@ msgid ""
 msgstr "잘못된 환불 대상입니다. 허용되는 값: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:213
+#: includes/Payments/Refund_Processor.php:214
 msgid "The original payment gateway is not available for refunds."
 msgstr "원래 결제 게이트웨이는 환불에 사용할 수 없습니다."
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:295
+#: includes/Payments/Refund_Processor.php:296
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr "이 주문에 대해 아직 결제된 금액이 없어 환불할 금액이 없습니다."
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:339
+#: includes/Payments/Refund_Processor.php:340
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "기록된 결제로는 원래 결제 수단을 통해 이 금액을 환불할 수 없습니다."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:400
+#: includes/Payments/Refund_Processor.php:461
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -813,17 +821,21 @@ msgstr "대상 매장은 게시된 상태여야 하며, 해당 매장에 접근�
 msgid "Close the register session before moving it to another store."
 msgstr "다른 매장으로 이동하기 전에 계산대 세션을 종료하십시오."
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "페어링 시도 횟수가 너무 많습니다."
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "페어링 코드가 유효하지 않거나 만료되었습니다."
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "디스플레이 인증 정보가 유효하지 않습니다."
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "디스플레이 스냅샷이 너무 큽니다."
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -871,73 +883,72 @@ msgid ""
 msgstr ""
 "이 상품은 매장별 가격을 사용하므로 가격 또는 세금이 변경되면 어느 매장에 해당하는지 지정해야 합니다. POS가 매장을 전송하지 않았습니다. 금전 등록기를 해당 매장에 다시 연결한 후 다시 시도하세요."
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "POS에 연결하는 중…"
 
-#: includes/Templates/Display.php:113
-msgid ""
-"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
-msgstr ""
-"이 디스플레이가 이 네트워크에서 POS에 연결할 수 없습니다. 두 장치가 같은 Wi-Fi에 연결되어야 합니다. 게스트 네트워크에서는 연결이 차단되는 경우가 많습니다."
-
 #: includes/Templates/Display.php:114
+msgid ""
+"This display couldn't connect to the POS. Check both devices are online; it will keep trying."
+msgstr "이 디스플레이를 POS에 연결하지 못했습니다. 두 기기가 모두 온라인인지 확인해 주세요. 연결을 계속 시도합니다."
+
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr "이 디스플레이가 스토어에 연결되지 않습니다. 이 기기의 인터넷 연결을 확인하십시오."
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr "POS를 기다리는 중입니다. 이 디스플레이와 연결된 계산대에서 POS를 여십시오."
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr "POS가 응답했지만 디스플레이 설정을 완료하지 못했습니다. POS를 다시 시작하고 다시 시도하십시오."
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "이 디스플레이가 제거되었습니다. 다시 페어링하십시오."
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "고객용 디스플레이 템플릿이 설정되지 않았습니다."
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "이 디스플레이 페어링"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "페어링 코드"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "디스플레이 이름"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "고객용 디스플레이"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "디스플레이 페어링"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "페어링 코드가 유효하지 않거나 만료되었습니다."
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "시도 횟수가 너무 많습니다. 잠시 후 다시 시도하십시오."
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "연결할 수 없습니다. 네트워크를 확인하고 다시 시도하십시오."
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "다시 연결하는 중…"
 
@@ -947,15 +958,15 @@ msgstr "다시 연결하는 중…"
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "%1$s을(를) 사용하려면 WCPOS Pro %2$s 이상이 필요합니다."
 
-#: woocommerce-pos-pro.php:209
+#: woocommerce-pos-pro.php:211
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro 로드에 실패했습니다. composer install을 실행하세요."
 
-#: woocommerce-pos-pro.php:294
+#: woocommerce-pos-pro.php:296
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:295
+#: woocommerce-pos-pro.php:297
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

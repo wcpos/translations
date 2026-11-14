@@ -274,28 +274,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro को WCPOS प्लगइन के नए संस्करण (वर्ज़न वाला REST API) की आवश्यकता है। बंडल की गई डिपेंडेंसी अपडेट होने तक Pro REST एक्सटेंशन अक्षम रहेंगे।"
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "कोई डिस्प्ले टेम्पलेट उपलब्ध नहीं है।"
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "अज्ञात डिस्प्ले।"
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "सिग्नल इस डिवाइस का नहीं है।"
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "अमान्य सिग्नलिंग पीयर।"
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "डिस्प्ले स्नैपशॉट अमान्य है।"
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "उस भूमिका के लिए सिग्नल पढ़े नहीं जा सकते।"
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "आपको इस स्टोर की अनुमति नहीं है।"
 
@@ -699,26 +707,26 @@ msgid ""
 msgstr "अमान्य रिफंड गंतव्य। अनुमत मान: original_method, cash, manual।"
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:213
+#: includes/Payments/Refund_Processor.php:214
 msgid "The original payment gateway is not available for refunds."
 msgstr "मूल भुगतान गेटवे रिफंड के लिए उपलब्ध नहीं है।"
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:295
+#: includes/Payments/Refund_Processor.php:296
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr ""
 "इस ऑर्डर के लिए अभी तक कोई भुगतान प्राप्त नहीं हुआ है, इसलिए रिफ़ंड करने के लिए कुछ नहीं है।"
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:339
+#: includes/Payments/Refund_Processor.php:340
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "दर्ज भुगतानों के ज़रिए मूल भुगतान विधि से यह राशि वापस नहीं की जा सकती।"
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:400
+#: includes/Payments/Refund_Processor.php:461
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -830,17 +838,21 @@ msgstr ""
 msgid "Close the register session before moving it to another store."
 msgstr "रजिस्टर को दूसरे स्टोर में ले जाने से पहले उसका सत्र बंद करें।"
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "पेयर करने के बहुत अधिक प्रयास हुए।"
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "अमान्य या समाप्त हो चुका पेयरिंग कोड।"
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "अमान्य डिस्प्ले क्रेडेंशियल।"
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "डिस्प्ले स्नैपशॉट बहुत बड़ा है।"
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -888,76 +900,76 @@ msgid ""
 msgstr ""
 "यह उत्पाद स्टोर-विशिष्ट कीमतों का उपयोग करता है, इसलिए कीमत या टैक्स में बदलाव के लिए यह बताना ज़रूरी है कि वह किस स्टोर के लिए है। POS ने कोई स्टोर नहीं भेजा — कैश रजिस्टर को उसके स्टोर से फिर से कनेक्ट करें और दोबारा कोशिश करें।"
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "POS से कनेक्ट हो रहा है…"
 
-#: includes/Templates/Display.php:113
-msgid ""
-"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
-msgstr ""
-"यह डिस्प्ले इस नेटवर्क पर POS तक नहीं पहुँच सकता। दोनों डिवाइस एक ही Wi-Fi पर होने चाहिए; अतिथि नेटवर्क अक्सर इसे रोकते हैं।"
-
 #: includes/Templates/Display.php:114
+msgid ""
+"This display couldn't connect to the POS. Check both devices are online; it will keep trying."
+msgstr ""
+"यह डिस्प्ले POS से कनेक्ट नहीं हो पाया। जाँचें कि दोनों डिवाइस ऑनलाइन हैं; यह कोशिश जारी रखेगा।"
+
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "यह डिस्प्ले आपके स्टोर से कनेक्ट नहीं हो पा रहा है। इस डिवाइस का इंटरनेट कनेक्शन जाँचें।"
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr ""
 "POS का इंतज़ार हो रहा है। जिस रजिस्टर के साथ यह डिस्प्ले जोड़ा गया है, उस पर POS खोलें।"
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "POS ने जवाब दिया, लेकिन इस डिस्प्ले का सेटअप पूरा नहीं किया। POS रीस्टार्ट करें और फिर कोशिश करें।"
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "यह डिस्प्ले हटा दिया गया था। इसे फिर से पेयर करें।"
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "कोई ग्राहक डिस्प्ले टेम्पलेट कॉन्फ़िगर नहीं है।"
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "इस डिस्प्ले को पेयर करें"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "पेयरिंग कोड"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "डिस्प्ले का नाम"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "ग्राहक डिस्प्ले"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "डिस्प्ले पेयर करें"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "वह पेयरिंग कोड अमान्य है या समाप्त हो चुका है।"
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "बहुत अधिक प्रयास हुए। थोड़ी देर बाद फिर कोशिश करें।"
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "कनेक्ट नहीं हो सका। नेटवर्क जाँचें और फिर कोशिश करें।"
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "फिर से कनेक्ट हो रहा है…"
 
@@ -967,15 +979,15 @@ msgstr "फिर से कनेक्ट हो रहा है…"
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "%1$s के लिए WCPOS Pro %2$s या नया संस्करण आवश्यक है।"
 
-#: woocommerce-pos-pro.php:209
+#: woocommerce-pos-pro.php:211
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS प्रो लोड करने में विफल। कृपया कंपोजर इंस्टॉल चलाएं।"
 
-#: woocommerce-pos-pro.php:294
+#: woocommerce-pos-pro.php:296
 msgid "WCPOS Pro"
 msgstr "WCPOS प्रो"
 
-#: woocommerce-pos-pro.php:295
+#: woocommerce-pos-pro.php:297
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""

@@ -273,28 +273,36 @@ msgid ""
 msgstr ""
 "يتطلب WCPOS Pro إصدارًا أحدث من إضافة WCPOS (واجهة REST API ذات إصدار). تم تعطيل إضافات REST الخاصة بـ Pro حتى يتم تحديث التبعية المضمّنة."
 
-#: includes/API/V1/Display_Controller.php:271
+#: includes/API/V1/Display_Controller.php:276
 msgid "No display template is available."
 msgstr "لا يتوفر نموذج لواجهة العرض."
 
-#: includes/API/V1/Display_Controller.php:286
-#: includes/API/V1/Display_Controller.php:314
+#: includes/API/V1/Display_Controller.php:291
+#: includes/API/V1/Display_Controller.php:335
+#: includes/Services/Customer_Display.php:196
 msgid "Unknown display."
 msgstr "واجهة عرض غير معروفة."
 
-#: includes/API/V1/Display_Controller.php:293
+#: includes/API/V1/Display_Controller.php:298
+#: includes/API/V1/Display_Controller.php:303
+#: includes/API/V1/Display_Controller.php:312
 msgid "Signal does not belong to this device."
 msgstr "الإشارة لا تخص هذا الجهاز."
 
-#: includes/API/V1/Display_Controller.php:296
+#: includes/API/V1/Display_Controller.php:308
 msgid "Invalid signaling peer."
 msgstr "طرف الإشارة غير صالح."
 
-#: includes/API/V1/Display_Controller.php:310
+#: includes/API/V1/Display_Controller.php:315
+#: includes/Services/Customer_Display.php:203
+msgid "Invalid display snapshot."
+msgstr "لقطة العرض غير صالحة."
+
+#: includes/API/V1/Display_Controller.php:331
 msgid "Cannot read signals for that role."
 msgstr "تعذرت قراءة الإشارات لهذا الدور."
 
-#: includes/API/V1/Display_Controller.php:336
+#: includes/API/V1/Display_Controller.php:363
 msgid "You are not authorized for this store."
 msgstr "ليس لديك صلاحية لهذا المتجر."
 
@@ -697,24 +705,24 @@ msgstr ""
 "وجهة استرداد غير صالحة. القيم المسموح بها: original_method، cash، manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:213
+#: includes/Payments/Refund_Processor.php:214
 msgid "The original payment gateway is not available for refunds."
 msgstr "بوابة الدفع الأصلية غير متاحة لعمليات الاسترداد."
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:295
+#: includes/Payments/Refund_Processor.php:296
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr "لم يتم تحصيل أي مبلغ لهذا الطلب بعد، لذا لا يوجد ما يمكن استرداده."
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:339
+#: includes/Payments/Refund_Processor.php:340
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr "لا يمكن رد هذا المبلغ من المدفوعات المسجلة عبر طريقة الدفع الأصلية."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:400
+#: includes/Payments/Refund_Processor.php:461
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
@@ -822,17 +830,21 @@ msgstr "يجب أن يكون المتجر المستهدف منشورًا وأن
 msgid "Close the register session before moving it to another store."
 msgstr "أغلق جلسة سجل الدفع قبل نقله إلى متجر آخر."
 
-#: includes/Services/Customer_Display.php:76
+#: includes/Services/Customer_Display.php:86
 msgid "Too many pairing attempts."
 msgstr "عدد محاولات الاقتران كبير جدًا."
 
-#: includes/Services/Customer_Display.php:84
+#: includes/Services/Customer_Display.php:94
 msgid "Invalid or expired pairing code."
 msgstr "رمز الاقتران غير صالح أو منتهي الصلاحية."
 
-#: includes/Services/Customer_Display.php:155
+#: includes/Services/Customer_Display.php:165
 msgid "Invalid display credentials."
 msgstr "بيانات اعتماد واجهة العرض غير صالحة."
+
+#: includes/Services/Customer_Display.php:207
+msgid "Display snapshot is too large."
+msgstr "لقطة العرض كبيرة جدًا."
 
 #: includes/Services/Settings.php:145
 msgid "Failed to save settings."
@@ -880,76 +892,76 @@ msgid ""
 msgstr ""
 "يستخدم هذا المنتج أسعارًا خاصة بكل متجر، لذا يجب أن يحدد أي تغيير في السعر أو الضريبة المتجر المعني. لم يرسل POS متجرًا — أعد ربط جهاز نقطة البيع بمتجره ثم حاول مرة أخرى."
 
-#: includes/Templates/Display.php:112
+#: includes/Templates/Display.php:113
 msgid "Connecting to the point of sale…"
 msgstr "جارٍ الاتصال بنقطة البيع…"
 
-#: includes/Templates/Display.php:113
-msgid ""
-"This display can't reach the POS on this network. Both devices must be on the same Wi-Fi; guest networks often block this."
-msgstr ""
-"لا يمكن لهذه الشاشة الوصول إلى POS عبر هذه الشبكة. يجب أن يكون الجهازان على شبكة Wi-Fi نفسها؛ فكثيرًا ما تمنع شبكات الضيوف ذلك."
-
 #: includes/Templates/Display.php:114
+msgid ""
+"This display couldn't connect to the POS. Check both devices are online; it will keep trying."
+msgstr ""
+"لم تتمكن هذه الشاشة من الاتصال بـ POS. تحقق من اتصال الجهازين بالإنترنت؛ وستواصل المحاولة."
+
+#: includes/Templates/Display.php:115
 msgid ""
 "This display can't reach your store. Check this device's internet connection."
 msgstr ""
 "لا تستطيع هذه الشاشة الاتصال بمتجرك. تحقق من اتصال هذا الجهاز بالإنترنت."
 
-#: includes/Templates/Display.php:115
+#: includes/Templates/Display.php:116
 msgid ""
 "Waiting for the POS. Open the POS on the till this display is paired with."
 msgstr ""
 "بانتظار نقطة البيع. افتح نقطة البيع على جهاز الكاشير المقترن بهذه الشاشة."
 
-#: includes/Templates/Display.php:116
+#: includes/Templates/Display.php:117
 msgid ""
 "The POS answered but didn't finish setting up this display. Restart the POS and try again."
 msgstr ""
 "استجابت نقطة البيع، لكنها لم تُكمل إعداد هذه الشاشة. أعد تشغيل نقطة البيع وحاول مرة أخرى."
 
-#: includes/Templates/Display.php:117
+#: includes/Templates/Display.php:118
 msgid "This display was removed. Pair it again."
 msgstr "أزيلت واجهة العرض هذه. أعد إقرانها."
 
-#: includes/Templates/Display.php:118
+#: includes/Templates/Display.php:119
 msgid "No customer display template is configured."
 msgstr "لم يتم إعداد نموذج لواجهة عرض العميل."
 
-#: includes/Templates/Display.php:119
+#: includes/Templates/Display.php:120
 msgid "Pair this display"
 msgstr "إقران واجهة العرض هذه"
 
-#: includes/Templates/Display.php:120
+#: includes/Templates/Display.php:121
 msgid "Pairing code"
 msgstr "رمز الاقتران"
 
-#: includes/Templates/Display.php:121
+#: includes/Templates/Display.php:122
 msgid "Display name"
 msgstr "اسم واجهة العرض"
 
-#: includes/Templates/Display.php:122
+#: includes/Templates/Display.php:123
 #: templates/display-host.php:6
 msgid "Customer display"
 msgstr "واجهة عرض العميل"
 
-#: includes/Templates/Display.php:123
+#: includes/Templates/Display.php:124
 msgid "Pair display"
 msgstr "إقران واجهة العرض"
 
-#: includes/Templates/Display.php:124
+#: includes/Templates/Display.php:125
 msgid "That pairing code is invalid or expired."
 msgstr "رمز الاقتران هذا غير صالح أو منتهي الصلاحية."
 
-#: includes/Templates/Display.php:125
+#: includes/Templates/Display.php:126
 msgid "Too many attempts. Try again shortly."
 msgstr "عدد المحاولات كبير جدًا. أعد المحاولة بعد قليل."
 
-#: includes/Templates/Display.php:126
+#: includes/Templates/Display.php:127
 msgid "Could not connect. Check the network and try again."
 msgstr "تعذر الاتصال. تحقق من الشبكة وأعد المحاولة."
 
-#: includes/Templates/Display.php:127
+#: includes/Templates/Display.php:128
 msgid "Reconnecting…"
 msgstr "جارٍ إعادة الاتصال…"
 
@@ -959,15 +971,15 @@ msgstr "جارٍ إعادة الاتصال…"
 msgid "%1$s requires WCPOS Pro %2$s or newer."
 msgstr "يتطلب %1$s الإصدار %2$s من WCPOS Pro أو إصدارًا أحدث."
 
-#: woocommerce-pos-pro.php:209
+#: woocommerce-pos-pro.php:211
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "فشل تحميل WCPOS Pro. يرجى تشغيل composer install."
 
-#: woocommerce-pos-pro.php:294
+#: woocommerce-pos-pro.php:296
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:295
+#: woocommerce-pos-pro.php:297
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
