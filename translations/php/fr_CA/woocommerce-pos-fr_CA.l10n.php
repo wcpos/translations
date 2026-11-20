@@ -40,7 +40,6 @@ return array(
 		'Online' => 'En ligne',
 		'POS Cashier' => 'Caissier PDV',
 		'Search for a cashier&hellip;' => 'Rechercher un caissier&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'La monnaie à rendre par le caissier ou le magasin dans le PDV n’a pas été appliquée, car son enregistrement n’a pas pu être écrit. Réessayez.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Base POS',
 		'Important:' => 'Important :',
 		'Major Update' => 'Mise à jour majeure',

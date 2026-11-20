@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'POS-Kassierer',
 		'Search for a cashier&hellip;' => 'Nach einem Kassierer suchen&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Das Wechselgeld für Kassenkraft oder Geschäft wurde nicht übernommen, da der Wechselgeld-Datensatz nicht gespeichert werden konnte. Bitte erneut versuchen.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS-Basis',
 		'Important:' => 'Wichtig:',
 		'Major Update' => 'Größeres Update',

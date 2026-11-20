@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'Kasir POS',
 		'Search for a cashier&hellip;' => 'Cari kasir&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Uang kembalian kasir atau toko di POS tidak diterapkan karena catatan uang kembalian tidak dapat ditulis. Coba lagi.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS Dasar',
 		'Important:' => 'Penting:',
 		'Major Update' => 'Pembaruan Besar',

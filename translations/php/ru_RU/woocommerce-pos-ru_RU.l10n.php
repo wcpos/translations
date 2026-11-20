@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Онлайн',
 		'POS Cashier' => 'Кассир POS',
 		'Search for a cashier&hellip;' => 'Поиск кассира&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Сдача кассира или магазина в POS не применена, так как не удалось записать запись о сдаче. Попробуйте ещё раз.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Основа POS',
 		'Important:' => 'Важно:',
 		'Major Update' => 'Крупное обновление',

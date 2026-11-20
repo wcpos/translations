@@ -40,7 +40,6 @@ return array(
 		'Online' => '온라인',
 		'POS Cashier' => 'POS 캐셔',
 		'Search for a cashier&hellip;' => '캐셔 검색 중&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS 계산원 또는 매장의 거스름돈이 적용되지 않았습니다. 거스름돈 기록을 저장할 수 없습니다. 다시 시도하세요.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS 기본',
 		'Important:' => '중요:',
 		'Major Update' => '주요 업데이트',

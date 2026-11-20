@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'POS Pénztáros',
 		'Search for a cashier&hellip;' => 'Pénztáros keresése&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'A POS-pénztáros vagy az üzlet visszajárója nem lépett életbe, mert a visszajáró rekordját nem sikerült menteni. Próbálja újra.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS alap',
 		'Important:' => 'Fontos:',
 		'Major Update' => 'Nagy frissítés',

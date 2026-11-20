@@ -40,7 +40,6 @@ return array(
 		'Online' => 'מקוון',
 		'POS Cashier' => 'קופאי POS',
 		'Search for a cashier&hellip;' => 'חפש קופאי&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'העודף של הקופאי או החנות ב-POS לא הוחל כי לא ניתן היה לכתוב את רשומת העודף. נסו שוב.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'בסיס POS',
 		'Important:' => 'חשוב:',
 		'Major Update' => 'עדכון משמעותי',

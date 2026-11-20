@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Á netinu',
 		'POS Cashier' => 'POS gjaldkeri',
 		'Search for a cashier&hellip;' => 'Leita að gjaldkera&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Afgangurinn hjá gjaldkera eða verslun í POS var ekki virkjaður þar sem ekki tókst að skrá afganginn. Reyndu aftur.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS grunnur',
 		'Important:' => 'Mikilvægt:',
 		'Major Update' => 'Stór uppfærsla',

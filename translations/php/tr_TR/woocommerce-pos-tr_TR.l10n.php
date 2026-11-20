@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Çevrimiçi',
 		'POS Cashier' => 'POS Kasiyeri',
 		'Search for a cashier&hellip;' => 'Bir kasiyer ara&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS kasiyerinin veya mağazanın para üstü uygulanmadı çünkü para üstü kaydı yazılamadı. Tekrar deneyin.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS tabanı',
 		'Important:' => 'Önemli:',
 		'Major Update' => 'Büyük Güncelleme',

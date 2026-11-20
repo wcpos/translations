@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'POS Kassanhoitaja',
 		'Search for a cashier&hellip;' => 'Etsi kassanhoitajaa&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS-kassanhoitajan tai myymälän vaihtorahaa ei otettu käyttöön, koska vaihtorahatietuetta ei voitu tallentaa. Yritä uudelleen.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS pohja',
 		'Important:' => 'Tärkeää:',
 		'Major Update' => 'Merkittävä päivitys',

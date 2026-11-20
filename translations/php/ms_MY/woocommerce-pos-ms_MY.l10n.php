@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Dalam Talian',
 		'POS Cashier' => 'Juruwang POS',
 		'Search for a cashier&hellip;' => 'Cari juruwang&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Wang baki juruwang atau kedai POS tidak digunakan kerana rekod wang baki tidak dapat ditulis. Cuba lagi.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Asas POS',
 		'Important:' => 'Penting:',
 		'Major Update' => 'Kemas Kini Utama',

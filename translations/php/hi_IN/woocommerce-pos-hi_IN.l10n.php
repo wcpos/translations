@@ -40,7 +40,6 @@ return array(
 		'Online' => 'ऑनलाइन',
 		'POS Cashier' => 'POS कैशियर',
 		'Search for a cashier&hellip;' => 'कैशियर खोजें&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS कैशियर या स्टोर का बाकी पैसा लागू नहीं हुआ, क्योंकि उसका रिकॉर्ड लिखा नहीं जा सका। फिर से कोशिश करें।',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS आधार',
 		'Important:' => 'महत्वपूर्ण:',
 		'Major Update' => 'मुख्य अपडेट',

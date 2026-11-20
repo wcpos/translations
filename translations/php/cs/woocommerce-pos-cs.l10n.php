@@ -40,7 +40,6 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'Pokladní POS',
 		'Search for a cashier&hellip;' => 'Hledat pokladního&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Hotovostní vratka pokladníka nebo obchodu v POS nebyla použita, protože se nepodařilo uložit její záznam. Zkuste to znovu.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Základ POS',
 		'Important:' => 'Důležité:',
 		'Major Update' => 'Hlavní aktualizace',

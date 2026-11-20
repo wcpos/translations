@@ -40,7 +40,6 @@ return array(
 		'Online' => 'En línia',
 		'POS Cashier' => 'Caixer POS',
 		'Search for a cashier&hellip;' => 'Cerca un caixer&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'No s’ha aplicat el canvi en efectiu del caixer o de la botiga del TPV perquè no s’ha pogut desar-ne el registre. Torna-ho a provar.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Base POS',
 		'Important:' => 'Important:',
 		'Major Update' => 'Actualització Important',

@@ -40,7 +40,6 @@ return array(
 		'Online' => 'متصل',
 		'POS Cashier' => 'أمين صندوق نقطة البيع',
 		'Search for a cashier&hellip;' => 'البحث عن أمين صندوق&hellip;',
-		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'لم يُطبَّق المبلغ المتبقي نقدًا لأمين الصندوق أو المتجر في POS، لتعذّر تسجيل المبلغ. حاول مرة أخرى.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'أساس POS',
 		'Important:' => 'مهم:',
 		'Major Update' => 'تحديث رئيسي',
