@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'تمت إعادة استخدام مفتاح عدم التكرار مع طلب مختلف.',
 		'An identical request is already being processed.' => 'تتم معالجة طلب مماثل بالفعل.',
 		'JWT is not configured properly, please contact the admin' => 'JWT غير مهيأ بشكل صحيح، يرجى الاتصال بالمسؤول',
+		'The sign-in could not be saved, please try again.' => 'تعذر حفظ تسجيل الدخول، يُرجى المحاولة مرة أخرى.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'لا يمكن لهذا الحساب استخدام نقطة البيع. الصلاحيات المفقودة: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'تعيّن لهذا الحساب الأدوار %s. يمكن لرفض صلاحية في أحد الأدوار أن يتغلب على منحها من دور آخر، كما أن إضافات تحرير الأدوار مثل Members تطبّق الرفض أولًا. أزل الدور الإضافي أو ألغِ الرفض في محرر الأدوار.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'امنحهم الصلاحيات من إعدادات WCPOS > الوصول، أو عيّن لهم دورًا يتضمنها.',

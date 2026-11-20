@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Idempotentsusvõtit kasutati uuesti teise päringuga.',
 		'An identical request is already being processed.' => 'Sama päringut töödeldakse juba.',
 		'JWT is not configured properly, please contact the admin' => 'JWT pole õigesti seadistatud, palun võtke ühendust administraatoriga',
+		'The sign-in could not be saved, please try again.' => 'Sisselogimist ei õnnestunud salvestada. Proovige uuesti.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'See konto ei saa POS-i kasutada. Puuduvad õigused: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Kontole on määratud rollid %s. Ühe rolli keelatud õigus võib tühistada teise rolli antud õiguse ning rolliredaktori pluginad, nagu Members, rakendavad selle keelu esmalt. Eemaldage lisaroll või tühistage keeld rolliredaktoris.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Andke need õigused WCPOS-i seadetes jaotises Juurdepääs või määrake talle roll, millel need õigused on.',

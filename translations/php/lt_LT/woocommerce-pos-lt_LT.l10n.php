@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Idempotency raktas buvo panaudotas pakartotinai su kita užklausa.',
 		'An identical request is already being processed.' => 'Tokia pati užklausa jau apdorojama.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nėra tinkamai sukonfigūruotas, prašome susisiekti su administratoriumi',
+		'The sign-in could not be saved, please try again.' => 'Nepavyko išsaugoti prisijungimo duomenų. Bandykite dar kartą.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Ši paskyra negali naudotis POS. Trūksta šių teisių: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Paskyrai priskirti vaidmenys %s. Vienam vaidmeniui nesuteikta teisė gali panaikinti kito vaidmens suteiktą teisę, o tokie vaidmenų redagavimo įskiepiai kaip „Members“ pirmiausia taiko šį draudimą. Pašalinkite papildomą vaidmenį arba panaikinkite draudimą vaidmenų rengyklėje.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Suteikite jas skiltyje „WCPOS“ → „Nustatymai“ → „Prieiga“ arba priskirkite vaidmenį, kuriam jos suteiktos.',

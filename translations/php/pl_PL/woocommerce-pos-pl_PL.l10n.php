@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Klucz idempotencji został użyty ponownie z innym żądaniem.',
 		'An identical request is already being processed.' => 'Identyczne żądanie jest już przetwarzane.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nie jest poprawnie skonfigurowany, skontaktuj się z administratorem',
+		'The sign-in could not be saved, please try again.' => 'Nie udało się zapisać logowania. Spróbuj ponownie.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'To konto nie może korzystać z POS. Brakujące uprawnienia: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Ma przypisane role: %s. Odmowa uprawnienia w jednej roli może nadpisać przyznanie go w innej, a wtyczki do edycji ról, takie jak Members, stosują tę odmowę w pierwszej kolejności. Usuń dodatkową rolę albo usuń odmowę w edytorze ról.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Nadaj je w Ustawieniach WCPOS w sekcji Dostęp albo przypisz rolę, która je obejmuje.',

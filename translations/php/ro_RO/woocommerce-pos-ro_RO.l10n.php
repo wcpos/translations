@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Cheia de idempotență a fost reutilizată cu o cerere diferită.',
 		'An identical request is already being processed.' => 'O cerere identică este deja în curs de procesare.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nu este configurat corect, vă rugăm să contactați administratorul',
+		'The sign-in could not be saved, please try again.' => 'Conectarea nu a putut fi salvată. Încearcă din nou.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Acest cont nu poate utiliza POS-ul. Lipsesc următoarele capabilități: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Are rolurile %s. O capabilitate refuzată pentru un rol poate anula acordarea ei printr-un alt rol, iar pluginurile de editare a rolurilor, precum Members, aplică mai întâi refuzul. Eliminați rolul suplimentar sau anulați refuzul în editorul de roluri.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Acordați-le din Setări WCPOS > Acces sau atribuiți un rol care le include.',

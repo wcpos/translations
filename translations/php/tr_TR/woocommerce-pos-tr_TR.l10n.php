@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Idempotency anahtarı farklı bir istekle yeniden kullanıldı.',
 		'An identical request is already being processed.' => 'Aynı istek zaten işleniyor.',
 		'JWT is not configured properly, please contact the admin' => 'JWT düzgün yapılandırılmamış, lütfen yönetici ile iletişime geçin',
+		'The sign-in could not be saved, please try again.' => 'Oturum açma bilgileri kaydedilemedi. Lütfen tekrar deneyin.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Bu hesap POS\'u kullanamaz. Eksik yetkiler: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Şu rollere sahip: %s. Bir rolde reddedilen bir yetki, başka bir rolden verilen yetkiyi geçersiz kılabilir; Members gibi rol düzenleme eklentileri bu reddi önce uygular. Ek rolü kaldırın veya rol düzenleyicisindeki reddi kaldırın.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Bu yetkileri WCPOS Ayarları > Erişim bölümünden verin veya bu yetkilere sahip bir rol atayın.',

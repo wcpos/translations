@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Kunci idempotensi digunakan semula dengan permintaan yang berbeza.',
 		'An identical request is already being processed.' => 'Permintaan yang sama sedang diproses.',
 		'JWT is not configured properly, please contact the admin' => 'JWT tidak dikonfigurasi dengan betul, sila hubungi pentadbir',
+		'The sign-in could not be saved, please try again.' => 'Log masuk tidak dapat disimpan. Sila cuba lagi.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Akaun ini tidak boleh menggunakan POS. Keupayaan yang tiada: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Akaun ini mempunyai peranan %s. Keupayaan yang dinafikan pada satu peranan boleh mengatasi pemberian daripada peranan lain, dan pemalam penyunting peranan seperti Members akan mengutamakan penafian tersebut. Buang peranan tambahan itu atau padamkan penafian dalam penyunting peranan.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Berikan keupayaan tersebut di bawah Tetapan WCPOS > Akses, atau tetapkan peranan yang mempunyai keupayaan tersebut.',

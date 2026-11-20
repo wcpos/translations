@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Endurnýting á idempotency-lykli með annarri beiðni.',
 		'An identical request is already being processed.' => 'Sams konar beiðni er þegar í vinnslu.',
 		'JWT is not configured properly, please contact the admin' => 'JWT er ekki rétt stillt, vinsamlegast hafðu samband við stjórnanda',
+		'The sign-in could not be saved, please try again.' => 'Ekki tókst að vista innskráninguna. Vinsamlegast reyndu aftur.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Þessi aðgangur getur ekki notað POS. Vantar heimildir: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Hann hefur hlutverkin %s. Heimild sem er hafnað í einu hlutverki getur yfirskrifað heimild frá öðru og viðbætur til að breyta hlutverkum, á borð við Members, beita höfnuninni fyrst. Fjarlægðu viðbótarhlutverkið eða fjarlægðu höfnunina í hlutverkastjóranum.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Veittu þær undir WCPOS Settings > Access eða úthlutaðu hlutverki sem hefur þær.',

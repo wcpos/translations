@@ -358,6 +358,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Key i idempotencës u ripërdor me një kërkesë tjetër.',
 		'An identical request is already being processed.' => 'Një kërkesë identike po përpunohet tashmë.',
 		'JWT is not configured properly, please contact the admin' => 'JWT nuk është konfiguruar siç duhet; ju lutemi, kontaktoni administratorin',
+		'The sign-in could not be saved, please try again.' => 'Hyrja nuk mund të ruhej. Ju lutemi provoni përsëri.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Kjo llogari nuk mund të përdorë POS-in. Mungojnë aftësitë: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Ka rolet %s. Një aftësi e mohuar në një rol mund të anashkalojë lejen e dhënë nga një rol tjetër, dhe Plugin-et e redaktimit të roleve si Members zbatojnë fillimisht mohimin. Hiqni rolin shtesë ose anuloni mohimin te redaktori i roleve.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Jepjani këto leje te Cilësimet e WCPOS > Qasja, ose caktoni një rol që i ka.',

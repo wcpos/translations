@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Az idempotencia kulcsot egy eltérő kéréshez használták újra.',
 		'An identical request is already being processed.' => 'Egy azonos kérés már feldolgozás alatt áll.',
 		'JWT is not configured properly, please contact the admin' => 'A JWT nincs megfelelően konfigurálva, kérjük, lépj kapcsolatba az adminisztrátorral',
+		'The sign-in could not be saved, please try again.' => 'A bejelentkezést nem sikerült menteni. Kérjük, próbálja újra.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Ez a fiók nem használhatja a POS-t. Hiányzó jogosultságok: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'A következő szerepkörökkel rendelkezik: %s. Az egyik szerepkörben megtagadott jogosultság felülírhatja egy másik szerepkör engedélyezését, és a Membershez hasonló szerepkör-szerkesztő bővítmények először ezt a tiltást alkalmazzák. Távolítsa el a további szerepkört, vagy törölje a tiltást a szerepkör-szerkesztőben.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Adja meg ezeket a WCPOS Beállítások > Hozzáférés menüpontjában, vagy rendeljen hozzá egy olyan szerepkört, amely rendelkezik velük.',

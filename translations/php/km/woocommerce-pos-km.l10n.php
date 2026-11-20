@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'បានប្រើសោ idempotency ឡើងវិញជាមួយសំណើផ្សេង។',
 		'An identical request is already being processed.' => 'សំណើដូចគ្នាមួយកំពុងត្រូវបានដំណើរការរួចហើយ។',
 		'JWT is not configured properly, please contact the admin' => 'JWT មិនត្រូវបានកំណត់រចនាសម្ព័ន្ធបានត្រឹមត្រូវ សូមទាក់ទងអ្នកគ្រប់គ្រង',
+		'The sign-in could not be saved, please try again.' => 'មិនអាចរក្សាទុកការចូលគណនីបានទេ។ សូមព្យាយាមម្ដងទៀត។',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'គណនីនេះមិនអាចប្រើ POS បានទេ។ សមត្ថភាពដែលខ្វះ៖ %s។',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'គណនីនេះមានតួនាទី %s។ ការបដិសេធសមត្ថភាពនៅលើតួនាទីមួយ អាចជំនួសការអនុញ្ញាតពីតួនាទីមួយទៀត ហើយកម្មវិធីកែសម្រួលតួនាទី ដូចជា Members នឹងអនុវត្តការបដិសេធនោះជាមុន។ សូមដកតួនាទីបន្ថែមចេញ ឬលុបការបដិសេធនៅក្នុងកម្មវិធីកែសម្រួលតួនាទី។',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'សូមផ្តល់សិទ្ធិទាំងនោះនៅក្នុង ការកំណត់ WCPOS > ការចូលប្រើ ឬកំណត់តួនាទីដែលមានសិទ្ធិទាំងនោះ។',

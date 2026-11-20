@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Ключ ідемпотентності було використано повторно з іншим запитом.',
 		'An identical request is already being processed.' => 'Ідентичний запит уже обробляється.',
 		'JWT is not configured properly, please contact the admin' => 'JWT налаштовано неправильно, будь ласка, зверніться до адміністратора',
+		'The sign-in could not be saved, please try again.' => 'Не вдалося зберегти вхід. Спробуйте ще раз.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Цей обліковий запис не може використовувати POS. Відсутні дозволи: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Цей обліковий запис має ролі %s. Заборонене право доступу в одній ролі може скасувати надання цього права в іншій, а плагіни для редагування ролей, як-от Members, спочатку застосовують цю заборону. Видаліть додаткову роль або скасуйте заборону в редакторі ролей.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Надайте ці дозволи в Налаштуваннях WCPOS → Доступ або призначте роль, яка їх має.',

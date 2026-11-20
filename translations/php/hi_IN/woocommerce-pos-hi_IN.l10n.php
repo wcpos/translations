@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Idempotency key का उपयोग एक अलग अनुरोध के साथ फिर से किया गया।',
 		'An identical request is already being processed.' => 'एक समान अनुरोध पहले से ही प्रोसेस हो रहा है।',
 		'JWT is not configured properly, please contact the admin' => 'JWT सही तरीके से कॉन्फ़िगर नहीं किया गया है, कृपया व्यवस्थापक से संपर्क करें',
+		'The sign-in could not be saved, please try again.' => 'साइन-इन सेव नहीं हो सका। कृपया फिर से कोशिश करें।',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'यह खाता POS का उपयोग नहीं कर सकता। आवश्यक क्षमताएँ अनुपलब्ध हैं: %s।',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'इस खाते में %s भूमिकाएँ हैं। एक भूमिका में अस्वीकृत क्षमता दूसरी भूमिका से मिली अनुमति को भी निष्प्रभावी कर सकती है, और Members जैसे भूमिका-संपादक प्लगइन पहले उसी अस्वीकृति को लागू करते हैं। अतिरिक्त भूमिका हटाएँ या भूमिका संपादक में उस अस्वीकृति को हटा दें।',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'उन्हें WCPOS Settings के Access अनुभाग में प्रदान करें, या ऐसी भूमिका असाइन करें जिसमें वे क्षमताएँ हों।',

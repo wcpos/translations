@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'idempotency key가 다른 요청에 재사용되었습니다.',
 		'An identical request is already being processed.' => '동일한 요청이 이미 처리 중입니다.',
 		'JWT is not configured properly, please contact the admin' => 'JWT가 제대로 구성되지 않았습니다. 관리자에게 문의하세요.',
+		'The sign-in could not be saved, please try again.' => '로그인 정보를 저장할 수 없습니다. 다시 시도해 주세요.',
 		'This account cannot use the POS. Missing capabilities: %s.' => '이 계정은 POS를 사용할 수 없습니다. 누락된 권한: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => '이 계정에는 %s 역할이 지정되어 있습니다. 한 역할에서 거부된 권한은 다른 역할에서 부여된 권한보다 우선할 수 있으며, Members와 같은 역할 편집 플러그인은 이러한 거부를 먼저 적용합니다. 추가 역할을 제거하거나 역할 편집기에서 거부 설정을 해제하세요.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'WCPOS 설정의 액세스에서 권한을 부여하거나 해당 권한이 있는 역할을 할당하세요.',

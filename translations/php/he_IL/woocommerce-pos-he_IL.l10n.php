@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'מפתח ה-idempotency שימש שוב עם בקשה אחרת.',
 		'An identical request is already being processed.' => 'בקשה זהה כבר נמצאת בעיבוד.',
 		'JWT is not configured properly, please contact the admin' => 'JWT לא מוגדר כראוי, אנא פנה למנהל',
+		'The sign-in could not be saved, please try again.' => 'לא ניתן לשמור את פרטי הכניסה. נא לנסות שוב.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'לחשבון הזה אין אפשרות להשתמש ב-POS. חסרות היכולות הבאות: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'לתפקידים של החשבון יש את התפקידים %s. שלילת יכולת בתפקיד אחד יכולה לגבור על הענקה מתפקיד אחר, ותוספים לעריכת תפקידים כמו Members מחילים את השלילה הזו קודם. הסירו את התפקיד הנוסף או בטלו את השלילה בעורך התפקידים.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'העניקו את היכולות האלה דרך הגדרות WCPOS > גישה, או הקצו תפקיד שמכיל אותן.',

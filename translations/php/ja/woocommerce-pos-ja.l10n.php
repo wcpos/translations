@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => '同じIDempotencyキーが別のリクエストで再利用されました。',
 		'An identical request is already being processed.' => '同一のリクエストがすでに処理中です。',
 		'JWT is not configured properly, please contact the admin' => 'JWTが正しく設定されていません。管理者に連絡してください。',
+		'The sign-in could not be saved, please try again.' => 'サインインを保存できませんでした。もう一度お試しください。',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'このアカウントではPOSを使用できません。不足している権限：%s。',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'このアカウントには次の権限グループが割り当てられています：%s。ある権限グループで拒否された権限は、別のグループで付与されていても優先される場合があります。Membersなどの権限グループ編集プラグインでは、拒否設定が先に適用されます。余分な権限グループを削除するか、権限グループエディターで拒否設定を解除してください。',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'WCPOS設定の「アクセス」で権限を付与するか、必要な権限を持つ権限グループを割り当ててください。',

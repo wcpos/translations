@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'Το κλειδί ιδιοδυναμίας χρησιμοποιήθηκε ξανά με διαφορετικό αίτημα.',
 		'An identical request is already being processed.' => 'Ένα πανομοιότυπο αίτημα βρίσκεται ήδη σε επεξεργασία.',
 		'JWT is not configured properly, please contact the admin' => 'Το JWT δεν έχει ρυθμιστεί σωστά, παρακαλώ επικοινωνήστε με τον διαχειριστή',
+		'The sign-in could not be saved, please try again.' => 'Δεν ήταν δυνατή η αποθήκευση της σύνδεσης. Δοκιμάστε ξανά.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'Ο λογαριασμός αυτός δεν μπορεί να χρησιμοποιήσει το POS. Λείπουν τα εξής δικαιώματα: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'Έχει τους ρόλους %s. Η άρνηση ενός δικαιώματος σε έναν ρόλο μπορεί να υπερισχύσει της εκχώρησής του από άλλον ρόλο, ενώ πρόσθετα επεξεργασίας ρόλων, όπως το Members, εφαρμόζουν πρώτα αυτή την άρνηση. Αφαιρέστε τον επιπλέον ρόλο ή καταργήστε την άρνηση στον επεξεργαστή ρόλων.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'Εκχωρήστε τα από τις Ρυθμίσεις WCPOS, στην ενότητα Πρόσβαση, ή αναθέστε έναν ρόλο που τα διαθέτει.',

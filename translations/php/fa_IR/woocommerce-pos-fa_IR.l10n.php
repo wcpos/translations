@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => 'کلید یکتاسازی با یک درخواست متفاوت دوباره استفاده شد.',
 		'An identical request is already being processed.' => 'یک درخواست یکسان از قبل در حال پردازش است.',
 		'JWT is not configured properly, please contact the admin' => 'JWT به درستی پیکربندی نشده است، لطفاً با مدیر تماس بگیرید',
+		'The sign-in could not be saved, please try again.' => 'ورود ذخیره نشد. لطفاً دوباره تلاش کنید.',
 		'This account cannot use the POS. Missing capabilities: %s.' => 'این حساب نمی‌تواند از POS استفاده کند. قابلیت‌های لازم وجود ندارند: %s.',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => 'این حساب دارای نقش‌های %s است. رد کردن یک قابلیت در یکی از نقش‌ها می‌تواند اعطای آن از نقش دیگری را بی‌اثر کند و افزونه‌های ویرایش نقش مانند Members ابتدا همین رد کردن را اعمال می‌کنند. نقش اضافی را حذف کنید یا رد کردن قابلیت را در ویرایشگر نقش لغو کنید.',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => 'این قابلیت‌ها را از مسیر تنظیمات WCPOS، دسترسی، اعطا کنید یا نقشی را اختصاص دهید که این قابلیت‌ها را داشته باشد.',

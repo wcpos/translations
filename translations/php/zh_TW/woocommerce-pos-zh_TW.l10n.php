@@ -360,6 +360,7 @@ return array(
 		'Idempotency key was reused with a different request.' => '冪等金鑰已被用於不同的請求。',
 		'An identical request is already being processed.' => '相同的請求正在處理中。',
 		'JWT is not configured properly, please contact the admin' => 'JWT配置不正確，請聯繫管理員',
+		'The sign-in could not be saved, please try again.' => '無法儲存登入資訊，請再試一次。',
 		'This account cannot use the POS. Missing capabilities: %s.' => '此帳號無法使用 POS。缺少的權限：%s。',
 		'It has the roles %s. A capability denied on one role can override a grant from another, and role-editor plugins such as Members apply that deny first. Remove the extra role or clear the deny in the role editor.' => '此帳號具有以下角色：%s。某個角色拒絕的權限可能會覆寫另一個角色授予的權限，而 Members 等角色編輯外掛會優先套用拒絕設定。請移除多餘的角色，或在角色編輯器中清除拒絕設定。',
 		'Grant them under WCPOS Settings, Access, or assign a role that has them.' => '請在 WCPOS 設定的「存取權限」中授予這些權限，或指派具有這些權限的角色。',
