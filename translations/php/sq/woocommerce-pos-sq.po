@@ -36,7 +36,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:1049
+#: includes/Activator.php:1051
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -44,7 +44,7 @@ msgstr ""
 "<strong>WCPOS</strong> kërkon PHP %1$s ose më të ri. Lexoni më shumë <a href=\"%2$s\">se si mund ta përditësoni</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:1073
+#: includes/Activator.php:1075
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -52,14 +52,14 @@ msgstr ""
 "<strong>WCPOS</strong> kërkon <a href=\"%1$s\">WooCommerce %2$s ose më të ri</a>. Ju lutemi <a href=\"%3$s\">instaloni dhe aktivizoni WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1095
+#: includes/Activator.php:1097
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> kërkon lidhje të përhershme <em>të lexueshme</em> për të funksionuar siç duhet"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1096
+#: includes/Activator.php:1098
 msgid "Enable permalinks"
 msgstr "Aktivizoni lidhjet e përhershme"
 
@@ -67,17 +67,17 @@ msgstr "Aktivizoni lidhjet e përhershme"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:1347
+#: includes/Activator.php:1351
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:351
+#: includes/Templates/Payment.php:395
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Arkëtar"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1574
+#: includes/Activator.php:1578
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -164,28 +164,21 @@ msgid "Online"
 msgstr "Online"
 
 #. translators: Order list label shown in WooCommerce admin for POS orders.
-#: includes/Admin/Orders/Single_Order.php:69
+#: includes/Admin/Orders/Single_Order.php:70
 msgid "POS Cashier"
 msgstr "Arkëtar POS"
 
 #. translators: Order list label shown in WooCommerce admin for POS orders.
-#: includes/Admin/Orders/Single_Order.php:70
+#: includes/Admin/Orders/Single_Order.php:71
 msgid "Search for a cashier&hellip;"
 msgstr "Kërkoni arkëtar&hellip;"
 
-#. translators: 1: old POS cashier, 2: new POS cashier.
-#: includes/Admin/Orders/Single_Order.php:112
-#: includes/Services/Order_Notes.php:83
-#, php-format
-msgid "POS cashier changed from %1$s to %2$s."
-msgstr "Arkëtari POS u ndryshua nga %1$s në %2$s."
-
-#. translators: Fallback cashier name shown when the POS cashier user cannot be found.
 #: includes/Admin/Orders/Single_Order.php:113
-#: includes/Admin/Orders/Single_Order.php:114
-#: includes/Services/Order_Notes.php:35
-msgid "Unknown"
-msgstr "I panjohur"
+#: includes/API/V2/Writers/Order_Writer.php:843
+msgid ""
+"POS cashier or store change was not applied because its change record could not be written. Try again."
+msgstr ""
+"Kusuri i arkëtarit ose dyqanit në POS nuk u zbatua sepse nuk u shkrua dot regjistrimi i kusurit. Provo përsëri."
 
 #. translators: Permalink settings label for the POS base URL.
 #: includes/Admin/Permalink.php:91
@@ -194,28 +187,28 @@ msgid "POS base"
 msgstr "Bazë POS"
 
 #. translators: Prefix for an important plugin update notice in the WordPress plugins screen.
-#: includes/Admin/Plugins.php:84
+#: includes/Admin/Plugins.php:88
 msgid "Important:"
 msgstr "E rëndësishme:"
 
 #. translators: Plugin admin screen label or notice for WCPOS.
-#: includes/Admin/Plugins.php:98
+#: includes/Admin/Plugins.php:102
 msgid "Major Update"
 msgstr "Përditësim madhor"
 
-#: includes/Admin/Plugins.php:101
+#: includes/Admin/Plugins.php:105
 msgid ""
 "Update when you have time to test the POS. You can rollback to the previous version if needed."
 msgstr ""
 "Përditësojeni kur të keni kohë ta testoni POS. Nëse nevojitet, mund të riktheheni te versioni i mëparshëm."
 
 #. translators: Plugin admin screen label or notice for WCPOS.
-#: includes/Admin/Plugins.php:105
+#: includes/Admin/Plugins.php:109
 msgid "Pro Users:"
 msgstr "Përdoruesit Pro:"
 
 #. translators: %s: URL to My Account page
-#: includes/Admin/Plugins.php:109
+#: includes/Admin/Plugins.php:113
 #, php-format
 msgid ""
 "WCPOS Pro is now a standalone plugin. Download the latest version from %s"
@@ -314,12 +307,12 @@ msgstr ""
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Checkout/payment form error message title.
 #: includes/Admin/Settings.php:60
-#: includes/Form_Handler.php:54
-#: includes/Form_Handler.php:66
-#: includes/Form_Handler.php:80
-#: includes/Form_Handler.php:94
-#: includes/Templates/Payment.php:202
-#: includes/Templates/Payment.php:493
+#: includes/Form_Handler.php:61
+#: includes/Form_Handler.php:73
+#: includes/Form_Handler.php:87
+#: includes/Form_Handler.php:101
+#: includes/Templates/Payment.php:203
+#: includes/Templates/Payment.php:537
 #: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Error"
@@ -509,31 +502,31 @@ msgstr "Marrja e të dhënave të dyqanit dështoi."
 msgid "Store not found or not accessible by this cashier."
 msgstr "Dyqani nuk u gjet ose ky arkëtar nuk ka qasje."
 
-#: includes/API/V1/Checkout_Controller.php:103
+#: includes/API/V1/Checkout_Controller.php:104
 msgid "Sorry, you cannot view checkout state."
 msgstr "Na vjen keq, nuk mund ta shihni gjendjen e pagesës."
 
-#: includes/API/V1/Checkout_Controller.php:114
+#: includes/API/V1/Checkout_Controller.php:115
 msgid "Sorry, you cannot process checkout."
 msgstr "Na vjen keq, nuk mund ta përfundoni pagesën."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:142
+#: includes/API/V1/Checkout_Controller.php:143
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Mungon header-i X-WCPOS-Idempotency-Key."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:153
-#: includes/API/V1/Gateway_Bootstrap_Controller.php:98
+#: includes/API/V1/Checkout_Controller.php:154
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:99
 msgid "Payment gateway not found."
 msgstr "Porta e pagesës nuk u gjet."
 
-#: includes/API/V1/Checkout_Controller.php:161
+#: includes/API/V1/Checkout_Controller.php:162
 msgid "Payment gateway is not available for POS checkout."
 msgstr "Porta e pagesës nuk është e disponueshme për pagesat në POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:282
+#: includes/API/V1/Checkout_Controller.php:283
 #: includes/API/V1/Receipts_Controller.php:283
 #: includes/API/V2/Payments_Controller.php:433
 #: includes/Payments/Contract/Settlement.php:92
@@ -596,7 +589,7 @@ msgstr "Nuk u rifreskuan dot shtesat. Ju lutemi, provoni përsëri."
 msgid "You do not have permission to view extensions."
 msgstr "Nuk keni leje për të parë shtesat."
 
-#: includes/API/V1/Gateway_Bootstrap_Controller.php:82
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:83
 msgid "Sorry, you cannot bootstrap payment gateways."
 msgstr "Na vjen keq, nuk mund të nisni portat e pagesave."
 
@@ -1273,7 +1266,7 @@ msgid "The session request could not be completed."
 msgstr "Kërkesa e sesionit nuk mund të përfundonte."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:589
+#: includes/API/V2/Writers/Order_Writer.php:590
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
@@ -1281,22 +1274,22 @@ msgstr ""
 "WCPOS: stoku për %1$s nuk mund të rregullohej me %2$s; rakordoni stokun e produktit manualisht."
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
-#: includes/Form_Handler.php:52
+#: includes/Form_Handler.php:59
 msgid "Order does not exist."
 msgstr "Porosia nuk ekziston."
 
 #. translators: Checkout/payment form error message shown when the order key does not match.
-#: includes/Form_Handler.php:64
+#: includes/Form_Handler.php:71
 msgid "Order key mismatch."
 msgstr "Key i porosisë nuk përputhet."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:78
+#: includes/Form_Handler.php:85
 msgid "Token not provided."
 msgstr "Token-i nuk është dhënë."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:92
+#: includes/Form_Handler.php:99
 msgid "Cashier token mismatch."
 msgstr "Token-i i arkëtarit nuk përputhet."
 
@@ -1307,21 +1300,21 @@ msgstr "Kartë"
 
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Fee line-item name for cashback charged on card payment.
-#: includes/Gateways/Card.php:60
-#: includes/Gateways/Card.php:63
-#: includes/Gateways/Card.php:141
-#: includes/Gateways/Card.php:223
+#: includes/Gateways/Card.php:67
+#: includes/Gateways/Card.php:70
+#: includes/Gateways/Card.php:148
+#: includes/Gateways/Card.php:230
 msgid "Cashback"
 msgstr "Kthim parash"
 
 #. translators: Checkout error shown when card nonce validation fails.
 #. translators: Checkout error shown when cash nonce validation fails.
-#: includes/Gateways/Card.php:82
-#: includes/Gateways/Cash.php:133
+#: includes/Gateways/Card.php:89
+#: includes/Gateways/Cash.php:135
 msgid "Nonce verification failed"
 msgstr "Verifikimi i nonce dështoi"
 
-#: includes/Gateways/Card.php:209
+#: includes/Gateways/Card.php:216
 msgid "Cashback amount must be zero or greater."
 msgstr "Shuma e kthimit të parave duhet të jetë zero ose më shumë."
 
@@ -1336,9 +1329,9 @@ msgstr "Para në dorë"
 #. translators: Cash checkout field label for the amount of money received from the customer.
 #. translators: Cash numpad label for the amount of money received from the customer.
 #. translators: Order note label for the cash amount received from the customer at checkout.
-#: includes/Gateways/Cash.php:83
-#: includes/Gateways/Cash.php:86
-#: includes/Gateways/Cash.php:203
+#: includes/Gateways/Cash.php:85
+#: includes/Gateways/Cash.php:88
+#: includes/Gateways/Cash.php:205
 msgid "Amount Tendered"
 msgstr "Shuma e marrë"
 
@@ -1346,7 +1339,7 @@ msgstr "Shuma e marrë"
 #. translators: Template-editor field label for total cash returned to the customer after payments; not "change" meaning modify.
 #. translators: Template-editor field label for cash returned to the customer after payment; not "change" meaning modify.
 #. translators: Receipt/payment label for cash returned to the customer when the received amount is greater than the total; not "change" meaning modify.
-#: includes/Gateways/Cash.php:91
+#: includes/Gateways/Cash.php:93
 #: includes/Services/Receipt_Data_Schema.php:813
 #: includes/Services/Receipt_Data_Schema.php:928
 #: includes/Services/Receipt_Data_Schema.php:1629
@@ -1357,25 +1350,25 @@ msgid "Change"
 msgstr "Kusur"
 
 #. translators: Checkout error shown when the cash amount tendered is less than the order balance.
-#: includes/Gateways/Cash.php:149
+#: includes/Gateways/Cash.php:151
 msgid ""
 "Enter the full amount here, or use the Cash tile to take a part payment."
 msgstr ""
 "Shkruani shumën e plotë këtu ose përdorni kutinë “Para në dorë” për të marrë një pagesë të pjesshme."
 
 #. translators: Money returned to the customer after a cash payment.
-#: includes/Gateways/Cash.php:205
+#: includes/Gateways/Cash.php:207
 msgctxt "Money returned from cash sale"
 msgid "Change"
 msgstr "Kusur"
 
-#: includes/Gateways/Cash.php:249
+#: includes/Gateways/Cash.php:251
 msgid "Partial cash payments are not supported by the POS API checkout flow."
 msgstr ""
 "Pagesat e pjesshme me para në dorë nuk mbështeten në rrjedhën e pagesës së API-së së POS-it."
 
 #. translators: Checkout validation error for the cash amount received from the customer.
-#: includes/Gateways/Cash.php:284
+#: includes/Gateways/Cash.php:286
 msgid "Tendered amount must be zero or greater."
 msgstr "Shuma e marrë duhet të jetë zero ose më shumë."
 
@@ -1770,7 +1763,7 @@ msgid "A payment command needs the order revision it was built against."
 msgstr ""
 "Komanda e pagesës ka nevojë për versionin e porosisë mbi të cilin u krijua."
 
-#: includes/Payments/Contract/Order_Lock.php:136
+#: includes/Payments/Contract/Order_Lock.php:140
 msgid "Another payment operation is running on this order."
 msgstr "Një veprim tjetër pagese po kryhet për këtë porosi."
 
@@ -1910,57 +1903,57 @@ msgid "POS audit metadata cannot be modified through this REST route."
 msgstr ""
 "Metadata e auditimit të POS-it nuk mund të ndryshohet përmes kësaj rruge REST."
 
-#: includes/Services/File_Integrity.php:225
+#: includes/Services/File_Integrity.php:243
 msgid "WCPOS file integrity"
 msgstr "Integriteti i skedarëve WCPOS"
 
-#: includes/Services/File_Integrity.php:254
+#: includes/Services/File_Integrity.php:272
 msgid "WCPOS"
 msgstr "WCPOS"
 
-#: includes/Services/File_Integrity.php:257
+#: includes/Services/File_Integrity.php:275
 msgid "WCPOS files match the published checksums"
 msgstr "Skedarët WCPOS përputhen me shumat kontrolluese të publikuara"
 
-#: includes/Services/File_Integrity.php:258
+#: includes/Services/File_Integrity.php:276
 msgid ""
 "Every WCPOS plugin file matches the checksums published for this version."
 msgstr ""
 "Çdo skedar i Plugin-it WCPOS përputhet me shumat kontrolluese të publikuara për këtë version."
 
-#: includes/Services/File_Integrity.php:263
+#: includes/Services/File_Integrity.php:281
 msgid "WCPOS files have not been checked yet"
 msgstr "Skedarët WCPOS nuk janë kontrolluar ende"
 
-#: includes/Services/File_Integrity.php:264
+#: includes/Services/File_Integrity.php:282
 msgid ""
 "A check of the WCPOS plugin files has been queued. Reload this page in a minute to see the result."
 msgstr ""
 "Kontrolli i skedarëve të Plugin-it WCPOS është vendosur në radhë. Ringarkojeni këtë faqe pas një minute për të parë rezultatin."
 
-#: includes/Services/File_Integrity.php:266
+#: includes/Services/File_Integrity.php:284
 msgid "WCPOS files could not be verified"
 msgstr "Skedarët WCPOS nuk mund të verifikoheshin"
 
-#: includes/Services/File_Integrity.php:267
+#: includes/Services/File_Integrity.php:285
 msgid ""
 "No checksums are published for this version of WCPOS, so its files were not compared. Development copies and older builds that do not ship checksums.json have none."
 msgstr ""
 "Nuk janë publikuar shuma kontrolluese për këtë version të WCPOS, ndaj skedarët nuk u krahasuan. Kopjet e zhvillimit dhe versionet e vjetra që nuk përfshijnë checksums.json nuk kanë të tilla."
 
-#: includes/Services/File_Integrity.php:274
+#: includes/Services/File_Integrity.php:292
 msgid "Some WCPOS files are missing or modified"
 msgstr "Disa skedarë WCPOS mungojnë ose janë ndryshuar"
 
 #. translators: 1: number of missing files, 2: number of modified files.
-#: includes/Services/File_Integrity.php:278
+#: includes/Services/File_Integrity.php:296
 #, php-format
 msgid ""
 "%1$d files are missing and %2$d files differ from the published version. An interrupted update can cause this, and it can make WCPOS fail to load."
 msgstr ""
 "Mungojnë %1$d skedarë dhe %2$d skedarë ndryshojnë nga versioni i publikuar. Kjo mund të ndodhë pas një përditësimi të ndërprerë dhe mund të pengojë ngarkimin e WCPOS."
 
-#: includes/Services/File_Integrity.php:283
+#: includes/Services/File_Integrity.php:301
 msgid "Reinstall the plugin to restore its files."
 msgstr "Rinstaloni Plugin-in për të rikthyer skedarët."
 
@@ -1978,15 +1971,15 @@ msgid "Invalid receipt document."
 msgstr "Dokumenti i kuponit është i pavlefshëm."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:96
-#: includes/Services/Fiscal_Record_Writers.php:261
+#: includes/Services/Fiscal_Record_Writers.php:114
+#: includes/Services/Fiscal_Record_Writers.php:405
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
 "Regjistrimi fiskal POS %s nuk mund të shkruhej; do të kërkojë rikuperim."
 
-#: includes/Services/Fiscal_Record_Writers.php:159
-#: includes/Services/Fiscal_Record_Writers.php:245
+#: includes/Services/Fiscal_Record_Writers.php:266
+#: includes/Services/Fiscal_Record_Writers.php:389
 msgid "POS fiscal sale record recovered."
 msgstr "U rikuperua regjistri fiskal i shitjes POS."
 
@@ -2004,12 +1997,17 @@ msgstr "Mbyllur"
 msgid "POS provenance keys cannot be changed after the sale: %s"
 msgstr "Çelësat e origjinës POS nuk mund të ndryshohen pas shitjes: %s"
 
+#. translators: Fallback cashier name shown when the POS cashier user cannot be found.
+#: includes/Services/Order_Notes.php:35
+msgid "Unknown"
+msgstr "I panjohur"
+
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:629
-#: includes/Templates/Payment.php:369
-#: tests/includes/Templates/Test_Receipt_Renderers.php:267
+#: includes/Services/Receipt_Data_Builder.php:631
+#: includes/Templates/Payment.php:413
+#: tests/includes/Templates/Test_Receipt_Renderers.php:269
 msgid "Guest"
 msgstr "Vizitor"
 
@@ -2017,9 +2015,9 @@ msgstr "Vizitor"
 #. translators: %d: Historical POS store ID that no longer exists.
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:609
-#: includes/Services/Receipt_Data_Builder.php:1037
-#: tests/includes/Services/Test_Receipt_Data_Builder.php:2004
+#: includes/Services/Receipt_Data_Builder.php:611
+#: includes/Services/Receipt_Data_Builder.php:1054
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:2170
 #, php-format
 msgid "Store #%d"
 msgstr "Dyqani #%d"
@@ -2029,6 +2027,12 @@ msgstr "Dyqani #%d"
 #, php-format
 msgid "Order created via POS by %1$s at %2$s."
 msgstr "Porosia u krijua përmes POS-it nga %1$s në %2$s."
+
+#. translators: 1: old POS cashier, 2: new POS cashier.
+#: includes/Services/Order_Notes.php:83
+#, php-format
+msgid "POS cashier changed from %1$s to %2$s."
+msgstr "Arkëtari POS u ndryshua nga %1$s në %2$s."
 
 #. translators: 1: old POS store, 2: new POS store.
 #: includes/Services/Order_Notes.php:94
@@ -2243,7 +2247,7 @@ msgstr ""
 "Kodi i zbritjes së shpejtë \"%s\" i përket një kuponi të dyqanit. Përdorni kod tjetër."
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:303
+#: includes/Services/Receipt_Data_Builder.php:305
 #, php-format
 msgid "Session %s"
 msgstr "Sesioni %s"
@@ -5207,11 +5211,11 @@ msgid "Duplicate printer id."
 msgstr "ID e printerit është e përsëritur."
 
 #. translators: Error message shown when invalid arguments are provided.
-#: includes/Services/Settings/Visibility_Section.php:130
+#: includes/Services/Settings/Visibility_Section.php:169
 msgid "Invalid arguments provided"
 msgstr "U dhanë argumente të pavlefshme"
 
-#: includes/Services/Settings/Visibility_Section.php:142
+#: includes/Services/Settings/Visibility_Section.php:181
 msgid "Invalid visibility option provided"
 msgstr "U dha një opsion i pavlefshëm dukshmërie"
 
@@ -5285,17 +5289,17 @@ msgid ""
 msgstr ""
 "Hook-u i panjohur i Collection Rules \"%s\"; vlera u kalua pa ndryshime."
 
-#: includes/Sync/Health.php:82
+#: includes/Sync/Health.php:107
 msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""
 "Depoja Sync e WCPOS nuk është instaluar ende (po inicializohet ose instalimi i skemës dështoi). Provoni sërish pas pak."
 
-#: includes/Sync/Order_Write_Payload.php:374
+#: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "date_created_gmt nuk mund të jetë më shumë se 24 orë në të ardhmen."
 
-#: includes/Sync/Order_Write_Payload.php:380
+#: includes/Sync/Order_Write_Payload.php:441
 msgid "date_created_gmt must be a valid ISO 8601 UTC date."
 msgstr "date_created_gmt duhet të jetë një datë e vlefshme ISO 8601 UTC."
 
@@ -6212,83 +6216,83 @@ msgid ""
 msgstr ""
 "Fleta e arkëtarit për qesen e parave: fondi fillestar, pagesat e numëruara, prerjet monetare, lëvizjet, shënimi dhe rreshtat e nënshkrimit. Pa të dhëna shitjesh ose taksash."
 
-#: includes/Templates/Payment.php:200
+#: includes/Templates/Payment.php:201
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Na vjen keq, kjo porosi nuk mund të paguhet. Çelësi i porosisë mungon ose është i pavlefshëm."
 
-#: includes/Templates/Payment.php:219
+#: includes/Templates/Payment.php:220
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Kjo porosi nuk mund të paguhet. Ju lutemi na kontaktoni nëse keni nevojë për ndihmë."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:227
+#: includes/Templates/Payment.php:228
 msgid "Pay for order"
 msgstr "Paguani porosinë"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:268
+#: includes/Templates/Payment.php:312
 msgid "Checkout Settings"
 msgstr "Cilësimet e pagesës"
 
-#: includes/Templates/Payment.php:274
+#: includes/Templates/Payment.php:318
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Skriptet dhe stilet mund të ndërhyjnë te modeli i personalizuar i pagesës; përdorni këtë formular për të hequr nga radha skriptet problematike."
 
-#: includes/Templates/Payment.php:276
+#: includes/Templates/Payment.php:320
 msgid "Disable All Styles and Scripts"
 msgstr "Çaktivizoni të gjitha stilet dhe skriptet"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:279
+#: includes/Templates/Payment.php:323
 msgid "Disable wp_head"
 msgstr "Çaktivizoni wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:284
+#: includes/Templates/Payment.php:328
 msgid "Disable wp_footer"
 msgstr "Çaktivizoni wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:289
+#: includes/Templates/Payment.php:333
 msgid "Disable Selected Styles"
 msgstr "Çaktivizoni stilet e zgjedhura"
 
-#: includes/Templates/Payment.php:296
-#: includes/Templates/Payment.php:308
+#: includes/Templates/Payment.php:340
+#: includes/Templates/Payment.php:352
 msgid "always removed on the POS payment page"
 msgstr "hiqet gjithmonë në faqen e pagesës POS"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:301
+#: includes/Templates/Payment.php:345
 msgid "Disable Selected Scripts"
 msgstr "Çaktivizoni skriptet e zgjedhura"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:314
+#: includes/Templates/Payment.php:358
 msgid "Submit"
 msgstr "Dërgoni"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:368
+#: includes/Templates/Payment.php:412
 msgid "Paying as customer"
 msgstr "Duke paguar si klient"
 
-#: includes/Templates/Payment.php:469
+#: includes/Templates/Payment.php:513
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Na vjen keq, kjo porosi është e pavlefshme dhe nuk mund të paguhet."
 
-#: includes/Templates/Payment.php:473
+#: includes/Templates/Payment.php:517
 msgid "Sorry, this order has already been paid for."
 msgstr "Na vjen keq, kjo porosi është paguar tashmë."
 
-#: includes/Templates/Payment.php:491
+#: includes/Templates/Payment.php:535
 msgid "You do not have permission to modify checkout settings."
 msgstr "Nuk keni leje të ndryshoni cilësimet e pagesës."
 
