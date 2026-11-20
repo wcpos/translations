@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Prisijungęs',
 		'POS Cashier' => 'POS kasos darbuotojas',
 		'Search for a cashier&hellip;' => 'Ieškoti kasos darbuotojo&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS kasininko arba parduotuvės pakeitimas nebuvo pritaikytas, nes nepavyko įrašyti pakeitimo įrašo. Bandykite dar kartą.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS bazė',
 		'Important:' => 'Svarbu:',
 		'Major Update' => 'Didelis atnaujinimas',

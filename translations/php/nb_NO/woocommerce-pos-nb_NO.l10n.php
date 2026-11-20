@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'POS Kasserer',
 		'Search for a cashier&hellip;' => 'Søk etter en kasserer&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Endringen av POS-kassemedarbeider eller butikk ble ikke brukt fordi endringen ikke kunne lagres. Prøv igjen.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS-grunnlag',
 		'Important:' => 'Viktig:',
 		'Major Update' => 'Stor oppdatering',

@@ -38,6 +38,7 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'Arkëtar POS',
 		'Search for a cashier&hellip;' => 'Kërkoni arkëtar&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Ndryshimi i arkëtarit ose i dyqanit në POS nuk u zbatua, sepse regjistrimi i ndryshimit nuk mund të ruhej. Provoni përsëri.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Bazë POS',
 		'Important:' => 'E rëndësishme:',
 		'Major Update' => 'Përditësim madhor',

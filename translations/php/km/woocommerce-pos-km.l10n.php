@@ -40,6 +40,7 @@ return array(
 		'Online' => 'អនឡាញ',
 		'POS Cashier' => 'អ្នកគិតលុយ POS',
 		'Search for a cashier&hellip;' => 'ស្វែងរកអ្នកគិតលុយ&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'មិនអាចអនុវត្តការផ្លាស់ប្តូរអ្នកគិតលុយ ឬហាង POS បានទេ ព្រោះមិនអាចរក្សាទុកកំណត់ត្រាការផ្លាស់ប្តូរ។ សូមព្យាយាមម្តងទៀត។',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'មូលដ្ឋាន POS',
 		'Important:' => 'សំខាន់:',
 		'Major Update' => 'បច្ចុប្បន្នភាពធំ',

@@ -40,6 +40,7 @@ return array(
 		'Online' => 'オンライン',
 		'POS Cashier' => 'POSレジ係',
 		'Search for a cashier&hellip;' => 'レジ係を検索&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POSのレジ係または店舗の変更を適用できませんでした。変更記録を保存できませんでした。もう一度お試しください。',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS基本',
 		'Important:' => '重要:',
 		'Major Update' => '主要な更新',

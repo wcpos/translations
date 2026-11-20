@@ -40,6 +40,7 @@ return array(
 		'Online' => '在线',
 		'POS Cashier' => 'POS收银员',
 		'Search for a cashier&hellip;' => '搜索收银员&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => '未能应用 POS 收银员或门店的更改，因为无法写入更改记录。请重试。',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS 基础',
 		'Important:' => '重要：',
 		'Major Update' => '重大更新',

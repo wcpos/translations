@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'POS-Kassierer',
 		'Search for a cashier&hellip;' => 'Nach einem Kassierer suchen&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Die Änderung des POS-Kassierers oder Geschäfts wurde nicht übernommen, weil der Änderungsdatensatz nicht gespeichert werden konnte. Bitte erneut versuchen.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS-Basis',
 		'Important:' => 'Wichtig:',
 		'Major Update' => 'Großes Update',

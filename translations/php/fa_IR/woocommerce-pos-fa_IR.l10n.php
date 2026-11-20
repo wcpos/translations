@@ -40,6 +40,7 @@ return array(
 		'Online' => 'آنلاین',
 		'POS Cashier' => 'صندوقدار POS',
 		'Search for a cashier&hellip;' => 'جستجوی صندوقدار&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'تغییر صندوقدار یا فروشگاه POS اعمال نشد، چون ثبت سابقهٔ تغییر ممکن نبود. دوباره تلاش کنید.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'مبنای POS',
 		'Important:' => 'مهم:',
 		'Major Update' => 'به‌روزرسانی عمده',

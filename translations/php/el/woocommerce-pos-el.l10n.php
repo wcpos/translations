@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Σε σύνδεση',
 		'POS Cashier' => 'Ταμίας POS',
 		'Search for a cashier&hellip;' => 'Αναζήτηση ταμία&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Η αλλαγή ταμία ή καταστήματος στο POS δεν εφαρμόστηκε, επειδή δεν ήταν δυνατή η αποθήκευση της εγγραφής αλλαγής. Δοκιμάστε ξανά.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Βάση POS',
 		'Important:' => 'Σημαντικό:',
 		'Major Update' => 'Μεγάλη Ενημέρωση',

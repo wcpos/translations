@@ -40,6 +40,7 @@ return array(
 		'Online' => 'ออนไลน์',
 		'POS Cashier' => 'แคชเชียร์ POS',
 		'Search for a cashier&hellip;' => 'ค้นหาแคชเชียร์&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'ไม่สามารถใช้การเปลี่ยนแปลงแคชเชียร์หรือร้านค้า POS ได้ เนื่องจากบันทึกการเปลี่ยนแปลงไม่สำเร็จ โปรดลองอีกครั้ง',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'ฐาน POS',
 		'Important:' => 'สำคัญ:',
 		'Major Update' => 'อัปเดตใหญ่',

@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Online',
 		'POS Cashier' => 'Caixa POS',
 		'Search for a cashier&hellip;' => 'Procurar por um caixa&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'A alteração do caixa ou da loja do PDV não foi aplicada porque não foi possível salvar o registro da alteração. Tente novamente.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Base do POS',
 		'Important:' => 'Importante:',
 		'Major Update' => 'Atualização Importante',

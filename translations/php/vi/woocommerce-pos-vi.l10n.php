@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Trực tuyến',
 		'POS Cashier' => 'Thu ngân POS',
 		'Search for a cashier&hellip;' => 'Tìm kiếm thu ngân&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'Không thể áp dụng thay đổi thu ngân hoặc cửa hàng POS vì không ghi được bản ghi thay đổi. Hãy thử lại.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'Cơ sở POS',
 		'Important:' => 'Quan trọng:',
 		'Major Update' => 'Cập nhật lớn',

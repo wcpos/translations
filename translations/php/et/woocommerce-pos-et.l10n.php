@@ -40,6 +40,7 @@ return array(
 		'Online' => 'Veebis',
 		'POS Cashier' => 'POS Kassapidaja',
 		'Search for a cashier&hellip;' => 'Otsi kassapidajat&hellip;',
+		'POS cashier or store change was not applied because its change record could not be written. Try again.' => 'POS-kassapidaja või poe muudatust ei rakendatud, sest muudatuse kirjet ei õnnestunud salvestada. Proovi uuesti.',
 		'Permalink setting, eg: /pos' . "\x04" . 'POS base' => 'POS alus',
 		'Important:' => 'Oluline:',
 		'Major Update' => 'Suur uuendus',
