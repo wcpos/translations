@@ -73,7 +73,7 @@ return array(
 		'Cannot read signals for that role.' => 'No se pueden leer las señales para ese perfil.',
 		'You are not authorized for this store.' => 'No tiene autorización para esta tienda.',
 		'You do not have permission to manage plugins.' => 'No tienes permiso para gestionar plugins.',
-		'You do not have permission to update plugins.' => 'No tienes permiso para actualizar plugins.',
+		'You do not have permission to update plugins.' => 'No tiene permiso para actualizar extensiones.',
 		'Extension "%s" not found in catalog.' => 'Extensión "%s" no encontrada en el catálogo.',
 		'Invalid action.' => 'Acción no válida.',
 		'No download URL available for this extension.' => 'No hay URL de descarga disponible para esta extensión.',
