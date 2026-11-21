@@ -165,7 +165,7 @@ These terms should be translated using the standard retail/POS terminology for t
 - Plugin, Theme (WordPress terms)
 
 ### Abbreviations (keep abbreviated, do not expand)
-- Qty → keep as short form (e.g., "Qty" or local abbreviation like "Anz." in German, "Ctd." in Spanish)
+- Qty → keep as the locale's standard short form, at most 5 characters (count user-perceived characters, so a Devanagari or Khmer word counts as it renders). Use the recognised abbreviation where the language has one ("Anz." German, "Ctd." Spanish, "Qté" French, "Aant." Dutch, "Il." Polish, "Kiek." Lithuanian, "Кол." Russian, "Qt." Catalan, "Db" Hungarian, "Qty" Malay); where the language has no abbreviation convention (CJK, Thai, Arabic script, Hebrew, Indic, Khmer) use the shortest natural word ("كمية", not "الكمية"). The cart column header `pos_cart.qty_abbrev` is narrow: never expand it to a word longer than 5 characters (Paul, 2026-11-18).
 - No. → keep as abbreviation for "Number"
 - ID → never spell out as "Identifier" or "Identification"
 - Min, Max → keep abbreviated
