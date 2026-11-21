@@ -9,7 +9,7 @@ CLAUDE_REVIEW_MODEL=sonnet # Default model for Claude review pass.
 DEFAULT_EFFORT=medium # Codex reasoning effort.
 MAX_PER_CALL=100 # Maximum summed packet items per call; larger locale packets are split into parts. gpt-6-luna returns nothing for ~200-item chunks (#410, #420).
 CALL_TIMEOUT=1800 # Seconds allowed for each translation or review call.
-RETRY_AFTER=86400 # Seconds before retrying work that an earlier run left untranslated.
+RETRY_AFTER=86400 # Seconds before retrying work that an earlier run made no progress on.
 
 log() { printf '[translate-local] %s\n' "$*"; }
 TRANSLATOR=${TRANSLATE_TRANSLATOR:-$DEFAULT_TRANSLATOR}
@@ -225,9 +225,13 @@ APPLY_SUMMARY=$(node scripts/apply-translations.js --work .translate/work --resu
 log "$APPLY_SUMMARY"
 if [ "$SKIP_MODEL" -eq 0 ] || [ "$TOTAL" -eq 0 ]; then
   REMAINING_SUMMARY=$(node scripts/translation-worklist.js "${WORKLIST_ARGS[@]}" --out .translate/remaining)
+  REMAINING_HASH=
   if [ "$(printf '%s' "$REMAINING_SUMMARY" | jq -r .total)" -gt 0 ]; then
     REMAINING_HASH=$(cat .translate/remaining/*.json | shasum -a 256 | cut -d' ' -f1)
-    printf '%s\n' "$(date +%s)" "$WORK_HASH" "$REMAINING_HASH" > "$STATE"
+  fi
+  # Back off only when nothing changed; a run that made progress clears the state so its leftover gets one retry on the next poll.
+  if [ -n "$REMAINING_HASH" ] && [ "$REMAINING_HASH" = "$WORK_HASH" ]; then
+    printf '%s\n' "$(date +%s)" "$WORK_HASH" > "$STATE"
   else
     rm -f "$STATE"
   fi
