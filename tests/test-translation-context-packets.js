@@ -88,6 +88,14 @@ test('matches glossary concepts by full source term, not arbitrary substring', (
   assert.ok(!contender.some(concept => concept.id === 'amount_tendered'));
 });
 
+test('matches change-as-modification concept on the cashier or store change error, not on Change due', () => {
+  const matches = matchConcepts('POS cashier or store change was not applied because its change record could not be written. Try again.');
+  assert.ok(matches.some(concept => concept.id === 'change_as_modification'));
+
+  const changeDue = matchConcepts('Change due');
+  assert.ok(!changeDue.some(concept => concept.id === 'change_as_modification'));
+});
+
 test('matches multi-word glossary concepts across punctuation', () => {
   const matches = matchConcepts('Amount-Tendered');
   assert.ok(matches.some(concept => concept.id === 'amount_tendered'));
