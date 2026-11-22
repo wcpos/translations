@@ -34,10 +34,24 @@ function termMatchesSource(source, term) {
   return fullWord.test(normalizedSource);
 }
 
-function matchConcepts(source, concepts = loadConcepts()) {
+function keyMatchesAny(key, patterns) {
+  return typeof key === 'string' && patterns.some(pattern => new RegExp(pattern, 'u').test(key));
+}
+
+// `key` is the JS translation key, or undefined for PO entries. `exclude_keys`
+// drops a concept for matching keys; `only_keys` limits it to matching keys
+// (never matches without a key). Both narrow the source_terms check.
+function conceptAppliesToKey(concept, key) {
+  if (concept.exclude_keys && keyMatchesAny(key, concept.exclude_keys)) return false;
+  if (concept.only_keys && !keyMatchesAny(key, concept.only_keys)) return false;
+  return true;
+}
+
+function matchConcepts(source, concepts = loadConcepts(), key) {
   const matches = [];
   for (const concept of concepts) {
-    if ((concept.source_terms || []).some(term => termMatchesSource(source, term))) {
+    if ((concept.source_terms || []).some(term => termMatchesSource(source, term))
+      && conceptAppliesToKey(concept, key)) {
       matches.push({
         id: concept.id,
         meaning: concept.meaning,

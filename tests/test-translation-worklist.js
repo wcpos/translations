@@ -151,3 +151,24 @@ try {
     fs.rmSync(rootDir, { recursive: true, force: true });
   }
 }
+
+{
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'translation-worklist-concept-keys-'));
+  try {
+    fs.mkdirSync(path.join(rootDir, 'source/js/monorepo'), { recursive: true });
+    fs.mkdirSync(path.join(rootDir, 'source/php'), { recursive: true });
+    fs.mkdirSync(path.join(rootDir, 'scripts'));
+    fs.writeFileSync(path.join(rootDir, 'locales.json'), JSON.stringify({ en: 'English', ja: 'Japanese' }));
+    fs.writeFileSync(path.join(rootDir, 'scripts/translation-glossary.json'), '{}');
+    fs.writeFileSync(path.join(rootDir, 'source/js/monorepo/core.json'), JSON.stringify({
+      'pos_checkout.change_reader': 'Change',
+      'register.reason_change': 'Change',
+    }));
+    const ja = buildWorklist({ rootDir }).packets.find(packet => packet.locale === 'ja');
+    const ids = key => ja.js['monorepo/core.json'][key].concepts.map(concept => concept.id);
+    assert.ok(!ids('pos_checkout.change_reader').includes('change_due'), 'change_reader must not get change_due');
+    assert.ok(ids('register.reason_change').includes('change_due'), 'reason_change must get change_due');
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+}
