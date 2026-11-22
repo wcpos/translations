@@ -29,15 +29,18 @@ field (for example `da`, not `da.part1`). A packet contains:
 
 - `locale`, `locale_name`: the exact regional locale. Translate for that region, so
   `es_MX` is not `es_ES` and `fr_CA` is not `fr_FR`.
-- `js["<project>/<file>.json"]["<key>"] = { source, plural_category?, concepts }`.
+- `js["<project>/<file>.json"]["<key>"] = { source, plural_category?, concepts, same_source? }`.
   `plural_category` (`zero`/`one`/`two`/`few`/`many`/`other`) means that the key is
   the i18next plural form for that CLDR category. Translate the source as that form
   in this locale. The key name often hints at where the string appears.
-- `php["<domain>"].entries[] = { id, msgctxt?, msgid, msgid_plural?, forms, translator_notes, references, concepts }`.
+- `php["<domain>"].entries[] = { id, msgctxt?, msgid, msgid_plural?, forms, translator_notes, references, concepts, same_source? }`.
   `forms` is the number of gettext plural forms that this locale needs. `plural_expression`
   says which `n` values each index covers. Singular entries have `forms: 1`.
 - `concepts`: disambiguation hints for words like Tender, Change, Void, Key and State.
   Follow the meaning, and never use a listed `avoid_meanings` sense.
+- `same_source` (singular entries only): how this locale already translates the identical
+  English elsewhere. Absent when there is none.
+- `short_forms`: English abbreviations and clipped words mapped to the form this locale must use.
 
 ## Results files
 
@@ -61,7 +64,19 @@ Write exactly one JSON file per packet, at the given results path, with this sha
   and `<link>`. Translate only the text between tags.
 - Write `WCPOS` / `WCPOS Pro` for the product, never `WooCommerce POS`.
 - Use natural target-language UI copy, not English word order. Follow the locale's
-  capitalization conventions and keep the length close to the source.
+  capitalization conventions.
+- When the English is an abbreviation or a clipped UI word (Qty, Min, Max, Avg, No., ID,
+  FAQ, Sync, OK, Eco, h/min/s), use the locale's standard short form, never the full word.
+  If the locale has no short form, use the shortest natural word. A source of 6 characters
+  or fewer must not translate to more than 10.
+- Keys containing `col_`, `_abbrev`, `_short`, `header_`, `_tile`, `status_`, `level_` or
+  `kind_` are column headers, chips or tiles on one line. Prefer a noun or a standard
+  abbreviation, never a phrase. Single-word sources on buttons take the shortest imperative
+  or infinitive the locale's UI convention uses.
+- The packet's `short_forms` maps English to the required form for that locale. When a source
+  equals a `short_forms` key (ignoring case and a trailing period), use that value exactly.
+- When an entry has `same_source`, the locale already translates the identical English that
+  way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense.
 
 ## Rules
 
