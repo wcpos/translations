@@ -67,8 +67,11 @@ Write exactly one JSON file per packet, at the given results path, with this sha
   capitalization conventions.
 - When the English is an abbreviation or a clipped UI word (Qty, Min, Max, Avg, No., ID,
   FAQ, Sync, OK, Eco, h/min/s), use the locale's standard short form, never the full word.
-  If the locale has no short form, use the shortest natural word. A source of 6 characters
-  or fewer must not translate to more than 10.
+  If the locale has no short form, use the shortest natural word. Abbreviate only where the
+  locale has a standard abbreviation or a `short_forms` entry; never invent one.
+- Length target for short labels: aim to keep a source of 9 characters or fewer within the
+  source length + 6 (twice the source length for CJK). This is a target, not a ban: a
+  correct full word beats an invented abbreviation (de "Orders" stays "Bestellungen").
 - Keys containing `col_`, `_abbrev`, `_short`, `header_`, `_tile`, `status_`, `level_` or
   `kind_` are column headers, chips or tiles on one line. Prefer a noun or a standard
   abbreviation, never a phrase. Single-word sources on buttons take the shortest imperative
