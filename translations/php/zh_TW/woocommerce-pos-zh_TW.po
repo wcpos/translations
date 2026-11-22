@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:1049
+#: includes/Activator.php:1051
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> 需要 PHP %1$s 或更高版本。閱讀更多關於<a href=\"%2$s\">如何更新</a>的信息"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:1073
+#: includes/Activator.php:1075
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,13 +54,13 @@ msgstr ""
 "<strong>WCPOS</strong> 需要 <a href=\"%1$s\">WooCommerce %2$s 或更高版本</a>。請<a href=\"%3$s\">安裝並啟用 WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1095
+#: includes/Activator.php:1097
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr "<strong>WooCommerce REST API</strong> 需要<em>漂亮的</em>永久連結才能正常工作"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1096
+#: includes/Activator.php:1098
 msgid "Enable permalinks"
 msgstr "啟用永久連結"
 
@@ -68,17 +68,17 @@ msgstr "啟用永久連結"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:1347
+#: includes/Activator.php:1351
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:351
+#: includes/Templates/Payment.php:395
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "收銀員"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1574
+#: includes/Activator.php:1578
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -165,28 +165,20 @@ msgid "Online"
 msgstr "線上"
 
 #. translators: Order list label shown in WooCommerce admin for POS orders.
-#: includes/Admin/Orders/Single_Order.php:69
+#: includes/Admin/Orders/Single_Order.php:70
 msgid "POS Cashier"
 msgstr "POS 收銀員"
 
 #. translators: Order list label shown in WooCommerce admin for POS orders.
-#: includes/Admin/Orders/Single_Order.php:70
+#: includes/Admin/Orders/Single_Order.php:71
 msgid "Search for a cashier&hellip;"
 msgstr "搜尋收銀員&hellip;"
 
-#. translators: 1: old POS cashier, 2: new POS cashier.
-#: includes/Admin/Orders/Single_Order.php:112
-#: includes/Services/Order_Notes.php:83
-#, php-format
-msgid "POS cashier changed from %1$s to %2$s."
-msgstr "POS 收銀員已從 %1$s 更改為 %2$s。"
-
-#. translators: Fallback cashier name shown when the POS cashier user cannot be found.
 #: includes/Admin/Orders/Single_Order.php:113
-#: includes/Admin/Orders/Single_Order.php:114
-#: includes/Services/Order_Notes.php:35
-msgid "Unknown"
-msgstr "未知"
+#: includes/API/V2/Writers/Order_Writer.php:843
+msgid ""
+"POS cashier or store change was not applied because its change record could not be written. Try again."
+msgstr "無法套用 POS 收銀員或商店的變更，因為無法寫入變更記錄。請再試一次。"
 
 #. translators: Permalink settings label for the POS base URL.
 #: includes/Admin/Permalink.php:91
@@ -195,27 +187,27 @@ msgid "POS base"
 msgstr "POS 基礎"
 
 #. translators: Prefix for an important plugin update notice in the WordPress plugins screen.
-#: includes/Admin/Plugins.php:84
+#: includes/Admin/Plugins.php:88
 msgid "Important:"
 msgstr "重要："
 
 #. translators: Plugin admin screen label or notice for WCPOS.
-#: includes/Admin/Plugins.php:98
+#: includes/Admin/Plugins.php:102
 msgid "Major Update"
 msgstr "重大更新"
 
-#: includes/Admin/Plugins.php:101
+#: includes/Admin/Plugins.php:105
 msgid ""
 "Update when you have time to test the POS. You can rollback to the previous version if needed."
 msgstr "有時間測試 POS 時再更新。如有需要，您可以回滾到先前版本。"
 
 #. translators: Plugin admin screen label or notice for WCPOS.
-#: includes/Admin/Plugins.php:105
+#: includes/Admin/Plugins.php:109
 msgid "Pro Users:"
 msgstr "Pro 用戶："
 
 #. translators: %s: URL to My Account page
-#: includes/Admin/Plugins.php:109
+#: includes/Admin/Plugins.php:113
 #, php-format
 msgid ""
 "WCPOS Pro is now a standalone plugin. Download the latest version from %s"
@@ -310,12 +302,12 @@ msgstr "更新時，型錄可見度會恢復為「%s」。如需其他設定，�
 #. translators: Short WCPOS UI label; keep concise.
 #. translators: Checkout/payment form error message title.
 #: includes/Admin/Settings.php:60
-#: includes/Form_Handler.php:54
-#: includes/Form_Handler.php:66
-#: includes/Form_Handler.php:80
-#: includes/Form_Handler.php:94
-#: includes/Templates/Payment.php:202
-#: includes/Templates/Payment.php:493
+#: includes/Form_Handler.php:61
+#: includes/Form_Handler.php:73
+#: includes/Form_Handler.php:87
+#: includes/Form_Handler.php:101
+#: includes/Templates/Payment.php:203
+#: includes/Templates/Payment.php:537
 #: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "錯誤"
@@ -500,31 +492,31 @@ msgstr "無法取得商店資料。"
 msgid "Store not found or not accessible by this cashier."
 msgstr "找不到商店或此收銀員無法存取。"
 
-#: includes/API/V1/Checkout_Controller.php:103
+#: includes/API/V1/Checkout_Controller.php:104
 msgid "Sorry, you cannot view checkout state."
 msgstr "抱歉，你無法查看結帳狀態。"
 
-#: includes/API/V1/Checkout_Controller.php:114
+#: includes/API/V1/Checkout_Controller.php:115
 msgid "Sorry, you cannot process checkout."
 msgstr "抱歉，你無法處理結帳。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:142
+#: includes/API/V1/Checkout_Controller.php:143
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "缺少 X-WCPOS-Idempotency-Key 標頭。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:153
-#: includes/API/V1/Gateway_Bootstrap_Controller.php:98
+#: includes/API/V1/Checkout_Controller.php:154
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:99
 msgid "Payment gateway not found."
 msgstr "找不到付款閘道。"
 
-#: includes/API/V1/Checkout_Controller.php:161
+#: includes/API/V1/Checkout_Controller.php:162
 msgid "Payment gateway is not available for POS checkout."
 msgstr "付款閘道不適用於 POS 結帳。"
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:282
+#: includes/API/V1/Checkout_Controller.php:283
 #: includes/API/V1/Receipts_Controller.php:283
 #: includes/API/V2/Payments_Controller.php:433
 #: includes/Payments/Contract/Settlement.php:92
@@ -587,7 +579,7 @@ msgstr "無法重新整理擴充功能。請再試一次。"
 msgid "You do not have permission to view extensions."
 msgstr "您沒有權限查看擴充功能。"
 
-#: includes/API/V1/Gateway_Bootstrap_Controller.php:82
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:83
 msgid "Sorry, you cannot bootstrap payment gateways."
 msgstr "抱歉，你無法初始化付款閘道。"
 
@@ -1247,29 +1239,29 @@ msgid "The session request could not be completed."
 msgstr "無法完成工作階段要求。"
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:589
+#: includes/API/V2/Writers/Order_Writer.php:590
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr "WCPOS：無法依 %2$s 調整 %1$s 的庫存；請手動核對該商品的庫存。"
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
-#: includes/Form_Handler.php:52
+#: includes/Form_Handler.php:59
 msgid "Order does not exist."
 msgstr "訂單不存在。"
 
 #. translators: Checkout/payment form error message shown when the order key does not match.
-#: includes/Form_Handler.php:64
+#: includes/Form_Handler.php:71
 msgid "Order key mismatch."
 msgstr "訂單金鑰不匹配。"
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:78
+#: includes/Form_Handler.php:85
 msgid "Token not provided."
 msgstr "未提供令牌。"
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:92
+#: includes/Form_Handler.php:99
 msgid "Cashier token mismatch."
 msgstr "收銀員令牌不匹配。"
 
@@ -1280,21 +1272,21 @@ msgstr "信用卡"
 
 #. translators: POS payment gateway label shown during checkout.
 #. translators: Fee line-item name for cashback charged on card payment.
-#: includes/Gateways/Card.php:60
-#: includes/Gateways/Card.php:63
-#: includes/Gateways/Card.php:141
-#: includes/Gateways/Card.php:223
+#: includes/Gateways/Card.php:67
+#: includes/Gateways/Card.php:70
+#: includes/Gateways/Card.php:148
+#: includes/Gateways/Card.php:230
 msgid "Cashback"
 msgstr "現金回饋"
 
 #. translators: Checkout error shown when card nonce validation fails.
 #. translators: Checkout error shown when cash nonce validation fails.
-#: includes/Gateways/Card.php:82
-#: includes/Gateways/Cash.php:133
+#: includes/Gateways/Card.php:89
+#: includes/Gateways/Cash.php:135
 msgid "Nonce verification failed"
 msgstr "隨機數驗證失敗"
 
-#: includes/Gateways/Card.php:209
+#: includes/Gateways/Card.php:216
 msgid "Cashback amount must be zero or greater."
 msgstr "現金回饋金額必須大於或等於 0。"
 
@@ -1309,9 +1301,9 @@ msgstr "現金"
 #. translators: Cash checkout field label for the amount of money received from the customer.
 #. translators: Cash numpad label for the amount of money received from the customer.
 #. translators: Order note label for the cash amount received from the customer at checkout.
-#: includes/Gateways/Cash.php:83
-#: includes/Gateways/Cash.php:86
-#: includes/Gateways/Cash.php:203
+#: includes/Gateways/Cash.php:85
+#: includes/Gateways/Cash.php:88
+#: includes/Gateways/Cash.php:205
 msgid "Amount Tendered"
 msgstr "實收金額"
 
@@ -1319,7 +1311,7 @@ msgstr "實收金額"
 #. translators: Template-editor field label for total cash returned to the customer after payments; not "change" meaning modify.
 #. translators: Template-editor field label for cash returned to the customer after payment; not "change" meaning modify.
 #. translators: Receipt/payment label for cash returned to the customer when the received amount is greater than the total; not "change" meaning modify.
-#: includes/Gateways/Cash.php:91
+#: includes/Gateways/Cash.php:93
 #: includes/Services/Receipt_Data_Schema.php:813
 #: includes/Services/Receipt_Data_Schema.php:928
 #: includes/Services/Receipt_Data_Schema.php:1629
@@ -1330,23 +1322,23 @@ msgid "Change"
 msgstr "找零"
 
 #. translators: Checkout error shown when the cash amount tendered is less than the order balance.
-#: includes/Gateways/Cash.php:149
+#: includes/Gateways/Cash.php:151
 msgid ""
 "Enter the full amount here, or use the Cash tile to take a part payment."
 msgstr "在此輸入全額，或使用「現金」磚塊收取部分款項。"
 
 #. translators: Money returned to the customer after a cash payment.
-#: includes/Gateways/Cash.php:205
+#: includes/Gateways/Cash.php:207
 msgctxt "Money returned from cash sale"
 msgid "Change"
 msgstr "找零"
 
-#: includes/Gateways/Cash.php:249
+#: includes/Gateways/Cash.php:251
 msgid "Partial cash payments are not supported by the POS API checkout flow."
 msgstr "POS API 結帳流程不支援部分現金付款。"
 
 #. translators: Checkout validation error for the cash amount received from the customer.
-#: includes/Gateways/Cash.php:284
+#: includes/Gateways/Cash.php:286
 msgid "Tendered amount must be zero or greater."
 msgstr "實收金額必須大於或等於 0。"
 
@@ -1723,7 +1715,7 @@ msgstr "命令 ID 必須是 UUID。"
 msgid "A payment command needs the order revision it was built against."
 msgstr "付款命令需要其建立時所依據的訂單修訂版本。"
 
-#: includes/Payments/Contract/Order_Lock.php:136
+#: includes/Payments/Contract/Order_Lock.php:140
 msgid "Another payment operation is running on this order."
 msgstr "此訂單目前正在執行另一項付款作業。"
 
@@ -1771,6 +1763,10 @@ msgstr "相同的請求正在處理中。"
 #: includes/Services/Auth.php:484
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT配置不正確，請聯繫管理員"
+
+#: includes/Services/Auth.php:539
+msgid "The sign-in could not be saved, please try again."
+msgstr "無法儲存登入資訊，請再試一次。"
 
 #. translators: %s: Comma-separated missing capability names.
 #: includes/Services/Cashier.php:249
@@ -1858,53 +1854,53 @@ msgstr "中繼註冊傳回無效憑證。"
 msgid "POS audit metadata cannot be modified through this REST route."
 msgstr "無法透過此 REST 路由修改 POS 稽核中繼資料。"
 
-#: includes/Services/File_Integrity.php:225
+#: includes/Services/File_Integrity.php:243
 msgid "WCPOS file integrity"
 msgstr "WCPOS 檔案完整性"
 
-#: includes/Services/File_Integrity.php:254
+#: includes/Services/File_Integrity.php:272
 msgid "WCPOS"
 msgstr "WCPOS"
 
-#: includes/Services/File_Integrity.php:257
+#: includes/Services/File_Integrity.php:275
 msgid "WCPOS files match the published checksums"
 msgstr "WCPOS 檔案與已發布的檢查碼相符"
 
-#: includes/Services/File_Integrity.php:258
+#: includes/Services/File_Integrity.php:276
 msgid ""
 "Every WCPOS plugin file matches the checksums published for this version."
 msgstr "所有 WCPOS 外掛檔案皆與此版本發布的檢查碼相符。"
 
-#: includes/Services/File_Integrity.php:263
+#: includes/Services/File_Integrity.php:281
 msgid "WCPOS files have not been checked yet"
 msgstr "尚未檢查 WCPOS 檔案"
 
-#: includes/Services/File_Integrity.php:264
+#: includes/Services/File_Integrity.php:282
 msgid ""
 "A check of the WCPOS plugin files has been queued. Reload this page in a minute to see the result."
 msgstr "已將 WCPOS 外掛檔案檢查加入佇列。請在一分鐘後重新載入此頁面以查看結果。"
 
-#: includes/Services/File_Integrity.php:266
+#: includes/Services/File_Integrity.php:284
 msgid "WCPOS files could not be verified"
 msgstr "無法驗證 WCPOS 檔案"
 
-#: includes/Services/File_Integrity.php:267
+#: includes/Services/File_Integrity.php:285
 msgid ""
 "No checksums are published for this version of WCPOS, so its files were not compared. Development copies and older builds that do not ship checksums.json have none."
 msgstr "此版本的 WCPOS 未發布檢查碼，因此未比較檔案。開發用副本和未隨附 checksums.json 的舊版也沒有檢查碼。"
 
-#: includes/Services/File_Integrity.php:274
+#: includes/Services/File_Integrity.php:292
 msgid "Some WCPOS files are missing or modified"
 msgstr "部分 WCPOS 檔案遺失或已修改"
 
 #. translators: 1: number of missing files, 2: number of modified files.
-#: includes/Services/File_Integrity.php:278
+#: includes/Services/File_Integrity.php:296
 #, php-format
 msgid ""
 "%1$d files are missing and %2$d files differ from the published version. An interrupted update can cause this, and it can make WCPOS fail to load."
 msgstr "遺失 %1$d 個檔案，另有 %2$d 個檔案與已發布版本不同。更新中斷可能造成此問題，並導致 WCPOS 無法載入。"
 
-#: includes/Services/File_Integrity.php:283
+#: includes/Services/File_Integrity.php:301
 msgid "Reinstall the plugin to restore its files."
 msgstr "重新安裝外掛以還原檔案。"
 
@@ -1922,14 +1918,14 @@ msgid "Invalid receipt document."
 msgstr "收據文件無效。"
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:96
-#: includes/Services/Fiscal_Record_Writers.php:261
+#: includes/Services/Fiscal_Record_Writers.php:114
+#: includes/Services/Fiscal_Record_Writers.php:405
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "無法寫入 POS 稅務 %s 紀錄；需要復原處理。"
 
-#: includes/Services/Fiscal_Record_Writers.php:159
-#: includes/Services/Fiscal_Record_Writers.php:245
+#: includes/Services/Fiscal_Record_Writers.php:266
+#: includes/Services/Fiscal_Record_Writers.php:389
 msgid "POS fiscal sale record recovered."
 msgstr "已復原 POS 銷售的稅務紀錄。"
 
@@ -1947,12 +1943,17 @@ msgstr "已關閉"
 msgid "POS provenance keys cannot be changed after the sale: %s"
 msgstr "銷售完成後，無法變更 POS 來源 Key：%s"
 
+#. translators: Fallback cashier name shown when the POS cashier user cannot be found.
+#: includes/Services/Order_Notes.php:35
+msgid "Unknown"
+msgstr "未知"
+
 #. translators: Customer name shown in an order note for a guest checkout.
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
-#: includes/Services/Receipt_Data_Builder.php:629
-#: includes/Templates/Payment.php:369
-#: tests/includes/Templates/Test_Receipt_Renderers.php:267
+#: includes/Services/Receipt_Data_Builder.php:631
+#: includes/Templates/Payment.php:413
+#: tests/includes/Templates/Test_Receipt_Renderers.php:269
 msgid "Guest"
 msgstr "訪客"
 
@@ -1960,9 +1961,9 @@ msgstr "訪客"
 #. translators: %d: Historical POS store ID that no longer exists.
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
-#: includes/Services/Receipt_Data_Builder.php:609
-#: includes/Services/Receipt_Data_Builder.php:1037
-#: tests/includes/Services/Test_Receipt_Data_Builder.php:2004
+#: includes/Services/Receipt_Data_Builder.php:611
+#: includes/Services/Receipt_Data_Builder.php:1054
+#: tests/includes/Services/Test_Receipt_Data_Builder.php:2170
 #, php-format
 msgid "Store #%d"
 msgstr "門市 #%d"
@@ -1972,6 +1973,12 @@ msgstr "門市 #%d"
 #, php-format
 msgid "Order created via POS by %1$s at %2$s."
 msgstr "由 %1$s 在 %2$s 透過 POS 建立訂單。"
+
+#. translators: 1: old POS cashier, 2: new POS cashier.
+#: includes/Services/Order_Notes.php:83
+#, php-format
+msgid "POS cashier changed from %1$s to %2$s."
+msgstr "POS 收銀員已從 %1$s 更改為 %2$s。"
 
 #. translators: 1: old POS store, 2: new POS store.
 #: includes/Services/Order_Notes.php:94
@@ -2179,7 +2186,7 @@ msgid ""
 msgstr "快速折扣代碼「%s」屬於商店優惠券。請改用其他代碼。"
 
 #. translators: %s: closed session number.
-#: includes/Services/Receipt_Data_Builder.php:303
+#: includes/Services/Receipt_Data_Builder.php:305
 #, php-format
 msgid "Session %s"
 msgstr "工作階段 %s"
@@ -5137,11 +5144,11 @@ msgid "Duplicate printer id."
 msgstr "印表機 ID 重複。"
 
 #. translators: Error message shown when invalid arguments are provided.
-#: includes/Services/Settings/Visibility_Section.php:130
+#: includes/Services/Settings/Visibility_Section.php:169
 msgid "Invalid arguments provided"
 msgstr "提供的參數無效"
 
-#: includes/Services/Settings/Visibility_Section.php:142
+#: includes/Services/Settings/Visibility_Section.php:181
 msgid "Invalid visibility option provided"
 msgstr "提供的可見性選項無效"
 
@@ -5212,16 +5219,16 @@ msgid ""
 "Unknown Collection Rules hook \"%s\"; the value was passed through unchanged."
 msgstr "未知的 Collection Rules hook「%s」；值已原樣傳遞。"
 
-#: includes/Sync/Health.php:82
+#: includes/Sync/Health.php:107
 msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr "WCPOS 同步商店尚未安裝（正在初始化，或結構描述安裝失敗）。請稍後再試。"
 
-#: includes/Sync/Order_Write_Payload.php:374
+#: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "date_created_gmt 不得超過未來 24 小時。"
 
-#: includes/Sync/Order_Write_Payload.php:380
+#: includes/Sync/Order_Write_Payload.php:441
 msgid "date_created_gmt must be a valid ISO 8601 UTC date."
 msgstr "date_created_gmt 必須是有效的 ISO 8601 UTC 日期。"
 
@@ -6098,80 +6105,80 @@ msgid ""
 "The cashier's slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures."
 msgstr "收銀員的現金袋點算單：備用金、已點算的付款金額、各面額、現金異動、備註及簽名欄。不含銷售或稅額。"
 
-#: includes/Templates/Payment.php:200
+#: includes/Templates/Payment.php:201
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr "很抱歉，無法為此訂單付款。訂單金鑰遺失或無效。"
 
-#: includes/Templates/Payment.php:219
+#: includes/Templates/Payment.php:220
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "此訂單無法付款。如需協助，請聯繫我們。"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:227
+#: includes/Templates/Payment.php:228
 msgid "Pay for order"
 msgstr "支付訂單"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:268
+#: includes/Templates/Payment.php:312
 msgid "Checkout Settings"
 msgstr "結帳設置"
 
-#: includes/Templates/Payment.php:274
+#: includes/Templates/Payment.php:318
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr "腳本和樣式可能會干擾自訂付款模板，使用此表單來取消排除任何有問題的腳本。"
 
-#: includes/Templates/Payment.php:276
+#: includes/Templates/Payment.php:320
 msgid "Disable All Styles and Scripts"
 msgstr "禁用所有樣式和腳本"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:279
+#: includes/Templates/Payment.php:323
 msgid "Disable wp_head"
 msgstr "禁用 wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:284
+#: includes/Templates/Payment.php:328
 msgid "Disable wp_footer"
 msgstr "禁用 wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:289
+#: includes/Templates/Payment.php:333
 msgid "Disable Selected Styles"
 msgstr "禁用選定的樣式"
 
-#: includes/Templates/Payment.php:296
-#: includes/Templates/Payment.php:308
+#: includes/Templates/Payment.php:340
+#: includes/Templates/Payment.php:352
 msgid "always removed on the POS payment page"
 msgstr "一律從 POS 付款頁面移除"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:301
+#: includes/Templates/Payment.php:345
 msgid "Disable Selected Scripts"
 msgstr "禁用選定的腳本"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:314
+#: includes/Templates/Payment.php:358
 msgid "Submit"
 msgstr "提交"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:368
+#: includes/Templates/Payment.php:412
 msgid "Paying as customer"
 msgstr "以顧客身份付款"
 
-#: includes/Templates/Payment.php:469
+#: includes/Templates/Payment.php:513
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "抱歉，此訂單無效且無法付款。"
 
-#: includes/Templates/Payment.php:473
+#: includes/Templates/Payment.php:517
 msgid "Sorry, this order has already been paid for."
 msgstr "抱歉，此訂單已付款。"
 
-#: includes/Templates/Payment.php:491
+#: includes/Templates/Payment.php:535
 msgid "You do not have permission to modify checkout settings."
 msgstr "您無權限修改結帳設定。"
 
