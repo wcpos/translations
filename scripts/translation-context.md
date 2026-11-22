@@ -176,7 +176,7 @@ These terms should be translated using the standard retail/POS terminology for t
 
 ### Key names, repeated sources and required short forms
 - Keys containing `col_`, `_abbrev`, `_short`, `header_`, `_tile`, `status_`, `level_` or `kind_` are column headers, chips or tiles on one line. Prefer a noun or a standard abbreviation, never a phrase. Single-word sources on buttons take the shortest imperative or infinitive the locale's UI convention uses.
-- When a packet entry has `same_source`, the locale already translates the identical English that way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense.
+- When a packet entry has `same_source`, the locale already translates the identical English that way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense, or the source has a `short_forms` entry: the short form always wins over `same_source`.
 - The packet's `short_forms` holds the required short forms for the locale (`scripts/translation-short-forms.json`). When a source equals a `short_forms` key (ignoring case and a trailing period), use that value exactly.
 
 ### Key (context-dependent) — IMPORTANT

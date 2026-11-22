@@ -79,7 +79,8 @@ Write exactly one JSON file per packet, at the given results path, with this sha
 - The packet's `short_forms` maps English to the required form for that locale. When a source
   equals a `short_forms` key (ignoring case and a trailing period), use that value exactly.
 - When an entry has `same_source`, the locale already translates the identical English that
-  way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense.
+  way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense, or the
+  source has a `short_forms` entry: the short form always wins over `same_source`.
 
 ## Rules
 
