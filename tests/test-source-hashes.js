@@ -65,12 +65,12 @@ try {
     { file: 'monorepo/core.json', key: 'x_other' },
   ]);
   assert.equal(result.seeded, 1);
-  assert.equal(result.removed, 10);
+  assert.equal(result.removed, 11);
   assert.equal(fs.readFileSync(path.join(rootDir, germanFile), 'utf8'),
     JSON.stringify({ 'tax.name': 'Steuername' }, null, 2) + '\n');
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(rootDir, arabicFile), 'utf8')),
     { 'tax.name': 'اسم' });
-  assert.equal(fs.readFileSync(path.join(rootDir, englishFile), 'utf8'), before[2]);
+  assert.equal(fs.readFileSync(path.join(rootDir, englishFile), 'utf8'), JSON.stringify({}, null, 2) + '\n');
   const changedHashText = fs.readFileSync(hashPath, 'utf8');
   const changedHashes = JSON.parse(changedHashText);
   assert.ok(!Object.hasOwn(changedHashes['monorepo/core.json'], 'tax.name'));
