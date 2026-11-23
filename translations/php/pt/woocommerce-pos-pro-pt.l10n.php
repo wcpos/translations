@@ -88,7 +88,7 @@ return array(
 		'Missing X-WCPOS-Idempotency-Key header.' => 'Cabeçalho X-WCPOS-Idempotency-Key em falta.',
 		'You do not have permission to manage stores.' => 'Não tem permissão para gerir lojas.',
 		'Store not found.' => 'Loja não encontrada.',
-		'This store has a till session that is still open. Close it before trashing the store.' => 'Esta loja ainda tem uma sessão de caixa aberta. Feche-a antes de enviar a loja para o lixo.',
+		'This store has a till session that is still open. Close it before trashing the store.' => 'Esta loja ainda tem uma sessão de caixa aberta. Feche-a antes de mover a loja para o lixo.',
 		'Failed to trash store.' => 'Falha ao mover a loja para o lixo.',
 		'Order not found.' => 'Encomenda não encontrada.',
 		'Payment not found.' => 'Pagamento não encontrado.',
