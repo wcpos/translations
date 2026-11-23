@@ -7,6 +7,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const { seedFromLane } = require('../scripts/seed-from-lane');
 const { applyTranslations } = require('../scripts/apply-translations');
+const { hashSource } = require('../scripts/source-hashes');
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'seed-from-lane-'));
 const rootDir = path.join(temp, 'repo');
@@ -157,6 +158,23 @@ try {
   assert.equal(cli.stdout.trim().split('\n').length, 1);
   assert.equal(JSON.parse(cli.stdout).seeded, summary.seeded);
   console.log('✓ CLI rejects invalid options and prints one JSON summary line');
+  const seedWithHashes = (ref, hashes) => {
+    git('checkout', '-q', '-b', ref, 'next');
+    write(path.join(rootDir, 'source/js-source-hashes.json'), { 'app/x.json': hashes });
+    git('add', '.');
+    git('-c', 'commit.gpgsign=false', 'commit', '-qm', ref);
+    seedFromLane({ rootDir, workDir, ref, outDir: path.join(temp, ref) });
+    return read(path.join(temp, ref, 'results/de.json')).js['app/x.json'];
+  };
+  const fresh = Object.fromEntries(Object.entries(sources).map(([key, text]) => [key, hashSource(text)]));
+  const staleSave = seedWithHashes('stale-save', { ...fresh, save: hashSource('Save') });
+  assert.ok(!Object.hasOwn(staleSave, 'save'));
+  assert.equal(staleSave.items_few, translations.items_few);
+  console.log('✓ JS key whose lane hash disagrees with its lane source is not seeded; matching keys still are');
+  const staleItems = seedWithHashes('stale-items', { items_other: hashSource('{count} things') });
+  assert.ok(!Object.hasOwn(staleItems, 'items_few'));
+  assert.equal(staleItems.save, translations.save);
+  console.log('✓ JS plural key with a stale lane hash on its base is not seeded; an unrecorded key still is');
 } finally {
   fs.rmSync(temp, { recursive: true, force: true });
 }
