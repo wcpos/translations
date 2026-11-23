@@ -96,6 +96,35 @@ test('matches change-as-modification concept on the cashier or store change erro
   assert.ok(!changeDue.some(concept => concept.id === 'change_as_modification'));
 });
 
+const hasConcept = (matches, id) => matches.some(concept => concept.id === id);
+
+test('change_due skips the excluded swap-reader and generic change keys', () => {
+  assert.ok(hasConcept(matchConcepts('Change', undefined, 'register.reason_change'), 'change_due'));
+  assert.ok(hasConcept(matchConcepts('Change {amount}', undefined, 'pos_checkout.change_due'), 'change_due'));
+  assert.ok(!hasConcept(matchConcepts('Change', undefined, 'pos_checkout.change_reader'), 'change_due'));
+  assert.ok(!hasConcept(matchConcepts('Change', undefined, 'common.change'), 'change_due'));
+  assert.ok(hasConcept(matchConcepts('Change'), 'change_due'), 'PO path (no key) still matches');
+});
+
+test('type_verb matches only the percent_type key', () => {
+  assert.ok(hasConcept(matchConcepts('Type', undefined, 'pos_checkout.percent_type'), 'type_verb'));
+  assert.ok(!hasConcept(matchConcepts('Type', undefined, 'common.type'), 'type_verb'));
+  assert.ok(!hasConcept(matchConcepts('Type'), 'type_verb'), 'only_keys never matches without a key');
+});
+
+test('exclude_keys and only_keys never let a concept match without its source_terms', () => {
+  const concepts = [
+    { id: 'excluded', source_terms: ['Alpha'], exclude_keys: ['^other\\.key$'], meaning: 'm' },
+    { id: 'only', source_terms: ['Alpha'], only_keys: ['^some\\.key$'], meaning: 'm' },
+  ];
+  assert.deepStrictEqual(matchConcepts('Beta', concepts, 'some.key'), []);
+  assert.deepStrictEqual(matchConcepts('Beta', concepts, 'other.key'), []);
+  assert.deepStrictEqual(matchConcepts('Beta', concepts), []);
+  assert.deepStrictEqual(matchConcepts('Alpha', concepts, 'some.key').map(c => c.id), ['excluded', 'only']);
+  assert.deepStrictEqual(matchConcepts('Alpha', concepts, 'other.key').map(c => c.id), []);
+  assert.deepStrictEqual(matchConcepts('Alpha', concepts).map(c => c.id), ['excluded']);
+});
+
 test('matches multi-word glossary concepts across punctuation', () => {
   const matches = matchConcepts('Amount-Tendered');
   assert.ok(matches.some(concept => concept.id === 'amount_tendered'));

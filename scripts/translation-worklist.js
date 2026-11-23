@@ -104,7 +104,7 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
         missing[key] = {
           source,
           ...(plural && pluralBases.has(plural.base) ? { plural_category: plural.suffix } : {}),
-          concepts: matchConcepts(source),
+          concepts: matchConcepts(source, undefined, key),
           ...(isPluralKey(key, pluralBases) ? {} : sameSourceField(source)),
         };
         packet.counts.js++;
