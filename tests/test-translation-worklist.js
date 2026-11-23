@@ -35,6 +35,7 @@ const pot = [
 try {
   write('locales.json', { en: 'English', de_DE: 'German (Germany)', ar: 'Arabic', ja: 'Japanese', en_US: 'US', en_GB: 'UK' });
   write('scripts/translation-glossary.json', { _comment: 'ignored', de: { Cashier: 'Fallback' }, de_DE: { Cashier: 'Kassierer' } });
+  write('scripts/translation-short-forms.json', { _comment: 'ignored', de: { Qty: 'Fallback' }, de_DE: { Qty: 'Anz.' }, ja: { Qty: '数量' } });
   write('scripts/locale-context/de_DE.md', 'German notes');
   write('source/js/monorepo/core.json', { x_one: '{count} item', x_other: '{count} items', plain: 'Tendered' });
   write('translations/js/de_DE/monorepo/core.json', { x_one: 'Ein Artikel', plain: '', stale: 'ignored' });
@@ -53,17 +54,20 @@ try {
   assert.equal(ar.locale_notes, null);
   assert.deepEqual(de.glossary, { Cashier: 'Kassierer' });
   assert.deepEqual(ar.glossary, {});
+  assert.deepEqual([de.short_forms, ar.short_forms, ja.short_forms], [{ Qty: 'Anz.' }, {}, { Qty: '数量' }]);
+  assert.deepEqual(Object.keys(de).slice(0, 5), ['locale', 'locale_name', 'locale_notes', 'glossary', 'short_forms']);
   assert.deepEqual(de.js, { 'monorepo/core.json': { x_other: { source: '{count} items', plural_category: 'other', concepts: [] } } });
   assert.deepEqual(Object.keys(ar.js['monorepo/core.json']), ['x_one', 'x_other', 'x_zero', 'x_two', 'x_few', 'x_many']);
   for (const [key, entry] of Object.entries(ar.js['monorepo/core.json'])) {
     assert.equal(entry.source, key === 'x_one' ? '{count} item' : '{count} items');
     assert.equal(entry.plural_category, key.slice(2));
   }
-  assert.deepEqual(ja.js['monorepo/core.json'].plain, { source: 'Tendered', concepts: matchConcepts('Tendered') });
+  // The ja .po already translates the identical msgid, so the JS entry reuses it.
+  assert.deepEqual(ja.js['monorepo/core.json'].plain, { source: 'Tendered', concepts: matchConcepts('Tendered'), same_source: 'translated' });
   assert.ok(ja.js['monorepo/core.json'].plain.concepts.length > 0);
   assert.deepEqual(de.php['woocommerce-pos'], {
     nplurals: 2, plural_expression: 'n != 1', entries: [
-      { id: 'p1', msgctxt: 'receipt', msgid: 'Tendered', forms: 1, translator_notes: ['Receipt label.', 'Keep it short.'], references: ['a.php:1', 'b.php:2', 'c.php:3'], concepts: matchConcepts('Tendered') },
+      { id: 'p1', msgctxt: 'receipt', msgid: 'Tendered', forms: 1, translator_notes: ['Receipt label.', 'Keep it short.'], references: ['a.php:1', 'b.php:2', 'c.php:3'], concepts: matchConcepts('Tendered'), same_source: 'translated' },
       { id: 'p2', msgid: '%d item', msgid_plural: '%d items', forms: 2, translator_notes: [], references: [], concepts: [] },
     ],
   });
@@ -112,9 +116,11 @@ try {
   fs.unlinkSync(path.join(rootDir, 'scripts/locale-context/de_DE.md'));
   write('scripts/locale-context/de.md', 'Language notes');
   write('scripts/translation-glossary.json', { _comment: 'ignored', de: { Cashier: 'Fallback' } });
+  write('scripts/translation-short-forms.json', { _comment: 'ignored', de: { Qty: 'Fallback' } });
   const fallback = buildWorklist({ rootDir, locales: ['de_DE'] }).packets[0];
   assert.equal(fallback.locale_notes, 'scripts/locale-context/de.md');
   assert.deepEqual(fallback.glossary, { Cashier: 'Fallback' });
+  assert.deepEqual(fallback.short_forms, { Qty: 'Fallback' });
   write('source/php/z-domain.pot', singular);
   write('source/php/a-domain.pot', singular);
   write('source/js/z-project/z.json', { z: 'Zed' });
@@ -141,6 +147,7 @@ try {
     fs.mkdirSync(path.join(rootDir, 'scripts'));
     fs.writeFileSync(path.join(rootDir, 'locales.json'), JSON.stringify({ en: 'English', ar: 'Arabic' }));
     fs.writeFileSync(path.join(rootDir, 'scripts/translation-glossary.json'), '{}');
+    fs.writeFileSync(path.join(rootDir, 'scripts/translation-short-forms.json'), '{}');
     fs.writeFileSync(path.join(rootDir, 'source/js/monorepo/core.json'), JSON.stringify({ kind_cash: 'Cash', kind_other: 'Other' }));
     const ar = buildWorklist({ rootDir }).packets.find(packet => packet.locale === 'ar');
     assert.deepEqual(ar.js['monorepo/core.json'], {
@@ -168,6 +175,54 @@ try {
     const ids = key => ja.js['monorepo/core.json'][key].concepts.map(concept => concept.id);
     assert.ok(!ids('pos_checkout.change_reader').includes('change_due'), 'change_reader must not get change_due');
     assert.ok(ids('register.reason_change').includes('change_due'), 'reason_change must get change_due');
+  } finally {
+    fs.rmSync(rootDir, { recursive: true, force: true });
+  }
+}
+
+{
+  // same_source: the most frequent shipped translation of the identical (trimmed) English source.
+  const rootDir = fs.mkdtempSync(path.join(os.tmpdir(), 'translation-worklist-same-source-'));
+  const write = (file, content) => {
+    fs.mkdirSync(path.dirname(path.join(rootDir, file)), { recursive: true });
+    fs.writeFileSync(path.join(rootDir, file), typeof content === 'string' ? content : JSON.stringify(content));
+  };
+  const po = pairs => pairs.map(([id, str]) => `msgid "${id}"\nmsgstr "${str}"\n`).join('\n');
+  try {
+    write('locales.json', { en: 'English', de_DE: 'German (Germany)' });
+    write('scripts/translation-glossary.json', {});
+    write('scripts/translation-short-forms.json', {});
+    write('source/js/a/one.json', { qty: 'Qty', tie_z: 'Tie', tie_a: 'Tie', x_one: '{count} item', x_other: '{count} items', items_label: '{count} items' });
+    write('translations/js/de_DE/a/one.json', { qty: 'Anz.', tie_z: 'Zeta', tie_a: 'Alpha', x_one: '{count} Artikel', x_other: '{count} Artikel', items_label: '{count} Stück' });
+    write('source/js/b/two.json', {
+      retry_a: 'Retry', retry_b: 'Retry', retry_c: 'Retry', solo: 'Solo', empty: 'Empty',
+      qty_col: 'Qty', tie_new: 'Tie', retry_new: ' Retry', y_one: '{count} item', y_other: '{count} items', z_label: '{count} item', lone: 'Nothing like it', empty_new: 'Empty',
+    });
+    write('translations/js/de_DE/b/two.json', { retry_a: 'Nochmal', retry_b: 'Wiederholen', retry_c: 'Wiederholen', solo: 'Solo JS', empty: '' });
+    write('source/php/a-dom.pot', po([['Pay', ''], ['Solo', '']]));
+    write('translations/php/de_DE/a-dom-de_DE.po', po([['Pay', 'Bezahlen'], ['Solo', 'Solo PHP']]));
+    write('source/php/dom.pot', po([['Qty', ''], ['Pay', ''], ['Solo', ''], ['Unique', '']]) + '\nmsgctxt "count"\nmsgid "Solo"\nmsgid_plural "Solos"\nmsgstr[0] ""\nmsgstr[1] ""\n');
+    const [de] = buildWorklist({ rootDir }).packets;
+    const reuse = entries => Object.fromEntries(Object.entries(entries)
+      .map(([key, entry]) => [key, Object.hasOwn(entry, 'same_source') ? entry.same_source : 'absent']));
+    assert.deepEqual(Object.keys(de.js), ['b/two.json']);
+    assert.deepEqual(reuse(de.js['b/two.json']), {
+      qty_col: 'Anz.', // (b) from another JS file of the locale
+      tie_new: 'Alpha', // (c) tie: a/one.json\u0000tie_a sorts before a/one.json\u0000tie_z
+      retry_new: 'Wiederholen', // most frequent wins; sources compare trimmed
+      y_one: 'absent', y_other: 'absent', // (d) plural keys never get same_source
+      z_label: 'absent', // shipped plural forms are not reused either
+      lone: 'absent', empty_new: 'absent', // (f) no match; an empty translation is not a match
+    });
+    const php = de.php.dom.entries;
+    assert.deepEqual(php.map(entry => [entry.msgid, Object.hasOwn(entry, 'same_source') ? entry.same_source : 'absent']), [
+      ['Qty', 'Anz.'], // (e) from a JS translation
+      ['Pay', 'Bezahlen'], // (e) from a PHP translation in another domain
+      ['Solo', 'Solo JS'], // tie: JS before PHP, although a-dom.pot sorts before b/two.json
+      ['Unique', 'absent'],
+      ['Solo', 'absent'], // a plural entry never gets same_source, even when its msgid matches
+    ]);
+    console.log('Translation worklist same_source tests passed');
   } finally {
     fs.rmSync(rootDir, { recursive: true, force: true });
   }
