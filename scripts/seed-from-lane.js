@@ -6,6 +6,8 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const { parsePoFile, buildPoEntryKey } = require('./po-file');
+const { hashSource } = require('./source-hashes');
+const { parsePluralKey } = require('./plural-rules');
 const DEFAULT_ROOT = path.resolve(__dirname, '..');
 
 function seedFromLane({ rootDir = DEFAULT_ROOT, workDir, ref, outDir }) {
@@ -33,6 +35,7 @@ function seedFromLane({ rootDir = DEFAULT_ROOT, workDir, ref, outDir }) {
       if (file.endsWith('.json')) fs.unlinkSync(path.join(target, file));
     }
   }
+  const laneHashes = read('source/js-source-hashes.json');
   const locales = {};
   let seeded = 0;
   for (const file of fs.readdirSync(workDir).filter(file => file.endsWith('.json')).sort()) {
@@ -44,9 +47,16 @@ function seedFromLane({ rootDir = DEFAULT_ROOT, workDir, ref, outDir }) {
       const translations = read(`translations/js/${locale}/${file}`);
       const sources = read(`source/js/${file}`);
       if (!translations || !sources) continue;
+      // A lane whose hash record disagrees with its own English still holds the old translation (translations#539):
+      // seeding it would undo the English change and mark the locale current, so such keys are left to the model.
+      const isStale = key => {
+        const base = parsePluralKey(key)?.base;
+        const group = typeof sources[key] === 'string' ? [key] : Object.keys(sources).filter(k => parsePluralKey(k)?.base === base);
+        return group.some(k => laneHashes?.[file]?.[k] !== undefined && laneHashes[file][k] !== hashSource(sources[k]));
+      };
       const selected = Object.entries(entries).filter(([key, entry]) => Object.hasOwn(translations, key)
         && typeof translations[key] === 'string' && translations[key].trim() !== ''
-        && sourceTextForTranslationKey(sources, key) === entry.source);
+        && sourceTextForTranslationKey(sources, key) === entry.source && !isStale(key));
       if (!selected.length) continue;
       work.js[file] = Object.fromEntries(selected);
       results.js[file] = Object.fromEntries(selected.map(([key]) => [key, translations[key]]));

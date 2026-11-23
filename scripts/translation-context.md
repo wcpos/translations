@@ -39,7 +39,7 @@ Store owners see WCPOS screens next to WooCommerce admin, so any term WooCommerc
 - Where WooCommerce core has no term for the concept (cashier, till, register, barcode, cash drawer), keep the POS terms in the glossary and locale notes. Loanwords the locale really uses (for example, German "Barcode") are fine.
 - **Checkout** has two senses. In WCPOS it usually means the till or checkout counter (glossary: Kasse, Caja, Caisse…). WooCommerce's "Checkout" means the online checkout page (Finalizar compra, Commander, Afrekenen…). Use WooCommerce's term only when the string refers to the online store checkout, such as checkout page settings or online orders.
 - **Receipt** in WCPOS is the till receipt (Beleg, Bon, レシート, Struk). Do not use WooCommerce's invoice-like term (Factuur, 領収書, Tanda terima) for it.
-- Do not rewrite strings that already ship just to align terminology. The rule applies to new and changed strings.
+- Do not rewrite strings that already ship just to align terminology. The rule applies to new and changed strings. A reviewed clean-up pass may rewrite shipped strings to restore short forms or fix a wrong sense; the translation run itself still never rewrites them.
 
 ## YOUR TASK
 
@@ -165,12 +165,19 @@ These terms should be translated using the standard retail/POS terminology for t
 - Plugin, Theme (WordPress terms)
 
 ### Abbreviations (keep abbreviated, do not expand)
-- Qty → keep as the locale's standard short form, at most 5 characters (count user-perceived characters, so a Devanagari or Khmer word counts as it renders). Use the recognised abbreviation where the language has one ("Anz." German, "Ctd." Spanish, "Qté" French, "Aant." Dutch, "Il." Polish, "Kiek." Lithuanian, "Кол." Russian, "Qt." Catalan, "Db" Hungarian, "Qty" Malay); where the language has no abbreviation convention (CJK, Thai, Arabic script, Hebrew, Indic, Khmer) use the shortest natural word ("كمية", not "الكمية"). The cart column header `pos_cart.qty_abbrev` is narrow: never expand it to a word longer than 5 characters (Paul, 2026-11-18).
+- **Short forms.** When the English is an abbreviation or a clipped UI word (Qty, Min, Max, Avg, No., ID, FAQ, Sync, OK, Eco, h/min/s), use the locale's standard short form, never the full word. If the locale has no short form, use the shortest natural word. Abbreviate only where the locale has a standard abbreviation or a `short_forms` entry; never invent one.
+- **Length target.** Aim to keep a short label (source of 9 characters or fewer) within the source length + 6 characters (twice the source length for CJK), the same budget the quality check warns on. It is a target, not a ban: a correct full word beats an invented abbreviation (de "Orders" stays "Bestellungen", "Refund" stays "Rückerstattung").
+- Qty → at most 5 characters (count user-perceived characters, so a Devanagari or Khmer word counts as it renders). Use the recognised abbreviation where the language has one ("Anz." German, "Cant." Spanish, "Qté" French, "Aant." Dutch, "Il." Polish, "Kiek." Lithuanian, "Кол." Russian, "Qt." Catalan, "Db" Hungarian, "Qty" Malay); where the language has no abbreviation convention (CJK, Thai, Arabic script, Hebrew, Indic, Khmer) use the shortest natural word ("كمية", not "الكمية"). Every key whose source is "Qty" (`pos_cart.qty_abbrev`, `pos_cart.col_qty`, `reports.col_qty`, the PHP receipt header) is a narrow column header and takes the same form; never expand it to a word longer than 5 characters (Paul, 2026-11-18).
 - No. → keep as abbreviation for "Number"
 - ID → never spell out as "Identifier" or "Identification"
 - Min, Max → keep abbreviated
 - Inc, Exc → keep as "Including", "Excluding" abbreviations
 - N/A → keep as is
+
+### Key names, repeated sources and required short forms
+- Keys containing `col_`, `_abbrev`, `_short`, `header_`, `_tile`, `status_`, `level_` or `kind_` are column headers, chips or tiles on one line. Prefer a noun or a standard abbreviation, never a phrase. Single-word sources on buttons take the shortest imperative or infinitive the locale's UI convention uses.
+- When a packet entry has `same_source`, the locale already translates the identical English that way elsewhere. Reuse it exactly unless the key or `concepts` show a different sense, or the source has a `short_forms` entry: the short form always wins over `same_source`.
+- The packet's `short_forms` holds the required short forms for the locale (`scripts/translation-short-forms.json`). When a source equals a `short_forms` key (ignoring case and a trailing period), use that value exactly.
 
 ### Key (context-dependent) — IMPORTANT
 The word "Key" has multiple meanings. Use context to determine:
@@ -327,17 +334,15 @@ Before outputting, verify:
 |--------|-----------|---------|
 | Gateway | Pasarela de pago | Acceso, Puerta |
 | State | Estado/Región | Provincia |
-| Qty | Ctd. | Cantidad |
+| Qty | Cant. | Cantidad |
 | Void | Anular | Anular transacción |
 | Rates | Tarifas | Frases |
 
 ### Russian (ru_RU)
 | Source | ✓ Correct | ✗ Wrong |
 |--------|-----------|---------|
-| Gateway | Gateway | Шлюз, Платежный шлюз |
-| Gateways | Gateways | Шлюзы |
 | State | Штат/Регион | Область |
-| Qty | Кол-во | Количество |
+| Qty | Кол. | Кол-во, Количество |
 | Void | Отмена | Отменить транзакцию |
 
 ### French (fr_FR)
