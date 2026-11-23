@@ -309,8 +309,8 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:87
-#: includes/Form_Handler.php:101
+#: includes/Form_Handler.php:138
+#: includes/Form_Handler.php:159
 #: includes/Templates/Payment.php:203
 #: includes/Templates/Payment.php:537
 #: includes/Templates/Received.php:92
@@ -398,6 +398,26 @@ msgstr "80mm (Standar)"
 #: includes/Admin/Templates/Single_Template.php:294
 msgid "58mm (Narrow)"
 msgstr "58mm (Sempit)"
+
+#: includes/Admin/User_Identity_Tool.php:29
+msgid "Reset WCPOS account identities"
+msgstr "Atur ulang identitas akun WCPOS"
+
+#: includes/Admin/User_Identity_Tool.php:30
+msgid "Reset identities"
+msgstr "Atur ulang identitas"
+
+#: includes/Admin/User_Identity_Tool.php:31
+msgid ""
+"Use this on a store that was copied from another store, when the POS app reports AUTH342. Each user gets a new POS identity the next time it is needed. Sync any waiting sales from the tills first; afterwards, remove this store from each till and connect it again."
+msgstr ""
+"Gunakan ini pada toko yang disalin dari toko lain saat aplikasi POS menampilkan AUTH342. Setiap pengguna akan mendapat identitas POS baru saat diperlukan berikutnya. Sinkronkan dahulu penjualan yang tertunda di semua kasir; setelah itu, hapus toko ini dari setiap kasir lalu hubungkan kembali."
+
+#. translators: %d: Number of users whose WCPOS account identity was reset.
+#: includes/Admin/User_Identity_Tool.php:51
+#, php-format
+msgid "WCPOS account identities reset. Users affected: %d."
+msgstr "Identitas akun WCPOS diatur ulang. Pengguna yang terdampak: %d."
 
 #. translators: REST API schema field label or error message.
 #: includes/API.php:438
@@ -500,36 +520,43 @@ msgstr "Gagal mengambil data toko."
 msgid "Store not found or not accessible by this cashier."
 msgstr "Toko tidak ditemukan atau tidak dapat diakses oleh kasir ini."
 
-#: includes/API/V1/Checkout_Controller.php:104
+#: includes/API/V1/Checkout_Controller.php:105
 msgid "Sorry, you cannot view checkout state."
 msgstr "Maaf, Anda tidak dapat melihat status checkout."
 
-#: includes/API/V1/Checkout_Controller.php:115
+#: includes/API/V1/Checkout_Controller.php:116
 msgid "Sorry, you cannot process checkout."
 msgstr "Maaf, Anda tidak dapat memproses checkout."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:143
+#: includes/API/V1/Checkout_Controller.php:144
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Header X-WCPOS-Idempotency-Key tidak ada."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:154
+#: includes/API/V1/Checkout_Controller.php:155
 #: includes/API/V1/Gateway_Bootstrap_Controller.php:99
 msgid "Payment gateway not found."
 msgstr "Gateway pembayaran tidak ditemukan."
 
-#: includes/API/V1/Checkout_Controller.php:162
+#: includes/API/V1/Checkout_Controller.php:163
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:107
 msgid "Payment gateway is not available for POS checkout."
 msgstr "Gateway pembayaran tidak tersedia untuk checkout POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:283
+#: includes/API/V1/Checkout_Controller.php:284
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:433
+#: includes/API/V2/Payments_Controller.php:434
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Pesanan tidak ditemukan."
+
+#: includes/API/V1/Checkout_Controller.php:294
+#: includes/API/V1/Orders_Controller.php:642
+#: includes/API/V2/Payments_Controller.php:438
+msgid "Sorry, you are not allowed to edit this order."
+msgstr "Maaf, Anda tidak diizinkan mengedit pesanan ini."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Customers_Controller.php:103
@@ -561,7 +588,7 @@ msgstr "Saring pelanggan berdasarkan peran."
 
 #. translators: Use default WordPress translation.
 #: includes/API/V1/Customers_Controller.php:328
-#: includes/API/V1/Orders_Controller.php:586
+#: includes/API/V1/Orders_Controller.php:587
 msgid "Invalid email address."
 msgstr "Alamat email tidak valid."
 
@@ -596,41 +623,41 @@ msgid "You do not have permission to view logs."
 msgstr "Anda tidak memiliki izin untuk melihat log."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Orders_Controller.php:297
-#: includes/API/V2/Order_Email_Controller.php:40
+#: includes/API/V1/Orders_Controller.php:298
+#: includes/API/V2/Order_Email_Controller.php:41
 msgid "Email address"
 msgstr "Alamat email"
 
-#: includes/API/V1/Orders_Controller.php:302
-#: includes/API/V2/Order_Email_Controller.php:45
+#: includes/API/V1/Orders_Controller.php:303
+#: includes/API/V2/Order_Email_Controller.php:46
 msgid "Save email to order"
 msgstr "Simpan email ke pesanan"
 
-#: includes/API/V1/Orders_Controller.php:337
+#: includes/API/V1/Orders_Controller.php:338
 msgid "Customer tax IDs snapshotted at sale time."
 msgstr "ID pajak pelanggan yang disimpan saat transaksi."
 
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:641
+#: includes/API/V1/Orders_Controller.php:647
 #, php-format
 msgid "Email address %s added to billing details from WCPOS."
 msgstr "Alamat email %s ditambahkan ke detail penagihan dari WCPOS."
 
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:654
+#: includes/API/V1/Orders_Controller.php:660
 #, php-format
 msgid "Order details manually sent to %s from WCPOS."
 msgstr "Detail pesanan dikirim secara manual ke %s dari WCPOS."
 
-#: includes/API/V1/Orders_Controller.php:719
+#: includes/API/V1/Orders_Controller.php:725
 msgid "Unique identifier for the order status."
 msgstr "Pengenal unik untuk status pesanan."
 
-#: includes/API/V1/Orders_Controller.php:725
+#: includes/API/V1/Orders_Controller.php:731
 msgid "Display name of the order status."
 msgstr "Nama tampilan status pesanan."
 
-#: includes/API/V1/Orders_Controller.php:751
+#: includes/API/V1/Orders_Controller.php:757
 msgid "Whether the order email was sent."
 msgstr "Apakah email pesanan telah dikirim."
 
@@ -864,29 +891,29 @@ msgstr "Templat penutupan diperlukan."
 msgid "Template not found."
 msgstr "Template tidak ditemukan."
 
-#: includes/API/V1/Receipts_Controller.php:352
 #: includes/API/V1/Receipts_Controller.php:360
+#: includes/API/V1/Receipts_Controller.php:368
 #: includes/Templates/Receipt.php:253
 #: includes/Templates/Receipt.php:261
 #: includes/Templates/Receipt.php:272
 msgid "Could not generate the receipt PDF."
 msgstr "PDF struk tidak dapat dibuat."
 
-#: includes/API/V1/Receipts_Controller.php:377
+#: includes/API/V1/Receipts_Controller.php:385
 msgid "Another print of this order is in progress; try again."
 msgstr "Pencetakan lain untuk pesanan ini sedang berlangsung; coba lagi."
 
-#: includes/API/V1/Receipts_Controller.php:395
-#: includes/API/V2/Closures_Controller.php:389
+#: includes/API/V1/Receipts_Controller.php:403
+#: includes/API/V2/Closures_Controller.php:399
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Permintaan penutupan tidak dapat diselesaikan."
 
-#: includes/API/V1/Receipts_Controller.php:399
+#: includes/API/V1/Receipts_Controller.php:407
 msgid "Receipt document could not be read."
 msgstr "Dokumen struk tidak dapat dibaca."
 
-#: includes/API/V1/Receipts_Controller.php:414
+#: includes/API/V1/Receipts_Controller.php:422
 msgid "Sorry, you cannot view receipts."
 msgstr "Maaf, Anda tidak dapat melihat receipt."
 
@@ -1124,32 +1151,32 @@ msgstr "Nilai meta_data _woocommerce_pos_uuid tidak valid."
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "Koleksi “%1$s” tidak dilayani oleh rute ini. Yang didukung: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:127
+#: includes/API/V2/Payments_Controller.php:128
 msgid "Sorry, you cannot manage order payments."
 msgstr "Maaf, Anda tidak dapat mengelola pembayaran pesanan."
 
-#: includes/API/V2/Payments_Controller.php:147
+#: includes/API/V2/Payments_Controller.php:148
 msgid "Payment must be an object."
 msgstr "Pembayaran harus berupa objek."
 
-#: includes/API/V2/Payments_Controller.php:218
+#: includes/API/V2/Payments_Controller.php:219
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:130
+#: includes/Payments/Contract/Gateway_Submission.php:131
 #: includes/Payments/Contract/Ledger.php:1671
 msgid "Payment method not found."
 msgstr "Metode pembayaran tidak ditemukan."
 
-#: includes/API/V2/Payments_Controller.php:224
+#: includes/API/V2/Payments_Controller.php:225
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Nilai harus berupa objek dan ID percobaan harus berupa UUID."
 
-#: includes/API/V2/Payments_Controller.php:229
+#: includes/API/V2/Payments_Controller.php:230
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr ""
 "ID percobaan harus merujuk pada percobaan terkirim yang akan dibatalkan."
 
-#: includes/API/V2/Payments_Controller.php:340
+#: includes/API/V2/Payments_Controller.php:341
 msgid "Invalid payment operation parameters."
 msgstr "Parameter operasi pembayaran tidak valid."
 
@@ -1162,8 +1189,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Maaf, Anda tidak dapat memulai metode pembayaran."
 
 #: includes/API/V2/Payment_Methods_Controller.php:116
-#: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:3068
+#: includes/Payments/Contract/Gateway_Submission.php:52
+#: includes/Payments/Contract/Ledger.php:3077
 msgid "Payment capture mode is unsupported."
 msgstr "Mode penagihan pembayaran tidak didukung."
 
@@ -1254,12 +1281,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Laporan “%1$s” gagal: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:474
+#: includes/API/V2/Sessions_Controller.php:502
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Parameter tidak valid: %s"
 
-#: includes/API/V2/Sessions_Controller.php:476
+#: includes/API/V2/Sessions_Controller.php:504
 msgid "The session request could not be completed."
 msgstr "Permintaan sesi tidak dapat diselesaikan."
 
@@ -1282,12 +1309,12 @@ msgid "Order key mismatch."
 msgstr "Kunci pesanan tidak cocok."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:85
+#: includes/Form_Handler.php:136
 msgid "Token not provided."
 msgstr "Token tidak disediakan."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:99
+#: includes/Form_Handler.php:157
 msgid "Cashier token mismatch."
 msgstr "Token kasir tidak cocok."
 
@@ -1420,14 +1447,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "Mode penagihan pembayaran ini tidak mendukung operasi tersebut."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:317
+#: includes/Payments/Contract/Attempts.php:320
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "Percobaan pembayaran WCPOS %1$s: hasilnya tidak diketahui dan %2$s tidak dapat memastikan apakah uang telah ditarik. Periksa pembayaran dengan penyedia, lalu batalkan percobaan di POS jika tidak ada biaya yang dikenakan."
 
-#: includes/Payments/Contract/Attempts.php:406
+#: includes/Payments/Contract/Attempts.php:409
 msgid "Clearing the awaiting-customer state"
 msgstr "Menghapus status menunggu pelanggan"
 
@@ -1435,12 +1462,12 @@ msgstr "Menghapus status menunggu pelanggan"
 msgid "This command ID was already used with a different request."
 msgstr "ID perintah ini sudah digunakan dengan permintaan lain."
 
-#: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:108
+#: includes/Payments/Contract/Command_Log.php:244
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Upaya ini dibatalkan atau digantikan di mesin kasir."
 
-#: includes/Payments/Contract/Command_Log.php:267
+#: includes/Payments/Contract/Command_Log.php:270
 msgid "The order changed since this command was built; read it again."
 msgstr ""
 "Pesanan berubah sejak perintah ini dibuat; baca kembali pesanan tersebut."
@@ -1475,51 +1502,51 @@ msgstr "Pesanan sudah dibayar sebelum percobaan pembayaran ini dikirim."
 msgid "This payment cannot be voided."
 msgstr "Pembayaran ini tidak dapat dibatalkan."
 
-#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Gateway_Submission.php:55
 msgid "Attempt ID must be a UUID."
 msgstr "ID percobaan harus berupa UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:57
+#: includes/Payments/Contract/Gateway_Submission.php:58
 msgid "Only POS orders take a gateway submission."
 msgstr ""
 "Hanya pesanan POS yang dapat mengirimkan transaksi ke gateway pembayaran."
 
-#: includes/Payments/Contract/Gateway_Submission.php:79
+#: includes/Payments/Contract/Gateway_Submission.php:80
 msgid "An earlier payment attempt on this order has no outcome yet."
 msgstr ""
 "Percobaan pembayaran sebelumnya untuk pesanan ini belum memiliki hasil."
 
-#: includes/Payments/Contract/Gateway_Submission.php:113
+#: includes/Payments/Contract/Gateway_Submission.php:114
 msgid "Payment method is not enabled for the POS."
 msgstr "Metode pembayaran tidak diaktifkan untuk POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:121
+#: includes/Payments/Contract/Gateway_Submission.php:122
 msgid "Order is already paid."
 msgstr "Pesanan sudah dibayar."
 
-#: includes/Payments/Contract/Gateway_Submission.php:125
+#: includes/Payments/Contract/Gateway_Submission.php:126
 msgid "Order already has a live payment."
 msgstr "Pesanan sudah memiliki pembayaran aktif."
 
-#: includes/Payments/Contract/Gateway_Submission.php:206
+#: includes/Payments/Contract/Gateway_Submission.php:207
 msgid "The payment method rejected the details entered."
 msgstr "Metode pembayaran menolak detail yang dimasukkan."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:294
+#: includes/Payments/Contract/Gateway_Submission.php:295
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "Percobaan pembayaran WCPOS %1$s: %2$s gagal setelah pembayaran dikirim. Tanyakan kepada penyedia apakah dana telah ditarik, lalu batalkan percobaan di POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:298
-#: includes/Payments/Contract/Gateway_Submission.php:313
+#: includes/Payments/Contract/Gateway_Submission.php:299
+#: includes/Payments/Contract/Gateway_Submission.php:314
 msgid "The payment provider failed."
 msgstr "Terjadi kegagalan pada penyedia pembayaran."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:317
+#: includes/Payments/Contract/Gateway_Submission.php:318
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1527,19 +1554,19 @@ msgstr ""
 "Metode pembayaran ini ingin membuka %s di browser, tetapi POS tidak dapat melanjutkannya."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:379
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Diselesaikan melalui POS: %1$s dengan status %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:394
+#: includes/Payments/Contract/Gateway_Submission.php:395
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Dikirim melalui POS: %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:417
+#: includes/Payments/Contract/Gateway_Submission.php:418
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1547,33 +1574,33 @@ msgstr ""
 "Percobaan pembayaran WCPOS %1$s: %2$s merespons, tetapi POS tidak dapat mencatatnya. Periksa pesanan dengan penyedia, lalu batalkan percobaan di POS."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:446
+#: includes/Payments/Contract/Gateway_Submission.php:447
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "Percobaan pembayaran %s mungkin sudah dibayar melalui gateway pembayaran; rekonsiliasikan pembayaran sebelum membatalkan percobaan tersebut."
 
-#: includes/Payments/Contract/Gateway_Submission.php:454
+#: includes/Payments/Contract/Gateway_Submission.php:455
 msgid "This invoice cannot be cancelled."
 msgstr "Faktur ini tidak dapat dibatalkan."
 
-#: includes/Payments/Contract/Gateway_Submission.php:457
+#: includes/Payments/Contract/Gateway_Submission.php:458
 msgid "The invoice was sent by a different payment method."
 msgstr "Faktur dikirim dengan metode pembayaran lain."
 
-#: includes/Payments/Contract/Gateway_Submission.php:461
+#: includes/Payments/Contract/Gateway_Submission.php:462
 msgid "A newer invoice has been sent for this order."
 msgstr "Faktur yang lebih baru telah dikirim untuk pesanan ini."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:467
+#: includes/Payments/Contract/Gateway_Submission.php:468
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Dibatalkan melalui POS: %1$s. %2$s"
 
 #. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:501
+#: includes/Payments/Contract/Gateway_Submission.php:502
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s closed at the POS by %2$s: nothing more was charged, and the sale's payments already cover it. %3$s"
@@ -1581,27 +1608,27 @@ msgstr ""
 "Percobaan pembayaran WCPOS %1$s ditutup di POS oleh %2$s: tidak ada biaya tambahan yang dikenakan, dan pembayaran penjualan sudah mencukupi. %3$s"
 
 #. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:501
+#: includes/Payments/Contract/Gateway_Submission.php:502
 msgid "an unknown user"
 msgstr "pengguna tidak dikenal"
 
-#: includes/Payments/Contract/Gateway_Submission.php:626
+#: includes/Payments/Contract/Gateway_Submission.php:629
 msgid "This field must be true or false."
 msgstr "Kolom ini harus bernilai true atau false."
 
-#: includes/Payments/Contract/Gateway_Submission.php:631
+#: includes/Payments/Contract/Gateway_Submission.php:634
 msgid "This field must be text."
 msgstr "Kolom ini harus berupa teks."
 
-#: includes/Payments/Contract/Gateway_Submission.php:635
+#: includes/Payments/Contract/Gateway_Submission.php:638
 msgid "This field is required."
 msgstr "Kolom ini wajib diisi."
 
-#: includes/Payments/Contract/Gateway_Submission.php:639
+#: includes/Payments/Contract/Gateway_Submission.php:642
 msgid "Choose one of the listed options."
 msgstr "Pilih salah satu opsi yang tercantum."
 
-#: includes/Payments/Contract/Gateway_Submission.php:653
+#: includes/Payments/Contract/Gateway_Submission.php:656
 msgid "Check the payment fields."
 msgstr "Periksa kolom pembayaran."
 
@@ -1648,7 +1675,7 @@ msgstr "Jumlah pembayaran melebihi sisa tagihan pesanan."
 
 #: includes/Payments/Contract/Ledger.php:881
 #: includes/Payments/Contract/Ledger.php:1735
-#: includes/Payments/Contract/Ledger.php:1908
+#: includes/Payments/Contract/Ledger.php:1909
 msgid "Another payment is already in progress on this order."
 msgstr "Pembayaran lain sedang berlangsung untuk pesanan ini."
 
@@ -1727,28 +1754,28 @@ msgid "The order is not covered by its payments."
 msgstr "Pembayaran untuk pesanan ini belum mencukupi."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1985
+#: includes/Payments/Contract/Ledger.php:1986
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Pembayaran WCPOS %s dibatalkan."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1987
+#: includes/Payments/Contract/Ledger.php:1988
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Pembayaran WCPOS %1$s dibatalkan: %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2675
+#: includes/Payments/Contract/Ledger.php:2684
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s tidak selesai; lakukan rekonsiliasi secara manual."
 
-#: includes/Payments/Contract/Ledger.php:3063
+#: includes/Payments/Contract/Ledger.php:3072
 msgid "Payment not found."
 msgstr "Pembayaran tidak ditemukan."
 
-#: includes/Payments/Contract/Ledger.php:3073
+#: includes/Payments/Contract/Ledger.php:3082
 msgid "Payment transition is invalid."
 msgstr "Perubahan status pembayaran tidak valid."
 
@@ -1972,14 +1999,14 @@ msgstr "Dokumen struk tidak valid."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:405
+#: includes/Services/Fiscal_Record_Writers.php:407
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
 "Catatan fiskal POS %s tidak dapat ditulis; catatan ini perlu dipulihkan."
 
-#: includes/Services/Fiscal_Record_Writers.php:266
-#: includes/Services/Fiscal_Record_Writers.php:389
+#: includes/Services/Fiscal_Record_Writers.php:267
+#: includes/Services/Fiscal_Record_Writers.php:391
 msgid "POS fiscal sale record recovered."
 msgstr "Catatan fiskal penjualan POS berhasil dipulihkan."
 
@@ -2007,7 +2034,7 @@ msgstr "Tidak diketahui"
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
 #: includes/Templates/Payment.php:413
-#: tests/includes/Templates/Test_Receipt_Renderers.php:269
+#: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Tamu"
 
@@ -5688,54 +5715,54 @@ msgstr "Musiman"
 msgid "Promotion"
 msgstr "Promosi"
 
-#: includes/Templates/Auth.php:127
+#: includes/Templates/Auth.php:118
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Parameter redirect_uri hilang atau tidak valid."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:133
+#: includes/Templates/Auth.php:124
 msgid "Missing state parameter."
 msgstr "Parameter state hilang."
 
-#: includes/Templates/Auth.php:145
-msgid "Too many requests. Please try again later."
-msgstr "Terlalu banyak permintaan. Silakan coba lagi nanti."
-
-#: includes/Templates/Auth.php:354
+#: includes/Templates/Auth.php:344
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr "Sesi autentikasi kedaluwarsa. Silakan coba masuk lagi dari aplikasi."
 
-#: includes/Templates/Auth.php:360
+#: includes/Templates/Auth.php:350
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr "Sesi autentikasi tidak valid. Silakan coba masuk lagi dari aplikasi."
 
-#: includes/Templates/Auth.php:380
+#: includes/Templates/Auth.php:370
 msgid "Security check failed. Please try again."
 msgstr "Pemeriksaan keamanan gagal. Silakan coba lagi."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:390
+#: includes/Templates/Auth.php:380
 msgid "Authentication failed."
 msgstr "Otentikasi gagal."
 
-#: includes/Templates/Auth.php:400
+#: includes/Templates/Auth.php:399
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Akun ini terkunci sementara karena terlalu banyak percobaan login yang gagal. Silakan coba lagi nanti."
 
-#: includes/Templates/Auth.php:441
+#: includes/Templates/Auth.php:444
 msgid "Failed to generate authentication tokens."
 msgstr "Gagal menghasilkan token otentikasi."
 
-#: includes/Templates/Auth.php:491
+#: includes/Templates/Auth.php:494
 msgid "Please enter both username and password."
 msgstr "Silakan masukkan nama pengguna dan kata sandi."
 
-#: includes/Templates/Auth.php:505
-#: includes/Templates/Auth.php:514
+#: includes/Templates/Auth.php:508
+#: includes/Templates/Auth.php:517
 msgid "Invalid username or password."
 msgstr "Nama pengguna atau kata sandi tidak valid."
+
+#: includes/Templates/Auth.php:556
+msgid "Too many requests. Please try again later."
+msgstr "Terlalu banyak permintaan. Silakan coba lagi nanti."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:50
@@ -6420,6 +6447,6 @@ msgstr ""
 msgid "Hello"
 msgstr "Halo"
 
-#: woocommerce-pos.php:163
+#: woocommerce-pos.php:167
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "Plugin WCPOS gagal dimuat dengan benar."

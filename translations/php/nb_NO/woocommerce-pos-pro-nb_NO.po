@@ -273,36 +273,36 @@ msgid ""
 msgstr ""
 "WCPOS Pro krever en nyere versjon av WCPOS-pluginet (versjonert REST API). Pro REST-utvidelser er deaktivert til den medfølgende avhengigheten er oppdatert."
 
-#: includes/API/V1/Display_Controller.php:276
+#: includes/API/V1/Display_Controller.php:282
 msgid "No display template is available."
 msgstr "Ingen visningsmal er tilgjengelig."
 
-#: includes/API/V1/Display_Controller.php:291
-#: includes/API/V1/Display_Controller.php:335
-#: includes/Services/Customer_Display.php:196
+#: includes/API/V1/Display_Controller.php:297
+#: includes/API/V1/Display_Controller.php:341
+#: includes/Services/Customer_Display.php:204
 msgid "Unknown display."
 msgstr "Ukjent visning."
 
-#: includes/API/V1/Display_Controller.php:298
-#: includes/API/V1/Display_Controller.php:303
-#: includes/API/V1/Display_Controller.php:312
+#: includes/API/V1/Display_Controller.php:304
+#: includes/API/V1/Display_Controller.php:309
+#: includes/API/V1/Display_Controller.php:318
 msgid "Signal does not belong to this device."
 msgstr "Signalet tilhører ikke denne enheten."
 
-#: includes/API/V1/Display_Controller.php:308
+#: includes/API/V1/Display_Controller.php:314
 msgid "Invalid signaling peer."
 msgstr "Ugyldig signalmotpart."
 
-#: includes/API/V1/Display_Controller.php:315
-#: includes/Services/Customer_Display.php:203
+#: includes/API/V1/Display_Controller.php:321
+#: includes/Services/Customer_Display.php:211
 msgid "Invalid display snapshot."
 msgstr "Ugyldig øyeblikksbilde av skjermen."
 
-#: includes/API/V1/Display_Controller.php:331
+#: includes/API/V1/Display_Controller.php:337
 msgid "Cannot read signals for that role."
 msgstr "Kan ikke lese signaler for denne rollen."
 
-#: includes/API/V1/Display_Controller.php:363
+#: includes/API/V1/Display_Controller.php:369
 msgid "You are not authorized for this store."
 msgstr "Du har ikke tilgang til denne butikken."
 
@@ -325,38 +325,43 @@ msgid "Invalid action."
 msgstr "Ugyldig handling."
 
 #: includes/API/V1/Extensions_Action.php:233
-#: includes/API/V1/Extensions_Action.php:375
+#: includes/API/V1/Extensions_Action.php:383
 msgid "No download URL available for this extension."
 msgstr "Ingen nedlastings-URL tilgjengelig for denne utvidelsen."
 
-#: includes/API/V1/Extensions_Action.php:258
+#: includes/API/V1/Extensions_Action.php:241
+#: includes/API/V1/Extensions_Action.php:391
+msgid "This extension's download location is not recognised."
+msgstr "Nedlastingsstedet for denne utvidelsen gjenkjennes ikke."
+
+#: includes/API/V1/Extensions_Action.php:266
 msgid "Plugin installation failed."
 msgstr "Installasjon av plugin mislyktes."
 
-#: includes/API/V1/Extensions_Action.php:273
+#: includes/API/V1/Extensions_Action.php:281
 msgid "Plugin was installed but could not be located."
 msgstr "Plugin ble installert, men kunne ikke lokaliseres."
 
-#: includes/API/V1/Extensions_Action.php:307
-#: includes/API/V1/Extensions_Action.php:336
-#: includes/API/V1/Extensions_Action.php:362
-#: includes/API/V1/Extensions_Action.php:481
+#: includes/API/V1/Extensions_Action.php:315
+#: includes/API/V1/Extensions_Action.php:344
+#: includes/API/V1/Extensions_Action.php:370
+#: includes/API/V1/Extensions_Action.php:497
 msgid "Extension is not installed."
 msgstr "Utvidelse er ikke installert."
 
-#: includes/API/V1/Extensions_Action.php:419
+#: includes/API/V1/Extensions_Action.php:435
 msgid "Plugin update failed."
 msgstr "Oppdatering av plugin mislyktes."
 
 #. translators: 1: extension name, 2: extension version, 3: WCPOS version the extension needs, 4: WCPOS version this site runs
-#: includes/API/V1/Extensions_Action.php:457
+#: includes/API/V1/Extensions_Action.php:473
 #, php-format
 msgid ""
 "%1$s %2$s needs WCPOS %3$s or later; this site runs WCPOS %4$s. Update WCPOS Pro first."
 msgstr ""
 "%1$s %2$s krever WCPOS %3$s eller nyere; dette nettstedet kjører WCPOS %4$s. Oppdater WCPOS Pro først."
 
-#: includes/API/V1/Extensions_Action.php:489
+#: includes/API/V1/Extensions_Action.php:505
 msgid "Automatic updates are disabled on this site."
 msgstr "Automatiske oppdateringer er deaktivert på dette nettstedet."
 
@@ -368,19 +373,26 @@ msgstr "Ugyldig ordre-ID."
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "Mangler X-WCPOS-Idempotency-Key-header."
 
-#: includes/API/V1/Stores.php:184
+#: includes/API/V1/Stores.php:210
 msgid "You do not have permission to manage stores."
 msgstr "Du har ikke tillatelse til å administrere butikker."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:207
-#: includes/API/V1/Stores.php:261
-#: includes/API/V1/Stores.php:310
+#: includes/API/V1/Stores.php:233
+#: includes/API/V1/Stores.php:287
+#: includes/API/V1/Stores.php:336
 msgid "Store not found."
 msgstr "Butikk ikke funnet."
 
 #. translators: Store is a physical POS store/location, not the verb "to store".
-#: includes/API/V1/Stores.php:321
+#: includes/API/V1/Stores.php:345
+msgid ""
+"This store has a till session that is still open. Close it before trashing the store."
+msgstr ""
+"Denne butikken har fortsatt en åpen kassasesjon. Lukk den før du flytter butikken til papirkurven."
+
+#. translators: Store is a physical POS store/location, not the verb "to store".
+#: includes/API/V1/Stores.php:356
 msgid "Failed to trash store."
 msgstr "Kunne ikke slette butikken."
 
@@ -435,44 +447,44 @@ msgstr "Idempotensnøkkelen ble gjenbrukt med en annen forespørsel."
 msgid "The provider could not confirm this payment."
 msgstr "Leverandøren kunne ikke bekrefte denne betalingen."
 
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:64
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:65
 msgid ""
 "The terminal payment has not completed yet. Finish it on the terminal, or choose another payment method."
 msgstr ""
 "Terminalbetalingen er ikke fullført ennå. Fullfør den på terminalen, eller velg en annen betalingsmetode."
 
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:80
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:81
 msgid "The refund could not be matched to a WooCommerce refund."
 msgstr "Refusjonen kunne ikke kobles til en WooCommerce-refusjon."
 
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:99
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:101
 msgid "This sale has no provider reference to refund against."
 msgstr "Dette salget har ingen leverandørreferanse å refundere mot."
 
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:106
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:108
 #: includes/Payments/OrderPay/Order_Pay_Panel.php:88
 msgid "The terminal provider reported an error."
 msgstr "Terminalleverandøren rapporterte en feil."
 
 #. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:118
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:120
 #, php-format
 msgid "Refund of %1$s requested via %2$s; provider reference %3$s (pending)"
 msgstr ""
 "Refusjon på %1$s forespurt via %2$s; leverandørreferanse %3$s (venter)"
 
 #. translators: 1: refund amount, 2: gateway title, 3: provider refund reference.
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:120
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:122
 #, php-format
 msgid "Refunded %1$s via %2$s; provider reference %3$s"
 msgstr "%1$s refundert via %2$s; leverandørreferanse %3$s"
 
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:151
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:153
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Refusjonsbeløpet kan ikke tilordnes denne betalingen."
 
 #. translators: 1: amount not refunded, 2: the provider's message.
-#: includes/Payments/OrderPay/Order_Pay_Gateway.php:168
+#: includes/Payments/OrderPay/Order_Pay_Gateway.php:170
 #, php-format
 msgid ""
 "%1$s of this refund could not be returned to the card (%2$s). Return it another way."
@@ -710,41 +722,55 @@ msgid "Details"
 msgstr "Detaljer"
 
 #. translators: Refund API validation error. original_method, cash, and manual are literal API enum values and must not be translated.
-#: includes/Payments/Refund_Processor.php:184
+#: includes/Payments/Refund_Processor.php:186
 msgid ""
 "Invalid refund destination. Allowed values: original_method, cash, manual."
 msgstr ""
 "Ugyldig refusjonsdestinasjon. Tillatte verdier: original_method, cash, manual."
 
 #. translators: Refund API error shown when the original payment gateway cannot process the refund.
-#: includes/Payments/Refund_Processor.php:214
+#: includes/Payments/Refund_Processor.php:216
 msgid "The original payment gateway is not available for refunds."
 msgstr ""
 "Den opprinnelige betalingsløsningen er ikke tilgjengelig for refusjoner."
 
 #. translators: Refund API error when no payment has been captured on the order.
-#: includes/Payments/Refund_Processor.php:296
+#: includes/Payments/Refund_Processor.php:298
 msgid ""
 "Nothing has been captured on this order yet, so there is nothing to refund."
 msgstr ""
 "Det er ennå ikke trukket noe for denne bestillingen, så det er ingenting å refundere."
 
 #. translators: Refund API error when the recorded payments cannot return the requested amount.
-#: includes/Payments/Refund_Processor.php:340
+#: includes/Payments/Refund_Processor.php:342
 msgid ""
 "The recorded payments cannot return this amount through the original method."
 msgstr ""
 "De registrerte betalingene kan ikke tilbakebetale dette beløpet via den opprinnelige betalingsmåten."
 
 #. translators: 1: refund id, 2: amount, 3: payment method id, 4: provider error.
-#: includes/Payments/Refund_Processor.php:461
+#: includes/Payments/Refund_Processor.php:465
 #, php-format
 msgid ""
 "POS refund #%1$d: %2$s could not be returned through %3$s — %4$s. Return it another way."
 msgstr ""
 "POS-refusjon #%1$d: %2$s kunne ikke refunderes via %3$s — %4$s. Refunder på en annen måte."
 
-#: includes/Payments/Server/Order_Status_Void.php:54
+#. translators: 1: amount, 2: payment method id, 3: provider reference, 4: refund error.
+#: includes/Payments/Refund_Processor.php:624
+#, php-format
+msgid ""
+"POS refund: %1$s was returned to the customer through %2$s (reference %3$s), but WooCommerce then removed the refund record after an error: %4$s"
+msgstr ""
+"POS-refusjon: %1$s ble tilbakebetalt til kunden via %2$s (referanse %3$s), men WooCommerce fjernet deretter refusjonsoppføringen etter en feil: %4$s"
+
+#: includes/Payments/Refund_Processor.php:636
+msgid ""
+"The refund was returned to the customer, but WooCommerce could not keep the refund record. Check the order notes before trying again."
+msgstr ""
+"Beløpet ble tilbakebetalt til kunden, men WooCommerce kunne ikke beholde refusjonsoppføringen. Sjekk ordrenotatene før du prøver igjen."
+
+#: includes/Payments/Server/Order_Status_Void.php:55
 msgid "Cancelling the payment still open on the reader"
 msgstr "Avbryter betalingen som fortsatt er åpen på kortterminalen"
 
@@ -762,7 +788,7 @@ msgid "This reader is unavailable."
 msgstr "Denne kortleseren er utilgjengelig."
 
 #. translators: 1: unconfirmed amount with currency, 2: refund record id, 3: number of days.
-#: includes/Payments/Server/Refund_Sweep.php:295
+#: includes/Payments/Server/Refund_Sweep.php:299
 #, php-format
 msgid ""
 "%1$s of refund #%2$d is still unconfirmed by the provider after %3$d days. The refund record stands; check the provider dashboard before returning the money another way."
@@ -770,14 +796,14 @@ msgstr ""
 "%1$s av refusjon #%2$d er fortsatt ikke bekreftet av betalingsleverandøren etter %3$d dager. Refusjonen er fortsatt registrert; sjekk leverandørens kontrollpanel før du betaler tilbake på en annen måte."
 
 #. translators: 1: refund amount with currency, 2: gateway title, 3: provider refund reference.
-#: includes/Payments/Server/Refund_Sweep.php:352
+#: includes/Payments/Server/Refund_Sweep.php:356
 #, php-format
 msgid "Refund of %1$s via %2$s confirmed by the provider (reference %3$s)."
 msgstr ""
 "Refusjon på %1$s via %2$s er bekreftet av betalingsleverandøren (referanse %3$s)."
 
 #. translators: 1: refund amount with currency, 2: gateway title, 3: provider refund reference.
-#: includes/Payments/Server/Refund_Sweep.php:354
+#: includes/Payments/Server/Refund_Sweep.php:358
 #, php-format
 msgid ""
 "Refund of %1$s via %2$s was rejected by the provider (reference %3$s). The refund record stands: return the money another way, not with a second refund."
@@ -820,46 +846,47 @@ msgstr ""
 msgid "You are not allowed to download this support bundle."
 msgstr "Du har ikke tillatelse til å laste ned denne støttepakken."
 
-#: includes/Registers.php:396
+#: includes/Registers.php:423
 #: includes/Services/Meta_Register_Repository.php:145
 msgid "Register"
 msgstr "Kasse"
 
-#: includes/Registers.php:542
+#: includes/Registers.php:569
 msgid "The store must be a published store you are authorized for."
 msgstr "Butikken må være publisert, og du må ha tilgang til den."
 
-#: includes/Registers.php:549
+#: includes/Registers.php:576
 msgid "Pick a store for the new register."
 msgstr "Velg en butikk for den nye kassen."
 
-#: includes/Registers.php:552
+#: includes/Registers.php:579
 msgid ""
 "Pick a store for the new register; the site's unassigned register already exists."
 msgstr ""
 "Velg en butikk for den nye kassen; nettstedets ufordelte kasse finnes allerede."
 
-#: includes/Registers.php:671
+#: includes/Registers.php:711
 msgid "The target store must be a published store you are authorized for."
 msgstr "Målbutikken må være publisert, og du må ha tilgang til den."
 
-#: includes/Registers.php:674
+#: includes/Registers.php:714
 msgid "Close the register session before moving it to another store."
 msgstr "Lukk kassesesjonen før du flytter den til en annen butikk."
 
-#: includes/Services/Customer_Display.php:86
+#: includes/Services/Customer_Display.php:88
+#: includes/Services/Customer_Display.php:94
 msgid "Too many pairing attempts."
 msgstr "For mange forsøk på sammenkobling."
 
-#: includes/Services/Customer_Display.php:94
+#: includes/Services/Customer_Display.php:102
 msgid "Invalid or expired pairing code."
 msgstr "Ugyldig eller utløpt sammenkoblingskode."
 
-#: includes/Services/Customer_Display.php:165
+#: includes/Services/Customer_Display.php:173
 msgid "Invalid display credentials."
 msgstr "Ugyldig påloggingsinformasjon for skjermen."
 
-#: includes/Services/Customer_Display.php:207
+#: includes/Services/Customer_Display.php:215
 msgid "Display snapshot is too large."
 msgstr "Øyeblikksbildet av skjermen er for stort."
 
@@ -991,11 +1018,11 @@ msgstr "%1$s krever WCPOS Pro %2$s eller nyere."
 msgid "WCPOS Pro failed to load. Please run composer install."
 msgstr "WCPOS Pro kunne ikke lastes. Vennligst kjør composer install."
 
-#: woocommerce-pos-pro.php:296
+#: woocommerce-pos-pro.php:304
 msgid "WCPOS Pro"
 msgstr "WCPOS Pro"
 
-#: woocommerce-pos-pro.php:297
+#: woocommerce-pos-pro.php:305
 msgid ""
 "now includes all features from the free plugin. The standalone free plugin has been automatically deactivated. You may safely delete it from your plugins."
 msgstr ""
