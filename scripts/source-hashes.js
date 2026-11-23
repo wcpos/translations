@@ -6,7 +6,6 @@ const { createHash } = require('crypto');
 const { parsePluralKey } = require('./plural-rules');
 
 const DEFAULT_ROOT = path.resolve(__dirname, '..');
-const ENGLISH_LOCALES = new Set(['en', 'en_US', 'en_GB']);
 // A short, stable fingerprint is enough to detect changed source text.
 const HASH_LENGTH = 16;
 
@@ -24,8 +23,9 @@ function syncSourceHashes({ rootDir = DEFAULT_ROOT } = {}) {
     .flatMap(project => fs.readdirSync(path.join(jsDir, project.name))
       .filter(file => file.endsWith('.json')).map(file => `${project.name}/${file}`))
     .sort();
-  const locales = Object.keys(JSON.parse(fs.readFileSync(path.join(rootDir, 'locales.json'), 'utf8')))
-    .filter(locale => !ENGLISH_LOCALES.has(locale));
+  // English locale files override the source in the app, so a changed English key must be cleared
+  // there too (wcpos/translations, en_US stale labels).
+  const locales = Object.keys(JSON.parse(fs.readFileSync(path.join(rootDir, 'locales.json'), 'utf8')));
   const hashes = {};
   const changed = [];
   let seeded = 0;
