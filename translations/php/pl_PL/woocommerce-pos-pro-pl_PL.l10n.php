@@ -109,7 +109,7 @@ return array(
 		'Send to terminal' => 'Wyślij do terminala',
 		'Cancel the terminal payment before choosing another payment method.' => 'Anuluj płatność na terminalu przed wybraniem innej metody płatności.',
 		'Cancel' => 'Anuluj',
-		'Try again' => 'Spróbuj ponownie',
+		'Try again' => 'Ponów',
 		'Terminal' => 'Terminal',
 		'No terminal is available. Check the terminal settings.' => 'Brak dostępnego terminala. Sprawdź jego ustawienia.',
 		'Ready' => 'Gotowe',
