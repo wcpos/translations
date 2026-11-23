@@ -311,8 +311,8 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:87
-#: includes/Form_Handler.php:101
+#: includes/Form_Handler.php:138
+#: includes/Form_Handler.php:159
 #: includes/Templates/Payment.php:203
 #: includes/Templates/Payment.php:537
 #: includes/Templates/Received.php:92
@@ -400,6 +400,27 @@ msgstr "80 mm (Standard)"
 #: includes/Admin/Templates/Single_Template.php:294
 msgid "58mm (Narrow)"
 msgstr "58 mm (Étroit)"
+
+#: includes/Admin/User_Identity_Tool.php:29
+msgid "Reset WCPOS account identities"
+msgstr "Réinitialiser les identités des comptes WCPOS"
+
+#: includes/Admin/User_Identity_Tool.php:30
+msgid "Reset identities"
+msgstr "Réinitialiser les identités"
+
+#: includes/Admin/User_Identity_Tool.php:31
+msgid ""
+"Use this on a store that was copied from another store, when the POS app reports AUTH342. Each user gets a new POS identity the next time it is needed. Sync any waiting sales from the tills first; afterwards, remove this store from each till and connect it again."
+msgstr ""
+"Utilisez cette option pour une boutique copiée depuis une autre lorsque l’application POS affiche AUTH342. Chaque utilisateur recevra une nouvelle identité POS la prochaine fois qu’elle sera nécessaire. Synchronisez d’abord les ventes en attente sur les caisses, puis supprimez cette boutique de chaque caisse et reconnectez-la."
+
+#. translators: %d: Number of users whose WCPOS account identity was reset.
+#: includes/Admin/User_Identity_Tool.php:51
+#, php-format
+msgid "WCPOS account identities reset. Users affected: %d."
+msgstr ""
+"Les identités des comptes WCPOS ont été réinitialisées. Utilisateurs concernés : %d."
 
 #. translators: REST API schema field label or error message.
 #: includes/API.php:438
@@ -504,36 +525,43 @@ msgstr "Échec de la récupération des données du magasin."
 msgid "Store not found or not accessible by this cashier."
 msgstr "Magasin introuvable ou inaccessible par ce caissier."
 
-#: includes/API/V1/Checkout_Controller.php:104
+#: includes/API/V1/Checkout_Controller.php:105
 msgid "Sorry, you cannot view checkout state."
 msgstr "Désolé, vous ne pouvez pas afficher l'état du paiement."
 
-#: includes/API/V1/Checkout_Controller.php:115
+#: includes/API/V1/Checkout_Controller.php:116
 msgid "Sorry, you cannot process checkout."
 msgstr "Désolé, vous ne pouvez pas traiter le paiement."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:143
+#: includes/API/V1/Checkout_Controller.php:144
 msgid "Missing X-WCPOS-Idempotency-Key header."
 msgstr "En-tête X-WCPOS-Idempotency-Key manquant."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:154
+#: includes/API/V1/Checkout_Controller.php:155
 #: includes/API/V1/Gateway_Bootstrap_Controller.php:99
 msgid "Payment gateway not found."
 msgstr "Passerelle de paiement introuvable."
 
-#: includes/API/V1/Checkout_Controller.php:162
+#: includes/API/V1/Checkout_Controller.php:163
+#: includes/API/V1/Gateway_Bootstrap_Controller.php:107
 msgid "Payment gateway is not available for POS checkout."
 msgstr "La passerelle de paiement n'est pas disponible pour le paiement POS."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Checkout_Controller.php:283
+#: includes/API/V1/Checkout_Controller.php:284
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:433
+#: includes/API/V2/Payments_Controller.php:434
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Commande introuvable."
+
+#: includes/API/V1/Checkout_Controller.php:294
+#: includes/API/V1/Orders_Controller.php:642
+#: includes/API/V2/Payments_Controller.php:438
+msgid "Sorry, you are not allowed to edit this order."
+msgstr "Désolé, vous n’êtes pas autorisé à modifier cette commande."
 
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Customers_Controller.php:103
@@ -565,7 +593,7 @@ msgstr "Filtrer les clients par rôles."
 
 #. translators: Use default WordPress translation.
 #: includes/API/V1/Customers_Controller.php:328
-#: includes/API/V1/Orders_Controller.php:586
+#: includes/API/V1/Orders_Controller.php:587
 msgid "Invalid email address."
 msgstr "Adresse e-mail invalide."
 
@@ -600,41 +628,41 @@ msgid "You do not have permission to view logs."
 msgstr "Vous n'avez pas la permission de voir les logs."
 
 #. translators: REST API schema field label or error message.
-#: includes/API/V1/Orders_Controller.php:297
-#: includes/API/V2/Order_Email_Controller.php:40
+#: includes/API/V1/Orders_Controller.php:298
+#: includes/API/V2/Order_Email_Controller.php:41
 msgid "Email address"
 msgstr "Adresse e-mail"
 
-#: includes/API/V1/Orders_Controller.php:302
-#: includes/API/V2/Order_Email_Controller.php:45
+#: includes/API/V1/Orders_Controller.php:303
+#: includes/API/V2/Order_Email_Controller.php:46
 msgid "Save email to order"
 msgstr "Enregistrer l'e-mail dans la commande"
 
-#: includes/API/V1/Orders_Controller.php:337
+#: includes/API/V1/Orders_Controller.php:338
 msgid "Customer tax IDs snapshotted at sale time."
 msgstr "Identifiants fiscaux client enregistrés au moment de la vente."
 
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:641
+#: includes/API/V1/Orders_Controller.php:647
 #, php-format
 msgid "Email address %s added to billing details from WCPOS."
 msgstr "Adresse e-mail %s ajoutée aux détails de facturation depuis WCPOS."
 
 #. translators: %s: email address.
-#: includes/API/V1/Orders_Controller.php:654
+#: includes/API/V1/Orders_Controller.php:660
 #, php-format
 msgid "Order details manually sent to %s from WCPOS."
 msgstr "Détails de la commande envoyés manuellement à %s depuis WCPOS."
 
-#: includes/API/V1/Orders_Controller.php:719
+#: includes/API/V1/Orders_Controller.php:725
 msgid "Unique identifier for the order status."
 msgstr "Identifiant unique pour le statut de la commande."
 
-#: includes/API/V1/Orders_Controller.php:725
+#: includes/API/V1/Orders_Controller.php:731
 msgid "Display name of the order status."
 msgstr "Nom d'affichage du statut de la commande."
 
-#: includes/API/V1/Orders_Controller.php:751
+#: includes/API/V1/Orders_Controller.php:757
 msgid "Whether the order email was sent."
 msgstr "Si l’e-mail de la commande a été envoyé."
 
@@ -871,29 +899,29 @@ msgstr "Un modèle de clôture est requis."
 msgid "Template not found."
 msgstr "Modèle non trouvé."
 
-#: includes/API/V1/Receipts_Controller.php:352
 #: includes/API/V1/Receipts_Controller.php:360
+#: includes/API/V1/Receipts_Controller.php:368
 #: includes/Templates/Receipt.php:253
 #: includes/Templates/Receipt.php:261
 #: includes/Templates/Receipt.php:272
 msgid "Could not generate the receipt PDF."
 msgstr "Impossible de générer le PDF du reçu."
 
-#: includes/API/V1/Receipts_Controller.php:377
+#: includes/API/V1/Receipts_Controller.php:385
 msgid "Another print of this order is in progress; try again."
 msgstr "Une autre impression de cette commande est en cours ; réessayez."
 
-#: includes/API/V1/Receipts_Controller.php:395
-#: includes/API/V2/Closures_Controller.php:389
+#: includes/API/V1/Receipts_Controller.php:403
+#: includes/API/V2/Closures_Controller.php:399
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "La requête de clôture n’a pas pu aboutir."
 
-#: includes/API/V1/Receipts_Controller.php:399
+#: includes/API/V1/Receipts_Controller.php:407
 msgid "Receipt document could not be read."
 msgstr "Impossible de lire le document de reçu."
 
-#: includes/API/V1/Receipts_Controller.php:414
+#: includes/API/V1/Receipts_Controller.php:422
 msgid "Sorry, you cannot view receipts."
 msgstr "Désolé, vous ne pouvez pas consulter les reçus."
 
@@ -1132,31 +1160,31 @@ msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
 "La collection « %1$s » n’est pas desservie par cette route. Collections prises en charge : %2$s."
 
-#: includes/API/V2/Payments_Controller.php:127
+#: includes/API/V2/Payments_Controller.php:128
 msgid "Sorry, you cannot manage order payments."
 msgstr "Désolé, vous ne pouvez pas gérer les paiements de commande."
 
-#: includes/API/V2/Payments_Controller.php:147
+#: includes/API/V2/Payments_Controller.php:148
 msgid "Payment must be an object."
 msgstr "Le paiement doit être un objet."
 
-#: includes/API/V2/Payments_Controller.php:218
+#: includes/API/V2/Payments_Controller.php:219
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
-#: includes/Payments/Contract/Gateway_Submission.php:130
+#: includes/Payments/Contract/Gateway_Submission.php:131
 #: includes/Payments/Contract/Ledger.php:1671
 msgid "Payment method not found."
 msgstr "Moyen de paiement introuvable."
 
-#: includes/API/V2/Payments_Controller.php:224
+#: includes/API/V2/Payments_Controller.php:225
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Les valeurs doivent être un objet et l’ID de tentative un UUID."
 
-#: includes/API/V2/Payments_Controller.php:229
+#: includes/API/V2/Payments_Controller.php:230
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "L’ID de tentative doit désigner la tentative envoyée à annuler."
 
-#: includes/API/V2/Payments_Controller.php:340
+#: includes/API/V2/Payments_Controller.php:341
 msgid "Invalid payment operation parameters."
 msgstr "Paramètres d’opération de paiement invalides."
 
@@ -1169,8 +1197,8 @@ msgid "Sorry, you cannot bootstrap payment methods."
 msgstr "Désolé, vous ne pouvez pas initialiser les moyens de paiement."
 
 #: includes/API/V2/Payment_Methods_Controller.php:116
-#: includes/Payments/Contract/Gateway_Submission.php:51
-#: includes/Payments/Contract/Ledger.php:3068
+#: includes/Payments/Contract/Gateway_Submission.php:52
+#: includes/Payments/Contract/Ledger.php:3077
 msgid "Payment capture mode is unsupported."
 msgstr "Mode de capture du paiement non pris en charge."
 
@@ -1261,12 +1289,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Échec du rapport « %1$s » : %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:474
+#: includes/API/V2/Sessions_Controller.php:502
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Paramètre invalide : %s"
 
-#: includes/API/V2/Sessions_Controller.php:476
+#: includes/API/V2/Sessions_Controller.php:504
 msgid "The session request could not be completed."
 msgstr "La requête de session n’a pas pu aboutir."
 
@@ -1289,12 +1317,12 @@ msgid "Order key mismatch."
 msgstr "Clé de commande non correspondante."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:85
+#: includes/Form_Handler.php:136
 msgid "Token not provided."
 msgstr "Jeton non fourni."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:99
+#: includes/Form_Handler.php:157
 msgid "Cashier token mismatch."
 msgstr "Jeton de caissier non correspondant."
 
@@ -1432,14 +1460,14 @@ msgstr ""
 "Ce mode de capture du paiement ne prend pas en charge cette opération."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:317
+#: includes/Payments/Contract/Attempts.php:320
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "Tentative de paiement %1$s dans WCPOS : le résultat est inconnu et %2$s ne peut pas confirmer si le montant a été débité. Vérifiez le paiement auprès du fournisseur, puis annulez la tentative à la caisse si aucun montant n’a été débité."
 
-#: includes/Payments/Contract/Attempts.php:406
+#: includes/Payments/Contract/Attempts.php:409
 msgid "Clearing the awaiting-customer state"
 msgstr "Effacement de l’état d’attente du client"
 
@@ -1448,12 +1476,12 @@ msgid "This command ID was already used with a different request."
 msgstr ""
 "Cet identifiant d’instruction a déjà été utilisé avec une autre requête."
 
-#: includes/Payments/Contract/Command_Log.php:241
-#: includes/Payments/Contract/Gateway_Submission.php:108
+#: includes/Payments/Contract/Command_Log.php:244
+#: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Cette tentative a été annulée ou remplacée à la caisse."
 
-#: includes/Payments/Contract/Command_Log.php:267
+#: includes/Payments/Contract/Command_Log.php:270
 msgid "The order changed since this command was built; read it again."
 msgstr ""
 "La commande a changé depuis la création de cette instruction ; relisez-la."
@@ -1488,51 +1516,51 @@ msgstr "La commande a été payée avant l’envoi de cette tentative de paiemen
 msgid "This payment cannot be voided."
 msgstr "Ce paiement ne peut pas être annulé."
 
-#: includes/Payments/Contract/Gateway_Submission.php:54
+#: includes/Payments/Contract/Gateway_Submission.php:55
 msgid "Attempt ID must be a UUID."
 msgstr "L’ID de tentative doit être un UUID."
 
-#: includes/Payments/Contract/Gateway_Submission.php:57
+#: includes/Payments/Contract/Gateway_Submission.php:58
 msgid "Only POS orders take a gateway submission."
 msgstr ""
 "Seules les commandes POS peuvent être soumises à une passerelle de paiement."
 
-#: includes/Payments/Contract/Gateway_Submission.php:79
+#: includes/Payments/Contract/Gateway_Submission.php:80
 msgid "An earlier payment attempt on this order has no outcome yet."
 msgstr ""
 "Une tentative de paiement antérieure pour cette commande n’a pas encore de résultat."
 
-#: includes/Payments/Contract/Gateway_Submission.php:113
+#: includes/Payments/Contract/Gateway_Submission.php:114
 msgid "Payment method is not enabled for the POS."
 msgstr "Le moyen de paiement n’est pas activé pour le POS."
 
-#: includes/Payments/Contract/Gateway_Submission.php:121
+#: includes/Payments/Contract/Gateway_Submission.php:122
 msgid "Order is already paid."
 msgstr "La commande est déjà payée."
 
-#: includes/Payments/Contract/Gateway_Submission.php:125
+#: includes/Payments/Contract/Gateway_Submission.php:126
 msgid "Order already has a live payment."
 msgstr "Un paiement actif est déjà associé à cette commande."
 
-#: includes/Payments/Contract/Gateway_Submission.php:206
+#: includes/Payments/Contract/Gateway_Submission.php:207
 msgid "The payment method rejected the details entered."
 msgstr "Le moyen de paiement a refusé les informations saisies."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:294
+#: includes/Payments/Contract/Gateway_Submission.php:295
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s failed after the payment was sent. Check with the provider whether money was taken, then cancel the attempt at the POS."
 msgstr ""
 "La tentative de paiement %1$s de WCPOS : %2$s a échoué après l'envoi du paiement. Vérifiez auprès du fournisseur si le montant a été prélevé, puis annulez la tentative à la caisse."
 
-#: includes/Payments/Contract/Gateway_Submission.php:298
-#: includes/Payments/Contract/Gateway_Submission.php:313
+#: includes/Payments/Contract/Gateway_Submission.php:299
+#: includes/Payments/Contract/Gateway_Submission.php:314
 msgid "The payment provider failed."
 msgstr "Le prestataire de paiement a rencontré une erreur."
 
 #. translators: %s: the host the gateway wanted to redirect the browser to.
-#: includes/Payments/Contract/Gateway_Submission.php:317
+#: includes/Payments/Contract/Gateway_Submission.php:318
 #, php-format
 msgid ""
 "This payment method wants to open %s in a browser, which the POS cannot follow."
@@ -1540,19 +1568,19 @@ msgstr ""
 "Ce moyen de paiement tente d’ouvrir %s dans un navigateur, ce que le POS ne peut pas suivre."
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the order status the merchant stored for this gateway.
-#: includes/Payments/Contract/Gateway_Submission.php:378
+#: includes/Payments/Contract/Gateway_Submission.php:379
 #, php-format
 msgid "Settled via POS: %1$s on %2$s"
 msgstr "Réglé via le POS : %1$s au statut %2$s"
 
 #. translators: 1: the gateway's verb label (e.g. "Send invoice"), 2: the destination the cashier entered.
-#: includes/Payments/Contract/Gateway_Submission.php:394
+#: includes/Payments/Contract/Gateway_Submission.php:395
 #, php-format
 msgid "Sent via POS: %1$s (%2$s)"
 msgstr "Envoyé via le POS : %1$s (%2$s)"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Gateway_Submission.php:417
+#: includes/Payments/Contract/Gateway_Submission.php:418
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: %2$s answered, but the POS could not record it. Check the order with the provider, then cancel the attempt at the POS."
@@ -1560,33 +1588,33 @@ msgstr ""
 "Tentative de paiement WCPOS %1$s : %2$s a répondu, mais le POS n’a pas pu l’enregistrer. Vérifiez la commande auprès du fournisseur, puis annulez la tentative sur le POS."
 
 #. translators: %s: attempt id.
-#: includes/Payments/Contract/Gateway_Submission.php:446
+#: includes/Payments/Contract/Gateway_Submission.php:447
 #, php-format
 msgid ""
 "Payment attempt %s may already have been paid by the gateway; reconcile the payment before cancelling it."
 msgstr ""
 "La tentative de paiement %s a peut-être déjà été payée via la passerelle de paiement ; rapprochez le paiement avant de l'annuler."
 
-#: includes/Payments/Contract/Gateway_Submission.php:454
+#: includes/Payments/Contract/Gateway_Submission.php:455
 msgid "This invoice cannot be cancelled."
 msgstr "Cette facture ne peut pas être annulée."
 
-#: includes/Payments/Contract/Gateway_Submission.php:457
+#: includes/Payments/Contract/Gateway_Submission.php:458
 msgid "The invoice was sent by a different payment method."
 msgstr "La facture a été envoyée avec un autre moyen de paiement."
 
-#: includes/Payments/Contract/Gateway_Submission.php:461
+#: includes/Payments/Contract/Gateway_Submission.php:462
 msgid "A newer invoice has been sent for this order."
 msgstr "Une facture plus récente a été envoyée pour cette commande."
 
 #. translators: 1: the payment method title, 2: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:467
+#: includes/Payments/Contract/Gateway_Submission.php:468
 #, php-format
 msgid "Cancelled via POS: %1$s. %2$s"
 msgstr "Annulé via le POS : %1$s. %2$s"
 
 #. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:501
+#: includes/Payments/Contract/Gateway_Submission.php:502
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s closed at the POS by %2$s: nothing more was charged, and the sale's payments already cover it. %3$s"
@@ -1594,27 +1622,27 @@ msgstr ""
 "%2$s a clôturé la tentative de paiement %1$s dans WCPOS à la caisse : aucun montant supplémentaire n’a été débité et les paiements de la vente couvrent déjà le total. %3$s"
 
 #. translators: 1: attempt id, 2: the staff member's display name, 3: the cashier's reason.
-#: includes/Payments/Contract/Gateway_Submission.php:501
+#: includes/Payments/Contract/Gateway_Submission.php:502
 msgid "an unknown user"
 msgstr "un utilisateur inconnu"
 
-#: includes/Payments/Contract/Gateway_Submission.php:626
+#: includes/Payments/Contract/Gateway_Submission.php:629
 msgid "This field must be true or false."
 msgstr "Ce champ doit être vrai ou faux."
 
-#: includes/Payments/Contract/Gateway_Submission.php:631
+#: includes/Payments/Contract/Gateway_Submission.php:634
 msgid "This field must be text."
 msgstr "Ce champ doit être du texte."
 
-#: includes/Payments/Contract/Gateway_Submission.php:635
+#: includes/Payments/Contract/Gateway_Submission.php:638
 msgid "This field is required."
 msgstr "Ce champ est obligatoire."
 
-#: includes/Payments/Contract/Gateway_Submission.php:639
+#: includes/Payments/Contract/Gateway_Submission.php:642
 msgid "Choose one of the listed options."
 msgstr "Choisissez l’une des options proposées."
 
-#: includes/Payments/Contract/Gateway_Submission.php:653
+#: includes/Payments/Contract/Gateway_Submission.php:656
 msgid "Check the payment fields."
 msgstr "Vérifiez les champs de paiement."
 
@@ -1661,7 +1689,7 @@ msgstr "Le montant du paiement dépasse le solde de la commande."
 
 #: includes/Payments/Contract/Ledger.php:881
 #: includes/Payments/Contract/Ledger.php:1735
-#: includes/Payments/Contract/Ledger.php:1908
+#: includes/Payments/Contract/Ledger.php:1909
 msgid "Another payment is already in progress on this order."
 msgstr "Un autre paiement est déjà en cours pour cette commande."
 
@@ -1740,28 +1768,28 @@ msgid "The order is not covered by its payments."
 msgstr "Les paiements ne couvrent pas le montant de la commande."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1985
+#: includes/Payments/Contract/Ledger.php:1986
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Paiement WCPOS %s annulé."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1987
+#: includes/Payments/Contract/Ledger.php:1988
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Paiement WCPOS %1$s annulé : %2$s"
 
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2675
+#: includes/Payments/Contract/Ledger.php:2684
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS : %s n'a pas abouti ; effectuez le rapprochement manuellement."
 
-#: includes/Payments/Contract/Ledger.php:3063
+#: includes/Payments/Contract/Ledger.php:3072
 msgid "Payment not found."
 msgstr "Paiement introuvable."
 
-#: includes/Payments/Contract/Ledger.php:3073
+#: includes/Payments/Contract/Ledger.php:3082
 msgid "Payment transition is invalid."
 msgstr "Transition de paiement invalide."
 
@@ -1990,14 +2018,14 @@ msgstr "Document de reçu invalide."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:405
+#: includes/Services/Fiscal_Record_Writers.php:407
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
 "Impossible d’écrire l’enregistrement fiscal POS %s ; une récupération sera nécessaire."
 
-#: includes/Services/Fiscal_Record_Writers.php:266
-#: includes/Services/Fiscal_Record_Writers.php:389
+#: includes/Services/Fiscal_Record_Writers.php:267
+#: includes/Services/Fiscal_Record_Writers.php:391
 msgid "POS fiscal sale record recovered."
 msgstr "L’enregistrement fiscal de la vente POS a été récupéré."
 
@@ -2026,7 +2054,7 @@ msgstr "Inconnu"
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
 #: includes/Templates/Payment.php:413
-#: tests/includes/Templates/Test_Receipt_Renderers.php:269
+#: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Invité"
 
@@ -5715,56 +5743,56 @@ msgstr "Saisonnier"
 msgid "Promotion"
 msgstr "Promotion"
 
-#: includes/Templates/Auth.php:127
+#: includes/Templates/Auth.php:118
 msgid "Missing or invalid redirect_uri parameter."
 msgstr "Paramètre redirect_uri manquant ou invalide."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:133
+#: includes/Templates/Auth.php:124
 msgid "Missing state parameter."
 msgstr "Paramètre d'état manquant."
 
-#: includes/Templates/Auth.php:145
-msgid "Too many requests. Please try again later."
-msgstr "Trop de requêtes. Veuillez réessayer plus tard."
-
-#: includes/Templates/Auth.php:354
+#: includes/Templates/Auth.php:344
 msgid "Auth session expired. Please try logging in again from the app."
 msgstr ""
 "Session d'authentification expirée. Veuillez essayer de vous reconnecter depuis l'application."
 
-#: includes/Templates/Auth.php:360
+#: includes/Templates/Auth.php:350
 msgid "Invalid auth session. Please try logging in again from the app."
 msgstr ""
 "Session d'authentification invalide. Veuillez essayer de vous reconnecter depuis l'application."
 
-#: includes/Templates/Auth.php:380
+#: includes/Templates/Auth.php:370
 msgid "Security check failed. Please try again."
 msgstr "Échec de la vérification de sécurité. Veuillez réessayer."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Auth.php:390
+#: includes/Templates/Auth.php:380
 msgid "Authentication failed."
 msgstr "Échec de l'authentification."
 
-#: includes/Templates/Auth.php:400
+#: includes/Templates/Auth.php:399
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Ce compte est temporairement verrouillé en raison de trop nombreuses tentatives de connexion échouées. Veuillez réessayer plus tard."
 
-#: includes/Templates/Auth.php:441
+#: includes/Templates/Auth.php:444
 msgid "Failed to generate authentication tokens."
 msgstr "Échec de la génération des jetons d'authentification."
 
-#: includes/Templates/Auth.php:491
+#: includes/Templates/Auth.php:494
 msgid "Please enter both username and password."
 msgstr "Veuillez entrer à la fois le nom d'utilisateur et le mot de passe."
 
-#: includes/Templates/Auth.php:505
-#: includes/Templates/Auth.php:514
+#: includes/Templates/Auth.php:508
+#: includes/Templates/Auth.php:517
 msgid "Invalid username or password."
 msgstr "Nom d'utilisateur ou mot de passe invalide."
+
+#: includes/Templates/Auth.php:556
+msgid "Too many requests. Please try again later."
+msgstr "Trop de requêtes. Veuillez réessayer plus tard."
 
 #. translators: Gallery template name shown in the admin Template Gallery.
 #: includes/Templates/Gallery_Registry.php:50
@@ -6454,6 +6482,6 @@ msgstr ""
 msgid "Hello"
 msgstr "Bonjour"
 
-#: woocommerce-pos.php:163
+#: woocommerce-pos.php:167
 msgid "The WCPOS plugin failed to load correctly."
 msgstr "Le plugin WCPOS n'a pas pu se charger correctement."
