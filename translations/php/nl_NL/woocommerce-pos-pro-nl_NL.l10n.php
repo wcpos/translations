@@ -111,7 +111,7 @@ return array(
 		'Send to terminal' => 'Naar betaalterminal sturen',
 		'Cancel the terminal payment before choosing another payment method.' => 'Annuleer de betaling via de betaalterminal voordat je een andere betaalmethode kiest.',
 		'Cancel' => 'Annuleren',
-		'Try again' => 'Opnieuw proberen',
+		'Try again' => 'Opnieuw',
 		'Terminal' => 'Betaalterminal',
 		'No terminal is available. Check the terminal settings.' => 'Er is geen betaalterminal beschikbaar. Controleer de instellingen van de betaalterminal.',
 		'Ready' => 'Gereed',

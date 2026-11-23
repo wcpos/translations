@@ -111,7 +111,7 @@ return array(
 		'Send to terminal' => 'Enviar para a maquininha',
 		'Cancel the terminal payment before choosing another payment method.' => 'Cancele o pagamento na maquininha antes de escolher outra forma de pagamento.',
 		'Cancel' => 'Cancelar',
-		'Try again' => 'Tentar novamente',
+		'Try again' => 'Repetir',
 		'Terminal' => 'Maquininha',
 		'No terminal is available. Check the terminal settings.' => 'Nenhuma maquininha disponível. Verifique as configurações da maquininha.',
 		'Ready' => 'Pronto',

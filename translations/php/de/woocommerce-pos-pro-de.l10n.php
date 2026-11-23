@@ -111,7 +111,7 @@ return array(
 		'Send to terminal' => 'An Terminal senden',
 		'Cancel the terminal payment before choosing another payment method.' => 'Brechen Sie die Zahlung am Terminal ab, bevor Sie eine andere Zahlungsmethode wählen.',
 		'Cancel' => 'Abbrechen',
-		'Try again' => 'Erneut versuchen',
+		'Try again' => 'Wiederholen',
 		'Terminal' => 'Terminal',
 		'No terminal is available. Check the terminal settings.' => 'Kein Terminal verfügbar. Prüfen Sie die Terminaleinstellungen.',
 		'Ready' => 'Bereit',
