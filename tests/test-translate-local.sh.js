@@ -57,6 +57,7 @@ if (tool === 'git') {
   if (args.includes('list')) console.log('worktree ' + wt);
   if (args.includes('status') && fs.existsSync('.translate/accepted')) console.log(' M translations/js/bb/app.json');
   if (args.includes('merge') && !args.includes('--abort') && config.conflict) process.exit(1);
+  if (args.includes('diff') && args.includes('--diff-filter=U') && Array.isArray(config.conflictFiles)) process.stdout.write(config.conflictFiles.map(file => file + '\n').join(''));
   if (args.includes('for-each-ref') && config.stale) process.stdout.write(config.stale.map(([name, tree]) => name + '\t' + (tree || '') + '\n').join(''));
 } else if (tool === 'gh') {
   if (args[0] === 'pr' && args[1] === 'view') console.log(config.prState || 'OPEN');
@@ -108,6 +109,7 @@ if (tool === 'git') {
   else if (args[0].endsWith('check-translation-quality.js')) console.log('QUALITY');
   else if (args[0].endsWith('check-completeness.js')) console.log('Details\nErrors:   0\nWarnings: 2');
   else if (args[0].endsWith('cleanup-stale-keys.js')) console.log('Removed 0 stale keys from 0 files.');
+  else if (args[0].endsWith('generate-mo-files.js')) console.log('generate-mo: wrote 1 .mo files');
   else process.exit(99);
 } else if (tool === 'codex' || tool === 'claude') {
   const prompt = fs.readFileSync(0, 'utf8');
@@ -272,6 +274,31 @@ if (tool === 'git') {
   assert.equal(result.status, 1);
   assert.ok(result.calls.some(c => isCall(c, 'git', 'merge', '--abort')));
   assert.ok(!result.calls.some(c => c.tool === 'pnpm'));
+  result = run({ pr, conflict: true, conflictFiles: ['translations/php/aa/x-aa.mo'], counts: [] });
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'checkout', '--theirs', '--', 'translations/php/aa/x-aa.mo')));
+  assert.ok(result.calls.some(c => isCall(c, 'node', 'scripts/generate-mo-files.js')));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'add', '--', 'translations/php/*.mo')));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'commit', '--no-edit')));
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'push', 'origin', 'auto-translate/existing')));
+  assert.ok(result.calls.findIndex(c => isCall(c, 'node', 'scripts/generate-mo-files.js')) < result.calls.findIndex(c => c.tool === 'pnpm'));
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'merge', '--abort')));
+  assert.match(result.stdout, /rebuilt 1 conflicted \.mo files/);
+  assert.match(result.stdout, /nothing to translate/);
+  result = run({ pr, conflict: true, conflictFiles: ['translations/php/aa/x-aa.mo', 'translations/php/aa/x-aa.po'] });
+  assert.equal(result.status, 1);
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'merge', '--abort')));
+  assert.ok(!result.calls.some(c => isCall(c, 'node', 'scripts/generate-mo-files.js')));
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'push')));
+  assert.match(result.stdout, /merge failed for PR 42/);
+  result = run({ pr, conflict: true, conflictFiles: ['translations/php/aa/x-aa.mo'], counts: [] }, ['--dry-run']);
+  assert.equal(result.status, 0, result.stderr);
+  assert.ok(result.calls.some(c => isCall(c, 'git', 'commit')));
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'push')));
+  result = run({ pr: { ...pr, headRefName: 'main' }, conflict: true, conflictFiles: ['translations/php/aa/x-aa.mo'], counts: [] });
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /refusing to push to main/);
+  assert.ok(!result.calls.some(c => isCall(c, 'git', 'push')));
   for (const branch of ['main', 'stack']) {
     result = run({ pr: { ...pr, headRefName: branch } }, ['--base', 'stack', '--no-review']);
     assert.equal(result.status, 1);
