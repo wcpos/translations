@@ -11,6 +11,25 @@ const { matchConcepts } = require('./translation-context-packets');
 const DEFAULT_ROOT = path.resolve(__dirname, '..');
 const ENGLISH_LOCALES = new Set(['en', 'en_US', 'en_GB']);
 
+/** English source -> the translation a locale ships most often for it (ties: first by "<file>\u0000<key>", JS before PHP). */
+function sameSourceMap(shipped) {
+  const counts = new Map();
+  for (const [order, source, translation] of shipped) {
+    const text = source.trim();
+    if (!text || !translation.trim()) continue;
+    const forSource = counts.get(text) ?? new Map();
+    counts.set(text, forSource);
+    const seen = forSource.get(translation);
+    forSource.set(translation, { count: (seen?.count ?? 0) + 1, first: seen && seen.first < order ? seen.first : order });
+  }
+  const best = new Map();
+  for (const [text, forSource] of counts) {
+    const [[translation]] = [...forSource].sort(([, a], [, b]) => b.count - a.count || (a.first < b.first ? -1 : 1));
+    best.set(text, translation);
+  }
+  return best;
+}
+
 function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
   const localeNames = JSON.parse(fs.readFileSync(path.join(rootDir, 'locales.json'), 'utf8'));
   for (const locale of locales ?? []) {
@@ -20,14 +39,23 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
   const { sourceTextForTranslationKey } = require('./check-completeness');
   const glossary = JSON.parse(fs.readFileSync(path.join(rootDir, 'scripts/translation-glossary.json'), 'utf8'));
   delete glossary._comment;
+  // Optional: a root without the file (older test fixtures) gets no short forms.
+  const shortFormsFile = path.join(rootDir, 'scripts/translation-short-forms.json');
+  const shortForms = fs.existsSync(shortFormsFile) ? JSON.parse(fs.readFileSync(shortFormsFile, 'utf8')) : {};
+  delete shortForms._comment;
   const jsDir = path.join(rootDir, 'source/js');
   const jsFiles = fs.readdirSync(jsDir, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .flatMap(project => fs.readdirSync(path.join(jsDir, project.name))
       .filter(file => file.endsWith('.json')).map(file => `${project.name}/${file}`))
-    .sort();
+    .sort()
+    .map(file => {
+      const sourceStrings = JSON.parse(fs.readFileSync(path.join(jsDir, file), 'utf8'));
+      return { file, sourceStrings, pluralBases: pluralBasesOf(Object.keys(sourceStrings)) };
+    });
   const phpDir = path.join(rootDir, 'source/php');
   const potFiles = fs.readdirSync(phpDir).filter(file => file.endsWith('.pot')).sort();
+  const pots = new Map(potFiles.map(file => [file, parsePoFile(fs.readFileSync(path.join(phpDir, file), 'utf8'))]));
   const packets = [];
   let total = 0;
 
@@ -39,15 +67,35 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
     const packet = {
       locale, locale_name: localeName, locale_notes: notes,
       glossary: glossary[locale] ?? glossary[language] ?? {},
+      short_forms: shortForms[locale] ?? shortForms[language] ?? {},
       counts: { js: 0, php: 0 }, js: {}, php: {},
     };
+    const jsLocale = jsFiles.map(js => {
+      const translationPath = path.join(rootDir, 'translations/js', locale, js.file);
+      return { ...js, translations: fs.existsSync(translationPath)
+        ? JSON.parse(fs.readFileSync(translationPath, 'utf8')) : {} };
+    });
+    const poLocale = potFiles.map(file => {
+      const poPath = path.join(rootDir, 'translations/php', locale, `${file.slice(0, -4)}-${locale}.po`);
+      return { file, existing: fs.existsSync(poPath)
+        ? parsePoFile(fs.readFileSync(poPath, 'utf8')) : { header: '', entries: [] } };
+    });
+    const isPluralKey = (key, pluralBases) => pluralBases.has(parsePluralKey(key)?.base);
+    const sameSource = sameSourceMap([
+      ...jsLocale.flatMap(({ file, sourceStrings, pluralBases, translations }) => Object.entries(translations)
+        .filter(([key, value]) => typeof value === 'string' && !isPluralKey(key, pluralBases))
+        .map(([key, value]) => [`0\u0000${file}\u0000${key}`, sourceTextForTranslationKey(sourceStrings, key), value])
+        .filter(([, source]) => typeof source === 'string')),
+      ...poLocale.flatMap(({ file, existing }) => existing.entries
+        .filter(entry => entry.msgid_plural === undefined)
+        .map(entry => [`1\u0000${file}\u0000${entry.msgid}`, entry.msgid, entry.msgstr])),
+    ]);
+    const sameSourceField = source => {
+      const match = typeof source === 'string' ? sameSource.get(source.trim()) : undefined;
+      return match === undefined ? {} : { same_source: match };
+    };
 
-    for (const file of jsFiles) {
-      const sourceStrings = JSON.parse(fs.readFileSync(path.join(jsDir, file), 'utf8'));
-      const pluralBases = pluralBasesOf(Object.keys(sourceStrings));
-      const translationPath = path.join(rootDir, 'translations/js', locale, file);
-      const translations = fs.existsSync(translationPath)
-        ? JSON.parse(fs.readFileSync(translationPath, 'utf8')) : {};
+    for (const { file, sourceStrings, pluralBases, translations } of jsLocale) {
       const missing = {};
       for (const key of expectedKeysForLocale(Object.keys(sourceStrings), locale)) {
         if (key in translations) continue;
@@ -56,19 +104,17 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
         missing[key] = {
           source,
           ...(plural && pluralBases.has(plural.base) ? { plural_category: plural.suffix } : {}),
-          concepts: matchConcepts(source),
+          concepts: matchConcepts(source, undefined, key),
+          ...(isPluralKey(key, pluralBases) ? {} : sameSourceField(source)),
         };
         packet.counts.js++;
       }
       if (Object.keys(missing).length) packet.js[file] = missing;
     }
 
-    for (const file of potFiles) {
+    for (const { file, existing } of poLocale) {
       const domain = file.slice(0, -4);
-      const pot = parsePoFile(fs.readFileSync(path.join(phpDir, file), 'utf8'));
-      const poPath = path.join(rootDir, 'translations/php', locale, `${domain}-${locale}.po`);
-      const existing = fs.existsSync(poPath)
-        ? parsePoFile(fs.readFileSync(poPath, 'utf8')) : { header: '', entries: [] };
+      const pot = pots.get(file);
       const header = ensurePoHeader(existing.header, domain, locale);
       const pluralForms = getPhpPluralForms(locale);
       const slots = parsePluralSlotCount(header) ?? pluralForms.nplurals;
@@ -88,6 +134,7 @@ function buildWorklist({ rootDir = DEFAULT_ROOT, locales = null } = {}) {
           references: entry.comments.filter(line => line.startsWith('#:'))
             .flatMap(line => line.slice(2).trim().split(/\s+/)).filter(Boolean),
           concepts: matchConcepts(entry.msgid),
+          ...(entry.msgid_plural === undefined ? sameSourceField(entry.msgid) : {}),
         })),
       };
     }
