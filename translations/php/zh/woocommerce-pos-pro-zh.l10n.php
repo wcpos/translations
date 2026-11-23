@@ -77,7 +77,7 @@ return array(
 		'Extension "%s" not found in catalog.' => '目录中未找到扩展 "%s"。',
 		'Invalid action.' => '无效操作。',
 		'No download URL available for this extension.' => '此扩展没有可用的下载链接。',
-		'This extension\'s download location is not recognised.' => '无法识别此扩展的下载位置。',
+		'This extension\'s download location is not recognised.' => '无法识别此扩展程序的下载位置。',
 		'Plugin installation failed.' => '插件安装失败。',
 		'Plugin was installed but could not be located.' => '插件已安装，但无法找到。',
 		'Extension is not installed.' => '扩展未安装。',
