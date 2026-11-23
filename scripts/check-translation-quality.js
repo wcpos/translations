@@ -14,11 +14,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const gettextParser = require('gettext-parser');
-const { parsePluralKey } = require('./plural-rules');
+const { parsePluralKey, pluralBasesOf } = require('./plural-rules');
 
 const ROOT = path.resolve(__dirname, '..');
-const PHP_TRANSLATIONS_DIR = path.join(ROOT, 'translations/php');
-const JS_TRANSLATIONS_DIR = path.join(ROOT, 'translations/js');
 const ENGLISH_LOCALES = new Set(['en', 'en_US', 'en_GB']);
 
 const ALWAYS_ENGLISH = new Set([
@@ -111,11 +109,11 @@ function isChangedRelativePath(changed, relativePath) {
   return !changed || changed.has(normalizePathSeparators(relativePath));
 }
 
-function changedTranslationFiles(ref) {
+function changedTranslationFiles(ref, root = ROOT) {
   if (!ref) return null;
   try {
     const changed = execFileSync('git', ['diff', '--name-only', ref, '--', 'translations/php', 'translations/js'], {
-      cwd: ROOT,
+      cwd: root,
       encoding: 'utf8',
     })
       .split('\n')
@@ -183,10 +181,10 @@ function scanJsonTranslations({ file, locale, translations, source = {} }) {
   return warnings;
 }
 
-function resolveJsonSourcePath(relPath, locale) {
+function resolveJsonSourcePath(relPath, locale, root = ROOT) {
   const prefix = `translations/js/${locale}/`;
   if (!relPath.startsWith(prefix)) return '';
-  return path.join(ROOT, 'source/js', relPath.slice(prefix.length));
+  return path.join(root, 'source/js', relPath.slice(prefix.length));
 }
 
 function scanJsonFile(filePath, locale) {
@@ -199,26 +197,28 @@ function scanJsonFile(filePath, locale) {
   return scanJsonTranslations({ file: relPath, locale, translations, source });
 }
 
-function discoverTranslationFiles({ locale, changedSince }) {
-  const changed = changedTranslationFiles(changedSince);
+function discoverTranslationFiles({ locale, changedSince, root = ROOT }) {
+  const changed = changedTranslationFiles(changedSince, root);
+  const phpTranslationsDir = path.join(root, 'translations/php');
+  const jsTranslationsDir = path.join(root, 'translations/js');
   const locales = locale
     ? [locale]
-    : fs.readdirSync(PHP_TRANSLATIONS_DIR, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
+    : fs.readdirSync(phpTranslationsDir, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name);
   const files = [];
 
   for (const code of locales) {
-    const phpDir = path.join(PHP_TRANSLATIONS_DIR, code);
+    const phpDir = path.join(phpTranslationsDir, code);
     if (fs.existsSync(phpDir)) {
       for (const file of fs.readdirSync(phpDir)) {
         if (!file.endsWith('.po')) continue;
         const absolute = path.join(phpDir, file);
-        const relative = path.relative(ROOT, absolute);
+        const relative = path.relative(root, absolute);
         if (!isChangedRelativePath(changed, relative)) continue;
         files.push({ file: absolute, locale: code, type: 'po' });
       }
     }
 
-    const jsDir = path.join(JS_TRANSLATIONS_DIR, code);
+    const jsDir = path.join(jsTranslationsDir, code);
     if (fs.existsSync(jsDir)) {
       const stack = [jsDir];
       while (stack.length > 0) {
@@ -230,7 +230,7 @@ function discoverTranslationFiles({ locale, changedSince }) {
             continue;
           }
           if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
-          const relative = path.relative(ROOT, absolute);
+          const relative = path.relative(root, absolute);
           if (!isChangedRelativePath(changed, relative)) continue;
           files.push({ file: absolute, locale: code, type: 'json' });
         }
@@ -239,6 +239,136 @@ function discoverTranslationFiles({ locale, changedSince }) {
   }
 
   return files;
+}
+
+// Thresholds from the 2026-11-22 Fable translations review (section 6 item 6): short
+// labels that grew far past their source, and one English source translated several
+// ways within a locale.
+const SHORT_SOURCE_MAX_GRAPHEMES = 9;
+const LENGTH_BUDGET_SLACK = 6;
+const WIDE_LOCALE_RE = /^(?:ja|zh|ko)(?:_|$)/;
+const DRIFT_SOURCE_MAX_CHARS = 60;
+const DRIFT_MESSAGE_MAX_CHARS = 300;
+// i18next {var} / {{var}} and printf %s, %d, %1$s.
+const PLACEHOLDER_RE = /\{[^}]+\}|%(?:\d+\$)?[sdfbu]/;
+const graphemeSegmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+// Wide (double-width) blocks: Hangul Jamo, CJK radicals and symbols/punctuation, Hiragana,
+// Katakana, Hangul compatibility Jamo, Katakana extension, CJK ideographs (ext. A, unified),
+// Hangul syllables, CJK compatibility ideographs, fullwidth forms, CJK ext. B and later.
+const WIDE_RANGES = [
+  [0x1100, 0x11ff], [0x2e80, 0x303f], [0x3040, 0x30ff], [0x3130, 0x318f], [0x31f0, 0x31ff],
+  [0x3400, 0x4dbf], [0x4e00, 0x9fff], [0xac00, 0xd7af], [0xf900, 0xfaff],
+  [0xff01, 0xff60], [0xffe0, 0xffe6], [0x20000, 0x3ffff],
+];
+
+function graphemes(value) {
+  return [...graphemeSegmenter.segment(String(value || '').trim())].map((part) => part.segment);
+}
+
+function isWideGrapheme(grapheme) {
+  const code = grapheme.codePointAt(0);
+  return WIDE_RANGES.some(([start, end]) => code >= start && code <= end);
+}
+
+function findLengthBudgetWarning({ locale, msgid, msgstr }) {
+  const source = String(msgid || '').trim();
+  const translation = String(msgstr || '').trim();
+  if (!source || !translation || PLACEHOLDER_RE.test(source) || PLACEHOLDER_RE.test(translation)) return '';
+  const sourceLength = graphemes(source).length;
+  if (sourceLength > SHORT_SOURCE_MAX_GRAPHEMES) return '';
+  const wide = WIDE_LOCALE_RE.test(String(locale || ''));
+  const parts = graphemes(translation);
+  const length = wide ? parts.reduce((sum, part) => sum + (isWideGrapheme(part) ? 2 : 1), 0) : parts.length;
+  const budget = wide ? 2 * sourceLength : sourceLength + LENGTH_BUDGET_SLACK;
+  if (length <= budget) return '';
+  return `Too long for a short label: "${source}" (${sourceLength}) → "${translation}" (${length}), budget ${budget}`;
+}
+
+/** Singular, non-empty entries of one PO or JSON file's content; plural entries and stale JSON keys are skipped. */
+function readSingularEntries(type, content, sourceStrings, relPath) {
+  if (type === 'po') {
+    const entries = [];
+    for (const [context, byId] of Object.entries(gettextParser.po.parse(content).translations || {})) {
+      for (const [msgid, entry] of Object.entries(byId || {})) {
+        const translation = String((entry.msgstr || [])[0] || '').trim();
+        if (!msgid || entry.msgid_plural || !translation) continue;
+        const label = context ? `${path.basename(relPath)} ${context}` : path.basename(relPath);
+        entries.push({ id: `${context}\u0004${msgid}`, label, source: msgid, translation });
+      }
+    }
+    return entries;
+  }
+  const bases = pluralBasesOf(Object.keys(sourceStrings));
+  return Object.entries(JSON.parse(String(content)) || {})
+    .filter(([key, value]) => {
+      const plural = parsePluralKey(key);
+      return typeof value === 'string' && value.trim() && typeof sourceStrings[key] === 'string'
+        && !(plural && bases.has(plural.base));
+    })
+    .map(([key, value]) => ({ id: key, label: key, source: sourceStrings[key], translation: value.trim() }));
+}
+
+function readFileAtRef(ref, relPath, root) {
+  try {
+    return execFileSync('git', ['show', `${ref}:${relPath}`], { cwd: root, stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 256 * 1024 * 1024 });
+  } catch {
+    return null; // Missing at the ref: everything in the file is new.
+  }
+}
+
+/**
+ * Length-budget and same-source-drift warnings. Drift groups span every file of a locale;
+ * with changedSince only entries new or changed since that ref (and drift groups holding one) warn.
+ */
+function findConsistencyWarnings({ locale, changedSince, root = ROOT }) {
+  const changed = changedTranslationFiles(changedSince, root);
+  const changedLocales = changed && new Set([...changed].map((file) => file.split('/')[2]));
+  const warnings = [];
+  const groups = new Map();
+
+  for (const { file, locale: code, type } of discoverTranslationFiles({ locale, root })) {
+    if (changedLocales && !changedLocales.has(code)) continue;
+    const relPath = normalizePathSeparators(path.relative(root, file));
+    const sourcePath = type === 'json' ? resolveJsonSourcePath(relPath, code, root) : '';
+    const sourceStrings = sourcePath && fs.existsSync(sourcePath) ? JSON.parse(fs.readFileSync(sourcePath, 'utf8')) : {};
+    let oldValues = null;
+    if (changed && changed.has(relPath)) {
+      const old = readFileAtRef(changedSince, relPath, root);
+      oldValues = new Map(old ? readSingularEntries(type, old, sourceStrings, relPath).map((e) => [e.id, e.translation]) : []);
+    }
+
+    for (const entry of readSingularEntries(type, fs.readFileSync(file), sourceStrings, relPath)) {
+      const isNew = !changed || (oldValues !== null && oldValues.get(entry.id) !== entry.translation);
+      const lengthWarning = isNew && findLengthBudgetWarning({ locale: code, msgid: entry.source, msgstr: entry.translation });
+      if (lengthWarning) {
+        warnings.push({ file: relPath, locale: code, key: entry.label, msgid: entry.source, context: '', form: 0,
+          msgstr: entry.translation, warning: lengthWarning, category: 'length-budget' });
+      }
+      const source = entry.source.trim();
+      if (!source || source.length > DRIFT_SOURCE_MAX_CHARS || PLACEHOLDER_RE.test(source)) continue;
+      const groupKey = `${code}\u0004${source}`;
+      if (!groups.has(groupKey)) groups.set(groupKey, { locale: code, source, entries: [] });
+      groups.get(groupKey).entries.push({ ...entry, file: relPath, isNew });
+    }
+  }
+
+  for (const group of groups.values()) {
+    const representative = group.entries.find((entry) => entry.isNew);
+    if (!representative) continue;
+    const variants = new Map();
+    for (const entry of group.entries) {
+      if (!variants.has(entry.translation)) variants.set(entry.translation, []);
+      variants.get(entry.translation).push(entry);
+    }
+    if (variants.size < 2) continue;
+    const parts = [...variants].map(([translation, entries]) => (
+      `"${translation}" (${entries[0].label}${entries.length > 1 ? `, +${entries.length - 1} more` : ''})`));
+    const message = truncateForSummary(`Same English, different translations: "${group.source}" → ${parts.join(' | ')}`, DRIFT_MESSAGE_MAX_CHARS);
+    warnings.push({ file: representative.file, locale: group.locale, key: representative.label, msgid: group.source, context: '',
+      form: 0, msgstr: [...variants.keys()].join(' | '), warning: message, category: 'same-source-drift' });
+  }
+
+  return warnings;
 }
 
 
@@ -260,6 +390,9 @@ function formatMarkdownSummary(warnings, { limit = 25 } = {}) {
     `${items.length} warning(s) found. This check is warning-only; investigate warnings before merging translation changes.`,
     '',
   ];
+  const counts = new Map();
+  for (const item of items) counts.set(item.category || 'heuristic', (counts.get(item.category || 'heuristic') || 0) + 1);
+  lines.push(`By category: ${[...counts].map(([category, count]) => `${category} ${count}`).join(', ')}`, '');
 
   for (const item of items.slice(0, limit)) {
     lines.push(`- **${item.warning}**`);
@@ -298,6 +431,7 @@ function main(argv = process.argv.slice(2)) {
   for (const { file, locale, type } of discoverTranslationFiles(options)) {
     warnings.push(...(type === 'json' ? scanJsonFile(file, locale) : scanPoFile(file, locale)));
   }
+  warnings.push(...findConsistencyWarnings(options));
 
   if (options.json) {
     console.log(JSON.stringify({ warnings: warnings.length, details: warnings }, null, 2));
@@ -319,6 +453,8 @@ function main(argv = process.argv.slice(2)) {
 }
 
 module.exports = {
+  findConsistencyWarnings,
+  findLengthBudgetWarning,
   findQualityWarnings,
   formatGithubAnnotations,
   formatMarkdownSummary,
