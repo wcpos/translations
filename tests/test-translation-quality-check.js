@@ -4,7 +4,10 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 const {
+  findConsistencyWarnings,
+  findLengthBudgetWarning,
   findQualityWarnings,
   isAllowedUnchangedTechnicalString,
   formatGithubAnnotations,
@@ -242,4 +245,99 @@ test('escapes GitHub Actions annotation control characters', () => {
   ]);
 
   assert.match(annotations, /Line one Line two => 100%25 ready: yes/);
+});
+
+function makeFixtureRepo({ jsA, jsB, po, locale = 'de_DE' }) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'wcpos-quality-consistency-'));
+  const write = (rel, content) => {
+    fs.mkdirSync(path.dirname(path.join(root, rel)), { recursive: true });
+    fs.writeFileSync(path.join(root, rel), typeof content === 'string' ? content : JSON.stringify(content, null, 2));
+  };
+  write('source/js/app/a.json', { 'a.cancel': 'Cancel', 'a.save': 'Save', items_one: 'Item', items_other: 'Items' });
+  write('source/js/app/b.json', { 'b.cancel': 'Cancel', 'b.save': 'Save' });
+  write(`translations/js/${locale}/app/a.json`, jsA);
+  write(`translations/js/${locale}/app/b.json`, jsB);
+  write(`translations/php/${locale}/plugin-${locale}.po`, `msgid ""\nmsgstr ""\n"Language: ${locale}\\n"\n\n${po}`);
+  return root;
+}
+
+function git(root, ...args) {
+  return execFileSync('git', ['-c', 'user.name=test', '-c', 'user.email=test@example.com', ...args], { cwd: root, encoding: 'utf8' }).trim();
+}
+
+test('length budget: a 3-char source warns at 12 chars in de, not at 8', () => {
+  assert.equal(
+    findLengthBudgetWarning({ locale: 'de_DE', msgid: 'Qty', msgstr: 'Mengenangabe' }),
+    'Too long for a short label: "Qty" (3) → "Mengenangabe" (12), budget 9',
+  );
+  assert.equal(findLengthBudgetWarning({ locale: 'de_DE', msgid: 'Qty', msgstr: 'Anz. Stk' }), '');
+});
+
+test('length budget: ja counts wide characters twice against twice the source', () => {
+  assert.equal(findLengthBudgetWarning({ locale: 'ja', msgid: 'Qty', msgstr: '数量' }), '');
+  assert.equal(
+    findLengthBudgetWarning({ locale: 'ja', msgid: 'Qty', msgstr: '注文された商品の数' }),
+    'Too long for a short label: "Qty" (3) → "注文された商品の数" (18), budget 6',
+  );
+});
+
+test('length budget skips placeholder strings and plural keys', () => {
+  assert.equal(findLengthBudgetWarning({ locale: 'de_DE', msgid: '%s items', msgstr: '%s Artikel im Warenkorb' }), '');
+  assert.equal(findLengthBudgetWarning({ locale: 'de_DE', msgid: '{n} left', msgstr: '{n} verbleibende Artikel' }), '');
+  const root = makeFixtureRepo({
+    jsA: { items_one: 'Artikel im Warenkorb', items_other: 'Artikel im Warenkorb' },
+    jsB: {},
+    po: 'msgid "Item"\nmsgid_plural "Items"\nmsgstr[0] "Artikel im Warenkorb"\nmsgstr[1] "Artikel im Warenkorb"\n',
+  });
+  assert.deepEqual(findConsistencyWarnings({ locale: 'de_DE', root }), []);
+});
+
+test('same-source drift across two JS files and one PO file gives one warning naming both variants', () => {
+  const root = makeFixtureRepo({
+    jsA: { 'a.cancel': 'Abbrechen', 'a.save': 'Speichern' },
+    jsB: { 'b.cancel': 'Stornieren', 'b.save': 'Speichern' },
+    po: 'msgid "Cancel"\nmsgstr "Abbrechen"\n\nmsgid "Save"\nmsgstr "Speichern"\n',
+  });
+  const warnings = findConsistencyWarnings({ locale: 'de_DE', root });
+  assert.equal(warnings.length, 1);
+  assert.equal(warnings[0].category, 'same-source-drift');
+  assert.equal(warnings[0].warning, 'Same English, different translations: "Cancel" → "Abbrechen" (plugin-de_DE.po, +1 more) | "Stornieren" (b.cancel)');
+});
+
+test('identical translations of one source give no drift warning', () => {
+  const root = makeFixtureRepo({
+    jsA: { 'a.cancel': 'Abbrechen', 'a.save': 'Speichern' },
+    jsB: { 'b.cancel': 'Abbrechen', 'b.save': 'Speichern' },
+    po: 'msgid "Cancel"\nmsgstr "Abbrechen"\n',
+  });
+  assert.deepEqual(findConsistencyWarnings({ locale: 'de_DE', root }), []);
+});
+
+test('changed-since: drift groups warn only when they hold a new or changed entry', () => {
+  const root = makeFixtureRepo({
+    jsA: { 'a.cancel': 'Abbrechen', 'a.save': 'Speichern' },
+    jsB: { 'b.cancel': 'Stornieren', 'b.save': 'Speichern' },
+    po: 'msgid "Save"\nmsgstr "Speichern"\n',
+  });
+  git(root, 'init', '-q');
+  git(root, 'add', '.');
+  git(root, 'commit', '-q', '-m', 'base');
+  const base = git(root, 'rev-parse', 'HEAD');
+
+  assert.deepEqual(findConsistencyWarnings({ changedSince: base, root }), []);
+
+  // Change an entry in the "Save" group only: the old "Cancel" drift stays silent.
+  fs.writeFileSync(path.join(root, 'translations/js/de_DE/app/b.json'), JSON.stringify({ 'b.cancel': 'Stornieren', 'b.save': 'Sichern' }));
+  const warnings = findConsistencyWarnings({ changedSince: base, root });
+  assert.deepEqual(warnings.map((item) => ({ category: item.category, file: item.file, msgid: item.msgid })), [
+    { category: 'same-source-drift', file: 'translations/js/de_DE/app/b.json', msgid: 'Save' },
+  ]);
+});
+
+test('markdown summary shows per-category counts', () => {
+  const markdown = formatMarkdownSummary([
+    { file: 'a.po', msgid: 'Qty', msgstr: 'Mengenangabe', warning: 'w1', category: 'length-budget' },
+    { file: 'a.po', msgid: 'Status', msgstr: 'Status', warning: 'human-facing English appears unchanged' },
+  ]);
+  assert.match(markdown, /^By category: length-budget 1, heuristic 1$/m);
 });
