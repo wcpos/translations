@@ -73,7 +73,7 @@ msgstr "Permalinks inschakelen"
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:432
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Kassier"
@@ -175,7 +175,7 @@ msgstr "POS Kassier"
 msgid "Search for a cashier&hellip;"
 msgstr "Zoek een kassier&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -311,11 +311,13 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:138
-#: includes/Form_Handler.php:159
-#: includes/Templates/Payment.php:203
-#: includes/Templates/Payment.php:537
-#: includes/Templates/Received.php:92
+#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:146
+#: includes/Templates/Payment.php:204
+#: includes/Templates/Payment.php:217
+#: includes/Templates/Payment.php:240
+#: includes/Templates/Payment.php:574
+#: includes/Templates/Received.php:98
 msgid "Error"
 msgstr "Fout"
 
@@ -912,7 +914,7 @@ msgstr ""
 "Er wordt al een andere afdruk van deze bestelling gemaakt. Probeer het opnieuw."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Het verzoek voor de kassasluiting kon niet worden voltooid."
@@ -1290,12 +1292,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Rapport ‘%1$s’ mislukt: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Ongeldige parameter: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "Het verzoek voor de sessie kon niet worden voltooid."
 
@@ -1318,12 +1320,13 @@ msgid "Order key mismatch."
 msgstr "Bestelsleutel komt niet overeen."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:134
 msgid "Token not provided."
 msgstr "Token niet verstrekt."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:157
+#: includes/Form_Handler.php:144
+#: includes/Templates/Payment.php:215
 msgid "Cashier token mismatch."
 msgstr "Kassiertoken komt niet overeen."
 
@@ -1460,14 +1463,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "Deze modus voor betalingsinning ondersteunt die bewerking niet."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:320
+#: includes/Payments/Contract/Attempts.php:339
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "WCPOS-betalingspoging %1$s: de uitkomst is onbekend en %2$s kan niet vaststellen of er geld is afgehaald. Controleer de betaling bij de provider en annuleer de poging daarna op de POS als er niets is aangerekend."
 
-#: includes/Payments/Contract/Attempts.php:409
+#: includes/Payments/Contract/Attempts.php:420
 msgid "Clearing the awaiting-customer state"
 msgstr "De status voor wachtende klant wissen"
 
@@ -1808,12 +1811,12 @@ msgid "Another payment operation is running on this order."
 msgstr ""
 "Er wordt al een andere betalingsbewerking uitgevoerd voor deze bestelling."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Elke tien minuten"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -1952,6 +1955,7 @@ msgid "WCPOS file integrity"
 msgstr "Bestandsintegriteit van WCPOS"
 
 #: includes/Services/File_Integrity.php:272
+#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -2050,7 +2054,7 @@ msgstr "Onbekend"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:413
+#: includes/Templates/Payment.php:450
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Gast"
@@ -2078,32 +2082,40 @@ msgstr "Bestelling aangemaakt via POS door %1$s in %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS kassier gewijzigd van %1$s naar %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"%1$s probeerde de POS-kassamedewerker te wijzigen in %2$s. Dit werd geweigerd: die persoon mag deze verkoop niet aan die gebruiker toewijzen. %3$s blijft de kassamedewerker."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS-winkel gewijzigd van %1$s naar %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Bestelling opnieuw geopend via POS door %1$s in %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Klant gewijzigd van %1$s naar %2$s via WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Klant gewijzigd van %1$s naar %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
@@ -5338,6 +5350,21 @@ msgid ""
 msgstr ""
 "De WCPOS-syncstore is nog niet geïnstalleerd (wordt geïnitialiseerd of de installatie van het schema is mislukt). Probeer het binnenkort opnieuw."
 
+#: includes/Sync/Integrity_Digest.php:449
+msgid "WCPOS sync integrity checks"
+msgstr "Integriteitscontroles voor WCPOS-synchronisatie"
+
+#: includes/Sync/Integrity_Digest.php:469
+msgid "WCPOS sync integrity checks are off on SQLite"
+msgstr ""
+"Integriteitscontroles voor WCPOS-synchronisatie zijn uitgeschakeld in SQLite"
+
+#: includes/Sync/Integrity_Digest.php:470
+msgid ""
+"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
+msgstr ""
+"De POS blijft synchroniseren via het wijzigingslogboek, maar de integriteitscontrole op de achtergrond die wijzigingen buiten WordPress opspoort (rechtstreekse databasebewerkingen en bepaalde imports), wordt niet uitgevoerd op deze database. SQLite is geen ondersteunde database voor WCPOS."
+
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "date_created_gmt mag niet meer dan 24 uur in de toekomst liggen."
@@ -5762,26 +5789,26 @@ msgstr "Beveiligingscontrole mislukt. Probeer het opnieuw."
 msgid "Authentication failed."
 msgstr "Authenticatie mislukt."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Dit account is tijdelijk geblokkeerd vanwege te veel mislukte inlogpogingen. Probeer het later opnieuw."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "Het genereren van authenticatietokens is mislukt."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Voer zowel gebruikersnaam als wachtwoord in."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Ongeldige gebruikersnaam of wachtwoord."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Te veel verzoeken. Probeer het later opnieuw."
 
@@ -6259,83 +6286,90 @@ msgid ""
 msgstr ""
 "De kassabon voor de geldzak: wisselgeld, getelde betaalmiddelen, coupures, bewegingen, notitie en handtekeningregels. Geen verkoop- of belastingbedragen."
 
-#: includes/Templates/Payment.php:201
+#: includes/Templates/Payment.php:202
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Helaas kan deze bestelling niet worden betaald. De bestelcode ontbreekt of is ongeldig."
 
-#: includes/Templates/Payment.php:220
+#. translators: Shown on the POS pay page when the cashier's session has expired.
+#: includes/Templates/Payment.php:234
+msgid ""
+"Your session has expired. Close this payment window and open it again."
+msgstr ""
+"Je sessie is verlopen. Sluit dit betalingsvenster en open het opnieuw."
+
+#: includes/Templates/Payment.php:257
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Deze bestelling kan niet worden betaald. Neem contact met ons op als u hulp nodig heeft."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:228
+#: includes/Templates/Payment.php:265
 msgid "Pay for order"
 msgstr "Betaal bestelling"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:312
+#: includes/Templates/Payment.php:349
 msgid "Checkout Settings"
 msgstr "Afrekeninstellingen"
 
-#: includes/Templates/Payment.php:318
+#: includes/Templates/Payment.php:355
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Scripts en stijlen kunnen de aangepaste betalingstemplate verstoren, gebruik dit formulier om problematische scripts te verwijderen."
 
-#: includes/Templates/Payment.php:320
+#: includes/Templates/Payment.php:357
 msgid "Disable All Styles and Scripts"
 msgstr "Alle stijlen en scripts uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:323
+#: includes/Templates/Payment.php:360
 msgid "Disable wp_head"
 msgstr "wp_head uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:328
+#: includes/Templates/Payment.php:365
 msgid "Disable wp_footer"
 msgstr "wp_footer uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:370
 msgid "Disable Selected Styles"
 msgstr "Geselecteerde stijlen uitschakelen"
 
-#: includes/Templates/Payment.php:340
-#: includes/Templates/Payment.php:352
+#: includes/Templates/Payment.php:377
+#: includes/Templates/Payment.php:389
 msgid "always removed on the POS payment page"
 msgstr "wordt altijd verwijderd van de POS-betaalpagina"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:345
+#: includes/Templates/Payment.php:382
 msgid "Disable Selected Scripts"
 msgstr "Geselecteerde scripts uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:358
+#: includes/Templates/Payment.php:395
 msgid "Submit"
 msgstr "Verzenden"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:412
+#: includes/Templates/Payment.php:449
 msgid "Paying as customer"
 msgstr "Betalen als klant"
 
-#: includes/Templates/Payment.php:513
+#: includes/Templates/Payment.php:550
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Sorry, deze bestelling is ongeldig en kan niet worden betaald."
 
-#: includes/Templates/Payment.php:517
+#: includes/Templates/Payment.php:554
 msgid "Sorry, this order has already been paid for."
 msgstr "Sorry, deze bestelling is al betaald."
 
-#: includes/Templates/Payment.php:535
+#: includes/Templates/Payment.php:572
 msgid "You do not have permission to modify checkout settings."
 msgstr "U heeft geen rechten om de kassa-instellingen te wijzigen."
 
@@ -6410,11 +6444,11 @@ msgstr "Probeer de standaard ontvangsttemplate te herstellen"
 msgid "Please contact the site administrator for assistance."
 msgstr "Neem contact op met de sitebeheerder voor hulp."
 
-#: includes/Templates/Received.php:82
+#: includes/Templates/Received.php:88
 msgid "Sorry, this order is invalid."
 msgstr "Sorry, deze bestelling is ongeldig."
 
-#: includes/Templates/Received.php:90
+#: includes/Templates/Received.php:96
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr ""
