@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => '门店 #%d',
 		'Order created via POS by %1$s at %2$s.' => '订单由 %1$s 在 %2$s 通过 POS 创建。',
 		'POS cashier changed from %1$s to %2$s.' => 'POS收银员从%1$s更改为%2$s。',
-		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s尝试将POS收银员更改为%2$s。此操作已被拒绝：他们无权将此销售分配给该用户。%3$s仍是收银员。',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s尝试将POS收银员更改为%2$s。此操作已被拒绝：此人无权将此销售分配给该用户。%3$s仍是收银员。',
 		'POS store changed from %1$s to %2$s.' => 'POS 门店已从 %1$s 更改为 %2$s。',
 		'Order re-opened via POS by %1$s at %2$s.' => '订单已由 %1$s 在 %2$s 通过 POS 重新打开。',
 		'Customer changed from %1$s to %2$s via WCPOS.' => '客户已通过 WCPOS 从 %1$s 更改为 %2$s。',
