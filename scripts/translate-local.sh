@@ -85,9 +85,24 @@ if [ -n "$PR" ]; then
   PR_URL=$(printf '%s' "$PR" | jq -r .url)
   git checkout -q -B "$BRANCH" "origin/$BRANCH"
   if ! git merge -q --no-edit "origin/$BASE"; then
-    git merge --abort
-    log "merge failed for PR $PR_NUMBER ($PR_URL)"
-    exit 1
+    CONFLICTS=$(git diff --name-only --diff-filter=U)
+    if [ -z "$CONFLICTS" ] || printf '%s\n' "$CONFLICTS" | grep -v '\.mo$' > /dev/null; then
+      git merge --abort
+      log "merge failed for PR $PR_NUMBER ($PR_URL)"
+      exit 1
+    fi
+    # .mo files are generated from .po, so their conflicts are safe to rebuild.
+    MO_FILES=()
+    while IFS= read -r FILE; do MO_FILES+=("$FILE"); done <<< "$CONFLICTS"
+    git checkout --theirs -- "${MO_FILES[@]}"
+    node scripts/generate-mo-files.js > /dev/null
+    git add -- 'translations/php/*.mo'
+    git commit -q --no-edit
+    log "rebuilt ${#MO_FILES[@]} conflicted .mo files from the merged .po for PR $PR_NUMBER"
+    if [ "$DRY_RUN" -eq 0 ]; then
+      if [ "$BRANCH" = main ] || [ "$BRANCH" = "$BASE" ]; then log "refusing to push to $BRANCH"; exit 1; fi
+      git push --quiet origin "$BRANCH"
+    fi
   fi
 else
   BRANCH="auto-translate/$(date -u +%Y%m%d-%H%M%S)"
