@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Butikk #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Ordre opprettet via POS av %1$s i %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS-kasserer endret fra %1$s til %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Bytte av POS-kasserer fra %1$s til %2$s ble avvist: vedkommende kan ikke tilordne dette salget til den brukeren. %3$s forblir kasserer.',
 		'POS store changed from %1$s to %2$s.' => 'POS-butikken ble endret fra %1$s til %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Ordren ble åpnet på nytt via POS av %1$s i %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Kunden ble endret fra %1$s til %2$s via WCPOS.',

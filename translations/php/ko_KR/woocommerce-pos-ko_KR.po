@@ -175,7 +175,7 @@ msgstr "POS 캐셔"
 msgid "Search for a cashier&hellip;"
 msgstr "캐셔 검색 중&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -888,7 +888,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "이 주문의 다른 인쇄 작업이 진행 중입니다. 다시 시도하십시오."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "마감 요청을 완료하지 못했습니다."
@@ -1258,12 +1258,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "보고서 “%1$s” 실패: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "매개변수가 유효하지 않습니다: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "세션 요청을 완료하지 못했습니다."
 
@@ -1752,12 +1752,12 @@ msgstr "결제 명령에는 생성 당시의 주문 리비전이 필요합니다
 msgid "Another payment operation is running on this order."
 msgstr "이 주문에서 다른 결제 작업을 처리 중입니다."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "10분마다"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2016,32 +2016,40 @@ msgstr "POS에서 %2$s 매장의 %1$s님이 주문을 생성했습니다."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS 캐셔가 %1$s에서 %2$s로 변경되었습니다."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"%1$s에서 %2$s(으)로 POS 계산원을 변경할 수 없습니다. 해당 판매를 그 사용자에게 지정할 권한이 없습니다. 계산원은 계속 %3$s입니다."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS 매장이 %1$s에서 %2$s로 변경되었습니다."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "POS에서 %2$s 매장의 %1$s님이 주문을 다시 열었습니다."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "WCPOS를 통해 고객이 %1$s에서 %2$s로 변경되었습니다."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "고객이 %1$s에서 %2$s로 변경되었습니다."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "현금 결제가 접수되었습니다 — 받은 금액: %1$s, 거스름돈: %2$s."
@@ -5684,25 +5692,25 @@ msgstr "보안 검사에 실패했습니다. 다시 시도해 주세요."
 msgid "Authentication failed."
 msgstr "인증에 실패했습니다."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr "로그인 시도가 너무 많아 이 계정이 일시적으로 잠겼습니다. 나중에 다시 시도해 주세요."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "인증 토큰 생성에 실패했습니다."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "사용자 이름과 비밀번호를 모두 입력해 주세요."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "잘못된 사용자 이름 또는 비밀번호입니다."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "요청이 너무 많습니다. 나중에 다시 시도하세요."
 

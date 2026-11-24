@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Botiga #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Comanda creada mitjançant el POS per %1$s a %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'El caixer POS ha canviat de %1$s a %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'S’ha rebutjat el canvi de caixer del TPV de %1$s a %2$s: no pot assignar aquesta venda a aquest usuari. %3$s continua sent el caixer.',
 		'POS store changed from %1$s to %2$s.' => 'La botiga del POS ha canviat de %1$s a %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Comanda reoberta mitjançant el POS per %1$s a %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'El client ha canviat de %1$s a %2$s mitjançant WCPOS.',

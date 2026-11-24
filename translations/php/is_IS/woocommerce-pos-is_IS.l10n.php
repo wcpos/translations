@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Verslun #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Pöntun stofnuð í gegnum POS af %1$s hjá %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS gjaldkeri breyttist úr %1$s í %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Breytingu á POS-afgreiðslumanni úr %1$s í %2$s var hafnað: viðkomandi má ekki úthluta þessari sölu á þann notanda. %3$s verður áfram afgreiðslumaður.',
 		'POS store changed from %1$s to %2$s.' => 'POS-verslun breytt úr %1$s í %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Pöntun opnuð aftur í gegnum POS af %1$s hjá %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Viðskiptavinur breyttist úr %1$s í %2$s í gegnum WCPOS.',

@@ -175,7 +175,7 @@ msgstr "POS कैशियर"
 msgid "Search for a cashier&hellip;"
 msgstr "कैशियर खोजें&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -904,7 +904,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "इस ऑर्डर का एक और प्रिंट चल रहा है; फिर कोशिश करें।"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "क्लोज़र का अनुरोध पूरा नहीं किया जा सका।"
@@ -1283,12 +1283,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "रिपोर्ट \"%1$s\" विफल रही: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "अमान्य पैरामीटर: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "सत्र का अनुरोध पूरा नहीं किया जा सका।"
 
@@ -1791,12 +1791,12 @@ msgstr ""
 msgid "Another payment operation is running on this order."
 msgstr "इस ऑर्डर पर एक और भुगतान कार्रवाई चल रही है।"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "हर दस मिनट में"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2061,32 +2061,40 @@ msgstr "%2$s में %1$s द्वारा POS के माध्यम स
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS कैशियर %1$s से %2$s में बदल गया।"
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"%1$s से %2$s तक POS कैशियर बदलने का अनुरोध अस्वीकार कर दिया गया: वे यह बिक्री उस उपयोगकर्ता को नहीं सौंप सकते। %3$s ही कैशियर रहेंगे।"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS स्टोर को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "%2$s में %1$s द्वारा POS के माध्यम से ऑर्डर फिर से खोला गया।"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "WCPOS के माध्यम से ग्राहक को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "ग्राहक को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "नकद भुगतान प्राप्त हुआ — दी गई राशि: %1$s, लौटाई गई राशि: %2$s।"
@@ -5740,26 +5748,26 @@ msgstr "सुरक्षा जांच विफल रही। कृप�
 msgid "Authentication failed."
 msgstr "प्रमाणीकरण विफल रहा।"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "बहुत अधिक विफल लॉगिन प्रयासों के कारण यह खाता अस्थायी रूप से बंद है। कृपया बाद में पुनः प्रयास करें।"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "प्रमाणीकरण टोकन उत्पन्न करने में विफल।"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "कृपया उपयोगकर्ता नाम और पासवर्ड दोनों दर्ज करें।"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड।"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "बहुत अधिक अनुरोध। कृपया बाद में पुनः प्रयास करें।"
 

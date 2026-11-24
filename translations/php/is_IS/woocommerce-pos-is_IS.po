@@ -175,7 +175,7 @@ msgstr "POS gjaldkeri"
 msgid "Search for a cashier&hellip;"
 msgstr "Leita að gjaldkera&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -906,7 +906,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "Önnur útprentun þessarar pöntunar er í gangi; reyndu aftur."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Ekki tókst að ljúka lokunarbeiðninni."
@@ -1284,12 +1284,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Skýrslan „%1$s“ mistókst: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Ógild færibreyta: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "Ekki tókst að ljúka lotubeiðninni."
 
@@ -1794,12 +1794,12 @@ msgstr "Greiðsluskipun þarf útgáfu pöntunarinnar sem hún var byggð á."
 msgid "Another payment operation is running on this order."
 msgstr "Önnur greiðsluaðgerð er í gangi á þessari pöntun."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Á tíu mínútna fresti"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2064,32 +2064,40 @@ msgstr "Pöntun stofnuð í gegnum POS af %1$s hjá %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS gjaldkeri breyttist úr %1$s í %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"Breytingu á POS-afgreiðslumanni úr %1$s í %2$s var hafnað: viðkomandi má ekki úthluta þessari sölu á þann notanda. %3$s verður áfram afgreiðslumaður."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS-verslun breytt úr %1$s í %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Pöntun opnuð aftur í gegnum POS af %1$s hjá %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Viðskiptavinur breyttist úr %1$s í %2$s í gegnum WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Viðskiptavinur breyttist úr %1$s í %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "Greiðsla í reiðufé móttekin — greidd upphæð: %1$s, til baka: %2$s."
@@ -5745,26 +5753,26 @@ msgstr "Öryggisathugun mistókst. Vinsamlegast reyndu aftur."
 msgid "Authentication failed."
 msgstr "Auðkenning mistókst."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Þessi reikningur er tímabundið læstur vegna of margra misheppnaðra innskráningartilrauna. Vinsamlegast reyndu aftur síðar."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "Mistókst að búa til auðkenningarmerki."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Vinsamlegast sláðu inn bæði notandanafn og lykilorð."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Ógilt notandanafn eða lykilorð."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Of margar beiðnir. Vinsamlegast reyndu aftur síðar."
 

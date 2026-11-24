@@ -175,7 +175,7 @@ msgstr "Thu ngân POS"
 msgid "Search for a cashier&hellip;"
 msgstr "Tìm kiếm thu ngân&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -904,7 +904,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "Một bản in khác của đơn hàng này đang được thực hiện. Hãy thử lại."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Không thể hoàn tất yêu cầu chốt phiên."
@@ -1278,12 +1278,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Báo cáo “%1$s” không thành công: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Tham số không hợp lệ: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "Không thể hoàn tất yêu cầu phiên."
 
@@ -1789,12 +1789,12 @@ msgstr ""
 msgid "Another payment operation is running on this order."
 msgstr "Một thao tác thanh toán khác đang chạy trên đơn hàng này."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Mỗi mười phút"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2057,32 +2057,40 @@ msgstr "Đơn hàng được tạo qua POS bởi %1$s tại %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "Thu ngân POS đã thay đổi từ %1$s thành %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"Yêu cầu đổi thu ngân POS từ %1$s sang %2$s bị từ chối: người này không được phép chỉ định giao dịch bán hàng này cho người dùng đó. %3$s vẫn là thu ngân."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "Cửa hàng POS được thay đổi từ %1$s thành %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Đơn hàng được mở lại qua POS bởi %1$s tại %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Khách hàng được thay đổi từ %1$s thành %2$s thông qua WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Khách hàng được thay đổi từ %1$s thành %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
@@ -5739,26 +5747,26 @@ msgstr "Kiểm tra bảo mật thất bại. Vui lòng thử lại."
 msgid "Authentication failed."
 msgstr "Xác thực thất bại."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Tài khoản này tạm thời bị khóa do quá nhiều lần đăng nhập thất bại. Vui lòng thử lại sau."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "Không thể tạo mã xác thực."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Vui lòng nhập cả tên đăng nhập và mật khẩu."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Tên đăng nhập hoặc mật khẩu không hợp lệ."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Quá nhiều yêu cầu. Vui lòng thử lại sau."
 

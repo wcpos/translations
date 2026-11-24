@@ -175,7 +175,7 @@ msgstr "Caixer POS"
 msgid "Search for a cashier&hellip;"
 msgstr "Cerca un caixer&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -912,7 +912,7 @@ msgstr ""
 "Ja s'està imprimint una altra còpia d'aquesta comanda; torna-ho a provar."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "No s'ha pogut completar la sol·licitud de tancament."
@@ -1293,12 +1293,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Ha fallat l'informe «%1$s»: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Paràmetre no vàlid: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "No s'ha pogut completar la sol·licitud de sessió."
 
@@ -1808,12 +1808,12 @@ msgstr ""
 msgid "Another payment operation is running on this order."
 msgstr "S'està executant una altra operació de pagament en aquesta comanda."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Cada deu minuts"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2083,32 +2083,40 @@ msgstr "Comanda creada mitjançant el POS per %1$s a %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "El caixer POS ha canviat de %1$s a %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"S’ha rebutjat el canvi de caixer del TPV de %1$s a %2$s: no pot assignar aquesta venda a aquest usuari. %3$s continua sent el caixer."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "La botiga del POS ha canviat de %1$s a %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Comanda reoberta mitjançant el POS per %1$s a %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "El client ha canviat de %1$s a %2$s mitjançant WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "El client ha canviat de %1$s a %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
@@ -5773,26 +5781,26 @@ msgstr ""
 msgid "Authentication failed."
 msgstr "Autenticació fallida."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Aquest compte està temporalment bloquejat a causa de massa intents fallits d'inici de sessió. Si us plau, torneu a intentar-ho més tard."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "No s'han pogut generar els tokens d'autenticació."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Si us plau, introduïu tant el nom d'usuari com la contrasenya."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Nom d'usuari o contrasenya no vàlids."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Massa sol·licituds. Si us plau, torna-ho a intentar més tard."
 

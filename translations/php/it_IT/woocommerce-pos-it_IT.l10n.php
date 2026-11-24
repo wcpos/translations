@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Negozio #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Ordine creato tramite POS da %1$s presso %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Cassiere POS cambiato da %1$s a %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'La modifica del cassiere POS da %1$s a %2$s è stata rifiutata: non può assegnare questa vendita a quell\'utente. Il cassiere resta %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'Punto vendita POS modificato da %1$s a %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Ordine riaperto tramite POS da %1$s presso %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Cliente modificato da %1$s a %2$s tramite WCPOS.',

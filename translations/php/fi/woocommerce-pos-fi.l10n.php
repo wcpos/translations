@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Myymälä #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Tilaus luotiin POS-järjestelmän kautta käyttäjän %1$s toimesta myymälässä %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS-kassanhoitaja vaihdettu %1$s:stä %2$s:ään.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'POS-kassavaihdos käyttäjältä %1$s käyttäjälle %2$s hylättiin: hän ei saa määrittää tätä myyntiä kyseiselle käyttäjälle. Kassanhoitajana pysyy %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'POS-myymälä vaihtui: %1$s → %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Tilaus avattiin uudelleen POS-järjestelmän kautta käyttäjän %1$s toimesta myymälässä %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Asiakas vaihdettiin WCPOS-järjestelmässä: %1$s → %2$s.',

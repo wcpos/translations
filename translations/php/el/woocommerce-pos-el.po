@@ -175,7 +175,7 @@ msgstr "Ταμίας POS"
 msgid "Search for a cashier&hellip;"
 msgstr "Αναζήτηση ταμία&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -912,7 +912,7 @@ msgstr ""
 "Μια άλλη εκτύπωση αυτής της παραγγελίας είναι σε εξέλιξη· δοκιμάστε ξανά."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Δεν ήταν δυνατή η ολοκλήρωση του αιτήματος κλεισίματος."
@@ -1295,12 +1295,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Αποτυχία αναφοράς «%1$s»: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Μη έγκυρη παράμετρος: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "Δεν ήταν δυνατή η ολοκλήρωση του αιτήματος συνεδρίας."
 
@@ -1814,12 +1814,12 @@ msgstr ""
 msgid "Another payment operation is running on this order."
 msgstr "Εκτελείται ήδη άλλη λειτουργία πληρωμής σε αυτήν την παραγγελία."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Κάθε δέκα λεπτά"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2088,32 +2088,40 @@ msgstr "Η παραγγελία δημιουργήθηκε μέσω POS από %
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "Ο ταμίας POS άλλαξε από %1$s σε %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"Η αλλαγή ταμία POS από %1$s σε %2$s απορρίφθηκε: δεν επιτρέπεται να αναθέσει αυτή την πώληση σε αυτόν τον χρήστη. Ταμίας παραμένει ο/η %3$s."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "Το κατάστημα POS άλλαξε από %1$s σε %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Η παραγγελία άνοιξε ξανά μέσω POS από %1$s στο κατάστημα %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Ο πελάτης άλλαξε από %1$s σε %2$s μέσω WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Ο πελάτης άλλαξε από %1$s σε %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "Λήφθηκε πληρωμή με μετρητά — καταβληθέν ποσό: %1$s, ρέστα: %2$s."
@@ -5775,26 +5783,26 @@ msgstr "Η επαλήθευση ασφαλείας απέτυχε. Παρακα�
 msgid "Authentication failed."
 msgstr "Η αυθεντικοποίηση απέτυχε."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "Αυτός ο λογαριασμός είναι προσωρινά κλειδωμένος λόγω πολλών αποτυχημένων προσπαθειών σύνδεσης. Παρακαλώ προσπαθήστε ξανά αργότερα."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "Απέτυχε η δημιουργία διακριτικών αυθεντικοποίησης."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Παρακαλώ εισάγετε και το όνομα χρήστη και τον κωδικό πρόσβασης."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Μη έγκυρο όνομα χρήστη ή κωδικός πρόσβασης."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Πάρα πολλά αιτήματα. Παρακαλώ δοκιμάστε ξανά αργότερα."
 

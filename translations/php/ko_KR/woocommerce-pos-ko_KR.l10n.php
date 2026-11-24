@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => '매장 #%d',
 		'Order created via POS by %1$s at %2$s.' => 'POS에서 %2$s 매장의 %1$s님이 주문을 생성했습니다.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS 캐셔가 %1$s에서 %2$s로 변경되었습니다.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s에서 %2$s(으)로 POS 계산원을 변경할 수 없습니다. 해당 판매를 그 사용자에게 지정할 권한이 없습니다. 계산원은 계속 %3$s입니다.',
 		'POS store changed from %1$s to %2$s.' => 'POS 매장이 %1$s에서 %2$s로 변경되었습니다.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'POS에서 %2$s 매장의 %1$s님이 주문을 다시 열었습니다.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'WCPOS를 통해 고객이 %1$s에서 %2$s로 변경되었습니다.',

@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => '店舗 #%d',
 		'Order created via POS by %1$s at %2$s.' => '%1$sが%2$sのPOSを介して注文を作成しました。',
 		'POS cashier changed from %1$s to %2$s.' => 'POSレジ係が%1$sから%2$sに変更されました。',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$sから%2$sへのPOS担当者の変更は拒否されました。この担当者はこの販売をそのユーザーに割り当てることができません。担当者は引き続き%3$sです。',
 		'POS store changed from %1$s to %2$s.' => 'POSストアが%1$sから%2$sに変更されました。',
 		'Order re-opened via POS by %1$s at %2$s.' => '%1$sが%2$sのPOSを介して注文を再開しました。',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'WCPOSを介して顧客が%1$sから%2$sに変更されました。',

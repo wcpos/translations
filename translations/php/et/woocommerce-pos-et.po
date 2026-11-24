@@ -175,7 +175,7 @@ msgstr "POS Kassapidaja"
 msgid "Search for a cashier&hellip;"
 msgstr "Otsi kassapidajat&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -903,7 +903,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "Selle tellimuse teine printimine on pooleli; proovige uuesti."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "Kassa sulgemise päringut ei saanud täita."
@@ -1278,12 +1278,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "Aruanne „%1$s” ebaõnnestus: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "Parameeter on vigane: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "Vahetuse päringut ei saanud täita."
 
@@ -1785,12 +1785,12 @@ msgstr "Maksekäsk vajab selle loomisel aluseks olnud tellimuse versiooni."
 msgid "Another payment operation is running on this order."
 msgstr "Selle tellimuse juures on juba teine maksetoiming pooleli."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "Iga kümne minuti järel"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2054,32 +2054,40 @@ msgstr "Tellimuse lõi POS-is %1$s kaupluses %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS kassapidaja muutus %1$s-lt %2$s-le."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"POS-kassapidaja vahetamine kasutajalt %1$s kasutajale %2$s lükati tagasi: ta ei tohi seda müüki sellele kasutajale määrata. Kassapidajaks jääb %3$s."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS-i kauplus muudeti väärtuselt %1$s väärtusele %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Tellimus avati POS-is uuesti: %1$s kaupluses %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Klient muudeti WCPOS-is väärtuselt %1$s väärtusele %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Klient muudeti väärtuselt %1$s väärtusele %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "Sularahamakse vastu võetud — antud summa: %1$s, tagastusraha: %2$s."
@@ -5735,26 +5743,26 @@ msgstr "Turvakontroll ebaõnnestus. Palun proovige uuesti."
 msgid "Authentication failed."
 msgstr "Autentimine ebaõnnestus."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "See konto on ajutiselt lukustatud liiga paljude ebaõnnestunud sisselogimiskatsete tõttu. Palun proovige hiljem uuesti."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "Autentimistokenite genereerimine ebaõnnestus."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "Palun sisestage nii kasutajanimi kui ka parool."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "Vigane kasutajanimi või parool."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "Liiga palju päringuid. Palun proovige hiljem uuesti."
 

@@ -175,7 +175,7 @@ msgstr "អ្នកគិតលុយ POS"
 msgid "Search for a cashier&hellip;"
 msgstr "ស្វែងរកអ្នកគិតលុយ&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -901,7 +901,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "កំពុងបោះពុម្ពការបញ្ជាទិញនេះមួយទៀត។ សូមព្យាយាមឡើងវិញ។"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "មិនអាចបញ្ចប់សំណើបិទវគ្គបានទេ។"
@@ -1276,12 +1276,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "របាយការណ៍ \"%1$s\" បរាជ័យ៖ %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "ប៉ារ៉ាម៉ែត្រមិនត្រឹមត្រូវ៖ %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "មិនអាចបញ្ចប់សំណើវគ្គបានទេ។"
 
@@ -1785,12 +1785,12 @@ msgstr "ពាក្យបញ្ជាទូទាត់ត្រូវការ
 msgid "Another payment operation is running on this order."
 msgstr "ប្រតិបត្តិការបង់ប្រាក់មួយទៀតកំពុងដំណើរការលើការបញ្ជាទិញនេះ។"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "រៀងរាល់ដប់នាទី"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2054,32 +2054,40 @@ msgstr "ការបញ្ជាទិញត្រូវបានបង្កើ
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "អ្នកគិតលុយ POS បានផ្លាស់ប្តូរពី %1$s ទៅ %2$s។"
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"ការផ្លាស់ប្តូរអ្នកគិតលុយ POS ពី %1$s ទៅ %2$s ត្រូវបានបដិសេធ៖ គាត់មិនអាចចាត់តាំងការលក់នេះទៅអ្នកប្រើប្រាស់នោះបានទេ។ %3$s នៅតែជាអ្នកគិតលុយ។"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "ហាង POS ត្រូវបានប្តូរពី %1$s ទៅ %2$s។"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "ការបញ្ជាទិញត្រូវបានបើកឡើងវិញតាមរយៈ POS ដោយ %1$s នៅហាង %2$s។"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "អតិថិជនត្រូវបានប្តូរពី %1$s ទៅ %2$s តាមរយៈ WCPOS។"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "អតិថិជនត្រូវបានប្តូរពី %1$s ទៅ %2$s។"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
@@ -5732,26 +5740,26 @@ msgstr "ការត្រួតពិនិត្យសុវត្ថិភា
 msgid "Authentication failed."
 msgstr "ការផ្ទៀងផ្ទាត់បរាជ័យ។"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "គណនីនេះត្រូវបានចាក់សោរបណ្តោះអាសន្នដោយសារការព្យាយាមចូលបរាជ័យច្រើនពេក។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "បរាជ័យក្នុងការបង្កើតសញ្ញាសម្ងាត់ផ្ទៀងផ្ទាត់។"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "សូមបញ្ចូលទាំងឈ្មោះអ្នកប្រើ និងពាក្យសម្ងាត់។"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ។"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "សំណើច្រើនពេក។ សូមព្យាយាមម្តងទៀតក្រោយ។"
 

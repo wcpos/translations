@@ -404,6 +404,7 @@ return array(
 		'Store #%d' => 'Dyqani #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Porosia u krijua përmes POS-it nga %1$s në %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Arkëtari POS u ndryshua nga %1$s në %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Ndryshimi i arkëtarit të POS nga %1$s në %2$s u refuzua: ai/ajo nuk mund t’ia caktojë këtë shitje atij përdoruesi. Arkëtar mbetet %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'Dyqani POS u ndryshua nga %1$s në %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Porosia u rihap përmes POS-it nga %1$s në %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Klienti u ndryshua nga %1$s në %2$s përmes WCPOS.',

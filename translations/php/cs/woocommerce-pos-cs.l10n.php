@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Prodejna č. %d',
 		'Order created via POS by %1$s at %2$s.' => 'Objednávka byla vytvořena přes POS uživatelem %1$s v prodejně %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Pokladní POS změněn z %1$s na %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Změna pokladníka POS z %1$s na %2$s byla zamítnuta: tento uživatel nesmí přiřadit tento prodej danému uživateli. Pokladníkem zůstává %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'Prodejna POS byla změněna z %1$s na %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Objednávka byla znovu otevřena přes POS uživatelem %1$s v prodejně %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Zákazník byl změněn z %1$s na %2$s prostřednictvím WCPOS.',

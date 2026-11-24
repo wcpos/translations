@@ -175,7 +175,7 @@ msgstr "แคชเชียร์ POS"
 msgid "Search for a cashier&hellip;"
 msgstr "ค้นหาแคชเชียร์&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -901,7 +901,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "กำลังพิมพ์คำสั่งซื้อนี้อีกชุดอยู่ โปรดลองอีกครั้ง"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "ดำเนินการคำขอปิดรอบไม่สำเร็จ"
@@ -1275,12 +1275,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "รายงาน \"%1$s\" ล้มเหลว: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "พารามิเตอร์ไม่ถูกต้อง: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "ดำเนินการคำขอเซสชันไม่สำเร็จ"
 
@@ -1778,12 +1778,12 @@ msgstr "คำสั่งชำระเงินต้องมีเวอร
 msgid "Another payment operation is running on this order."
 msgstr "มีการดำเนินการชำระเงินอื่นกับคำสั่งซื้อนี้อยู่"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "ทุก 10 นาที"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2045,32 +2045,40 @@ msgstr "สร้างคำสั่งซื้อผ่าน POS โดย 
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "แคชเชียร์ POS เปลี่ยนจาก %1$s เป็น %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"การเปลี่ยนแคชเชียร์ POS จาก %1$s เป็น %2$s ถูกปฏิเสธ: ไม่สามารถกำหนดการขายนี้ให้ผู้ใช้ดังกล่าวได้ %3$s ยังคงเป็นแคชเชียร์"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "เปลี่ยนร้าน POS จาก %1$s เป็น %2$s"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "เปิดคำสั่งซื้ออีกครั้งผ่าน POS โดย %1$s ที่ %2$s"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "เปลี่ยนลูกค้าจาก %1$s เป็น %2$s ผ่าน WCPOS"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "เปลี่ยนลูกค้าจาก %1$s เป็น %2$s"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "ได้รับชำระเงินสด — จำนวนเงินที่รับ: %1$s, เงินทอน: %2$s"
@@ -5718,26 +5726,26 @@ msgstr "การตรวจสอบความปลอดภัยล้ม
 msgid "Authentication failed."
 msgstr "การตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "บัญชีนี้ถูกล็อกชั่วคราวเนื่องจากพยายามเข้าสู่ระบบล้มเหลวหลายครั้ง กรุณาลองใหม่อีกครั้งภายหลัง"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "กรุณากรอกทั้งชื่อผู้ใช้และรหัสผ่าน"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "มีการร้องขอมากเกินไป กรุณาลองใหม่ภายหลัง"
 

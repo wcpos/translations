@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Κατάστημα #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Η παραγγελία δημιουργήθηκε μέσω POS από %1$s στο κατάστημα %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Ο ταμίας POS άλλαξε από %1$s σε %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Η αλλαγή ταμία POS από %1$s σε %2$s απορρίφθηκε: δεν επιτρέπεται να αναθέσει αυτή την πώληση σε αυτόν τον χρήστη. Ταμίας παραμένει ο/η %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'Το κατάστημα POS άλλαξε από %1$s σε %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Η παραγγελία άνοιξε ξανά μέσω POS από %1$s στο κατάστημα %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Ο πελάτης άλλαξε από %1$s σε %2$s μέσω WCPOS.',

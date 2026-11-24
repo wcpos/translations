@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => 'Cửa hàng #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Đơn hàng được tạo qua POS bởi %1$s tại %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Thu ngân POS đã thay đổi từ %1$s thành %2$s.',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Yêu cầu đổi thu ngân POS từ %1$s sang %2$s bị từ chối: người này không được phép chỉ định giao dịch bán hàng này cho người dùng đó. %3$s vẫn là thu ngân.',
 		'POS store changed from %1$s to %2$s.' => 'Cửa hàng POS được thay đổi từ %1$s thành %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Đơn hàng được mở lại qua POS bởi %1$s tại %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Khách hàng được thay đổi từ %1$s thành %2$s thông qua WCPOS.',
