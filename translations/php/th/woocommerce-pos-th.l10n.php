@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'สาขา #%d',
 		'Order created via POS by %1$s at %2$s.' => 'สร้างคำสั่งซื้อผ่าน POS โดย %1$s ที่ %2$s',
 		'POS cashier changed from %1$s to %2$s.' => 'แคชเชียร์ POS เปลี่ยนจาก %1$s เป็น %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'การเปลี่ยนแคชเชียร์ POS จาก %1$s เป็น %2$s ถูกปฏิเสธ: ไม่สามารถกำหนดการขายนี้ให้ผู้ใช้ดังกล่าวได้ %3$s ยังคงเป็นแคชเชียร์',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s พยายามเปลี่ยนแคชเชียร์ POS เป็น %2$s แต่ถูกปฏิเสธ: บุคคลนี้ไม่มีสิทธิ์กำหนดการขายนี้ให้ผู้ใช้นั้น %3$s ยังคงเป็นแคชเชียร์',
 		'POS store changed from %1$s to %2$s.' => 'เปลี่ยนร้าน POS จาก %1$s เป็น %2$s',
 		'Order re-opened via POS by %1$s at %2$s.' => 'เปิดคำสั่งซื้ออีกครั้งผ่าน POS โดย %1$s ที่ %2$s',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'เปลี่ยนลูกค้าจาก %1$s เป็น %2$s ผ่าน WCPOS',

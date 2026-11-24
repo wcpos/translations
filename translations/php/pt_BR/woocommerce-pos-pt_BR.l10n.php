@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Loja #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Pedido criado via POS por %1$s em %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Caixa POS alterado de %1$s para %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'A alteração do operador de caixa do PDV de %1$s para %2$s foi recusada: não pode atribuir esta venda a esse usuário. %3$s continua sendo o operador de caixa.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s tentou alterar o operador do POS para %2$s. A solicitação foi recusada: essa pessoa não pode atribuir esta venda a esse usuário. %3$s continua sendo o operador.',
 		'POS store changed from %1$s to %2$s.' => 'A loja do POS foi alterada de %1$s para %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Pedido reaberto via POS por %1$s em %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'O cliente foi alterado de %1$s para %2$s via WCPOS.',

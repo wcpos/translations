@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Magazin #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Comanda a fost creată prin POS de %1$s la %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Casierul POS a fost schimbat de la %1$s la %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Schimbarea casierului POS de la %1$s la %2$s a fost refuzată: persoana respectivă nu poate atribui această vânzare acelui utilizator. Casierul rămâne %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s a încercat să schimbe casierul POS în %2$s. Cererea a fost refuzată: nu poate atribui această vânzare acelui utilizator. %3$s rămâne casier.',
 		'POS store changed from %1$s to %2$s.' => 'Magazinul POS a fost schimbat din %1$s în %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Comanda a fost redeschisă prin POS de %1$s la %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Clientul a fost schimbat din %1$s în %2$s prin WCPOS.',

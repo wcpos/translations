@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Toko #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Pesanan dibuat melalui POS oleh %1$s di %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Kasir POS diubah dari %1$s ke %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Perubahan kasir POS dari %1$s ke %2$s ditolak: mereka tidak boleh menetapkan penjualan ini kepada pengguna tersebut. Kasir tetap %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s mencoba mengganti kasir POS menjadi %2$s. Permintaan ini ditolak: orang yang mencoba perubahan ini tidak boleh menetapkan penjualan ini kepada pengguna tersebut. %3$s tetap menjadi kasir.',
 		'POS store changed from %1$s to %2$s.' => 'Toko POS diubah dari %1$s menjadi %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Pesanan dibuka kembali melalui POS oleh %1$s di %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Pelanggan diubah dari %1$s menjadi %2$s melalui WCPOS.',

@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'स्टोर #%d',
 		'Order created via POS by %1$s at %2$s.' => '%2$s में %1$s द्वारा POS के माध्यम से ऑर्डर बनाया गया।',
 		'POS cashier changed from %1$s to %2$s.' => 'POS कैशियर %1$s से %2$s में बदल गया।',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s से %2$s तक POS कैशियर बदलने का अनुरोध अस्वीकार कर दिया गया: वे यह बिक्री उस उपयोगकर्ता को नहीं सौंप सकते। %3$s ही कैशियर रहेंगे।',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s ने POS कैशियर को %2$s में बदलने की कोशिश की। यह अनुरोध अस्वीकार कर दिया गया: उन्हें यह बिक्री उस उपयोगकर्ता को सौंपने की अनुमति नहीं है। %3$s कैशियर बने रहेंगे।',
 		'POS store changed from %1$s to %2$s.' => 'POS स्टोर को %1$s से बदलकर %2$s किया गया।',
 		'Order re-opened via POS by %1$s at %2$s.' => '%2$s में %1$s द्वारा POS के माध्यम से ऑर्डर फिर से खोला गया।',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'WCPOS के माध्यम से ग्राहक को %1$s से बदलकर %2$s किया गया।',

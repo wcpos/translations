@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Bolt #%d',
 		'Order created via POS by %1$s at %2$s.' => 'A rendelést a POS-on keresztül %1$s hozta létre a(z) %2$s üzletben.',
 		'POS cashier changed from %1$s to %2$s.' => 'A POS pénztáros %1$s-ról %2$s-ra változott.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'A POS-pénztáros %1$s-ről %2$s-re történő módosítását elutasítottuk: nem rendelheti ezt az értékesítést ehhez a felhasználóhoz. A pénztáros továbbra is %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s megpróbálta a POS pénztárosát %2$s felhasználóra módosítani. A műveletet elutasítottuk: nem rendelheti ezt az eladást ehhez a felhasználóhoz. Továbbra is %3$s a pénztáros.',
 		'POS store changed from %1$s to %2$s.' => 'A POS-üzlet %1$s-ről %2$s-re változott.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'A rendelést a POS-on keresztül %1$s újranyitotta a(z) %2$s üzletben.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'A WCPOS-on keresztül az ügyfél %1$s helyett %2$s lett.',

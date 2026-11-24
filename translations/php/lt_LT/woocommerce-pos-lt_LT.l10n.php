@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Parduotuvė #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Užsakymą per POS sukūrė %1$s parduotuvėje %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS kasos darbuotojas pakeistas iš %1$s į %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'POS kasininko pakeitimas iš %1$s į %2$s atmestas: šis asmuo negali priskirti šio pardavimo tam naudotojui. Kasininku lieka %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s bandė pakeisti POS kasininką į %2$s. Šis veiksmas atmestas: jis negali priskirti šio pardavimo tam naudotojui. Kasininku lieka %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'POS parduotuvė pakeista iš %1$s į %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Užsakymą per POS iš naujo atidarė %1$s parduotuvėje %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Klientas WCPOS pakeistas iš %1$s į %2$s.',

@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Магазин #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Заказ создан через POS кассиром %1$s в магазине %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'Кассир POS изменен с %1$s на %2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'Смена кассира POS с %1$s на %2$s отклонена: этот пользователь не может назначить эту продажу указанному пользователю. Кассиром остается %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s попытался изменить кассира POS на %2$s. Запрос отклонён: этому пользователю нельзя назначить эту продажу. Кассиром остаётся %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'Магазин POS изменён с %1$s на %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Заказ повторно открыт через POS кассиром %1$s в магазине %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Клиент изменён с %1$s на %2$s через WCPOS.',

@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'Pood #%d',
 		'Order created via POS by %1$s at %2$s.' => 'Tellimuse lõi POS-is %1$s kaupluses %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'POS kassapidaja muutus %1$s-lt %2$s-le.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'POS-kassapidaja vahetamine kasutajalt %1$s kasutajale %2$s lükati tagasi: ta ei tohi seda müüki sellele kasutajale määrata. Kassapidajaks jääb %3$s.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s üritas POS-i kassapidajat vahetada kasutajaks %2$s. See lükati tagasi: ta ei tohi seda müüki sellele kasutajale määrata. Kassapidajaks jääb %3$s.',
 		'POS store changed from %1$s to %2$s.' => 'POS-i kauplus muudeti väärtuselt %1$s väärtusele %2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'Tellimus avati POS-is uuesti: %1$s kaupluses %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'Klient muudeti WCPOS-is väärtuselt %1$s väärtusele %2$s.',

@@ -406,7 +406,7 @@ return array(
 		'Store #%d' => 'חנות מס\' %d',
 		'Order created via POS by %1$s at %2$s.' => 'הזמנה נוצרה דרך POS על ידי %1$s בחנות %2$s.',
 		'POS cashier changed from %1$s to %2$s.' => 'קופאי ה-POS שונה מ-%1$s ל-%2$s.',
-		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => 'שינוי הקופאי בקופה מ־%1$s ל־%2$s נדחה: אין לו הרשאה לשייך את המכירה הזו למשתמש הזה. %3$s נשאר הקופאי.',
+		'%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s ניסה לשנות את הקופאי ב-POS ל-%2$s. הבקשה נדחתה: אסור לו לשייך את המכירה הזו למשתמש הזה. %3$s נשאר הקופאי.',
 		'POS store changed from %1$s to %2$s.' => 'חנות ה-POS השתנתה מ-%1$s ל-%2$s.',
 		'Order re-opened via POS by %1$s at %2$s.' => 'ההזמנה נפתחה מחדש דרך POS על ידי %1$s בחנות %2$s.',
 		'Customer changed from %1$s to %2$s via WCPOS.' => 'הלקוח הוחלף מ-%1$s ל-%2$s דרך WCPOS.',
