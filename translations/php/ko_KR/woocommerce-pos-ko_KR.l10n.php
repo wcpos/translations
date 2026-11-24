@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => '계수표(80mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => '현금 봉투용 캐셔 계수표예요. 시재, 계수한 결제 수단, 권종, 입출금 내역, 메모와 서명란을 포함하며 매출 및 세금 수치는 표시하지 않아요.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => '죄송합니다. 이 주문을 결제할 수 없습니다. 주문 키가 누락되거나 잘못되었습니다.',
+		'Your session has expired. Close this payment window and open it again.' => '세션이 만료되었습니다. 이 결제 창을 닫은 후 다시 여세요.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => '이 주문은 결제할 수 없습니다. 도움이 필요하시면 저희에게 연락해 주세요.',
 		'Pay for order' => '주문 결제',
 		'Checkout Settings' => '결제 설정',

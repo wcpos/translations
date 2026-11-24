@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'قسيمة العدّ (80 مم)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'قسيمة الكاشير لكيس النقود: الرصيد الافتتاحي، والدفعات المعدودة، والفئات النقدية، والحركات، وخطوط الملاحظات والتوقيع. لا تتضمن أرقام المبيعات أو الضرائب.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'عذرًا، لا يمكن دفع ثمن الطلب. مفتاح الطلب مفقود أو غير صحيح',
+		'Your session has expired. Close this payment window and open it again.' => 'انتهت صلاحية جلستك. أغلق نافذة الدفع هذه وافتحها مجددًا.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'لا يمكن دفع هذا الطلب. يرجى الاتصال بنا إذا كنت بحاجة إلى مساعدة.',
 		'Pay for order' => 'دفع الطلب',
 		'Checkout Settings' => 'إعدادات الدفع',

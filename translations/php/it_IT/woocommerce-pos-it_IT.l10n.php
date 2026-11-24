@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Distinta di conteggio (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Distinta del cassiere per il sacchetto del contante: fondo cassa, pagamenti conteggiati, tagli, movimenti, nota e righe per la firma. Nessun dato su vendite o imposte.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Spiacenti, non è possibile effettuare il pagamento per questo ordine. La chiave dell\'ordine è mancante o non valida.',
+		'Your session has expired. Close this payment window and open it again.' => 'La sessione è scaduta. Chiudi questa finestra di pagamento e riaprila.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Questo ordine non può essere pagato. Contattaci se hai bisogno di assistenza.',
 		'Pay for order' => 'Paga l\'ordine',
 		'Checkout Settings' => 'Impostazioni del checkout',

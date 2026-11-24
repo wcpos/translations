@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Opptellingsslipp (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kassamedarbeiderens slipp for kontantposen: vekselbeholdning, opptalte betalinger, valører, bevegelser, notat og signaturlinjer. Ingen salgs- eller avgiftstall.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Beklager, denne bestillingen kan ikke betales for. Bestillingsnøkkelen mangler eller er ugyldig.',
+		'Your session has expired. Close this payment window and open it again.' => 'Økten din er utløpt. Lukk dette betalingsvinduet og åpne det igjen.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Denne bestillingen kan ikke betales. Vennligst kontakt oss hvis du trenger hjelp.',
 		'Pay for order' => 'Betal for bestilling',
 		'Checkout Settings' => 'Innstillinger for utsjekking',

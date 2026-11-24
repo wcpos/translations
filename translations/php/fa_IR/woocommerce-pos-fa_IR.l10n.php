@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'برگه شمارش (۸۰ میلی‌متر)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'برگه صندوق‌دار برای کیسه پول نقد: موجودی اولیه، روش‌های پرداخت شمارش‌شده، اسکناس‌ها و سکه‌ها، جابه‌جایی‌ها، یادداشت و محل امضا. بدون ارقام فروش یا مالیات.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'ماسفیانه، این سفارش نمی‌تواند پرداخت شود. کلید سفارش اشتباه یا ناوجود است.',
+		'Your session has expired. Close this payment window and open it again.' => 'مهلت نشست شما به پایان رسیده است. این پنجرهٔ پرداخت را ببندید و دوباره باز کنید.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'این سفارش قابل پرداخت نیست. اگر به کمک نیاز دارید با ما تماس بگیرید.',
 		'Pay for order' => 'پرداخت سفارش',
 		'Checkout Settings' => 'تنظیمات پرداخت',

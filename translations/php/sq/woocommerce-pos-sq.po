@@ -71,7 +71,7 @@ msgstr "Aktivizoni lidhjet e përhershme"
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:432
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Arkëtar"
@@ -309,11 +309,13 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:138
-#: includes/Form_Handler.php:159
-#: includes/Templates/Payment.php:203
-#: includes/Templates/Payment.php:537
-#: includes/Templates/Received.php:92
+#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:146
+#: includes/Templates/Payment.php:204
+#: includes/Templates/Payment.php:217
+#: includes/Templates/Payment.php:240
+#: includes/Templates/Payment.php:574
+#: includes/Templates/Received.php:98
 msgid "Error"
 msgstr "Error"
 
@@ -1311,12 +1313,13 @@ msgid "Order key mismatch."
 msgstr "Key i porosisë nuk përputhet."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:134
 msgid "Token not provided."
 msgstr "Token-i nuk është dhënë."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:157
+#: includes/Form_Handler.php:144
+#: includes/Templates/Payment.php:215
 msgid "Cashier token mismatch."
 msgstr "Token-i i arkëtarit nuk përputhet."
 
@@ -1452,14 +1455,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "Kjo mënyrë arkëtimi e pagesës nuk e mbështet atë veprim."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:320
+#: includes/Payments/Contract/Attempts.php:339
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "Përpjekja e pagesës WCPOS %1$s: rezultati nuk dihet dhe %2$s nuk mund të thotë nëse janë marrë para. Kontrolloni pagesën te ofruesi, pastaj anuloni përpjekjen në POS nëse nuk është marrë asnjë pagesë."
 
-#: includes/Payments/Contract/Attempts.php:409
+#: includes/Payments/Contract/Attempts.php:420
 msgid "Clearing the awaiting-customer state"
 msgstr "Po pastrohet gjendja e pritjes së klientit"
 
@@ -2037,7 +2040,7 @@ msgstr "I panjohur"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:413
+#: includes/Templates/Payment.php:450
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Vizitor"
@@ -6255,83 +6258,90 @@ msgid ""
 msgstr ""
 "Fleta e arkëtarit për qesen e parave: fondi fillestar, pagesat e numëruara, prerjet monetare, lëvizjet, shënimi dhe rreshtat e nënshkrimit. Pa të dhëna shitjesh ose taksash."
 
-#: includes/Templates/Payment.php:201
+#: includes/Templates/Payment.php:202
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Na vjen keq, kjo porosi nuk mund të paguhet. Çelësi i porosisë mungon ose është i pavlefshëm."
 
-#: includes/Templates/Payment.php:220
+#. translators: Shown on the POS pay page when the cashier's session has expired.
+#: includes/Templates/Payment.php:234
+msgid ""
+"Your session has expired. Close this payment window and open it again."
+msgstr ""
+"Seanca juaj ka skaduar. Mbylleni këtë dritare pagese dhe hapeni përsëri."
+
+#: includes/Templates/Payment.php:257
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Kjo porosi nuk mund të paguhet. Ju lutemi na kontaktoni nëse keni nevojë për ndihmë."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:228
+#: includes/Templates/Payment.php:265
 msgid "Pay for order"
 msgstr "Paguani porosinë"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:312
+#: includes/Templates/Payment.php:349
 msgid "Checkout Settings"
 msgstr "Cilësimet e pagesës"
 
-#: includes/Templates/Payment.php:318
+#: includes/Templates/Payment.php:355
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Skriptet dhe stilet mund të ndërhyjnë te modeli i personalizuar i pagesës; përdorni këtë formular për të hequr nga radha skriptet problematike."
 
-#: includes/Templates/Payment.php:320
+#: includes/Templates/Payment.php:357
 msgid "Disable All Styles and Scripts"
 msgstr "Çaktivizoni të gjitha stilet dhe skriptet"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:323
+#: includes/Templates/Payment.php:360
 msgid "Disable wp_head"
 msgstr "Çaktivizoni wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:328
+#: includes/Templates/Payment.php:365
 msgid "Disable wp_footer"
 msgstr "Çaktivizoni wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:370
 msgid "Disable Selected Styles"
 msgstr "Çaktivizoni stilet e zgjedhura"
 
-#: includes/Templates/Payment.php:340
-#: includes/Templates/Payment.php:352
+#: includes/Templates/Payment.php:377
+#: includes/Templates/Payment.php:389
 msgid "always removed on the POS payment page"
 msgstr "hiqet gjithmonë në faqen e pagesës POS"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:345
+#: includes/Templates/Payment.php:382
 msgid "Disable Selected Scripts"
 msgstr "Çaktivizoni skriptet e zgjedhura"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:358
+#: includes/Templates/Payment.php:395
 msgid "Submit"
 msgstr "Dërgoni"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:412
+#: includes/Templates/Payment.php:449
 msgid "Paying as customer"
 msgstr "Duke paguar si klient"
 
-#: includes/Templates/Payment.php:513
+#: includes/Templates/Payment.php:550
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Na vjen keq, kjo porosi është e pavlefshme dhe nuk mund të paguhet."
 
-#: includes/Templates/Payment.php:517
+#: includes/Templates/Payment.php:554
 msgid "Sorry, this order has already been paid for."
 msgstr "Na vjen keq, kjo porosi është paguar tashmë."
 
-#: includes/Templates/Payment.php:535
+#: includes/Templates/Payment.php:572
 msgid "You do not have permission to modify checkout settings."
 msgstr "Nuk keni leje të ndryshoni cilësimet e pagesës."
 
@@ -6406,11 +6416,11 @@ msgstr "Provoni ta rivendosni modelin e parazgjedhur të kuponit"
 msgid "Please contact the site administrator for assistance."
 msgstr "Ju lutemi kontaktoni administratorin e faqes për ndihmë."
 
-#: includes/Templates/Received.php:82
+#: includes/Templates/Received.php:88
 msgid "Sorry, this order is invalid."
 msgstr "Na vjen keq, kjo porosi është e pavlefshme."
 
-#: includes/Templates/Received.php:90
+#: includes/Templates/Received.php:96
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr ""

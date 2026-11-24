@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Full de recompte (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Full del caixer per a la bossa de caixa: fons inicial, imports comptats, denominacions, moviments i línies per a notes i signatures. Sense xifres de vendes ni d’impostos.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Ho sentim, no es pot pagar aquesta comanda. La clau de la comanda és inexistent o és incorrecta.',
+		'Your session has expired. Close this payment window and open it again.' => 'La sessió ha caducat. Tanqueu aquesta finestra de pagament i torneu-la a obrir.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Aquesta comanda no es pot pagar. Si us plau, contacteu-nos si necessiteu ajuda.',
 		'Pay for order' => 'Pagar la comanda',
 		'Checkout Settings' => 'Configuració de pagament',

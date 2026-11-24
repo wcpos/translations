@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => '計数票（80 mm）',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => '現金袋用のキャッシャー計数票です。釣銭準備金、決済方法別の計数、金種、入出金、メモ、署名欄を記載します。売上や税額は記載しません。',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => '申し訳ございませんが、この注文は支払うことができません。注文キーが存在しないか無効です。',
+		'Your session has expired. Close this payment window and open it again.' => 'セッションの有効期限が切れました。この決済ウィンドウを閉じて、もう一度開いてください。',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'この注文は支払いできません。サポートが必要な場合はお問い合わせください。',
 		'Pay for order' => '注文を支払う',
 		'Checkout Settings' => 'チェックアウト設定',

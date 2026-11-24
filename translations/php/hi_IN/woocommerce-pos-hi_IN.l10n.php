@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'गिनती पर्ची (80 मिमी)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'नकदी के बैग के लिए कैशियर की पर्ची: शुरुआती नकदी, गिने गए भुगतान, नोटों और सिक्कों के मूल्य, लेन-देन, टिप्पणी और हस्ताक्षर की पंक्तियाँ। बिक्री या कर के आँकड़े नहीं।',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'क्षमा करें, इस आदेश का भुगतान नहीं किया जा सकता है। आदेश कुंजी अनुपस्थित है या अमान्य है।',
+		'Your session has expired. Close this payment window and open it again.' => 'आपका सत्र समाप्त हो गया है। इस भुगतान विंडो को बंद करके फिर से खोलें।',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'इस आदेश का भुगतान नहीं किया जा सकता। यदि आपको सहायता की आवश्यकता है, तो कृपया हमसे संपर्क करें।',
 		'Pay for order' => 'आदेश का भुगतान करें',
 		'Checkout Settings' => 'चेकआउट सेटिंग्स',

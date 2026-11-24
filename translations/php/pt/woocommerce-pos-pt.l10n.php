@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Talão de contagem (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Talão do operador de caixa para o saco do dinheiro: fundo de caixa, pagamentos contados, denominações, movimentos, observações e linhas de assinatura. Sem valores de vendas ou impostos.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Sinto muito, esta encomenda não pode ser paga. A chave da encomenda está ausente ou inválida.',
+		'Your session has expired. Close this payment window and open it again.' => 'A sua sessão expirou. Feche esta janela de pagamento e abra-a novamente.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Esta encomenda não pode ser paga. Por favor, contacte-nos se precisar de assistência.',
 		'Pay for order' => 'Pagar encomenda',
 		'Checkout Settings' => 'Configurações de Checkout',

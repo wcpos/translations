@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Απόδειξη καταμέτρησης (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Το δελτίο του ταμία για τον σάκο μετρητών: αρχικό ταμείο, καταμετρημένοι τρόποι πληρωμής, ονομαστικές αξίες, κινήσεις, σημείωση και γραμμές υπογραφής. Χωρίς στοιχεία πωλήσεων ή φόρων.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Λυπούμαστε, αυτή η παραγγελία δεν μπορεί να πληρωθεί. Το κλειδί της παραγγελίας λείπει ή είναι άκυρο.',
+		'Your session has expired. Close this payment window and open it again.' => 'Η συνεδρία σας έληξε. Κλείστε αυτό το παράθυρο πληρωμής και ανοίξτε το ξανά.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Αυτή η παραγγελία δεν μπορεί να πληρωθεί. Παρακαλώ επικοινωνήστε μαζί μας αν χρειάζεστε βοήθεια.',
 		'Pay for order' => 'Πληρωμή παραγγελίας',
 		'Checkout Settings' => 'Ρυθμίσεις ολοκλήρωσης αγοράς',

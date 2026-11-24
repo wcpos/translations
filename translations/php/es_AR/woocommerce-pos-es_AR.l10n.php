@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Comprobante de recuento (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'El comprobante del cajero para la bolsa de efectivo: fondo inicial, medios de pago contados, denominaciones, movimientos, nota y líneas de firma. Sin cifras de ventas ni impuestos.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Lo sentimos, este pedido no puede pagarse. La clave del pedido está ausente o no es válida.',
+		'Your session has expired. Close this payment window and open it again.' => 'Tu sesión venció. Cerrá esta ventana de pago y volvé a abrirla.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Este pedido no se puede pagar. Por favor, contáctenos si necesita ayuda.',
 		'Pay for order' => 'Pagar pedido',
 		'Checkout Settings' => 'Configuración de Pago',

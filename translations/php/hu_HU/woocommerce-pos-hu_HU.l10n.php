@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Számolási bizonylat (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'A pénztáros bizonylata a készpénzes tasakhoz: nyitókészlet, megszámolt fizetési módok, címletek, pénzmozgások, megjegyzés és aláírási sorok. Eladási és adóadatok nélkül.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Sajnálatos módon ezt a megrendelést nem lehet fizetni. A megrendeléskulcs hiányzik vagy érvénytelen.',
+		'Your session has expired. Close this payment window and open it again.' => 'A munkamenet lejárt. Zárja be ezt a fizetési ablakot, majd nyissa meg újra.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Ez a rendelés nem fizethető ki. Kérjük, lépjen kapcsolatba velünk, ha segítségre van szüksége.',
 		'Pay for order' => 'Rendelés kifizetése',
 		'Checkout Settings' => 'Pénztár beállítások',

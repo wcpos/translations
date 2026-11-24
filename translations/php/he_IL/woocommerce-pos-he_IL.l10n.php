@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'דף ספירה (80 מ״מ)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'דף הקופאי לשק הכסף: יתרת פתיחה, אמצעי תשלום שנספרו, שטרות ומטבעות, תנועות, הערה ושורות חתימה. ללא נתוני מכירות או מס.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'מצטער, לא ניתן לשלם על ה焯:焯ឃ הזה. מפתח ה焯:焯ឃ חסר או שגוי.',
+		'Your session has expired. Close this payment window and open it again.' => 'פג תוקף ההפעלה שלך. סגור את חלון התשלום הזה ופתח אותו מחדש.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'לא ניתן לשלם עבור הזמנה זו. אנא צור קשר אם אתה זקוק לעזרה.',
 		'Pay for order' => 'שלם עבור ההזמנה',
 		'Checkout Settings' => 'הגדרות תשלום',

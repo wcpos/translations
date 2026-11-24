@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Sayım Fişi (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kasiyerin para çantası için fişi: açılış nakdi, sayılan tahsilatlar, kupürler, hareketler, not ve imza satırları. Satış veya vergi tutarları içermez.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Üzgünüz, bu sipariş için ödeme yapılamıyor. Sipariş anahtarı eksik ya da geçersiz.',
+		'Your session has expired. Close this payment window and open it again.' => 'Oturumunuzun süresi doldu. Bu ödeme penceresini kapatıp yeniden açın.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Bu sipariş ödenemez. Yardıma ihtiyacınız varsa lütfen bizimle iletişime geçin.',
 		'Pay for order' => 'Siparişi öde',
 		'Checkout Settings' => 'Ödeme Ayarları',

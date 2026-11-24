@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Laskentalomake (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kassanhoitajan lomake käteispussia varten: alkukassa, lasketut maksutavat ja nimellisarvot, kassaliikkeet, huomautus sekä allekirjoitusrivit. Ei myynti- tai verolukuja.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Valitettavasti tätä tilausta ei voida maksaa. Tilaustubarnin avain puuttuu tai on voimoton.',
+		'Your session has expired. Close this payment window and open it again.' => 'Istuntosi on vanhentunut. Sulje tämä maksuikkuna ja avaa se uudelleen.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Tätä tilausta ei voi maksaa. Ota yhteyttä, jos tarvitset apua.',
 		'Pay for order' => 'Maksa tilaus',
 		'Checkout Settings' => 'Kassan asetukset',

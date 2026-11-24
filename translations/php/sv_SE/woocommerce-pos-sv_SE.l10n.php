@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Räkningssedel (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kassörens räkningssedel för kontantpåsen: växelkassa, räknade betalningar, valörer, rörelser, antecknings- och signaturrader. Inga försäljnings- eller skattebelopp.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Tyvärr kan denna order inte betalas. Ordernyckeln saknas eller är ogiltig.',
+		'Your session has expired. Close this payment window and open it again.' => 'Din session har gått ut. Stäng det här betalningsfönstret och öppna det igen.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Denna beställning kan inte betalas. Kontakta oss om du behöver hjälp.',
 		'Pay for order' => 'Betala för beställning',
 		'Checkout Settings' => 'Inställningar för kassan',

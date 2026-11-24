@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Slip penghitungan (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Slip kasir untuk kantong uang tunai: saldo awal, metode pembayaran yang dihitung, pecahan uang, pergerakan, catatan, dan baris tanda tangan. Tanpa angka penjualan atau pajak.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Maaf, pesanan ini tidak dapat dibayar. Kunci pesanan hilang atau tidak valid.',
+		'Your session has expired. Close this payment window and open it again.' => 'Sesi Anda telah kedaluwarsa. Tutup jendela pembayaran ini, lalu buka kembali.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Pesanan ini tidak dapat dibayar. Silakan hubungi kami jika Anda memerlukan bantuan.',
 		'Pay for order' => 'Bayar pesanan',
 		'Checkout Settings' => 'Pengaturan Checkout',

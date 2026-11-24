@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Karta przeliczenia (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Karta kasjera do worka na gotówkę: stan początkowy, przeliczone płatności, nominały, operacje, uwagi i miejsce na podpisy. Bez danych o sprzedaży ani podatkach.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Niestety, to zamówienie nie może zostać opłacone. Klucz zamówienia jest brakujący lub nieprawidłowy.',
+		'Your session has expired. Close this payment window and open it again.' => 'Sesja wygasła. Zamknij to okno płatności i otwórz je ponownie.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Nie można opłacić tego zamówienia. Skontaktuj się z nami, jeśli potrzebujesz pomocy.',
 		'Pay for order' => 'Opłać zamówienie',
 		'Checkout Settings' => 'Ustawienia kasy',

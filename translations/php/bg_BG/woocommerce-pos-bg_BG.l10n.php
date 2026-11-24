@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Касова бележка за преброяване (80 мм)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Бележка на касиера за касетата с пари: начална сума, преброени плащания, купюри, движения, редове за бележки и подпис. Без данни за продажби или данъци.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Съжаляваме, тази поръчка не може да бъде платена. Липсва ключ за поръчка или е невалиден.',
+		'Your session has expired. Close this payment window and open it again.' => 'Сесията ви изтече. Затворете този прозорец за плащане и го отворете отново.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Тази поръчка не може да бъде платена. Моля, свържете се с нас, ако имате нужда от помощ.',
 		'Pay for order' => 'Плащане на поръчка',
 		'Checkout Settings' => 'Настройки за плащане',

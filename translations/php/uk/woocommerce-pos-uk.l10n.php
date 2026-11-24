@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Аркуш підрахунку (80 мм)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Аркуш касира для грошового мішка: розмінний фонд, підраховані оплати, номінали, рух коштів, примітка та рядки для підписів. Без сум продажів і податків.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Вибачте, це замовлення не може бути оплачене. Ключ замовлення відсутній або недійсний.',
+		'Your session has expired. Close this payment window and open it again.' => 'Термін дії сеансу минув. Закрийте це вікно оплати й відкрийте його знову.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Це замовлення не можна оплатити. Будь ласка, зв\'яжіться з нами, якщо вам потрібна допомога.',
 		'Pay for order' => 'Оплатити замовлення',
 		'Checkout Settings' => 'Налаштування оформлення',

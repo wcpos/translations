@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Phiếu kiểm đếm (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Phiếu của thu ngân cho túi tiền mặt: tiền đầu ca, các khoản thanh toán đã đếm, mệnh giá, biến động, ghi chú và dòng chữ ký. Không có số liệu bán hàng hoặc thuế.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Xin lỗi, đơn hàng này không thể thanh toán. Mã đơn hàng không tồn tại hoặc không hợp lệ.',
+		'Your session has expired. Close this payment window and open it again.' => 'Phiên của bạn đã hết hạn. Hãy đóng cửa sổ thanh toán này rồi mở lại.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ.',
 		'Pay for order' => 'Thanh toán đơn hàng',
 		'Checkout Settings' => 'Cài đặt Thanh toán',

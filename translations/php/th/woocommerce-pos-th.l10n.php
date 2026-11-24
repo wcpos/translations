@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'ใบนับเงิน (80 มม.)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'ใบบันทึกของแคชเชียร์สำหรับถุงเงินสด: เงินทอนตั้งต้น ยอดรับชำระที่นับได้ จำนวนธนบัตรและเหรียญ รายการเคลื่อนไหว หมายเหตุ และบรรทัดลงชื่อ ไม่มีตัวเลขยอดขายหรือภาษี',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'ขออภัย การชำระเงินสำหรับการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง',
+		'Your session has expired. Close this payment window and open it again.' => 'เซสชันของคุณหมดอายุแล้ว ปิดหน้าต่างการชำระเงินนี้แล้วเปิดอีกครั้ง',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ',
 		'Pay for order' => 'ชำระเงินสำหรับคำสั่งซื้อ',
 		'Checkout Settings' => 'การตั้งค่าชำระเงิน',

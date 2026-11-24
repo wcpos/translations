@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Bon de numărare (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Bonul casierului pentru sacul de bani: fond de casă, plăți numărate, cupiuri, operațiuni, observații și câmpuri de semnătură. Fără valori despre vânzări sau taxe.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Ne pare rău, această comandă nu poate fi achitată. Cheia comenzi este lipsă sau invalidă.',
+		'Your session has expired. Close this payment window and open it again.' => 'Sesiunea a expirat. Închideți această fereastră de plată și redeschideți-o.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Această comandă nu poate fi plătită. Vă rugăm să ne contactați dacă aveți nevoie de asistență.',
 		'Pay for order' => 'Plătiți comanda',
 		'Checkout Settings' => 'Setări de finalizare a comenzii',

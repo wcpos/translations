@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => '清点单（80 毫米）',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => '收银员现金袋清点单：备用金、已清点的收款、面额、现金变动、备注和签名栏。不含销售额或税额。',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => '对不起，无法为该订单付款。订单密钥缺失或无效。',
+		'Your session has expired. Close this payment window and open it again.' => '您的会话已过期。请关闭此付款窗口，然后重新打开。',
 		'This order cannot be paid for. Please contact us if you need assistance.' => '此订单无法支付。如需帮助，请联系我们。',
 		'Pay for order' => '支付订单',
 		'Checkout Settings' => '结账设置',

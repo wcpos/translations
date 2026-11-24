@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Teltelling (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'De kassabon voor de geldzak: wisselgeld, getelde betaalmiddelen, coupures, mutaties, notitie en handtekeningregels. Geen verkoop- of belastingbedragen.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Helaas kan deze bestelling niet worden betaald. De bestelcode ontbreekt of is ongeldig.',
+		'Your session has expired. Close this payment window and open it again.' => 'Je sessie is verlopen. Sluit dit betalingsvenster en open het opnieuw.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Deze bestelling kan niet worden betaald. Neem contact met ons op als u hulp nodig heeft.',
 		'Pay for order' => 'Bestelling betalen',
 		'Checkout Settings' => 'Afrekeninstellingen',

@@ -1190,6 +1190,7 @@ return array(
 		'Count Slip (80mm)' => 'Fletë numërimi (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Fleta e arkëtarit për qesen e parave: fondi fillestar, pagesat e numëruara, prerjet monetare, lëvizjet, shënimi dhe rreshtat e nënshkrimit. Pa të dhëna shitjesh ose taksash.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Na vjen keq, kjo porosi nuk mund të paguhet. Çelësi i porosisë mungon ose është i pavlefshëm.',
+		'Your session has expired. Close this payment window and open it again.' => 'Seanca juaj ka skaduar. Mbylleni këtë dritare pagese dhe hapeni përsëri.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Kjo porosi nuk mund të paguhet. Ju lutemi na kontaktoni nëse keni nevojë për ndihmë.',
 		'Pay for order' => 'Paguani porosinë',
 		'Checkout Settings' => 'Cilësimet e pagesës',

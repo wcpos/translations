@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Optællingsbon (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kassererens bon til pengekassen: startbeløb, optalte betalinger, mønter og sedler, bevægelser samt linjer til noter og underskrift. Ingen salgs- eller afgiftsbeløb.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Undskyld, denne ordre kan ikke betales. Ordrenøglen mangler eller er ugyldig.',
+		'Your session has expired. Close this payment window and open it again.' => 'Din session er udløbet. Luk dette betalingsvindue, og åbn det igen.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Denne ordre kan ikke betales. Kontakt os venligst, hvis du har brug for hjælp.',
 		'Pay for order' => 'Betal for ordre',
 		'Checkout Settings' => 'Indstillinger for betaling',

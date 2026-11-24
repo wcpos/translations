@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Лист подсчёта (80 мм)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Лист кассира для денежного мешка: разменный фонд, подсчитанные платежи, номиналы, операции, примечание и строки для подписей. Без данных о продажах и налогах.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Извините, этот заказ нельзя оплатить. Ключ заказа отсутствует или недействителен.',
+		'Your session has expired. Close this payment window and open it again.' => 'Срок действия сеанса истёк. Закройте это окно оплаты и откройте его снова.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Этот заказ не может быть оплачен. Пожалуйста, свяжитесь с нами, если вам нужна помощь.',
 		'Pay for order' => 'Оплатить заказ',
 		'Checkout Settings' => 'Настройки оформления',

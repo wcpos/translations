@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Feuille de comptage (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Feuille du caissier pour le sac de caisse : fond de caisse, modes de paiement comptés, coupures, mouvements, note et lignes de signature. Aucun chiffre de vente ni de taxe.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Désolé, cette commande ne peut pas être payée. La clé de commande est manquante ou invalide.',
+		'Your session has expired. Close this payment window and open it again.' => 'Votre session a expiré. Fermez cette fenêtre de paiement et rouvrez-la.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Cette commande ne peut pas être payée. Veuillez nous contacter si vous avez besoin d\'aide.',
 		'Pay for order' => 'Payer la commande',
 		'Checkout Settings' => 'Paramètres de paiement',

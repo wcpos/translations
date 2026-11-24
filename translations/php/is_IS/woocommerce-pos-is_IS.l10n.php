@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Talningarseðill (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Seðill gjaldkerans fyrir peningapokann: upphafsfé, taldar greiðslur, peningaseðlar og mynt, hreyfingar, athugasemd og undirskriftarlínur. Engar sölu- eða skattatölur.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Því miður getur þessi áskrift ekki verið greidd. Áskriftarmiði er ótæma eða ógilt.',
+		'Your session has expired. Close this payment window and open it again.' => 'Setan þín er útrunnin. Lokaðu þessum greiðsluglugga og opnaðu hann aftur.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Ekki er hægt að greiða fyrir þessa pöntun. Vinsamlegast hafðu samband við okkur ef þú þarft aðstoð.',
 		'Pay for order' => 'Greiða fyrir pöntun',
 		'Checkout Settings' => 'Stillingar útskráningar',

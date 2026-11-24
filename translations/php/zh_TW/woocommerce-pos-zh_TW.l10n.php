@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => '點算單（80 mm）',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => '收銀員的現金袋點算單：備用金、已點算的付款金額、各面額、現金異動、備註及簽名欄。不含銷售或稅額。',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => '很抱歉，無法為此訂單付款。訂單金鑰遺失或無效。',
+		'Your session has expired. Close this payment window and open it again.' => '您的工作階段已逾期。請關閉此付款視窗，然後重新開啟。',
 		'This order cannot be paid for. Please contact us if you need assistance.' => '此訂單無法付款。如需協助，請聯繫我們。',
 		'Pay for order' => '支付訂單',
 		'Checkout Settings' => '結帳設置',

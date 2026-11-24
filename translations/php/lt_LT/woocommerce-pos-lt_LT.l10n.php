@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Pinigų skaičiavimo lapelis (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Kasininko lapelis grynųjų pinigų maišui: pradinė grynųjų suma, suskaičiuoti mokėjimai, nominalai, operacijos, pastabų ir parašų eilutės. Be pardavimo ar mokesčių sumų.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Deja, šis užsakymas negali būti apmokestintas. Užsakymo raktas trūksta ar yra neteisingas.',
+		'Your session has expired. Close this payment window and open it again.' => 'Jūsų sesija baigėsi. Uždarykite šį mokėjimo langą ir atidarykite jį iš naujo.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Šis užsakymas negali būti apmokėtas. Jei reikia pagalbos, susisiekite su mumis.',
 		'Pay for order' => 'Apmokėti užsakymą',
 		'Checkout Settings' => 'Atsiskaitymo nustatymai',

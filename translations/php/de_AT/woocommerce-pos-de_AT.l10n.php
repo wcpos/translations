@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Zählbeleg (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Der Beleg des Kassierers für die Geldtasche: Wechselgeldbestand, gezählte Zahlungen, Stückelungen, Bewegungen sowie Zeilen für Notizen und Unterschrift. Ohne Verkaufs- oder Steuerzahlen.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Es tut uns leid, diese Bestellung kann nicht bezahlt werden. Der Bestellungsschlüssel fehlt oder ist ungültig.',
+		'Your session has expired. Close this payment window and open it again.' => 'Ihre Sitzung ist abgelaufen. Schließen Sie dieses Zahlungsfenster und öffnen Sie es erneut.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Diese Bestellung kann nicht bezahlt werden. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen.',
 		'Pay for order' => 'Bestellung bezahlen',
 		'Checkout Settings' => 'Checkout-Einstellungen',

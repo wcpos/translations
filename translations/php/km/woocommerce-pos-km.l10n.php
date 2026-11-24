@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'ប័ណ្ណរាប់ប្រាក់ (80 មម)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'ប័ណ្ណអ្នកគិតលុយសម្រាប់ថង់សាច់ប្រាក់៖ ប្រាក់ដើមក្នុងថតប្រាក់ វិធីបង់ប្រាក់ដែលបានរាប់ ចំនួនក្រដាសប្រាក់និងកាក់ ចលនាប្រាក់ កំណត់ចំណាំ និងបន្ទាត់ហត្ថលេខា។ មិនមានតួលេខការលក់ ឬពន្ធទេ។',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'ស្ទើរ​ហើយ​! ការ​លក់​នេះ​គ្មាន​លទ្ធភាព​ដែលត្រូវបាន​បង់។ វា​គឺ​ជា​មូលដ្ឋាន​ការលក់ មិនទាន់មាន ឬ​មិនសកម្ម។',
+		'Your session has expired. Close this payment window and open it again.' => 'សម័យប្រើប្រាស់របស់អ្នកបានផុតកំណត់ហើយ។ សូមបិទបង្អួចទូទាត់នេះ ហើយបើកវាម្តងទៀត។',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'ការបញ្ជាទិញនេះមិនអាចបង់ប្រាក់បានទេ។ សូមទាក់ទងមកយើងប្រសិនបើអ្នកត្រូវការជំនួយ។',
 		'Pay for order' => 'បង់ប្រាក់សម្រាប់ការបញ្ជាទិញ',
 		'Checkout Settings' => 'ការកំណត់ការទូទាត់',

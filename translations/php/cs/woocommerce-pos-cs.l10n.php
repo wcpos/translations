@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Počítací lístek (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Lístek pokladníka k sáčku s hotovostí: počáteční hotovost, spočítané platby, nominální hodnoty, pohyby a řádky pro poznámku a podpis. Bez údajů o prodeji a daních.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Omlouváme se, tuto objednávku nelze zaplatit. Objednávkový klíč chybí nebo je neplatný.',
+		'Your session has expired. Close this payment window and open it again.' => 'Platnost vaší relace vypršela. Zavřete toto platební okno a znovu ho otevřete.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Tuto objednávku nelze zaplatit. Kontaktujte nás, pokud potřebujete pomoc.',
 		'Pay for order' => 'Zaplatit objednávku',
 		'Checkout Settings' => 'Nastavení pokladny',

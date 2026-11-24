@@ -1192,6 +1192,7 @@ return array(
 		'Count Slip (80mm)' => 'Ливче за броење (80 mm)',
 		'The cashier\'s slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures.' => 'Ливче на касиерот за вреќата со готовина: почетна готовина, изброени плаќања, апоени, движења, белешка и линии за потпис. Без податоци за продажба или даноци.',
 		'Sorry, this order cannot be paid for. The order key is missing or invalid.' => 'Нажалост, оваа порачка не може да се плаќа. Клучот на порачката не е присутен или е неважечки.',
+		'Your session has expired. Close this payment window and open it again.' => 'Вашата сесија истече. Затворете го овој прозорец за плаќање и отворете го повторно.',
 		'This order cannot be paid for. Please contact us if you need assistance.' => 'Оваа нарачка не може да се плати. Ве молиме контактирајте не ако ви треба помош.',
 		'Pay for order' => 'Плати за нарачка',
 		'Checkout Settings' => 'Поставки за наплата',
