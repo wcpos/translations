@@ -72,7 +72,7 @@ msgstr "啟用永久連結"
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:432
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "收銀員"
@@ -174,7 +174,7 @@ msgstr "POS 收銀員"
 msgid "Search for a cashier&hellip;"
 msgstr "搜尋收銀員&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -304,11 +304,13 @@ msgstr "更新時，型錄可見度會恢復為「%s」。如需其他設定，�
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:138
-#: includes/Form_Handler.php:159
-#: includes/Templates/Payment.php:203
-#: includes/Templates/Payment.php:537
-#: includes/Templates/Received.php:92
+#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:146
+#: includes/Templates/Payment.php:204
+#: includes/Templates/Payment.php:217
+#: includes/Templates/Payment.php:240
+#: includes/Templates/Payment.php:574
+#: includes/Templates/Received.php:98
 msgid "Error"
 msgstr "錯誤"
 
@@ -886,7 +888,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "此訂單正在列印，請稍後再試。"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "無法完成交班要求。"
@@ -1256,12 +1258,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "報表「%1$s」失敗：%2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "參數無效：%s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "無法完成工作階段要求。"
 
@@ -1283,12 +1285,13 @@ msgid "Order key mismatch."
 msgstr "訂單金鑰不匹配。"
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:134
 msgid "Token not provided."
 msgstr "未提供令牌。"
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:157
+#: includes/Form_Handler.php:144
+#: includes/Templates/Payment.php:215
 msgid "Cashier token mismatch."
 msgstr "收銀員令牌不匹配。"
 
@@ -1418,14 +1421,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "此付款請款模式不支援該作業。"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:320
+#: includes/Payments/Contract/Attempts.php:339
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "WCPOS 付款嘗試 %1$s：結果未知，%2$s 無法確認是否已收款。請向付款服務提供者確認付款情況；若未扣款，請在 POS 中取消此次嘗試。"
 
-#: includes/Payments/Contract/Attempts.php:409
+#: includes/Payments/Contract/Attempts.php:420
 msgid "Clearing the awaiting-customer state"
 msgstr "正在清除等待顧客狀態"
 
@@ -1746,12 +1749,12 @@ msgstr "付款命令需要其建立時所依據的訂單修訂版本。"
 msgid "Another payment operation is running on this order."
 msgstr "此訂單目前正在執行另一項付款作業。"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "每十分鐘"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -1886,6 +1889,7 @@ msgid "WCPOS file integrity"
 msgstr "WCPOS 檔案完整性"
 
 #: includes/Services/File_Integrity.php:272
+#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -1979,7 +1983,7 @@ msgstr "未知"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:413
+#: includes/Templates/Payment.php:450
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "訪客"
@@ -2007,32 +2011,39 @@ msgstr "由 %1$s 在 %2$s 透過 POS 建立訂單。"
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS 收銀員已從 %1$s 更改為 %2$s。"
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr "%1$s嘗試將POS收銀員變更為%2$s。此操作已遭拒絕：他們無權將此筆銷售指派給該使用者。%3$s仍是收銀員。"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS 門市已從 %1$s 變更為 %2$s。"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "由 %1$s 在 %2$s 透過 POS 重新開啟訂單。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "客戶已透過 WCPOS 從 %1$s 變更為 %2$s。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "客戶已從 %1$s 變更為 %2$s。"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "已收到現金付款 — 收款金額：%1$s，找零：%2$s。"
@@ -5251,6 +5262,20 @@ msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr "WCPOS 同步商店尚未安裝（正在初始化，或結構描述安裝失敗）。請稍後再試。"
 
+#: includes/Sync/Integrity_Digest.php:449
+msgid "WCPOS sync integrity checks"
+msgstr "WCPOS 同步完整性檢查"
+
+#: includes/Sync/Integrity_Digest.php:469
+msgid "WCPOS sync integrity checks are off on SQLite"
+msgstr "SQLite 上的 WCPOS 同步完整性檢查已關閉"
+
+#: includes/Sync/Integrity_Digest.php:470
+msgid ""
+"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
+msgstr ""
+"POS 仍會透過變更記錄進行同步，但用來偵測 WordPress 外部變更（直接編輯資料庫、某些匯入作業）的背景完整性檢查不會在此資料庫上執行。SQLite 不是 WCPOS 支援的資料庫。"
+
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "date_created_gmt 不得超過未來 24 小時。"
@@ -5670,25 +5695,25 @@ msgstr "安全檢查失敗。請再試一次。"
 msgid "Authentication failed."
 msgstr "驗證失敗。"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr "由於多次登入失敗，該帳號暫時被鎖定。請稍後再試。"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "生成驗證令牌失敗。"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "請輸入用戶名和密碼。"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "用戶名或密碼無效。"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "請求過多。請稍後再試。"
 
@@ -6132,80 +6157,86 @@ msgid ""
 "The cashier's slip for the cash bag: float, counted tenders, denominations, movements, note and signature lines. No sales or tax figures."
 msgstr "收銀員的現金袋點算單：備用金、已點算的付款金額、各面額、現金異動、備註及簽名欄。不含銷售或稅額。"
 
-#: includes/Templates/Payment.php:201
+#: includes/Templates/Payment.php:202
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr "很抱歉，無法為此訂單付款。訂單金鑰遺失或無效。"
 
-#: includes/Templates/Payment.php:220
+#. translators: Shown on the POS pay page when the cashier's session has expired.
+#: includes/Templates/Payment.php:234
+msgid ""
+"Your session has expired. Close this payment window and open it again."
+msgstr "您的工作階段已逾期。請關閉此付款視窗，然後重新開啟。"
+
+#: includes/Templates/Payment.php:257
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "此訂單無法付款。如需協助，請聯繫我們。"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:228
+#: includes/Templates/Payment.php:265
 msgid "Pay for order"
 msgstr "支付訂單"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:312
+#: includes/Templates/Payment.php:349
 msgid "Checkout Settings"
 msgstr "結帳設置"
 
-#: includes/Templates/Payment.php:318
+#: includes/Templates/Payment.php:355
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr "腳本和樣式可能會干擾自訂付款模板，使用此表單來取消排除任何有問題的腳本。"
 
-#: includes/Templates/Payment.php:320
+#: includes/Templates/Payment.php:357
 msgid "Disable All Styles and Scripts"
 msgstr "禁用所有樣式和腳本"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:323
+#: includes/Templates/Payment.php:360
 msgid "Disable wp_head"
 msgstr "禁用 wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:328
+#: includes/Templates/Payment.php:365
 msgid "Disable wp_footer"
 msgstr "禁用 wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:370
 msgid "Disable Selected Styles"
 msgstr "禁用選定的樣式"
 
-#: includes/Templates/Payment.php:340
-#: includes/Templates/Payment.php:352
+#: includes/Templates/Payment.php:377
+#: includes/Templates/Payment.php:389
 msgid "always removed on the POS payment page"
 msgstr "一律從 POS 付款頁面移除"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:345
+#: includes/Templates/Payment.php:382
 msgid "Disable Selected Scripts"
 msgstr "禁用選定的腳本"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:358
+#: includes/Templates/Payment.php:395
 msgid "Submit"
 msgstr "提交"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:412
+#: includes/Templates/Payment.php:449
 msgid "Paying as customer"
 msgstr "以顧客身份付款"
 
-#: includes/Templates/Payment.php:513
+#: includes/Templates/Payment.php:550
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "抱歉，此訂單無效且無法付款。"
 
-#: includes/Templates/Payment.php:517
+#: includes/Templates/Payment.php:554
 msgid "Sorry, this order has already been paid for."
 msgstr "抱歉，此訂單已付款。"
 
-#: includes/Templates/Payment.php:535
+#: includes/Templates/Payment.php:572
 msgid "You do not have permission to modify checkout settings."
 msgstr "您無權限修改結帳設定。"
 
@@ -6277,11 +6308,11 @@ msgstr "嘗試重置為默認收據模板"
 msgid "Please contact the site administrator for assistance."
 msgstr "請聯繫網站管理員以獲取幫助。"
 
-#: includes/Templates/Received.php:82
+#: includes/Templates/Received.php:88
 msgid "Sorry, this order is invalid."
 msgstr "抱歉，此訂單無效。"
 
-#: includes/Templates/Received.php:90
+#: includes/Templates/Received.php:96
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr "很抱歉，無法查看此訂單。訂單金鑰遺失或無效。"

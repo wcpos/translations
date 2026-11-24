@@ -73,7 +73,7 @@ msgstr "تمكين الروابط الثابتة"
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:432
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "أمين الصندوق"
@@ -175,7 +175,7 @@ msgstr "أمين صندوق نقطة البيع"
 msgid "Search for a cashier&hellip;"
 msgstr "البحث عن أمين صندوق&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -310,11 +310,13 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:138
-#: includes/Form_Handler.php:159
-#: includes/Templates/Payment.php:203
-#: includes/Templates/Payment.php:537
-#: includes/Templates/Received.php:92
+#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:146
+#: includes/Templates/Payment.php:204
+#: includes/Templates/Payment.php:217
+#: includes/Templates/Payment.php:240
+#: includes/Templates/Payment.php:574
+#: includes/Templates/Received.php:98
 msgid "Error"
 msgstr "خطأ"
 
@@ -901,7 +903,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "تجري طباعة أخرى لهذا الطلب؛ أعد المحاولة."
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "تعذر إكمال طلب الإغلاق."
@@ -1273,12 +1275,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "فشل التقرير «%1$s»: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "المعلمة غير صالحة: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "تعذر إكمال طلب الجلسة."
 
@@ -1300,12 +1302,13 @@ msgid "Order key mismatch."
 msgstr "عدم تطابق مفتاح الطلب."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:134
 msgid "Token not provided."
 msgstr "لم يتم توفير الرمز."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:157
+#: includes/Form_Handler.php:144
+#: includes/Templates/Payment.php:215
 msgid "Cashier token mismatch."
 msgstr "عدم تطابق رمز الكاشير."
 
@@ -1446,14 +1449,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "وضع تحصيل هذه الدفعة لا يدعم هذه العملية."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:320
+#: includes/Payments/Contract/Attempts.php:339
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "محاولة الدفع %1$s في WCPOS: النتيجة غير معروفة، ولا يمكن لـ%2$s تحديد ما إذا تم تحصيل المبلغ. تحقّق من الدفع لدى مزوّد الخدمة، ثم ألغِ المحاولة من نقطة البيع إذا لم يتم تحصيل أي مبلغ."
 
-#: includes/Payments/Contract/Attempts.php:409
+#: includes/Payments/Contract/Attempts.php:420
 msgid "Clearing the awaiting-customer state"
 msgstr "جارٍ مسح حالة انتظار العميل"
 
@@ -1783,12 +1786,12 @@ msgstr "يحتاج أمر الدفع إلى إصدار الطلب الذي بُ�
 msgid "Another payment operation is running on this order."
 msgstr "تجري عملية دفع أخرى لهذا الطلب."
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "كل عشر دقائق"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -1925,6 +1928,7 @@ msgid "WCPOS file integrity"
 msgstr "سلامة ملفات WCPOS"
 
 #: includes/Services/File_Integrity.php:272
+#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -2022,7 +2026,7 @@ msgstr "غير معروف"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:413
+#: includes/Templates/Payment.php:450
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "ضيف"
@@ -2050,32 +2054,40 @@ msgstr "تم إنشاء الطلب عبر POS بواسطة %1$s في متجر %2
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "تم تغيير أمين صندوق نقطة البيع من %1$s إلى %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"حاول %1$s تغيير الكاشير في نقطة البيع إلى %2$s. رُفض ذلك: لا يحق لمن حاول هذا التغيير إسناد هذا البيع إلى ذلك المستخدم. وسيظل %3$s هو الكاشير."
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "تم تغيير متجر POS من %1$s إلى %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "أُعيد فتح الطلب عبر POS بواسطة %1$s في متجر %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "تم تغيير العميل من %1$s إلى %2$s عبر WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "تم تغيير العميل من %1$s إلى %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "تم استلام الدفع نقدًا — المبلغ المدفوع: %1$s، والباقي المُعاد: %2$s."
@@ -5303,6 +5315,20 @@ msgid ""
 msgstr ""
 "لم يتم تثبيت متجر مزامنة WCPOS بعد (إما أنه قيد التهيئة أو فشل تثبيت المخطط). أعد المحاولة بعد قليل."
 
+#: includes/Sync/Integrity_Digest.php:449
+msgid "WCPOS sync integrity checks"
+msgstr "فحوصات سلامة مزامنة WCPOS"
+
+#: includes/Sync/Integrity_Digest.php:469
+msgid "WCPOS sync integrity checks are off on SQLite"
+msgstr "فحوصات سلامة مزامنة WCPOS متوقفة على SQLite"
+
+#: includes/Sync/Integrity_Digest.php:470
+msgid ""
+"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
+msgstr ""
+"تستمر نقطة البيع في المزامنة عبر سجل التغييرات، لكن فحص السلامة في الخلفية، الذي يرصد التغييرات التي تتم خارج WordPress (مثل التعديلات المباشرة على قاعدة البيانات وبعض عمليات الاستيراد)، لا يعمل على قاعدة البيانات هذه. SQLite ليست قاعدة بيانات مدعومة من WCPOS."
+
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "لا يمكن أن يكون date_created_gmt أكثر من 24 ساعة في المستقبل."
@@ -5726,26 +5752,26 @@ msgstr "فشل التحقق الأمني. يرجى المحاولة مرة أخ�
 msgid "Authentication failed."
 msgstr "فشل التحقق من الهوية."
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "تم قفل هذا الحساب مؤقتًا بسبب عدد كبير من محاولات تسجيل الدخول الفاشلة. يرجى المحاولة مرة أخرى لاحقًا."
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "فشل في إنشاء رموز التحقق."
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "يرجى إدخال اسم المستخدم وكلمة المرور."
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "طلبات كثيرة جدًا. يرجى المحاولة مرة أخرى لاحقًا."
 
@@ -6217,81 +6243,87 @@ msgid ""
 msgstr ""
 "قسيمة الكاشير لكيس النقود: الرصيد الافتتاحي، والدفعات المعدودة، والفئات النقدية، والحركات، وخطوط الملاحظات والتوقيع. لا تتضمن أرقام المبيعات أو الضرائب."
 
-#: includes/Templates/Payment.php:201
+#: includes/Templates/Payment.php:202
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr "عذرًا، لا يمكن دفع ثمن الطلب. مفتاح الطلب مفقود أو غير صحيح"
 
-#: includes/Templates/Payment.php:220
+#. translators: Shown on the POS pay page when the cashier's session has expired.
+#: includes/Templates/Payment.php:234
+msgid ""
+"Your session has expired. Close this payment window and open it again."
+msgstr "انتهت صلاحية جلستك. أغلق نافذة الدفع هذه وافتحها مجددًا."
+
+#: includes/Templates/Payment.php:257
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr "لا يمكن دفع هذا الطلب. يرجى الاتصال بنا إذا كنت بحاجة إلى مساعدة."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:228
+#: includes/Templates/Payment.php:265
 msgid "Pay for order"
 msgstr "دفع الطلب"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:312
+#: includes/Templates/Payment.php:349
 msgid "Checkout Settings"
 msgstr "إعدادات الدفع"
 
-#: includes/Templates/Payment.php:318
+#: includes/Templates/Payment.php:355
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "قد تتداخل السكربتات والأنماط مع قالب الدفع المخصص، استخدم هذا النموذج لإزالة أي سكربتات مشكلة."
 
-#: includes/Templates/Payment.php:320
+#: includes/Templates/Payment.php:357
 msgid "Disable All Styles and Scripts"
 msgstr "تعطيل جميع الأنماط والسكربتات"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:323
+#: includes/Templates/Payment.php:360
 msgid "Disable wp_head"
 msgstr "تعطيل wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:328
+#: includes/Templates/Payment.php:365
 msgid "Disable wp_footer"
 msgstr "تعطيل wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:370
 msgid "Disable Selected Styles"
 msgstr "تعطيل الأنماط المحددة"
 
-#: includes/Templates/Payment.php:340
-#: includes/Templates/Payment.php:352
+#: includes/Templates/Payment.php:377
+#: includes/Templates/Payment.php:389
 msgid "always removed on the POS payment page"
 msgstr "يُزال دائمًا من صفحة الدفع في POS"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:345
+#: includes/Templates/Payment.php:382
 msgid "Disable Selected Scripts"
 msgstr "تعطيل السكربتات المحددة"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:358
+#: includes/Templates/Payment.php:395
 msgid "Submit"
 msgstr "إرسال"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:412
+#: includes/Templates/Payment.php:449
 msgid "Paying as customer"
 msgstr "الدفع كعميل"
 
-#: includes/Templates/Payment.php:513
+#: includes/Templates/Payment.php:550
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "عذرًا، هذا الطلب غير صالح ولا يمكن دفعه."
 
-#: includes/Templates/Payment.php:517
+#: includes/Templates/Payment.php:554
 msgid "Sorry, this order has already been paid for."
 msgstr "عذرًا، تم دفع هذا الطلب بالفعل."
 
-#: includes/Templates/Payment.php:535
+#: includes/Templates/Payment.php:572
 msgid "You do not have permission to modify checkout settings."
 msgstr "لا تمتلك الصلاحية لتعديل إعدادات نقاط البيع"
 
@@ -6365,11 +6397,11 @@ msgstr "حاول إعادة التعيين إلى قالب الإيصال الا
 msgid "Please contact the site administrator for assistance."
 msgstr "يرجى الاتصال بمسؤول الموقع للحصول على المساعدة."
 
-#: includes/Templates/Received.php:82
+#: includes/Templates/Received.php:88
 msgid "Sorry, this order is invalid."
 msgstr "عذرًا، هذا الطلب غير صالح."
 
-#: includes/Templates/Received.php:90
+#: includes/Templates/Received.php:96
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr "عذرًا، لا يمكن عرض الطلب. مفتاح الطلب مفقود أو غير صحيح"

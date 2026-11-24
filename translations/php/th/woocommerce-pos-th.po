@@ -73,7 +73,7 @@ msgstr "เปิดใช้งานลิงก์ถาวร"
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:432
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "แคชเชียร์"
@@ -175,7 +175,7 @@ msgstr "แคชเชียร์ POS"
 msgid "Search for a cashier&hellip;"
 msgstr "ค้นหาแคชเชียร์&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -309,11 +309,13 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:138
-#: includes/Form_Handler.php:159
-#: includes/Templates/Payment.php:203
-#: includes/Templates/Payment.php:537
-#: includes/Templates/Received.php:92
+#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:146
+#: includes/Templates/Payment.php:204
+#: includes/Templates/Payment.php:217
+#: includes/Templates/Payment.php:240
+#: includes/Templates/Payment.php:574
+#: includes/Templates/Received.php:98
 msgid "Error"
 msgstr "ข้อผิดพลาด"
 
@@ -901,7 +903,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "กำลังพิมพ์คำสั่งซื้อนี้อีกชุดอยู่ โปรดลองอีกครั้ง"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "ดำเนินการคำขอปิดรอบไม่สำเร็จ"
@@ -1275,12 +1277,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "รายงาน \"%1$s\" ล้มเหลว: %2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "พารามิเตอร์ไม่ถูกต้อง: %s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "ดำเนินการคำขอเซสชันไม่สำเร็จ"
 
@@ -1303,12 +1305,13 @@ msgid "Order key mismatch."
 msgstr "คีย์คำสั่งซื้อไม่ตรงกัน"
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:136
+#: includes/Form_Handler.php:134
 msgid "Token not provided."
 msgstr "ไม่ได้ให้โทเค็น"
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:157
+#: includes/Form_Handler.php:144
+#: includes/Templates/Payment.php:215
 msgid "Cashier token mismatch."
 msgstr "โทเค็นแคชเชียร์ไม่ตรงกัน"
 
@@ -1439,14 +1442,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "โหมดเรียกเก็บเงินนี้ไม่รองรับการดำเนินการดังกล่าว"
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:320
+#: includes/Payments/Contract/Attempts.php:339
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "การลองชำระเงิน WCPOS %1$s: ไม่ทราบผลลัพธ์ และ %2$s ไม่สามารถระบุได้ว่ามีการเรียกเก็บเงินหรือไม่ โปรดตรวจสอบการชำระเงินกับผู้ให้บริการ จากนั้นยกเลิกการลองชำระเงินใน POS หากไม่มีการเรียกเก็บเงิน"
 
-#: includes/Payments/Contract/Attempts.php:409
+#: includes/Payments/Contract/Attempts.php:420
 msgid "Clearing the awaiting-customer state"
 msgstr "กำลังล้างสถานะรอลูกค้า"
 
@@ -1778,12 +1781,12 @@ msgstr "คำสั่งชำระเงินต้องมีเวอร
 msgid "Another payment operation is running on this order."
 msgstr "มีการดำเนินการชำระเงินอื่นกับคำสั่งซื้อนี้อยู่"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "ทุก 10 นาที"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -1921,6 +1924,7 @@ msgid "WCPOS file integrity"
 msgstr "ความสมบูรณ์ของไฟล์ WCPOS"
 
 #: includes/Services/File_Integrity.php:272
+#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -2017,7 +2021,7 @@ msgstr "ไม่ทราบ"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:413
+#: includes/Templates/Payment.php:450
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "ผู้เยี่ยมชม"
@@ -2045,32 +2049,40 @@ msgstr "สร้างคำสั่งซื้อผ่าน POS โดย 
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "แคชเชียร์ POS เปลี่ยนจาก %1$s เป็น %2$s."
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"%1$s พยายามเปลี่ยนแคชเชียร์ POS เป็น %2$s แต่ถูกปฏิเสธ: บุคคลนี้ไม่มีสิทธิ์กำหนดการขายนี้ให้ผู้ใช้นั้น %3$s ยังคงเป็นแคชเชียร์"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "เปลี่ยนร้าน POS จาก %1$s เป็น %2$s"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "เปิดคำสั่งซื้ออีกครั้งผ่าน POS โดย %1$s ที่ %2$s"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "เปลี่ยนลูกค้าจาก %1$s เป็น %2$s ผ่าน WCPOS"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "เปลี่ยนลูกค้าจาก %1$s เป็น %2$s"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "ได้รับชำระเงินสด — จำนวนเงินที่รับ: %1$s, เงินทอน: %2$s"
@@ -5297,6 +5309,20 @@ msgid ""
 msgstr ""
 "ยังไม่ได้ติดตั้งร้านค้าสำหรับซิงค์ของ WCPOS (กำลังเริ่มต้นระบบหรือการติดตั้งสคีมาล้มเหลว) โปรดลองอีกครั้งในอีกสักครู่"
 
+#: includes/Sync/Integrity_Digest.php:449
+msgid "WCPOS sync integrity checks"
+msgstr "การตรวจสอบความสมบูรณ์ของการซิงค์ WCPOS"
+
+#: includes/Sync/Integrity_Digest.php:469
+msgid "WCPOS sync integrity checks are off on SQLite"
+msgstr "การตรวจสอบความสมบูรณ์ของการซิงค์ WCPOS ปิดอยู่ใน SQLite"
+
+#: includes/Sync/Integrity_Digest.php:470
+msgid ""
+"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
+msgstr ""
+"POS ยังคงซิงค์ผ่านบันทึกการเปลี่ยนแปลง แต่การตรวจสอบความสมบูรณ์เบื้องหลังซึ่งตรวจจับการเปลี่ยนแปลงที่เกิดขึ้นนอก WordPress (การแก้ไขฐานข้อมูลโดยตรงและการนำเข้าข้อมูลบางประเภท) จะไม่ทำงานกับฐานข้อมูลนี้ SQLite ไม่ใช่ฐานข้อมูลที่ WCPOS รองรับ"
+
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
 msgstr "date_created_gmt ต้องไม่มากกว่า 24 ชั่วโมงในอนาคต"
@@ -5718,26 +5744,26 @@ msgstr "การตรวจสอบความปลอดภัยล้ม
 msgid "Authentication failed."
 msgstr "การตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr ""
 "บัญชีนี้ถูกล็อกชั่วคราวเนื่องจากพยายามเข้าสู่ระบบล้มเหลวหลายครั้ง กรุณาลองใหม่อีกครั้งภายหลัง"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "การสร้างโทเค็นการตรวจสอบสิทธิ์ล้มเหลว"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "กรุณากรอกทั้งชื่อผู้ใช้และรหัสผ่าน"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "มีการร้องขอมากเกินไป กรุณาลองใหม่ภายหลัง"
 
@@ -6213,83 +6239,89 @@ msgid ""
 msgstr ""
 "ใบบันทึกของแคชเชียร์สำหรับถุงเงินสด: เงินทอนตั้งต้น ยอดรับชำระที่นับได้ จำนวนธนบัตรและเหรียญ รายการเคลื่อนไหว หมายเหตุ และบรรทัดลงชื่อ ไม่มีตัวเลขยอดขายหรือภาษี"
 
-#: includes/Templates/Payment.php:201
+#: includes/Templates/Payment.php:202
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "ขออภัย การชำระเงินสำหรับการสั่งซื้อนี้ไม่สามารถดำเนินการได้ คีย์ในข้อมูลการสั่งซื้อหายไปหรือไม่ถูกต้อง"
 
-#: includes/Templates/Payment.php:220
+#. translators: Shown on the POS pay page when the cashier's session has expired.
+#: includes/Templates/Payment.php:234
+msgid ""
+"Your session has expired. Close this payment window and open it again."
+msgstr "เซสชันของคุณหมดอายุแล้ว ปิดหน้าต่างการชำระเงินนี้แล้วเปิดอีกครั้ง"
+
+#: includes/Templates/Payment.php:257
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "ไม่สามารถชำระเงินสำหรับคำสั่งซื้อนี้ได้ กรุณาติดต่อเราหากคุณต้องการความช่วยเหลือ"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:228
+#: includes/Templates/Payment.php:265
 msgid "Pay for order"
 msgstr "ชำระเงินสำหรับคำสั่งซื้อ"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:312
+#: includes/Templates/Payment.php:349
 msgid "Checkout Settings"
 msgstr "การตั้งค่าชำระเงิน"
 
-#: includes/Templates/Payment.php:318
+#: includes/Templates/Payment.php:355
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "สคริปต์และสไตล์อาจรบกวนเทมเพลตการชำระเงินที่กำหนดเอง ใช้ฟอร์มนี้เพื่อลบสคริปต์ที่มีปัญหาออก"
 
-#: includes/Templates/Payment.php:320
+#: includes/Templates/Payment.php:357
 msgid "Disable All Styles and Scripts"
 msgstr "ปิดใช้งานสไตล์และสคริปต์ทั้งหมด"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:323
+#: includes/Templates/Payment.php:360
 msgid "Disable wp_head"
 msgstr "ปิดใช้งาน wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:328
+#: includes/Templates/Payment.php:365
 msgid "Disable wp_footer"
 msgstr "ปิดใช้งาน wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:333
+#: includes/Templates/Payment.php:370
 msgid "Disable Selected Styles"
 msgstr "ปิดใช้งานสไตล์ที่เลือก"
 
-#: includes/Templates/Payment.php:340
-#: includes/Templates/Payment.php:352
+#: includes/Templates/Payment.php:377
+#: includes/Templates/Payment.php:389
 msgid "always removed on the POS payment page"
 msgstr "ถูกนำออกจากหน้าชำระเงิน POS เสมอ"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:345
+#: includes/Templates/Payment.php:382
 msgid "Disable Selected Scripts"
 msgstr "ปิดใช้งานสคริปต์ที่เลือก"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:358
+#: includes/Templates/Payment.php:395
 msgid "Submit"
 msgstr "ส่ง"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:412
+#: includes/Templates/Payment.php:449
 msgid "Paying as customer"
 msgstr "ชำระเงินในฐานะลูกค้า"
 
-#: includes/Templates/Payment.php:513
+#: includes/Templates/Payment.php:550
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้องและไม่สามารถชำระเงินได้"
 
-#: includes/Templates/Payment.php:517
+#: includes/Templates/Payment.php:554
 msgid "Sorry, this order has already been paid for."
 msgstr "ขออภัย คำสั่งซื้อนี้ได้ชำระเงินแล้ว"
 
-#: includes/Templates/Payment.php:535
+#: includes/Templates/Payment.php:572
 msgid "You do not have permission to modify checkout settings."
 msgstr "คุณไม่มีสิทธิ์ในการเปลี่ยนแปลงการตั้งค่าแคชเชียร์"
 
@@ -6363,11 +6395,11 @@ msgstr "ลองรีเซ็ตเป็นเทมเพลตใบเส
 msgid "Please contact the site administrator for assistance."
 msgstr "กรุณาติดต่อผู้ดูแลเว็บไซต์เพื่อขอความช่วยเหลือ"
 
-#: includes/Templates/Received.php:82
+#: includes/Templates/Received.php:88
 msgid "Sorry, this order is invalid."
 msgstr "ขออภัย คำสั่งซื้อนี้ไม่ถูกต้อง"
 
-#: includes/Templates/Received.php:90
+#: includes/Templates/Received.php:96
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr ""
