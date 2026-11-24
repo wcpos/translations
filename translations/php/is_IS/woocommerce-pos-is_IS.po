@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "Leita að gjaldkera&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:843
+#: includes/API/V2/Writers/Order_Writer.php:927
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr ""
@@ -1296,12 +1296,18 @@ msgid "The session request could not be completed."
 msgstr "Ekki tókst að ljúka lotubeiðninni."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:599
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr ""
 "WCPOS: ekki tókst að leiðrétta birgðir fyrir %1$s um %2$s; leiðréttu vörubirgðir handvirkt."
+
+#: includes/API/V2/Writers/Order_Writer.php:858
+msgid ""
+"POS sale day change was not applied because its change record could not be written. Try again."
+msgstr ""
+"Breyting á söludegi POS var ekki virkjuð vegna þess að ekki tókst að skrifa breytingaskrána. Reyndu aftur."
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1492,7 +1498,7 @@ msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: ekki tókst að skrá lokafærslu %d; gerðu handvirka afstemmingu."
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:205
+#: includes/Payments/Contract/Completion_Stamp.php:208
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -2006,14 +2012,14 @@ msgstr "Ógilt kvittunarskjal."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:407
+#: includes/Services/Fiscal_Record_Writers.php:455
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr ""
 "Ekki tókst að skrá skattalega POS-færslu %s; hana þarf að endurheimta."
 
-#: includes/Services/Fiscal_Record_Writers.php:267
-#: includes/Services/Fiscal_Record_Writers.php:391
+#: includes/Services/Fiscal_Record_Writers.php:315
+#: includes/Services/Fiscal_Record_Writers.php:439
 msgid "POS fiscal sale record recovered."
 msgstr "Skattaskráning POS-sölunnar var endurheimt."
 
@@ -2068,8 +2074,20 @@ msgstr "Pöntun stofnuð í gegnum POS af %1$s hjá %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS gjaldkeri breyttist úr %1$s í %2$s."
 
+#. translators: 1: corrected sale date, 2: reason.
+#: includes/Services/Order_Notes.php:96
+#, php-format
+msgid "POS sale day set to %1$s. Reason: %2$s"
+msgstr "Söludagur POS var stilltur á %1$s. Ástæða: %2$s"
+
+#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
+#: includes/Services/Order_Notes.php:99
+#, php-format
+msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
+msgstr "Söludegi POS var breytt úr %1$s í %2$s. Ástæða: %3$s"
+
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:94
+#: includes/Services/Order_Notes.php:108
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2077,31 +2095,31 @@ msgstr ""
 "%1$s reyndi að breyta afgreiðslumanneskju POS í %2$s. Því var hafnað: viðkomandi má ekki úthluta þessari sölu á þann notanda. %3$s er áfram afgreiðslumanneskja."
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:106
+#: includes/Services/Order_Notes.php:120
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS-verslun breytt úr %1$s í %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:117
+#: includes/Services/Order_Notes.php:131
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Pöntun opnuð aftur í gegnum POS af %1$s hjá %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:128
+#: includes/Services/Order_Notes.php:142
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Viðskiptavinur breyttist úr %1$s í %2$s í gegnum WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:139
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Viðskiptavinur breyttist úr %1$s í %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:167
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "Greiðsla í reiðufé móttekin — greidd upphæð: %1$s, til baka: %2$s."
