@@ -406,6 +406,7 @@ return array(
 		'Store #%d' => '門市 #%d',
 		'Order created via POS by %1$s at %2$s.' => '由 %1$s 在 %2$s 透過 POS 建立訂單。',
 		'POS cashier changed from %1$s to %2$s.' => 'POS 收銀員已從 %1$s 更改為 %2$s。',
+		'POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier.' => '%1$s 嘗試將此筆銷售的 POS 收銀員更換為 %2$s，但請求遭到拒絕：該使用者可能無權將此筆銷售指派給該使用者。%3$s 仍是收銀員。',
 		'POS store changed from %1$s to %2$s.' => 'POS 門市已從 %1$s 變更為 %2$s。',
 		'Order re-opened via POS by %1$s at %2$s.' => '由 %1$s 在 %2$s 透過 POS 重新開啟訂單。',
 		'Customer changed from %1$s to %2$s via WCPOS.' => '客戶已透過 WCPOS 從 %1$s 變更為 %2$s。',

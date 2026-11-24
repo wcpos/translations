@@ -174,7 +174,7 @@ msgstr "POS 收銀員"
 msgid "Search for a cashier&hellip;"
 msgstr "搜尋收銀員&hellip;"
 
-#: includes/Admin/Orders/Single_Order.php:113
+#: includes/Admin/Orders/Single_Order.php:117
 #: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
@@ -886,7 +886,7 @@ msgid "Another print of this order is in progress; try again."
 msgstr "此訂單正在列印，請稍後再試。"
 
 #: includes/API/V1/Receipts_Controller.php:403
-#: includes/API/V2/Closures_Controller.php:399
+#: includes/API/V2/Closures_Controller.php:400
 #: includes/Templates/Receipt.php:544
 msgid "The closure request could not be completed."
 msgstr "無法完成交班要求。"
@@ -1256,12 +1256,12 @@ msgid "Report \"%1$s\" failed: %2$s"
 msgstr "報表「%1$s」失敗：%2$s"
 
 #. translators: %s: name of the request field that was rejected.
-#: includes/API/V2/Sessions_Controller.php:502
+#: includes/API/V2/Sessions_Controller.php:503
 #, php-format
 msgid "Invalid parameter: %s"
 msgstr "參數無效：%s"
 
-#: includes/API/V2/Sessions_Controller.php:504
+#: includes/API/V2/Sessions_Controller.php:505
 msgid "The session request could not be completed."
 msgstr "無法完成工作階段要求。"
 
@@ -1746,12 +1746,12 @@ msgstr "付款命令需要其建立時所依據的訂單修訂版本。"
 msgid "Another payment operation is running on this order."
 msgstr "此訂單目前正在執行另一項付款作業。"
 
-#: includes/Payments/Contract/Payments_Sweeper.php:37
+#: includes/Payments/Contract/Payments_Sweeper.php:108
 msgid "Every ten minutes"
 msgstr "每十分鐘"
 
 #. translators: 1: payment row uuid, 2: leg amount with currency.
-#: includes/Payments/Contract/Payments_Sweeper.php:128
+#: includes/Payments/Contract/Payments_Sweeper.php:199
 #, php-format
 msgid ""
 "WCPOS payment %1$s: the authorization for %2$s expired after the order was marked paid and was never captured — needs attention."
@@ -2007,32 +2007,40 @@ msgstr "由 %1$s 在 %2$s 透過 POS 建立訂單。"
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS 收銀員已從 %1$s 更改為 %2$s。"
 
-#. translators: 1: old POS store, 2: new POS store.
+#. translators: 1: user who tried the change, 2: cashier the change was refused for, 3: cashier who stays on the order.
 #: includes/Services/Order_Notes.php:94
+#, php-format
+msgid ""
+"POS cashier change by %1$s to %2$s was refused: they may not assign this sale to that user. %3$s remains the cashier."
+msgstr ""
+"%1$s 嘗試將此筆銷售的 POS 收銀員更換為 %2$s，但請求遭到拒絕：該使用者可能無權將此筆銷售指派給該使用者。%3$s 仍是收銀員。"
+
+#. translators: 1: old POS store, 2: new POS store.
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS 門市已從 %1$s 變更為 %2$s。"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:105
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "由 %1$s 在 %2$s 透過 POS 重新開啟訂單。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:116
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "客戶已透過 WCPOS 從 %1$s 變更為 %2$s。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:127
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "客戶已從 %1$s 變更為 %2$s。"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:141
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "已收到現金付款 — 收款金額：%1$s，找零：%2$s。"
@@ -5670,25 +5678,25 @@ msgstr "安全檢查失敗。請再試一次。"
 msgid "Authentication failed."
 msgstr "驗證失敗。"
 
-#: includes/Templates/Auth.php:399
+#: includes/Templates/Auth.php:401
 msgid ""
 "This account is temporarily locked due to too many failed login attempts. Please try again later."
 msgstr "由於多次登入失敗，該帳號暫時被鎖定。請稍後再試。"
 
-#: includes/Templates/Auth.php:444
+#: includes/Templates/Auth.php:446
 msgid "Failed to generate authentication tokens."
 msgstr "生成驗證令牌失敗。"
 
-#: includes/Templates/Auth.php:494
+#: includes/Templates/Auth.php:496
 msgid "Please enter both username and password."
 msgstr "請輸入用戶名和密碼。"
 
-#: includes/Templates/Auth.php:508
-#: includes/Templates/Auth.php:517
+#: includes/Templates/Auth.php:510
+#: includes/Templates/Auth.php:519
 msgid "Invalid username or password."
 msgstr "用戶名或密碼無效。"
 
-#: includes/Templates/Auth.php:556
+#: includes/Templates/Auth.php:558
 msgid "Too many requests. Please try again later."
 msgstr "請求過多。請稍後再試。"
 
