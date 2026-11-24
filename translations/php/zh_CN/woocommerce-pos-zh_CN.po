@@ -175,7 +175,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "搜索收银员&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:843
+#: includes/API/V2/Writers/Order_Writer.php:927
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr "未能应用 POS 收银员或门店的更改，因为无法写入更改记录。请重试。"
@@ -1268,11 +1268,16 @@ msgid "The session request could not be completed."
 msgstr "无法完成会话请求。"
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:599
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr "WCPOS：无法按 %2$s 调整 %1$s 的库存；请手动核对该商品的库存。"
+
+#: includes/API/V2/Writers/Order_Writer.php:858
+msgid ""
+"POS sale day change was not applied because its change record could not be written. Try again."
+msgstr "POS 销售日期更改未生效，因为无法写入更改记录。请重试。"
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1456,7 +1461,7 @@ msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS：无法记录完成编号 %d；请手动核对。"
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:205
+#: includes/Payments/Contract/Completion_Stamp.php:208
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr "WCPOS：无法在完成历史记录中记录重新打开操作；请手动核对。"
@@ -1950,13 +1955,13 @@ msgstr "收据文档无效。"
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:407
+#: includes/Services/Fiscal_Record_Writers.php:455
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "无法写入 POS 税务记录 %s；需要恢复。"
 
-#: includes/Services/Fiscal_Record_Writers.php:267
-#: includes/Services/Fiscal_Record_Writers.php:391
+#: includes/Services/Fiscal_Record_Writers.php:315
+#: includes/Services/Fiscal_Record_Writers.php:439
 msgid "POS fiscal sale record recovered."
 msgstr "已恢复 POS 销售的税务记录。"
 
@@ -2011,39 +2016,51 @@ msgstr "订单由 %1$s 在 %2$s 通过 POS 创建。"
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS收银员从%1$s更改为%2$s。"
 
+#. translators: 1: corrected sale date, 2: reason.
+#: includes/Services/Order_Notes.php:96
+#, php-format
+msgid "POS sale day set to %1$s. Reason: %2$s"
+msgstr "POS 销售日期已设为 %1$s。原因：%2$s"
+
+#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
+#: includes/Services/Order_Notes.php:99
+#, php-format
+msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
+msgstr "POS 销售日期已从 %1$s 更改为 %2$s。原因：%3$s"
+
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:94
+#: includes/Services/Order_Notes.php:108
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
 msgstr "%1$s尝试将POS收银员更改为%2$s。此操作已被拒绝：此人无权将此销售分配给该用户。%3$s仍是收银员。"
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:106
+#: includes/Services/Order_Notes.php:120
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS 门店已从 %1$s 更改为 %2$s。"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:117
+#: includes/Services/Order_Notes.php:131
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "订单已由 %1$s 在 %2$s 通过 POS 重新打开。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:128
+#: includes/Services/Order_Notes.php:142
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "客户已通过 WCPOS 从 %1$s 更改为 %2$s。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:139
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "客户已从 %1$s 更改为 %2$s。"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:167
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "已收到现金付款——收款金额：%1$s，找零：%2$s。"
