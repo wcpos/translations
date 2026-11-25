@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "البحث عن أمين صندوق&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:843
+#: includes/API/V2/Writers/Order_Writer.php:927
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr ""
@@ -1285,11 +1285,17 @@ msgid "The session request could not be completed."
 msgstr "تعذر إكمال طلب الجلسة."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:599
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr "WCPOS: تعذّر تعديل مخزون %1$s بمقدار %2$s؛ سوِّ مخزون المنتج يدويًا."
+
+#: includes/API/V2/Writers/Order_Writer.php:858
+msgid ""
+"POS sale day change was not applied because its change record could not be written. Try again."
+msgstr ""
+"لم يُطبَّق تغيير يوم البيع في نقطة البيع لتعذّر كتابة سجل التغيير. يُرجى المحاولة مرة أخرى."
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1484,7 +1490,7 @@ msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: تعذّر تسجيل الإكمال %d؛ يُرجى إجراء التسوية يدويًا."
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:205
+#: includes/Payments/Contract/Completion_Stamp.php:208
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -1993,13 +1999,13 @@ msgstr "مستند الإيصال غير صالح."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:407
+#: includes/Services/Fiscal_Record_Writers.php:455
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "تعذرت كتابة السجل المالي %s في POS؛ ويلزم استرداده."
 
-#: includes/Services/Fiscal_Record_Writers.php:267
-#: includes/Services/Fiscal_Record_Writers.php:391
+#: includes/Services/Fiscal_Record_Writers.php:315
+#: includes/Services/Fiscal_Record_Writers.php:439
 msgid "POS fiscal sale record recovered."
 msgstr "تم استرداد سجل البيع المالي الخاص بـ POS."
 
@@ -2054,8 +2060,20 @@ msgstr "تم إنشاء الطلب عبر POS بواسطة %1$s في متجر %2
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "تم تغيير أمين صندوق نقطة البيع من %1$s إلى %2$s."
 
+#. translators: 1: corrected sale date, 2: reason.
+#: includes/Services/Order_Notes.php:96
+#, php-format
+msgid "POS sale day set to %1$s. Reason: %2$s"
+msgstr "تم تعيين يوم البيع في نقطة البيع إلى %1$s. السبب: %2$s"
+
+#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
+#: includes/Services/Order_Notes.php:99
+#, php-format
+msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
+msgstr "تم تغيير يوم البيع في نقطة البيع من %1$s إلى %2$s. السبب: %3$s"
+
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:94
+#: includes/Services/Order_Notes.php:108
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2063,31 +2081,31 @@ msgstr ""
 "حاول %1$s تغيير الكاشير في نقطة البيع إلى %2$s. رُفض ذلك: لا يحق لمن حاول هذا التغيير إسناد هذا البيع إلى ذلك المستخدم. وسيظل %3$s هو الكاشير."
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:106
+#: includes/Services/Order_Notes.php:120
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "تم تغيير متجر POS من %1$s إلى %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:117
+#: includes/Services/Order_Notes.php:131
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "أُعيد فتح الطلب عبر POS بواسطة %1$s في متجر %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:128
+#: includes/Services/Order_Notes.php:142
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "تم تغيير العميل من %1$s إلى %2$s عبر WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:139
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "تم تغيير العميل من %1$s إلى %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:167
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "تم استلام الدفع نقدًا — المبلغ المدفوع: %1$s، والباقي المُعاد: %2$s."
