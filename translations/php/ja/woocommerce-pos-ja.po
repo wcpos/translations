@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "レジ係を検索&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:843
+#: includes/API/V2/Writers/Order_Writer.php:927
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr "POSのレジ係または店舗の変更を適用できませんでした。変更記録を保存できませんでした。もう一度お試しください。"
@@ -1270,11 +1270,16 @@ msgid "The session request could not be completed."
 msgstr "セッションのリクエストを完了できませんでした。"
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:599
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr "WCPOS: %1$sの在庫を%2$s分調整できませんでした。商品の在庫を手動で照合してください。"
+
+#: includes/API/V2/Writers/Order_Writer.php:858
+msgid ""
+"POS sale day change was not applied because its change record could not be written. Try again."
+msgstr "変更記録を書き込めなかったため、POS の販売日の変更は適用されませんでした。もう一度お試しください。"
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1458,7 +1463,7 @@ msgid "WCPOS: completion %d could not be recorded; reconcile manually."
 msgstr "WCPOS: 完了%dを記録できませんでした。手動で照合してください。"
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:205
+#: includes/Payments/Contract/Completion_Stamp.php:208
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr "WCPOS: 再開を完了履歴に記録できませんでした。手動で照合してください。"
@@ -1957,13 +1962,13 @@ msgstr "レシートのドキュメントが無効です。"
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:407
+#: includes/Services/Fiscal_Record_Writers.php:455
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "POSの税務記録%sを書き込めませんでした。復旧が必要です。"
 
-#: includes/Services/Fiscal_Record_Writers.php:267
-#: includes/Services/Fiscal_Record_Writers.php:391
+#: includes/Services/Fiscal_Record_Writers.php:315
+#: includes/Services/Fiscal_Record_Writers.php:439
 msgid "POS fiscal sale record recovered."
 msgstr "POSの税務上の販売記録を復元しました。"
 
@@ -2018,8 +2023,20 @@ msgstr "%1$sが%2$sのPOSを介して注文を作成しました。"
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POSレジ係が%1$sから%2$sに変更されました。"
 
+#. translators: 1: corrected sale date, 2: reason.
+#: includes/Services/Order_Notes.php:96
+#, php-format
+msgid "POS sale day set to %1$s. Reason: %2$s"
+msgstr "POS の販売日を %1$s に設定しました。理由: %2$s"
+
+#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
+#: includes/Services/Order_Notes.php:99
+#, php-format
+msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
+msgstr "POS の販売日を %1$s から %2$s に変更しました。理由: %3$s"
+
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:94
+#: includes/Services/Order_Notes.php:108
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2027,31 +2044,31 @@ msgstr ""
 "%1$sさんはPOSのレジ係を%2$sさんに変更しようとしましたが、拒否されました。この販売をそのユーザーに割り当てる権限がありません。レジ係は引き続き%3$sさんです。"
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:106
+#: includes/Services/Order_Notes.php:120
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POSストアが%1$sから%2$sに変更されました。"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:117
+#: includes/Services/Order_Notes.php:131
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "%1$sが%2$sのPOSを介して注文を再開しました。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:128
+#: includes/Services/Order_Notes.php:142
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "WCPOSを介して顧客が%1$sから%2$sに変更されました。"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:139
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "顧客が%1$sから%2$sに変更されました。"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:167
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "現金で支払いを受け付けました — 受取金額：%1$s、お釣り：%2$s。"

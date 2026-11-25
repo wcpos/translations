@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "कैशियर खोजें&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:843
+#: includes/API/V2/Writers/Order_Writer.php:927
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr ""
@@ -1295,12 +1295,18 @@ msgid "The session request could not be completed."
 msgstr "सत्र का अनुरोध पूरा नहीं किया जा सका।"
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:590
+#: includes/API/V2/Writers/Order_Writer.php:599
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr ""
 "WCPOS: %1$s के स्टॉक में %2$s का समायोजन नहीं हो सका; उत्पाद का स्टॉक मैन्युअल रूप से मिलाएँ।"
+
+#: includes/API/V2/Writers/Order_Writer.php:858
+msgid ""
+"POS sale day change was not applied because its change record could not be written. Try again."
+msgstr ""
+"POS बिक्री-दिन का बदलाव लागू नहीं हुआ क्योंकि बदलाव का रिकॉर्ड लिखा नहीं जा सका। फिर से कोशिश करें।"
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1490,7 +1496,7 @@ msgstr ""
 "WCPOS: पूरा होने के क्रमांक %d का रिकॉर्ड नहीं बन सका; मैन्युअल रूप से मिलान करें।"
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:205
+#: includes/Payments/Contract/Completion_Stamp.php:208
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -2004,13 +2010,13 @@ msgstr "अमान्य रसीद दस्तावेज़।"
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
 #: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:407
+#: includes/Services/Fiscal_Record_Writers.php:455
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "POS राजकोषीय %s रिकॉर्ड लिखा नहीं जा सका; इसे पुनर्प्राप्त करना होगा।"
 
-#: includes/Services/Fiscal_Record_Writers.php:267
-#: includes/Services/Fiscal_Record_Writers.php:391
+#: includes/Services/Fiscal_Record_Writers.php:315
+#: includes/Services/Fiscal_Record_Writers.php:439
 msgid "POS fiscal sale record recovered."
 msgstr "POS बिक्री का वित्तीय रिकॉर्ड पुनर्प्राप्त किया गया।"
 
@@ -2065,8 +2071,20 @@ msgstr "%2$s में %1$s द्वारा POS के माध्यम स
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS कैशियर %1$s से %2$s में बदल गया।"
 
+#. translators: 1: corrected sale date, 2: reason.
+#: includes/Services/Order_Notes.php:96
+#, php-format
+msgid "POS sale day set to %1$s. Reason: %2$s"
+msgstr "POS बिक्री-दिन %1$s पर सेट किया गया। कारण: %2$s"
+
+#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
+#: includes/Services/Order_Notes.php:99
+#, php-format
+msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
+msgstr "POS बिक्री-दिन %1$s से बदलकर %2$s किया गया। कारण: %3$s"
+
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:94
+#: includes/Services/Order_Notes.php:108
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2074,31 +2092,31 @@ msgstr ""
 "%1$s ने POS कैशियर को %2$s में बदलने की कोशिश की। यह अनुरोध अस्वीकार कर दिया गया: उन्हें यह बिक्री उस उपयोगकर्ता को सौंपने की अनुमति नहीं है। %3$s कैशियर बने रहेंगे।"
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:106
+#: includes/Services/Order_Notes.php:120
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS स्टोर को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:117
+#: includes/Services/Order_Notes.php:131
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "%2$s में %1$s द्वारा POS के माध्यम से ऑर्डर फिर से खोला गया।"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:128
+#: includes/Services/Order_Notes.php:142
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "WCPOS के माध्यम से ग्राहक को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:139
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "ग्राहक को %1$s से बदलकर %2$s किया गया।"
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:167
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr "नकद भुगतान प्राप्त हुआ — दी गई राशि: %1$s, लौटाई गई राशि: %2$s।"
