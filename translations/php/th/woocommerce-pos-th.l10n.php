@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'คำขอ Star Online ล้มเหลวด้วยสถานะ %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'ไม่สามารถดำเนินการคำสั่งซื้อให้เสร็จสมบูรณ์ได้: มีสินค้า %d รายการที่มีจำนวนในสต็อกไม่เพียงพอ',
 		'WP Overnight %s PDF could not be generated.' => 'ไม่สามารถสร้าง PDF %s ของ WP Overnight ได้.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'การชำระเงินนี้บันทึกด้วยตนเอง ผู้ให้บริการชำระเงินจึงไม่เคยได้รับรายการนี้และไม่สามารถคืนเงินได้ โปรดคืนเงินด้วยวิธีชำระเงินอื่น',
 		'Download receipt (PDF)' => 'ดาวน์โหลดใบเสร็จ (PDF)',
 		'Download receipt for order #%s' => 'ดาวน์โหลดใบเสร็จสำหรับคำสั่งซื้อ #%s',
 		'Filter orders by POS cashier.' => 'กรองคำสั่งซื้อตามแคชเชียร์ POS',

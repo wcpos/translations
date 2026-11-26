@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Запрос Star Online завершился с кодом %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Невозможно завершить заказ: для %d позиций недостаточно товара на складе.',
 		'WP Overnight %s PDF could not be generated.' => 'Не удалось создать PDF %s WP Overnight.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Этот платёж зарегистрирован вручную, поэтому платёжный сервис не получал его и не может вернуть деньги. Оформите возврат другим способом оплаты.',
 		'Download receipt (PDF)' => 'Скачать чек (PDF)',
 		'Download receipt for order #%s' => 'Скачать чек для заказа №%s',
 		'Filter orders by POS cashier.' => 'Фильтровать заказы по кассиру POS.',

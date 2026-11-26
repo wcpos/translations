@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online のリクエストはステータス %d で失敗しました。',
 		'Cannot complete order: %d item(s) exceed available stock.' => '注文を完了できません。在庫が足りない商品が%d点あります。',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnight %s PDF を生成できませんでした。',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'この支払いは手動で記録されたため、決済サービスには処理されておらず、返金できません。別の支払い方法で返金してください。',
 		'Download receipt (PDF)' => '領収書（PDF）をダウンロード',
 		'Download receipt for order #%s' => '注文番号 #%s の領収書をダウンロード',
 		'Filter orders by POS cashier.' => 'POSキャッシャーで注文をフィルタリング。',

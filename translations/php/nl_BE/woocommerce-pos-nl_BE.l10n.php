@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online-verzoek mislukt met status %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Bestelling kan niet worden voltooid: voor %d artikel(en) is onvoldoende voorraad beschikbaar.',
 		'WP Overnight %s PDF could not be generated.' => 'De WP Overnight-%s-PDF kon niet worden gegenereerd.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Deze betaling is manueel geregistreerd. De betalingsprovider heeft ze dus nooit ontvangen en kan ze niet terugbetalen. Betaal terug via een andere betaalmethode.',
 		'Download receipt (PDF)' => 'Kassabon downloaden (PDF)',
 		'Download receipt for order #%s' => 'Kassabon voor bestelling #%s downloaden',
 		'Filter orders by POS cashier.' => 'Bestellingen filteren op POS-kassier.',

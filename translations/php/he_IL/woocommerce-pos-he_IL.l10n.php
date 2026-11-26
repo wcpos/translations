@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'הבקשה של Star Online נכשלה עם סטטוס %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'לא ניתן להשלים את ההזמנה: %d פריטי הזמנה חורגים מהמלאי הזמין.',
 		'WP Overnight %s PDF could not be generated.' => 'לא ניתן ליצור את ה-PDF של %s של WP Overnight.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'התשלום הזה תועד ידנית, ולכן ספק התשלום לא קיבל אותו ולא יכול לזכות עליו. יש לבצע את ההחזר באמצעות אמצעי תשלום אחר.',
 		'Download receipt (PDF)' => 'הורד קבלה (PDF)',
 		'Download receipt for order #%s' => 'הורד קבלה להזמנה #%s',
 		'Filter orders by POS cashier.' => 'סנן הזמנות לפי קופאי POS.',

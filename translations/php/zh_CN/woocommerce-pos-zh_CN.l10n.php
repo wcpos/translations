@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online 请求失败，状态码为 %d。',
 		'Cannot complete order: %d item(s) exceed available stock.' => '无法完成订单：%d 个商品的库存不足。',
 		'WP Overnight %s PDF could not be generated.' => '无法生成 WP Overnight %s PDF。',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => '此笔付款是手动记录的，因此支付服务商从未收到这笔款项，也无法退款。请使用其他付款方式退款。',
 		'Download receipt (PDF)' => '下载收据（PDF）',
 		'Download receipt for order #%s' => '下载订单 #%s 的收据',
 		'Filter orders by POS cashier.' => '按POS收银员筛选订单。',

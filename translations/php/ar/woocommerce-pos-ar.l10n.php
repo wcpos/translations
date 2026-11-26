@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'فشل طلب Star Online مع الحالة %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'لا يمكن إكمال الطلب: يتجاوز عدد من عناصره (%d) المخزون المتاح.',
 		'WP Overnight %s PDF could not be generated.' => 'تعذر إنشاء ملف PDF لـ WP Overnight %s.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'سُجِّل هذا الدفع يدويًا، لذا لم يتلقه مزود الدفع ولا يمكنه رد المبلغ. أعد المبلغ باستخدام طريقة دفع أخرى.',
 		'Download receipt (PDF)' => 'تنزيل الإيصال (PDF)',
 		'Download receipt for order #%s' => 'تنزيل إيصال الطلب رقم #%s',
 		'Filter orders by POS cashier.' => 'تصفية الطلبات حسب كاشير POS.',

@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Požadavek Star Online selhal s kódem stavu %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Objednávku nelze dokončit: u %d položek není dostatečná skladová zásoba.',
 		'WP Overnight %s PDF could not be generated.' => 'PDF %s od WP Overnight se nepodařilo vygenerovat.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Tato platba byla zaznamenána ručně, takže ji poskytovatel plateb nepřijal a nemůže ji vrátit. Vraťte peníze jiným způsobem platby.',
 		'Download receipt (PDF)' => 'Stáhnout účtenku (PDF)',
 		'Download receipt for order #%s' => 'Stáhnout účtenku k objednávce č. %s',
 		'Filter orders by POS cashier.' => 'Filtrovat objednávky podle pokladní POS.',

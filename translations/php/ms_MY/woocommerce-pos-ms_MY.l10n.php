@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Permintaan Star Online gagal dengan status %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Pesanan tidak dapat diselesaikan: %d item melebihi stok yang tersedia.',
 		'WP Overnight %s PDF could not be generated.' => 'PDF %s WP Overnight tidak dapat dijana.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Bayaran ini direkodkan secara manual, jadi penyedia pembayaran tidak pernah menerimanya dan tidak dapat membayar baliknya. Buat bayaran balik melalui kaedah pembayaran lain.',
 		'Download receipt (PDF)' => 'Muat turun resit (PDF)',
 		'Download receipt for order #%s' => 'Muat turun resit untuk pesanan #%s',
 		'Filter orders by POS cashier.' => 'Tapis pesanan mengikut juruwang POS.',

@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online\'i päring ebaõnnestus olekukoodiga %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Tellimust ei saa lõpetada: %d kaubaartikli puhul ei ole piisavalt laovaru.',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnight %s PDF-i ei õnnestunud luua.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'See makse registreeriti käsitsi, seega makseteenuse pakkuja ei saanud seda kunagi kätte ega saa seda tagastada. Tagastage summa muu makseviisi kaudu.',
 		'Download receipt (PDF)' => 'Laadi kviitung alla (PDF)',
 		'Download receipt for order #%s' => 'Laadi tellimuse nr %s kviitung alla',
 		'Filter orders by POS cashier.' => 'Filtreeri tellimusi POS kassapidaja järgi.',

@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Yêu cầu Star Online thất bại với mã trạng thái %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Không thể hoàn tất đơn hàng: %d mặt hàng vượt quá lượng tồn kho hiện có.',
 		'WP Overnight %s PDF could not be generated.' => 'Không thể tạo PDF %s của WP Overnight.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Khoản thanh toán này được ghi nhận thủ công nên nhà cung cấp dịch vụ thanh toán chưa từng nhận được và không thể hoàn tiền. Hãy hoàn tiền bằng phương thức thanh toán khác.',
 		'Download receipt (PDF)' => 'Tải biên lai (PDF)',
 		'Download receipt for order #%s' => 'Tải biên lai cho đơn hàng #%s',
 		'Filter orders by POS cashier.' => 'Lọc đơn hàng theo thu ngân POS.',

@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Το αίτημα προς το Star Online απέτυχε με κωδικό %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Δεν είναι δυνατή η ολοκλήρωση της παραγγελίας: %d είδος υπερβαίνει το διαθέσιμο απόθεμα.',
 		'WP Overnight %s PDF could not be generated.' => 'Δεν ήταν δυνατή η δημιουργία του PDF %s της WP Overnight.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Αυτή η πληρωμή καταγράφηκε χειροκίνητα, επομένως ο πάροχος πληρωμών δεν την έλαβε ποτέ και δεν μπορεί να επιστρέψει τα χρήματα. Κάντε την επιστροφή με άλλη μέθοδο πληρωμής.',
 		'Download receipt (PDF)' => 'Λήψη απόδειξης (PDF)',
 		'Download receipt for order #%s' => 'Λήψη απόδειξης για την παραγγελία #%s',
 		'Filter orders by POS cashier.' => 'Φιλτράρετε παραγγελίες ανά ταμείο POS.',

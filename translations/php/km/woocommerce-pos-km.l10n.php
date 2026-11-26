@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online request បរាជ័យដោយស្ថានភាព %d។',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'មិនអាចបញ្ចប់ការបញ្ជាទិញបានទេ៖ ទំនិញចំនួន %d មុខ លើសពីស្តុកដែលមាន។',
 		'WP Overnight %s PDF could not be generated.' => 'មិនអាចបង្កើត PDF %s របស់ WP Overnight បានទេ។',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'ការទូទាត់នេះត្រូវបានកត់ត្រាដោយដៃ ដូច្នេះអ្នកផ្ដល់សេវាទូទាត់មិនបានទទួលវាទេ ហើយមិនអាចសងប្រាក់វិញបានទេ។ សងប្រាក់វិញតាមវិធីទូទាត់ផ្សេង។',
 		'Download receipt (PDF)' => 'ទាញយកបង្កាន់ដៃ (PDF)',
 		'Download receipt for order #%s' => 'ទាញយកបង្កាន់ដៃសម្រាប់ការបញ្ជាទិញ #%s',
 		'Filter orders by POS cashier.' => 'ត្រងការបញ្ជាទិញតាមអ្នកគិតលុយ POS។',

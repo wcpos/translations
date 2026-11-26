@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online isteği %d durum koduyla başarısız oldu.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Sipariş tamamlanamıyor: %d ürünün mevcut stoğu yetersiz.',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnight %s PDF\'si oluşturulamadı.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Bu ödeme elle kaydedildiğinden ödeme sağlayıcısı ödemeyi hiç almadı ve geri ödeme yapamaz. Tutarı başka bir ödeme yöntemiyle iade edin.',
 		'Download receipt (PDF)' => 'Fişi indir (PDF)',
 		'Download receipt for order #%s' => '#%s numaralı siparişin fişini indir',
 		'Filter orders by POS cashier.' => 'Siparişleri POS kasiyerine göre filtrele.',

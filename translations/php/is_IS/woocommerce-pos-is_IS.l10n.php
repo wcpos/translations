@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online-beiðnin mistókst með stöðukóðanum %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Ekki er hægt að ljúka pöntun: %d vörur fara yfir tiltækar birgðir.',
 		'WP Overnight %s PDF could not be generated.' => 'Ekki tókst að búa til WP Overnight %s PDF.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Þessi greiðsla var skráð handvirkt, þannig að greiðsluþjónustan tók aldrei við henni og getur ekki endurgreitt hana. Endurgreiddu með öðrum greiðslumáta.',
 		'Download receipt (PDF)' => 'Sækja kvittun (PDF)',
 		'Download receipt for order #%s' => 'Sækja kvittun fyrir pöntun #%s',
 		'Filter orders by POS cashier.' => 'Sía pantanir eftir POS gjaldkera.',

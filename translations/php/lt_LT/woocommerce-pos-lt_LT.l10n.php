@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online užklausa nepavyko, būsenos kodas %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Užsakymo užbaigti negalima: %d prekės viršija turimą atsargų kiekį.',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnight %s PDF nepavyko sugeneruoti.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Šis mokėjimas užregistruotas rankiniu būdu, todėl mokėjimo paslaugų teikėjas jo negavo ir negali grąžinti pinigų. Grąžinkite pinigus kitu mokėjimo būdu.',
 		'Download receipt (PDF)' => 'Atsisiųsti kvitą (PDF)',
 		'Download receipt for order #%s' => 'Atsisiųsti užsakymo #%s kvitą',
 		'Filter orders by POS cashier.' => 'Filtruoti užsakymus pagal POS kasininką.',

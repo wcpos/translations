@@ -1020,6 +1020,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Kërkesa në Star Online dështoi me statusin %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Porosia nuk mund të përfundohet: %d artikuj tejkalojnë stokun e disponueshëm.',
 		'WP Overnight %s PDF could not be generated.' => 'PDF-ja %s e WP Overnight nuk mund të krijohej.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Kjo pagesë u regjistrua manualisht, ndaj ofruesi i pagesave nuk e mori kurrë dhe nuk mund ta rimbursojë. Rimbursojeni me një mënyrë tjetër pagese.',
 		'Download receipt (PDF)' => 'Shkarkoni kuponin (PDF)',
 		'Download receipt for order #%s' => 'Shkarkoni kuponin për porosinë nr. %s',
 		'Filter orders by POS cashier.' => 'Filtroni porositë sipas arkëtarit POS.',

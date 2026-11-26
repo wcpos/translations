@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Cererea Star Online a eșuat cu statusul %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Comanda nu poate fi finalizată: %d articole nu au stoc suficient.',
 		'WP Overnight %s PDF could not be generated.' => 'PDF-ul %s de la WP Overnight nu a putut fi generat.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Această plată a fost înregistrată manual, așa că furnizorul de plăți nu a primit-o și nu o poate rambursa. Rambursați suma printr-o altă metodă de plată.',
 		'Download receipt (PDF)' => 'Descarcă bonul (PDF)',
 		'Download receipt for order #%s' => 'Descarcă bonul pentru comanda nr. %s',
 		'Filter orders by POS cashier.' => 'Filtrează comenzile după casierul POS.',

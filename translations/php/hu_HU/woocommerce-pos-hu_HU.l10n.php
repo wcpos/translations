@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'A Star Online kérés sikertelen volt, állapotkód: %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'A rendelés nem teljesíthető: %d tétel készlete nem elegendő.',
 		'WP Overnight %s PDF could not be generated.' => 'A WP Overnight %s PDF létrehozása nem sikerült.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Ezt a fizetést kézzel rögzítették, ezért a fizetési szolgáltató nem kapta meg, és nem tudja visszatéríteni. Térítse vissza másik fizetési móddal.',
 		'Download receipt (PDF)' => 'Nyugta letöltése (PDF)',
 		'Download receipt for order #%s' => 'Nyugta letöltése a #%s számú rendeléshez',
 		'Filter orders by POS cashier.' => 'Rendelések szűrése POS pénztáros szerint.',

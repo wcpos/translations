@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online-forespørselen mislyktes med status %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Kan ikke fullføre ordren: %d varelinje(r) har ikke nok på lager.',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnight %s-PDF kunne ikke genereres.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Denne betalingen ble registrert manuelt, så betalingsleverandøren mottok den aldri og kan ikke refundere den. Refunder beløpet med en annen betalingsmåte.',
 		'Download receipt (PDF)' => 'Last ned kvittering (PDF)',
 		'Download receipt for order #%s' => 'Last ned kvittering for ordre #%s',
 		'Filter orders by POS cashier.' => 'Filtrer bestillinger etter POS-kasserer.',

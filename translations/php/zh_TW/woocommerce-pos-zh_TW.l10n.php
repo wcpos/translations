@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online 請求失敗，狀態碼為 %d。',
 		'Cannot complete order: %d item(s) exceed available stock.' => '無法完成訂單：%d 個品項的庫存不足。',
 		'WP Overnight %s PDF could not be generated.' => '無法產生 WP Overnight %s PDF。',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => '此筆付款是手動記錄的，因此付款服務供應商從未收到款項，也無法退款。請使用其他付款方式退款。',
 		'Download receipt (PDF)' => '下載收據（PDF）',
 		'Download receipt for order #%s' => '下載訂單 #%s 的收據',
 		'Filter orders by POS cashier.' => '按POS收銀員篩選訂單。',

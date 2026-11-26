@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'Star Online -pyyntö epäonnistui tilakoodilla %d.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'Tilausta ei voi viimeistellä: varastossa ei ole riittävästi tavaraa %d tuotteelle.',
 		'WP Overnight %s PDF could not be generated.' => 'WP Overnightin %s-PDF-tiedostoa ei voitu luoda.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'Maksu kirjattiin käsin, joten maksupalvelu ei ole koskaan vastaanottanut sitä eikä voi palauttaa sitä. Palauta summa toisella maksutavalla.',
 		'Download receipt (PDF)' => 'Lataa kuitti (PDF)',
 		'Download receipt for order #%s' => 'Lataa tilauksen #%s kuitti',
 		'Filter orders by POS cashier.' => 'Suodata tilaukset POS-kassan mukaan.',

@@ -1022,6 +1022,7 @@ return array(
 		'Star Online request failed with status %d.' => 'درخواست Star Online با وضعیت %d ناموفق بود.',
 		'Cannot complete order: %d item(s) exceed available stock.' => 'امکان تکمیل سفارش وجود ندارد: موجودی %d قلم از اقلام سفارش کافی نیست.',
 		'WP Overnight %s PDF could not be generated.' => 'PDF %s مربوط به WP Overnight ایجاد نشد.',
+		'This payment was recorded by hand, so its payment provider never took it and cannot refund it. Refund it to another payment method.' => 'این پرداخت به‌صورت دستی ثبت شده است، بنابراین ارائه‌دهندهٔ پرداخت هرگز آن را دریافت نکرده و نمی‌تواند مبلغ را بازپرداخت کند. مبلغ را با روش پرداخت دیگری بازپرداخت کنید.',
 		'Download receipt (PDF)' => 'دانلود رسید (PDF)',
 		'Download receipt for order #%s' => 'دانلود رسید سفارش شمارهٔ %s',
 		'Filter orders by POS cashier.' => 'فیلتر کردن سفارش‌ها بر اساس صندوق‌دار POS.',
