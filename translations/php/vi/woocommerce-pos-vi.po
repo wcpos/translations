@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:1051
+#: includes/Activator.php:1088
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> yêu cầu PHP %1$s trở lên. Đọc thêm thông tin về <a href=\"%2$s\">cách bạn có thể cập nhật</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:1075
+#: includes/Activator.php:1112
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> yêu cầu <a href=\"%1$s\">WooCommerce %2$s trở lên</a>. Vui lòng <a href=\"%3$s\">cài đặt và kích hoạt WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1097
+#: includes/Activator.php:1134
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> yêu cầu permalinks <em>đẹp</em> để hoạt động chính xác"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1098
+#: includes/Activator.php:1135
 msgid "Enable permalinks"
 msgstr "Kích hoạt permalinks"
 
@@ -69,17 +69,17 @@ msgstr "Kích hoạt permalinks"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:1351
+#: includes/Activator.php:1387
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:432
+#: includes/Templates/Payment.php:395
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Thu ngân"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1578
+#: includes/Activator.php:1614
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "Tìm kiếm thu ngân&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:927
+#: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr ""
@@ -310,13 +310,11 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:136
-#: includes/Form_Handler.php:146
-#: includes/Templates/Payment.php:204
-#: includes/Templates/Payment.php:217
-#: includes/Templates/Payment.php:240
-#: includes/Templates/Payment.php:574
-#: includes/Templates/Received.php:98
+#: includes/Form_Handler.php:138
+#: includes/Form_Handler.php:159
+#: includes/Templates/Payment.php:203
+#: includes/Templates/Payment.php:537
+#: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Lỗi"
 
@@ -423,12 +421,12 @@ msgid "WCPOS account identities reset. Users affected: %d."
 msgstr "Đã đặt lại danh tính tài khoản WCPOS. Số người dùng bị ảnh hưởng: %d."
 
 #. translators: REST API schema field label or error message.
-#: includes/API.php:438
+#: includes/API.php:439
 #: includes/API/V1/Cashier.php:124
 msgid "Authentication required."
 msgstr "Yêu cầu xác thực."
 
-#: includes/API.php:445
+#: includes/API.php:446
 msgid "You do not have permission to access the POS."
 msgstr "Bạn không có quyền truy cập vào POS."
 
@@ -551,14 +549,14 @@ msgstr "Cổng thanh toán không khả dụng cho thanh toán POS."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:284
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:466
+#: includes/API/V2/Payments_Controller.php:434
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Không tìm thấy đơn hàng."
 
 #: includes/API/V1/Checkout_Controller.php:294
 #: includes/API/V1/Orders_Controller.php:642
-#: includes/API/V2/Payments_Controller.php:470
+#: includes/API/V2/Payments_Controller.php:438
 msgid "Sorry, you are not allowed to edit this order."
 msgstr "Rất tiếc, bạn không có quyền chỉnh sửa đơn hàng này."
 
@@ -1145,38 +1143,42 @@ msgstr "Xin lỗi, bạn không thể cập nhật template."
 msgid "Invalid _woocommerce_pos_uuid meta_data value."
 msgstr "Giá trị meta_data _woocommerce_pos_uuid không hợp lệ."
 
+#: includes/API/V2/Changes_Controller.php:381
+msgid "Order changes could not be read."
+msgstr "Không thể đọc các thay đổi của đơn hàng."
+
 #. translators: 1: the requested collection, 2: the supported collections.
-#: includes/API/V2/Changes_Controller.php:782
+#: includes/API/V2/Changes_Controller.php:860
 #, php-format
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
 "Bộ sưu tập “%1$s” không được phục vụ qua tuyến này. Được hỗ trợ: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:141
+#: includes/API/V2/Payments_Controller.php:128
 msgid "Sorry, you cannot manage order payments."
 msgstr "Rất tiếc, bạn không thể quản lý thanh toán đơn hàng."
 
-#: includes/API/V2/Payments_Controller.php:161
+#: includes/API/V2/Payments_Controller.php:148
 msgid "Payment must be an object."
 msgstr "Khoản thanh toán phải là một đối tượng."
 
-#: includes/API/V2/Payments_Controller.php:232
+#: includes/API/V2/Payments_Controller.php:219
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:131
-#: includes/Payments/Contract/Ledger.php:1680
+#: includes/Payments/Contract/Ledger.php:1671
 msgid "Payment method not found."
 msgstr "Không tìm thấy phương thức thanh toán."
 
-#: includes/API/V2/Payments_Controller.php:238
+#: includes/API/V2/Payments_Controller.php:225
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Các giá trị phải là một đối tượng và ID lần thử phải là UUID."
 
-#: includes/API/V2/Payments_Controller.php:243
+#: includes/API/V2/Payments_Controller.php:230
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "ID lần thử phải xác định lần thử đã gửi cần hủy."
 
-#: includes/API/V2/Payments_Controller.php:373
+#: includes/API/V2/Payments_Controller.php:341
 msgid "Invalid payment operation parameters."
 msgstr "Tham số thao tác thanh toán không hợp lệ."
 
@@ -1190,7 +1192,7 @@ msgstr "Rất tiếc, bạn không thể khởi tạo phương thức thanh toá
 
 #: includes/API/V2/Payment_Methods_Controller.php:116
 #: includes/Payments/Contract/Gateway_Submission.php:52
-#: includes/Payments/Contract/Ledger.php:3287
+#: includes/Payments/Contract/Ledger.php:3077
 msgid "Payment capture mode is unsupported."
 msgstr "Chế độ thu tiền không được hỗ trợ."
 
@@ -1290,18 +1292,12 @@ msgid "The session request could not be completed."
 msgstr "Không thể hoàn tất yêu cầu phiên."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:599
+#: includes/API/V2/Writers/Order_Writer.php:590
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr ""
 "WCPOS: không thể điều chỉnh tồn kho của %1$s theo %2$s; vui lòng tự đối soát tồn kho của sản phẩm."
-
-#: includes/API/V2/Writers/Order_Writer.php:858
-msgid ""
-"POS sale day change was not applied because its change record could not be written. Try again."
-msgstr ""
-"Thay đổi ngày bán POS chưa được áp dụng vì không thể ghi bản ghi thay đổi. Hãy thử lại."
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1314,13 +1310,12 @@ msgid "Order key mismatch."
 msgstr "Khóa đơn hàng không khớp."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:134
+#: includes/Form_Handler.php:136
 msgid "Token not provided."
 msgstr "Không cung cấp mã thông báo."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:144
-#: includes/Templates/Payment.php:215
+#: includes/Form_Handler.php:157
 msgid "Cashier token mismatch."
 msgstr "Mã thông báo thu ngân không khớp."
 
@@ -1373,8 +1368,8 @@ msgstr "Số tiền đã nhận"
 #: includes/Gateways/Cash.php:93
 #: includes/Services/Receipt_Data_Schema.php:813
 #: includes/Services/Receipt_Data_Schema.php:928
-#: includes/Services/Receipt_Data_Schema.php:1630
-#: includes/Services/Receipt_Data_Schema.php:1676
+#: includes/Services/Receipt_Data_Schema.php:1629
+#: includes/Services/Receipt_Data_Schema.php:1675
 #: includes/Services/Receipt_I18n_Labels.php:237
 #: templates/receipt.php:367
 msgid "Change"
@@ -1454,14 +1449,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "Chế độ thu tiền này không hỗ trợ thao tác đó."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:339
+#: includes/Payments/Contract/Attempts.php:320
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "Lần thử thanh toán WCPOS %1$s: chưa rõ kết quả và %2$s không thể xác nhận tiền đã được thu hay chưa. Hãy kiểm tra khoản thanh toán với nhà cung cấp, sau đó hủy lần thử tại POS nếu chưa bị trừ tiền."
 
-#: includes/Payments/Contract/Attempts.php:420
+#: includes/Payments/Contract/Attempts.php:409
 msgid "Clearing the awaiting-customer state"
 msgstr "Đang xóa trạng thái chờ khách hàng"
 
@@ -1469,12 +1464,12 @@ msgstr "Đang xóa trạng thái chờ khách hàng"
 msgid "This command ID was already used with a different request."
 msgstr "ID lệnh này đã được dùng cho một yêu cầu khác."
 
-#: includes/Payments/Contract/Command_Log.php:250
+#: includes/Payments/Contract/Command_Log.php:244
 #: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Lần thử này đã bị hủy hoặc thay thế tại quầy."
 
-#: includes/Payments/Contract/Command_Log.php:276
+#: includes/Payments/Contract/Command_Log.php:270
 msgid "The order changed since this command was built; read it again."
 msgstr ""
 "Đơn hàng đã thay đổi kể từ khi lệnh này được tạo. Hãy đọc lại đơn hàng."
@@ -1491,7 +1486,7 @@ msgstr ""
 "WCPOS: không thể ghi nhận lần hoàn tất %d; vui lòng đối soát thủ công."
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:208
+#: includes/Payments/Contract/Completion_Stamp.php:205
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -1638,80 +1633,80 @@ msgstr "Chọn một trong các tùy chọn được liệt kê."
 msgid "Check the payment fields."
 msgstr "Kiểm tra các trường thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:560
+#: includes/Payments/Contract/Ledger.php:558
 msgid ""
 "This till asked for a reader connection the store does not allow for this payment method."
 msgstr ""
 "Quầy thu ngân này đã yêu cầu kết nối với đầu đọc mà cửa hàng không cho phép dùng cho phương thức thanh toán này."
 
-#: includes/Payments/Contract/Ledger.php:592
-#: includes/Payments/Contract/Ledger.php:800
+#: includes/Payments/Contract/Ledger.php:590
+#: includes/Payments/Contract/Ledger.php:798
 msgid "This payment was started on a different reader connection."
 msgstr "Khoản thanh toán này được bắt đầu bằng một kết nối đầu đọc khác."
 
-#: includes/Payments/Contract/Ledger.php:617
+#: includes/Payments/Contract/Ledger.php:615
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Không thể ghi nhận phương thức thanh toán này; phương thức phải tự xử lý bước thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:623
+#: includes/Payments/Contract/Ledger.php:621
 msgid "Recorded payments must be captured or authorized."
 msgstr "Khoản thanh toán đã ghi nhận phải được thu hoặc ủy quyền."
 
-#: includes/Payments/Contract/Ledger.php:631
-#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:629
+#: includes/Payments/Contract/Ledger.php:633
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Số tiền thanh toán không hợp lệ với phương thức này."
 
-#: includes/Payments/Contract/Ledger.php:863
+#: includes/Payments/Contract/Ledger.php:861
 msgid "Payment method is disabled."
 msgstr "Phương thức thanh toán đã bị tắt."
 
-#: includes/Payments/Contract/Ledger.php:871
-#: includes/Payments/Contract/Ledger.php:1741
-#: includes/Payments/Contract/Ledger.php:1802
+#: includes/Payments/Contract/Ledger.php:869
+#: includes/Payments/Contract/Ledger.php:1732
+#: includes/Payments/Contract/Ledger.php:1793
 msgid "The order is already paid."
 msgstr "Đơn hàng đã được thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:871
-#: includes/Payments/Contract/Ledger.php:1742
+#: includes/Payments/Contract/Ledger.php:869
+#: includes/Payments/Contract/Ledger.php:1733
 msgid "Payment amount exceeds the order balance."
 msgstr "Số tiền thanh toán vượt quá số dư đơn hàng."
 
-#: includes/Payments/Contract/Ledger.php:883
-#: includes/Payments/Contract/Ledger.php:1744
-#: includes/Payments/Contract/Ledger.php:1918
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1735
+#: includes/Payments/Contract/Ledger.php:1909
 msgid "Another payment is already in progress on this order."
 msgstr "Một khoản thanh toán khác cho đơn hàng này đang được xử lý."
 
-#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1125
 msgid "Tip"
 msgstr "Tiền boa"
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1183
+#: includes/Payments/Contract/Ledger.php:1181
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Số tiền thanh toán WCPOS %1$s không khớp: dự kiến %2$s, đã xác nhận %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1279
+#: includes/Payments/Contract/Ledger.php:1273
 msgid "Refund must belong to this order."
 msgstr "Khoản hoàn tiền phải thuộc đơn hàng này."
 
-#: includes/Payments/Contract/Ledger.php:1282
-#: includes/Payments/Contract/Ledger.php:1297
-#: includes/Payments/Contract/Ledger.php:1352
+#: includes/Payments/Contract/Ledger.php:1276
+#: includes/Payments/Contract/Ledger.php:1291
+#: includes/Payments/Contract/Ledger.php:1346
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "Không thể phân bổ số tiền hoàn này cho khoản thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Ledger.php:1309
 msgid "The refund could not be reserved; retry."
 msgstr "Không thể tạm giữ khoản hoàn tiền; hãy thử lại."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1412
+#: includes/Payments/Contract/Ledger.php:1406
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
@@ -1719,91 +1714,69 @@ msgstr ""
 "WCPOS: khoản hoàn tiền #%1$d trị giá %2$s đã được gửi đến %3$s; hãy xác nhận với nhà cung cấp trước khi thử lại."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1412
+#: includes/Payments/Contract/Ledger.php:1406
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: khoản hoàn tiền #%1$d trị giá %2$s không được xử lý qua %3$s, nhưng không thể hủy việc tạm giữ khoản hoàn tiền này; hãy kiểm tra thanh toán trước khi thử lại."
 
-#: includes/Payments/Contract/Ledger.php:1487
-#: includes/Payments/Contract/Ledger.php:1655
+#: includes/Payments/Contract/Ledger.php:1481
+#: includes/Payments/Contract/Ledger.php:1646
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "ID thanh toán phải là UUID."
 
-#: includes/Payments/Contract/Ledger.php:1508
-#: includes/Payments/Contract/Ledger.php:1720
+#: includes/Payments/Contract/Ledger.php:1502
+#: includes/Payments/Contract/Ledger.php:1711
 msgid "Payment id conflicts with an existing payment."
 msgstr "ID thanh toán trùng với khoản thanh toán hiện có."
 
-#: includes/Payments/Contract/Ledger.php:1550
+#: includes/Payments/Contract/Ledger.php:1544
 msgid "Refund status is invalid."
 msgstr "Trạng thái hoàn tiền không hợp lệ."
 
-#: includes/Payments/Contract/Ledger.php:1658
-#: includes/Payments/Contract/Ledger.php:1662
+#: includes/Payments/Contract/Ledger.php:1649
+#: includes/Payments/Contract/Ledger.php:1653
 msgid "Payment amount must be positive."
 msgstr "Số tiền thanh toán phải lớn hơn 0."
 
-#: includes/Payments/Contract/Ledger.php:1667
+#: includes/Payments/Contract/Ledger.php:1658
 msgid "Payment currency must match the order."
 msgstr "Đơn vị tiền tệ thanh toán phải khớp với đơn hàng."
 
-#: includes/Payments/Contract/Ledger.php:1743
+#: includes/Payments/Contract/Ledger.php:1734
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Số tiền hoặc đơn vị tiền tệ do nhà cung cấp xác nhận không khớp với khoản thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:1849
+#: includes/Payments/Contract/Ledger.php:1840
 msgid "The order is not covered by its payments."
 msgstr "Các khoản thanh toán không đủ để thanh toán đơn hàng."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1995
+#: includes/Payments/Contract/Ledger.php:1986
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "Đã hủy thanh toán WCPOS %s."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1997
+#: includes/Payments/Contract/Ledger.php:1988
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "Đã hủy thanh toán WCPOS %1$s: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2038
-msgid "Tender correction is not available while a fiscal module is active."
-msgstr ""
-"Không thể sửa phương thức thanh toán khi mô-đun tài chính đang hoạt động."
-
-#: includes/Payments/Contract/Ledger.php:2075
-msgid "This payment cannot be corrected."
-msgstr "Không thể sửa khoản thanh toán này."
-
-#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount.
-#: includes/Payments/Contract/Ledger.php:2140
-#, php-format
-msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s)"
-msgstr "Khoản thanh toán WCPOS %1$s đã được sửa: %2$s thành %3$s (%4$s)"
-
-#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount, 5: reference the cashier gave.
-#: includes/Payments/Contract/Ledger.php:2142
-#, php-format
-msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s), reference %5$s"
-msgstr ""
-"Khoản thanh toán WCPOS %1$s đã được sửa: %2$s thành %3$s (%4$s), mã tham chiếu %5$s"
-
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2893
+#: includes/Payments/Contract/Ledger.php:2684
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s chưa hoàn tất; hãy đối soát thủ công."
 
-#: includes/Payments/Contract/Ledger.php:3282
+#: includes/Payments/Contract/Ledger.php:3072
 msgid "Payment not found."
 msgstr "Không tìm thấy khoản thanh toán."
 
-#: includes/Payments/Contract/Ledger.php:3292
+#: includes/Payments/Contract/Ledger.php:3082
 msgid "Payment transition is invalid."
 msgstr "Chuyển trạng thái thanh toán không hợp lệ."
 
@@ -1862,12 +1835,12 @@ msgstr "Khóa idempotency đã được dùng lại với một yêu cầu khác
 msgid "An identical request is already being processed."
 msgstr "Một yêu cầu giống hệt đang được xử lý."
 
-#: includes/Services/Auth.php:389
-#: includes/Services/Auth.php:484
+#: includes/Services/Auth.php:405
+#: includes/Services/Auth.php:500
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT không được cấu hình đúng, vui lòng liên hệ quản trị viên"
 
-#: includes/Services/Auth.php:539
+#: includes/Services/Auth.php:555
 msgid "The sign-in could not be saved, please try again."
 msgstr "Không thể lưu thông tin đăng nhập. Vui lòng thử lại."
 
@@ -1963,7 +1936,6 @@ msgid "WCPOS file integrity"
 msgstr "Tính toàn vẹn tệp WCPOS"
 
 #: includes/Services/File_Integrity.php:272
-#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -2027,14 +1999,14 @@ msgid "Invalid receipt document."
 msgstr "Tài liệu biên lai không hợp lệ."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:119
-#: includes/Services/Fiscal_Record_Writers.php:460
+#: includes/Services/Fiscal_Record_Writers.php:114
+#: includes/Services/Fiscal_Record_Writers.php:407
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "Không thể ghi hồ sơ thuế POS %s; cần khôi phục."
 
-#: includes/Services/Fiscal_Record_Writers.php:320
-#: includes/Services/Fiscal_Record_Writers.php:444
+#: includes/Services/Fiscal_Record_Writers.php:267
+#: includes/Services/Fiscal_Record_Writers.php:391
 msgid "POS fiscal sale record recovered."
 msgstr "Đã khôi phục bản ghi tài chính của giao dịch bán hàng POS."
 
@@ -2061,7 +2033,7 @@ msgstr "Không xác định"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:450
+#: includes/Templates/Payment.php:413
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Khách"
@@ -2071,7 +2043,7 @@ msgstr "Khách"
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
 #: includes/Services/Receipt_Data_Builder.php:611
-#: includes/Services/Receipt_Data_Builder.php:1048
+#: includes/Services/Receipt_Data_Builder.php:1054
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:2170
 #, php-format
 msgid "Store #%d"
@@ -2089,20 +2061,8 @@ msgstr "Đơn hàng được tạo qua POS bởi %1$s tại %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "Thu ngân POS đã thay đổi từ %1$s thành %2$s."
 
-#. translators: 1: corrected sale date, 2: reason.
-#: includes/Services/Order_Notes.php:96
-#, php-format
-msgid "POS sale day set to %1$s. Reason: %2$s"
-msgstr "Đã đặt ngày bán POS thành %1$s. Lý do: %2$s"
-
-#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
-#: includes/Services/Order_Notes.php:99
-#, php-format
-msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
-msgstr "Đã đổi ngày bán POS từ %1$s thành %2$s. Lý do: %3$s"
-
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:108
+#: includes/Services/Order_Notes.php:94
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2110,35 +2070,91 @@ msgstr ""
 "%1$s đã cố đổi nhân viên thu ngân POS thành %2$s. Yêu cầu bị từ chối: họ không được phép chỉ định giao dịch bán này cho người dùng đó. %3$s vẫn là nhân viên thu ngân."
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:120
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "Cửa hàng POS được thay đổi từ %1$s thành %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:131
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Đơn hàng được mở lại qua POS bởi %1$s tại %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:142
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Khách hàng được thay đổi từ %1$s thành %2$s thông qua WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Khách hàng được thay đổi từ %1$s thành %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:167
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
 "Đã nhận thanh toán bằng tiền mặt — số tiền khách đưa: %1$s, tiền thối lại: %2$s."
+
+#: includes/Services/Permission_Registry.php:144
+msgid "Use the POS"
+msgstr "Sử dụng POS"
+
+#: includes/Services/Permission_Registry.php:145
+msgid "Manage POS settings in WP Admin"
+msgstr "Quản lý cài đặt POS trong WP Admin"
+
+#: includes/Services/Permission_Registry.php:146
+msgid "Open and close the register, cash in and out"
+msgstr "Mở và đóng quầy, thu và chi tiền mặt"
+
+#: includes/Services/Permission_Registry.php:147
+msgid "Reports"
+msgstr "Báo cáo"
+
+#: includes/Services/Permission_Registry.php:148
+msgid "Approve a variance or recount"
+msgstr "Phê duyệt chênh lệch hoặc kiểm đếm lại"
+
+#: includes/Services/Permission_Registry.php:149
+msgid "Reassign a sale's cashier"
+msgstr "Chuyển giao dịch bán cho thu ngân khác"
+
+#: includes/Services/Permission_Registry.php:150
+msgid "See cost, profit and margin"
+msgstr "Xem giá vốn, lợi nhuận và biên lợi nhuận"
+
+#: includes/Services/Permission_Registry.php:151
+msgid "Add a customer"
+msgstr "Thêm khách hàng"
+
+#: includes/Services/Permission_Registry.php:152
+msgid "Edit products"
+msgstr "Sửa sản phẩm"
+
+#: includes/Services/Permission_Registry.php:153
+msgid "Delete products"
+msgstr "Xóa sản phẩm"
+
+#: includes/Services/Permission_Registry.php:154
+msgid "Edit a customer"
+msgstr "Sửa khách hàng"
+
+#: includes/Services/Permission_Registry.php:155
+msgid "Manage categories"
+msgstr "Quản lý danh mục"
+
+#: includes/Services/Permission_Registry.php:156
+msgid "Manage coupons"
+msgstr "Quản lý mã giảm giá"
+
+#: includes/Services/Permission_Registry.php:157
+msgid "Delete coupons"
+msgstr "Xóa mã giảm giá"
 
 #: includes/Services/Permission_Rules.php:536
 msgid "Sorry, you are not allowed to give users that role."
@@ -2220,7 +2236,7 @@ msgstr "Cảm ơn quý khách!"
 #: includes/Services/Preview_Receipt_Builder.php:1230
 #: includes/Services/Preview_Receipt_Builder.php:1255
 #: includes/Services/Receipt_Data_Schema.php:835
-#: includes/Services/Receipt_Data_Schema.php:1525
+#: includes/Services/Receipt_Data_Schema.php:1524
 #: includes/Services/Receipt_I18n_Labels.php:233
 #: includes/Services/Reports_Registry.php:243
 #: templates/closure.php:47
@@ -2490,13 +2506,13 @@ msgstr "Thông tin chân trang"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:331
-#: includes/Services/Receipt_Data_Schema.php:1554
+#: includes/Services/Receipt_Data_Schema.php:1553
 msgid "Cashier ID"
 msgstr "ID thu ngân"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:335
-#: includes/Services/Receipt_Data_Schema.php:1558
+#: includes/Services/Receipt_Data_Schema.php:1557
 msgid "Cashier Name"
 msgstr "Tên thu ngân"
 
@@ -2545,8 +2561,8 @@ msgstr "Mã số thuế khách hàng"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:373
 #: includes/Services/Receipt_Data_Schema.php:395
-#: includes/Services/Receipt_Data_Schema.php:1565
-#: includes/Services/Receipt_Data_Schema.php:1944
+#: includes/Services/Receipt_Data_Schema.php:1564
+#: includes/Services/Receipt_Data_Schema.php:1943
 #: includes/Services/Receipt_I18n_Labels.php:78
 #: includes/Services/Reports_Registry.php:257
 #: templates/closure.php:93
@@ -2557,8 +2573,8 @@ msgstr "Loại"
 #: includes/Services/Receipt_Data_Schema.php:377
 #: includes/Services/Receipt_Data_Schema.php:399
 #: includes/Services/Receipt_Data_Schema.php:1269
-#: includes/Services/Receipt_Data_Schema.php:1530
-#: includes/Services/Receipt_Data_Schema.php:1854
+#: includes/Services/Receipt_Data_Schema.php:1529
+#: includes/Services/Receipt_Data_Schema.php:1853
 msgid "Value"
 msgstr "Giá trị"
 
@@ -2573,7 +2589,7 @@ msgstr "Quốc gia"
 #: includes/Services/Receipt_Data_Schema.php:385
 #: includes/Services/Receipt_Data_Schema.php:407
 #: includes/Services/Receipt_Data_Schema.php:1265
-#: includes/Services/Receipt_Data_Schema.php:1830
+#: includes/Services/Receipt_Data_Schema.php:1829
 msgid "Label"
 msgstr "Nhãn"
 
@@ -2778,7 +2794,7 @@ msgstr "Giá đơn vị (không thuế)"
 #. translators: Receipt total-row label for the order subtotal before final total adjustments.
 #: includes/Services/Receipt_Data_Schema.php:584
 #: includes/Services/Receipt_Data_Schema.php:735
-#: includes/Services/Receipt_Data_Schema.php:1963
+#: includes/Services/Receipt_Data_Schema.php:1962
 #: includes/Services/Receipt_I18n_Labels.php:226
 msgid "Subtotal"
 msgstr "Tạm tính"
@@ -2867,7 +2883,7 @@ msgstr "Nhãn phí"
 #: includes/Services/Receipt_Data_Schema.php:680
 #: includes/Services/Receipt_Data_Schema.php:718
 #: includes/Services/Receipt_Data_Schema.php:797
-#: includes/Services/Receipt_Data_Schema.php:1606
+#: includes/Services/Receipt_Data_Schema.php:1605
 #: includes/Services/Receipt_I18n_Labels.php:228
 #: templates/receipt.php:229
 msgid "Total"
@@ -2941,7 +2957,7 @@ msgstr "Loại mã giảm giá"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:731
-#: includes/Services/Receipt_Data_Schema.php:1876
+#: includes/Services/Receipt_Data_Schema.php:1875
 msgid "Totals"
 msgstr "Tổng cộng"
 
@@ -3146,9 +3162,9 @@ msgstr "Phương thức thanh toán"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Generic receipt column/field label for a monetary amount.
 #: includes/Services/Receipt_Data_Schema.php:920
-#: includes/Services/Receipt_Data_Schema.php:1528
-#: includes/Services/Receipt_Data_Schema.php:1532
-#: includes/Services/Receipt_Data_Schema.php:1660
+#: includes/Services/Receipt_Data_Schema.php:1527
+#: includes/Services/Receipt_Data_Schema.php:1531
+#: includes/Services/Receipt_Data_Schema.php:1659
 #: includes/Services/Receipt_I18n_Labels.php:256
 #: includes/Services/Reports_Registry.php:260
 #: templates/closure.php:93
@@ -3158,7 +3174,7 @@ msgstr "Số tiền"
 #. translators: Template-editor field label for the money received from the customer at checkout; use the target-language equivalent of "Received", not procurement tender/bid language.
 #. translators: Standalone receipt/payment label meaning money received from the customer at checkout. Use the target-language equivalent of "Received" as a concise label; do not use wording that means "Amount paid/deposited", and do not use procurement tender/bid language.
 #: includes/Services/Receipt_Data_Schema.php:924
-#: includes/Services/Receipt_Data_Schema.php:1668
+#: includes/Services/Receipt_Data_Schema.php:1667
 #: includes/Services/Receipt_I18n_Labels.php:236
 #: templates/receipt.php:363
 msgid "Tendered"
@@ -3542,12 +3558,12 @@ msgid "Printed Number"
 msgstr "Số bản in"
 
 #: includes/Services/Receipt_Data_Schema.php:1319
-#: includes/Services/Receipt_Data_Schema.php:1894
+#: includes/Services/Receipt_Data_Schema.php:1893
 msgid "Session ID"
 msgstr "ID phiên"
 
 #: includes/Services/Receipt_Data_Schema.php:1320
-#: includes/Services/Receipt_Data_Schema.php:1890
+#: includes/Services/Receipt_Data_Schema.php:1889
 msgid "Business Day"
 msgstr "Ngày kinh doanh"
 
@@ -3782,14 +3798,13 @@ msgid "Denominations"
 msgstr "Mệnh giá"
 
 #: includes/Services/Receipt_Data_Schema.php:1411
-#: includes/Services/Receipt_Data_Schema.php:1549
+#: includes/Services/Receipt_Data_Schema.php:1548
 #: includes/Services/Receipt_I18n_Labels.php:86
 #: templates/closure.php:116
 msgid "Cashiers"
 msgstr "Thu ngân"
 
 #: includes/Services/Receipt_Data_Schema.php:1422
-#: includes/Services/Receipt_Data_Schema.php:1520
 msgid "Corrections"
 msgstr "Điều chỉnh"
 
@@ -3818,7 +3833,7 @@ msgid "Approver Name"
 msgstr "Tên người duyệt"
 
 #: includes/Services/Receipt_Data_Schema.php:1450
-#: includes/Services/Receipt_Data_Schema.php:1567
+#: includes/Services/Receipt_Data_Schema.php:1566
 #: includes/Services/Receipt_I18n_Labels.php:79
 #: includes/Services/Reports_Registry.php:258
 #: templates/closure.php:93
@@ -3826,7 +3841,7 @@ msgid "Reason"
 msgstr "Lý do"
 
 #: includes/Services/Receipt_Data_Schema.php:1454
-#: includes/Services/Receipt_Data_Schema.php:1568
+#: includes/Services/Receipt_Data_Schema.php:1567
 msgid "Created (UTC)"
 msgstr "Tạo lúc (UTC)"
 
@@ -3892,148 +3907,148 @@ msgstr "Khóa phương thức thanh toán"
 msgid "Sales"
 msgstr "Doanh số"
 
-#: includes/Services/Receipt_Data_Schema.php:1523
+#: includes/Services/Receipt_Data_Schema.php:1522
 msgid "Tax Rate"
 msgstr "Thuế suất"
 
-#: includes/Services/Receipt_Data_Schema.php:1524
+#: includes/Services/Receipt_Data_Schema.php:1523
 #: includes/Services/Receipt_I18n_Labels.php:89
 #: includes/Services/Reports_Registry.php:242
 #: templates/closure.php:46
 msgid "Net"
 msgstr "Thuần"
 
-#: includes/Services/Receipt_Data_Schema.php:1526
+#: includes/Services/Receipt_Data_Schema.php:1525
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:240
 #: templates/closure.php:48
 msgid "Gross"
 msgstr "Gộp"
 
-#: includes/Services/Receipt_Data_Schema.php:1531
+#: includes/Services/Receipt_Data_Schema.php:1530
 #: includes/Services/Receipt_I18n_Labels.php:50
 msgid "Pieces"
 msgstr "Số lượng"
 
-#: includes/Services/Receipt_Data_Schema.php:1566
+#: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Movement Label"
 msgstr "Nhãn điều chỉnh"
 
-#: includes/Services/Receipt_Data_Schema.php:1577
+#: includes/Services/Receipt_Data_Schema.php:1576
 #: includes/Services/Receipt_I18n_Labels.php:98
 #: templates/closure.php:98
 msgid "Voided"
 msgstr "Đã hủy"
 
-#: includes/Services/Receipt_Data_Schema.php:1581
+#: includes/Services/Receipt_Data_Schema.php:1580
 msgid "Created"
 msgstr "Đã tạo"
 
-#: includes/Services/Receipt_Data_Schema.php:1590
-#: includes/Services/Receipt_Data_Schema.php:1858
+#: includes/Services/Receipt_Data_Schema.php:1589
+#: includes/Services/Receipt_Data_Schema.php:1857
 msgid "Formatted"
 msgstr "Đã định dạng"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
-#: includes/Services/Receipt_Data_Schema.php:1598
+#: includes/Services/Receipt_Data_Schema.php:1597
 #: includes/Templates/Gallery_Registry.php:92
 msgid "Ledger"
 msgstr "Sổ giao dịch"
 
 #. translators: Receipt label for order/document status.
-#: includes/Services/Receipt_Data_Schema.php:1602
-#: includes/Services/Receipt_Data_Schema.php:1656
+#: includes/Services/Receipt_Data_Schema.php:1601
+#: includes/Services/Receipt_Data_Schema.php:1655
 #: includes/Services/Receipt_I18n_Labels.php:306
 msgid "Status"
 msgstr "Trạng thái"
 
-#: includes/Services/Receipt_Data_Schema.php:1610
+#: includes/Services/Receipt_Data_Schema.php:1609
 msgid "Total (raw)"
 msgstr "Tổng (thô)"
 
 #. translators: Receipt payment-section heading for amounts already paid by the customer.
-#: includes/Services/Receipt_Data_Schema.php:1614
+#: includes/Services/Receipt_Data_Schema.php:1613
 #: includes/Services/Receipt_I18n_Labels.php:234
 #: templates/receipt.php:355
 msgid "Paid"
 msgstr "Đã thanh toán"
 
-#: includes/Services/Receipt_Data_Schema.php:1618
+#: includes/Services/Receipt_Data_Schema.php:1617
 msgid "Paid (raw)"
 msgstr "Đã thanh toán (thô)"
 
-#: includes/Services/Receipt_Data_Schema.php:1622
+#: includes/Services/Receipt_Data_Schema.php:1621
 msgid "Due"
 msgstr "Còn phải trả"
 
-#: includes/Services/Receipt_Data_Schema.php:1626
+#: includes/Services/Receipt_Data_Schema.php:1625
 msgid "Due (raw)"
 msgstr "Còn phải trả (thô)"
 
-#: includes/Services/Receipt_Data_Schema.php:1634
-#: includes/Services/Receipt_Data_Schema.php:1680
+#: includes/Services/Receipt_Data_Schema.php:1633
+#: includes/Services/Receipt_Data_Schema.php:1679
 msgid "Change (raw)"
 msgstr "Tiền thối (thô)"
 
-#: includes/Services/Receipt_Data_Schema.php:1639
+#: includes/Services/Receipt_Data_Schema.php:1638
 msgid "Ledger payments"
 msgstr "Khoản thanh toán trong sổ"
 
-#: includes/Services/Receipt_Data_Schema.php:1644
+#: includes/Services/Receipt_Data_Schema.php:1643
 msgid "ID"
 msgstr "ID"
 
-#: includes/Services/Receipt_Data_Schema.php:1648
+#: includes/Services/Receipt_Data_Schema.php:1647
 #: includes/Services/Reports_Registry.php:244
 msgid "Method"
 msgstr "Phương thức"
 
-#: includes/Services/Receipt_Data_Schema.php:1652
+#: includes/Services/Receipt_Data_Schema.php:1651
 msgid "Kind"
 msgstr "Loại"
 
-#: includes/Services/Receipt_Data_Schema.php:1664
+#: includes/Services/Receipt_Data_Schema.php:1663
 msgid "Amount (raw)"
 msgstr "Số tiền (thô)"
 
-#: includes/Services/Receipt_Data_Schema.php:1672
+#: includes/Services/Receipt_Data_Schema.php:1671
 msgid "Tendered (raw)"
 msgstr "Số tiền khách đưa (thô)"
 
-#: includes/Services/Receipt_Data_Schema.php:1685
+#: includes/Services/Receipt_Data_Schema.php:1684
 msgid "Assets"
 msgstr "Tài nguyên"
 
-#: includes/Services/Receipt_Data_Schema.php:1689
+#: includes/Services/Receipt_Data_Schema.php:1688
 msgid "Plugin image folder URL (example pictures)"
 msgstr "URL thư mục hình ảnh của plugin (ảnh mẫu)"
 
-#: includes/Services/Receipt_Data_Schema.php:1694
+#: includes/Services/Receipt_Data_Schema.php:1693
 msgid "Payment"
 msgstr "Thanh toán"
 
-#: includes/Services/Receipt_Data_Schema.php:1698
+#: includes/Services/Receipt_Data_Schema.php:1697
 msgid "State"
 msgstr "Tỉnh/Bang"
 
-#: includes/Services/Receipt_Data_Schema.php:1702
+#: includes/Services/Receipt_Data_Schema.php:1701
 msgid "Message"
 msgstr "Thông báo"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1738
+#: includes/Services/Receipt_Data_Schema.php:1737
 msgid "Date & Time"
 msgstr "Ngày & giờ"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the sale/order date.
-#: includes/Services/Receipt_Data_Schema.php:1742
+#: includes/Services/Receipt_Data_Schema.php:1741
 #: includes/Services/Receipt_I18n_Labels.php:108
 msgid "Date"
 msgstr "Ngày"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1746
+#: includes/Services/Receipt_Data_Schema.php:1745
 #: includes/Services/Receipt_I18n_Labels.php:77
 #: includes/Services/Reports_Registry.php:256
 #: templates/closure.php:93
@@ -4041,197 +4056,197 @@ msgid "Time"
 msgstr "Giờ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1750
+#: includes/Services/Receipt_Data_Schema.php:1749
 msgid "Short Date & Time"
 msgstr "Ngày & giờ ngắn"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1754
+#: includes/Services/Receipt_Data_Schema.php:1753
 msgid "Long Date & Time"
 msgstr "Ngày & giờ dài"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1758
+#: includes/Services/Receipt_Data_Schema.php:1757
 msgid "Full Date & Time"
 msgstr "Ngày & giờ đầy đủ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1762
+#: includes/Services/Receipt_Data_Schema.php:1761
 msgid "Short Date"
 msgstr "Ngày ngắn"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1766
+#: includes/Services/Receipt_Data_Schema.php:1765
 msgid "Long Date"
 msgstr "Ngày dài"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1770
+#: includes/Services/Receipt_Data_Schema.php:1769
 msgid "Full Date"
 msgstr "Ngày đầy đủ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1774
+#: includes/Services/Receipt_Data_Schema.php:1773
 msgid "YYYY-MM-DD"
 msgstr "YYYY-MM-DD"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1778
+#: includes/Services/Receipt_Data_Schema.php:1777
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1782
+#: includes/Services/Receipt_Data_Schema.php:1781
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1786
+#: includes/Services/Receipt_Data_Schema.php:1785
 msgid "Weekday Short"
 msgstr "Thứ viết tắt"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1790
+#: includes/Services/Receipt_Data_Schema.php:1789
 msgid "Weekday Long"
 msgstr "Thứ đầy đủ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1794
+#: includes/Services/Receipt_Data_Schema.php:1793
 msgid "Day"
 msgstr "Ngày"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1798
+#: includes/Services/Receipt_Data_Schema.php:1797
 msgid "Month Number"
 msgstr "Số tháng"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1802
+#: includes/Services/Receipt_Data_Schema.php:1801
 msgid "Month Short"
 msgstr "Tháng viết tắt"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1806
+#: includes/Services/Receipt_Data_Schema.php:1805
 msgid "Month Long"
 msgstr "Tháng đầy đủ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1810
+#: includes/Services/Receipt_Data_Schema.php:1809
 msgid "Year"
 msgstr "Năm"
 
-#: includes/Services/Receipt_Data_Schema.php:1826
+#: includes/Services/Receipt_Data_Schema.php:1825
 msgid "Key"
 msgstr "Key"
 
-#: includes/Services/Receipt_Data_Schema.php:1835
+#: includes/Services/Receipt_Data_Schema.php:1834
 msgid "First entry"
 msgstr "Mục đầu tiên"
 
-#: includes/Services/Receipt_Data_Schema.php:1840
+#: includes/Services/Receipt_Data_Schema.php:1839
 msgid "Cells"
 msgstr "Ô"
 
-#: includes/Services/Receipt_Data_Schema.php:1846
+#: includes/Services/Receipt_Data_Schema.php:1845
 msgid "Column label"
 msgstr "Nhãn cột"
 
-#: includes/Services/Receipt_Data_Schema.php:1850
+#: includes/Services/Receipt_Data_Schema.php:1849
 msgid "Repeats the row heading"
 msgstr "Lặp lại tiêu đề hàng"
 
-#: includes/Services/Receipt_Data_Schema.php:1864
-#: includes/Services/Receipt_Data_Schema.php:1948
+#: includes/Services/Receipt_Data_Schema.php:1863
+#: includes/Services/Receipt_Data_Schema.php:1947
 msgid "Alignment"
 msgstr "Căn chỉnh"
 
-#: includes/Services/Receipt_Data_Schema.php:1871
+#: includes/Services/Receipt_Data_Schema.php:1870
 msgid "Rows"
 msgstr "Hàng"
 
-#: includes/Services/Receipt_Data_Schema.php:1882
+#: includes/Services/Receipt_Data_Schema.php:1881
 msgid "Mode"
 msgstr "Chế độ"
 
-#: includes/Services/Receipt_Data_Schema.php:1898
+#: includes/Services/Receipt_Data_Schema.php:1897
 msgid "Session Number"
 msgstr "Số phiên"
 
-#: includes/Services/Receipt_Data_Schema.php:1902
+#: includes/Services/Receipt_Data_Schema.php:1901
 msgid "Opened At"
 msgstr "Mở lúc"
 
-#: includes/Services/Receipt_Data_Schema.php:1903
+#: includes/Services/Receipt_Data_Schema.php:1902
 msgid "Closed At"
 msgstr "Đóng lúc"
 
-#: includes/Services/Receipt_Data_Schema.php:1904
+#: includes/Services/Receipt_Data_Schema.php:1903
 msgid "From"
 msgstr "Từ"
 
-#: includes/Services/Receipt_Data_Schema.php:1905
+#: includes/Services/Receipt_Data_Schema.php:1904
 msgid "To"
 msgstr "Đến"
 
-#: includes/Services/Receipt_Data_Schema.php:1914
+#: includes/Services/Receipt_Data_Schema.php:1913
 #: includes/Templates.php:598
 #: includes/Templates/Gallery_Registry.php:590
 msgid "Report"
 msgstr "Báo cáo"
 
-#: includes/Services/Receipt_Data_Schema.php:1919
+#: includes/Services/Receipt_Data_Schema.php:1918
 msgid "Title"
 msgstr "Tiêu đề"
 
-#: includes/Services/Receipt_Data_Schema.php:1923
+#: includes/Services/Receipt_Data_Schema.php:1922
 msgid "Subtitle"
 msgstr "Phụ đề"
 
-#: includes/Services/Receipt_Data_Schema.php:1927
+#: includes/Services/Receipt_Data_Schema.php:1926
 msgid "Scope"
 msgstr "Phạm vi"
 
-#: includes/Services/Receipt_Data_Schema.php:1933
+#: includes/Services/Receipt_Data_Schema.php:1932
 msgid "Group By"
 msgstr "Nhóm theo"
 
-#: includes/Services/Receipt_Data_Schema.php:1939
+#: includes/Services/Receipt_Data_Schema.php:1938
 msgid "Columns"
 msgstr "Cột"
 
-#: includes/Services/Receipt_Data_Schema.php:1954
+#: includes/Services/Receipt_Data_Schema.php:1953
 msgid "Column Count"
 msgstr "Số cột"
 
-#: includes/Services/Receipt_Data_Schema.php:1960
+#: includes/Services/Receipt_Data_Schema.php:1959
 msgid "Groups"
 msgstr "Nhóm"
 
-#: includes/Services/Receipt_Data_Schema.php:1969
+#: includes/Services/Receipt_Data_Schema.php:1968
 msgid "Count"
 msgstr "Số lượng"
 
-#: includes/Services/Receipt_Data_Schema.php:1973
+#: includes/Services/Receipt_Data_Schema.php:1972
 msgid "Has Groups"
 msgstr "Có nhóm"
 
-#: includes/Services/Receipt_Data_Schema.php:1977
+#: includes/Services/Receipt_Data_Schema.php:1976
 msgid "Has Rows"
 msgstr "Có hàng"
 
-#: includes/Services/Receipt_Data_Schema.php:1981
+#: includes/Services/Receipt_Data_Schema.php:1980
 msgid "Generated At"
 msgstr "Tạo lúc"
 
-#: includes/Services/Receipt_Data_Schema.php:1986
+#: includes/Services/Receipt_Data_Schema.php:1985
 msgid "Is Partial"
 msgstr "Một phần"
 
-#: includes/Services/Receipt_Data_Schema.php:1990
+#: includes/Services/Receipt_Data_Schema.php:1989
 msgid "Partial Reason"
 msgstr "Lý do chưa đầy đủ"
 
-#: includes/Services/Receipt_Data_Schema.php:1996
+#: includes/Services/Receipt_Data_Schema.php:1995
 msgid "Is Report Document"
 msgstr "Là tài liệu báo cáo"
 
@@ -5273,7 +5288,7 @@ msgstr "Không tìm thấy cài đặt với id %s"
 msgid "Can not save settings with id %s"
 msgstr "Không thể lưu cài đặt với id %s"
 
-#: includes/Services/Settings/Access_Section.php:268
+#: includes/Services/Settings/Access_Section.php:240
 msgid "You do not have permission to update access settings."
 msgstr "Bạn không có quyền cập nhật cài đặt quyền truy cập."
 
@@ -5342,19 +5357,19 @@ msgstr "Tải biên lai cho đơn hàng #%s"
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:191
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:304
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:247
 msgid "Filter orders by POS cashier."
 msgstr "Lọc đơn hàng theo thu ngân POS."
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:197
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:309
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:252
 msgid "Filter orders by POS store."
 msgstr "Lọc đơn hàng theo cửa hàng POS."
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:202
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:314
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:257
 msgid "Filter orders by POS register."
 msgstr "Lọc đơn hàng theo máy tính tiền POS."
 
@@ -5370,20 +5385,6 @@ msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""
 "Cửa hàng đồng bộ WCPOS chưa được cài đặt (đang khởi tạo hoặc cài đặt schema không thành công). Vui lòng thử lại sau ít lâu."
-
-#: includes/Sync/Integrity_Digest.php:449
-msgid "WCPOS sync integrity checks"
-msgstr "Kiểm tra tính toàn vẹn đồng bộ hóa WCPOS"
-
-#: includes/Sync/Integrity_Digest.php:469
-msgid "WCPOS sync integrity checks are off on SQLite"
-msgstr "Kiểm tra tính toàn vẹn đồng bộ hóa WCPOS đã tắt trên SQLite"
-
-#: includes/Sync/Integrity_Digest.php:470
-msgid ""
-"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
-msgstr ""
-"POS vẫn đồng bộ hóa thông qua nhật ký thay đổi, nhưng kiểm tra tính toàn vẹn chạy nền, dùng để phát hiện các thay đổi bên ngoài WordPress (chỉnh sửa trực tiếp cơ sở dữ liệu và một số lần nhập dữ liệu), không chạy trên cơ sở dữ liệu này. SQLite không phải là cơ sở dữ liệu được WCPOS hỗ trợ."
 
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
@@ -6301,89 +6302,83 @@ msgid ""
 msgstr ""
 "Phiếu của thu ngân cho túi tiền mặt: tiền đầu ca, các khoản thanh toán đã đếm, mệnh giá, biến động, ghi chú và dòng chữ ký. Không có số liệu bán hàng hoặc thuế."
 
-#: includes/Templates/Payment.php:202
+#: includes/Templates/Payment.php:201
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Xin lỗi, đơn hàng này không thể thanh toán. Mã đơn hàng không tồn tại hoặc không hợp lệ."
 
-#. translators: Shown on the POS pay page when the cashier's session has expired.
-#: includes/Templates/Payment.php:234
-msgid ""
-"Your session has expired. Close this payment window and open it again."
-msgstr "Phiên của bạn đã hết hạn. Hãy đóng cửa sổ thanh toán này rồi mở lại."
-
-#: includes/Templates/Payment.php:257
+#: includes/Templates/Payment.php:220
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Đơn hàng này không thể thanh toán. Vui lòng liên hệ với chúng tôi nếu bạn cần hỗ trợ."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:265
+#: includes/Templates/Payment.php:228
 msgid "Pay for order"
 msgstr "Thanh toán đơn hàng"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:349
+#: includes/Templates/Payment.php:312
 msgid "Checkout Settings"
 msgstr "Cài đặt Thanh toán"
 
-#: includes/Templates/Payment.php:355
+#: includes/Templates/Payment.php:318
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Các script và style có thể gây cản trở cho mẫu thanh toán tùy chỉnh, sử dụng biểu mẫu này để loại bỏ các script có vấn đề."
 
-#: includes/Templates/Payment.php:357
+#: includes/Templates/Payment.php:320
 msgid "Disable All Styles and Scripts"
 msgstr "Vô hiệu hóa tất cả Styles và Scripts"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:360
+#: includes/Templates/Payment.php:323
 msgid "Disable wp_head"
 msgstr "Vô hiệu hóa wp_head"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:365
+#: includes/Templates/Payment.php:328
 msgid "Disable wp_footer"
 msgstr "Vô hiệu hóa wp_footer"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:370
+#: includes/Templates/Payment.php:333
 msgid "Disable Selected Styles"
 msgstr "Vô hiệu hóa Styles đã chọn"
 
-#: includes/Templates/Payment.php:377
-#: includes/Templates/Payment.php:389
+#: includes/Templates/Payment.php:340
+#: includes/Templates/Payment.php:352
 msgid "always removed on the POS payment page"
 msgstr "luôn bị xóa khỏi trang thanh toán POS"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:382
+#: includes/Templates/Payment.php:345
 msgid "Disable Selected Scripts"
 msgstr "Vô hiệu hóa Scripts đã chọn"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:358
 msgid "Submit"
 msgstr "Gửi"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:449
+#: includes/Templates/Payment.php:412
 msgid "Paying as customer"
 msgstr "Thanh toán với tư cách khách hàng"
 
-#: includes/Templates/Payment.php:550
+#: includes/Templates/Payment.php:513
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Xin lỗi, đơn hàng này không hợp lệ và không thể thanh toán."
 
-#: includes/Templates/Payment.php:554
+#: includes/Templates/Payment.php:517
 msgid "Sorry, this order has already been paid for."
 msgstr "Xin lỗi, đơn hàng này đã được thanh toán."
 
-#: includes/Templates/Payment.php:572
+#: includes/Templates/Payment.php:535
 msgid "You do not have permission to modify checkout settings."
 msgstr "Bạn không có quyền chỉnh sửa cài đặt thanh toán."
 
@@ -6457,11 +6452,11 @@ msgstr "Thử đặt lại mẫu hóa đơn mặc định"
 msgid "Please contact the site administrator for assistance."
 msgstr "Vui lòng liên hệ quản trị viên trang để được hỗ trợ."
 
-#: includes/Templates/Received.php:88
+#: includes/Templates/Received.php:82
 msgid "Sorry, this order is invalid."
 msgstr "Xin lỗi, đơn hàng này không hợp lệ."
 
-#: includes/Templates/Received.php:96
+#: includes/Templates/Received.php:90
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr ""
