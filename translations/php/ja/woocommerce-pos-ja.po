@@ -542,14 +542,14 @@ msgstr "支払いゲートウェイはPOSチェックアウトでは利用でき
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:284
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:434
+#: includes/API/V2/Payments_Controller.php:466
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "注文が見つかりません。"
 
 #: includes/API/V1/Checkout_Controller.php:294
 #: includes/API/V1/Orders_Controller.php:642
-#: includes/API/V2/Payments_Controller.php:438
+#: includes/API/V2/Payments_Controller.php:470
 msgid "Sorry, you are not allowed to edit this order."
 msgstr "この注文を編集する権限がありません。"
 
@@ -1132,31 +1132,31 @@ msgstr "_woocommerce_pos_uuid meta_data の値が無効です。"
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr "コレクション「%1$s」はこのルートでは提供されていません。対応：%2$s。"
 
-#: includes/API/V2/Payments_Controller.php:128
+#: includes/API/V2/Payments_Controller.php:141
 msgid "Sorry, you cannot manage order payments."
 msgstr "注文の支払いを管理する権限がありません。"
 
-#: includes/API/V2/Payments_Controller.php:148
+#: includes/API/V2/Payments_Controller.php:161
 msgid "Payment must be an object."
 msgstr "支払いはオブジェクトである必要があります。"
 
-#: includes/API/V2/Payments_Controller.php:219
+#: includes/API/V2/Payments_Controller.php:232
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:131
-#: includes/Payments/Contract/Ledger.php:1671
+#: includes/Payments/Contract/Ledger.php:1680
 msgid "Payment method not found."
 msgstr "支払い方法が見つかりません。"
 
-#: includes/API/V2/Payments_Controller.php:225
+#: includes/API/V2/Payments_Controller.php:238
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "値はオブジェクト、試行 ID は UUID である必要があります。"
 
-#: includes/API/V2/Payments_Controller.php:230
+#: includes/API/V2/Payments_Controller.php:243
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr "試行 ID は、キャンセルする送信済みの試行を示す必要があります。"
 
-#: includes/API/V2/Payments_Controller.php:341
+#: includes/API/V2/Payments_Controller.php:373
 msgid "Invalid payment operation parameters."
 msgstr "支払い操作のパラメーターが無効です。"
 
@@ -1170,7 +1170,7 @@ msgstr "支払い方法を初期化する権限がありません。"
 
 #: includes/API/V2/Payment_Methods_Controller.php:116
 #: includes/Payments/Contract/Gateway_Submission.php:52
-#: includes/Payments/Contract/Ledger.php:3077
+#: includes/Payments/Contract/Ledger.php:3287
 msgid "Payment capture mode is unsupported."
 msgstr "この支払いキャプチャモードには対応していません。"
 
@@ -1351,8 +1351,8 @@ msgstr "受領額"
 #: includes/Gateways/Cash.php:93
 #: includes/Services/Receipt_Data_Schema.php:813
 #: includes/Services/Receipt_Data_Schema.php:928
-#: includes/Services/Receipt_Data_Schema.php:1629
-#: includes/Services/Receipt_Data_Schema.php:1675
+#: includes/Services/Receipt_Data_Schema.php:1630
+#: includes/Services/Receipt_Data_Schema.php:1676
 #: includes/Services/Receipt_I18n_Labels.php:237
 #: templates/receipt.php:367
 msgid "Change"
@@ -1443,12 +1443,12 @@ msgstr "顧客待ち状態を解除しています"
 msgid "This command ID was already used with a different request."
 msgstr "このコマンドIDは、すでに別のリクエストで使用されています。"
 
-#: includes/Payments/Contract/Command_Log.php:244
+#: includes/Payments/Contract/Command_Log.php:250
 #: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "レジでこの試行はキャンセルされたか、別の試行に置き換えられました。"
 
-#: includes/Payments/Contract/Command_Log.php:270
+#: includes/Payments/Contract/Command_Log.php:276
 msgid "The order changed since this command was built; read it again."
 msgstr "このコマンドの作成後に注文が変更されました。再度読み込んでください。"
 
@@ -1605,145 +1605,165 @@ msgstr "一覧から1つ選択してください。"
 msgid "Check the payment fields."
 msgstr "決済項目を確認してください。"
 
-#: includes/Payments/Contract/Ledger.php:558
+#: includes/Payments/Contract/Ledger.php:560
 msgid ""
 "This till asked for a reader connection the store does not allow for this payment method."
 msgstr "このレジは、この支払い方法では店舗が許可していないリーダー接続を要求しました。"
 
-#: includes/Payments/Contract/Ledger.php:590
-#: includes/Payments/Contract/Ledger.php:798
+#: includes/Payments/Contract/Ledger.php:592
+#: includes/Payments/Contract/Ledger.php:800
 msgid "This payment was started on a different reader connection."
 msgstr "この支払いは別のリーダー接続で開始されました。"
 
-#: includes/Payments/Contract/Ledger.php:615
+#: includes/Payments/Contract/Ledger.php:617
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr "この支払い方法は記録できません。独自の支払い処理を実行する必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:621
+#: includes/Payments/Contract/Ledger.php:623
 msgid "Recorded payments must be captured or authorized."
 msgstr "記録した支払いは、キャプチャまたは承認済みである必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:629
-#: includes/Payments/Contract/Ledger.php:633
+#: includes/Payments/Contract/Ledger.php:631
+#: includes/Payments/Contract/Ledger.php:635
 msgid "Tendered amount is invalid for this payment method."
 msgstr "この支払い方法では、受領額が無効です。"
 
-#: includes/Payments/Contract/Ledger.php:861
+#: includes/Payments/Contract/Ledger.php:863
 msgid "Payment method is disabled."
 msgstr "支払い方法は無効になっています。"
 
-#: includes/Payments/Contract/Ledger.php:869
-#: includes/Payments/Contract/Ledger.php:1732
-#: includes/Payments/Contract/Ledger.php:1793
+#: includes/Payments/Contract/Ledger.php:871
+#: includes/Payments/Contract/Ledger.php:1741
+#: includes/Payments/Contract/Ledger.php:1802
 msgid "The order is already paid."
 msgstr "注文はすでに支払い済みです。"
 
-#: includes/Payments/Contract/Ledger.php:869
-#: includes/Payments/Contract/Ledger.php:1733
+#: includes/Payments/Contract/Ledger.php:871
+#: includes/Payments/Contract/Ledger.php:1742
 msgid "Payment amount exceeds the order balance."
 msgstr "支払い額が注文の残額を超えています。"
 
-#: includes/Payments/Contract/Ledger.php:881
-#: includes/Payments/Contract/Ledger.php:1735
-#: includes/Payments/Contract/Ledger.php:1909
+#: includes/Payments/Contract/Ledger.php:883
+#: includes/Payments/Contract/Ledger.php:1744
+#: includes/Payments/Contract/Ledger.php:1918
 msgid "Another payment is already in progress on this order."
 msgstr "この注文ではすでに別の決済が進行中です。"
 
-#: includes/Payments/Contract/Ledger.php:1125
+#: includes/Payments/Contract/Ledger.php:1127
 msgid "Tip"
 msgstr "チップ"
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1181
+#: includes/Payments/Contract/Ledger.php:1183
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr "WCPOSの支払い%1$sの金額が一致しません：想定額%2$s、確認額%3$s。"
 
-#: includes/Payments/Contract/Ledger.php:1273
+#: includes/Payments/Contract/Ledger.php:1279
 msgid "Refund must belong to this order."
 msgstr "返金はこの注文に属している必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:1276
-#: includes/Payments/Contract/Ledger.php:1291
-#: includes/Payments/Contract/Ledger.php:1346
+#: includes/Payments/Contract/Ledger.php:1282
+#: includes/Payments/Contract/Ledger.php:1297
+#: includes/Payments/Contract/Ledger.php:1352
 msgid "Refund amount cannot be allocated to this payment."
 msgstr "この支払いに返金額を割り当てられません。"
 
-#: includes/Payments/Contract/Ledger.php:1309
+#: includes/Payments/Contract/Ledger.php:1315
 msgid "The refund could not be reserved; retry."
 msgstr "返金を確保できませんでした。再試行してください。"
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1412
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
 msgstr "WCPOS: %2$s の返金 #%1$d を %3$s に送信しました。再試行する前にプロバイダーに確認してください。"
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1406
+#: includes/Payments/Contract/Ledger.php:1412
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: %2$s の返金 #%1$d は %3$s 経由で処理されませんでしたが、予約を解除できませんでした。再試行する前に支払い状況を確認してください。"
 
-#: includes/Payments/Contract/Ledger.php:1481
-#: includes/Payments/Contract/Ledger.php:1646
+#: includes/Payments/Contract/Ledger.php:1487
+#: includes/Payments/Contract/Ledger.php:1655
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "支払いIDはUUIDである必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:1502
-#: includes/Payments/Contract/Ledger.php:1711
+#: includes/Payments/Contract/Ledger.php:1508
+#: includes/Payments/Contract/Ledger.php:1720
 msgid "Payment id conflicts with an existing payment."
 msgstr "支払いIDが既存の支払いと競合しています。"
 
-#: includes/Payments/Contract/Ledger.php:1544
+#: includes/Payments/Contract/Ledger.php:1550
 msgid "Refund status is invalid."
 msgstr "返金ステータスが無効です。"
 
-#: includes/Payments/Contract/Ledger.php:1649
-#: includes/Payments/Contract/Ledger.php:1653
+#: includes/Payments/Contract/Ledger.php:1658
+#: includes/Payments/Contract/Ledger.php:1662
 msgid "Payment amount must be positive."
 msgstr "支払い額は正の値である必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:1658
+#: includes/Payments/Contract/Ledger.php:1667
 msgid "Payment currency must match the order."
 msgstr "支払い通貨は注文の通貨と一致する必要があります。"
 
-#: includes/Payments/Contract/Ledger.php:1734
+#: includes/Payments/Contract/Ledger.php:1743
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr "プロバイダーが確認した金額または通貨が、支払い情報と一致しません。"
 
-#: includes/Payments/Contract/Ledger.php:1840
+#: includes/Payments/Contract/Ledger.php:1849
 msgid "The order is not covered by its payments."
 msgstr "注文金額が支払いで全額カバーされていません。"
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1986
+#: includes/Payments/Contract/Ledger.php:1995
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOSの支払い%sは取り消されました。"
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1988
+#: includes/Payments/Contract/Ledger.php:1997
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOSの支払い%1$sは取り消されました：%2$s"
 
+#: includes/Payments/Contract/Ledger.php:2038
+msgid "Tender correction is not available while a fiscal module is active."
+msgstr "税務モジュールが有効な間は、決済方法を修正できません。"
+
+#: includes/Payments/Contract/Ledger.php:2075
+msgid "This payment cannot be corrected."
+msgstr "この決済は修正できません。"
+
+#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount.
+#: includes/Payments/Contract/Ledger.php:2140
+#, php-format
+msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s)"
+msgstr "WCPOS決済 %1$s を修正しました：%2$s から %3$s（%4$s）"
+
+#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount, 5: reference the cashier gave.
+#: includes/Payments/Contract/Ledger.php:2142
+#, php-format
+msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s), reference %5$s"
+msgstr "WCPOS決済 %1$s を修正しました：%2$s から %3$s（%4$s）、参照番号 %5$s"
+
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2684
+#: includes/Payments/Contract/Ledger.php:2893
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s が完了しませんでした。手動で照合してください。"
 
-#: includes/Payments/Contract/Ledger.php:3072
+#: includes/Payments/Contract/Ledger.php:3282
 msgid "Payment not found."
 msgstr "支払いが見つかりません。"
 
-#: includes/Payments/Contract/Ledger.php:3082
+#: includes/Payments/Contract/Ledger.php:3292
 msgid "Payment transition is invalid."
 msgstr "支払いの状態遷移が無効です。"
 
@@ -1961,14 +1981,14 @@ msgid "Invalid receipt document."
 msgstr "レシートのドキュメントが無効です。"
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:114
-#: includes/Services/Fiscal_Record_Writers.php:455
+#: includes/Services/Fiscal_Record_Writers.php:119
+#: includes/Services/Fiscal_Record_Writers.php:460
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "POSの税務記録%sを書き込めませんでした。復旧が必要です。"
 
-#: includes/Services/Fiscal_Record_Writers.php:315
-#: includes/Services/Fiscal_Record_Writers.php:439
+#: includes/Services/Fiscal_Record_Writers.php:320
+#: includes/Services/Fiscal_Record_Writers.php:444
 msgid "POS fiscal sale record recovered."
 msgstr "POSの税務上の販売記録を復元しました。"
 
@@ -2005,7 +2025,7 @@ msgstr "ゲスト"
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
 #: includes/Services/Receipt_Data_Builder.php:611
-#: includes/Services/Receipt_Data_Builder.php:1054
+#: includes/Services/Receipt_Data_Builder.php:1048
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:2170
 #, php-format
 msgid "Store #%d"
@@ -2150,7 +2170,7 @@ msgstr "ご購入ありがとうございます！"
 #: includes/Services/Preview_Receipt_Builder.php:1230
 #: includes/Services/Preview_Receipt_Builder.php:1255
 #: includes/Services/Receipt_Data_Schema.php:835
-#: includes/Services/Receipt_Data_Schema.php:1524
+#: includes/Services/Receipt_Data_Schema.php:1525
 #: includes/Services/Receipt_I18n_Labels.php:233
 #: includes/Services/Reports_Registry.php:243
 #: templates/closure.php:47
@@ -2417,13 +2437,13 @@ msgstr "フッターインプリント"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:331
-#: includes/Services/Receipt_Data_Schema.php:1553
+#: includes/Services/Receipt_Data_Schema.php:1554
 msgid "Cashier ID"
 msgstr "キャッシャーID"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:335
-#: includes/Services/Receipt_Data_Schema.php:1557
+#: includes/Services/Receipt_Data_Schema.php:1558
 msgid "Cashier Name"
 msgstr "キャッシャー名"
 
@@ -2472,8 +2492,8 @@ msgstr "顧客の税ID"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:373
 #: includes/Services/Receipt_Data_Schema.php:395
-#: includes/Services/Receipt_Data_Schema.php:1564
-#: includes/Services/Receipt_Data_Schema.php:1943
+#: includes/Services/Receipt_Data_Schema.php:1565
+#: includes/Services/Receipt_Data_Schema.php:1944
 #: includes/Services/Receipt_I18n_Labels.php:78
 #: includes/Services/Reports_Registry.php:257
 #: templates/closure.php:93
@@ -2484,8 +2504,8 @@ msgstr "タイプ"
 #: includes/Services/Receipt_Data_Schema.php:377
 #: includes/Services/Receipt_Data_Schema.php:399
 #: includes/Services/Receipt_Data_Schema.php:1269
-#: includes/Services/Receipt_Data_Schema.php:1529
-#: includes/Services/Receipt_Data_Schema.php:1853
+#: includes/Services/Receipt_Data_Schema.php:1530
+#: includes/Services/Receipt_Data_Schema.php:1854
 msgid "Value"
 msgstr "値"
 
@@ -2500,7 +2520,7 @@ msgstr "国"
 #: includes/Services/Receipt_Data_Schema.php:385
 #: includes/Services/Receipt_Data_Schema.php:407
 #: includes/Services/Receipt_Data_Schema.php:1265
-#: includes/Services/Receipt_Data_Schema.php:1829
+#: includes/Services/Receipt_Data_Schema.php:1830
 msgid "Label"
 msgstr "ラベル"
 
@@ -2705,7 +2725,7 @@ msgstr "単価（税抜）"
 #. translators: Receipt total-row label for the order subtotal before final total adjustments.
 #: includes/Services/Receipt_Data_Schema.php:584
 #: includes/Services/Receipt_Data_Schema.php:735
-#: includes/Services/Receipt_Data_Schema.php:1962
+#: includes/Services/Receipt_Data_Schema.php:1963
 #: includes/Services/Receipt_I18n_Labels.php:226
 msgid "Subtotal"
 msgstr "小計"
@@ -2794,7 +2814,7 @@ msgstr "費用ラベル"
 #: includes/Services/Receipt_Data_Schema.php:680
 #: includes/Services/Receipt_Data_Schema.php:718
 #: includes/Services/Receipt_Data_Schema.php:797
-#: includes/Services/Receipt_Data_Schema.php:1605
+#: includes/Services/Receipt_Data_Schema.php:1606
 #: includes/Services/Receipt_I18n_Labels.php:228
 #: templates/receipt.php:229
 msgid "Total"
@@ -2868,7 +2888,7 @@ msgstr "クーポンタイプ"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:731
-#: includes/Services/Receipt_Data_Schema.php:1875
+#: includes/Services/Receipt_Data_Schema.php:1876
 msgid "Totals"
 msgstr "合計"
 
@@ -3071,9 +3091,9 @@ msgstr "支払い方法"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Generic receipt column/field label for a monetary amount.
 #: includes/Services/Receipt_Data_Schema.php:920
-#: includes/Services/Receipt_Data_Schema.php:1527
-#: includes/Services/Receipt_Data_Schema.php:1531
-#: includes/Services/Receipt_Data_Schema.php:1659
+#: includes/Services/Receipt_Data_Schema.php:1528
+#: includes/Services/Receipt_Data_Schema.php:1532
+#: includes/Services/Receipt_Data_Schema.php:1660
 #: includes/Services/Receipt_I18n_Labels.php:256
 #: includes/Services/Reports_Registry.php:260
 #: templates/closure.php:93
@@ -3083,7 +3103,7 @@ msgstr "金額"
 #. translators: Template-editor field label for the money received from the customer at checkout; use the target-language equivalent of "Received", not procurement tender/bid language.
 #. translators: Standalone receipt/payment label meaning money received from the customer at checkout. Use the target-language equivalent of "Received" as a concise label; do not use wording that means "Amount paid/deposited", and do not use procurement tender/bid language.
 #: includes/Services/Receipt_Data_Schema.php:924
-#: includes/Services/Receipt_Data_Schema.php:1667
+#: includes/Services/Receipt_Data_Schema.php:1668
 #: includes/Services/Receipt_I18n_Labels.php:236
 #: templates/receipt.php:363
 msgid "Tendered"
@@ -3467,12 +3487,12 @@ msgid "Printed Number"
 msgstr "印刷番号"
 
 #: includes/Services/Receipt_Data_Schema.php:1319
-#: includes/Services/Receipt_Data_Schema.php:1893
+#: includes/Services/Receipt_Data_Schema.php:1894
 msgid "Session ID"
 msgstr "セッションID"
 
 #: includes/Services/Receipt_Data_Schema.php:1320
-#: includes/Services/Receipt_Data_Schema.php:1889
+#: includes/Services/Receipt_Data_Schema.php:1890
 msgid "Business Day"
 msgstr "営業日"
 
@@ -3705,13 +3725,14 @@ msgid "Denominations"
 msgstr "金種"
 
 #: includes/Services/Receipt_Data_Schema.php:1411
-#: includes/Services/Receipt_Data_Schema.php:1548
+#: includes/Services/Receipt_Data_Schema.php:1549
 #: includes/Services/Receipt_I18n_Labels.php:86
 #: templates/closure.php:116
 msgid "Cashiers"
 msgstr "レジ係"
 
 #: includes/Services/Receipt_Data_Schema.php:1422
+#: includes/Services/Receipt_Data_Schema.php:1520
 msgid "Corrections"
 msgstr "修正"
 
@@ -3740,7 +3761,7 @@ msgid "Approver Name"
 msgstr "承認者名"
 
 #: includes/Services/Receipt_Data_Schema.php:1450
-#: includes/Services/Receipt_Data_Schema.php:1566
+#: includes/Services/Receipt_Data_Schema.php:1567
 #: includes/Services/Receipt_I18n_Labels.php:79
 #: includes/Services/Reports_Registry.php:258
 #: templates/closure.php:93
@@ -3748,7 +3769,7 @@ msgid "Reason"
 msgstr "理由"
 
 #: includes/Services/Receipt_Data_Schema.php:1454
-#: includes/Services/Receipt_Data_Schema.php:1567
+#: includes/Services/Receipt_Data_Schema.php:1568
 msgid "Created (UTC)"
 msgstr "作成日時（UTC）"
 
@@ -3814,148 +3835,148 @@ msgstr "支払方法キー"
 msgid "Sales"
 msgstr "売上"
 
-#: includes/Services/Receipt_Data_Schema.php:1522
+#: includes/Services/Receipt_Data_Schema.php:1523
 msgid "Tax Rate"
 msgstr "税率"
 
-#: includes/Services/Receipt_Data_Schema.php:1523
+#: includes/Services/Receipt_Data_Schema.php:1524
 #: includes/Services/Receipt_I18n_Labels.php:89
 #: includes/Services/Reports_Registry.php:242
 #: templates/closure.php:46
 msgid "Net"
 msgstr "税抜"
 
-#: includes/Services/Receipt_Data_Schema.php:1525
+#: includes/Services/Receipt_Data_Schema.php:1526
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:240
 #: templates/closure.php:48
 msgid "Gross"
 msgstr "税込"
 
-#: includes/Services/Receipt_Data_Schema.php:1530
+#: includes/Services/Receipt_Data_Schema.php:1531
 #: includes/Services/Receipt_I18n_Labels.php:50
 msgid "Pieces"
 msgstr "枚数"
 
-#: includes/Services/Receipt_Data_Schema.php:1565
+#: includes/Services/Receipt_Data_Schema.php:1566
 msgid "Movement Label"
 msgstr "移動ラベル"
 
-#: includes/Services/Receipt_Data_Schema.php:1576
+#: includes/Services/Receipt_Data_Schema.php:1577
 #: includes/Services/Receipt_I18n_Labels.php:98
 #: templates/closure.php:98
 msgid "Voided"
 msgstr "取消済み"
 
-#: includes/Services/Receipt_Data_Schema.php:1580
+#: includes/Services/Receipt_Data_Schema.php:1581
 msgid "Created"
 msgstr "作成日時"
 
-#: includes/Services/Receipt_Data_Schema.php:1589
-#: includes/Services/Receipt_Data_Schema.php:1857
+#: includes/Services/Receipt_Data_Schema.php:1590
+#: includes/Services/Receipt_Data_Schema.php:1858
 msgid "Formatted"
 msgstr "書式設定済み"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
-#: includes/Services/Receipt_Data_Schema.php:1597
+#: includes/Services/Receipt_Data_Schema.php:1598
 #: includes/Templates/Gallery_Registry.php:92
 msgid "Ledger"
 msgstr "台帳"
 
 #. translators: Receipt label for order/document status.
-#: includes/Services/Receipt_Data_Schema.php:1601
-#: includes/Services/Receipt_Data_Schema.php:1655
+#: includes/Services/Receipt_Data_Schema.php:1602
+#: includes/Services/Receipt_Data_Schema.php:1656
 #: includes/Services/Receipt_I18n_Labels.php:306
 msgid "Status"
 msgstr "ステータス"
 
-#: includes/Services/Receipt_Data_Schema.php:1609
+#: includes/Services/Receipt_Data_Schema.php:1610
 msgid "Total (raw)"
 msgstr "合計（未加工）"
 
 #. translators: Receipt payment-section heading for amounts already paid by the customer.
-#: includes/Services/Receipt_Data_Schema.php:1613
+#: includes/Services/Receipt_Data_Schema.php:1614
 #: includes/Services/Receipt_I18n_Labels.php:234
 #: templates/receipt.php:355
 msgid "Paid"
 msgstr "支払済み"
 
-#: includes/Services/Receipt_Data_Schema.php:1617
+#: includes/Services/Receipt_Data_Schema.php:1618
 msgid "Paid (raw)"
 msgstr "支払済み（未加工）"
 
-#: includes/Services/Receipt_Data_Schema.php:1621
+#: includes/Services/Receipt_Data_Schema.php:1622
 msgid "Due"
 msgstr "未払い"
 
-#: includes/Services/Receipt_Data_Schema.php:1625
+#: includes/Services/Receipt_Data_Schema.php:1626
 msgid "Due (raw)"
 msgstr "未払い（未加工）"
 
-#: includes/Services/Receipt_Data_Schema.php:1633
-#: includes/Services/Receipt_Data_Schema.php:1679
+#: includes/Services/Receipt_Data_Schema.php:1634
+#: includes/Services/Receipt_Data_Schema.php:1680
 msgid "Change (raw)"
 msgstr "お釣り（未加工）"
 
-#: includes/Services/Receipt_Data_Schema.php:1638
+#: includes/Services/Receipt_Data_Schema.php:1639
 msgid "Ledger payments"
 msgstr "台帳の支払い"
 
-#: includes/Services/Receipt_Data_Schema.php:1643
+#: includes/Services/Receipt_Data_Schema.php:1644
 msgid "ID"
 msgstr "ID"
 
-#: includes/Services/Receipt_Data_Schema.php:1647
+#: includes/Services/Receipt_Data_Schema.php:1648
 #: includes/Services/Reports_Registry.php:244
 msgid "Method"
 msgstr "方法"
 
-#: includes/Services/Receipt_Data_Schema.php:1651
+#: includes/Services/Receipt_Data_Schema.php:1652
 msgid "Kind"
 msgstr "種類"
 
-#: includes/Services/Receipt_Data_Schema.php:1663
+#: includes/Services/Receipt_Data_Schema.php:1664
 msgid "Amount (raw)"
 msgstr "金額（未加工）"
 
-#: includes/Services/Receipt_Data_Schema.php:1671
+#: includes/Services/Receipt_Data_Schema.php:1672
 msgid "Tendered (raw)"
 msgstr "受領額（未加工）"
 
-#: includes/Services/Receipt_Data_Schema.php:1684
+#: includes/Services/Receipt_Data_Schema.php:1685
 msgid "Assets"
 msgstr "アセット"
 
-#: includes/Services/Receipt_Data_Schema.php:1688
+#: includes/Services/Receipt_Data_Schema.php:1689
 msgid "Plugin image folder URL (example pictures)"
 msgstr "プラグイン画像フォルダーのURL（サンプル画像）"
 
-#: includes/Services/Receipt_Data_Schema.php:1693
+#: includes/Services/Receipt_Data_Schema.php:1694
 msgid "Payment"
 msgstr "支払い"
 
-#: includes/Services/Receipt_Data_Schema.php:1697
+#: includes/Services/Receipt_Data_Schema.php:1698
 msgid "State"
 msgstr "州"
 
-#: includes/Services/Receipt_Data_Schema.php:1701
+#: includes/Services/Receipt_Data_Schema.php:1702
 msgid "Message"
 msgstr "メッセージ"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1737
+#: includes/Services/Receipt_Data_Schema.php:1738
 msgid "Date & Time"
 msgstr "日時"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the sale/order date.
-#: includes/Services/Receipt_Data_Schema.php:1741
+#: includes/Services/Receipt_Data_Schema.php:1742
 #: includes/Services/Receipt_I18n_Labels.php:108
 msgid "Date"
 msgstr "日付"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1745
+#: includes/Services/Receipt_Data_Schema.php:1746
 #: includes/Services/Receipt_I18n_Labels.php:77
 #: includes/Services/Reports_Registry.php:256
 #: templates/closure.php:93
@@ -3963,197 +3984,197 @@ msgid "Time"
 msgstr "時刻"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1749
+#: includes/Services/Receipt_Data_Schema.php:1750
 msgid "Short Date & Time"
 msgstr "短い日時"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1753
+#: includes/Services/Receipt_Data_Schema.php:1754
 msgid "Long Date & Time"
 msgstr "長い日時"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1757
+#: includes/Services/Receipt_Data_Schema.php:1758
 msgid "Full Date & Time"
 msgstr "完全な日時"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1761
+#: includes/Services/Receipt_Data_Schema.php:1762
 msgid "Short Date"
 msgstr "短い日付"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1765
+#: includes/Services/Receipt_Data_Schema.php:1766
 msgid "Long Date"
 msgstr "長い日付"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1769
+#: includes/Services/Receipt_Data_Schema.php:1770
 msgid "Full Date"
 msgstr "完全な日付"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1773
+#: includes/Services/Receipt_Data_Schema.php:1774
 msgid "YYYY-MM-DD"
 msgstr "YYYY-MM-DD"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1777
+#: includes/Services/Receipt_Data_Schema.php:1778
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1781
+#: includes/Services/Receipt_Data_Schema.php:1782
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1785
+#: includes/Services/Receipt_Data_Schema.php:1786
 msgid "Weekday Short"
 msgstr "曜日（短）"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1789
+#: includes/Services/Receipt_Data_Schema.php:1790
 msgid "Weekday Long"
 msgstr "曜日（長）"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1793
+#: includes/Services/Receipt_Data_Schema.php:1794
 msgid "Day"
 msgstr "日"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1797
+#: includes/Services/Receipt_Data_Schema.php:1798
 msgid "Month Number"
 msgstr "月番号"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1801
+#: includes/Services/Receipt_Data_Schema.php:1802
 msgid "Month Short"
 msgstr "月（短）"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1805
+#: includes/Services/Receipt_Data_Schema.php:1806
 msgid "Month Long"
 msgstr "月（長）"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1809
+#: includes/Services/Receipt_Data_Schema.php:1810
 msgid "Year"
 msgstr "年"
 
-#: includes/Services/Receipt_Data_Schema.php:1825
+#: includes/Services/Receipt_Data_Schema.php:1826
 msgid "Key"
 msgstr "キー"
 
-#: includes/Services/Receipt_Data_Schema.php:1834
+#: includes/Services/Receipt_Data_Schema.php:1835
 msgid "First entry"
 msgstr "最初の入力"
 
-#: includes/Services/Receipt_Data_Schema.php:1839
+#: includes/Services/Receipt_Data_Schema.php:1840
 msgid "Cells"
 msgstr "セル"
 
-#: includes/Services/Receipt_Data_Schema.php:1845
+#: includes/Services/Receipt_Data_Schema.php:1846
 msgid "Column label"
 msgstr "列ラベル"
 
-#: includes/Services/Receipt_Data_Schema.php:1849
+#: includes/Services/Receipt_Data_Schema.php:1850
 msgid "Repeats the row heading"
 msgstr "行見出しを繰り返す"
 
-#: includes/Services/Receipt_Data_Schema.php:1863
-#: includes/Services/Receipt_Data_Schema.php:1947
+#: includes/Services/Receipt_Data_Schema.php:1864
+#: includes/Services/Receipt_Data_Schema.php:1948
 msgid "Alignment"
 msgstr "配置"
 
-#: includes/Services/Receipt_Data_Schema.php:1870
+#: includes/Services/Receipt_Data_Schema.php:1871
 msgid "Rows"
 msgstr "行"
 
-#: includes/Services/Receipt_Data_Schema.php:1881
+#: includes/Services/Receipt_Data_Schema.php:1882
 msgid "Mode"
 msgstr "モード"
 
-#: includes/Services/Receipt_Data_Schema.php:1897
+#: includes/Services/Receipt_Data_Schema.php:1898
 msgid "Session Number"
 msgstr "セッション番号"
 
-#: includes/Services/Receipt_Data_Schema.php:1901
+#: includes/Services/Receipt_Data_Schema.php:1902
 msgid "Opened At"
 msgstr "開始日時"
 
-#: includes/Services/Receipt_Data_Schema.php:1902
+#: includes/Services/Receipt_Data_Schema.php:1903
 msgid "Closed At"
 msgstr "終了日時"
 
-#: includes/Services/Receipt_Data_Schema.php:1903
+#: includes/Services/Receipt_Data_Schema.php:1904
 msgid "From"
 msgstr "開始"
 
-#: includes/Services/Receipt_Data_Schema.php:1904
+#: includes/Services/Receipt_Data_Schema.php:1905
 msgid "To"
 msgstr "終了"
 
-#: includes/Services/Receipt_Data_Schema.php:1913
+#: includes/Services/Receipt_Data_Schema.php:1914
 #: includes/Templates.php:598
 #: includes/Templates/Gallery_Registry.php:590
 msgid "Report"
 msgstr "レポート"
 
-#: includes/Services/Receipt_Data_Schema.php:1918
+#: includes/Services/Receipt_Data_Schema.php:1919
 msgid "Title"
 msgstr "タイトル"
 
-#: includes/Services/Receipt_Data_Schema.php:1922
+#: includes/Services/Receipt_Data_Schema.php:1923
 msgid "Subtitle"
 msgstr "サブタイトル"
 
-#: includes/Services/Receipt_Data_Schema.php:1926
+#: includes/Services/Receipt_Data_Schema.php:1927
 msgid "Scope"
 msgstr "対象範囲"
 
-#: includes/Services/Receipt_Data_Schema.php:1932
+#: includes/Services/Receipt_Data_Schema.php:1933
 msgid "Group By"
 msgstr "グループ化"
 
-#: includes/Services/Receipt_Data_Schema.php:1938
+#: includes/Services/Receipt_Data_Schema.php:1939
 msgid "Columns"
 msgstr "列"
 
-#: includes/Services/Receipt_Data_Schema.php:1953
+#: includes/Services/Receipt_Data_Schema.php:1954
 msgid "Column Count"
 msgstr "列数"
 
-#: includes/Services/Receipt_Data_Schema.php:1959
+#: includes/Services/Receipt_Data_Schema.php:1960
 msgid "Groups"
 msgstr "グループ"
 
-#: includes/Services/Receipt_Data_Schema.php:1968
+#: includes/Services/Receipt_Data_Schema.php:1969
 msgid "Count"
 msgstr "件数"
 
-#: includes/Services/Receipt_Data_Schema.php:1972
+#: includes/Services/Receipt_Data_Schema.php:1973
 msgid "Has Groups"
 msgstr "グループあり"
 
-#: includes/Services/Receipt_Data_Schema.php:1976
+#: includes/Services/Receipt_Data_Schema.php:1977
 msgid "Has Rows"
 msgstr "行あり"
 
-#: includes/Services/Receipt_Data_Schema.php:1980
+#: includes/Services/Receipt_Data_Schema.php:1981
 msgid "Generated At"
 msgstr "生成日時"
 
-#: includes/Services/Receipt_Data_Schema.php:1985
+#: includes/Services/Receipt_Data_Schema.php:1986
 msgid "Is Partial"
 msgstr "一部のみ"
 
-#: includes/Services/Receipt_Data_Schema.php:1989
+#: includes/Services/Receipt_Data_Schema.php:1990
 msgid "Partial Reason"
 msgstr "一部のみの理由"
 
-#: includes/Services/Receipt_Data_Schema.php:1995
+#: includes/Services/Receipt_Data_Schema.php:1996
 msgid "Is Report Document"
 msgstr "レポート文書"
 
@@ -5260,19 +5281,19 @@ msgstr "注文番号 #%s の領収書をダウンロード"
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:191
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:247
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:304
 msgid "Filter orders by POS cashier."
 msgstr "POSキャッシャーで注文をフィルタリング。"
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:197
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:252
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:309
 msgid "Filter orders by POS store."
 msgstr "POS店舗で注文をフィルタリング。"
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:202
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:257
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:314
 msgid "Filter orders by POS register."
 msgstr "POSレジで注文を絞り込む。"
 
