@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Document de tiquet no vàlid.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'No s\'ha pogut escriure el registre fiscal %s del TPV; caldrà recuperar-lo.',
 		'POS fiscal sale record recovered.' => 'S\'ha recuperat el registre fiscal de la venda del POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'No s’ha pogut desar el registre de correcció del pagament fiscal del TPV; caldrà recuperar-lo.',
 		'Closed' => 'Tancat',
 		'POS provenance keys cannot be changed after the sale: %s' => 'No es poden canviar les claus de procedència del TPV un cop feta la venda: %s',
 		'Unknown' => 'Desconegut',

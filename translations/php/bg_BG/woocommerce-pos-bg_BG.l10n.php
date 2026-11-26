@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Невалиден документ на касова бележка.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Фискалният запис %s на POS не можа да бъде записан; ще трябва да бъде възстановен.',
 		'POS fiscal sale record recovered.' => 'Възстановен е фискалният запис за продажба на POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Записът за корекция на фискалния начин на плащане в POS не можа да бъде записан; ще трябва да бъде възстановен.',
 		'Closed' => 'Затворен',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ключовете за произход на POS не могат да се променят след продажбата: %s',
 		'Unknown' => 'Непознат',

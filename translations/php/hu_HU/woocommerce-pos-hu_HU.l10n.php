@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Érvénytelen nyugta-dokumentum.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'A POS adóügyi %s rekordját nem sikerült megírni; helyreállításra lesz szükség.',
 		'POS fiscal sale record recovered.' => 'A POS értékesítés adóügyi rekordja helyreállítva.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'A POS adóügyi fizetési korrekciós rekordját nem sikerült rögzíteni; helyre kell állítani.',
 		'Closed' => 'Lezárva',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Az értékesítés után a POS eredetkulcsai nem módosíthatók: %s',
 		'Unknown' => 'Ismeretlen',

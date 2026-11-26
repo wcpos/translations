@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Dokumen struk tidak valid.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Catatan fiskal POS %s tidak dapat ditulis; catatan ini perlu dipulihkan.',
 		'POS fiscal sale record recovered.' => 'Catatan fiskal penjualan POS berhasil dipulihkan.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Catatan koreksi metode pembayaran fiskal POS tidak dapat ditulis; catatan ini perlu dipulihkan.',
 		'Closed' => 'Ditutup',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Key asal transaksi POS tidak dapat diubah setelah penjualan: %s',
 		'Unknown' => 'Tidak diketahui',

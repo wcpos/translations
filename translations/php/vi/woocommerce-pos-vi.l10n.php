@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Tài liệu biên lai không hợp lệ.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Không thể ghi hồ sơ thuế POS %s; cần khôi phục.',
 		'POS fiscal sale record recovered.' => 'Đã khôi phục bản ghi tài chính của giao dịch bán hàng POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Không thể ghi bản ghi điều chỉnh phương thức thanh toán thuế của POS; cần khôi phục bản ghi này.',
 		'Closed' => 'Đã đóng',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Không thể thay đổi khóa nguồn gốc POS sau khi bán: %s',
 		'Unknown' => 'Không xác định',

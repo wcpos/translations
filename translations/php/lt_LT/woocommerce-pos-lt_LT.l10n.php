@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Netinkamas kvito dokumentas.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Nepavyko įrašyti POS fiskalinio %s įrašo; jį reikės atkurti.',
 		'POS fiscal sale record recovered.' => 'Atkurtas POS pardavimo fiskalinis įrašas.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Nepavyko įrašyti POS fiskalinio mokėjimo būdo taisymo įrašo; jį reikės atkurti.',
 		'Closed' => 'Uždaryta',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Po pardavimo POS kilmės duomenų raktų pakeisti negalima: %s',
 		'Unknown' => 'Nežinomas',

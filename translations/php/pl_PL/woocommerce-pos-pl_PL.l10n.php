@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Nieprawidłowy dokument paragonu.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Nie można zapisać fiskalnego rekordu POS %s; będzie wymagać odzyskania.',
 		'POS fiscal sale record recovered.' => 'Przywrócono fiskalny zapis sprzedaży POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Nie udało się zapisać rekordu korekty fiskalnej metody płatności POS; trzeba go odzyskać.',
 		'Closed' => 'Zamknięte',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Nie można zmienić kluczy pochodzenia POS po sprzedaży: %s',
 		'Unknown' => 'Nieznany',

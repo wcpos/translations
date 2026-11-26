@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Virheellinen kuittiasiakirja.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS-verotietuetta %s ei voitu kirjoittaa; se on palautettava.',
 		'POS fiscal sale record recovered.' => 'POS-myynnin verotietue palautettiin.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'POS-maksutavan verokorjaustietuetta ei voitu kirjoittaa; se on palautettava.',
 		'Closed' => 'Suljettu',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-alkuperätietojen avaimia ei voi muuttaa myynnin jälkeen: %s',
 		'Unknown' => 'Tuntematon',

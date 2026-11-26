@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'ឯកសារបង្កាន់ដៃមិនត្រឹមត្រូវ។',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'មិនអាចសរសេរកំណត់ត្រាពន្ធដារ POS %s បានទេ។ ត្រូវស្តារវាឡើងវិញ។',
 		'POS fiscal sale record recovered.' => 'បានស្ដារកំណត់ត្រាពន្ធនៃការលក់ POS ឡើងវិញ។',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'មិនអាចសរសេរកំណត់ត្រាកែតម្រូវវិធីបង់ប្រាក់សារពើពន្ធរបស់ POS បានទេ។ ត្រូវស្ដារវាឡើងវិញ។',
 		'Closed' => 'បិទ',
 		'POS provenance keys cannot be changed after the sale: %s' => 'មិនអាចប្តូរ Key ប្រភព POS ក្រោយការលក់បានទេ៖ %s',
 		'Unknown' => 'មិនស្គាល់',

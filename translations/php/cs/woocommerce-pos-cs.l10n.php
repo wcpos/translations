@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Neplatný dokument účtenky.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Fiskální záznam POS %s se nepodařilo zapsat; bude nutné jej obnovit.',
 		'POS fiscal sale record recovered.' => 'Fiskální záznam prodeje POS byl obnoven.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Záznam o opravě fiskální platby v POS se nepodařilo uložit; bude nutné jej obnovit.',
 		'Closed' => 'Uzavřeno',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Klíče původu POS po prodeji nelze změnit: %s',
 		'Unknown' => 'Neznámý',

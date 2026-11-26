@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Fiş belgesi geçersiz.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'POS mali %s kaydı yazılamadı; kurtarılması gerekecek.',
 		'POS fiscal sale record recovered.' => 'POS mali satış kaydı kurtarıldı.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'POS mali ödeme yöntemi düzeltme kaydı yazılamadı; kurtarılması gerekecek.',
 		'Closed' => 'Kapalı',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Satıştan sonra POS kaynak bilgisi anahtarları değiştirilemez: %s',
 		'Unknown' => 'Bilinmeyen',

@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'מסמך הקבלה אינו תקין.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'לא ניתן היה לכתוב את רשומת המס של POS %s; יהיה צורך לשחזר אותה.',
 		'POS fiscal sale record recovered.' => 'רשומת המכירה הפיסקלית של POS שוחזרה.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'לא ניתן היה לכתוב את רשומת תיקון אמצעי התשלום לצורכי מס בקופה; יהיה צורך לשחזר אותה.',
 		'Closed' => 'נסגר',
 		'POS provenance keys cannot be changed after the sale: %s' => 'אי אפשר לשנות מפתחות מקור של POS לאחר המכירה: %s',
 		'Unknown' => 'לא ידוע',

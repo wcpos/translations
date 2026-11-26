@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'سند رسید نامعتبر است.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'نوشتن سابقه مالی POS %s ممکن نشد؛ باید بازیابی شود.',
 		'POS fiscal sale record recovered.' => 'سابقه مالی فروش POS بازیابی شد.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'ثبت اصلاح روش پرداخت مالیاتی POS ذخیره نشد؛ باید بازیابی شود.',
 		'Closed' => 'بسته شد',
 		'POS provenance keys cannot be changed after the sale: %s' => 'کلیدهای منشأ POS پس از فروش قابل تغییر نیستند: %s',
 		'Unknown' => 'ناشناخته',

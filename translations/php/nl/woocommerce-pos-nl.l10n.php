@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Ongeldig bonbestand.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Fiscaal POS-record %s kon niet worden geschreven; herstel is nodig.',
 		'POS fiscal sale record recovered.' => 'Het fiscale verkooprecord van POS is hersteld.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'De registratie van de fiscale betaalmethodecorrectie in POS kon niet worden opgeslagen; deze moet worden hersteld.',
 		'Closed' => 'Gesloten',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Herkomstsleutels van de POS kunnen na de verkoop niet worden gewijzigd: %s',
 		'Unknown' => 'Onbekend',

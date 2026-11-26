@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Μη έγκυρο έγγραφο απόδειξης.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Δεν ήταν δυνατή η εγγραφή φορολογικού αρχείου POS %s· θα χρειαστεί ανάκτηση.',
 		'POS fiscal sale record recovered.' => 'Ανακτήθηκε η φορολογική εγγραφή πώλησης του POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Δεν ήταν δυνατή η καταχώριση της διόρθωσης του φορολογικού τρόπου πληρωμής στο POS· θα χρειαστεί ανάκτηση.',
 		'Closed' => 'Κλειστό',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Δεν είναι δυνατή η αλλαγή των Key προέλευσης POS μετά την πώληση: %s',
 		'Unknown' => 'Άγνωστο',

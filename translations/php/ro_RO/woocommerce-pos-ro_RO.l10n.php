@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Document nevalid pentru bon.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Înregistrarea fiscală POS %s nu a putut fi scrisă; va trebui recuperată.',
 		'POS fiscal sale record recovered.' => 'Înregistrarea fiscală a vânzării POS a fost recuperată.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Înregistrarea de corectare a metodei de plată fiscale POS nu a putut fi scrisă; va trebui recuperată.',
 		'Closed' => 'Închis',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Cheile de proveniență POS nu pot fi schimbate după vânzare: %s',
 		'Unknown' => 'Necunoscut',

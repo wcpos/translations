@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Documento della ricevuta non valido.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Non è stato possibile scrivere il documento fiscale POS %s; sarà necessario ripristinarlo.',
 		'POS fiscal sale record recovered.' => 'Il record fiscale della vendita POS è stato recuperato.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Non è stato possibile scrivere il record di rettifica del metodo di pagamento fiscale del POS; sarà necessario recuperarlo.',
 		'Closed' => 'Chiuso',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Le chiavi di provenienza POS non possono essere modificate dopo la vendita: %s',
 		'Unknown' => 'Sconosciuto',

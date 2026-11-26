@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'เอกสารใบเสร็จไม่ถูกต้อง',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'เขียนระเบียนทางภาษี POS %s ไม่ได้ ต้องกู้คืน',
 		'POS fiscal sale record recovered.' => 'กู้คืนระเบียนการขายทางการคลังของ POS แล้ว',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'ไม่สามารถบันทึกรายการแก้ไขวิธีชำระเงินทางภาษีของ POS ได้ ต้องกู้คืนรายการนี้',
 		'Closed' => 'ปิดแล้ว',
 		'POS provenance keys cannot be changed after the sale: %s' => 'เปลี่ยน Key ที่ระบุที่มาของ POS หลังการขายไม่ได้: %s',
 		'Unknown' => 'ไม่ทราบ',

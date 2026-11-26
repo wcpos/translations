@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Dokumen resit tidak sah.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Rekod fiskal POS %s tidak dapat ditulis; pemulihan diperlukan.',
 		'POS fiscal sale record recovered.' => 'Rekod fiskal jualan POS telah dipulihkan.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Rekod pembetulan kaedah pembayaran fiskal POS tidak dapat ditulis; rekod ini perlu dipulihkan.',
 		'Closed' => 'Ditutup',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Kunci asal-usul POS tidak boleh diubah selepas jualan: %s',
 		'Unknown' => 'Tidak Diketahui',

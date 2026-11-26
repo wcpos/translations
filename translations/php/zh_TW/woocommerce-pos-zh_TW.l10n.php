@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => '收據文件無效。',
 		'POS fiscal %s record could not be written; it will need recovery.' => '無法寫入 POS 稅務 %s 紀錄；需要復原處理。',
 		'POS fiscal sale record recovered.' => '已復原 POS 銷售的稅務紀錄。',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => '無法寫入 POS 財務付款方式更正記錄；需要復原該記錄。',
 		'Closed' => '已關閉',
 		'POS provenance keys cannot be changed after the sale: %s' => '銷售完成後，無法變更 POS 來源 Key：%s',
 		'Unknown' => '未知',

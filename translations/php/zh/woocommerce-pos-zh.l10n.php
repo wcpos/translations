@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => '收据文档无效。',
 		'POS fiscal %s record could not be written; it will need recovery.' => '无法写入 POS 税务记录 %s；需要恢复。',
 		'POS fiscal sale record recovered.' => '已恢复 POS 销售的税务记录。',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => '无法写入 POS 财务付款方式更正记录；需要恢复该记录。',
 		'Closed' => '已关闭',
 		'POS provenance keys cannot be changed after the sale: %s' => '销售完成后，无法更改 POS 来源记录键：%s',
 		'Unknown' => '未知',

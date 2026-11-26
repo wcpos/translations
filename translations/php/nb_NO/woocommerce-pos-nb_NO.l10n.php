@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Ugyldig kvitteringsdokument.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Den fiskale POS-registreringen av typen %s kunne ikke skrives; den må gjenopprettes.',
 		'POS fiscal sale record recovered.' => 'Den fiskale salgsoppføringen for POS ble gjenopprettet.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Kunne ikke skrive posten for korrigering av POS-betalingsmåten for skatteformål; den må gjenopprettes.',
 		'Closed' => 'Lukket',
 		'POS provenance keys cannot be changed after the sale: %s' => 'POS-opprinnelsesnøkler kan ikke endres etter salget: %s',
 		'Unknown' => 'Ukjent',

@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Недійсний документ чека.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Не вдалося записати фіскальний запис POS %s; його потрібно буде відновити.',
 		'POS fiscal sale record recovered.' => 'Відновлено фіскальний запис про продаж POS.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Не вдалося записати запис про коригування фіскального способу оплати в POS; його потрібно буде відновити.',
 		'Closed' => 'Закрито',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ключі походження POS не можна змінювати після продажу: %s',
 		'Unknown' => 'Невідомо',

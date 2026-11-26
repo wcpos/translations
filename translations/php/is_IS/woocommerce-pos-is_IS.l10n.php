@@ -404,6 +404,7 @@ return array(
 		'Invalid receipt document.' => 'Ógilt kvittunarskjal.',
 		'POS fiscal %s record could not be written; it will need recovery.' => 'Ekki tókst að skrá skattalega POS-færslu %s; hana þarf að endurheimta.',
 		'POS fiscal sale record recovered.' => 'Skattaskráning POS-sölunnar var endurheimt.',
+		'POS fiscal tender correction record could not be written; it will need recovery.' => 'Ekki tókst að skrifa færslu fyrir leiðréttingu á skattalegri greiðsluaðferð í POS; endurheimta þarf hana.',
 		'Closed' => 'Lokað',
 		'POS provenance keys cannot be changed after the sale: %s' => 'Ekki er hægt að breyta upprunalyklum POS eftir sölu: %s',
 		'Unknown' => 'Óþekkt',
