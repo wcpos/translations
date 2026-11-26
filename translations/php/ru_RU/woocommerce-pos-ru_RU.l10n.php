@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Без налога',
 		'Gross' => 'С налогом',
 		'Pieces' => 'Штуки',
+		'Non-zero Corrections' => 'Корректировки, отличные от нуля',
+		'Any Tender Corrected' => 'Исправлен любой способ оплаты',
 		'Movement Label' => 'Обозначение движения',
 		'Voided' => 'Аннулировано',
 		'Created' => 'Создано',

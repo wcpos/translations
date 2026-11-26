@@ -757,6 +757,8 @@ return array(
 		'Net' => 'الصافي',
 		'Gross' => 'الإجمالي',
 		'Pieces' => 'القطع',
+		'Non-zero Corrections' => 'تصحيحات غير صفرية',
+		'Any Tender Corrected' => 'تم تصحيح إحدى طرق الدفع',
 		'Movement Label' => 'وصف الحركة',
 		'Voided' => 'مُبطل',
 		'Created' => 'تاريخ الإنشاء',

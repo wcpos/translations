@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Čistá částka',
 		'Gross' => 'Hrubá částka',
 		'Pieces' => 'Kusy',
+		'Non-zero Corrections' => 'Nenulové opravy',
+		'Any Tender Corrected' => 'Opravena jakákoli platební metoda',
 		'Movement Label' => 'Označení pohybu',
 		'Voided' => 'Stornováno',
 		'Created' => 'Vytvořeno',

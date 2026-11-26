@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Be mokesčių',
 		'Gross' => 'Su mokesčiais',
 		'Pieces' => 'Vienetai',
+		'Non-zero Corrections' => 'Nulinės vertės neturinčios korekcijos',
+		'Any Tender Corrected' => 'Koreguotas bet kuris mokėjimo būdas',
 		'Movement Label' => 'Judėjimo žyma',
 		'Voided' => 'Anuliuota',
 		'Created' => 'Sukurta',

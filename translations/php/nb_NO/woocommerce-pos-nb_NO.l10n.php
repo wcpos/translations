@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netto',
 		'Gross' => 'Brutto',
 		'Pieces' => 'Stykker',
+		'Non-zero Corrections' => 'Korrigeringer ulik null',
+		'Any Tender Corrected' => 'Betalingsmåte korrigert',
 		'Movement Label' => 'Bevegelsesetikett',
 		'Voided' => 'Annullert',
 		'Created' => 'Opprettet',

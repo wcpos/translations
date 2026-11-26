@@ -757,6 +757,8 @@ return array(
 		'Net' => 'ยอดก่อนภาษี',
 		'Gross' => 'ยอดรวม (รวมภาษี)',
 		'Pieces' => 'ชิ้น',
+		'Non-zero Corrections' => 'การปรับยอดที่ไม่เป็นศูนย์',
+		'Any Tender Corrected' => 'มีการแก้ไขวิธีชำระเงินใด ๆ',
 		'Movement Label' => 'ป้ายการเคลื่อนไหว',
 		'Voided' => 'ยกเลิกแล้ว',
 		'Created' => 'สร้างแล้ว',

@@ -757,6 +757,8 @@ return array(
 		'Net' => '순액',
 		'Gross' => '총액',
 		'Pieces' => '개수',
+		'Non-zero Corrections' => '0이 아닌 수정',
+		'Any Tender Corrected' => '수정된 결제 수단 있음',
 		'Movement Label' => '이동 내역',
 		'Voided' => '무효 처리',
 		'Created' => '생성',

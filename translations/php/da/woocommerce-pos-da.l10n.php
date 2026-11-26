@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netto',
 		'Gross' => 'Brutto',
 		'Pieces' => 'Styk',
+		'Non-zero Corrections' => 'Korrektioner med værdier forskellig fra nul',
+		'Any Tender Corrected' => 'En betalingsmetode er korrigeret',
 		'Movement Label' => 'Bevægelsesbetegnelse',
 		'Voided' => 'Annulleret',
 		'Created' => 'Oprettet',

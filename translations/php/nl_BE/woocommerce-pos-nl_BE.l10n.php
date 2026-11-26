@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netto',
 		'Gross' => 'Bruto',
 		'Pieces' => 'Stuks',
+		'Non-zero Corrections' => 'Correcties ongelijk aan nul',
+		'Any Tender Corrected' => 'Betaalmethode gecorrigeerd',
 		'Movement Label' => 'Label geldbeweging',
 		'Voided' => 'Geannuleerd',
 		'Created' => 'Aangemaakt',

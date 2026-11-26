@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Нето',
 		'Gross' => 'Бруто',
 		'Pieces' => 'Парчиња',
+		'Non-zero Corrections' => 'Корекции различни од нула',
+		'Any Tender Corrected' => 'Коригиран е кој било начин на плаќање',
 		'Movement Label' => 'Ознака на движење',
 		'Voided' => 'Поништено',
 		'Created' => 'Создадено',

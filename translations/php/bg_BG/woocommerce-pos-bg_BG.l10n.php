@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Нетно',
 		'Gross' => 'Брутно',
 		'Pieces' => 'Бройки',
+		'Non-zero Corrections' => 'Корекции с ненулева стойност',
+		'Any Tender Corrected' => 'Коригиран е платежен метод',
 		'Movement Label' => 'Обозначение на движението',
 		'Voided' => 'Анулирано',
 		'Created' => 'Създадено',

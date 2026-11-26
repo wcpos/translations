@@ -757,6 +757,8 @@ return array(
 		'Net' => 'សុទ្ធ',
 		'Gross' => 'សរុបរួម',
 		'Pieces' => 'ចំនួនឯកតា',
+		'Non-zero Corrections' => 'ការកែតម្រូវដែលមិនស្មើសូន្យ',
+		'Any Tender Corrected' => 'ការកែតម្រូវវិធីទូទាត់ណាមួយ',
 		'Movement Label' => 'ស្លាកចលនាប្រាក់',
 		'Voided' => 'បានលុបចោល',
 		'Created' => 'បានបង្កើត',

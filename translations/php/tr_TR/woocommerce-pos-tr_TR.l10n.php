@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Net',
 		'Gross' => 'Brüt',
 		'Pieces' => 'Adet',
+		'Non-zero Corrections' => 'Sıfır dışı düzeltmeler',
+		'Any Tender Corrected' => 'Herhangi bir ödeme yöntemi düzeltildi',
 		'Movement Label' => 'Hareket etiketi',
 		'Voided' => 'İptal edildi',
 		'Created' => 'Oluşturuldu',

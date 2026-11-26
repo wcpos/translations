@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Thuần',
 		'Gross' => 'Gộp',
 		'Pieces' => 'Số lượng',
+		'Non-zero Corrections' => 'Các điều chỉnh khác 0',
+		'Any Tender Corrected' => 'Có điều chỉnh phương thức thanh toán',
 		'Movement Label' => 'Nhãn điều chỉnh',
 		'Voided' => 'Đã hủy',
 		'Created' => 'Đã tạo',

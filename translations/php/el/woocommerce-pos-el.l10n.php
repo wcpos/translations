@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Καθαρό',
 		'Gross' => 'Μικτό',
 		'Pieces' => 'Τεμάχια',
+		'Non-zero Corrections' => 'Μη μηδενικές διορθώσεις',
+		'Any Tender Corrected' => 'Διορθωμένος τρόπος πληρωμής',
 		'Movement Label' => 'Ένδειξη κίνησης',
 		'Voided' => 'Ακυρώθηκε',
 		'Created' => 'Δημιουργήθηκε',

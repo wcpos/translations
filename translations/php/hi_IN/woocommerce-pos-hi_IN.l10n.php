@@ -757,6 +757,8 @@ return array(
 		'Net' => 'शुद्ध',
 		'Gross' => 'सकल',
 		'Pieces' => 'इकाइयाँ',
+		'Non-zero Corrections' => 'गैर-शून्य सुधार',
+		'Any Tender Corrected' => 'किसी भी भुगतान विधि में सुधार किया गया',
 		'Movement Label' => 'गतिविधि का लेबल',
 		'Voided' => 'रद्द किया गया',
 		'Created' => 'बनाया गया',

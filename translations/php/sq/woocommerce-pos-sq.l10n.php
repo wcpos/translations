@@ -755,6 +755,8 @@ return array(
 		'Net' => 'Neto',
 		'Gross' => 'Bruto',
 		'Pieces' => 'Copë',
+		'Non-zero Corrections' => 'Korrigjime të ndryshme nga zero',
+		'Any Tender Corrected' => 'Çdo mënyrë pagese e korrigjuar',
 		'Movement Label' => 'Etiketa e lëvizjes',
 		'Voided' => 'Anuluar',
 		'Created' => 'Krijuar',

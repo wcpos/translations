@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Нетто',
 		'Gross' => 'Брутто',
 		'Pieces' => 'Штуки',
+		'Non-zero Corrections' => 'Ненульові коригування',
+		'Any Tender Corrected' => 'Є коригування способу оплати',
 		'Movement Label' => 'Позначення руху коштів',
 		'Voided' => 'Анульовано',
 		'Created' => 'Створено',

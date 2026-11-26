@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Neto',
 		'Gross' => 'Bruto',
 		'Pieces' => 'Jumlah',
+		'Non-zero Corrections' => 'Koreksi non-nol',
+		'Any Tender Corrected' => 'Ada metode pembayaran yang dikoreksi',
 		'Movement Label' => 'Label pergerakan',
 		'Voided' => 'Dibatalkan',
 		'Created' => 'Dibuat',

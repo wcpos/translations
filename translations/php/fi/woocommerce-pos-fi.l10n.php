@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Veroton',
 		'Gross' => 'Verollinen',
 		'Pieces' => 'Kappaleet',
+		'Non-zero Corrections' => 'Nollasta poikkeavat korjaukset',
+		'Any Tender Corrected' => 'Korjattu maksutapa',
 		'Movement Label' => 'Tapahtuman kuvaus',
 		'Voided' => 'Mitätöity',
 		'Created' => 'Luotu',

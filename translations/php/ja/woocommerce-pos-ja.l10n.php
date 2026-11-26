@@ -757,6 +757,8 @@ return array(
 		'Net' => '税抜',
 		'Gross' => '税込',
 		'Pieces' => '枚数',
+		'Non-zero Corrections' => 'ゼロ以外の修正',
+		'Any Tender Corrected' => '支払方法の修正あり',
 		'Movement Label' => '移動ラベル',
 		'Voided' => '取消済み',
 		'Created' => '作成日時',

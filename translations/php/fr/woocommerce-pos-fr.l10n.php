@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Net',
 		'Gross' => 'Brut',
 		'Pieces' => 'Pièces',
+		'Non-zero Corrections' => 'Corrections non nulles',
+		'Any Tender Corrected' => 'Mode de paiement corrigé',
 		'Movement Label' => 'Libellé du mouvement',
 		'Voided' => 'Annulé',
 		'Created' => 'Créé',

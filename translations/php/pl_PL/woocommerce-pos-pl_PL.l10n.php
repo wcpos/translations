@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netto',
 		'Gross' => 'Brutto',
 		'Pieces' => 'Sztuki',
+		'Non-zero Corrections' => 'Korekty niezerowe',
+		'Any Tender Corrected' => 'Skorygowano metodę płatności',
 		'Movement Label' => 'Etykieta ruchu',
 		'Voided' => 'Unieważniono',
 		'Created' => 'Utworzono',

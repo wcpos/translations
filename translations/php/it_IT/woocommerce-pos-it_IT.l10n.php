@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netto',
 		'Gross' => 'Lordo',
 		'Pieces' => 'Pezzi',
+		'Non-zero Corrections' => 'Rettifiche diverse da zero',
+		'Any Tender Corrected' => 'Qualsiasi metodo di pagamento rettificato',
 		'Movement Label' => 'Etichetta movimento',
 		'Voided' => 'Annullato',
 		'Created' => 'Creato',

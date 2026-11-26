@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Net',
 		'Gross' => 'Brut',
 		'Pieces' => 'Bucăți',
+		'Non-zero Corrections' => 'Corecții diferite de zero',
+		'Any Tender Corrected' => 'Orice metodă de plată corectată',
 		'Movement Label' => 'Etichetă mișcare',
 		'Voided' => 'Anulată',
 		'Created' => 'Creată',

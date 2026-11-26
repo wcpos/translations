@@ -757,6 +757,8 @@ return array(
 		'Net' => 'خالص',
 		'Gross' => 'ناخالص',
 		'Pieces' => 'تعداد',
+		'Non-zero Corrections' => 'اصلاحات غیرصفر',
+		'Any Tender Corrected' => 'روش پرداخت اصلاح‌شده',
 		'Movement Label' => 'برچسب جابه‌جایی',
 		'Voided' => 'باطل‌شده',
 		'Created' => 'ایجادشده',

@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Netosumma',
 		'Gross' => 'Brutosumma',
 		'Pieces' => 'Tükid',
+		'Non-zero Corrections' => 'Nullist erinevad parandused',
+		'Any Tender Corrected' => 'Parandatud makseviis',
 		'Movement Label' => 'Liikumise nimetus',
 		'Voided' => 'Tühistatud',
 		'Created' => 'Loodud',

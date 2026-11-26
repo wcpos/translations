@@ -757,6 +757,8 @@ return array(
 		'Net' => 'נטו',
 		'Gross' => 'ברוטו',
 		'Pieces' => 'יחידות',
+		'Non-zero Corrections' => 'תיקונים שאינם אפס',
+		'Any Tender Corrected' => 'תוקנה שיטת תשלום כלשהי',
 		'Movement Label' => 'תווית תנועה',
 		'Voided' => 'בוטל',
 		'Created' => 'נוצר',

@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Nettó',
 		'Gross' => 'Brúttó',
 		'Pieces' => 'Stykki',
+		'Non-zero Corrections' => 'Leiðréttingar sem eru ekki núll',
+		'Any Tender Corrected' => 'Einhver greiðslumáti leiðréttur',
 		'Movement Label' => 'Heiti hreyfingar',
 		'Voided' => 'Afturkallað',
 		'Created' => 'Stofnað',

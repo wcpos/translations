@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Nettó',
 		'Gross' => 'Bruttó',
 		'Pieces' => 'Darab',
+		'Non-zero Corrections' => 'Nem nulla korrekciók',
+		'Any Tender Corrected' => 'Bármely fizetési mód korrigálva',
 		'Movement Label' => 'Pénzmozgás megnevezése',
 		'Voided' => 'Érvénytelenítve',
 		'Created' => 'Létrehozva',

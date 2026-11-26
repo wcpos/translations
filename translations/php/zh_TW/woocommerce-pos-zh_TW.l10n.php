@@ -757,6 +757,8 @@ return array(
 		'Net' => '淨額',
 		'Gross' => '總額',
 		'Pieces' => '件數',
+		'Non-zero Corrections' => '非零更正',
+		'Any Tender Corrected' => '任一付款方式已更正',
 		'Movement Label' => '異動標籤',
 		'Voided' => '已作廢',
 		'Created' => '已建立',

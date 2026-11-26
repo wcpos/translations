@@ -757,6 +757,8 @@ return array(
 		'Net' => 'Bersih',
 		'Gross' => 'Kasar',
 		'Pieces' => 'Kepingan',
+		'Non-zero Corrections' => 'Pelarasan bukan sifar',
+		'Any Tender Corrected' => 'Sebarang kaedah pembayaran diperbetulkan',
 		'Movement Label' => 'Label pergerakan',
 		'Voided' => 'Dibatalkan',
 		'Created' => 'Dicipta',
