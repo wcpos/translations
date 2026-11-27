@@ -758,7 +758,7 @@ return array(
 		'Gross' => 'Brutto',
 		'Pieces' => 'Stück',
 		'Non-zero Corrections' => 'Korrekturen ungleich null',
-		'Any Tender Corrected' => 'Zahlungsmethode korrigiert',
+		'Any Tender Corrected' => 'Zahlungsart korrigiert',
 		'Movement Label' => 'Bewegungsbezeichnung',
 		'Voided' => 'Storniert',
 		'Created' => 'Erstellt',
