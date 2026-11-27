@@ -758,7 +758,7 @@ return array(
 		'Gross' => '总额',
 		'Pieces' => '件数',
 		'Non-zero Corrections' => '非零更正',
-		'Any Tender Corrected' => '有支付方式更正',
+		'Any Tender Corrected' => '任一付款方式已更正',
 		'Movement Label' => '变动标签',
 		'Voided' => '已作废',
 		'Created' => '已创建',
