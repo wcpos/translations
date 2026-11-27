@@ -38,7 +38,7 @@ msgid "http://wcpos.com"
 msgstr "http://wcpos.com"
 
 #. translators: 1: Minimum PHP version, 2: Update URL.
-#: includes/Activator.php:1051
+#: includes/Activator.php:1088
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires PHP %1$s or higher. Read more information about <a href=\"%2$s\">how you can update</a>"
@@ -46,7 +46,7 @@ msgstr ""
 "<strong>WCPOS</strong> vereist PHP %1$s of hoger. Lees meer informatie over <a href=\"%2$s\">hoe je kunt updaten</a>"
 
 #. translators: 1: WooCommerce URL, 2: Minimum WC version, 3: Plugins URL.
-#: includes/Activator.php:1075
+#: includes/Activator.php:1112
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WooCommerce %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WooCommerce</a>"
@@ -54,14 +54,14 @@ msgstr ""
 "<strong>WCPOS</strong> vereist <a href=\"%1$s\">WooCommerce %2$s of hoger</a>. Installeer en activeer <a href=\"%3$s\">WooCommerce</a>"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1097
+#: includes/Activator.php:1134
 msgid ""
 "<strong>WooCommerce REST API</strong> requires <em>pretty</em> permalinks to work correctly"
 msgstr ""
 "<strong>WooCommerce REST API</strong> vereist <em>mooie</em> permalinks om correct te werken"
 
 #. translators: Plugin activation notice label.
-#: includes/Activator.php:1098
+#: includes/Activator.php:1135
 msgid "Enable permalinks"
 msgstr "Permalinks inschakelen"
 
@@ -69,17 +69,17 @@ msgstr "Permalinks inschakelen"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the POS cashier/operator who served the customer.
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Activator.php:1351
+#: includes/Activator.php:1387
 #: includes/Services/Receipt_Data_Schema.php:327
 #: includes/Services/Receipt_I18n_Labels.php:113
 #: includes/Services/Reports_Registry.php:188
-#: includes/Templates/Payment.php:432
+#: includes/Templates/Payment.php:395
 #: templates/receipt.php:203
 msgid "Cashier"
 msgstr "Kassier"
 
 #. translators: 1: WCPOS Pro URL, 2: Minimum Pro version, 3: Plugins URL.
-#: includes/Activator.php:1578
+#: includes/Activator.php:1614
 #, php-format
 msgid ""
 "<strong>WCPOS</strong> requires <a href=\"%1$s\">WCPOS Pro %2$s or higher</a>. Please <a href=\"%3$s\">install and activate WCPOS Pro</a>"
@@ -176,7 +176,7 @@ msgid "Search for a cashier&hellip;"
 msgstr "Zoek een kassier&hellip;"
 
 #: includes/Admin/Orders/Single_Order.php:117
-#: includes/API/V2/Writers/Order_Writer.php:927
+#: includes/API/V2/Writers/Order_Writer.php:843
 msgid ""
 "POS cashier or store change was not applied because its change record could not be written. Try again."
 msgstr ""
@@ -311,13 +311,11 @@ msgstr ""
 #: includes/Admin/Settings.php:60
 #: includes/Form_Handler.php:61
 #: includes/Form_Handler.php:73
-#: includes/Form_Handler.php:136
-#: includes/Form_Handler.php:146
-#: includes/Templates/Payment.php:204
-#: includes/Templates/Payment.php:217
-#: includes/Templates/Payment.php:240
-#: includes/Templates/Payment.php:574
-#: includes/Templates/Received.php:98
+#: includes/Form_Handler.php:138
+#: includes/Form_Handler.php:159
+#: includes/Templates/Payment.php:203
+#: includes/Templates/Payment.php:537
+#: includes/Templates/Received.php:92
 msgid "Error"
 msgstr "Fout"
 
@@ -426,12 +424,12 @@ msgstr ""
 "WCPOS-accountidentiteiten opnieuw ingesteld. Getroffen gebruikers: %d."
 
 #. translators: REST API schema field label or error message.
-#: includes/API.php:438
+#: includes/API.php:439
 #: includes/API/V1/Cashier.php:124
 msgid "Authentication required."
 msgstr "Authenticatie vereist."
 
-#: includes/API.php:445
+#: includes/API.php:446
 msgid "You do not have permission to access the POS."
 msgstr "Je hebt geen toestemming om toegang te krijgen tot de POS."
 
@@ -555,14 +553,14 @@ msgstr "Betaalgateway is niet beschikbaar voor POS-afrekenen."
 #. translators: REST API schema field label or error message.
 #: includes/API/V1/Checkout_Controller.php:284
 #: includes/API/V1/Receipts_Controller.php:283
-#: includes/API/V2/Payments_Controller.php:466
+#: includes/API/V2/Payments_Controller.php:434
 #: includes/Payments/Contract/Settlement.php:92
 msgid "Order not found."
 msgstr "Bestelling niet gevonden."
 
 #: includes/API/V1/Checkout_Controller.php:294
 #: includes/API/V1/Orders_Controller.php:642
-#: includes/API/V2/Payments_Controller.php:470
+#: includes/API/V2/Payments_Controller.php:438
 msgid "Sorry, you are not allowed to edit this order."
 msgstr "Je mag deze bestelling niet bewerken."
 
@@ -1155,39 +1153,43 @@ msgstr "Helaas kunt u sjablonen niet bijwerken."
 msgid "Invalid _woocommerce_pos_uuid meta_data value."
 msgstr "Ongeldige waarde voor _woocommerce_pos_uuid in meta_data."
 
+#: includes/API/V2/Changes_Controller.php:381
+msgid "Order changes could not be read."
+msgstr "Wijzigingen aan de bestelling konden niet worden opgehaald."
+
 #. translators: 1: the requested collection, 2: the supported collections.
-#: includes/API/V2/Changes_Controller.php:782
+#: includes/API/V2/Changes_Controller.php:860
 #, php-format
 msgid "Collection \"%1$s\" is not served by this route. Supported: %2$s."
 msgstr ""
 "Collectie ‘%1$s’ wordt niet aangeboden via deze route. Ondersteund: %2$s."
 
-#: includes/API/V2/Payments_Controller.php:141
+#: includes/API/V2/Payments_Controller.php:128
 msgid "Sorry, you cannot manage order payments."
 msgstr "Je mag geen betalingen voor bestellingen beheren."
 
-#: includes/API/V2/Payments_Controller.php:161
+#: includes/API/V2/Payments_Controller.php:148
 msgid "Payment must be an object."
 msgstr "Betaling moet een object zijn."
 
-#: includes/API/V2/Payments_Controller.php:232
+#: includes/API/V2/Payments_Controller.php:219
 #: includes/API/V2/Payment_Methods_Controller.php:110
 #: includes/Payments/Contract/Gateway_Handler.php:59
 #: includes/Payments/Contract/Gateway_Submission.php:131
-#: includes/Payments/Contract/Ledger.php:1680
+#: includes/Payments/Contract/Ledger.php:1671
 msgid "Payment method not found."
 msgstr "Betaalmethode niet gevonden."
 
-#: includes/API/V2/Payments_Controller.php:238
+#: includes/API/V2/Payments_Controller.php:225
 msgid "Values must be an object and attempt ID a UUID."
 msgstr "Waarden moeten een object zijn en de poging-ID een UUID."
 
-#: includes/API/V2/Payments_Controller.php:243
+#: includes/API/V2/Payments_Controller.php:230
 msgid "Attempt ID must name the sent attempt to cancel."
 msgstr ""
 "De poging-ID moet verwijzen naar de verzonden poging die u wilt annuleren."
 
-#: includes/API/V2/Payments_Controller.php:373
+#: includes/API/V2/Payments_Controller.php:341
 msgid "Invalid payment operation parameters."
 msgstr "Ongeldige parameters voor de betalingsbewerking."
 
@@ -1201,7 +1203,7 @@ msgstr "Je mag betaalmethoden niet initialiseren."
 
 #: includes/API/V2/Payment_Methods_Controller.php:116
 #: includes/Payments/Contract/Gateway_Submission.php:52
-#: includes/Payments/Contract/Ledger.php:3287
+#: includes/Payments/Contract/Ledger.php:3077
 msgid "Payment capture mode is unsupported."
 msgstr "Deze inningsmodus wordt niet ondersteund."
 
@@ -1302,18 +1304,12 @@ msgid "The session request could not be completed."
 msgstr "Het sessieverzoek kon niet worden voltooid."
 
 #. translators: 1: line name, 2: units.
-#: includes/API/V2/Writers/Order_Writer.php:599
+#: includes/API/V2/Writers/Order_Writer.php:590
 #, php-format
 msgid ""
 "WCPOS: stock for %1$s could not be adjusted by %2$s; reconcile the product's stock manually."
 msgstr ""
 "WCPOS: de voorraad van %1$s kon niet met %2$s worden aangepast; corrigeer de productvoorraad handmatig."
-
-#: includes/API/V2/Writers/Order_Writer.php:858
-msgid ""
-"POS sale day change was not applied because its change record could not be written. Try again."
-msgstr ""
-"De wijziging van de POS-verkoopdatum is niet toegepast omdat de wijzigingsregistratie niet kon worden opgeslagen. Probeer het opnieuw."
 
 #. translators: Checkout/payment form error message shown when the order cannot be found.
 #: includes/Form_Handler.php:59
@@ -1326,13 +1322,12 @@ msgid "Order key mismatch."
 msgstr "Bestelsleutel komt niet overeen."
 
 #. translators: Checkout/payment form error message shown when no cashier token is provided.
-#: includes/Form_Handler.php:134
+#: includes/Form_Handler.php:136
 msgid "Token not provided."
 msgstr "Token niet verstrekt."
 
 #. translators: Checkout/payment form error message shown when the cashier token does not match.
-#: includes/Form_Handler.php:144
-#: includes/Templates/Payment.php:215
+#: includes/Form_Handler.php:157
 msgid "Cashier token mismatch."
 msgstr "Kassiertoken komt niet overeen."
 
@@ -1385,8 +1380,8 @@ msgstr "Ontvangen bedrag"
 #: includes/Gateways/Cash.php:93
 #: includes/Services/Receipt_Data_Schema.php:813
 #: includes/Services/Receipt_Data_Schema.php:928
-#: includes/Services/Receipt_Data_Schema.php:1630
-#: includes/Services/Receipt_Data_Schema.php:1676
+#: includes/Services/Receipt_Data_Schema.php:1629
+#: includes/Services/Receipt_Data_Schema.php:1675
 #: includes/Services/Receipt_I18n_Labels.php:237
 #: templates/receipt.php:367
 msgid "Change"
@@ -1469,14 +1464,14 @@ msgid "This payment capture mode does not support that operation."
 msgstr "Deze inningsmodus ondersteunt die bewerking niet."
 
 #. translators: 1: attempt id, 2: payment method title.
-#: includes/Payments/Contract/Attempts.php:339
+#: includes/Payments/Contract/Attempts.php:320
 #, php-format
 msgid ""
 "WCPOS payment attempt %1$s: the outcome is unknown and %2$s cannot say whether money was taken. Check the payment with the provider, then cancel the attempt at the POS if nothing was charged."
 msgstr ""
 "WCPOS-betalingspoging %1$s: de uitkomst is onbekend en %2$s kan niet vaststellen of er geld is afgeschreven. Controleer de betaling bij de provider en annuleer de poging daarna op de POS als er niets is afgeschreven."
 
-#: includes/Payments/Contract/Attempts.php:420
+#: includes/Payments/Contract/Attempts.php:409
 msgid "Clearing the awaiting-customer state"
 msgstr "De status voor wachtende klant wissen"
 
@@ -1484,12 +1479,12 @@ msgstr "De status voor wachtende klant wissen"
 msgid "This command ID was already used with a different request."
 msgstr "Deze opdracht-ID is al gebruikt voor een ander verzoek."
 
-#: includes/Payments/Contract/Command_Log.php:250
+#: includes/Payments/Contract/Command_Log.php:244
 #: includes/Payments/Contract/Gateway_Submission.php:109
 msgid "This attempt was cancelled or superseded at the till."
 msgstr "Deze poging is bij de kassa geannuleerd of vervangen."
 
-#: includes/Payments/Contract/Command_Log.php:276
+#: includes/Payments/Contract/Command_Log.php:270
 msgid "The order changed since this command was built; read it again."
 msgstr ""
 "De bestelling is gewijzigd sinds deze opdracht is aangemaakt. Lees de bestelling opnieuw in."
@@ -1506,7 +1501,7 @@ msgstr ""
 "WCPOS: voltooiing %d kon niet worden geregistreerd. Stem handmatig af."
 
 #: includes/Payments/Contract/Completion_Stamp.php:183
-#: includes/Payments/Contract/Completion_Stamp.php:208
+#: includes/Payments/Contract/Completion_Stamp.php:205
 msgid ""
 "WCPOS: the reopen could not be recorded on the completion history; reconcile manually."
 msgstr ""
@@ -1654,82 +1649,82 @@ msgstr "Kies een van de vermelde opties."
 msgid "Check the payment fields."
 msgstr "Controleer de betalingsvelden."
 
-#: includes/Payments/Contract/Ledger.php:560
+#: includes/Payments/Contract/Ledger.php:558
 msgid ""
 "This till asked for a reader connection the store does not allow for this payment method."
 msgstr ""
 "Deze kassa heeft een verbinding met een lezer aangevraagd die de winkel niet toestaat voor deze betaalmethode."
 
-#: includes/Payments/Contract/Ledger.php:592
-#: includes/Payments/Contract/Ledger.php:800
+#: includes/Payments/Contract/Ledger.php:590
+#: includes/Payments/Contract/Ledger.php:798
 msgid "This payment was started on a different reader connection."
 msgstr "Deze betaling is gestart via een andere verbinding met de lezer."
 
-#: includes/Payments/Contract/Ledger.php:617
+#: includes/Payments/Contract/Ledger.php:615
 msgid ""
 "This payment method cannot be recorded; it has to run its own payment leg."
 msgstr ""
 "Deze betaalmethode kan niet worden geregistreerd; de bijbehorende betaalstap moet zelf worden uitgevoerd."
 
-#: includes/Payments/Contract/Ledger.php:623
+#: includes/Payments/Contract/Ledger.php:621
 msgid "Recorded payments must be captured or authorized."
 msgstr "Geregistreerde betalingen moeten worden geïnd of geautoriseerd."
 
-#: includes/Payments/Contract/Ledger.php:631
-#: includes/Payments/Contract/Ledger.php:635
+#: includes/Payments/Contract/Ledger.php:629
+#: includes/Payments/Contract/Ledger.php:633
 msgid "Tendered amount is invalid for this payment method."
 msgstr "Het ontvangen bedrag is ongeldig voor deze betaalmethode."
 
-#: includes/Payments/Contract/Ledger.php:863
+#: includes/Payments/Contract/Ledger.php:861
 msgid "Payment method is disabled."
 msgstr "Betaalmethode is uitgeschakeld."
 
-#: includes/Payments/Contract/Ledger.php:871
-#: includes/Payments/Contract/Ledger.php:1741
-#: includes/Payments/Contract/Ledger.php:1802
+#: includes/Payments/Contract/Ledger.php:869
+#: includes/Payments/Contract/Ledger.php:1732
+#: includes/Payments/Contract/Ledger.php:1793
 msgid "The order is already paid."
 msgstr "De bestelling is al betaald."
 
-#: includes/Payments/Contract/Ledger.php:871
-#: includes/Payments/Contract/Ledger.php:1742
+#: includes/Payments/Contract/Ledger.php:869
+#: includes/Payments/Contract/Ledger.php:1733
 msgid "Payment amount exceeds the order balance."
 msgstr ""
 "Het betalingsbedrag is hoger dan het openstaande bedrag van de bestelling."
 
-#: includes/Payments/Contract/Ledger.php:883
-#: includes/Payments/Contract/Ledger.php:1744
-#: includes/Payments/Contract/Ledger.php:1918
+#: includes/Payments/Contract/Ledger.php:881
+#: includes/Payments/Contract/Ledger.php:1735
+#: includes/Payments/Contract/Ledger.php:1909
 msgid "Another payment is already in progress on this order."
 msgstr "Er wordt al een andere betaling verwerkt voor deze bestelling."
 
-#: includes/Payments/Contract/Ledger.php:1127
+#: includes/Payments/Contract/Ledger.php:1125
 msgid "Tip"
 msgstr "Fooi"
 
 #. translators: 1: payment ID, 2: expected amount/currency, 3: confirmed amount/currency.
-#: includes/Payments/Contract/Ledger.php:1183
+#: includes/Payments/Contract/Ledger.php:1181
 #, php-format
 msgid "WCPOS payment %1$s amount mismatch: expected %2$s, confirmed %3$s."
 msgstr ""
 "Bedrag van WCPOS-betaling %1$s komt niet overeen: verwacht %2$s, bevestigd %3$s."
 
-#: includes/Payments/Contract/Ledger.php:1279
+#: includes/Payments/Contract/Ledger.php:1273
 msgid "Refund must belong to this order."
 msgstr "Terugbetaling moet bij deze bestelling horen."
 
-#: includes/Payments/Contract/Ledger.php:1282
-#: includes/Payments/Contract/Ledger.php:1297
-#: includes/Payments/Contract/Ledger.php:1352
+#: includes/Payments/Contract/Ledger.php:1276
+#: includes/Payments/Contract/Ledger.php:1291
+#: includes/Payments/Contract/Ledger.php:1346
 msgid "Refund amount cannot be allocated to this payment."
 msgstr ""
 "Het terugbetalingsbedrag kan niet aan deze betaling worden toegewezen."
 
-#: includes/Payments/Contract/Ledger.php:1315
+#: includes/Payments/Contract/Ledger.php:1309
 msgid "The refund could not be reserved; retry."
 msgstr "De terugbetaling kon niet worden gereserveerd; probeer het opnieuw."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1412
+#: includes/Payments/Contract/Ledger.php:1406
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s was sent to %3$s; confirm it with the provider before retrying."
@@ -1737,91 +1732,69 @@ msgstr ""
 "WCPOS: terugbetaling #%1$d voor %2$s is naar %3$s verzonden; bevestig deze bij de provider voordat je het opnieuw probeert."
 
 #. translators: 1: refund ID, 2: amount with currency, 3: payment method ID
-#: includes/Payments/Contract/Ledger.php:1412
+#: includes/Payments/Contract/Ledger.php:1406
 #, php-format
 msgid ""
 "WCPOS: refund #%1$d for %2$s did not go through %3$s but its reservation could not be removed; check the payment before retrying."
 msgstr ""
 "WCPOS: terugbetaling #%1$d voor %2$s is niet via %3$s uitgevoerd, maar de reservering kon niet worden verwijderd; controleer de betaling voordat je het opnieuw probeert."
 
-#: includes/Payments/Contract/Ledger.php:1487
-#: includes/Payments/Contract/Ledger.php:1655
+#: includes/Payments/Contract/Ledger.php:1481
+#: includes/Payments/Contract/Ledger.php:1646
 #: includes/Payments/Contract/Settlement.php:51
 msgid "Payment id must be a UUID."
 msgstr "Betalings-ID moet een UUID zijn."
 
-#: includes/Payments/Contract/Ledger.php:1508
-#: includes/Payments/Contract/Ledger.php:1720
+#: includes/Payments/Contract/Ledger.php:1502
+#: includes/Payments/Contract/Ledger.php:1711
 msgid "Payment id conflicts with an existing payment."
 msgstr "Het betalings-ID botst met een bestaande betaling."
 
-#: includes/Payments/Contract/Ledger.php:1550
+#: includes/Payments/Contract/Ledger.php:1544
 msgid "Refund status is invalid."
 msgstr "De terugbetalingsstatus is ongeldig."
 
-#: includes/Payments/Contract/Ledger.php:1658
-#: includes/Payments/Contract/Ledger.php:1662
+#: includes/Payments/Contract/Ledger.php:1649
+#: includes/Payments/Contract/Ledger.php:1653
 msgid "Payment amount must be positive."
 msgstr "Betalingsbedrag moet positief zijn."
 
-#: includes/Payments/Contract/Ledger.php:1667
+#: includes/Payments/Contract/Ledger.php:1658
 msgid "Payment currency must match the order."
 msgstr "Valuta van de betaling moet overeenkomen met die van de bestelling."
 
-#: includes/Payments/Contract/Ledger.php:1743
+#: includes/Payments/Contract/Ledger.php:1734
 msgid "Provider-confirmed amount or currency does not match the payment."
 msgstr ""
 "Het door de betaaldienstverlener bevestigde bedrag of de valuta komt niet overeen met de betaling."
 
-#: includes/Payments/Contract/Ledger.php:1849
+#: includes/Payments/Contract/Ledger.php:1840
 msgid "The order is not covered by its payments."
 msgstr "De betalingen dekken het bedrag van de bestelling niet."
 
 #. translators: %s: payment row uuid.
-#: includes/Payments/Contract/Ledger.php:1995
+#: includes/Payments/Contract/Ledger.php:1986
 #, php-format
 msgid "WCPOS payment %s voided."
 msgstr "WCPOS-betaling %s geannuleerd."
 
 #. translators: 1: payment row uuid, 2: void reason given by the cashier.
-#: includes/Payments/Contract/Ledger.php:1997
+#: includes/Payments/Contract/Ledger.php:1988
 #, php-format
 msgid "WCPOS payment %1$s voided: %2$s"
 msgstr "WCPOS-betaling %1$s geannuleerd: %2$s"
 
-#: includes/Payments/Contract/Ledger.php:2038
-msgid "Tender correction is not available while a fiscal module is active."
-msgstr ""
-"Correctie van de betaalmethode is niet beschikbaar zolang een fiscale module actief is."
-
-#: includes/Payments/Contract/Ledger.php:2075
-msgid "This payment cannot be corrected."
-msgstr "Deze betaling kan niet worden gecorrigeerd."
-
-#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount.
-#: includes/Payments/Contract/Ledger.php:2140
-#, php-format
-msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s)"
-msgstr "WCPOS-betaling %1$s gecorrigeerd: %2$s naar %3$s (%4$s)"
-
-#. translators: 1: payment row uuid, 2: old payment method title, 3: new payment method title, 4: amount, 5: reference the cashier gave.
-#: includes/Payments/Contract/Ledger.php:2142
-#, php-format
-msgid "WCPOS payment %1$s corrected: %2$s to %3$s (%4$s), reference %5$s"
-msgstr ""
-"WCPOS-betaling %1$s gecorrigeerd: %2$s naar %3$s (%4$s), referentie %5$s"
-
 #. translators: %s: what the deferred work was for.
-#: includes/Payments/Contract/Ledger.php:2893
+#: includes/Payments/Contract/Ledger.php:2684
 #, php-format
 msgid "WCPOS: %s did not complete; reconcile manually."
 msgstr "WCPOS: %s is niet voltooid; verwerk dit handmatig."
 
-#: includes/Payments/Contract/Ledger.php:3282
+#: includes/Payments/Contract/Ledger.php:3072
 msgid "Payment not found."
 msgstr "Betaling niet gevonden."
 
-#: includes/Payments/Contract/Ledger.php:3292
+#: includes/Payments/Contract/Ledger.php:3082
 msgid "Payment transition is invalid."
 msgstr "Ongeldige statusovergang voor betaling."
 
@@ -1881,12 +1854,12 @@ msgstr "Idempotentiesleutel is opnieuw gebruikt met een ander verzoek."
 msgid "An identical request is already being processed."
 msgstr "Een identiek verzoek wordt al verwerkt."
 
-#: includes/Services/Auth.php:389
-#: includes/Services/Auth.php:484
+#: includes/Services/Auth.php:405
+#: includes/Services/Auth.php:500
 msgid "JWT is not configured properly, please contact the admin"
 msgstr "JWT is niet correct geconfigureerd, neem contact op met de beheerder"
 
-#: includes/Services/Auth.php:539
+#: includes/Services/Auth.php:555
 msgid "The sign-in could not be saved, please try again."
 msgstr "Inloggen kon niet worden opgeslagen. Probeer het opnieuw."
 
@@ -1983,7 +1956,6 @@ msgid "WCPOS file integrity"
 msgstr "Bestandsintegriteit van WCPOS"
 
 #: includes/Services/File_Integrity.php:272
-#: includes/Sync/Integrity_Digest.php:466
 msgid "WCPOS"
 msgstr "WCPOS"
 
@@ -2047,14 +2019,14 @@ msgid "Invalid receipt document."
 msgstr "Ongeldig bonbestand."
 
 #. translators: %s: fiscal record type (sale, refund, void, cancellation).
-#: includes/Services/Fiscal_Record_Writers.php:119
-#: includes/Services/Fiscal_Record_Writers.php:460
+#: includes/Services/Fiscal_Record_Writers.php:114
+#: includes/Services/Fiscal_Record_Writers.php:407
 #, php-format
 msgid "POS fiscal %s record could not be written; it will need recovery."
 msgstr "Fiscaal POS-record %s kon niet worden geschreven; herstel is nodig."
 
-#: includes/Services/Fiscal_Record_Writers.php:320
-#: includes/Services/Fiscal_Record_Writers.php:444
+#: includes/Services/Fiscal_Record_Writers.php:267
+#: includes/Services/Fiscal_Record_Writers.php:391
 msgid "POS fiscal sale record recovered."
 msgstr "Het fiscale verkooprecord van POS is hersteld."
 
@@ -2082,7 +2054,7 @@ msgstr "Onbekend"
 #. translators: Short WCPOS UI label; keep concise.
 #: includes/Services/Order_Notes.php:42
 #: includes/Services/Receipt_Data_Builder.php:631
-#: includes/Templates/Payment.php:450
+#: includes/Templates/Payment.php:413
 #: tests/includes/Templates/Test_Receipt_Renderers.php:298
 msgid "Guest"
 msgstr "Gast"
@@ -2092,7 +2064,7 @@ msgstr "Gast"
 #. translators: %d: store ID.
 #: includes/Services/Order_Notes.php:61
 #: includes/Services/Receipt_Data_Builder.php:611
-#: includes/Services/Receipt_Data_Builder.php:1048
+#: includes/Services/Receipt_Data_Builder.php:1054
 #: tests/includes/Services/Test_Receipt_Data_Builder.php:2170
 #, php-format
 msgid "Store #%d"
@@ -2110,20 +2082,8 @@ msgstr "Bestelling aangemaakt via POS door %1$s in %2$s."
 msgid "POS cashier changed from %1$s to %2$s."
 msgstr "POS kassier gewijzigd van %1$s naar %2$s."
 
-#. translators: 1: corrected sale date, 2: reason.
-#: includes/Services/Order_Notes.php:96
-#, php-format
-msgid "POS sale day set to %1$s. Reason: %2$s"
-msgstr "POS-verkoopdatum ingesteld op %1$s. Reden: %2$s"
-
-#. translators: 1: previous sale date, 2: corrected sale date, 3: reason.
-#: includes/Services/Order_Notes.php:99
-#, php-format
-msgid "POS sale day changed from %1$s to %2$s. Reason: %3$s"
-msgstr "POS-verkoopdatum gewijzigd van %1$s naar %2$s. Reden: %3$s"
-
 #. translators: 1: the person who attempted the change (not the previous cashier), 2: the user they tried to make the cashier, 3: the cashier who stays on the order.
-#: includes/Services/Order_Notes.php:108
+#: includes/Services/Order_Notes.php:94
 #, php-format
 msgid ""
 "%1$s tried to change the POS cashier to %2$s. This was refused: they may not assign this sale to that user. %3$s remains the cashier."
@@ -2131,35 +2091,91 @@ msgstr ""
 "%1$s probeerde de kassamedewerker van de kassa te wijzigen in %2$s. Dit is geweigerd: die persoon mag deze verkoop niet aan die gebruiker toewijzen. %3$s blijft de kassamedewerker."
 
 #. translators: 1: old POS store, 2: new POS store.
-#: includes/Services/Order_Notes.php:120
+#: includes/Services/Order_Notes.php:106
 #, php-format
 msgid "POS store changed from %1$s to %2$s."
 msgstr "POS-locatie gewijzigd van %1$s naar %2$s."
 
 #. translators: 1: POS cashier, 2: POS store.
-#: includes/Services/Order_Notes.php:131
+#: includes/Services/Order_Notes.php:117
 #, php-format
 msgid "Order re-opened via POS by %1$s at %2$s."
 msgstr "Bestelling opnieuw geopend via POS door %1$s in %2$s."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:142
+#: includes/Services/Order_Notes.php:128
 #, php-format
 msgid "Customer changed from %1$s to %2$s via WCPOS."
 msgstr "Klant gewijzigd van %1$s naar %2$s via WCPOS."
 
 #. translators: 1: old customer, 2: new customer.
-#: includes/Services/Order_Notes.php:153
+#: includes/Services/Order_Notes.php:139
 #, php-format
 msgid "Customer changed from %1$s to %2$s."
 msgstr "Klant gewijzigd van %1$s naar %2$s."
 
 #. translators: 1: cash amount tendered, 2: change given.
-#: includes/Services/Order_Notes.php:167
+#: includes/Services/Order_Notes.php:153
 #, php-format
 msgid "Cash payment received — amount tendered: %1$s, change given: %2$s."
 msgstr ""
 "Contante betaling ontvangen — aangeboden bedrag: %1$s, wisselgeld: %2$s."
+
+#: includes/Services/Permission_Registry.php:144
+msgid "Use the POS"
+msgstr "De POS gebruiken"
+
+#: includes/Services/Permission_Registry.php:145
+msgid "Manage POS settings in WP Admin"
+msgstr "POS-instellingen beheren in WP Admin"
+
+#: includes/Services/Permission_Registry.php:146
+msgid "Open and close the register, cash in and out"
+msgstr "De kassa openen en sluiten, geld in- en uitnemen"
+
+#: includes/Services/Permission_Registry.php:147
+msgid "Reports"
+msgstr "Rapporten"
+
+#: includes/Services/Permission_Registry.php:148
+msgid "Approve a variance or recount"
+msgstr "Een kasverschil goedkeuren of opnieuw tellen"
+
+#: includes/Services/Permission_Registry.php:149
+msgid "Reassign a sale's cashier"
+msgstr "De kassamedewerker van een verkoop opnieuw toewijzen"
+
+#: includes/Services/Permission_Registry.php:150
+msgid "See cost, profit and margin"
+msgstr "Kostprijs, winst en marge bekijken"
+
+#: includes/Services/Permission_Registry.php:151
+msgid "Add a customer"
+msgstr "Een klant toevoegen"
+
+#: includes/Services/Permission_Registry.php:152
+msgid "Edit products"
+msgstr "Producten bewerken"
+
+#: includes/Services/Permission_Registry.php:153
+msgid "Delete products"
+msgstr "Producten verwijderen"
+
+#: includes/Services/Permission_Registry.php:154
+msgid "Edit a customer"
+msgstr "Een klant bewerken"
+
+#: includes/Services/Permission_Registry.php:155
+msgid "Manage categories"
+msgstr "Categorieën beheren"
+
+#: includes/Services/Permission_Registry.php:156
+msgid "Manage coupons"
+msgstr "Kortingsbonnen beheren"
+
+#: includes/Services/Permission_Registry.php:157
+msgid "Delete coupons"
+msgstr "Coupons verwijderen"
 
 #: includes/Services/Permission_Rules.php:536
 msgid "Sorry, you are not allowed to give users that role."
@@ -2240,7 +2256,7 @@ msgstr "Bedankt voor uw aankoop!"
 #: includes/Services/Preview_Receipt_Builder.php:1230
 #: includes/Services/Preview_Receipt_Builder.php:1255
 #: includes/Services/Receipt_Data_Schema.php:835
-#: includes/Services/Receipt_Data_Schema.php:1525
+#: includes/Services/Receipt_Data_Schema.php:1524
 #: includes/Services/Receipt_I18n_Labels.php:233
 #: includes/Services/Reports_Registry.php:243
 #: templates/closure.php:47
@@ -2510,13 +2526,13 @@ msgstr "Voetnoot"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:331
-#: includes/Services/Receipt_Data_Schema.php:1554
+#: includes/Services/Receipt_Data_Schema.php:1553
 msgid "Cashier ID"
 msgstr "Kassier ID"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:335
-#: includes/Services/Receipt_Data_Schema.php:1558
+#: includes/Services/Receipt_Data_Schema.php:1557
 msgid "Cashier Name"
 msgstr "Kassiernaam"
 
@@ -2565,8 +2581,8 @@ msgstr "Klant-btw-nummers"
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:373
 #: includes/Services/Receipt_Data_Schema.php:395
-#: includes/Services/Receipt_Data_Schema.php:1565
-#: includes/Services/Receipt_Data_Schema.php:1944
+#: includes/Services/Receipt_Data_Schema.php:1564
+#: includes/Services/Receipt_Data_Schema.php:1943
 #: includes/Services/Receipt_I18n_Labels.php:78
 #: includes/Services/Reports_Registry.php:257
 #: templates/closure.php:93
@@ -2577,8 +2593,8 @@ msgstr "Type"
 #: includes/Services/Receipt_Data_Schema.php:377
 #: includes/Services/Receipt_Data_Schema.php:399
 #: includes/Services/Receipt_Data_Schema.php:1269
-#: includes/Services/Receipt_Data_Schema.php:1530
-#: includes/Services/Receipt_Data_Schema.php:1854
+#: includes/Services/Receipt_Data_Schema.php:1529
+#: includes/Services/Receipt_Data_Schema.php:1853
 msgid "Value"
 msgstr "Waarde"
 
@@ -2593,7 +2609,7 @@ msgstr "Land"
 #: includes/Services/Receipt_Data_Schema.php:385
 #: includes/Services/Receipt_Data_Schema.php:407
 #: includes/Services/Receipt_Data_Schema.php:1265
-#: includes/Services/Receipt_Data_Schema.php:1830
+#: includes/Services/Receipt_Data_Schema.php:1829
 msgid "Label"
 msgstr "Label"
 
@@ -2798,7 +2814,7 @@ msgstr "Prijs per eenheid (exclusief btw)"
 #. translators: Receipt total-row label for the order subtotal before final total adjustments.
 #: includes/Services/Receipt_Data_Schema.php:584
 #: includes/Services/Receipt_Data_Schema.php:735
-#: includes/Services/Receipt_Data_Schema.php:1963
+#: includes/Services/Receipt_Data_Schema.php:1962
 #: includes/Services/Receipt_I18n_Labels.php:226
 msgid "Subtotal"
 msgstr "Subtotaal"
@@ -2887,7 +2903,7 @@ msgstr "Kostenlabel"
 #: includes/Services/Receipt_Data_Schema.php:680
 #: includes/Services/Receipt_Data_Schema.php:718
 #: includes/Services/Receipt_Data_Schema.php:797
-#: includes/Services/Receipt_Data_Schema.php:1606
+#: includes/Services/Receipt_Data_Schema.php:1605
 #: includes/Services/Receipt_I18n_Labels.php:228
 #: templates/receipt.php:229
 msgid "Total"
@@ -2961,7 +2977,7 @@ msgstr "Type coupon"
 
 #. translators: Label for a receipt data field in the template editor.
 #: includes/Services/Receipt_Data_Schema.php:731
-#: includes/Services/Receipt_Data_Schema.php:1876
+#: includes/Services/Receipt_Data_Schema.php:1875
 msgid "Totals"
 msgstr "Totalen"
 
@@ -3164,9 +3180,9 @@ msgstr "Betalingsmethode"
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Generic receipt column/field label for a monetary amount.
 #: includes/Services/Receipt_Data_Schema.php:920
-#: includes/Services/Receipt_Data_Schema.php:1528
-#: includes/Services/Receipt_Data_Schema.php:1532
-#: includes/Services/Receipt_Data_Schema.php:1660
+#: includes/Services/Receipt_Data_Schema.php:1527
+#: includes/Services/Receipt_Data_Schema.php:1531
+#: includes/Services/Receipt_Data_Schema.php:1659
 #: includes/Services/Receipt_I18n_Labels.php:256
 #: includes/Services/Reports_Registry.php:260
 #: templates/closure.php:93
@@ -3176,7 +3192,7 @@ msgstr "Bedrag"
 #. translators: Template-editor field label for the money received from the customer at checkout; use the target-language equivalent of "Received", not procurement tender/bid language.
 #. translators: Standalone receipt/payment label meaning money received from the customer at checkout. Use the target-language equivalent of "Received" as a concise label; do not use wording that means "Amount paid/deposited", and do not use procurement tender/bid language.
 #: includes/Services/Receipt_Data_Schema.php:924
-#: includes/Services/Receipt_Data_Schema.php:1668
+#: includes/Services/Receipt_Data_Schema.php:1667
 #: includes/Services/Receipt_I18n_Labels.php:236
 #: templates/receipt.php:363
 msgid "Tendered"
@@ -3560,12 +3576,12 @@ msgid "Printed Number"
 msgstr "Afdruknummer"
 
 #: includes/Services/Receipt_Data_Schema.php:1319
-#: includes/Services/Receipt_Data_Schema.php:1894
+#: includes/Services/Receipt_Data_Schema.php:1893
 msgid "Session ID"
 msgstr "Sessie-ID"
 
 #: includes/Services/Receipt_Data_Schema.php:1320
-#: includes/Services/Receipt_Data_Schema.php:1890
+#: includes/Services/Receipt_Data_Schema.php:1889
 msgid "Business Day"
 msgstr "Bedrijfsdag"
 
@@ -3800,14 +3816,13 @@ msgid "Denominations"
 msgstr "Muntwaarden"
 
 #: includes/Services/Receipt_Data_Schema.php:1411
-#: includes/Services/Receipt_Data_Schema.php:1549
+#: includes/Services/Receipt_Data_Schema.php:1548
 #: includes/Services/Receipt_I18n_Labels.php:86
 #: templates/closure.php:116
 msgid "Cashiers"
 msgstr "Kassamedewerkers"
 
 #: includes/Services/Receipt_Data_Schema.php:1422
-#: includes/Services/Receipt_Data_Schema.php:1520
 msgid "Corrections"
 msgstr "Correcties"
 
@@ -3836,7 +3851,7 @@ msgid "Approver Name"
 msgstr "Naam goedkeurder"
 
 #: includes/Services/Receipt_Data_Schema.php:1450
-#: includes/Services/Receipt_Data_Schema.php:1567
+#: includes/Services/Receipt_Data_Schema.php:1566
 #: includes/Services/Receipt_I18n_Labels.php:79
 #: includes/Services/Reports_Registry.php:258
 #: templates/closure.php:93
@@ -3844,7 +3859,7 @@ msgid "Reason"
 msgstr "Reden"
 
 #: includes/Services/Receipt_Data_Schema.php:1454
-#: includes/Services/Receipt_Data_Schema.php:1568
+#: includes/Services/Receipt_Data_Schema.php:1567
 msgid "Created (UTC)"
 msgstr "Aangemaakt (UTC)"
 
@@ -3910,148 +3925,148 @@ msgstr "Sleutel betaalwijze"
 msgid "Sales"
 msgstr "Verkopen"
 
-#: includes/Services/Receipt_Data_Schema.php:1523
+#: includes/Services/Receipt_Data_Schema.php:1522
 msgid "Tax Rate"
 msgstr "Belastingtarief"
 
-#: includes/Services/Receipt_Data_Schema.php:1524
+#: includes/Services/Receipt_Data_Schema.php:1523
 #: includes/Services/Receipt_I18n_Labels.php:89
 #: includes/Services/Reports_Registry.php:242
 #: templates/closure.php:46
 msgid "Net"
 msgstr "Netto"
 
-#: includes/Services/Receipt_Data_Schema.php:1526
+#: includes/Services/Receipt_Data_Schema.php:1525
 #: includes/Services/Receipt_I18n_Labels.php:90
 #: includes/Services/Reports_Registry.php:240
 #: templates/closure.php:48
 msgid "Gross"
 msgstr "Bruto"
 
-#: includes/Services/Receipt_Data_Schema.php:1531
+#: includes/Services/Receipt_Data_Schema.php:1530
 #: includes/Services/Receipt_I18n_Labels.php:50
 msgid "Pieces"
 msgstr "Stuks"
 
-#: includes/Services/Receipt_Data_Schema.php:1566
+#: includes/Services/Receipt_Data_Schema.php:1565
 msgid "Movement Label"
 msgstr "Mutatielabel"
 
-#: includes/Services/Receipt_Data_Schema.php:1577
+#: includes/Services/Receipt_Data_Schema.php:1576
 #: includes/Services/Receipt_I18n_Labels.php:98
 #: templates/closure.php:98
 msgid "Voided"
 msgstr "Geannuleerd"
 
-#: includes/Services/Receipt_Data_Schema.php:1581
+#: includes/Services/Receipt_Data_Schema.php:1580
 msgid "Created"
 msgstr "Aangemaakt"
 
-#: includes/Services/Receipt_Data_Schema.php:1590
-#: includes/Services/Receipt_Data_Schema.php:1858
+#: includes/Services/Receipt_Data_Schema.php:1589
+#: includes/Services/Receipt_Data_Schema.php:1857
 msgid "Formatted"
 msgstr "Opgemaakt"
 
 #. translators: Gallery template name shown in the admin Template Gallery.
-#: includes/Services/Receipt_Data_Schema.php:1598
+#: includes/Services/Receipt_Data_Schema.php:1597
 #: includes/Templates/Gallery_Registry.php:92
 msgid "Ledger"
 msgstr "Grootboek"
 
 #. translators: Receipt label for order/document status.
-#: includes/Services/Receipt_Data_Schema.php:1602
-#: includes/Services/Receipt_Data_Schema.php:1656
+#: includes/Services/Receipt_Data_Schema.php:1601
+#: includes/Services/Receipt_Data_Schema.php:1655
 #: includes/Services/Receipt_I18n_Labels.php:306
 msgid "Status"
 msgstr "Status"
 
-#: includes/Services/Receipt_Data_Schema.php:1610
+#: includes/Services/Receipt_Data_Schema.php:1609
 msgid "Total (raw)"
 msgstr "Totaal (ruwe waarde)"
 
 #. translators: Receipt payment-section heading for amounts already paid by the customer.
-#: includes/Services/Receipt_Data_Schema.php:1614
+#: includes/Services/Receipt_Data_Schema.php:1613
 #: includes/Services/Receipt_I18n_Labels.php:234
 #: templates/receipt.php:355
 msgid "Paid"
 msgstr "Betaald"
 
-#: includes/Services/Receipt_Data_Schema.php:1618
+#: includes/Services/Receipt_Data_Schema.php:1617
 msgid "Paid (raw)"
 msgstr "Betaald (ruwe waarde)"
 
-#: includes/Services/Receipt_Data_Schema.php:1622
+#: includes/Services/Receipt_Data_Schema.php:1621
 msgid "Due"
 msgstr "Te betalen"
 
-#: includes/Services/Receipt_Data_Schema.php:1626
+#: includes/Services/Receipt_Data_Schema.php:1625
 msgid "Due (raw)"
 msgstr "Te betalen (ruwe waarde)"
 
-#: includes/Services/Receipt_Data_Schema.php:1634
-#: includes/Services/Receipt_Data_Schema.php:1680
+#: includes/Services/Receipt_Data_Schema.php:1633
+#: includes/Services/Receipt_Data_Schema.php:1679
 msgid "Change (raw)"
 msgstr "Wisselgeld (ruwe waarde)"
 
-#: includes/Services/Receipt_Data_Schema.php:1639
+#: includes/Services/Receipt_Data_Schema.php:1638
 msgid "Ledger payments"
 msgstr "Grootboekbetalingen"
 
-#: includes/Services/Receipt_Data_Schema.php:1644
+#: includes/Services/Receipt_Data_Schema.php:1643
 msgid "ID"
 msgstr "ID"
 
-#: includes/Services/Receipt_Data_Schema.php:1648
+#: includes/Services/Receipt_Data_Schema.php:1647
 #: includes/Services/Reports_Registry.php:244
 msgid "Method"
 msgstr "Methode"
 
-#: includes/Services/Receipt_Data_Schema.php:1652
+#: includes/Services/Receipt_Data_Schema.php:1651
 msgid "Kind"
 msgstr "Type"
 
-#: includes/Services/Receipt_Data_Schema.php:1664
+#: includes/Services/Receipt_Data_Schema.php:1663
 msgid "Amount (raw)"
 msgstr "Bedrag (ruwe waarde)"
 
-#: includes/Services/Receipt_Data_Schema.php:1672
+#: includes/Services/Receipt_Data_Schema.php:1671
 msgid "Tendered (raw)"
 msgstr "Ontvangen (ruwe waarde)"
 
-#: includes/Services/Receipt_Data_Schema.php:1685
+#: includes/Services/Receipt_Data_Schema.php:1684
 msgid "Assets"
 msgstr "Middelen"
 
-#: includes/Services/Receipt_Data_Schema.php:1689
+#: includes/Services/Receipt_Data_Schema.php:1688
 msgid "Plugin image folder URL (example pictures)"
 msgstr "URL van map met plug-inafbeeldingen (voorbeeldafbeeldingen)"
 
-#: includes/Services/Receipt_Data_Schema.php:1694
+#: includes/Services/Receipt_Data_Schema.php:1693
 msgid "Payment"
 msgstr "Betaling"
 
-#: includes/Services/Receipt_Data_Schema.php:1698
+#: includes/Services/Receipt_Data_Schema.php:1697
 msgid "State"
 msgstr "Status"
 
-#: includes/Services/Receipt_Data_Schema.php:1702
+#: includes/Services/Receipt_Data_Schema.php:1701
 msgid "Message"
 msgstr "Bericht"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1738
+#: includes/Services/Receipt_Data_Schema.php:1737
 msgid "Date & Time"
 msgstr "Datum en tijd"
 
 #. translators: Label for a receipt data field in the template editor.
 #. translators: Receipt label for the sale/order date.
-#: includes/Services/Receipt_Data_Schema.php:1742
+#: includes/Services/Receipt_Data_Schema.php:1741
 #: includes/Services/Receipt_I18n_Labels.php:108
 msgid "Date"
 msgstr "Datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1746
+#: includes/Services/Receipt_Data_Schema.php:1745
 #: includes/Services/Receipt_I18n_Labels.php:77
 #: includes/Services/Reports_Registry.php:256
 #: templates/closure.php:93
@@ -4059,197 +4074,197 @@ msgid "Time"
 msgstr "Tijd"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1750
+#: includes/Services/Receipt_Data_Schema.php:1749
 msgid "Short Date & Time"
 msgstr "Korte datum en tijd"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1754
+#: includes/Services/Receipt_Data_Schema.php:1753
 msgid "Long Date & Time"
 msgstr "Lange datum en tijd"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1758
+#: includes/Services/Receipt_Data_Schema.php:1757
 msgid "Full Date & Time"
 msgstr "Volledige datum en tijd"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1762
+#: includes/Services/Receipt_Data_Schema.php:1761
 msgid "Short Date"
 msgstr "Korte datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1766
+#: includes/Services/Receipt_Data_Schema.php:1765
 msgid "Long Date"
 msgstr "Lange datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1770
+#: includes/Services/Receipt_Data_Schema.php:1769
 msgid "Full Date"
 msgstr "Volledige datum"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1774
+#: includes/Services/Receipt_Data_Schema.php:1773
 msgid "YYYY-MM-DD"
 msgstr "YYYY-MM-DD"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1778
+#: includes/Services/Receipt_Data_Schema.php:1777
 msgid "DD/MM/YYYY"
 msgstr "DD/MM/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1782
+#: includes/Services/Receipt_Data_Schema.php:1781
 msgid "MM/DD/YYYY"
 msgstr "MM/DD/YYYY"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1786
+#: includes/Services/Receipt_Data_Schema.php:1785
 msgid "Weekday Short"
 msgstr "Weekdag kort"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1790
+#: includes/Services/Receipt_Data_Schema.php:1789
 msgid "Weekday Long"
 msgstr "Weekdag lang"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1794
+#: includes/Services/Receipt_Data_Schema.php:1793
 msgid "Day"
 msgstr "Dag"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1798
+#: includes/Services/Receipt_Data_Schema.php:1797
 msgid "Month Number"
 msgstr "Maandnummer"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1802
+#: includes/Services/Receipt_Data_Schema.php:1801
 msgid "Month Short"
 msgstr "Maand kort"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1806
+#: includes/Services/Receipt_Data_Schema.php:1805
 msgid "Month Long"
 msgstr "Maand lang"
 
 #. translators: Label for a receipt data field in the template editor.
-#: includes/Services/Receipt_Data_Schema.php:1810
+#: includes/Services/Receipt_Data_Schema.php:1809
 msgid "Year"
 msgstr "Jaar"
 
-#: includes/Services/Receipt_Data_Schema.php:1826
+#: includes/Services/Receipt_Data_Schema.php:1825
 msgid "Key"
 msgstr "Sleutel"
 
-#: includes/Services/Receipt_Data_Schema.php:1835
+#: includes/Services/Receipt_Data_Schema.php:1834
 msgid "First entry"
 msgstr "Eerste invoer"
 
-#: includes/Services/Receipt_Data_Schema.php:1840
+#: includes/Services/Receipt_Data_Schema.php:1839
 msgid "Cells"
 msgstr "Cellen"
 
-#: includes/Services/Receipt_Data_Schema.php:1846
+#: includes/Services/Receipt_Data_Schema.php:1845
 msgid "Column label"
 msgstr "Kolomlabel"
 
-#: includes/Services/Receipt_Data_Schema.php:1850
+#: includes/Services/Receipt_Data_Schema.php:1849
 msgid "Repeats the row heading"
 msgstr "Rijkop herhalen"
 
-#: includes/Services/Receipt_Data_Schema.php:1864
-#: includes/Services/Receipt_Data_Schema.php:1948
+#: includes/Services/Receipt_Data_Schema.php:1863
+#: includes/Services/Receipt_Data_Schema.php:1947
 msgid "Alignment"
 msgstr "Uitlijning"
 
-#: includes/Services/Receipt_Data_Schema.php:1871
+#: includes/Services/Receipt_Data_Schema.php:1870
 msgid "Rows"
 msgstr "Rijen"
 
-#: includes/Services/Receipt_Data_Schema.php:1882
+#: includes/Services/Receipt_Data_Schema.php:1881
 msgid "Mode"
 msgstr "Modus"
 
-#: includes/Services/Receipt_Data_Schema.php:1898
+#: includes/Services/Receipt_Data_Schema.php:1897
 msgid "Session Number"
 msgstr "Sessienummer"
 
-#: includes/Services/Receipt_Data_Schema.php:1902
+#: includes/Services/Receipt_Data_Schema.php:1901
 msgid "Opened At"
 msgstr "Geopend op"
 
-#: includes/Services/Receipt_Data_Schema.php:1903
+#: includes/Services/Receipt_Data_Schema.php:1902
 msgid "Closed At"
 msgstr "Gesloten op"
 
-#: includes/Services/Receipt_Data_Schema.php:1904
+#: includes/Services/Receipt_Data_Schema.php:1903
 msgid "From"
 msgstr "Van"
 
-#: includes/Services/Receipt_Data_Schema.php:1905
+#: includes/Services/Receipt_Data_Schema.php:1904
 msgid "To"
 msgstr "Tot"
 
-#: includes/Services/Receipt_Data_Schema.php:1914
+#: includes/Services/Receipt_Data_Schema.php:1913
 #: includes/Templates.php:598
 #: includes/Templates/Gallery_Registry.php:590
 msgid "Report"
 msgstr "Rapport"
 
-#: includes/Services/Receipt_Data_Schema.php:1919
+#: includes/Services/Receipt_Data_Schema.php:1918
 msgid "Title"
 msgstr "Titel"
 
-#: includes/Services/Receipt_Data_Schema.php:1923
+#: includes/Services/Receipt_Data_Schema.php:1922
 msgid "Subtitle"
 msgstr "Ondertitel"
 
-#: includes/Services/Receipt_Data_Schema.php:1927
+#: includes/Services/Receipt_Data_Schema.php:1926
 msgid "Scope"
 msgstr "Bereik"
 
-#: includes/Services/Receipt_Data_Schema.php:1933
+#: includes/Services/Receipt_Data_Schema.php:1932
 msgid "Group By"
 msgstr "Groeperen op"
 
-#: includes/Services/Receipt_Data_Schema.php:1939
+#: includes/Services/Receipt_Data_Schema.php:1938
 msgid "Columns"
 msgstr "Kolommen"
 
-#: includes/Services/Receipt_Data_Schema.php:1954
+#: includes/Services/Receipt_Data_Schema.php:1953
 msgid "Column Count"
 msgstr "Aantal kolommen"
 
-#: includes/Services/Receipt_Data_Schema.php:1960
+#: includes/Services/Receipt_Data_Schema.php:1959
 msgid "Groups"
 msgstr "Groepen"
 
-#: includes/Services/Receipt_Data_Schema.php:1969
+#: includes/Services/Receipt_Data_Schema.php:1968
 msgid "Count"
 msgstr "Aantal"
 
-#: includes/Services/Receipt_Data_Schema.php:1973
+#: includes/Services/Receipt_Data_Schema.php:1972
 msgid "Has Groups"
 msgstr "Heeft groepen"
 
-#: includes/Services/Receipt_Data_Schema.php:1977
+#: includes/Services/Receipt_Data_Schema.php:1976
 msgid "Has Rows"
 msgstr "Heeft rijen"
 
-#: includes/Services/Receipt_Data_Schema.php:1981
+#: includes/Services/Receipt_Data_Schema.php:1980
 msgid "Generated At"
 msgstr "Gegenereerd op"
 
-#: includes/Services/Receipt_Data_Schema.php:1986
+#: includes/Services/Receipt_Data_Schema.php:1985
 msgid "Is Partial"
 msgstr "Is gedeeltelijk"
 
-#: includes/Services/Receipt_Data_Schema.php:1990
+#: includes/Services/Receipt_Data_Schema.php:1989
 msgid "Partial Reason"
 msgstr "Reden voor gedeeltelijke weergave"
 
-#: includes/Services/Receipt_Data_Schema.php:1996
+#: includes/Services/Receipt_Data_Schema.php:1995
 msgid "Is Report Document"
 msgstr "Is rapportdocument"
 
@@ -5293,7 +5308,7 @@ msgstr "Instellingen met id %s niet gevonden"
 msgid "Can not save settings with id %s"
 msgstr "Kan instellingen met id %s niet opslaan"
 
-#: includes/Services/Settings/Access_Section.php:268
+#: includes/Services/Settings/Access_Section.php:240
 msgid "You do not have permission to update access settings."
 msgstr "U hebt geen rechten om de toegangsinstellingen bij te werken."
 
@@ -5362,19 +5377,19 @@ msgstr "Kassabon voor bestelling #%s downloaden"
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:191
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:304
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:247
 msgid "Filter orders by POS cashier."
 msgstr "Bestellingen filteren op POS-kassier."
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:197
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:309
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:252
 msgid "Filter orders by POS store."
 msgstr "Bestellingen filteren op POS-winkel."
 
 #. translators: REST API schema field label or error message.
 #: includes/Sync/Collection_Rules.php:202
-#: tests/includes/Sync/Test_Collection_Rules_Plan.php:314
+#: tests/includes/Sync/Test_Collection_Rules_Plan.php:257
 msgid "Filter orders by POS register."
 msgstr "Bestellingen filteren op POS-kassa."
 
@@ -5391,21 +5406,6 @@ msgid ""
 "The WCPOS sync store is not installed yet (initialising or a schema install failed). Retry shortly."
 msgstr ""
 "De WCPOS-synchronisatiewinkel is nog niet geïnstalleerd (initialisatie bezig of installatie van het schema mislukt). Probeer het zo opnieuw."
-
-#: includes/Sync/Integrity_Digest.php:449
-msgid "WCPOS sync integrity checks"
-msgstr "Integriteitscontroles voor WCPOS-synchronisatie"
-
-#: includes/Sync/Integrity_Digest.php:469
-msgid "WCPOS sync integrity checks are off on SQLite"
-msgstr ""
-"Integriteitscontroles voor WCPOS-synchronisatie zijn uitgeschakeld in SQLite"
-
-#: includes/Sync/Integrity_Digest.php:470
-msgid ""
-"The POS still syncs through its change log, but the background integrity check that catches changes made outside WordPress (direct database edits, some imports) does not run on this database. SQLite is not a supported database for WCPOS."
-msgstr ""
-"De POS blijft synchroniseren via het wijzigingslogboek, maar de integriteitscontrole op de achtergrond die wijzigingen buiten WordPress opspoort (rechtstreekse databasebewerkingen en sommige imports), wordt niet uitgevoerd op deze database. SQLite is geen ondersteunde database voor WCPOS."
 
 #: includes/Sync/Order_Write_Payload.php:435
 msgid "date_created_gmt cannot be more than 24 hours in the future."
@@ -6328,90 +6328,83 @@ msgid ""
 msgstr ""
 "De kassabon voor de geldzak: wisselgeld, getelde betaalmiddelen, coupures, mutaties, notitie en handtekeningregels. Geen verkoop- of belastingbedragen."
 
-#: includes/Templates/Payment.php:202
+#: includes/Templates/Payment.php:201
 msgid ""
 "Sorry, this order cannot be paid for. The order key is missing or invalid."
 msgstr ""
 "Helaas kan deze bestelling niet worden betaald. De bestelcode ontbreekt of is ongeldig."
 
-#. translators: Shown on the POS pay page when the cashier's session has expired.
-#: includes/Templates/Payment.php:234
-msgid ""
-"Your session has expired. Close this payment window and open it again."
-msgstr ""
-"Je sessie is verlopen. Sluit dit betalingsvenster en open het opnieuw."
-
-#: includes/Templates/Payment.php:257
+#: includes/Templates/Payment.php:220
 msgid ""
 "This order cannot be paid for. Please contact us if you need assistance."
 msgstr ""
 "Deze bestelling kan niet worden betaald. Neem contact met ons op als u hulp nodig heeft."
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:265
+#: includes/Templates/Payment.php:228
 msgid "Pay for order"
 msgstr "Bestelling betalen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:349
+#: includes/Templates/Payment.php:312
 msgid "Checkout Settings"
 msgstr "Afrekeninstellingen"
 
-#: includes/Templates/Payment.php:355
+#: includes/Templates/Payment.php:318
 msgid ""
 "Scripts and styles may interfere with the custom payment template, use this form to dequeue any problematic scripts."
 msgstr ""
 "Scripts en stijlen kunnen de aangepaste betalingssjabloon verstoren, gebruik dit formulier om problematische scripts uit te schakelen."
 
-#: includes/Templates/Payment.php:357
+#: includes/Templates/Payment.php:320
 msgid "Disable All Styles and Scripts"
 msgstr "Alle stijlen en scripts uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:360
+#: includes/Templates/Payment.php:323
 msgid "Disable wp_head"
 msgstr "wp_head uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:365
+#: includes/Templates/Payment.php:328
 msgid "Disable wp_footer"
 msgstr "wp_footer uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:370
+#: includes/Templates/Payment.php:333
 msgid "Disable Selected Styles"
 msgstr "Geselecteerde stijlen uitschakelen"
 
-#: includes/Templates/Payment.php:377
-#: includes/Templates/Payment.php:389
+#: includes/Templates/Payment.php:340
+#: includes/Templates/Payment.php:352
 msgid "always removed on the POS payment page"
 msgstr "wordt altijd verwijderd van de POS-betaalpagina"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:382
+#: includes/Templates/Payment.php:345
 msgid "Disable Selected Scripts"
 msgstr "Geselecteerde scripts uitschakelen"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:395
+#: includes/Templates/Payment.php:358
 msgid "Submit"
 msgstr "Verzenden"
 
 #. translators: Short WCPOS UI label; keep concise.
-#: includes/Templates/Payment.php:449
+#: includes/Templates/Payment.php:412
 msgid "Paying as customer"
 msgstr "Betalen als klant"
 
-#: includes/Templates/Payment.php:550
+#: includes/Templates/Payment.php:513
 #: includes/Template_Router.php:130
 msgid "Sorry, this order is invalid and cannot be paid for."
 msgstr "Sorry, deze bestelling is ongeldig en kan niet worden betaald."
 
-#: includes/Templates/Payment.php:554
+#: includes/Templates/Payment.php:517
 msgid "Sorry, this order has already been paid for."
 msgstr "Sorry, deze bestelling is al betaald."
 
-#: includes/Templates/Payment.php:572
+#: includes/Templates/Payment.php:535
 msgid "You do not have permission to modify checkout settings."
 msgstr "U heeft geen toestemming om de afrekeninstellingen te wijzigen."
 
@@ -6486,11 +6479,11 @@ msgstr "Probeer terug te zetten naar de standaard bon sjabloon"
 msgid "Please contact the site administrator for assistance."
 msgstr "Neem contact op met de sitebeheerder voor hulp."
 
-#: includes/Templates/Received.php:88
+#: includes/Templates/Received.php:82
 msgid "Sorry, this order is invalid."
 msgstr "Sorry, deze bestelling is ongeldig."
 
-#: includes/Templates/Received.php:96
+#: includes/Templates/Received.php:90
 msgid ""
 "Sorry, this order cannot be viewed. The order key is missing or invalid."
 msgstr ""
